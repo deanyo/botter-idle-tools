@@ -5,7 +5,7 @@ private game source). Hosts the browser-based authoring portal — atlas
 viewer, biome / item / affix editors, drop-tuning sliders — and the
 CC0 tile assets they render against.
 
-> Live: **https://dnyo.co.uk/botter-idle/** (GitHub Pages)
+> Live: **https://dnyo.co.uk/botter-idle-tools/** (GitHub Pages)
 
 This split exists because the editors need GitHub Pages, and Pages on
 private repos is a paid GitHub Enterprise feature. The game is private;
