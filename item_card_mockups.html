@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Item Card Layout Mockups</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Layout chrome */
+  body { line-height: 1.5; }
+  main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+  .intro {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .intro p { margin: 4px 0; color: var(--muted); font-size: 13px; }
+  .intro strong { color: var(--accent); }
+  .controls {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+    padding: 10px 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .controls .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    font-size: 12px;
+  }
+  .controls input[type="checkbox"] { transform: scale(1.15); }
+
+  .variant-section {
+    margin: 28px 0 36px;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .variant-section h2 {
+    margin: 0 0 4px;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  .variant-section .desc {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .row .col-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .row .col-label .dim { color: rgba(255,255,255,0.4); }
+
+  /* ============================================================
+     Item-card root — all variants inherit this.
+     Mirrors the in-game ItemTooltip widget: 280px wide, OLED-pure-
+     black panel, rarity border, rarity-colored title.
+     ============================================================ */
+  .ic {
+    --rar-common:    #d8d8d8;
+    --rar-uncommon:  #66b3ff;
+    --rar-rare:      #ffe04d;
+    --rar-epic:      #ff8033;
+    --rar-legendary: #ff4d4d;
+    --meta-ancient:  #ffc54d;
+    --meta-primal:   #ff2e33;
+    --gold:          #ffd84d;
+    --hp:            #5fc878;
+    --str:           #f24c4c;
+    --dex:           #80f266;
+    --int:           #73d8ff;
+    --crit:          #ffd84d;
+    --haste:         #ffab3a;
+    --armor:         #b9b9b9;
+    --vamp:          #d93b3b;
+    --fire:          #ff8c2e;
+    --cold:          #73d8ff;
+    --lightning:     #a6ccff;
+    --holy:          #ffeb8c;
+    --poison:        #80f266;
+    --dark:          #d98cff;
+    --flavor:        #a69e80;
+    --hotkey:        #807d72;
+    --body:          #ebe9d8;
+    --subtle:        #a69e80;
+
+    width: 280px;
+    background: rgba(13, 10, 5, 0.94);
+    color: var(--body);
+    font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    padding: 10px;
+    border: 2px solid var(--rarity);
+    position: relative;
+    line-height: 1.35;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,0.6);
+  }
+  .ic[data-rarity="common"]    { --rarity: var(--rar-common);    border-width: 1.5px; }
+  .ic[data-rarity="uncommon"]  { --rarity: var(--rar-uncommon);  border-width: 2.5px; }
+  .ic[data-rarity="rare"]      { --rarity: var(--rar-rare);      border-width: 3px;   }
+  .ic[data-rarity="epic"]      { --rarity: var(--rar-epic);      border-width: 3.5px; }
+  .ic[data-rarity="legendary"] { --rarity: var(--rar-legendary); border-width: 4px;   }
+  .ic[data-meta="ancient"]     { --rarity: var(--meta-ancient);  border-width: 4px; box-shadow: 0 0 18px rgba(255,184,77,0.45); }
+  .ic[data-meta="primal"]      { --rarity: var(--meta-primal);   border-width: 4px; box-shadow: 0 0 18px rgba(255,46,51,0.50); }
+
+  .ic .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--rarity);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    margin: 0 0 2px;
+    line-height: 1.2;
+  }
+  .ic .subtitle {
+    font-size: 11px;
+    color: var(--subtle);
+    margin: 0 0 4px;
+  }
+  .ic .forged {
+    font-size: 11px;
+    color: #ffb43d;
+    font-weight: 600;
+    margin: 2px 0;
+  }
+  .ic .quality {
+    font-size: 11px;
+    margin: 1px 0 4px;
+  }
+  .ic .quality .pct { font-weight: 600; }
+  .ic .spell-blurb { font-size: 13px; color: var(--body); margin: 4px 0; }
+  .ic .dmg-line {
+    font-size: 14px;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  }
+  .ic .speed, .ic .cd, .ic .mana, .ic .style {
+    font-size: 12px;
+    color: var(--body);
+  }
+  .ic .style { color: #c8d8eb; font-size: 11px; }
+  .ic .scales { font-size: 12px; font-weight: 600; }
+
+  .ic .heritage { font-size: 11px; }
+  .ic .heritage.active { color: #73e88c; }
+  .ic .heritage.muted  { color: #f3c84d; }
+
+  .ic .implicit {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  }
+  .ic .implicit.muted { color: #6f6a5a; }
+  .ic .affix { font-size: 12px; }
+  .ic .affix .stat-str        { color: var(--str); }
+  .ic .affix .stat-dex        { color: var(--dex); }
+  .ic .affix .stat-int        { color: var(--int); }
+  .ic .affix .stat-hp         { color: var(--hp); }
+  .ic .affix .stat-armor      { color: var(--armor); }
+  .ic .affix .stat-crit       { color: var(--crit); }
+  .ic .affix .stat-haste      { color: var(--haste); }
+  .ic .affix .stat-fire       { color: var(--fire); }
+  .ic .affix .stat-cold       { color: var(--cold); }
+  .ic .affix .stat-lightning  { color: var(--lightning); }
+  .ic .affix .stat-vamp       { color: var(--vamp); }
+  .ic .affix .stat-physical   { color: var(--body); }
+  .ic .affix .tier-badge { color: rgba(255,255,255,0.45); font-size: 11px; }
+  .ic .affix .tier-badge.sparkle { color: var(--gold); }
+
+  .ic .slot-footer {
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+  .ic .slot-footer.full { color: var(--gold); }
+
+  .ic .modifier { font-size: 11px; font-weight: 600; }
+  .ic .modifier.prismatic { color: #ff9bff; }
+  .ic .modifier.photoneg  { color: #80e8ff; }
+  .ic .modifier.shimmer   { color: var(--gold); }
+
+  .ic .enchant-line { font-size: 13px; font-weight: 600; }
+  .ic .enchant-combo { font-size: 12px; font-weight: 600; }
+  .ic .enchant-desc { font-size: 11px; color: var(--body); }
+
+  .ic .ilvl { font-size: 11px; color: var(--rarity); font-weight: 600; }
+  .ic .lore {
+    font-size: 11px;
+    color: var(--flavor);
+    font-style: italic;
+  }
+  .ic .delta-good { color: #73f08c; font-weight: 600; }
+  .ic .delta-bad  { color: #f37373; font-weight: 600; }
+  .ic .delta-zero { color: rgba(255,255,255,0.4); }
+  .ic .summary {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .ic .summary.good   { color: #73f08c; }
+  .ic .summary.bad    { color: #f37373; }
+  .ic .summary.mixed  { color: var(--gold); }
+  .ic .hotkey {
+    font-size: 10px;
+    color: var(--hotkey);
+  }
+
+  /* Alt-hidden lines — the in-game tooltip shows these only while
+     the player holds Alt. Toggled here by the [data-alt="true"] root. */
+  .ic .alt-only { display: none; }
+  .ic[data-alt="true"] .alt-only { display: block; }
+  .ic .alt-stat-desc {
+    font-size: 11px;
+    color: #d8d2b3;
+  }
+  .ic .alt-detail {
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* =========== Variant 1 — Hairlines (current baseline) =========== */
+  .v1 .sep {
+    height: 1px;
+    background: rgba(255,255,255,0.10);
+    margin: 5px 0;
+  }
+
+  /* =========== Variant 2 — Iconographic gutter =========== */
+  .v2 .section { display: grid; grid-template-columns: 14px 1fr; gap: 4px; align-items: start; }
+  .v2 .section .glyph {
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    text-align: center;
+    user-select: none;
+    line-height: 1.45;
+  }
+  .v2 .section.sec-implicit  .glyph { color: var(--gold); }
+  .v2 .section.sec-affix     .glyph { color: var(--rarity); }
+  .v2 .section.sec-modifier  .glyph { color: #ff9bff; }
+  .v2 .section.sec-enchant   .glyph { color: var(--gold); }
+  .v2 .section.sec-flavor    .glyph { color: var(--flavor); }
+  .v2 .section.sec-damage    .glyph { color: var(--rarity); }
+  .v2 .section + .section { margin-top: 4px; }
+
+  /* =========== Variant 3 — Tiny uppercase headers =========== */
+  .v3 .sec-head {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.32);
+    font-weight: 600;
+    margin: 6px 0 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 1px;
+  }
+  .v3 .sec-head.gold { color: rgba(255,216,77,0.55); }
+  .v3 .sec-head:first-child { margin-top: 0; }
+
+  /* =========== Variant 4 — Left color-bands =========== */
+  .v4 .section {
+    border-left: 3px solid transparent;
+    padding-left: 7px;
+    margin: 4px 0;
+  }
+  .v4 .section.sec-damage    { border-left-color: var(--rarity); }
+  .v4 .section.sec-implicit  { border-left-color: var(--gold); }
+  .v4 .section.sec-affix     { border-left-color: rgba(255,255,255,0.18); }
+  .v4 .section.sec-modifier  { border-left-color: #ff9bff; }
+  .v4 .section.sec-enchant   { border-left-color: var(--gold); }
+  .v4 .section.sec-flavor    { border-left-color: rgba(166,158,128,0.4); }
+  .v4 .section.sec-spell     { border-left-color: var(--rarity); }
+
+  /* =========== Variant 5 — Indent ladder (no lines) =========== */
+  .v5 .section { margin: 5px 0; }
+  .v5 .section.indent { padding-left: 8px; }
+  .v5 .section.dimsep { border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 4px; }
+
+  /* =========== Variant 6 — Inset card-within-card =========== */
+  .v6 .section {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 3px;
+    padding: 5px 7px;
+    margin: 5px 0;
+  }
+  .v6 .section.sec-implicit { border-color: rgba(255,216,77,0.25); background: rgba(255,216,77,0.04); }
+  .v6 .section.sec-modifier { border-color: rgba(255,155,255,0.30); background: rgba(255,155,255,0.04); }
+  .v6 .section.sec-enchant  { border-color: rgba(255,216,77,0.25); background: rgba(255,216,77,0.03); }
+  .v6 .section.sec-flavor   { border: none; background: none; padding-left: 0; padding-right: 0; }
+
+  /* Make a small per-card alt button (in addition to the global toggle) */
+  .ic-alt-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .ic[data-alt="true"] .ic-alt-btn { color: var(--accent); border-color: var(--accent); }
+  .ic-alt-btn:hover { color: var(--accent); }
+
+  .pick-row {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0 14px;
+    flex-wrap: wrap;
+  }
+  .pick-row .pick {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 3px 9px;
+    font-size: 11px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .pick-row .pick.active { color: var(--accent); border-color: var(--accent-dim); background: var(--accent-soft); }
+
+  .verdict {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  /* Condensed comparison table for the bottom of the page. */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .compare-table th, .compare-table td {
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .compare-table th {
+    color: var(--accent);
+    background: var(--panel-2);
+    font-weight: 600;
+    font-size: 11px;
+  }
+  .compare-table td.pro { color: var(--good); }
+  .compare-table td.con { color: var(--bad); }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="card-mockups" data-title="Item Card Mockups"></nav>
+
+<main>
+
+<div class="intro">
+  <p><strong>Goal:</strong> design a clearer "section structure" for item tooltips so players can parse Type · Damage · Implicit · Affixes · Modifier · Enchant · Flavor at a glance, especially at high rarity where lines pile up.</p>
+  <p>Each variant below renders the SAME three items at three power tiers (Common ⇒ Rare ⇒ God-tier 0.00001% Primal Masterwork Legendary) so you can compare how each layout scales from sparse to dense.</p>
+  <p>Hold <kbd>Alt</kbd> on the keyboard, or click the <kbd>alt</kbd> badge on a card, to expand affix detail (mirrors the in-game behavior). The global toggle below flips every card on the page.</p>
+</div>
+
+<div class="controls">
+  <span class="toggle"><input type="checkbox" id="alt-global"> <label for="alt-global">Force-show Alt detail on every card (or just hold <kbd>Alt</kbd>)</label></span>
+  <span class="toggle" style="margin-left:auto;color:var(--muted);font-size:11px;">All data: real <code>items.json</code> + <code>affixes.json</code> shapes — verified against <code>item_tooltip.gd</code>.</span>
+</div>
+
+<!-- Variants will be injected here by JS so we keep this file under one
+     authoring surface. Each variant is one .variant-section. -->
+<div id="variants"></div>
+
+<div class="variant-section">
+  <h2>Decision matrix</h2>
+  <p class="desc">A cheat-sheet so you can pick fast.</p>
+  <table class="compare-table">
+    <tr>
+      <th>Variant</th><th>Reads-fast at low rarity?</th><th>Survives 5 affixes + combo?</th><th>Cost</th><th>Risk</th>
+    </tr>
+    <tr>
+      <td><strong>1 — Hairlines</strong> (current)</td>
+      <td>Yes — minimal chrome</td>
+      <td class="con">Borderline — sections blur together</td>
+      <td>Already shipped</td>
+      <td class="con">User says it's "a bit of a jumble"</td>
+    </tr>
+    <tr>
+      <td><strong>2 — Glyph gutter</strong></td>
+      <td>Yes — quiet at low density</td>
+      <td class="pro">Yes — gutter telegraphs section without taking width</td>
+      <td>Modest — one extra column</td>
+      <td>Glyphs need to read at small size</td>
+    </tr>
+    <tr>
+      <td><strong>3 — Tiny uppercase headers</strong></td>
+      <td>Maybe — feels heavy on common items</td>
+      <td class="pro">Strongest — explicit labels never collide</td>
+      <td class="con">Vertical space</td>
+      <td>Risk of "form-y" feel</td>
+    </tr>
+    <tr>
+      <td><strong>4 — Left color-bands</strong></td>
+      <td>Yes — colored stripe is a quiet cue</td>
+      <td class="pro">Yes — same chrome at all densities</td>
+      <td>Tiny — 3px left border</td>
+      <td>Color salad if too many bands compete</td>
+    </tr>
+    <tr>
+      <td><strong>5 — Indent ladder</strong></td>
+      <td class="pro">Cleanest — no extra chrome</td>
+      <td class="con">Weak — relies entirely on whitespace</td>
+      <td>Zero</td>
+      <td>Doesn't fix the "jumble" problem at high density</td>
+    </tr>
+    <tr>
+      <td><strong>6 — Inset cards</strong></td>
+      <td class="con">Heavy — common item looks over-styled</td>
+      <td class="pro">Yes — sections are unmistakeable</td>
+      <td class="con">Vertical space + visual weight</td>
+      <td>Reads "form" not "loot"</td>
+    </tr>
+  </table>
+</div>
+
+</main>
+
+<script src="portal_nav.js" defer></script>
+<script>
+/* =========================================================
+ * Item-card data — three power tiers using REAL game items
+ * (verified against data/items.json + affixes.json).
+ * Each entry mirrors what item_tooltip.gd would have to render.
+ * =========================================================
+ */
+const ITEMS = {
+  /* Tier 1 — Common Bone Knife with one low-roll affix.
+   * Real def: damage 4-7 physical, speed 0.45, base_type knife (bleed proc),
+   *           common rarity_affix_count = 1, no implicit. */
+  simple: {
+    name: 'Bone Knife',
+    rarity: 'common',
+    slot: 'weapon',
+    weapon_class: '1H',
+    damage: { min: 4, max: 7, type: 'Physical' },
+    speed: 0.45,
+    style: '40% on hit: bleed (4 ticks × 8% damage)',
+    implicit: [],
+    affixes: [
+      { id: 'of_might', stat: 'str', label: '+1 Strength', tier: 'T1',
+        desc: 'Strength scales melee damage and HP.' },
+    ],
+    affix_cap: 1,
+    enchant: null,
+    enchant_combo: null,
+    quality: null,
+    quality_mult: 1.0,
+    forged: 0,
+    meta: null,
+    modifier: null,
+    lore: 'Fashioned from something that used to be alive.',
+    flavor_tags: [],
+    ilvl: 4,
+  },
+
+  /* Tier 2 — Midgame: Rare Agate Ring with rolled enchant.
+   * Real def: implicit_affixes ["of_finesse","of_haste"], 3 rolled affixes
+   *           at rare, ~10% enchant_chance. */
+  midgame: {
+    name: 'Honed Agate Ring',
+    rarity: 'rare',
+    slot: 'ring',
+    quality: 'Honed',
+    quality_mult: 1.10,
+    damage: null,
+    implicit: [
+      { id: 'of_finesse', stat: 'dex',   label: '+5 Dexterity', desc: 'Dexterity scales attack speed and ranged damage.' },
+      { id: 'of_haste',   stat: 'haste', label: '+18% Haste',   desc: 'Speeds up attacks and movement.' },
+    ],
+    affixes: [
+      { id: 'of_might',     stat: 'str',  label: '+5 Strength', tier: 'T3',
+        desc: 'Strength scales melee damage and HP.' },
+      { id: 'of_crit',      stat: 'crit', label: '+11% Crit Chance', tier: 'T3',
+        desc: 'Each strike has this chance to land a critical hit.' },
+      { id: 'of_lifesteal', stat: 'vamp', label: '+5% Lifesteal', tier: 'T3', sparkle: true,
+        desc: 'A portion of damage dealt restores health.' },
+    ],
+    affix_cap: 3,
+    enchant: { name: 'Vampiric', color: 'vamp',
+      desc: 'Heal for a small portion of damage dealt to bleeding foes.' },
+    enchant_combo: null,
+    forged: 0,
+    meta: null,
+    modifier: null,
+    lore: 'Banded stone, polished smooth.',
+    flavor_tags: ['footwork','vampiric'],
+    ilvl: 38,
+  },
+
+  /* Tier 3 — God-tier 0.00001% Primal Masterwork Arc Blade with full
+   * 5 rolled affixes, an enchant_combo (Plasma = fire+thunderous),
+   * and a rolled visual modifier (Photonegative).
+   * Real def: legendary, damage 71-131 physical, speed 0.7,
+   *           implicit_affixes ["of_storms"]. Layering primal +
+   *           Masterwork (1.20×) onto it stays within bounds the
+   *           game can actually roll. */
+  godtier: {
+    name: 'Arc Blade',
+    name_full: 'Primal Masterwork Arc Blade',
+    rarity: 'legendary',
+    slot: 'weapon',
+    weapon_class: '1H',
+    quality: 'Masterwork',
+    quality_mult: 1.20,
+    damage: { min: 85, max: 157, type: 'Physical' },  /* base × 1.20 quality */
+    speed: 0.7,
+    style: 'On hit: cleave 60% damage to one adjacent foe',
+    implicit: [
+      { id: 'of_storms', stat: 'lightning', label: '+18-27 Lightning', desc: 'Adds lightning damage to every strike.' },
+    ],
+    affixes: [
+      { id: 'of_might',      stat: 'str',       label: '+13 Strength',         tier: 'T5', sparkle: true,
+        desc: 'Strength scales melee damage and HP.' },
+      { id: 'of_sharpness',  stat: 'physical',  label: '+13-21 Physical',      tier: 'T5',
+        desc: 'Adds raw physical damage to every strike.' },
+      { id: 'of_crit',       stat: 'crit',      label: '+24% Crit Chance',     tier: 'T5', sparkle: true,
+        desc: 'Each strike has this chance to land a critical hit.' },
+      { id: 'of_haste',      stat: 'haste',     label: '+35% Haste',           tier: 'T5', sparkle: true,
+        desc: 'Speeds up attacks and movement.' },
+      { id: 'of_lifesteal',  stat: 'vamp',      label: '+13% Lifesteal',       tier: 'T5',
+        desc: 'A portion of damage dealt restores health.' },
+    ],
+    affix_cap: 5,
+    enchant: null,
+    enchant_combo: { name: 'Plasma', a: '#ff8c2e', b: '#a6ccff',
+      desc: '+25% damage; chance to chain to one adjacent foe on hit.' },
+    forged: 3,
+    meta: 'primal',
+    modifier: { type: 'photoneg', label: '⌧ Photonegative', detail: '+12% Strength · +6% Crit Chance' },
+    lore: 'Lightning runs the length of the blade. It hisses when wet.',
+    flavor_tags: ['arcane','elemental','lightning'],
+    ilvl: 142,
+  },
+};
+
+/* The user's section model (in stated order):
+ *   1. type        (rarity / slot / weapon class / quality)
+ *   2. unique-stat (damage line for weapons; effect for spells)
+ *   3. enchant prefixes
+ *   4. affixes
+ *   5. modifiers (prismatic / inverted)
+ *   6. flavor
+ *
+ * The actual code render order (verified in item_tooltip.gd) is:
+ *   title → subtitle → forged → quality → spell-blurb (top, spells only)
+ *   → damage block → defensives → heritage gate → implicit affixes
+ *   → rolled affixes → slot-footer → tint disclosure → enchant/combo
+ *   → ilvl → lore → hotkey hints
+ *
+ * For these mockups we honor the user's stated taxonomy by surfacing
+ * ENCHANT before AFFIXES (per their ordering) and treating the
+ * "Photonegative / Prismatic / Shimmer" line as a clearly-marked
+ * Modifier section. The sectioning style is what each variant
+ * varies — render order itself is consistent across variants.
+ */
+
+/* =========================================================
+ * Variant renderers. Each returns the inner HTML for one card.
+ * They share helpers below.
+ * =========================================================
+ */
+
+function escHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function rarityLabel(item){
+  const parts = [item.rarity[0].toUpperCase()+item.rarity.slice(1)];
+  parts.push(item.slot[0].toUpperCase()+item.slot.slice(1));
+  if (item.weapon_class) parts.push(item.weapon_class);
+  return parts.join(' · ');
+}
+
+function titleString(item){
+  let n = item.name;
+  if (item.quality && item.quality !== 'Standard') n = item.quality + ' ' + n;
+  if (item.meta === 'ancient') n = 'Ancient ' + n;
+  if (item.meta === 'primal')  n = 'Primal '  + n;
+  return n;
+}
+
+function damageHtml(item){
+  if (!item.damage) return '';
+  return `<div class="dmg-line" style="color:var(--body);">${item.damage.min}-${item.damage.max} ${item.damage.type}</div>` +
+         (item.speed ? `<div class="speed">${item.speed.toFixed(2)}s Attack Speed</div>` : '') +
+         (item.style ? `<div class="style">Style: ${escHtml(item.style)}</div>` : '');
+}
+
+function implicitHtml(item){
+  if (!item.implicit || !item.implicit.length) return '';
+  return item.implicit.map(a => `
+    <div class="implicit affix">${escHtml(a.label)}</div>
+    <div class="alt-only alt-stat-desc">→ ${escHtml(a.desc)}</div>
+    <div class="alt-only alt-detail">[implicit] ${escHtml(a.id)} · ${a.stat}</div>
+  `).join('');
+}
+
+function affixesHtml(item){
+  if (!item.affixes || !item.affixes.length) return '';
+  let out = item.affixes.map(a => `
+    <div class="affix">
+      <span class="stat-${a.stat}">${escHtml(a.label)}</span>
+      <span class="alt-only tier-badge${a.sparkle?' sparkle':''}">  [${a.tier}${a.sparkle?'✦':''}]</span>
+    </div>
+    <div class="alt-only alt-stat-desc">→ ${escHtml(a.desc)}</div>
+    <div class="alt-only alt-detail">${escHtml(a.id)} · ${a.stat} · ${a.tier}</div>
+  `).join('');
+  if (item.affix_cap){
+    const full = item.affixes.length >= item.affix_cap;
+    out += `<div class="slot-footer${full?' full':''}">${item.affixes.length} / ${item.affix_cap} affix slots</div>`;
+  }
+  return out;
+}
+
+function modifierHtml(item){
+  if (!item.modifier) return '';
+  const m = item.modifier;
+  const cls = m.type === 'prismatic' ? 'prismatic' : (m.type === 'photoneg' ? 'photoneg' : 'shimmer');
+  return `<div class="modifier ${cls}">${escHtml(m.label)}</div>
+          <div class="affix" style="font-size:11px;color:rgba(255,255,255,0.6);">${escHtml(m.detail)}</div>`;
+}
+
+function enchantHtml(item){
+  if (item.enchant_combo){
+    const c = item.enchant_combo;
+    return `<div class="enchant-combo" style="background:linear-gradient(90deg, ${c.a}, ${c.b});-webkit-background-clip:text;background-clip:text;color:transparent;">✦ ${escHtml(c.name)}</div>
+            <div class="enchant-desc">${escHtml(c.desc)}</div>`;
+  }
+  if (item.enchant){
+    return `<div class="enchant-line" style="color:var(--${item.enchant.color});">✦ ${escHtml(item.enchant.name)}</div>
+            <div class="enchant-desc">${escHtml(item.enchant.desc)}</div>`;
+  }
+  return '';
+}
+
+function ilvlAndLoreHtml(item){
+  let out = `<div class="ilvl">iLvl ${item.ilvl}  ·  ${item.rarity[0].toUpperCase()+item.rarity.slice(1)}</div>`;
+  if (item.lore) out += `<div class="lore">"${escHtml(item.lore)}"</div>`;
+  out += `<div class="hotkey">[Shift] compare · [Alt] affix detail</div>`;
+  return out;
+}
+
+function qualityLineHtml(item){
+  if (!item.quality || item.quality === 'Standard') return '';
+  const pct = Math.round((item.quality_mult-1)*100);
+  const sign = pct >= 0 ? '+' : '';
+  return `<div class="quality" style="color:#ffd87a;">${escHtml(item.quality)} · <span class="pct">${sign}${pct}%</span></div>`;
+}
+
+function forgedLineHtml(item){
+  if (!item.forged) return '';
+  return `<div class="forged">Forged ×${item.forged}</div>`;
+}
+
+/* ============== Variant 1 — Hairlines (current baseline) ============== */
+function renderV1(item){
+  const has = {
+    type: true,
+    damage: !!item.damage,
+    implicit: !!item.implicit?.length,
+    affix: !!item.affixes?.length,
+    modifier: !!item.modifier,
+    enchant: !!(item.enchant || item.enchant_combo),
+    flavor: true,
+  };
+  const sep = '<div class="sep"></div>';
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (has.damage) html += sep + damageHtml(item);
+  if (has.implicit) html += sep + implicitHtml(item);
+  if (has.affix) html += sep + affixesHtml(item);
+  if (has.modifier) html += sep + modifierHtml(item);
+  if (has.enchant) html += sep + enchantHtml(item);
+  html += sep + ilvlAndLoreHtml(item);
+  return html;
+}
+
+/* ============== Variant 2 — Iconographic gutter ============== */
+function renderV2(item){
+  const sec = (kind, glyph, body) => `<div class="section sec-${kind}"><div class="glyph">${glyph}</div><div>${body}</div></div>`;
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (item.damage)  html += sec('damage','⚔', damageHtml(item));
+  if (item.implicit?.length)  html += sec('implicit','★', implicitHtml(item));
+  if (item.affixes?.length)   html += sec('affix','✦', affixesHtml(item));
+  if (item.modifier)          html += sec('modifier','◇', modifierHtml(item));
+  if (item.enchant || item.enchant_combo) html += sec('enchant','✧', enchantHtml(item));
+  html += sec('flavor','❝', ilvlAndLoreHtml(item));
+  return html;
+}
+
+/* ============== Variant 3 — Tiny uppercase headers ============== */
+function renderV3(item){
+  const head = (label, gold) => `<div class="sec-head${gold?' gold':''}">${label}</div>`;
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (item.damage)            html += head(item.slot==='weapon' ? 'Weapon' : 'Damage') + damageHtml(item);
+  if (item.implicit?.length)  html += head('Unique', true) + implicitHtml(item);
+  if (item.affixes?.length)   html += head('Affixes') + affixesHtml(item);
+  if (item.modifier)          html += head('Modifier') + modifierHtml(item);
+  if (item.enchant || item.enchant_combo) html += head('Enchant', true) + enchantHtml(item);
+  html += head('Item') + ilvlAndLoreHtml(item);
+  return html;
+}
+
+/* ============== Variant 4 — Left color-bands ============== */
+function renderV4(item){
+  const sec = (kind, body) => `<div class="section sec-${kind}">${body}</div>`;
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (item.damage)            html += sec('damage', damageHtml(item));
+  if (item.implicit?.length)  html += sec('implicit', implicitHtml(item));
+  if (item.affixes?.length)   html += sec('affix', affixesHtml(item));
+  if (item.modifier)          html += sec('modifier', modifierHtml(item));
+  if (item.enchant || item.enchant_combo) html += sec('enchant', enchantHtml(item));
+  html += sec('flavor', ilvlAndLoreHtml(item));
+  return html;
+}
+
+/* ============== Variant 5 — Indent ladder ============== */
+function renderV5(item){
+  const sec = (cls, body) => `<div class="section ${cls}">${body}</div>`;
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (item.damage)            html += sec('', damageHtml(item));
+  if (item.implicit?.length)  html += sec('dimsep', implicitHtml(item));
+  if (item.affixes?.length)   html += sec('dimsep indent', affixesHtml(item));
+  if (item.modifier)          html += sec('dimsep', modifierHtml(item));
+  if (item.enchant || item.enchant_combo) html += sec('dimsep', enchantHtml(item));
+  html += sec('dimsep', ilvlAndLoreHtml(item));
+  return html;
+}
+
+/* ============== Variant 6 — Inset card-within-card ============== */
+function renderV6(item){
+  const sec = (kind, body) => `<div class="section sec-${kind}">${body}</div>`;
+  let html = '';
+  html += `<div class="title">${escHtml(titleString(item))}</div>`;
+  html += `<div class="subtitle">${rarityLabel(item)}</div>`;
+  html += forgedLineHtml(item);
+  html += qualityLineHtml(item);
+  if (item.damage)            html += sec('damage', damageHtml(item));
+  if (item.implicit?.length)  html += sec('implicit', implicitHtml(item));
+  if (item.affixes?.length)   html += sec('affix', affixesHtml(item));
+  if (item.modifier)          html += sec('modifier', modifierHtml(item));
+  if (item.enchant || item.enchant_combo) html += sec('enchant', enchantHtml(item));
+  html += sec('flavor', ilvlAndLoreHtml(item));
+  return html;
+}
+
+const VARIANTS = [
+  { id: 1, key: 'v1', title: 'Hairlines (current)', desc: '1px translucent dividers between sections — what the in-game tooltip ships today. Baseline.', render: renderV1 },
+  { id: 2, key: 'v2', title: 'Iconographic gutter', desc: 'A 14-px left gutter carries one glyph per section (⚔ damage · ★ unique · ✦ affixes · ◇ modifier · ✧ enchant · ❝ flavor). Sections still have implicit hairlines but the glyph carries the cue.', render: renderV2 },
+  { id: 3, key: 'v3', title: 'Tiny uppercase headers', desc: 'Explicit small-caps section labels above each block. Strongest "this is its own section" signal — costs vertical space.', render: renderV3 },
+  { id: 4, key: 'v4', title: 'Left color-bands', desc: 'A 3px colored stripe down the left edge of each section, themed to that section (rarity for damage, gold for unique/enchant, magenta for modifier). No horizontal lines.', render: renderV4 },
+  { id: 5, key: 'v5', title: 'Indent ladder (no chrome)', desc: 'Whitespace + a barely-visible dashed line between sections. Most minimal. Affixes get a slight indent to nest under "unique".', render: renderV5 },
+  { id: 6, key: 'v6', title: 'Inset card-within-card', desc: 'Each section is a faint inset panel with its own subtle border. Most explicit — also heaviest.', render: renderV6 },
+];
+
+const COLS = [
+  { key: 'simple',  label: 'Simple',   sub: 'Common · 1 affix' },
+  { key: 'midgame', label: 'Midgame',  sub: 'Rare · enchant + 3 affixes' },
+  { key: 'godtier', label: 'God-tier', sub: 'Primal Masterwork · 0.00001%' },
+];
+
+function build(){
+  const root = document.getElementById('variants');
+  for (const v of VARIANTS){
+    const sec = document.createElement('section');
+    sec.className = 'variant-section';
+    let inner = `<h2>Variant ${v.id} — ${v.title}</h2><p class="desc">${v.desc}</p><div class="row">`;
+    for (const c of COLS){
+      const item = ITEMS[c.key];
+      inner += `<div>
+        <div class="col-label">${c.label} <span class="dim">· ${c.sub}</span></div>
+        <div class="ic ${v.key}" data-rarity="${item.rarity}" ${item.meta?`data-meta="${item.meta}"`:''}>
+          <div class="ic-alt-btn" data-toggle-alt>alt</div>
+          ${v.render(item)}
+        </div>
+      </div>`;
+    }
+    inner += `</div>`;
+    sec.innerHTML = inner;
+    root.appendChild(sec);
+  }
+
+  // Per-card alt toggle
+  document.querySelectorAll('[data-toggle-alt]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.ic');
+      card.dataset.alt = card.dataset.alt === 'true' ? '' : 'true';
+    });
+  });
+  // Global toggle
+  const global = document.getElementById('alt-global');
+  global.addEventListener('change', () => {
+    document.querySelectorAll('.ic').forEach(c => c.dataset.alt = global.checked ? 'true' : '');
+  });
+  // Keyboard: hold Alt to expand all (matches in-game)
+  let altHeld = false;
+  function setAlt(on){
+    if (altHeld === on) return;
+    altHeld = on;
+    document.querySelectorAll('.ic').forEach(c => {
+      if (on) c.dataset.altKb = 'true';
+      else delete c.dataset.altKb;
+    });
+    // Apply via the same data-alt attribute when held
+    document.querySelectorAll('.ic').forEach(c => {
+      if (on) c.dataset.alt = 'true';
+      else if (!global.checked) c.dataset.alt = '';
+    });
+  }
+  window.addEventListener('keydown', e => { if (e.altKey) setAlt(true); });
+  window.addEventListener('keyup',   e => { if (!e.altKey) setAlt(false); });
+  window.addEventListener('blur',    ()  => setAlt(false));
+}
+build();
+</script>
+</body>
+</html>

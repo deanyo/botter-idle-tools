@@ -20,6 +20,7 @@
     { id: 'matrix',    href: 'build_matrix.html', label: 'Build matrix' },
     { id: 'enemies',   href: 'enemy_resistance_editor.html', label: 'Enemies' },
     { id: 'proposal',  href: 'slot_proposal.html', label: 'Slot proposal' },
+    { id: 'card-mockups', href: 'item_card_mockups.html', label: 'Card mockups' },
   ];
 
   function build() {
