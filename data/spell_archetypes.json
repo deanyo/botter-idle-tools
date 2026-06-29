@@ -137,7 +137,8 @@
     "projectile": "",
     "trail_flavor": "dark",
     "element": "dark",
-    "projectile_speed": 0.0
+    "projectile_speed": 0.0,
+    "class": "utility"
   },
   "spell_wrath_charge": {
     "primary_stat": "str",
@@ -147,6 +148,7 @@
     "projectile": "",
     "trail_flavor": "brutal",
     "element": "",
+    "class": "utility",
     "projectile_speed": 0.0
   },
   "spell_echo_lance": {
@@ -178,5 +180,120 @@
     "trail_flavor": "fire",
     "element": "fire",
     "projectile_speed": 0.0
+  },
+  "spell_choking_cloud": {
+    "primary_stat": "int",
+    "cooldown": 4.5,
+    "damage": 2,
+    "range_cells": 5,
+    "projectile": "",
+    "trail_flavor": "dark",
+    "element": "dark",
+    "projectile_speed": 0.0
+  },
+  "spell_curse_frailty": {
+    "primary_stat": "int",
+    "cooldown": 8.0,
+    "damage": 1,
+    "range_cells": 6,
+    "projectile": "",
+    "trail_flavor": "dark",
+    "element": "dark",
+    "projectile_speed": 0.0,
+    "class": "utility"
+  },
+  "spell_bolt_long_cd": {
+    "primary_stat": "int",
+    "cooldown": 12.0,
+    "damage": 110,
+    "range_cells": 10,
+    "projectile": "res://assets/tiles/projectiles/fireball.png",
+    "trail_flavor": "fire",
+    "element": "fire",
+    "projectile_speed": 360.0
+  },
+  "spell_blade_dance": {
+    "primary_stat": "dex",
+    "cooldown": 2.4,
+    "damage": 24,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "physical",
+    "element": "",
+    "projectile_speed": 0.0
+  },
+  "spell_static_field": {
+    "primary_stat": "dex",
+    "cooldown": 4.5,
+    "damage": 8,
+    "range_cells": 6,
+    "projectile": "",
+    "trail_flavor": "thunderous",
+    "element": "thunderous",
+    "projectile_speed": 0.0
+  },
+  "spell_aura_grace": {
+    "primary_stat": "dex",
+    "cooldown": 11.0,
+    "damage": 0,
+    "range_cells": 3,
+    "projectile": "",
+    "trail_flavor": "footwork",
+    "element": "",
+    "projectile_speed": 0.0,
+    "reservation": 10,
+    "lane": "defensive",
+    "class": "utility"
+  },
+  "spell_aura_wisdom": {
+    "primary_stat": "int",
+    "cooldown": 11.0,
+    "damage": 0,
+    "range_cells": 3,
+    "projectile": "",
+    "trail_flavor": "wisdom",
+    "element": "",
+    "projectile_speed": 0.0,
+    "reservation": 12,
+    "lane": "offensive",
+    "class": "utility"
+  },
+  "spell_thorn_aura": {
+    "primary_stat": "str",
+    "cooldown": 12.0,
+    "damage": 6,
+    "range_cells": 3,
+    "projectile": "",
+    "trail_flavor": "thorns",
+    "element": "",
+    "projectile_speed": 0.0,
+    "reservation": 14,
+    "lane": "offensive"
+  },
+  "spell_aura_warding": {
+    "primary_stat": "int",
+    "cooldown": 11.0,
+    "damage": 0,
+    "range_cells": 3,
+    "projectile": "",
+    "trail_flavor": "wisdom",
+    "element": "",
+    "projectile_speed": 0.0,
+    "reservation": 10,
+    "lane": "defensive",
+    "class": "utility"
+  },
+  "spell_aura_communion": {
+    "primary_stat": "int",
+    "cooldown": 11.0,
+    "damage": 0,
+    "range_cells": 6,
+    "projectile": "",
+    "trail_flavor": "wisdom",
+    "element": "",
+    "projectile_speed": 0.0,
+    "reservation": 10,
+    "lane": "utility",
+    "class": "utility"
   }
 }
