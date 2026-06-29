@@ -6,6 +6,8 @@
       "label": "Hasted",
       "atk_speed_pct": 35.0,
       "move_speed_mult": 1.30,
+      "aura_status_id": "hasted_pack",
+      "aura_buff_radius": 4,
       "glyph_icon": "spells/icons/haste.png",
       "glyph_tint": [1.0, 1.0, 0.6, 1.0]
     },
@@ -14,6 +16,8 @@
       "label": "Tough",
       "hp_pct": 50.0,
       "def_pct": 25.0,
+      "aura_status_id": "tough_pack",
+      "aura_buff_radius": 4,
       "glyph_icon": "spells/icons/ozocubus_armour.png",
       "glyph_tint": [0.85, 0.85, 1.0, 1.0]
     },
@@ -21,6 +25,8 @@
       "id": "vicious",
       "label": "Vicious",
       "atk_pct": 35.0,
+      "aura_status_id": "vicious_pack",
+      "aura_buff_radius": 4,
       "glyph_icon": "spells/icons/sting.png",
       "glyph_tint": [1.0, 0.5, 0.5, 1.0]
     },
@@ -35,6 +41,8 @@
       "id": "regenerating",
       "label": "Regenerating",
       "hp_regen_per_sec": 1.0,
+      "aura_status_id": "regen_pack",
+      "aura_buff_radius": 4,
       "glyph_icon": "spells/icons/sublimation_of_blood.png",
       "glyph_tint": [0.6, 1.0, 0.6, 1.0]
     },
@@ -43,6 +51,8 @@
       "label": "Stalwart",
       "def_pct": 60.0,
       "hp_pct": 15.0,
+      "aura_status_id": "stalwart_pack",
+      "aura_buff_radius": 4,
       "glyph_icon": "spells/icons/awaken_armour.png",
       "glyph_tint": [0.8, 0.9, 1.0, 1.0]
     },
