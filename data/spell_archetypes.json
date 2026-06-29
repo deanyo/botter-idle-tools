@@ -117,7 +117,8 @@
     "projectile": "",
     "trail_flavor": "poison",
     "element": "poison",
-    "projectile_speed": 0.0
+    "projectile_speed": 0.0,
+    "tick": true
   },
   "spell_stormcaller_totem": {
     "primary_stat": "dex",
@@ -127,7 +128,8 @@
     "projectile": "",
     "trail_flavor": "thunderous",
     "element": "thunderous",
-    "projectile_speed": 0.0
+    "projectile_speed": 0.0,
+    "tick": true
   },
   "spell_curse_brittlebone": {
     "primary_stat": "dex",
@@ -179,7 +181,8 @@
     "projectile": "",
     "trail_flavor": "fire",
     "element": "fire",
-    "projectile_speed": 0.0
+    "projectile_speed": 0.0,
+    "tick": true
   },
   "spell_choking_cloud": {
     "primary_stat": "int",
@@ -189,7 +192,8 @@
     "projectile": "",
     "trail_flavor": "dark",
     "element": "dark",
-    "projectile_speed": 0.0
+    "projectile_speed": 0.0,
+    "tick": true
   },
   "spell_curse_frailty": {
     "primary_stat": "int",
@@ -226,6 +230,7 @@
     "primary_stat": "dex",
     "cooldown": 4.5,
     "damage": 8,
+    "tick": true,
     "range_cells": 6,
     "projectile": "",
     "trail_flavor": "thunderous",
@@ -268,7 +273,8 @@
     "element": "",
     "projectile_speed": 0.0,
     "reservation": 14,
-    "lane": "offensive"
+    "lane": "offensive",
+    "tick": true
   },
   "spell_aura_warding": {
     "primary_stat": "int",
