@@ -228,6 +228,10 @@
      the player holds Alt. Toggled here by the [data-alt="true"] root. */
   .ic .alt-only { display: none; }
   .ic[data-alt="true"] .alt-only { display: block; }
+  /* Tier badge is a sibling span INSIDE the affix line — keep it inline
+     when alt is held so [T3] sits next to the stat instead of taking a
+     fresh row per affix. Big height savings on dense legendaries. */
+  .ic[data-alt="true"] .affix .alt-only.tier-badge { display: inline; }
   .ic .alt-stat-desc {
     font-size: 11px;
     color: #d8d2b3;
