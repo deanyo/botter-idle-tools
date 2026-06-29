@@ -1,0 +1,38 @@
+{
+  "_doc": "PoE-style monster modifiers applied to magic/rare pack mobs. Each mod has a label (used in the rare's display name), and a set of stat modifiers / status grants. Effects stack by addition (atk_pct/def_pct/hp_pct/move_speed_mult). flavor_tags are passed to combat_defense_tags() so existing tag-driven mechanics (rage/thorns/vampiric) apply automatically.",
+  "mods": [
+    {
+      "id": "hasted",
+      "label": "Hasted",
+      "atk_speed_pct": 35.0,
+      "move_speed_mult": 1.30
+    },
+    {
+      "id": "tough",
+      "label": "Tough",
+      "hp_pct": 50.0,
+      "def_pct": 25.0
+    },
+    {
+      "id": "vicious",
+      "label": "Vicious",
+      "atk_pct": 35.0
+    },
+    {
+      "id": "vampiric_pack",
+      "label": "Vampiric",
+      "flavor_tags": ["vampiric"]
+    },
+    {
+      "id": "regenerating",
+      "label": "Regenerating",
+      "hp_regen_per_sec": 1.0
+    },
+    {
+      "id": "stalwart",
+      "label": "Stalwart",
+      "def_pct": 60.0,
+      "hp_pct": 15.0
+    }
+  ]
+}

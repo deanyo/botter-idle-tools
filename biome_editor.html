@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Biome Editor</title>
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Biome-editor specific layout. Shared palette + form controls +
+     button styles live in portal.css. */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  /* Editor uses some custom widths on text inputs. */
+  input[type="text"] { width: 180px; }
+
+  #sidebar {
+    width: 220px; flex-shrink: 0;
+    background: var(--panel); border-right: 1px solid var(--border);
+    overflow-y: auto;
+    display: flex; flex-direction: column;
+  }
+  #sidebar header { background: var(--panel-2); }
+  #biome-list { flex: 1; overflow-y: auto; padding: 4px; }
+  .biome-item {
+    padding: 6px 8px; cursor: pointer; border-radius: 3px;
+    border: 1px solid transparent; font-size: 12px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .biome-item:hover { background: var(--panel-2); }
+  .biome-item.active { background: var(--panel-2); border-color: var(--accent); color: var(--accent); }
+  .biome-item.dirty::after { content: "●"; color: var(--warn); margin-left: 4px; }
+  #sidebar-actions {
+    padding: 8px; border-top: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+
+  main {
+    flex: 1; overflow-y: auto; padding: 16px 24px;
+  }
+  .field-row {
+    display: flex; gap: 12px; align-items: center; margin: 4px 0;
+  }
+  .field-row label { min-width: 110px; }
+  .tile-strip {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 8px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .tile-cell {
+    background: var(--tile-bg); border: 1px solid var(--border); border-radius: 3px;
+    padding: 4px; width: 88px; text-align: center; position: relative;
+  }
+  .tile-cell img {
+    width: 64px; height: 64px;
+    image-rendering: pixelated; background: #000;
+  }
+  .tile-cell .tile-name {
+    font-size: 9px; color: var(--muted);
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    max-width: 80px;
+  }
+  .tile-cell .tile-label {
+    position: absolute; top: 2px; left: 2px;
+    background: rgba(0,0,0,0.7); color: var(--warn);
+    padding: 1px 4px; font-size: 9px; border-radius: 2px;
+    pointer-events: none;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .tile-cell .replace-btn {
+    margin-top: 2px; font-size: 10px; padding: 2px 6px; width: 100%;
+  }
+  .tile-cell .remove-btn {
+    position: absolute; top: 2px; right: 2px;
+    background: rgba(0,0,0,0.7); color: #ff8888; cursor: pointer;
+    padding: 1px 5px; font-size: 11px; border-radius: 2px;
+    border: 0;
+  }
+  .add-cell {
+    background: var(--panel-2); border: 1px dashed var(--border);
+    color: var(--muted); display: flex; align-items: center;
+    justify-content: center; cursor: pointer; min-height: 100px;
+    border-radius: 3px;
+  }
+  .add-cell:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Picker modal */
+  #picker {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75); display: none;
+    align-items: center; justify-content: center; z-index: 100;
+  }
+  #picker.open { display: flex; }
+  #picker-inner {
+    background: var(--picker-bg); border: 1px solid var(--accent);
+    border-radius: 6px; width: 90%; max-width: 1100px; max-height: 85vh;
+    display: flex; flex-direction: column;
+  }
+  #picker-head {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    display: flex; gap: 8px; align-items: center;
+  }
+  #picker-head input { flex: 1; }
+  #picker-grid {
+    flex: 1; overflow-y: auto; padding: 8px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 4px;
+  }
+  .pick-cell {
+    background: var(--tile-bg); border: 1px solid var(--border); border-radius: 3px;
+    padding: 4px; text-align: center; cursor: pointer;
+  }
+  .pick-cell:hover { border-color: var(--accent); }
+  .pick-cell img {
+    width: 100%; aspect-ratio: 1;
+    object-fit: contain; image-rendering: pixelated;
+    background: #000;
+  }
+  .pick-cell .pick-name {
+    font-size: 9px; color: var(--muted);
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  }
+
+  textarea {
+    width: 100%; min-height: 80px; max-height: 200px; resize: vertical;
+    background: var(--bg); color: var(--text); border: 1px solid var(--border);
+    padding: 6px; font: 12px ui-monospace, monospace; border-radius: 3px;
+  }
+  .help {
+    color: var(--muted); font-size: 11px; margin: 6px 0 12px;
+    line-height: 1.5;
+  }
+  .small { font-size: 11px; color: var(--muted); }
+  .pill {
+    display: inline-block; padding: 1px 6px; background: var(--panel-2);
+    border: 1px solid var(--border); border-radius: 10px; font-size: 10px;
+    margin-right: 4px; color: var(--muted);
+  }
+
+  .toolbar {
+    position: sticky; top: 0; background: var(--bg);
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 12px; display: flex; gap: 8px; align-items: center;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="biomes" data-title="Biome Editor"></nav>
+<div id="biome-shell" style="display:flex; flex:1; min-height:0; overflow:hidden;">
+
+<aside id="sidebar">
+  <header style="display:flex; align-items:center; gap:10px;">
+    <h1>Biomes</h1>
+  </header>
+  <div id="biome-list"></div>
+  <div id="sidebar-actions">
+    <button onclick="duplicateBiome()">Duplicate selected</button>
+    <button onclick="newBiome()">New blank biome</button>
+    <button onclick="deleteBiome()" class="danger">Delete selected</button>
+  </div>
+</aside>
+
+<main id="main">
+  <div class="empty">Loading…</div>
+</main>
+
+</div><!-- /#biome-shell -->
+
+<!-- Picker modal -->
+<div id="picker">
+  <div id="picker-inner">
+    <div id="picker-head">
+      <strong id="picker-title">Pick tile</strong>
+      <input type="text" id="picker-search" placeholder="filter…" oninput="renderPicker()">
+      <button onclick="closePicker()">Close</button>
+    </div>
+    <div id="picker-grid"></div>
+  </div>
+</div>
+
+<script>
+const BIOMES_PATH = "data/biomes.json";
+const MANIFEST_PATH = "biome_manifest.json";
+const TILE_BASE = "assets/tiles/";
+
+let biomes = {};       // {id: biome}
+let runPlans = [];
+let manifest = {};
+let dirty = new Set(); // biome ids that have been edited
+let activeId = null;
+let pickerCtx = null;  // { dir, callback }
+
+// ---------- Field schema ----------
+// Each entry is one editable field on the biome. Defines:
+//   key: where it lives in the biome JSON
+//   label: human title
+//   dir: which manifest dir to pick from
+//   kind: "list" (array of prefix/@stem) | "string" (one value) | "directional"
+//   help: explanatory text
+const FIELDS = [
+  {
+    key: "floor_primary", label: "Floor primary",
+    dir: "floor", kind: "list",
+    help: "Main floor tile pool. Picked per-cell via stable hash with weighted distribution (early entries dominate). Should be square-symmetric tiles only."
+  },
+  {
+    key: "floor_secondary", label: "Floor secondary",
+    dir: "floor", kind: "list",
+    help: "Optional dual-floor mix. When set, Perlin noise selects between primary and secondary across the map (transitions look smooth). Currently used by Lair."
+  },
+  {
+    key: "floor_accent", label: "Floor accent",
+    dir: "floor", kind: "list",
+    help: "Sprinkled at ~12% density per cell. Should be subtle variants — directional or sigil-shaped tiles will look like garbage scattered."
+  },
+  {
+    key: "wall_primary", label: "Wall primary",
+    dir: "wall", kind: "list",
+    help: "Main wall tile pool. Walls carry biome identity more reliably than floors. Tile is picked from Voronoi-style patches across the map."
+  },
+  {
+    key: "wall_accent", label: "Wall accent",
+    dir: "wall", kind: "list",
+    help: "Sprinkled at ~6% density on wall cells."
+  },
+  {
+    key: "wall_alternates", label: "Wall alternates",
+    dir: "wall", kind: "weighted_groups",
+    help: "Whole-cluster wall variants — e.g. trees in spider/forest. Each group renders as a Voronoi blob. Each entry has a weight (chance of picking that group when seeding a cluster)."
+  },
+  {
+    key: "edge_overlay", label: "Edge overlay",
+    dir: "overlays", kind: "directional",
+    help: "Directional autotile that stamps on floor cells bordering walls. e.g. grass tufts spilling from wall sides. Optional 'patches' variants for cells with no wall neighbours."
+  },
+  {
+    key: "sigil_set", label: "Sigil set",
+    dir: "sigils", kind: "string_list",
+    help: "Self-contained sigils stamped 1-2 per BSP room. Only single-tile, square-symmetric sigils — directional pieces (sigil_y_north etc.) belong in vault decor_overlays, not here."
+  },
+];
+
+// Other plain-JSON fields shown in a metadata section.
+const META_FIELDS = [
+  { key: "display_name", type: "text" },
+  { key: "darkness", type: "number" },
+  { key: "ambient_density", type: "number" },
+  { key: "liquid_type", type: "text", help: '"water", "lava", or "" — gates river/lake builders.' },
+];
+
+// ---------- Loaders ----------
+async function load() {
+  try {
+    const [bj, mj] = await Promise.all([
+      fetch(BIOMES_PATH).then(r => r.json()),
+      fetch(MANIFEST_PATH).then(r => r.json()),
+    ]);
+    biomes = bj.biomes || {};
+    runPlans = bj.run_plans || [];
+    manifest = mj;
+  } catch (e) {
+    document.getElementById("main").innerHTML =
+      `<div style="color:#ff8888">Failed to load: ${e.message}<br>Run a local server: <code>python3 -m http.server 8080</code> from repo root, then open <a href="http://localhost:8080/tools/biome_editor.html">http://localhost:8080/tools/biome_editor.html</a></div>`;
+    return;
+  }
+  renderSidebar();
+  const ids = Object.keys(biomes);
+  if (ids.length) selectBiome(ids[0]);
+}
+
+function renderSidebar() {
+  const list = document.getElementById("biome-list");
+  list.innerHTML = "";
+  for (const id of Object.keys(biomes).sort()) {
+    const item = document.createElement("div");
+    item.className = "biome-item";
+    if (id === activeId) item.classList.add("active");
+    if (dirty.has(id)) item.classList.add("dirty");
+    item.innerHTML = `<span>${escape(id)}</span><span class="small">${escape(biomes[id].display_name || "")}</span>`;
+    item.onclick = () => selectBiome(id);
+    list.appendChild(item);
+  }
+}
+
+function selectBiome(id) {
+  activeId = id;
+  renderSidebar();
+  renderEditor();
+}
+
+function markDirty() {
+  dirty.add(activeId);
+  renderSidebar();
+}
+
+// ---------- Editor ----------
+function renderEditor() {
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+  if (!activeId) { main.innerHTML = "<div>Select a biome.</div>"; return; }
+  const b = biomes[activeId];
+
+  const bar = document.createElement("div");
+  bar.className = "toolbar";
+  bar.innerHTML = `
+    <h1>${escape(activeId)}</h1>
+    <span class="small">${escape(b.display_name || "")}</span>
+    <button onclick="exportSingleBiome()" title="Download just this biome — paste into a GitHub issue to share">⬇ Export this biome</button>
+    <button onclick="copySingleBiomeToClipboard()" title="Copy this biome's JSON to clipboard">⧉ Copy to clipboard</button>
+    <button class="primary" onclick="exportJSON()" title="Download the full biomes.json with all biomes">⬇ Export full biomes.json</button>
+    <span class="small" id="dirty-count"></span>
+  `;
+  main.appendChild(bar);
+  document.getElementById("dirty-count").textContent =
+    dirty.size ? `${dirty.size} biome${dirty.size > 1 ? "s" : ""} edited` : "";
+
+  // Metadata
+  const meta = document.createElement("div");
+  meta.innerHTML = "<h2>Metadata</h2>";
+  for (const f of META_FIELDS) {
+    const row = document.createElement("div");
+    row.className = "field-row";
+    const lab = document.createElement("label");
+    lab.textContent = f.key;
+    row.appendChild(lab);
+    if (f.type === "number") {
+      const inp = document.createElement("input");
+      inp.type = "number"; inp.step = "0.01";
+      inp.value = b[f.key] ?? "";
+      inp.onchange = () => { b[f.key] = parseFloat(inp.value); markDirty(); };
+      row.appendChild(inp);
+    } else {
+      const inp = document.createElement("input");
+      inp.type = "text";
+      inp.value = b[f.key] ?? "";
+      inp.onchange = () => { b[f.key] = inp.value; markDirty(); };
+      row.appendChild(inp);
+    }
+    if (f.help) {
+      const help = document.createElement("span");
+      help.className = "small";
+      help.textContent = f.help;
+      row.appendChild(help);
+    }
+    meta.appendChild(row);
+  }
+  main.appendChild(meta);
+
+  // Field strips
+  for (const f of FIELDS) renderField(main, b, f);
+
+  // Raw JSON edit at the bottom for advanced edits.
+  const rawWrap = document.createElement("div");
+  rawWrap.innerHTML = "<h2>Raw JSON (advanced)</h2><div class='help'>Edit other fields here (enemy_pool, vault_themes, ambient_decor, layouts, modulate, etc). Click 'Apply raw' to commit.</div>";
+  const ta = document.createElement("textarea");
+  ta.value = JSON.stringify(b, null, 2);
+  rawWrap.appendChild(ta);
+  const apply = document.createElement("button");
+  apply.textContent = "Apply raw";
+  apply.onclick = () => {
+    try { biomes[activeId] = JSON.parse(ta.value); markDirty(); renderEditor(); }
+    catch (e) { alert("Invalid JSON: " + e.message); }
+  };
+  rawWrap.appendChild(apply);
+  main.appendChild(rawWrap);
+}
+
+function renderField(host, b, field) {
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `<h2>${field.label}</h2><div class="help">${field.help}</div>`;
+  const strip = document.createElement("div");
+  strip.className = "tile-strip";
+  wrap.appendChild(strip);
+  host.appendChild(wrap);
+
+  if (field.kind === "list" || field.kind === "string_list") {
+    const arr = ensureArray(b, field.key);
+    arr.forEach((entry, idx) => {
+      const tiles = expandEntry(entry, field.dir);
+      tiles.forEach(stem => strip.appendChild(makeTileCell(stem, field.dir, () => {
+        // replace this entry with a single-tile pick
+        openPicker(field.dir, picked => {
+          arr[idx] = "@" + picked;
+          markDirty();
+          renderEditor();
+        }, "Replace " + entry);
+      }, () => {
+        // remove this entry from the list
+        arr.splice(idx, 1);
+        markDirty();
+        renderEditor();
+      }, entry)));
+    });
+    strip.appendChild(makeAddCell(() => {
+      openPicker(field.dir, picked => {
+        arr.push("@" + picked);
+        markDirty();
+        renderEditor();
+      }, "Add to " + field.label);
+    }));
+  } else if (field.kind === "weighted_groups") {
+    const arr = ensureArray(b, field.key);
+    arr.forEach((group, gidx) => {
+      const groupWrap = document.createElement("div");
+      groupWrap.style = "border:1px solid var(--border); padding:8px; border-radius:3px; margin-bottom:8px; background:var(--panel)";
+      const head = document.createElement("div");
+      head.className = "field-row";
+      const w = document.createElement("input");
+      w.type = "number"; w.value = group.weight ?? 1; w.style.width = "60px";
+      w.onchange = () => { group.weight = parseFloat(w.value); markDirty(); };
+      const wlab = document.createElement("label"); wlab.textContent = "weight"; head.appendChild(wlab); head.appendChild(w);
+      const del = document.createElement("button"); del.textContent = "Remove group"; del.className = "danger";
+      del.onclick = () => { arr.splice(gidx, 1); markDirty(); renderEditor(); };
+      head.appendChild(del);
+      groupWrap.appendChild(head);
+
+      // Each group has a textures-or-prefix list. Reuse our list ui.
+      const subList = group.prefixes || (group.prefix ? [group.prefix] : []);
+      group.prefixes = subList;
+      delete group.prefix;
+      const subStrip = document.createElement("div"); subStrip.className = "tile-strip";
+      subList.forEach((entry, eidx) => {
+        const tiles = expandEntry(entry, field.dir);
+        tiles.forEach(stem => subStrip.appendChild(makeTileCell(stem, field.dir, () => {
+          openPicker(field.dir, picked => { subList[eidx] = "@" + picked; markDirty(); renderEditor(); }, "Replace");
+        }, () => { subList.splice(eidx, 1); markDirty(); renderEditor(); }, entry)));
+      });
+      subStrip.appendChild(makeAddCell(() => {
+        openPicker(field.dir, picked => { subList.push("@" + picked); markDirty(); renderEditor(); }, "Add tile");
+      }));
+      groupWrap.appendChild(subStrip);
+      strip.parentElement.appendChild(groupWrap);
+    });
+    const addGroup = document.createElement("button");
+    addGroup.textContent = "+ Add group";
+    addGroup.onclick = () => {
+      arr.push({ weight: 1, prefixes: [] });
+      markDirty(); renderEditor();
+    };
+    strip.parentElement.appendChild(addGroup);
+    strip.remove();
+  } else if (field.kind === "directional") {
+    const obj = b[field.key] || {};
+    b[field.key] = obj;
+    const dirs = ["northwest", "north", "northeast", "west", "full", "east", "southwest", "south", "southeast"];
+    const dirLabels = {
+      northwest: "NW", north: "N", northeast: "NE",
+      west: "W", full: "FULL", east: "E",
+      southwest: "SW", south: "S", southeast: "SE",
+    };
+    // Render as a 3x3 grid for readability.
+    const grid = document.createElement("div");
+    grid.style = "display:grid; grid-template-columns:repeat(3, 110px); gap:6px; margin-bottom:8px;";
+    for (const d of dirs) {
+      const cell = makeDirectionalCell(obj, d, dirLabels[d], field.dir);
+      grid.appendChild(cell);
+    }
+    strip.appendChild(grid);
+
+    // density / patch_density inputs
+    const params = document.createElement("div");
+    params.className = "field-row";
+    params.innerHTML = `
+      <label>density</label>
+      <input type="number" step="0.05" min="0" max="1" value="${obj.density ?? 0.7}" id="ovl-density">
+      <label>patch density</label>
+      <input type="number" step="0.01" min="0" max="0.5" value="${obj.patch_density ?? 0.04}" id="ovl-patchdensity">
+    `;
+    strip.appendChild(params);
+    params.querySelector("#ovl-density").onchange = e => { obj.density = parseFloat(e.target.value); markDirty(); };
+    params.querySelector("#ovl-patchdensity").onchange = e => { obj.patch_density = parseFloat(e.target.value); markDirty(); };
+
+    // patches list (random spatter)
+    const ph = document.createElement("h3");
+    ph.textContent = "Patches (no-wall-neighbour spatter, optional)";
+    strip.appendChild(ph);
+    const patchStrip = document.createElement("div");
+    patchStrip.className = "tile-strip";
+    const patches = obj.patches || [];
+    obj.patches = patches;
+    patches.forEach((stem, i) => {
+      patchStrip.appendChild(makeTileCell(stem, field.dir, () => {
+        openPicker(field.dir, picked => { patches[i] = picked; markDirty(); renderEditor(); }, "Replace patch");
+      }, () => { patches.splice(i, 1); markDirty(); renderEditor(); }, stem));
+    });
+    patchStrip.appendChild(makeAddCell(() => {
+      openPicker(field.dir, picked => { patches.push(picked); markDirty(); renderEditor(); }, "Add patch");
+    }));
+    strip.appendChild(patchStrip);
+
+    // Helper button: fill from a directional set
+    const setBtn = document.createElement("button");
+    setBtn.textContent = "Fill from directional set…";
+    setBtn.onclick = () => {
+      const sets = Object.keys(manifest.directional?.overlays || {});
+      const choice = prompt("Set name (one of: " + sets.join(", ") + ")", obj.prefix || "dirt");
+      if (!choice) return;
+      const dirset = manifest.directional.overlays[choice];
+      if (!dirset) return alert("No such set.");
+      obj.prefix = choice;
+      for (const d of dirs) {
+        if (dirset[d]) obj[d] = dirset[d]; else delete obj[d];
+      }
+      markDirty(); renderEditor();
+    };
+    strip.appendChild(setBtn);
+  }
+}
+
+function makeDirectionalCell(obj, dir, label, manifestDir) {
+  const cell = document.createElement("div");
+  cell.className = "tile-cell";
+  const lab = document.createElement("div");
+  lab.className = "tile-label"; lab.textContent = label;
+  cell.appendChild(lab);
+  const stem = obj[dir];
+  if (stem) {
+    const img = document.createElement("img");
+    img.src = TILE_BASE + manifestDir + "/" + stem + ".png";
+    cell.appendChild(img);
+    const name = document.createElement("div");
+    name.className = "tile-name"; name.textContent = stem;
+    cell.appendChild(name);
+    const rem = document.createElement("button");
+    rem.className = "remove-btn"; rem.textContent = "✕";
+    rem.onclick = (e) => { e.stopPropagation(); delete obj[dir]; markDirty(); renderEditor(); };
+    cell.appendChild(rem);
+  } else {
+    cell.style.opacity = "0.5";
+    const placeholder = document.createElement("div");
+    placeholder.style = "width:64px; height:64px; background:#000; display:flex; align-items:center; justify-content:center; color:#444;";
+    placeholder.textContent = "—";
+    cell.appendChild(placeholder);
+    const name = document.createElement("div");
+    name.className = "tile-name"; name.textContent = "(empty)";
+    cell.appendChild(name);
+  }
+  const replace = document.createElement("button");
+  replace.className = "replace-btn"; replace.textContent = stem ? "Replace" : "Pick";
+  replace.onclick = () => openPicker(manifestDir, picked => { obj[dir] = picked; markDirty(); renderEditor(); }, "Pick " + label);
+  cell.appendChild(replace);
+  return cell;
+}
+
+function makeTileCell(stem, dir, onReplace, onRemove, sourceLabel) {
+  const cell = document.createElement("div");
+  cell.className = "tile-cell";
+  const img = document.createElement("img");
+  img.src = TILE_BASE + dir + "/" + stem + ".png";
+  cell.appendChild(img);
+  const name = document.createElement("div");
+  name.className = "tile-name"; name.textContent = stem;
+  cell.appendChild(name);
+  if (sourceLabel && sourceLabel !== ("@" + stem)) {
+    const src = document.createElement("div");
+    src.className = "tile-name"; src.style.color = "var(--accent)";
+    src.textContent = "from " + sourceLabel;
+    cell.appendChild(src);
+  }
+  const rep = document.createElement("button");
+  rep.className = "replace-btn"; rep.textContent = "Replace";
+  rep.onclick = onReplace;
+  cell.appendChild(rep);
+  if (onRemove) {
+    const rem = document.createElement("button");
+    rem.className = "remove-btn"; rem.textContent = "✕";
+    rem.onclick = (e) => { e.stopPropagation(); onRemove(); };
+    cell.appendChild(rem);
+  }
+  return cell;
+}
+
+function makeAddCell(onClick) {
+  const cell = document.createElement("div");
+  cell.className = "tile-cell add-cell";
+  cell.textContent = "+";
+  cell.onclick = onClick;
+  return cell;
+}
+
+function ensureArray(b, key) {
+  let v = b[key];
+  if (!Array.isArray(v)) {
+    if (typeof v === "string" && v) v = [v];
+    else v = [];
+    b[key] = v;
+  }
+  return v;
+}
+
+// Expand "@stem" to ["stem"], or "prefix" to ["prefix_0","prefix_1",...] using manifest.
+function expandEntry(entry, dir) {
+  if (typeof entry !== "string") return [];
+  if (entry.startsWith("@")) return [entry.substring(1)];
+  const map = manifest.prefixes?.[dir] || {};
+  return map[entry] || [];
+}
+
+// ---------- Picker ----------
+function openPicker(dir, callback, title) {
+  pickerCtx = { dir, callback };
+  document.getElementById("picker-title").textContent = title || "Pick tile";
+  document.getElementById("picker-search").value = "";
+  document.getElementById("picker").classList.add("open");
+  renderPicker();
+}
+function closePicker() {
+  document.getElementById("picker").classList.remove("open");
+  pickerCtx = null;
+}
+function renderPicker() {
+  if (!pickerCtx) return;
+  const grid = document.getElementById("picker-grid");
+  grid.innerHTML = "";
+  const q = document.getElementById("picker-search").value.toLowerCase();
+  const stems = (manifest.dirs?.[pickerCtx.dir] || []);
+  for (const stem of stems) {
+    if (q && !stem.toLowerCase().includes(q)) continue;
+    const c = document.createElement("div");
+    c.className = "pick-cell";
+    c.title = stem;
+    const img = document.createElement("img");
+    img.src = TILE_BASE + pickerCtx.dir + "/" + stem + ".png";
+    img.loading = "lazy";
+    c.appendChild(img);
+    const n = document.createElement("div");
+    n.className = "pick-name"; n.textContent = stem;
+    c.appendChild(n);
+    c.onclick = () => {
+      pickerCtx.callback(stem);
+      closePicker();
+    };
+    grid.appendChild(c);
+  }
+  if (!grid.children.length) grid.innerHTML = "<div style='padding:16px;color:#888'>(no matches)</div>";
+}
+
+// ---------- Biome list actions ----------
+function duplicateBiome() {
+  if (!activeId) return;
+  const newId = prompt("New biome id:", activeId + "_copy");
+  if (!newId || biomes[newId]) return;
+  biomes[newId] = JSON.parse(JSON.stringify(biomes[activeId]));
+  dirty.add(newId);
+  selectBiome(newId);
+}
+function newBiome() {
+  const newId = prompt("New biome id:");
+  if (!newId || biomes[newId]) return;
+  biomes[newId] = {
+    display_name: newId,
+    floor_primary: ["dungeon"],
+    floor_accent: [],
+    wall_primary: ["dungeon"],
+    wall_accent: [],
+    modulate: [1, 1, 1, 1],
+    darkness: 0.2,
+    ambient_density: 0.012,
+    enemy_pool: [],
+    vault_themes: ["dungeon"],
+    layout: "basic",
+    layouts: [{ id: "basic", weight: 1 }],
+    liquid_type: "",
+  };
+  dirty.add(newId);
+  selectBiome(newId);
+}
+function deleteBiome() {
+  if (!activeId) return;
+  if (!confirm("Delete biome '" + activeId + "'? This will be saved on next export.")) return;
+  delete biomes[activeId];
+  dirty.add(activeId); // tracks that something changed
+  activeId = Object.keys(biomes)[0] || null;
+  renderSidebar(); renderEditor();
+}
+
+function exportJSON() {
+  const out = { biomes, run_plans: runPlans };
+  const blob = new Blob([JSON.stringify(out, null, 2) + "\n"], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "biomes.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+  // Don't clear dirty — user might re-export after more edits.
+}
+
+// Single-biome export: emit just the active biome's JSON with its id.
+// The shape mirrors how `biomes.json::biomes` keys an entry — we
+// wrap in `{ id: biome }` so a reviewer can `jq -s '.[]' biome.json
+// | jq 'add'` straight into the main file. Designed for the share-
+// back loop where someone authors ONE biome and wants to paste it
+// into a GitHub issue.
+function singleBiomeJSON() {
+  if (!activeId) return null;
+  const wrapped = {};
+  wrapped[activeId] = biomes[activeId];
+  return JSON.stringify(wrapped, null, 2) + "\n";
+}
+
+function exportSingleBiome() {
+  const json = singleBiomeJSON();
+  if (json === null) return;
+  const blob = new Blob([json], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `biome_${activeId}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+async function copySingleBiomeToClipboard() {
+  const json = singleBiomeJSON();
+  if (json === null) return;
+  try {
+    await navigator.clipboard.writeText(json);
+    const dc = document.getElementById("dirty-count");
+    if (dc) {
+      const prev = dc.textContent;
+      dc.textContent = `Copied "${activeId}" JSON to clipboard.`;
+      setTimeout(() => { dc.textContent = prev; }, 2400);
+    }
+  } catch (e) {
+    alert("Clipboard write blocked — use ⬇ Export this biome instead.");
+  }
+}
+
+function escape(s) {
+  return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+}
+
+load();
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,2187 @@
+{
+  "format_version": 1,
+  "slot": "helm",
+  "notes": "Source of truth for the item editor (helm tab). Tile paths are relative to the DCSS tile pack root (dcss/Dungeon Crawl Stone Soup Full/). DCSS base types from item-prop.cc: hat AC 0, helmet AC 1. Hats are tinkerier (more ego variety, lower DEF); helmets are heavier and crit-shrugging.",
+  "base_types": {
+    "skullcap": {
+      "label": "Skullcap",
+      "category": "helm",
+      "dcss_base": "hat",
+      "dcss_ac": 0,
+      "flavor": "Improvised head protection. Small DEF, light HP."
+    },
+    "cap": {
+      "label": "Cap",
+      "category": "helm",
+      "dcss_base": "hat",
+      "dcss_ac": 0,
+      "flavor": "Padded cloth or leather cap. Tinkery \u2014 favors affix slots over raw DEF."
+    },
+    "hood": {
+      "label": "Hood",
+      "category": "helm",
+      "dcss_base": "hat",
+      "dcss_ac": 0,
+      "flavor": "Stealth-flavor headwear. Future: agility/crit synergy."
+    },
+    "wizard_hat": {
+      "label": "Wizard Hat",
+      "category": "helm",
+      "dcss_base": "hat",
+      "dcss_ac": 0,
+      "flavor": "Pointed mage hat. Future: mana/regen synergy."
+    },
+    "helmet": {
+      "label": "Helmet",
+      "category": "helm",
+      "dcss_base": "helmet",
+      "dcss_ac": 1,
+      "flavor": "Hardened steel. Higher DEF, fewer ego slots."
+    },
+    "great_helm": {
+      "label": "Great Helm",
+      "category": "helm",
+      "dcss_base": "helmet",
+      "dcss_ac": 1,
+      "flavor": "Full visored helmet. Heaviest 1H-class headgear."
+    },
+    "crown": {
+      "label": "Crown",
+      "category": "helm",
+      "dcss_base": "helmet",
+      "dcss_ac": 1,
+      "flavor": "Royal regalia. End-game flavor; large stat band."
+    }
+  },
+  "flavor_tags": {
+    "fortified": {
+      "color": "#aaccdd",
+      "desc": "Future: flat damage reduction vs bosses. Currently: Stamina affix bonus."
+    },
+    "stealth": {
+      "color": "#666688",
+      "desc": "Future: lower aggro range. Currently: Agility affix bonus."
+    },
+    "vision": {
+      "color": "#ffeebb",
+      "desc": "Future: extended fog reveal radius. Currently: no bonus."
+    },
+    "wisdom": {
+      "color": "#cc88ff",
+      "desc": "Future: bonus XP gain. Currently: no bonus."
+    },
+    "warding": {
+      "color": "#88ccff",
+      "desc": "Future: chance to negate damage. Currently: Agility affix bonus."
+    },
+    "regen": {
+      "color": "#66cc88",
+      "desc": "Future: HP regen scales with tier. Currently: Regen affix bonus."
+    },
+    "willpower": {
+      "color": "#ffaa88",
+      "desc": "Future: magic resistance. Currently: Stamina affix bonus."
+    },
+    "lordly": {
+      "color": "#ffdd44",
+      "desc": "Future: nearby allies inspired. Currently: Strength affix bonus."
+    },
+    "elemental": {
+      "color": "#ff8866",
+      "desc": "Future: elemental resistance. Currently: Stamina affix bonus."
+    },
+    "psychic": {
+      "color": "#aa88ff",
+      "desc": "Future: see-invisible (no enemy stealth). Currently: no bonus."
+    }
+  },
+  "drop_weight_schema": "Array of 5 weights [T1,T2,T3,T4,T5] \u2014 relative probability this item appears in the loot pool for each dungeon tier.",
+  "items": [
+    {
+      "id": "battered_skullcap",
+      "name": "Battered Skullcap",
+      "slot": "helm",
+      "rarity": "common",
+      "tile": "cap_1.png",
+      "base_type": "skullcap",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Dented in too many places to count.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "leather_cap",
+      "name": "Leather Cap",
+      "slot": "helm",
+      "rarity": "common",
+      "tile": "cap_2.png",
+      "base_type": "cap",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Soft leather. Better than nothing.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "iron_skullcap",
+      "name": "Iron Skullcap",
+      "slot": "helm",
+      "rarity": "common",
+      "tile": "helmet_1.png",
+      "base_type": "skullcap",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Cold iron. Better than soft leather.",
+      "drop_weights": [
+        70,
+        20,
+        2,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "padded_coif",
+      "name": "Padded Coif",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "cap_jester.png",
+      "base_type": "cap",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Quilted layers absorb the worst of it.",
+      "drop_weights": [
+        55,
+        30,
+        5,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "overlay": "helm_padded_coif"
+    },
+    {
+      "id": "plumed_helm",
+      "name": "Plumed Helm",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "plumed_helmet.png",
+      "base_type": "helmet",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [
+        "lordly"
+      ],
+      "lore": "A flourish that announces a fight.",
+      "drop_weights": [
+        50,
+        35,
+        8,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "ranger_hood",
+      "name": "Ranger's Hood",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "hat_1.png",
+      "base_type": "hood",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "Drawn close, the wearer's face becomes weather.",
+      "drop_weights": [
+        45,
+        35,
+        10,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "kettle_helm",
+      "name": "Kettle Helm",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "helmet_2.png",
+      "base_type": "helmet",
+      "armor": 6,
+      "evasion": 5,
+      "item_tier": 2,
+      "flavor_tags": [],
+      "lore": "A common soldier's helm. Practical to a fault.",
+      "drop_weights": [
+        15,
+        65,
+        25,
+        3,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "crested_helm",
+      "name": "Crested Helm",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "crested_helmet.png",
+      "base_type": "helmet",
+      "armor": 6,
+      "evasion": 5,
+      "item_tier": 2,
+      "flavor_tags": [
+        "lordly"
+      ],
+      "lore": "Worn by sergeants who outlived their lieutenants.",
+      "drop_weights": [
+        12,
+        60,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "elven_helm",
+      "name": "Elven Leather Helm",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "elven_leather_helm.png",
+      "base_type": "cap",
+      "armor": 7,
+      "evasion": 5,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth",
+        "vision"
+      ],
+      "lore": "So light you forget it isn't your own scalp.",
+      "drop_weights": [
+        8,
+        55,
+        32,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "etched_helm",
+      "name": "Etched Helm",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "helmet_2_etched.png",
+      "base_type": "helmet",
+      "armor": 7,
+      "evasion": 5,
+      "item_tier": 2,
+      "flavor_tags": [
+        "warding"
+      ],
+      "lore": "The runes don't quite stay still in lamplight.",
+      "drop_weights": [
+        5,
+        50,
+        35,
+        8,
+        2
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "knights_helm",
+      "name": "Knight's Helm",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "helmet_3_new.png",
+      "base_type": "great_helm",
+      "armor": 10,
+      "evasion": 7,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Heavy and hot. Worth it when the blow comes.",
+      "drop_weights": [
+        0,
+        18,
+        60,
+        22,
+        4
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 220,
+        "sat": 0.6,
+        "mode": "colorize",
+        "colorize_strength": 0.35
+      }
+    },
+    {
+      "id": "visored_basinet",
+      "name": "Visored Basinet",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "helmet_1_visored.png",
+      "base_type": "great_helm",
+      "armor": 10,
+      "evasion": 7,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "All eyes, no expression. Effective.",
+      "drop_weights": [
+        0,
+        15,
+        58,
+        25,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 0.7,
+        "mode": "colorize",
+        "colorize_strength": 0.4
+      }
+    },
+    {
+      "id": "wizard_hat",
+      "name": "Wizard's Hat",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "wizard_hat_1.png",
+      "base_type": "wizard_hat",
+      "armor": 10,
+      "evasion": 7,
+      "item_tier": 3,
+      "flavor_tags": [
+        "wisdom",
+        "regen"
+      ],
+      "lore": "Only the truly wise wear something this silly.",
+      "drop_weights": [
+        0,
+        10,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "champion_helm",
+      "name": "Champion's Helm",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_3_old.png",
+      "base_type": "great_helm",
+      "armor": 11,
+      "evasion": 8,
+      "item_tier": 3,
+      "flavor_tags": [
+        "lordly",
+        "fortified"
+      ],
+      "lore": "Worn by those who finished the tournament.",
+      "drop_weights": [
+        0,
+        8,
+        50,
+        32,
+        12
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "warlords_visor",
+      "name": "Warlord's Visor",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_4_visor.png",
+      "base_type": "great_helm",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "lordly",
+        "willpower"
+      ],
+      "lore": "It looks at the battlefield differently.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        55,
+        32
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "spectres_cowl",
+      "name": "Spectre's Cowl",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "hat_2.png",
+      "base_type": "hood",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "stealth",
+        "psychic"
+      ],
+      "lore": "Cold cloth. Things see less of you while you wear it.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        58,
+        30
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "dragonbone_helm",
+      "name": "Dragonbone Helm",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_5.png",
+      "base_type": "helmet",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "elemental"
+      ],
+      "lore": "Carved from a wyrm too old to remember its hatchling name.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "ego_etched_great_helm",
+      "name": "Mage-Bound Helm",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_ego_1.png",
+      "base_type": "great_helm",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "wisdom",
+        "warding"
+      ],
+      "lore": "The bindings hum when spells fly nearby.",
+      "drop_weights": [
+        0,
+        0,
+        6,
+        52,
+        38
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 50,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "kings_diadem",
+      "name": "King's Diadem",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_art_1.png",
+      "base_type": "crown",
+      "armor": 21,
+      "evasion": 16,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "willpower"
+      ],
+      "lore": "Worn while signing the order to attack.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        18,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "crystal_crown",
+      "name": "Crystal Crown",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_art_2.png",
+      "base_type": "crown",
+      "armor": 21,
+      "evasion": 16,
+      "item_tier": 5,
+      "flavor_tags": [
+        "wisdom",
+        "warding"
+      ],
+      "lore": "It refracts more than light.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        14,
+        72
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "halo_of_ascension",
+      "name": "Halo of Ascension",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_art_3.png",
+      "base_type": "crown",
+      "armor": 21,
+      "evasion": 16,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "wisdom"
+      ],
+      "lore": "Rests just above the head. Doesn't ask permission.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "hat_of_pondering",
+      "name": "Hat of Pondering",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "urand_pondering_new.png",
+      "base_type": "wizard_hat",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "wisdom",
+        "regen"
+      ],
+      "lore": "It thinks for you. You don't always agree.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "cornuthaum",
+      "name": "Cornuthaum",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "cornuthaum.png",
+      "base_type": "wizard_hat",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "wisdom",
+        "warding"
+      ],
+      "lore": "The Wizard's Hat. The W is implied.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "helm_of_the_dragon",
+      "name": "Helm of the Dragon",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "urand_dragonmask.png",
+      "base_type": "great_helm",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "elemental"
+      ],
+      "lore": "Worn by the last knight to challenge the wyrm. Briefly worn by the wyrm afterward.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 30,
+        "sat": 1.2,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "crown_of_dyrovepreva",
+      "name": "Crown of Dyrovepreva",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "urand_dyrovepreva_new.png",
+      "base_type": "crown",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "psychic"
+      ],
+      "lore": "It remembers every order it ever wore.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8,
+        "of_glass_cannon": 8,
+        "of_unbroken": 5,
+        "of_unwavering_focus": 8,
+        "of_recoup": 5,
+        "of_obstinance": 5,
+        "of_iron_aegis": 4,
+        "of_arcane_pool": 5,
+        "of_arcane_flow": 5,
+        "of_thrift": 6
+      }
+    },
+    {
+      "id": "helm_of_high_council",
+      "name": "Helm of the High Council",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "urand_high_council.png",
+      "base_type": "great_helm",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "willpower"
+      ],
+      "lore": "Six hands forged it. Five of them disagreed.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 45,
+        "sat": 1.2,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "jesters_cap",
+      "name": "Jester's Cap",
+      "slot": "helm",
+      "rarity": "uncommon",
+      "tile": "cap_jester.png",
+      "base_type": "cap",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 1,
+      "flavor_tags": [
+        "wisdom"
+      ],
+      "lore": "Bells included. They jingle even on the dead.",
+      "drop_weights": [
+        40,
+        35,
+        15,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "overlay": "helm_jesters_cap"
+    },
+    {
+      "id": "green_mask",
+      "name": "Green Mask",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "green_mask.png",
+      "base_type": "hood",
+      "armor": 10,
+      "evasion": 7,
+      "item_tier": 3,
+      "flavor_tags": [
+        "stealth",
+        "psychic"
+      ],
+      "lore": "The mask sees what the wearer hasn't. Yet.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "ego_visor",
+      "name": "Visor of the Watchman",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_ego_2.png",
+      "base_type": "great_helm",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "vision",
+        "warding"
+      ],
+      "lore": "It sees in the dark. It sees the dark.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 180,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "ego_thane",
+      "name": "Helm of the Thane",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_ego_3.png",
+      "base_type": "great_helm",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "lordly",
+        "fortified"
+      ],
+      "lore": "Worn by mountain-thanes who never quite died.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        37
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 280,
+        "sat": 1.1,
+        "mode": "colorize",
+        "colorize_strength": 0.35
+      }
+    },
+    {
+      "id": "ego_warden",
+      "name": "Helm of the Warden",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_ego_4.png",
+      "base_type": "great_helm",
+      "armor": 21,
+      "evasion": 16,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "warding",
+        "willpower"
+      ],
+      "lore": "Issued to the lieutenants of the gate. Returned, mostly.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        18,
+        65
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "wizard_hat_2",
+      "name": "Hat of the Archmage",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "wizard_hat_2.png",
+      "base_type": "wizard_hat",
+      "armor": 15,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "wisdom",
+        "warding",
+        "regen"
+      ],
+      "lore": "Pointier than the regulation hat. Worn by the difficult professors.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        55,
+        33
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      }
+    },
+    {
+      "id": "etheric_cage",
+      "name": "Maxwell's Etheric Cage",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "urand_etheric_cage.png",
+      "base_type": "great_helm",
+      "armor": 24,
+      "evasion": 18,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "willpower"
+      ],
+      "lore": "An armor that holds its wearer in place. Spells slide off the bars.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        3,
+        18
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_executioner": 8
+      },
+      "overlay": "urand_pondering_new",
+      "default_tint": {
+        "hue": 270,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 28,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 24,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_shadows": 26,
+        "of_dark_resist": 18,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "armor": 10,
+      "base_type": "hood",
+      "default_tint": {
+        "hue": 282.6,
+        "mode": "normal",
+        "sat": 0.66
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 7,
+      "flavor_tags": [
+        "stealth",
+        "psychic",
+        "dark"
+      ],
+      "id": "green_mask_shadowed",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "Hard to see in dim light, even when held directly before you.",
+      "name": "Shadowed Green Mask",
+      "rarity": "rare",
+      "slot": "helm",
+      "tile": "green_mask.png",
+      "unique": false,
+      "recolor_of": "green_mask"
+    },
+    {
+      "affix_pool": {
+        "of_might": 28,
+        "of_finesse": 28,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_shadows": 22,
+        "of_lifesteal": 12,
+        "of_executioner": 8
+      },
+      "armor": 24,
+      "base_type": "crown",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.95,
+          0.92,
+          0.78
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 18,
+      "flavor_tags": [
+        "lordly",
+        "psychic"
+      ],
+      "id": "crown_of_dyrovepreva_bone",
+      "implicit_affixes": [],
+      "item_tier": 5,
+      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
+      "name": "Bone Crown of Dyrovepreva",
+      "rarity": "legendary",
+      "slot": "helm",
+      "tile": "urand_dyrovepreva_new.png",
+      "unique": true
+    },
+    {
+      "affix_pool": {
+        "of_might": 28,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 40,
+        "of_the_bear": 52,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_sharpness": 14,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "armor": 7,
+      "base_type": "helmet",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 5,
+      "flavor_tags": [
+        "warding"
+      ],
+      "id": "etched_helm_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 2,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Etched Helm",
+      "rarity": "rare",
+      "slot": "helm",
+      "tile": "helmet_2_etched.png",
+      "unique": false,
+      "recolor_of": "etched_helm"
+    },
+    {
+      "affix_pool": {
+        "of_might": 28,
+        "of_finesse": 28,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_shadows": 22,
+        "of_lifesteal": 12,
+        "of_executioner": 8
+      },
+      "armor": 24,
+      "base_type": "wizard_hat",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.95,
+          0.92,
+          0.78
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 18,
+      "flavor_tags": [
+        "wisdom",
+        "regen"
+      ],
+      "id": "hat_of_pondering_bone",
+      "implicit_affixes": [],
+      "item_tier": 5,
+      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
+      "name": "Bone Hat of Pondering",
+      "rarity": "legendary",
+      "slot": "helm",
+      "tile": "urand_pondering_new.png",
+      "unique": true
+    },
+    {
+      "affix_pool": {
+        "of_might": 28,
+        "of_finesse": 28,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_shadows": 22,
+        "of_lifesteal": 12,
+        "of_sage": 8,
+        "of_scribe": 8,
+        "of_executioner": 8
+      },
+      "armor": 10,
+      "base_type": "wizard_hat",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.95,
+          0.92,
+          0.78
+        ]
+      },
+      "drop_weights": [
+        3,
+        25,
+        60,
+        12,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 7,
+      "flavor_tags": [
+        "wisdom",
+        "regen"
+      ],
+      "id": "wizard_hat_bone",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
+      "name": "Bone Wizard's Hat",
+      "rarity": "rare",
+      "slot": "helm",
+      "tile": "wizard_hat_1.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 36,
+        "of_the_bear": 44,
+        "of_the_cat": 14,
+        "of_str_mastery": 8,
+        "of_dex_mastery": 8,
+        "of_int_mastery": 8,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_channeling": 12,
+        "of_crit": 12,
+        "of_shadows": 22,
+        "of_dark_resist": 18,
+        "of_executioner": 8
+      },
+      "armor": 24,
+      "base_type": "crown",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.15,
+          0.13,
+          0.18
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 18,
+      "flavor_tags": [
+        "lordly",
+        "psychic",
+        "dark"
+      ],
+      "id": "crown_of_dyrovepreva_obsidian",
+      "implicit_affixes": [
+        "of_nightcaller",
+        "of_dark_resist"
+      ],
+      "item_tier": 5,
+      "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
+      "name": "Obsidian Crown of Dyrovepreva",
+      "rarity": "legendary",
+      "slot": "helm",
+      "tile": "urand_dyrovepreva_new.png",
+      "unique": true,
+      "recolor_of": "crown_of_dyrovepreva"
+    },
+    {
+      "id": "minotaur_horn_helm",
+      "name": "Horn-Bound Helm",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "crested_helmet.png",
+      "base_type": "great_helm",
+      "armor": 14,
+      "evasion": 4,
+      "item_tier": 3,
+      "flavor_tags": [
+        "lordly",
+        "rampaging"
+      ],
+      "lore": "The skull beneath remembers older wars. Charging is a virtue.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "bovine",
+      "implicit_affixes": [
+        "of_might",
+        "of_hunter"
+      ],
+      "affix_pool": {
+        "of_might": 20,
+        "of_vitality": 14,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 25,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "tengu_skystriker_helm",
+      "name": "Sky-Striker Beak Helm",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "plumed_helmet.png",
+      "base_type": "helmet",
+      "armor": 9,
+      "evasion": 11,
+      "item_tier": 4,
+      "flavor_tags": [
+        "first_blood",
+        "precision"
+      ],
+      "lore": "The first stroke is the one that breaks the sky.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "avian",
+      "implicit_affixes": [
+        "of_crit"
+      ],
+      "affix_pool": {
+        "of_finesse": 18,
+        "of_crit": 12,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 0.9,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "demonspawn_ashen_crown",
+      "name": "Ashen Crown",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_art_3.png",
+      "base_type": "crown",
+      "armor": 8,
+      "evasion": 8,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fire",
+        "harm"
+      ],
+      "lore": "Worn by every demonspawn who outlived their patron.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "demon",
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_resonance"
+      ],
+      "affix_pool": {
+        "of_pyromancer": 18,
+        "of_int_mastery": 14,
+        "of_executioner": 8
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 0.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "psyche_holy_censer",
+      "name": "Psyche's Holy Censer",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helm_cap.png",
+      "base_type": "helm",
+      "armor": 4,
+      "evasion": 1,
+      "item_tier": 2,
+      "flavor_tags": [
+        "faith",
+        "regen"
+      ],
+      "lore": "Smolders eternally. Psyche believed the smoke kept her sane. It did not.",
+      "drop_weights": [
+        0,
+        25,
+        5,
+        0,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_holy_anchor",
+        "of_holy_resist"
+      ],
+      "affix_pool": {
+        "of_wisdom": 16,
+        "of_vitality": 18,
+        "of_holy_resist": 18,
+        "of_regen": 16
+      },
+      "boss_drop": "boss_psyche",
+      "biome_pool": [
+        "temple"
+      ]
+    },
+    {
+      "id": "tiamat_five_heads",
+      "name": "Tiamat's Five Heads",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "crested_helmet.png",
+      "base_type": "helm",
+      "armor": 12,
+      "evasion": 4,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fire_res",
+        "cold_res",
+        "willpower"
+      ],
+      "lore": "Five heads. Five jaws. Five voices, none quieting.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_five_heads",
+        "of_fire_resist",
+        "of_cold_resist",
+        "of_poison_resist"
+      ],
+      "affix_pool": {
+        "of_wisdom": 20,
+        "of_vitality": 22,
+        "of_channeling": 16,
+        "of_quickcast": 14
+      },
+      "boss_drop": "boss_tiamat",
+      "biome_pool": [
+        "zot"
+      ]
+    },
+    {
+      "id": "gargoyle_basalt_visor",
+      "name": "Basalt Visor",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "helmet_4_visor.png",
+      "base_type": "helmet",
+      "armor": 18,
+      "evasion": 6,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "petrify"
+      ],
+      "lore": "Cooled lava cut and bound. Heavier than the wearer's head.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "stone",
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_warding"
+      ],
+      "affix_pool": {
+        "of_the_bear": 18,
+        "of_vitality": 12,
+        "of_regen": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10,
+        "of_lightning_resist": 10,
+        "of_holy_resist": 8,
+        "of_poison_resist": 8,
+        "of_dark_resist": 8
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 0.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "crypt_bone_helm",
+      "name": "Helm of the Bone Chamber",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "helm_crested.png",
+      "base_type": "helm",
+      "item_tier": 5,
+      "flavor_tags": [
+        "dark"
+      ],
+      "lore": "Crowned the most important mound. The chamber accepts no others.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_dark_resist",
+        "of_int_mastery",
+        "of_tactician"
+      ],
+      "affix_pool": {},
+      "vault_drop": "crypt_bone_chamber_5x5"
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Build Matrix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Build-matrix layout. Three-pane: filter strip on top, big grid in
+     the middle (15 species × 10 archetypes), a side detail panel that
+     slides out when a cell is clicked. */
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 16px;
+    padding: 16px;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .filters {
+    grid-column: 1 / -1;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-group { display: flex; gap: 6px; align-items: center; }
+  .filter-group select { font-size: 12px; }
+  .filter-group label { font-size: 10px; }
+
+  /* The big matrix. */
+  .matrix-wrap {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: auto;
+    padding: 12px;
+  }
+  table.matrix {
+    border-collapse: collapse;
+    font-size: 11px;
+    width: 100%;
+  }
+  table.matrix th, table.matrix td {
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  table.matrix thead th {
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  table.matrix tbody th {
+    text-align: left;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 600;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 120px;
+  }
+  table.matrix tbody th .innate {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 10px;
+    margin-left: 6px;
+  }
+  table.matrix tbody td {
+    cursor: pointer;
+    transition: filter 0.1s;
+  }
+  table.matrix tbody td:hover { filter: brightness(1.3); }
+  table.matrix tbody td.selected {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  /* Cell colors driven by class — values come from CELL_BAND. */
+  td.viable  { background: rgba(95, 200, 120, 0.22); color: #aef0b8; }
+  td.weak    { background: rgba(255, 170, 85, 0.18);  color: #ffd7a5; }
+  td.unbuilt { background: rgba(240, 100, 100, 0.16); color: #f8b6b6; }
+  td.empty   { background: rgba(80, 80, 90, 0.18);    color: var(--muted); }
+  td .meta   { display: block; font-size: 10px; color: inherit; opacity: 0.7; margin-top: 2px; }
+
+  /* Side detail panel. */
+  .detail {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 16px;
+  }
+  .detail h2 { margin: 0 0 6px; font-size: 14px; color: var(--accent); }
+  .detail .sub { color: var(--muted); font-size: 11px; margin-bottom: 10px; }
+  .detail .row { display: flex; justify-content: space-between; gap: 8px; padding: 4px 0; border-bottom: 1px dashed var(--border); font-size: 12px; }
+  .detail .row:last-child { border-bottom: 0; }
+  .detail .row .k { color: var(--muted); }
+  .detail .anchors { margin-top: 10px; }
+  .detail .anchors h3 { margin: 0 0 4px; }
+  .detail .anchor-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 6px;
+    margin: 2px 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-size: 11px;
+  }
+  .detail .anchor-row .rar { font-size: 10px; }
+  .rar-common    { color: var(--rarity-common); }
+  .rar-uncommon  { color: var(--rarity-uncommon); }
+  .rar-rare      { color: var(--rarity-rare); }
+  .rar-epic      { color: var(--rarity-epic); }
+  .rar-legendary { color: var(--rarity-legendary); }
+  .equip-cmd {
+    margin-top: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 8px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    word-break: break-all;
+    color: var(--accent);
+  }
+  .copy-btn { margin-top: 6px; }
+  .legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  /* Dim cells when filter excludes them. */
+  td.dim { opacity: 0.25; pointer-events: none; }
+
+  /* Stat-class color border for archetypes (red/green/blue = STR/DEX/INT). */
+  table.matrix thead th.arch-str { border-bottom: 3px solid var(--rarity-legendary); }
+  table.matrix thead th.arch-dex { border-bottom: 3px solid var(--good); }
+  table.matrix thead th.arch-int { border-bottom: 3px solid var(--rarity-uncommon); }
+</style>
+</head>
+<body>
+
+<nav class="portal-nav" data-active="matrix" data-title="Build Matrix"></nav>
+
+<main>
+  <div class="filters">
+    <div class="filter-group">
+      <label>Stat alloc</label>
+      <select id="filter-alloc">
+        <option value="all">all</option>
+        <option value="str">STR-heavy</option>
+        <option value="dex">DEX-heavy</option>
+        <option value="int">INT-heavy</option>
+        <option value="hybrid">hybrid</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Weapon class</label>
+      <select id="filter-weapon">
+        <option value="all">all</option>
+        <option value="1H">1H</option>
+        <option value="2H">2H</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Rarity floor</label>
+      <select id="filter-rarity">
+        <option value="all">all</option>
+        <option value="legendary">legendary only</option>
+        <option value="epic">epic+</option>
+        <option value="rare">rare+</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Race anchors only</label>
+      <input type="checkbox" id="filter-anchors">
+    </div>
+    <div class="legend">
+      <span><span class="swatch" style="background: rgba(95,200,120,0.4)"></span>VIABLE</span>
+      <span><span class="swatch" style="background: rgba(255,170,85,0.4)"></span>WEAK</span>
+      <span><span class="swatch" style="background: rgba(240,100,100,0.4)"></span>UNBUILT</span>
+      <span><span class="swatch" style="background: rgba(80,80,90,0.4)"></span>NO ANCHOR</span>
+    </div>
+  </div>
+
+  <div class="matrix-wrap">
+    <table class="matrix" id="matrix">
+      <thead><tr id="matrix-head"></tr></thead>
+      <tbody id="matrix-body"></tbody>
+    </table>
+    <p class="meta" id="matrix-meta" style="color: var(--muted); font-size: 11px; margin-top: 12px;"></p>
+  </div>
+
+  <aside class="detail" id="detail">
+    <h2>Pick a cell</h2>
+    <p class="sub">Click any species × archetype cell to see anchor items, build summary, and the <code>/equip</code> command that drops the player into that build.</p>
+  </aside>
+</main>
+
+<script src="portal_nav.js" defer></script>
+<script>
+const DATA_BASE = 'data/';
+const FETCH_PATHS = {
+  items: DATA_BASE + 'items.json',
+  species: DATA_BASE + 'species.json',
+  archetypes: DATA_BASE + 'spell_archetypes.json',
+};
+
+// Stat alloc bias for each species. Hand-derived from species.json
+// str_flat/dex_flat/int_flat values: argmax = lane, ties = hybrid.
+function classifyAlloc(sp) {
+  const s = sp.str_flat || 0, d = sp.dex_flat || 0, i = sp.int_flat || 0;
+  const max = Math.max(s, d, i);
+  const top = [s, d, i].filter(x => x >= max - 1).length;
+  if (top >= 2) return 'hybrid';
+  if (s === max) return 'str';
+  if (d === max) return 'dex';
+  return 'int';
+}
+
+function rarityRank(r) {
+  return ['common', 'uncommon', 'rare', 'epic', 'legendary'].indexOf(r);
+}
+function rarityClass(r) { return 'rar-' + r; }
+
+// Decide cell band for (species, archetype) cell.
+//
+// VIABLE — species's primary lane matches archetype's primary_stat
+//          AND at least one item of that archetype exists at rare+
+// WEAK   — species's primary lane is one off (e.g. STR species on
+//          a STR archetype but INT-tagged item; or hybrid species)
+// UNBUILT — archetype primary_stat misaligned with species lane;
+//          no items targeting this combo exist beyond commons
+// NO_ANCHOR — empty pool (no items of this archetype at all)
+//
+// This is heuristic; the real signal is Wilson CI from /duel which the
+// matrix invokes when you click "Run /duel" on a cell.
+function classifyCell(sp, arch, items) {
+  const allocLane = classifyAlloc(sp);
+  const archStat = arch.primary_stat;
+  const matchLane = (allocLane === archStat) || (allocLane === 'hybrid');
+  // Items of this archetype, primary_stat match.
+  const pool = items.filter(it =>
+    it.base_type === arch.id &&
+    (it.primary_stat || arch.primary_stat) === archStat
+  );
+  if (pool.length === 0) return { band: 'empty', best: null };
+  const best = pool.reduce((a, b) => rarityRank(b.rarity) > rarityRank(a.rarity) ? b : a);
+  if (matchLane && rarityRank(best.rarity) >= rarityRank('rare')) {
+    return { band: 'viable', best };
+  }
+  if (matchLane) return { band: 'weak', best };
+  if (rarityRank(best.rarity) >= rarityRank('epic')) return { band: 'weak', best };
+  return { band: 'unbuilt', best };
+}
+
+let DATA = { items: [], species: [], archetypes: {} };
+let SELECTED = null;
+
+async function load() {
+  const [items, species, archetypes] = await Promise.all([
+    fetch(FETCH_PATHS.items).then(r => r.json()),
+    fetch(FETCH_PATHS.species).then(r => r.json()),
+    fetch(FETCH_PATHS.archetypes).then(r => r.json()),
+  ]);
+  DATA.items = items.items || [];
+  DATA.species = species.species || [];
+  DATA.archetypes = Object.entries(archetypes).map(([id, def]) => ({ id, ...def }));
+  render();
+}
+
+function render() {
+  const head = document.getElementById('matrix-head');
+  const body = document.getElementById('matrix-body');
+  head.innerHTML = '';
+  body.innerHTML = '';
+
+  // Header: corner cell + one column per archetype.
+  const corner = document.createElement('th');
+  corner.textContent = 'species \\ archetype';
+  head.appendChild(corner);
+  for (const arch of DATA.archetypes) {
+    const th = document.createElement('th');
+    th.textContent = arch.id.replace(/^spell_/, '');
+    th.classList.add('arch-' + (arch.primary_stat || 'int'));
+    th.title = `${arch.id}\nprimary_stat=${arch.primary_stat}\nelement=${arch.element || 'physical'}\ncd=${arch.cooldown}s`;
+    head.appendChild(th);
+  }
+
+  // Body: one row per species.
+  for (const sp of DATA.species) {
+    const tr = document.createElement('tr');
+    const rowHead = document.createElement('th');
+    const innate = (sp.innate_tags && sp.innate_tags.length)
+      ? `<span class="innate">${sp.innate_tags.join(',')}</span>`
+      : '';
+    rowHead.innerHTML = `${sp.name}${innate}`;
+    rowHead.title = `str+${sp.str_flat ?? 0} dex+${sp.dex_flat ?? 0} int+${sp.int_flat ?? 0}`;
+    tr.appendChild(rowHead);
+    for (const arch of DATA.archetypes) {
+      const td = document.createElement('td');
+      const verdict = classifyCell(sp, arch, DATA.items);
+      td.classList.add(verdict.band);
+      td.dataset.species = sp.id;
+      td.dataset.archetype = arch.id;
+      td.dataset.band = verdict.band;
+      td.dataset.bestRarity = verdict.best?.rarity || '';
+      const labelTop = verdict.band === 'empty' ? '—' : verdict.best.rarity[0].toUpperCase();
+      const labelBot = verdict.band.toUpperCase();
+      td.innerHTML = `${labelTop}<span class="meta">${labelBot}</span>`;
+      td.addEventListener('click', () => selectCell(sp, arch, verdict, td));
+      tr.appendChild(td);
+    }
+    body.appendChild(tr);
+  }
+
+  document.getElementById('matrix-meta').innerHTML =
+    `${DATA.species.length} species × ${DATA.archetypes.length} archetypes = ${DATA.species.length * DATA.archetypes.length} cells. ` +
+    `Source: <code>data/items.json</code> + <code>data/species.json</code> + <code>data/spell_archetypes.json</code>.`;
+
+  applyFilters();
+}
+
+// /equip-shorthand: pick the strongest matching item to suggest as
+// the spell slot, plus a placeholder weapon. Reads /equip skill format.
+function buildEquipCmd(sp, arch, best) {
+  if (!best) return null;
+  const allocLane = classifyAlloc(sp);
+  const allocStr = allocLane === 'str' ? 50 : (allocLane === 'hybrid' ? 25 : 10);
+  const allocDex = allocLane === 'dex' ? 50 : (allocLane === 'hybrid' ? 25 : 10);
+  const allocInt = allocLane === 'int' ? 50 : (allocLane === 'hybrid' ? 25 : 10);
+  return `/equip "species=${sp.id} level=30 alloc_str=${allocStr} alloc_dex=${allocDex} alloc_int=${allocInt} spell1=${best.id}"`;
+}
+
+function selectCell(sp, arch, verdict, td) {
+  document.querySelectorAll('td.selected').forEach(c => c.classList.remove('selected'));
+  td.classList.add('selected');
+  SELECTED = { sp, arch, verdict };
+
+  const detail = document.getElementById('detail');
+  if (verdict.band === 'empty') {
+    detail.innerHTML = `
+      <h2>${sp.name} × ${arch.id.replace(/^spell_/, '')}</h2>
+      <p class="sub">no anchor items found</p>
+      <div class="row"><span class="k">archetype primary_stat</span><span>${arch.primary_stat}</span></div>
+      <div class="row"><span class="k">archetype element</span><span>${arch.element || 'physical'}</span></div>
+      <div class="row"><span class="k">species lane</span><span>${classifyAlloc(sp)}</span></div>
+      <p class="sub" style="margin-top: 12px;">No item with <code>base_type=${arch.id}</code> and <code>primary_stat=${arch.primary_stat}</code> exists. Either author one (race-anchor unique candidate, S5) or accept that this corner is intentionally empty.</p>
+    `;
+    return;
+  }
+
+  // Anchor list: every item of this archetype × matching primary_stat,
+  // grouped by rarity, sorted by midpoint damage.
+  const pool = DATA.items.filter(it =>
+    it.base_type === arch.id &&
+    (it.primary_stat || arch.primary_stat) === arch.primary_stat
+  );
+  pool.sort((a, b) => rarityRank(b.rarity) - rarityRank(a.rarity));
+
+  const equipCmd = buildEquipCmd(sp, arch, verdict.best);
+  const allocLane = classifyAlloc(sp);
+  const matchLane = (allocLane === arch.primary_stat) || (allocLane === 'hybrid');
+
+  detail.innerHTML = `
+    <h2>${sp.name} × ${arch.id.replace(/^spell_/, '')}</h2>
+    <p class="sub">${verdict.band.toUpperCase()} — best item: <span class="${rarityClass(verdict.best.rarity)}">${verdict.best.rarity}</span></p>
+    <div class="row"><span class="k">species lane</span><span>${allocLane}</span></div>
+    <div class="row"><span class="k">archetype primary_stat</span><span>${arch.primary_stat}</span></div>
+    <div class="row"><span class="k">lane match</span><span>${matchLane ? 'yes' : 'no'}</span></div>
+    <div class="row"><span class="k">archetype cooldown</span><span>${arch.cooldown}s</span></div>
+    <div class="row"><span class="k">archetype element</span><span>${arch.element || 'physical'}</span></div>
+    <div class="row"><span class="k">items in pool</span><span>${pool.length}</span></div>
+    <div class="anchors">
+      <h3>Pool (${pool.length})</h3>
+      ${pool.map(it => {
+        const dmg = (it.damage_min ?? 0) + '-' + (it.damage_max ?? 0);
+        return `<div class="anchor-row">
+          <span><span class="rar ${rarityClass(it.rarity)}">${it.rarity[0].toUpperCase()}</span> ${it.id}</span>
+          <span>${dmg}</span>
+        </div>`;
+      }).join('')}
+    </div>
+    <h3 style="margin-top: 12px;">/equip command</h3>
+    <div class="equip-cmd" id="equip-cmd">${equipCmd}</div>
+    <button class="copy-btn subtle" id="copy-btn">copy to clipboard</button>
+    <p class="sub" style="margin-top: 10px;">
+      Drop this into your shell — the harness pre-loads the build into the
+      debug save. Pair with <code>/duel</code> against the canonical-strong
+      cell for the same archetype to confirm Wilson CI.
+    </p>
+  `;
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    navigator.clipboard.writeText(equipCmd).then(() => {
+      document.getElementById('copy-btn').textContent = 'copied';
+      setTimeout(() => { document.getElementById('copy-btn').textContent = 'copy to clipboard'; }, 1200);
+    });
+  });
+}
+
+function applyFilters() {
+  const alloc = document.getElementById('filter-alloc').value;
+  const weapon = document.getElementById('filter-weapon').value;
+  const rarity = document.getElementById('filter-rarity').value;
+  const anchorsOnly = document.getElementById('filter-anchors').checked;
+
+  const cells = document.querySelectorAll('table.matrix tbody td');
+  cells.forEach(td => td.classList.remove('dim'));
+  if (alloc === 'all' && weapon === 'all' && rarity === 'all' && !anchorsOnly) return;
+
+  for (const td of cells) {
+    const spId = td.dataset.species;
+    const archId = td.dataset.archetype;
+    const sp = DATA.species.find(s => s.id === spId);
+    const arch = DATA.archetypes.find(a => a.id === archId);
+    if (!sp || !arch) continue;
+    let dim = false;
+    if (alloc !== 'all' && classifyAlloc(sp) !== alloc) dim = true;
+    if (rarity !== 'all') {
+      const have = td.dataset.bestRarity;
+      if (!have || rarityRank(have) < rarityRank(rarity)) dim = true;
+    }
+    if (anchorsOnly) {
+      // Race-anchor = item carrying requires_innate_tag matching this species.
+      const tags = sp.innate_tags || [];
+      const anchor = DATA.items.find(it =>
+        it.base_type === archId &&
+        Array.isArray(it.requires_innate_tag) &&
+        it.requires_innate_tag.some(t => tags.includes(t))
+      );
+      if (!anchor) dim = true;
+    }
+    if (weapon !== 'all') {
+      // Spell archetypes have no weapon class; this filter only dims.
+      // Reserved for the future melee-build matrix view.
+    }
+    if (dim) td.classList.add('dim');
+  }
+}
+
+document.getElementById('filter-alloc').addEventListener('change', applyFilters);
+document.getElementById('filter-weapon').addEventListener('change', applyFilters);
+document.getElementById('filter-rarity').addEventListener('change', applyFilters);
+document.getElementById('filter-anchors').addEventListener('change', applyFilters);
+
+load().catch(err => {
+  document.getElementById('matrix-meta').textContent =
+    'failed to load data — open this page over python3 -m http.server (browsers block file:// fetch). ' + err;
+});
+</script>
+</body>
+</html>

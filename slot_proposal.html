@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Slot Proposal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Research-backed proposal for new equipment slots in Botter — sprite availability + design fit per candidate.">
+<link rel="stylesheet" href="portal.css">
+<style>
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main {
+    flex: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 16px 20px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .summary {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+  }
+  .summary p { margin: 0; line-height: 1.55; color: var(--text); font-size: 12px; }
+  .summary .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 18px;
+    align-content: start;
+  }
+  .summary .stat { display: flex; justify-content: space-between; font-size: 11px; }
+  .summary .stat .k { color: var(--muted); }
+  .summary .stat .v { color: var(--accent); font-weight: 600; }
+
+  h2.section {
+    margin: 0;
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2.section .count {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 8px;
+  }
+
+  /* Top recommendations - large, ranked. */
+  .top-rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 14px;
+  }
+  .rec-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rec-card .rank {
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    margin-right: 4px;
+  }
+  .rec-card .rec-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .rec-card .rec-name {
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 600;
+    flex: 1;
+    min-width: 200px;
+  }
+  .rec-card .effort-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .effort-low { background: rgba(95,200,120,0.15); color: var(--good); }
+  .effort-medium { background: var(--accent-soft); color: var(--accent); }
+  .effort-high { background: rgba(240,100,100,0.15); color: var(--bad); }
+
+  .rec-card .field { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; }
+  .rec-card .field .label-tag {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    min-width: 56px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .rec-card .field p { margin: 0; line-height: 1.55; flex: 1; }
+
+  /* Two-column split for inv-only / inv+positional. */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 1000px) {
+    .split { grid-template-columns: 1fr; }
+    .summary { grid-template-columns: 1fr; }
+  }
+  .col-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .col-block h3.col-title {
+    margin: 0;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.3px;
+  }
+  .col-block .col-blurb {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0 0 4px 0;
+  }
+  .opt-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color 0.1s, background 0.1s;
+  }
+  .opt-card:hover {
+    border-color: var(--accent-dim);
+    background: var(--panel-2);
+  }
+  .opt-card .opt-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .opt-card .opt-name { color: var(--text); font-weight: 600; font-size: 12px; }
+  .opt-card .fit-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 1px 6px;
+    border-radius: 8px;
+  }
+  .fit-excellent { background: rgba(95,200,120,0.18); color: var(--good); }
+  .fit-good { background: var(--accent-soft); color: var(--accent); }
+  .fit-fair { background: rgba(255,170,85,0.15); color: var(--warn); }
+  .fit-poor { background: rgba(240,100,100,0.15); color: var(--bad); }
+  .opt-card .opt-note {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .opt-card .opt-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .opt-card .opt-meta .m-key { color: var(--text); margin-right: 3px; }
+  .opt-card.shipped { opacity: 0.45; cursor: default; }
+  .opt-card.shipped:hover { border-color: var(--border); background: var(--panel); }
+
+  /* Low priority - dimmed list. */
+  .skip-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 8px;
+  }
+  .skip-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 8px 12px;
+    opacity: 0.85;
+  }
+  .skip-card .sk-name { color: var(--muted); font-weight: 600; font-size: 11px; }
+  .skip-card .sk-why { color: var(--muted); font-size: 10px; line-height: 1.5; margin-top: 2px; }
+
+  /* Engineering blocker section. */
+  .blockers {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--bad);
+    border-radius: 6px;
+    padding: 14px 18px;
+  }
+  .blockers .block-content {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+  }
+  .blockers .block-content strong { color: var(--accent); }
+  .blockers .block-content code {
+    background: rgba(255,255,255,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: var(--accent-dim);
+  }
+
+  /* Detail panel modal. */
+  .detail-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 16px;
+  }
+  .detail-modal.open { display: flex; }
+  .detail-inner {
+    background: var(--picker-bg);
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 880px;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  }
+  .detail-head {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .detail-head h2 { margin: 0; font-size: 15px; color: var(--accent); }
+  .detail-body {
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .detail-section .ds-label {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .detail-section p { margin: 0; line-height: 1.6; font-size: 12px; }
+  .sprite-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 600px) {
+    .sprite-grid { grid-template-columns: 1fr; }
+  }
+  .sprite-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+  .sprite-block .sb-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .sprite-block .sb-title { color: var(--text); font-size: 11px; font-weight: 600; }
+  .sprite-block .sb-count { color: var(--accent); font-size: 11px; font-weight: 600; }
+  .sprite-block .sb-count.zero { color: var(--bad); }
+  .sprite-block .sb-paths {
+    list-style: none;
+    margin: 4px 0 0 0;
+    padding: 0;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    color: var(--muted);
+    word-break: break-all;
+    line-height: 1.5;
+  }
+  .sprite-block .sb-paths li { margin-bottom: 2px; }
+  .sprite-block .sb-notes {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .empty-block {
+    color: var(--muted);
+    text-align: center;
+    padding: 16px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<nav class="portal-nav" data-active="proposal" data-title="Slot Proposal"></nav>
+
+<main>
+
+<header style="display: flex; flex-direction: column; gap: 6px;">
+  <h1 style="font-size: 18px; color: var(--accent); margin: 0;">New Equipment Slot Proposal</h1>
+  <p style="color: var(--muted); font-size: 12px; line-height: 1.55; margin: 0; max-width: 880px;">
+    Research-backed survey of candidate item slots / types Botter could ship next. 18 candidates investigated for sprite availability (inventory icon vs player-overlay), DCSS mechanic fit, and design payoff. Data: <code style="color: var(--accent-dim);">tools/slot_proposal_data.json</code>.
+  </p>
+</header>
+
+<section class="summary" id="summary"></section>
+
+<section style="display: flex; flex-direction: column; gap: 12px;">
+  <h2 class="section">Top recommendations <span class="count" id="rec-count"></span></h2>
+  <p style="color: var(--muted); font-size: 12px; line-height: 1.55; margin: 0;">Ranked by leverage × low risk. Each card has a "why" (gameplay angle), "how" (implementation skeleton), sprite-status counts, and effort tag.</p>
+  <div class="top-rec-grid" id="top-rec-grid"></div>
+</section>
+
+<section class="split">
+  <div class="col-block">
+    <h2 class="section">Inventory only<span class="count" id="invonly-count"></span></h2>
+    <p class="col-blurb">Slots that need only an inventory icon — jewelry/accessory pattern. No paperdoll work. Lowest content cost per slot. <em>Click a card for full sprite paths and design notes.</em></p>
+    <div id="invonly-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+  </div>
+  <div class="col-block">
+    <h2 class="section">Inventory + positional<span class="count" id="invpos-count"></span></h2>
+    <p class="col-blurb">Slots with both inv icons and player-overlay sprites in the DCSS pack. Visible on the bot when equipped. Higher payoff, higher cost.</p>
+    <div id="invpos-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+  </div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px;">
+  <h2 class="section">Cross-cutting engineering blockers</h2>
+  <p style="color: var(--muted); font-size: 12px; margin: 0;">Pipeline gaps that block multiple slot adds. Address these before bulk slot work.</p>
+  <div class="blockers"><div class="block-content" id="blockers-content"></div></div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px;">
+  <h2 class="section">Low priority — skip / defer<span class="count" id="skip-count"></span></h2>
+  <p style="color: var(--muted); font-size: 12px; margin: 0;">DCSS items / slots that exist but don't fit Botter's idle-ARPG frame. Each notes why.</p>
+  <div class="skip-list" id="skip-list"></div>
+</section>
+
+</main>
+
+<!-- Detail panel -->
+<div class="detail-modal" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <div class="detail-inner">
+    <div class="detail-head">
+      <h2 id="detail-title">—</h2>
+      <button class="subtle" id="detail-close">close ✕</button>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </div>
+</div>
+
+<div class="kbd-hint"><kbd>Esc</kbd> close · <kbd>click</kbd> any card for detail</div>
+
+<script src="portal_nav.js" defer></script>
+<script>
+(async function () {
+  const $ = (id) => document.getElementById(id);
+  const escapeHtml = (s) => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  // Render markdown-ish content used in cross_cutting_notes:
+  // **bold** -> <strong>, `code` -> <code>, preserves newlines.
+  function richText(s) {
+    let html = escapeHtml(s);
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+    return html;
+  }
+
+  let data;
+  try {
+    const res = await fetch('slot_proposal_data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch (e) {
+    document.body.innerHTML = '<main style="padding:40px;color:var(--bad);font-size:13px;">'
+      + '<strong>Failed to load slot_proposal_data.json.</strong> Serve this page over HTTP '
+      + '(<code>python3 -m http.server 8080</code> from repo root, then open '
+      + '<code>http://localhost:8080/tools/slot_proposal.html</code>). '
+      + 'Browsers block <code>file://</code> fetch.<br><br>'
+      + 'Detail: ' + escapeHtml(String(e)) + '</main>';
+    return;
+  }
+
+  const report = data.report || {};
+  const investigations = data.investigations || [];
+
+  // Index investigations by key for the detail-panel lookup. Some slots
+  // (shipped: shield, cloak; orphan: belt) appear in the report's named
+  // lists but won't have a matching investigation entry — that's fine,
+  // we fall through to a name-based fallback.
+  const invByKey = {};
+  for (const inv of investigations) {
+    if (inv && inv.key) invByKey[inv.key] = inv;
+  }
+  const invByName = {};
+  for (const inv of investigations) {
+    if (inv && inv.name) invByName[inv.name.toLowerCase()] = inv;
+  }
+
+  // ---- Summary panel.
+  function renderSummary() {
+    const slots = data.current_slots && data.current_slots.slots || [];
+    const gearSlots = slots.filter(s => !/^spell\d/.test(s.name));
+    const spellSlots = slots.filter(s => /^spell\d/.test(s.name));
+    const totalItems = gearSlots.reduce((a, s) => a + (s.count || 0), 0);
+    const renderable = (data.player_render && data.player_render.overlay_slots) || [];
+    const summaryText = report.current_state_summary || '';
+    const html = `
+      <p>${escapeHtml(summaryText)}</p>
+      <div class="stats-grid">
+        <div class="stat"><span class="k">Gear slots today</span><span class="v">${gearSlots.length}</span></div>
+        <div class="stat"><span class="k">Spell slots today</span><span class="v">${spellSlots.length}</span></div>
+        <div class="stat"><span class="k">Total gear items</span><span class="v">${totalItems}</span></div>
+        <div class="stat"><span class="k">Paperdoll overlays</span><span class="v">${renderable.length}</span></div>
+        <div class="stat"><span class="k">Candidates studied</span><span class="v">${investigations.length}</span></div>
+        <div class="stat"><span class="k">Top recs</span><span class="v">${(report.top_recommendations || []).length}</span></div>
+      </div>`;
+    $('summary').innerHTML = html;
+  }
+
+  // ---- Top recommendations.
+  function renderTopRecs() {
+    const recs = report.top_recommendations || [];
+    $('rec-count').textContent = `${recs.length} ranked`;
+    const grid = $('top-rec-grid');
+    grid.innerHTML = recs.map((r, i) => {
+      const effortClass = 'effort-' + (r.effort || 'medium').toLowerCase();
+      return `
+        <div class="rec-card" data-rec-name="${escapeHtml(r.name)}">
+          <div class="rec-head">
+            <span class="rank">${i + 1}</span>
+            <span class="rec-name">${escapeHtml(r.name)}</span>
+            <span class="effort-tag ${effortClass}">${escapeHtml(r.effort || '?')} effort</span>
+          </div>
+          <div class="field">
+            <span class="label-tag">Why</span>
+            <p>${escapeHtml(r.why || '')}</p>
+          </div>
+          <div class="field">
+            <span class="label-tag">How</span>
+            <p>${escapeHtml(r.how || '')}</p>
+          </div>
+          <div class="field">
+            <span class="label-tag">Sprites</span>
+            <p style="color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px;">${escapeHtml(r.sprite_status || '')}</p>
+          </div>
+        </div>`;
+    }).join('');
+
+    // Click a recommendation card to open its detail (look up by first
+    // word of the recommendation name, since "second_ring (universal
+    // ring2)" maps to investigation key "second_ring" etc.).
+    grid.querySelectorAll('.rec-card').forEach((card, i) => {
+      card.addEventListener('click', () => {
+        const r = recs[i];
+        const name = (r && r.name) || '';
+        const firstWord = name.toLowerCase().split(/[\s_(]+/)[0];
+        const candidates = [
+          firstWord,
+          firstWord.replace('-', '_'),
+          name.toLowerCase().replace(/[^a-z]+/g, '_').replace(/^_|_$/g, ''),
+        ];
+        let inv = null;
+        for (const c of candidates) {
+          if (invByKey[c]) { inv = invByKey[c]; break; }
+        }
+        if (!inv) inv = invByName[firstWord] || null;
+        openDetail(inv, { name: name, fromRecommendation: r });
+      });
+    });
+  }
+
+  // ---- Inv-only / inv+positional columns. We split based on the
+  // investigations' own visual_category, falling back to the report's
+  // grouping where we don't have a matching investigation. Fit-tag and
+  // sprite counts come from the investigation when available.
+  function categoryOf(invKey) {
+    const inv = invByKey[invKey];
+    return inv && inv.fit_assessment && inv.fit_assessment.visual_category;
+  }
+
+  function renderInvOnly() {
+    const items = report.inv_only_options || [];
+    $('invonly-count').textContent = `${items.length} options`;
+    const list = $('invonly-list');
+    list.innerHTML = items.map(opt => buildOptCard(opt)).join('');
+    list.querySelectorAll('.opt-card').forEach((el) => {
+      el.addEventListener('click', () => {
+        const k = el.dataset.optKey;
+        openDetail(invByKey[k] || null, { name: el.dataset.optName, fitNote: el.dataset.optNote });
+      });
+    });
+  }
+
+  function renderInvPos() {
+    const items = report.inv_plus_positional_options || [];
+    $('invpos-count').textContent = `${items.length} options`;
+    const list = $('invpos-list');
+    list.innerHTML = items.map(opt => buildOptCard(opt)).join('');
+    list.querySelectorAll('.opt-card').forEach((el) => {
+      el.addEventListener('click', () => {
+        if (el.classList.contains('shipped')) return;
+        const k = el.dataset.optKey;
+        openDetail(invByKey[k] || null, { name: el.dataset.optName, fitNote: el.dataset.optNote });
+      });
+    });
+  }
+
+  function deriveOptKey(name) {
+    // "second_ring (universal ring2)" -> "second_ring"
+    // "throwing weapon (javelin/dart/tomahawk)" -> "throwing_weapon"
+    const head = name.split(/\s*\(/)[0].trim().toLowerCase();
+    const cleaned = head.replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    if (invByKey[cleaned]) return cleaned;
+    const firstWord = head.split(/\s+/)[0];
+    if (invByKey[firstWord]) return firstWord;
+    // Try "consumable" -> "consumable_scroll_potion".
+    for (const k of Object.keys(invByKey)) {
+      if (k.startsWith(firstWord)) return k;
+    }
+    return cleaned;
+  }
+
+  function buildOptCard(opt) {
+    const name = opt.name || '';
+    const key = deriveOptKey(name);
+    const inv = invByKey[key];
+    const fitText = (opt.fit || '').toLowerCase();
+    let fitClass = 'fit-fair';
+    if (fitText.includes('excellent')) fitClass = 'fit-excellent';
+    else if (fitText.includes('good')) fitClass = 'fit-good';
+    else if (fitText.includes('poor')) fitClass = 'fit-poor';
+    const isShipped = (opt.note || '').toLowerCase().includes('already shipped');
+    const shippedClass = isShipped ? ' shipped' : '';
+    let metaHtml = '';
+    if (inv) {
+      const invCount = (inv.sprite_inventory && inv.sprite_inventory.count_estimate) || 0;
+      const posCount = (inv.sprite_positional && inv.sprite_positional.count_estimate) || 0;
+      metaHtml = `
+        <div class="opt-meta">
+          <span><span class="m-key">inv:</span>${invCount}</span>
+          <span><span class="m-key">positional:</span>${posCount}</span>
+          <span><span class="m-key">complexity:</span>${escapeHtml((inv.fit_assessment && inv.fit_assessment.implementation_complexity) || '?')}</span>
+        </div>`;
+    }
+    return `
+      <div class="opt-card${shippedClass}" data-opt-key="${escapeHtml(key)}" data-opt-name="${escapeHtml(name)}" data-opt-note="${escapeHtml(opt.note || '')}">
+        <div class="opt-head">
+          <span class="opt-name">${escapeHtml(name)}</span>
+          <span class="fit-tag ${fitClass}">${escapeHtml(opt.fit || '?')}</span>
+        </div>
+        <div class="opt-note">${escapeHtml(opt.note || '')}</div>
+        ${metaHtml}
+      </div>`;
+  }
+
+  // ---- Skip / low priority.
+  function renderSkip() {
+    const items = report.low_priority || [];
+    $('skip-count').textContent = `${items.length} skip`;
+    const grid = $('skip-list');
+    grid.innerHTML = items.map(opt => `
+      <div class="skip-card">
+        <div class="sk-name">${escapeHtml(opt.name || '')}</div>
+        <div class="sk-why">${escapeHtml(opt.why_skip || '')}</div>
+      </div>`).join('');
+  }
+
+  // ---- Cross-cutting blockers.
+  function renderBlockers() {
+    const text = report.cross_cutting_notes || '';
+    $('blockers-content').innerHTML = richText(text);
+  }
+
+  // ---- Detail modal.
+  function openDetail(inv, fallback) {
+    const modal = $('detail-modal');
+    const title = $('detail-title');
+    const body = $('detail-body');
+    const name = (inv && inv.name) || (fallback && fallback.name) || 'Detail';
+    title.textContent = name;
+
+    let html = '';
+
+    if (fallback && fallback.fromRecommendation) {
+      const r = fallback.fromRecommendation;
+      html += `
+        <div class="detail-section" style="border-left: 3px solid var(--accent-dim); padding: 8px 12px; background: var(--accent-soft); border-radius: 4px;">
+          <div class="ds-label">Top recommendation</div>
+          <p><strong style="color: var(--accent);">Why:</strong> ${escapeHtml(r.why || '')}</p>
+          <p><strong style="color: var(--accent);">How:</strong> ${escapeHtml(r.how || '')}</p>
+          <p><strong style="color: var(--accent);">Sprites:</strong> ${escapeHtml(r.sprite_status || '')}</p>
+          <p><strong style="color: var(--accent);">Effort:</strong> ${escapeHtml(r.effort || '?')}</p>
+        </div>`;
+    }
+
+    if (inv) {
+      const fa = inv.fit_assessment || {};
+      const meta = [];
+      if (fa.fit_score) meta.push(`<span class="pill accent">fit: ${escapeHtml(fa.fit_score)}</span>`);
+      if (fa.implementation_complexity) meta.push(`<span class="pill">complexity: ${escapeHtml(fa.implementation_complexity)}</span>`);
+      if (fa.visual_category) meta.push(`<span class="pill">visual: ${escapeHtml(fa.visual_category)}</span>`);
+      if (meta.length) html += `<div class="meta-row">${meta.join('')}</div>`;
+
+      if (fa.rationale) {
+        html += `
+          <div class="detail-section">
+            <span class="ds-label">Fit rationale</span>
+            <p>${escapeHtml(fa.rationale)}</p>
+          </div>`;
+      }
+      if (inv.recommended_design) {
+        html += `
+          <div class="detail-section">
+            <span class="ds-label">Recommended design for Botter</span>
+            <p>${escapeHtml(inv.recommended_design)}</p>
+          </div>`;
+      }
+      if (inv.dcss_mechanics) {
+        html += `
+          <div class="detail-section">
+            <span class="ds-label">DCSS mechanics</span>
+            <p style="color: var(--muted);">${escapeHtml(inv.dcss_mechanics)}</p>
+          </div>`;
+      }
+
+      const si = inv.sprite_inventory || {};
+      const sp = inv.sprite_positional || {};
+      html += `
+        <div class="sprite-grid">
+          <div class="sprite-block">
+            <div class="sb-head">
+              <span class="sb-title">Inventory icons</span>
+              <span class="sb-count${(si.count_estimate ? '' : ' zero')}">${si.count_estimate || 0}</span>
+            </div>
+            ${(si.paths && si.paths.length) ? `<ul class="sb-paths">${si.paths.slice(0, 6).map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>` : '<div class="empty-block" style="padding:8px;">no sprites</div>'}
+            ${si.notes ? `<div class="sb-notes">${escapeHtml(si.notes)}</div>` : ''}
+          </div>
+          <div class="sprite-block">
+            <div class="sb-head">
+              <span class="sb-title">Player overlay (positional)</span>
+              <span class="sb-count${(sp.count_estimate ? '' : ' zero')}">${sp.count_estimate || 0}</span>
+            </div>
+            ${(sp.paths && sp.paths.length) ? `<ul class="sb-paths">${sp.paths.slice(0, 6).map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>` : '<div class="empty-block" style="padding:8px;">no overlay sprites</div>'}
+            ${sp.notes ? `<div class="sb-notes">${escapeHtml(sp.notes)}</div>` : ''}
+          </div>
+        </div>`;
+    } else if (fallback && fallback.fitNote) {
+      html += `
+        <div class="detail-section">
+          <span class="ds-label">Note</span>
+          <p>${escapeHtml(fallback.fitNote)}</p>
+        </div>
+        <div class="empty-block">No deep investigation entry — this option is summarized only at the report level.</div>`;
+    } else if (!fallback || !fallback.fromRecommendation) {
+      html += '<div class="empty-block">No data.</div>';
+    }
+
+    body.innerHTML = html;
+    modal.classList.add('open');
+  }
+
+  function closeDetail() {
+    $('detail-modal').classList.remove('open');
+  }
+
+  $('detail-close').addEventListener('click', closeDetail);
+  $('detail-modal').addEventListener('click', (e) => {
+    if (e.target === $('detail-modal')) closeDetail();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDetail();
+  });
+
+  renderSummary();
+  renderTopRecs();
+  renderInvOnly();
+  renderInvPos();
+  renderBlockers();
+  renderSkip();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2549 @@
+{
+  "format_version": 1,
+  "slot": "armor",
+  "notes": "Source of truth for the item editor (armor tab). DCSS base types from item-prop.cc: robe (AC 2), leather (3), ring_mail (5), scale_mail (6), chain_mail (8), plate (10), crystal_plate (14), troll_leather (3+regen), dragon armours (5-12+ego). Heavy bias on dragon and unique armors at T5.",
+  "base_types": {
+    "robe": {
+      "label": "Robe",
+      "category": "armor",
+      "dcss_base": "robe",
+      "dcss_ac": 2,
+      "flavor": "Cloth, fast, casts well. Future: regen + spell synergy."
+    },
+    "leather": {
+      "label": "Leather",
+      "category": "armor",
+      "dcss_base": "leather",
+      "dcss_ac": 3,
+      "flavor": "Light, mobile. Stealth/agility flavor."
+    },
+    "studded": {
+      "label": "Studded Leather",
+      "category": "armor",
+      "dcss_base": "leather",
+      "dcss_ac": 3,
+      "flavor": "Reinforced leather. The mid-light option."
+    },
+    "ring_mail": {
+      "label": "Ring Mail",
+      "category": "armor",
+      "dcss_base": "ring_mail",
+      "dcss_ac": 5,
+      "flavor": "Riveted iron rings. Common medium armor."
+    },
+    "scale_mail": {
+      "label": "Scale Mail",
+      "category": "armor",
+      "dcss_base": "scale_mail",
+      "dcss_ac": 6,
+      "flavor": "Layered metal scales. Solid mid-tier."
+    },
+    "chain_mail": {
+      "label": "Chain Mail",
+      "category": "armor",
+      "dcss_base": "chain_mail",
+      "dcss_ac": 8,
+      "flavor": "Interlinked rings. The workhorse heavy."
+    },
+    "splint_mail": {
+      "label": "Splint Mail",
+      "category": "armor",
+      "dcss_base": "scale_mail",
+      "dcss_ac": 7,
+      "flavor": "Strips of metal over chain. Heavy but flexible."
+    },
+    "banded_mail": {
+      "label": "Banded Mail",
+      "category": "armor",
+      "dcss_base": "scale_mail",
+      "dcss_ac": 7,
+      "flavor": "Concentric bands. Mid-heavy choice."
+    },
+    "plate": {
+      "label": "Plate Armor",
+      "category": "armor",
+      "dcss_base": "plate",
+      "dcss_ac": 10,
+      "flavor": "Forged plates. Heaviest standard armor."
+    },
+    "crystal_plate": {
+      "label": "Crystal Plate",
+      "category": "armor",
+      "dcss_base": "crystal_plate",
+      "dcss_ac": 14,
+      "flavor": "Living crystal lattice. End-game heavy."
+    },
+    "troll_leather": {
+      "label": "Troll Leather",
+      "category": "armor",
+      "dcss_base": "troll_leather",
+      "dcss_ac": 3,
+      "flavor": "Light hide that knits its own wounds. Future: regen."
+    },
+    "dragon_scales": {
+      "label": "Dragon Scales",
+      "category": "armor",
+      "dcss_base": "dragon",
+      "dcss_ac": 9,
+      "flavor": "Hide pulled from dragons. Each color carries an element."
+    }
+  },
+  "flavor_tags": {
+    "fortified": {
+      "color": "#aaccdd",
+      "desc": "Future: flat damage reduction. Currently: Stamina affix bonus."
+    },
+    "stealth": {
+      "color": "#666688",
+      "desc": "Future: lower aggro range. Currently: Agility affix bonus."
+    },
+    "regen": {
+      "color": "#66cc88",
+      "desc": "Future: HP regen tick. Currently: Regen affix bonus."
+    },
+    "fire_res": {
+      "color": "#ff6633",
+      "desc": "Future: % damage reduction from fire. Currently: Stamina affix bonus."
+    },
+    "cold_res": {
+      "color": "#66ccff",
+      "desc": "Future: % damage reduction from cold. Currently: Stamina affix bonus."
+    },
+    "poison_res": {
+      "color": "#66cc44",
+      "desc": "Future: immune to poison DoT. Currently: Stamina affix bonus."
+    },
+    "willpower": {
+      "color": "#ffaa88",
+      "desc": "Future: magic resistance. Currently: Stamina affix bonus."
+    },
+    "swiftness": {
+      "color": "#aaddff",
+      "desc": "Future: +move speed. Currently: Agility affix bonus."
+    },
+    "ponderous": {
+      "color": "#998866",
+      "desc": "Future: -move speed (drawback). Currently: no penalty."
+    },
+    "elemental": {
+      "color": "#ff8866",
+      "desc": "Future: multi-element resistance. Currently: Stamina affix bonus."
+    },
+    "lordly": {
+      "color": "#ffdd44",
+      "desc": "Future: aura buff. Currently: Strength affix bonus."
+    },
+    "thorns": {
+      "color": "#aa6666",
+      "desc": "Future: reflect % melee damage. Currently: no bonus."
+    }
+  },
+  "items": [
+    {
+      "id": "tattered_hide",
+      "name": "Tattered Hide",
+      "slot": "armor",
+      "rarity": "common",
+      "tile": "animal_skin_1_new.png",
+      "base_type": "leather",
+      "armor": 8,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Whatever it was, it's leather now.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "patchwork_robe",
+      "name": "Patchwork Robe",
+      "slot": "armor",
+      "rarity": "common",
+      "tile": "robe_1_old.png",
+      "base_type": "robe",
+      "armor": 8,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [
+        "regen"
+      ],
+      "lore": "Mended often. Keeps falling apart.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 280,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "leather_jerkin",
+      "name": "Leather Jerkin",
+      "slot": "armor",
+      "rarity": "common",
+      "tile": "leather_armor_1.png",
+      "base_type": "leather",
+      "armor": 8,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Smells of old smoke.",
+      "drop_weights": [
+        70,
+        20,
+        2,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "studded_leather",
+      "name": "Studded Leather",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "studded_leather_armor.png",
+      "base_type": "studded",
+      "armor": 9,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Iron rivets in a leather grid. Doesn't catch on fences.",
+      "drop_weights": [
+        55,
+        35,
+        5,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "iron_brigandine",
+      "name": "Iron Brigandine",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "ring_mail_1_new.png",
+      "base_type": "ring_mail",
+      "armor": 9,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Cheap and reliable. Heavy on the shoulders.",
+      "drop_weights": [
+        50,
+        35,
+        8,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "scout_robe",
+      "name": "Scout's Robe",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "robe_1_new.png",
+      "base_type": "robe",
+      "armor": 12,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "lore": "Dyed in grass-shadow. Nobody sees it coming.",
+      "drop_weights": [
+        15,
+        65,
+        22,
+        3,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 110,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "fine_chainmail",
+      "name": "Fine Chainmail",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "chain_mail_1.png",
+      "base_type": "chain_mail",
+      "armor": 12,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Each ring closed cleanly. A craftsman's pride.",
+      "drop_weights": [
+        12,
+        60,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "elven_leather",
+      "name": "Elven Leather",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "elven_leather_armor.png",
+      "base_type": "leather",
+      "armor": 14,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "lore": "Lighter than air, by all accounts.",
+      "drop_weights": [
+        8,
+        55,
+        32,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "orcish_chain",
+      "name": "Orcish Chainmail",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "orcish_chain_mail.png",
+      "base_type": "chain_mail",
+      "armor": 12,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Not pretty. Not subtle. Stops things.",
+      "drop_weights": [
+        12,
+        55,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "scale_mail",
+      "name": "Scale Mail",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "scale_mail_1_new.png",
+      "base_type": "scale_mail",
+      "armor": 14,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Each scale overlaps the next. Almost fish.",
+      "drop_weights": [
+        5,
+        50,
+        35,
+        8,
+        2
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "splint_mail",
+      "name": "Splint Mail",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "splint_mail_1.png",
+      "base_type": "splint_mail",
+      "armor": 19,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Strips of steel over linen. A compromise that works.",
+      "drop_weights": [
+        0,
+        18,
+        60,
+        22,
+        4
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "banded_mail",
+      "name": "Banded Mail",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "banded_mail_1.png",
+      "base_type": "banded_mail",
+      "armor": 19,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Bands ring against each other when you walk.",
+      "drop_weights": [
+        0,
+        15,
+        58,
+        25,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "elven_scalemail",
+      "name": "Elven Scalemail",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "elven_scalemail.png",
+      "base_type": "scale_mail",
+      "armor": 19,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "swiftness",
+        "willpower"
+      ],
+      "lore": "Mithril-scaled, light as silk, strong as steel.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "troll_leather",
+      "name": "Troll Leather Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "troll_leather_armor.png",
+      "base_type": "troll_leather",
+      "armor": 21,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "regen"
+      ],
+      "lore": "It bleeds when struck. The bleeding stops on its own.",
+      "drop_weights": [
+        0,
+        8,
+        50,
+        32,
+        12
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "plate_armor",
+      "name": "Plate Armor",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "plate_mail_1.png",
+      "base_type": "plate",
+      "armor": 27,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "ponderous"
+      ],
+      "lore": "Forged plates. Heavy. Honest.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        60,
+        28
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "swamp_dragon_armor",
+      "name": "Swamp Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "swamp_dragon_armor_new.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "poison_res"
+      ],
+      "lore": "Always damp. Smells faintly of bog.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 85,
+        "sat": 0.95,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "ice_dragon_armor",
+      "name": "Ice Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "ice_dragon_armor_new.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "cold_res"
+      ],
+      "lore": "Cold to the touch. Colder when struck.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "fire_dragon_armor",
+      "name": "Fire Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "blue_dragon_scale_mail_new.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fire_res"
+      ],
+      "lore": "Warm where you wear it. Warmer where it strikes.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.2,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "shimmering_armor",
+      "name": "Shimmering Dragon Scales",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "shimmering_dragon_scales.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "willpower"
+      ],
+      "lore": "The colors shift with what's looking at it.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        50,
+        40
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.0,
+        "mode": "shimmer"
+      }
+    },
+    {
+      "id": "wyrmscale_hauberk",
+      "name": "Wyrmscale Hauberk",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "scale_mail_3.png",
+      "base_type": "scale_mail",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "elemental"
+      ],
+      "lore": "Built around the spine of something that never stopped flying.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        38
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "shadow_dragon",
+      "name": "Shadow Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "shadow_dragon_scale_mail.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "willpower"
+      ],
+      "lore": "Light bends around it. So do gazes.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        18,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "gold_dragon_armor",
+      "name": "Gold Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "gold_dragon_armor_new.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "elemental",
+        "fortified"
+      ],
+      "lore": "Each scale catches the sun. Catches the spell, too.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        72
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 45,
+        "sat": 1.15,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "pearl_dragon",
+      "name": "Pearl Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "pearl_dragon_armor.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "willpower",
+        "regen"
+      ],
+      "lore": "Worn by saints, briefly. Always returned.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 0.5,
+        "mode": "colorize",
+        "colorize_strength": 0.35
+      }
+    },
+    {
+      "id": "crystal_plate",
+      "name": "Crystal Plate",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "crystal_plate_mail.png",
+      "base_type": "crystal_plate",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "thorns"
+      ],
+      "lore": "Living crystal grown over a hauberk. Hums in melee.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        10,
+        65
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_revenant": 8,
+        "of_unbroken": 8,
+        "of_thorns": 8,
+        "of_obstinance": 6,
+        "of_steadfast": 5
+      }
+    },
+    {
+      "id": "lear_chainmail",
+      "name": "Lear's Chainmail",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_lear.png",
+      "base_type": "chain_mail",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "willpower"
+      ],
+      "lore": "Worn by a king who refused to take it off.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_might",
+        "of_the_bear"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "robe_of_folly",
+      "name": "Robe of Folly",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_folly.png",
+      "base_type": "robe",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "regen",
+        "willpower"
+      ],
+      "lore": "Anyone who wears it makes one terrible decision. They survive it.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_regen"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "robe_of_misfortune",
+      "name": "Robe of Misfortune",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_misfortune.png",
+      "base_type": "robe",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "thorns",
+        "willpower"
+      ],
+      "lore": "Bad things happen near it. Worse things happen when struck.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        20
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_dark_resist"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_revenant": 8
+      }
+    },
+    {
+      "id": "orcish_leather",
+      "name": "Orcish Leather",
+      "slot": "armor",
+      "rarity": "common",
+      "tile": "orcish_leather_armor.png",
+      "base_type": "leather",
+      "armor": 8,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Cured rough. Smells like a forge.",
+      "drop_weights": [
+        70,
+        22,
+        4,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "orcish_ringmail",
+      "name": "Orcish Ringmail",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "tile": "orcish_ringmail.png",
+      "base_type": "ring_mail",
+      "armor": 12,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Hammered hot, riveted cold. Effective.",
+      "drop_weights": [
+        15,
+        60,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "orcish_platemail",
+      "name": "Orcish Platemail",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "orcish_platemail.png",
+      "base_type": "plate",
+      "armor": 19,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Looks like it was bashed into shape. It was.",
+      "drop_weights": [
+        0,
+        18,
+        60,
+        22,
+        4
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "troll_hide",
+      "name": "Troll Hide",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "troll_hide.png",
+      "base_type": "troll_leather",
+      "armor": 14,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "regen"
+      ],
+      "lore": "Raw hide, still healing slowly. So is the wearer.",
+      "drop_weights": [
+        10,
+        50,
+        32,
+        8,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "green_dragon",
+      "name": "Green Dragon Scales",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "green_dragon_scale_mail.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "poison_res"
+      ],
+      "lore": "Dappled jade. Worn by a wyrm who poisoned cities.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 120,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "mottled_dragon",
+      "name": "Mottled Dragon Scales",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "mottled_dragon_armor_new.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fire_res",
+        "elemental"
+      ],
+      "lore": "Patchwork brown. Spat sticky napalm.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "silver_dragon",
+      "name": "Silver Dragon Armor",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "silver_dragon_scale_mail_new.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "willpower",
+        "fortified"
+      ],
+      "lore": "Spectral wyrm. Spell-thirsty even in death.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        72
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.0,
+        "mode": "colorize",
+        "colorize_strength": 0.45
+      }
+    },
+    {
+      "id": "quicksilver_dragon",
+      "name": "Quicksilver Dragon Scales",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "quicksilver_dragon_scale_mail.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "swiftness",
+        "willpower"
+      ],
+      "lore": "Liquid sheen. Always slightly off-pace with the rest of the world.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        72
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "shadow_dragon_scales",
+      "name": "Shadow Dragon Scales",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "shadow_dragon_scales.png",
+      "base_type": "dragon_scales",
+      "armor": 42,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "Lighter than the mail. Darker than the void.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        14,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 270,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "robe_of_clouds",
+      "name": "Robe of Clouds",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_clouds.png",
+      "base_type": "robe",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "willpower",
+        "regen"
+      ],
+      "lore": "Fades in and out of solid the longer the wearer stands still.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_finesse",
+        "of_lightning_resist"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "faerie_dragon",
+      "name": "Faerie Dragon Hide",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_faerie.png",
+      "base_type": "dragon_scales",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "elemental",
+        "willpower",
+        "swiftness"
+      ],
+      "lore": "Light enough to be silly. Strong enough to be feared.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_finesse",
+        "of_cold_resist"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 320,
+        "sat": 1.2,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "salamander_hide",
+      "name": "Salamander Hide",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_salamander.png",
+      "base_type": "leather",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fire_res",
+        "regen"
+      ],
+      "lore": "Hot to the touch. Cold to the things hitting it.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_fire_resist",
+        "of_regen"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_revenant": 8,
+        "of_unbroken": 6,
+        "of_thorns": 5,
+        "of_obstinance": 5
+      }
+    },
+    {
+      "id": "dragon_kings_robe",
+      "name": "Robe of the Dragon King",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_dragon_king.png",
+      "base_type": "robe",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "elemental",
+        "lordly",
+        "willpower"
+      ],
+      "lore": "Worn by the wyrm who claimed the title. Briefly.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_might",
+        "of_fire_resist"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "armor_of_zhor",
+      "name": "Armor of Zhor",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_zhor.png",
+      "base_type": "leather",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "regen",
+        "stealth"
+      ],
+      "lore": "Worn by Zhor, who could not be found. Or hurt.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_regen",
+        "of_vitality"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "id": "robe_of_night",
+      "name": "Robe of Night",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "urand_night_new.png",
+      "base_type": "robe",
+      "armor": 48,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "dark",
+        "willpower"
+      ],
+      "lore": "Dimmer than the room around it. Always.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        20
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_dark_resist",
+        "of_finesse"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      }
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_devotion": 22,
+        "of_haste": 18,
+        "of_lifesteal": 12,
+        "of_quickcast": 15
+      },
+      "armor": 48,
+      "base_type": "robe",
+      "default_tint": {
+        "hue": 339.7,
+        "mode": "shimmer",
+        "sat": 0.903
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "regen",
+        "willpower",
+        "holy"
+      ],
+      "id": "robe_of_folly_rosegold",
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_holy_resist"
+      ],
+      "item_tier": 5,
+      "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
+      "name": "Rose-gold Robe of Folly",
+      "rarity": "legendary",
+      "slot": "armor",
+      "tile": "urand_folly.png",
+      "unique": true,
+      "recolor_of": "robe_of_folly"
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_embers": 18,
+        "of_frost": 18,
+        "of_storms": 18,
+        "of_devotion": 18,
+        "of_venom": 18,
+        "of_shadows": 18,
+        "of_sharpness": 18
+      },
+      "armor": 48,
+      "base_type": "robe",
+      "default_tint": {
+        "hue": 152.9,
+        "mode": "prismatic",
+        "sat": 1.0
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "regen",
+        "willpower"
+      ],
+      "id": "robe_of_folly_prismatic",
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_finesse"
+      ],
+      "item_tier": 5,
+      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
+      "name": "Prismatic Robe of Folly",
+      "rarity": "legendary",
+      "slot": "armor",
+      "tile": "urand_folly.png",
+      "unique": true,
+      "recolor_of": "robe_of_folly"
+    },
+    {
+      "affix_pool": {
+        "of_might": 27,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 30,
+        "of_regen": 15,
+        "of_shadows": 32,
+        "of_lifesteal": 18
+      },
+      "armor": 8,
+      "base_type": "leather",
+      "default_tint": {
+        "hue": 299.7,
+        "mode": "normal",
+        "sat": 1.139
+      },
+      "drop_weights": [
+        60,
+        12,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 2,
+      "flavor_tags": [
+        "dark"
+      ],
+      "id": "leather_jerkin_voidwrought",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
+      "name": "Voidwrought Leather Jerkin",
+      "rarity": "uncommon",
+      "slot": "armor",
+      "tile": "leather_armor_1.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_devotion": 22,
+        "of_haste": 18,
+        "of_lifesteal": 12,
+        "of_quickcast": 15
+      },
+      "armor": 19,
+      "base_type": "banded_mail",
+      "default_tint": {
+        "hue": 332.9,
+        "mode": "shimmer",
+        "sat": 0.843
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.18,
+      "evasion": 5,
+      "flavor_tags": [
+        "fortified",
+        "holy"
+      ],
+      "id": "banded_mail_rosegold",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
+      "name": "Rose-gold Banded Mail",
+      "rarity": "epic",
+      "slot": "armor",
+      "tile": "banded_mail_1.png",
+      "unique": false,
+      "recolor_of": "banded_mail"
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 26,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_devotion": 28,
+        "of_channeling": 15,
+        "of_quickcast": 12
+      },
+      "armor": 19,
+      "base_type": "plate",
+      "default_tint": {
+        "hue": 44.7,
+        "mode": "shimmer",
+        "sat": 0.931
+      },
+      "drop_weights": [
+        3,
+        25,
+        60,
+        12,
+        0
+      ],
+      "enchant_chance": 0.18,
+      "evasion": 5,
+      "flavor_tags": [
+        "fortified",
+        "holy"
+      ],
+      "id": "orcish_platemail_gilded",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "Cathedral-gold leaf, beaten thin and prayed over for a hundred years.",
+      "name": "Gilded Orcish Platemail",
+      "rarity": "epic",
+      "slot": "armor",
+      "tile": "orcish_platemail.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 52,
+        "of_the_bear": 45,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 28,
+        "of_dark_resist": 8,
+        "of_regen": 33
+      },
+      "armor": 48,
+      "base_type": "robe",
+      "default_tint": {
+        "hue": 127.4,
+        "mode": "normal",
+        "sat": 1.08
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "thorns",
+        "willpower"
+      ],
+      "id": "robe_of_misfortune_verdant",
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_poison_resist"
+      ],
+      "item_tier": 5,
+      "lore": "Vines crawl over the haft, seeking soil that is not there.",
+      "name": "Verdant Robe of Misfortune",
+      "rarity": "legendary",
+      "slot": "armor",
+      "tile": "urand_misfortune.png",
+      "unique": true
+    },
+    {
+      "affix_pool": {
+        "of_might": 29,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 52,
+        "of_the_bear": 60,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_sharpness": 14
+      },
+      "armor": 12,
+      "base_type": "robe",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 3,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "id": "scout_robe_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 2,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Scout's Robe",
+      "rarity": "uncommon",
+      "slot": "armor",
+      "tile": "robe_1_new.png",
+      "unique": false,
+      "recolor_of": "scout_robe"
+    },
+    {
+      "affix_pool": {
+        "of_might": 29,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 52,
+        "of_the_bear": 60,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_sharpness": 14
+      },
+      "armor": 48,
+      "base_type": "robe",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "stealth",
+        "willpower",
+        "regen"
+      ],
+      "id": "robe_of_clouds_ironclad",
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_lightning_resist"
+      ],
+      "item_tier": 5,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Robe of Clouds",
+      "rarity": "legendary",
+      "slot": "armor",
+      "tile": "urand_clouds.png",
+      "unique": true,
+      "recolor_of": "robe_of_clouds"
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 30,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_venom": 22,
+        "of_dex_mastery": 14,
+        "of_crit": 15
+      },
+      "armor": 8,
+      "base_type": "leather",
+      "default_tint": {
+        "hue": 148.1,
+        "mode": "shimmer",
+        "sat": 0.979
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 2,
+      "flavor_tags": [
+        "poison"
+      ],
+      "id": "tattered_hide_jadeforged",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
+      "name": "Jade-forged Tattered Hide",
+      "rarity": "rare",
+      "slot": "armor",
+      "tile": "animal_skin_1_new.png",
+      "unique": false,
+      "recolor_of": "tattered_hide"
+    },
+    {
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 34,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15,
+        "of_embers": 30,
+        "of_quickcast": 14,
+        "of_channeling": 10
+      },
+      "armor": 8,
+      "base_type": "leather",
+      "default_tint": {
+        "hue": 27.9,
+        "mode": "shimmer",
+        "sat": 1.166
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 2,
+      "flavor_tags": [
+        "fire"
+      ],
+      "id": "orcish_leather_embered",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Carries its own slow heat. Embers drift from it when struck.",
+      "name": "Embered Orcish Leather",
+      "rarity": "rare",
+      "slot": "armor",
+      "tile": "orcish_leather_armor.png",
+      "unique": false,
+      "recolor_of": "orcish_leather"
+    },
+    {
+      "id": "troll_hide_armor",
+      "name": "Troll-Hide Armor",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "troll_hide.png",
+      "base_type": "troll_leather",
+      "armor": 18,
+      "evasion": 4,
+      "item_tier": 3,
+      "flavor_tags": [
+        "feast",
+        "regen"
+      ],
+      "lore": "Sloughs and re-knits with each meal. Smells worse than its previous owner.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "regen",
+      "implicit_affixes": [
+        "of_vitality",
+        "of_regen"
+      ],
+      "affix_pool": {
+        "of_might": 12,
+        "of_the_bear": 10
+      }
+    },
+    {
+      "id": "mummy_tomb_wrappings",
+      "name": "Sigil-Wrappings of the Tomb",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "urand_misfortune.png",
+      "base_type": "robe",
+      "armor": 6,
+      "evasion": 18,
+      "item_tier": 3,
+      "flavor_tags": [
+        "dark",
+        "willpower"
+      ],
+      "lore": "Three sigils per wrap. The sigils outlast the linen.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "ancient",
+      "implicit_affixes": [
+        "of_dark_resist",
+        "of_int_mastery"
+      ],
+      "affix_pool": {
+        "of_wisdom": 16,
+        "of_channeling": 12
+      },
+      "default_tint": {
+        "hue": 40,
+        "sat": 0.6,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "gargoyle_stoneflesh_plate",
+      "name": "Stoneflesh Plate",
+      "slot": "armor",
+      "rarity": "epic",
+      "tile": "urand_lear.png",
+      "base_type": "plate",
+      "armor": 30,
+      "evasion": 0,
+      "item_tier": 4,
+      "flavor_tags": [
+        "petrify",
+        "fortified"
+      ],
+      "lore": "Becomes the wearer's skin where it touches it. Take it off carefully.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "stone",
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
+      "affix_pool": {
+        "of_the_bear": 18,
+        "of_might": 12
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 0.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "kobold_scavenger_coat",
+      "name": "Scavenger's Coat",
+      "slot": "armor",
+      "rarity": "rare",
+      "tile": "urand_ratskin_cloak.png",
+      "base_type": "leather",
+      "armor": 8,
+      "evasion": 8,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortune",
+        "regen"
+      ],
+      "lore": "Patched with whatever the previous owner had no further use for.",
+      "drop_weights": [
+        0,
+        12,
+        30,
+        8,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "scavenger",
+      "implicit_affixes": [
+        "of_plunder",
+        "of_regen"
+      ],
+      "affix_pool": {
+        "of_plunder": 12,
+        "of_finesse": 10
+      }
+    }
+  ]
+}

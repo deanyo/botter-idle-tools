@@ -1,0 +1,1106 @@
+{
+  "format_version": 2,
+  "notes": "Cloak slot \u2014 DCSS ARM_CLOAK. Sprites under item/armor/ matching cloak shapes.",
+  "base_types": {
+    "cloak": {
+      "label": "Cloak"
+    }
+  },
+  "flavor_tags": {},
+  "drop_weight_schema": {
+    "description": "5 ints, T1..T5"
+  },
+  "items": [
+    {
+      "id": "ratskin_cloak",
+      "name": "Ratskin Cloak",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "urand_ratskin_cloak.png",
+      "base_type": "cloak",
+      "armor": 6,
+      "evasion": 36,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "regen"
+      ],
+      "lore": "Stitched from a thousand rats. They were a problem first.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8
+      },
+      "overlay": "cloak_1_leather"
+    },
+    {
+      "id": "starlight_cloak",
+      "name": "Cloak of Starlight",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "urand_starlight.png",
+      "base_type": "cloak",
+      "armor": 6,
+      "evasion": 36,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "willpower"
+      ],
+      "lore": "Twilight clings to it. So does whatever's hunting you.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_holy_resist"
+      ],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8
+      },
+      "overlay": "cloak_3",
+      "default_tint": {
+        "hue": 200,
+        "sat": 0.5,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "cloak_of_flash",
+      "name": "Cloak of Flash",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "urand_flash.png",
+      "base_type": "cloak",
+      "armor": 6,
+      "evasion": 36,
+      "item_tier": 5,
+      "flavor_tags": [
+        "swiftness",
+        "flying",
+        "thunderous"
+      ],
+      "lore": "When they move, light moves out of the way.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8
+      },
+      "overlay": "cloak_1_leather",
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.4,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "cloak_of_the_thief",
+      "name": "Cloak of the Thief",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "urand_thief.png",
+      "base_type": "cloak",
+      "armor": 6,
+      "evasion": 36,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "footwork"
+      ],
+      "lore": "They've left more places than they've entered.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8
+      },
+      "overlay": "cloak_2",
+      "default_tint": {
+        "hue": 0,
+        "sat": 0.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "leather_cloak",
+      "name": "Leather Cloak",
+      "slot": "cloak",
+      "rarity": "common",
+      "tile": "cloak_1_leather.png",
+      "base_type": "cloak",
+      "armor": 1,
+      "evasion": 6,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Coarse weave. Keeps the rain out, mostly.",
+      "drop_weights": [
+        50,
+        30,
+        5,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_leather"
+    },
+    {
+      "id": "travelers_cloak",
+      "name": "Traveler's Cloak",
+      "slot": "cloak",
+      "rarity": "common",
+      "tile": "cloak_2.png",
+      "base_type": "cloak",
+      "armor": 1,
+      "evasion": 6,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Worn in the rain. Still warm enough.",
+      "drop_weights": [
+        45,
+        32,
+        8,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_travelers"
+    },
+    {
+      "id": "wool_cloak",
+      "name": "Wool Cloak",
+      "slot": "cloak",
+      "rarity": "uncommon",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 2,
+      "evasion": 9,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "Hood deep enough to hide a face.",
+      "drop_weights": [
+        10,
+        40,
+        30,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_wool"
+    },
+    {
+      "id": "hooded_cloak",
+      "name": "Hooded Cloak",
+      "slot": "cloak",
+      "rarity": "uncommon",
+      "tile": "cloak_4.png",
+      "base_type": "cloak",
+      "armor": 2,
+      "evasion": 9,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "Hood deep enough to hide a face.",
+      "drop_weights": [
+        5,
+        40,
+        30,
+        10,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_hooded"
+    },
+    {
+      "id": "woven_cloak",
+      "name": "Woven Cloak",
+      "slot": "cloak",
+      "rarity": "rare",
+      "tile": "cloak_2.png",
+      "base_type": "cloak",
+      "armor": 2,
+      "evasion": 14,
+      "item_tier": 3,
+      "flavor_tags": [
+        "stealth",
+        "willpower"
+      ],
+      "lore": "Tailored for those who do not wish to be seen.",
+      "drop_weights": [
+        0,
+        15,
+        40,
+        30,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_woven"
+    },
+    {
+      "id": "rangers_cloak",
+      "name": "Ranger's Cloak",
+      "slot": "cloak",
+      "rarity": "rare",
+      "tile": "cloak_4.png",
+      "base_type": "cloak",
+      "armor": 2,
+      "evasion": 14,
+      "item_tier": 3,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "lore": "Tailored for those who do not wish to be seen.",
+      "drop_weights": [
+        0,
+        10,
+        35,
+        35,
+        10
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_rangers"
+    },
+    {
+      "id": "silken_cloak",
+      "name": "Silken Cloak",
+      "slot": "cloak",
+      "rarity": "epic",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 22,
+      "item_tier": 4,
+      "flavor_tags": [
+        "stealth",
+        "willpower",
+        "regen"
+      ],
+      "lore": "Bears the high marshal's clasp.",
+      "drop_weights": [
+        0,
+        0,
+        15,
+        35,
+        30
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_silken"
+    },
+    {
+      "id": "warlord_cloak",
+      "name": "Warlord's Cloak",
+      "slot": "cloak",
+      "rarity": "epic",
+      "tile": "cloak_1_leather.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 22,
+      "item_tier": 4,
+      "flavor_tags": [
+        "lordly",
+        "fortified"
+      ],
+      "lore": "Silk so fine the wind passes through it twice.",
+      "drop_weights": [
+        0,
+        0,
+        5,
+        30,
+        40
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8
+      },
+      "overlay": "cloak_warlord"
+    },
+    {
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 34,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 28,
+        "of_regen": 8,
+        "of_storms": 32,
+        "of_velocity": 14,
+        "of_plunder": 8
+      },
+      "armor": 1,
+      "base_type": "cloak",
+      "default_tint": {
+        "hue": 248.7,
+        "mode": "shimmer",
+        "sat": 1.079
+      },
+      "drop_weights": [
+        60,
+        12,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 6,
+      "flavor_tags": [
+        "thunderous"
+      ],
+      "id": "travelers_cloak_stormtouched",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Static raises the hairs on your arm. A faint hum, always present.",
+      "name": "Stormtouched Traveler's Cloak",
+      "overlay": "cloak_travelers",
+      "rarity": "rare",
+      "slot": "cloak",
+      "tile": "cloak_2.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 33,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 32,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 22,
+        "of_venom": 28,
+        "of_plunder": 8
+      },
+      "armor": 1,
+      "base_type": "cloak",
+      "default_tint": {
+        "hue": 107.1,
+        "mode": "normal",
+        "sat": 0.793
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 6,
+      "flavor_tags": [
+        "poison"
+      ],
+      "id": "travelers_cloak_mossy",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "name": "Mossy Traveler's Cloak",
+      "overlay": "cloak_travelers",
+      "rarity": "uncommon",
+      "slot": "cloak",
+      "tile": "cloak_2.png",
+      "unique": false,
+      "recolor_of": "travelers_cloak"
+    },
+    {
+      "affix_pool": {
+        "of_might": 24,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 40,
+        "of_the_bear": 42,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 34,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 28,
+        "of_regen": 8,
+        "of_storms": 32,
+        "of_velocity": 14,
+        "of_sharpness": 14,
+        "of_plunder": 8
+      },
+      "armor": 1,
+      "base_type": "cloak",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 6,
+      "flavor_tags": [
+        "thunderous"
+      ],
+      "id": "travelers_cloak_stormtouched_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Stormtouched Traveler's Cloak",
+      "overlay": "cloak_travelers",
+      "rarity": "uncommon",
+      "slot": "cloak",
+      "tile": "cloak_2.png",
+      "unique": false,
+      "recolor_of": "travelers_cloak_stormtouched"
+    },
+    {
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 26,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 26,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_shadows": 26,
+        "of_quickcast": 12,
+        "of_plunder": 8
+      },
+      "armor": 1,
+      "base_type": "cloak",
+      "default_tint": {
+        "hue": 272.6,
+        "mode": "normal",
+        "sat": 0.66
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 6,
+      "flavor_tags": [
+        "dark"
+      ],
+      "id": "leather_cloak_shadowed",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Hard to see in dim light, even when held directly before you.",
+      "name": "Shadowed Leather Cloak",
+      "overlay": "cloak_leather",
+      "rarity": "uncommon",
+      "slot": "cloak",
+      "tile": "cloak_1_leather.png",
+      "unique": false,
+      "recolor_of": "leather_cloak"
+    },
+    {
+      "id": "spriggan_fae_cloak",
+      "name": "Fey-Sap Cloak",
+      "slot": "cloak",
+      "rarity": "epic",
+      "tile": "cloak_4.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 24,
+      "item_tier": 4,
+      "flavor_tags": [
+        "stealth",
+        "willpower"
+      ],
+      "lore": "It dries the wood of every forest it walks through.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "forest",
+      "implicit_affixes": [
+        "of_haste",
+        "of_resonance"
+      ],
+      "affix_pool": {
+        "of_finesse": 16,
+        "of_wisdom": 12
+      },
+      "default_tint": {
+        "hue": 100,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "tengu_wind_cloak",
+      "name": "Windborn Cloak",
+      "slot": "cloak",
+      "rarity": "rare",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 1,
+      "evasion": 16,
+      "item_tier": 3,
+      "flavor_tags": [
+        "swiftness",
+        "flying"
+      ],
+      "lore": "Catches the air the wearer's wings would have, were they still there.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "windborn",
+      "implicit_affixes": [
+        "of_haste"
+      ],
+      "affix_pool": {
+        "of_finesse": 14
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "vampire_nightshade_cloak",
+      "name": "Nightshade Cloak",
+      "slot": "cloak",
+      "rarity": "rare",
+      "tile": "cloak_2.png",
+      "base_type": "cloak",
+      "armor": 2,
+      "evasion": 14,
+      "item_tier": 3,
+      "flavor_tags": [
+        "stealth",
+        "vampiric"
+      ],
+      "lore": "Folded shadow with a salt taste. Closes around the neck like a kiss.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "vampiric",
+      "implicit_affixes": [
+        "of_lifesteal",
+        "of_haste"
+      ],
+      "affix_pool": {
+        "of_lifesteal": 14,
+        "of_finesse": 10,
+        "of_recoup": 5,
+        "of_smoldering_step": 5,
+        "of_warden_step": 5,
+        "of_abundance": 4,
+        "of_devastation": 4,
+        "of_arcane_flow": 4
+      },
+      "default_tint": {
+        "hue": 270,
+        "sat": 0.7,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "orc_beoghs_banner",
+      "name": "Beogh's Banner",
+      "slot": "cloak",
+      "rarity": "epic",
+      "tile": "cloak_1_leather.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 18,
+      "item_tier": 3,
+      "flavor_tags": [
+        "rage",
+        "lordly"
+      ],
+      "lore": "Pinned to the back of every orc warlord. Most are too proud to drop it.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "orcish",
+      "implicit_affixes": [
+        "of_might",
+        "of_berserker"
+      ],
+      "affix_pool": {
+        "of_might": 18,
+        "of_berserker": 14
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.3,
+        "mode": "normal"
+      }
+    },
+    {
+      "id": "lernaean_hydra_cloak",
+      "name": "Lernaean Hydra-Scale Cloak",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 6,
+      "evasion": 12,
+      "item_tier": 3,
+      "flavor_tags": [
+        "regen"
+      ],
+      "lore": "Each scale grew back twice. The wearer feels the same.",
+      "drop_weights": [
+        0,
+        0,
+        30,
+        0,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_serpent_growth",
+        "of_vitality"
+      ],
+      "affix_pool": {
+        "of_vitality": 24,
+        "of_the_bear": 18,
+        "of_regen": 16,
+        "of_poison_resist": 14
+      },
+      "boss_drop": "boss_lernaean",
+      "biome_pool": [
+        "swamp"
+      ]
+    },
+    {
+      "id": "student_mantle",
+      "name": "Student's Mantle",
+      "slot": "cloak",
+      "rarity": "common",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 1,
+      "evasion": 6,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Ink-stained at the cuffs. Stitched by someone in a hurry.",
+      "drop_weights": [
+        55,
+        30,
+        8,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 8,
+        "of_finesse": 10,
+        "of_wisdom": 30,
+        "of_vitality": 14,
+        "of_the_cat": 14,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10,
+        "of_lightning_resist": 10,
+        "of_holy_resist": 8,
+        "of_poison_resist": 8,
+        "of_dark_resist": 8,
+        "of_resonance": 16,
+        "of_lingering": 16,
+        "of_quickcast": 18,
+        "of_channeling": 14,
+        "of_regen": 8
+      }
+    },
+    {
+      "id": "demonspawn_pyre_mantle",
+      "name": "Pyre-Stitched Mantle",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_4.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 14,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fire",
+        "demon"
+      ],
+      "lore": "Cinders sewn into the lining. Smoulders in the dark.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        18
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "demon",
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_embers"
+      ],
+      "affix_pool": {
+        "of_pyromancer": 16,
+        "of_fire_resist": 12,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_channeling": 12,
+        "of_haste": 8
+      },
+      "default_tint": {
+        "hue": 5,
+        "sat": 1.5,
+        "mode": "colorize",
+        "colorize_strength": 0.65
+      },
+      "biome_pool": [
+        "forge",
+        "pandemonium"
+      ]
+    },
+    {
+      "id": "lair_grove_cloak",
+      "name": "Cloak of the Tree Grove",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "item_tier": 5,
+      "flavor_tags": [
+        "regen",
+        "swiftness"
+      ],
+      "lore": "Stitched from leaves the grove kept after the season. Each one still drinks light.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_regen",
+        "of_smoldering_step"
+      ],
+      "affix_pool": {},
+      "vault_drop": "lair_tree_grove_5x5"
+    }
+  ]
+}

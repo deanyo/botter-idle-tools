@@ -1,0 +1,1968 @@
+{
+  "format_version": 1,
+  "slot": "shield",
+  "notes": "Source of truth for the item editor (shield tab). DCSS base types from item-prop.cc: buckler (SH 3), kite shield (SH 8), tower shield (SH 13), orb (SH 0 + ego). Shields lean DEF-heavy. The orb base is a magic-themed offhand, lighter on flat DEF but tagged with magic flavor.",
+  "base_types": {
+    "buckler": {
+      "label": "Buckler",
+      "category": "shield",
+      "dcss_base": "buckler",
+      "dcss_sh": 3,
+      "flavor": "Small round shield. Light, fast, parries; agility synergy."
+    },
+    "round_shield": {
+      "label": "Round Shield",
+      "category": "shield",
+      "dcss_base": "buckler",
+      "dcss_sh": 4,
+      "flavor": "Mid-size; balanced parry and block."
+    },
+    "kite_shield": {
+      "label": "Kite Shield",
+      "category": "shield",
+      "dcss_base": "kite_shield",
+      "dcss_sh": 8,
+      "flavor": "Large body shield. Heavy block, good warfront."
+    },
+    "tower_shield": {
+      "label": "Tower Shield",
+      "category": "shield",
+      "dcss_base": "tower_shield",
+      "dcss_sh": 13,
+      "flavor": "Wall on a strap. Heaviest 1H-class block."
+    },
+    "orb": {
+      "label": "Orb",
+      "category": "shield",
+      "dcss_base": "orb",
+      "dcss_sh": 0,
+      "flavor": "Magical offhand. Trades flat block for ego utility."
+    }
+  },
+  "flavor_tags": {
+    "fortified": {
+      "color": "#aaccdd",
+      "desc": "Future: flat damage reduction. Currently: Stamina affix bonus."
+    },
+    "reflective": {
+      "color": "#88ccff",
+      "desc": "Future: chance to reflect ranged attacks. Currently: Agility affix bonus."
+    },
+    "thorns": {
+      "color": "#aa6666",
+      "desc": "Future: reflect % of melee damage. Currently: no bonus."
+    },
+    "warding": {
+      "color": "#88ccff",
+      "desc": "Future: chance to negate damage. Currently: Agility affix bonus."
+    },
+    "willpower": {
+      "color": "#ffaa88",
+      "desc": "Future: magic resistance. Currently: Stamina affix bonus."
+    },
+    "lordly": {
+      "color": "#ffdd44",
+      "desc": "Future: aura buff to bot. Currently: Strength affix bonus."
+    },
+    "swiftness": {
+      "color": "#aaddff",
+      "desc": "Future: smaller block penalty to attack speed. Currently: Agility affix bonus."
+    },
+    "elemental": {
+      "color": "#ff8866",
+      "desc": "Future: multi-element resistance. Currently: Stamina affix bonus."
+    },
+    "stardust": {
+      "color": "#cc88ff",
+      "desc": "Future: orb-only \u2014 random buff per floor. Currently: no bonus."
+    },
+    "mayhem": {
+      "color": "#ff6655",
+      "desc": "Future: orb-only \u2014 chance to chain damage. Currently: Strength affix bonus."
+    }
+  },
+  "items": [
+    {
+      "id": "wooden_buckler",
+      "name": "Wooden Buckler",
+      "slot": "shield",
+      "rarity": "common",
+      "tile": "buckler_1_old.png",
+      "base_type": "buckler",
+      "armor": 6,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Round, plain, splintery.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 30,
+        "sat": 1.0,
+        "mode": "colorize"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "iron_buckler",
+      "name": "Iron Buckler",
+      "slot": "shield",
+      "rarity": "common",
+      "tile": "buckler_1_new.png",
+      "base_type": "buckler",
+      "armor": 6,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Hammered iron disc with a strap.",
+      "drop_weights": [
+        75,
+        20,
+        2,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 220,
+        "sat": 0.5,
+        "mode": "colorize",
+        "colorize_strength": 0.4
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "round_shield",
+      "name": "Round Shield",
+      "slot": "shield",
+      "rarity": "uncommon",
+      "tile": "shield_3_round.png",
+      "base_type": "round_shield",
+      "armor": 7,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Worn down by decades of arrow strikes.",
+      "drop_weights": [
+        55,
+        35,
+        5,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 180,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "id": "kite_shield",
+      "name": "Kite Shield",
+      "slot": "shield",
+      "rarity": "uncommon",
+      "tile": "shield_2_kite.png",
+      "base_type": "kite_shield",
+      "armor": 7,
+      "evasion": 2,
+      "item_tier": 1,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Long enough to crouch behind.",
+      "drop_weights": [
+        50,
+        35,
+        8,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8,
+        "of_aegis_thorns": 8
+      },
+      "default_tint": {
+        "hue": 90,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "elven_buckler",
+      "name": "Elven Buckler",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "elven_buckler_1.png",
+      "base_type": "buckler",
+      "armor": 10,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "lore": "Light. Almost silly. The dents tell another story.",
+      "drop_weights": [
+        10,
+        60,
+        25,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 290,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "reinforced_buckler",
+      "name": "Reinforced Buckler",
+      "slot": "shield",
+      "rarity": "uncommon",
+      "tile": "buckler_2_new.png",
+      "base_type": "buckler",
+      "armor": 9,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [],
+      "lore": "Iron rim welded over wood. Twice the weight, twice the life.",
+      "drop_weights": [
+        15,
+        65,
+        25,
+        3,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 30,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "guardsman_kite",
+      "name": "Guardsman's Kite",
+      "slot": "shield",
+      "rarity": "uncommon",
+      "tile": "shield_1.png",
+      "base_type": "kite_shield",
+      "armor": 9,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Standard issue. Never quite clean.",
+      "drop_weights": [
+        12,
+        60,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "elven_shield",
+      "name": "Elven Shield",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "shield_1_elven.png",
+      "base_type": "round_shield",
+      "armor": 14,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "lore": "Gilt with leaves. Holds blows lightly.",
+      "drop_weights": [
+        0,
+        18,
+        60,
+        20,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 130,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "id": "dwarven_buckler",
+      "name": "Dwarven Buckler",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "dwarven_buckler_1.png",
+      "base_type": "buckler",
+      "armor": 14,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified",
+        "reflective"
+      ],
+      "lore": "Stout, riveted, slightly grumpy.",
+      "drop_weights": [
+        0,
+        15,
+        55,
+        25,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "spellward_kite",
+      "name": "Spellward Kite",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "shield_2_new.png",
+      "base_type": "kite_shield",
+      "armor": 14,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "willpower",
+        "warding"
+      ],
+      "lore": "Engraved against magic. The runes sting when struck.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 260,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "large_kite",
+      "name": "Large Kite",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "large_shield_1_new.png",
+      "base_type": "kite_shield",
+      "armor": 14,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Tall as a person. Heavy as a person.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "tower_shield",
+      "name": "Tower Shield",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "large_shield_2_new.png",
+      "base_type": "tower_shield",
+      "armor": 20,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "A wall, briefly portable.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        60,
+        28
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8,
+        "of_unbroken": 8,
+        "of_aegis_thorns": 10
+      },
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "spriggan_shield",
+      "name": "Spriggan Shield",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_4_spriggan.png",
+      "base_type": "buckler",
+      "armor": 22,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "lore": "Light as a leaf. Doesn't move when hit.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 60,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "dragoncrest_shield",
+      "name": "Dragoncrest Shield",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_3.png",
+      "base_type": "kite_shield",
+      "armor": 22,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "elemental"
+      ],
+      "lore": "Forged from a dragon's claw. The crest still looks angry.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        58,
+        32
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "overlay": "shield_dragoncrest",
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "fortress_wall",
+      "name": "Fortress Wall",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "large_shield_3_new.png",
+      "base_type": "tower_shield",
+      "armor": 22,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "thorns"
+      ],
+      "lore": "Heavy enough to redefine 'block.'",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        38
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 30.0,
+        "sat": 1.15,
+        "mode": "normal"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "phantom_aegis",
+      "name": "Phantom Aegis",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_3.png",
+      "base_type": "round_shield",
+      "armor": 31,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "warding",
+        "willpower"
+      ],
+      "lore": "Half-translucent. Catches things that aren't there yet.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        18,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8,
+        "of_aegis_thorns": 8,
+        "of_obstinance": 5
+      },
+      "default_tint": {
+        "hue": 270,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "overlay": "shield_phantom_aegis",
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "id": "warlords_bulwark",
+      "name": "Warlord's Bulwark",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_dd.png",
+      "base_type": "tower_shield",
+      "armor": 31,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "lordly"
+      ],
+      "lore": "Borne in front of the line.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        15,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 0.0,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "shield_of_reflection",
+      "name": "Shield of Reflection",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_of_reflection.png",
+      "base_type": "kite_shield",
+      "armor": 31,
+      "evasion": 10,
+      "item_tier": 5,
+      "flavor_tags": [
+        "reflective",
+        "warding"
+      ],
+      "lore": "Polished. Dangerous to look into.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        12,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.0,
+        "mode": "colorize",
+        "colorize_strength": 0.45
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "lshield_louise",
+      "name": "Louise's Shield",
+      "slot": "shield",
+      "rarity": "legendary",
+      "tile": "lshield_louise.png",
+      "base_type": "tower_shield",
+      "armor": 36,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "thorns"
+      ],
+      "lore": "Forged for a knight who didn't believe in retreat.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_warding",
+        "of_steadfast"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 130.0,
+        "sat": 1.15,
+        "mode": "inverted"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "bullseye",
+      "name": "Bullseye",
+      "slot": "shield",
+      "rarity": "legendary",
+      "tile": "urand_bullseye.png",
+      "base_type": "round_shield",
+      "armor": 36,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "reflective",
+        "warding"
+      ],
+      "lore": "Painted concentric. Ranged attackers find it irresistibly aimable-at.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_iron_aegis"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "id": "gong_shield",
+      "name": "The Gong",
+      "slot": "shield",
+      "rarity": "legendary",
+      "tile": "urand_gong.png",
+      "base_type": "buckler",
+      "armor": 36,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "thorns"
+      ],
+      "lore": "Every blow rings out. Half a mile away, things wake up.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_resonance"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8,
+        "of_aegis_thorns": 8
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "elven_buckler_2",
+      "name": "Elven Targe",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "elven_buckler_2.png",
+      "base_type": "buckler",
+      "armor": 10,
+      "evasion": 3,
+      "item_tier": 2,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "lore": "Filigreed silver vines. The vines grow if you stop looking.",
+      "drop_weights": [
+        8,
+        55,
+        30,
+        7,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 110,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "dwarven_buckler_2",
+      "name": "Dwarven Roundel",
+      "slot": "shield",
+      "rarity": "rare",
+      "tile": "dwarven_buckler_2.png",
+      "base_type": "buckler",
+      "armor": 14,
+      "evasion": 5,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified",
+        "thorns"
+      ],
+      "lore": "Heavier than its size. Heavier than its weight.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 30,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "donald_shield",
+      "name": "Donald's Shield",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_donald.png",
+      "base_type": "kite_shield",
+      "armor": 22,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "lordly"
+      ],
+      "lore": "Donald lost it once. Briefly.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        58,
+        32
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "id": "dd_scion_shield",
+      "name": "Scion's Bulwark",
+      "slot": "shield",
+      "rarity": "epic",
+      "tile": "shield_dd_scion.png",
+      "base_type": "tower_shield",
+      "armor": 22,
+      "evasion": 7,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Forged in deep halls. Inherited.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        38
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 280.0,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "lshield_doomknight",
+      "name": "The Doom Knight's Shield",
+      "slot": "shield",
+      "rarity": "legendary",
+      "tile": "lshield_dd_dk.png",
+      "base_type": "tower_shield",
+      "armor": 36,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fortified",
+        "thorns",
+        "willpower"
+      ],
+      "lore": "Bears the same crest as the blade. Worn together. Buried apart.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_warding",
+        "of_bulwark"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "default_tint": {
+        "hue": 320.0,
+        "sat": 1.2,
+        "mode": "shimmer"
+      },
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "id": "shield_of_resistance",
+      "name": "Shield of Resistance",
+      "slot": "shield",
+      "rarity": "legendary",
+      "tile": "urand_resistance.png",
+      "base_type": "kite_shield",
+      "armor": 36,
+      "evasion": 12,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fire_res",
+        "cold_res",
+        "willpower"
+      ],
+      "lore": "Worn by spell-eaters. Charred at the cuffs.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_fire_resist",
+        "of_iron_aegis",
+        "of_warding"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "block_chance": 20,
+      "block_amount": 15,
+      "overlay": "urand_gong",
+      "default_tint": {
+        "hue": 110,
+        "sat": 1.2,
+        "mode": "normal"
+      }
+    },
+    {
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 26,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_int_mastery": 18,
+        "of_quickcast": 14,
+        "of_resonance": 14,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 36,
+      "base_type": "round_shield",
+      "default_tint": {
+        "hue": 126.3,
+        "mode": "inverted",
+        "sat": 0.796
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "reflective",
+        "warding"
+      ],
+      "id": "bullseye_inverse",
+      "implicit_affixes": [],
+      "item_tier": 5,
+      "lore": "Looking at it too long inverts what you saw before.",
+      "name": "Inverse Bullseye",
+      "rarity": "legendary",
+      "slot": "shield",
+      "tile": "urand_bullseye.png",
+      "unique": true,
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 22,
+        "of_wisdom": 22,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 26,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_devotion": 14,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 10,
+      "base_type": "buckler",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.92,
+          0.92,
+          0.96
+        ]
+      },
+      "drop_weights": [
+        25,
+        60,
+        12,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 3,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "id": "elven_buckler_2_pale",
+      "implicit_affixes": [],
+      "item_tier": 2,
+      "lore": "Bleached past white into a color the eye cannot name.",
+      "name": "Pale Elven Targe",
+      "rarity": "rare",
+      "slot": "shield",
+      "tile": "elven_buckler_2.png",
+      "unique": false,
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "affix_pool": {
+        "of_might": 30,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 44,
+        "of_the_bear": 60,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_sharpness": 14,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 20,
+      "base_type": "tower_shield",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 7,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "id": "tower_shield_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 4,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Tower Shield",
+      "rarity": "rare",
+      "slot": "shield",
+      "tile": "large_shield_2_new.png",
+      "unique": false,
+      "recolor_of": "tower_shield",
+      "block_chance": 25,
+      "block_amount": 20
+    },
+    {
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 40,
+        "of_the_bear": 52,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 26,
+        "of_shadows": 22,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 31,
+      "base_type": "round_shield",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.15,
+          0.13,
+          0.18
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 10,
+      "flavor_tags": [
+        "warding",
+        "willpower",
+        "dark"
+      ],
+      "id": "phantom_aegis_obsidian",
+      "implicit_affixes": [
+        "of_dark_resist",
+        "of_warding"
+      ],
+      "item_tier": 5,
+      "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
+      "name": "Obsidian Phantom Aegis",
+      "overlay": "shield_phantom_aegis",
+      "rarity": "legendary",
+      "slot": "shield",
+      "tile": "shield_3.png",
+      "unique": false,
+      "recolor_of": "phantom_aegis",
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "affix_pool": {
+        "of_might": 30,
+        "of_finesse": 22,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_shadows": 22,
+        "of_lifesteal": 12,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 22,
+      "base_type": "kite_shield",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.95,
+          0.92,
+          0.78
+        ]
+      },
+      "drop_weights": [
+        0,
+        3,
+        25,
+        60,
+        12
+      ],
+      "enchant_chance": 0.18,
+      "evasion": 7,
+      "flavor_tags": [
+        "fortified",
+        "lordly"
+      ],
+      "id": "donald_shield_bone",
+      "implicit_affixes": [],
+      "item_tier": 4,
+      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
+      "name": "Bone Donald's Shield",
+      "rarity": "epic",
+      "slot": "shield",
+      "tile": "shield_donald.png",
+      "unique": false,
+      "block_chance": 20,
+      "block_amount": 15
+    },
+    {
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 36,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_frost": 35,
+        "of_quickcast": 18,
+        "of_crit": 15,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 14,
+      "base_type": "buckler",
+      "default_tint": {
+        "hue": 205.5,
+        "mode": "shimmer",
+        "sat": 0.921
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.18,
+      "evasion": 5,
+      "flavor_tags": [
+        "fortified",
+        "thorns",
+        "cold"
+      ],
+      "id": "dwarven_buckler_2_frostbound",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "A rime of ice will not melt, no matter how warm the room.",
+      "name": "Frostbound Dwarven Roundel",
+      "rarity": "epic",
+      "slot": "shield",
+      "tile": "dwarven_buckler_2.png",
+      "unique": false,
+      "recolor_of": "dwarven_buckler_2",
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "affix_pool": {
+        "of_might": 30,
+        "of_finesse": 22,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_shadows": 22,
+        "of_lifesteal": 12,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 14,
+      "base_type": "round_shield",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.95,
+          0.92,
+          0.78
+        ]
+      },
+      "drop_weights": [
+        3,
+        25,
+        60,
+        12,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 5,
+      "flavor_tags": [
+        "swiftness",
+        "warding"
+      ],
+      "id": "elven_shield_bone",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
+      "name": "Bone Elven Shield",
+      "rarity": "rare",
+      "slot": "shield",
+      "tile": "shield_1_elven.png",
+      "unique": false,
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_embers": 18,
+        "of_frost": 18,
+        "of_storms": 18,
+        "of_devotion": 18,
+        "of_venom": 18,
+        "of_shadows": 18,
+        "of_sharpness": 18,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 36,
+      "base_type": "buckler",
+      "default_tint": {
+        "hue": 161.7,
+        "mode": "prismatic",
+        "sat": 1.0
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "lordly",
+        "thorns"
+      ],
+      "id": "gong_shield_prismatic",
+      "implicit_affixes": [
+        "of_might",
+        "of_warding"
+      ],
+      "item_tier": 5,
+      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
+      "name": "Prismatic The Gong",
+      "rarity": "legendary",
+      "slot": "shield",
+      "tile": "urand_gong.png",
+      "unique": true,
+      "recolor_of": "gong_shield",
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "affix_pool": {
+        "of_might": 34,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 22,
+        "of_the_bear": 30,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 30,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_devotion": 30,
+        "of_regen": 12,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 36,
+      "base_type": "round_shield",
+      "default_tint": {
+        "hue": 39.2,
+        "mode": "shimmer",
+        "sat": 0.973
+      },
+      "drop_weights": [
+        0,
+        0,
+        3,
+        25,
+        60
+      ],
+      "enchant_chance": 0.3,
+      "evasion": 12,
+      "flavor_tags": [
+        "reflective",
+        "warding",
+        "holy"
+      ],
+      "id": "bullseye_sunsteel",
+      "implicit_affixes": [
+        "of_holy_resist",
+        "of_warding"
+      ],
+      "item_tier": 5,
+      "lore": "The metal is warm even at midnight. Undead dare not touch it.",
+      "name": "Sunsteel Bullseye",
+      "rarity": "legendary",
+      "slot": "shield",
+      "tile": "urand_bullseye.png",
+      "unique": true,
+      "recolor_of": "bullseye",
+      "block_chance": 15,
+      "block_amount": 10
+    },
+    {
+      "affix_pool": {
+        "of_might": 30,
+        "of_finesse": 8,
+        "of_wisdom": 10,
+        "of_vitality": 44,
+        "of_the_bear": 60,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_sharpness": 14,
+        "of_warding": 8,
+        "of_bulwark": 8
+      },
+      "armor": 14,
+      "base_type": "buckler",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 5,
+      "flavor_tags": [
+        "fortified",
+        "thorns"
+      ],
+      "id": "dwarven_buckler_2_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 3,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Dwarven Roundel",
+      "rarity": "rare",
+      "slot": "shield",
+      "tile": "dwarven_buckler_2.png",
+      "unique": false,
+      "recolor_of": "dwarven_buckler_2",
+      "block_chance": 8,
+      "block_amount": 5
+    },
+    {
+      "id": "padded_targe",
+      "name": "Padded Targe",
+      "slot": "shield",
+      "rarity": "common",
+      "tile": "buckler_2_new.png",
+      "base_type": "buckler",
+      "armor": 4,
+      "evasion": 4,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Boiled leather over a willow disc. Tougher than it sounds.",
+      "drop_weights": [
+        70,
+        25,
+        3,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_might": 18,
+        "of_finesse": 14,
+        "of_wisdom": 10,
+        "of_the_bear": 22,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_warding": 14,
+        "of_bulwark": 14
+      },
+      "default_tint": {
+        "hue": 28,
+        "sat": 0.7,
+        "mode": "colorize",
+        "colorize_strength": 0.4
+      },
+      "block_chance": 8,
+      "block_amount": 6
+    }
+  ]
+}

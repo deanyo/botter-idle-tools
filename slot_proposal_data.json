@@ -1,0 +1,1463 @@
+{
+  "current_slots": {
+    "slots": [
+      {
+        "name": "weapon",
+        "description": "Melee or ranged weapon; damage_min/max, speed, weapon_class (1H/2H), damage_type (physical/elemental). Slots in right hand of paperdoll. Layer order z=6 (topmost).",
+        "count": 177,
+        "mechanics": "Weapon-specific affixes apply (of_dancing, of_tidesong, of_serrated_edge, etc). Rolls from per-item affix_pool. Enchant_chance 5-25% varies by rarity. Speed affects attack rate."
+      },
+      {
+        "name": "armor",
+        "description": "Body armor (chest piece); base armor + evasion stats. DCSS-faithful slot distinct from helm/boots/gloves. Renders below gloves but above boots in z-order.",
+        "count": 56,
+        "mechanics": "Generic stat affixes (of_might, of_finesse, of_wisdom). No armor-exclusive affixes. Applies armor value to bot's damage reduction."
+      },
+      {
+        "name": "helm",
+        "description": "Helmet; armor + evasion focus. Can carry head-slot-exclusive implicit affixes. Topmost visible piece in paperdoll (z=4), sits above gloves and below nothing.",
+        "count": 47,
+        "mechanics": "Generic stat affixes + helm-exclusive implicits (of_five_heads, of_holy_anchor). Head-slot-only affixes restricted to helm and amulet in applies_to."
+      },
+      {
+        "name": "shield",
+        "description": "Off-hand defensive item; armor + block chance. Slots in left hand. Layer order z=5 (above armor, below weapon).",
+        "count": 38,
+        "mechanics": "Smallest generic affix pool (19 affixes). Shield-exclusive mechanic: of_aegis_thorns (generic). Block mechanics drive defensive playstyle."
+      },
+      {
+        "name": "boots",
+        "description": "Footwear; evasion + movement focus. DCSS-faithful slot. Layer order z=1 (above base, below armor). Can be converted to ring on Octopode/Naga.",
+        "count": 25,
+        "mechanics": "Generic + evasion-focused affixes. Octopode converts boots→ring (gets +1 ring slot). Spell affixes 30 can apply."
+      },
+      {
+        "name": "gloves",
+        "description": "Hand armor; dexterity focus, can carry attack-speed affixes. Layer order z=3 (above armor, below helm). DCSS-faithful addition (2026-06-03).",
+        "count": 19,
+        "mechanics": "Generic stat affixes + glove-exclusive implicits (of_wolf_kinship). Large affix pool (64). Dex scaling + attack-speed bonuses concentrate here."
+      },
+      {
+        "name": "cloak",
+        "description": "Cloak/cape; worn over armor. DCSS-faithful slot. Layer order z=-1 (BENEATH base sprite, renders as back-layer). DCSS source-accurate rendering (2026-06-05).",
+        "count": 26,
+        "mechanics": "Generic + cloak-exclusive implicits (of_serpent_growth). Large affix pool (44). Cloaks never render on top of bot despite z-order placement."
+      },
+      {
+        "name": "ring",
+        "description": "Jewelry slot for stat rings and defensive trinkets. Base slot always present. Species may gain ring2, ring3, ring4 via slot_conversions (Octopode +3 rings via armor/boots/helm conversion, Naga +1 ring via boots conversion). Read by save_state._backfill_equipped_slots as 'ring' (singular).",
+        "count": 49,
+        "mechanics": "Large affix pool (64). Ring-exclusive mechanic: of_vault_key (archetype, applies only to ring). No visual paperdoll rendering (abstract stat item)."
+      },
+      {
+        "name": "amulet",
+        "description": "Neck slot; stat-focused trinket. Largest per-slot affix pool (83). No visual paperdoll overlay. Read from equipped['amulet'].",
+        "count": 52,
+        "mechanics": "Largest generic affix pool (83 affixes). Amulet-exclusive implicits (of_phylactery, of_polymorph). Spell affixes can apply to amulets."
+      },
+      {
+        "name": "spell1",
+        "description": "Autocast spell slot 1; every character spawns with a starter spell here (species-specific). Central to autocast system. Only spell1 guaranteed populated; spell2-5 start empty.",
+        "count": 0,
+        "mechanics": "Does NOT draw from items.json slot='spell'; instead filled by spell items (234 total) added to inventory/equipped as instances. Managed via doctrine system (BotDoctrine.SPELL_SLOT_IDS). Trigger condition + cooldown per spell defines cast behavior."
+      },
+      {
+        "name": "spell2",
+        "description": "Autocast spell slot 2; fills from mob drops, chests, shop, boss guarantees. Empty at character creation.",
+        "count": 0,
+        "mechanics": "Same as spell1: manages autocast spell instances. Doctrine tracks priority/enabled flags per slot."
+      },
+      {
+        "name": "spell3",
+        "description": "Autocast spell slot 3; fills from loot. Empty at character creation.",
+        "count": 0,
+        "mechanics": "Same spell mechanics as spell1-2. Doctrine evaluator uses aura_priority array to determine cast order."
+      },
+      {
+        "name": "spell4",
+        "description": "Autocast spell slot 4; fills from loot. Empty at character creation.",
+        "count": 0,
+        "mechanics": "Same spell mechanics. All five slots subject to spell_ready (cooldown) predicates in doctrine rules."
+      },
+      {
+        "name": "spell5",
+        "description": "Autocast spell slot 5 (final); fills from loot. Empty at character creation. Completes the autocast battery.",
+        "count": 0,
+        "mechanics": "Same spell mechanics. Full affix system applies to spell instances (52 affixes available). Archetype-exclusive flag affixes restrict to specific spell types."
+      }
+    ],
+    "manifest_files": [
+      "/Users/dyo/claude/botter/project/data/items.json",
+      "/Users/dyo/claude/botter/project/data/affixes.json",
+      "/Users/dyo/claude/botter/project/scripts/save_state.gd",
+      "/Users/dyo/claude/botter/project/scripts/paperdoll_renderer.gd",
+      "/Users/dyo/claude/botter/project/scripts/bot_doctrine.gd",
+      "/Users/dyo/claude/botter/project/scripts/outpost.gd",
+      "/Users/dyo/claude/botter/project/scripts/loot_factory.gd",
+      "/Users/dyo/claude/botter/project/scripts/species_data.gd",
+      "/Users/dyo/claude/botter/tools/items_amulets_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_armor_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_boots_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_cloaks_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_gloves_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_helms_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_rings_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_shields_manifest.json",
+      "/Users/dyo/claude/botter/tools/items_weapons_extended_manifest.json"
+    ],
+    "slot_enum_location": "/Users/dyo/claude/botter/project/scripts/save_state.gd:410-412",
+    "notes": "CANONICAL SLOT LIST (save_state._backfill_equipped_slots): weapon, armor, helm, boots, shield, gloves, cloak, ring, amulet, spell1, spell2, spell3, spell4, spell5.\n\nGEAR SLOTS (9): weapon, armor, helm, boots, shield, gloves, cloak, ring, amulet. Items drawn from items.json slot field. Paperdoll renders weapon/armor/helm/shield/boots/gloves/cloak as visual overlays; ring and amulet are abstract (no overlay). Z-order from bottom to top: cloak=-1, boots=1, armor=2, gloves=3, helm=4, shield=5, weapon=6.\n\nSPELL SLOTS (5): spell1-spell5. Do NOT correspond to items.json slot='spell'. Instead, spell instances are items with base_id resolved from items.json (234 spell items total), then instantiated into equipped['spell1..5'] or inventory. Managed by doctrine system (BotDoctrine.SPELL_SLOT_IDS, compile_knobs, cast predicates).\n\nSPECIAL: Octopode/Naga species convert body slots to extra ring slots via slot_conversions: Octopode armor+boots+helm→ring (net +3 rings: ring/ring2/ring3/ring4=4 total), Naga boots→ring (net +1 ring: ring/ring2=2 total). ring_slot_ids() returns full list per species.\n\nLOOT DROP WEIGHTS (SLOT_DROP_WEIGHTS in loot_factory.gd): weapon 18, armor 10, helm 10, shield 10, boots 10, gloves 10, cloak 10, ring 10, amulet 8, spell 4 (spell gated to magic+ kills). Slot picked first, then item within slot weighted by item.drop_weights[tier-1].\n\nAFFIX SYSTEM: Each affix has applies_to array (list of slots where it can roll). 18 affixes apply only to 1 slot (spell archetype-defining flags, ring vault key, glove wolf kinship, etc). Spell affixes=52, amulet=83 (largest), weapon=80, gloves=64, ring=64, helm=59, cloak=44, boots=30, armor=22, shield=19 (smallest).\n\nUI DISPLAY: outpost.gd PAPERDOLL_LEFT_COLUMN=[weapon, armor, boots, shield, ring, spell1-5] vs PAPERDOLL_RIGHT_COLUMN=[helm, amulet, cloak, gloves, belt]. NOTE: 'belt' in UI constants is orphaned (not in save_state equipped backfill or items.json). Likely dead UI code; no belt items exist.\n\nSCHEMA: save_state.SCHEMA_VERSION=17. Spell slots added v7 (2026-06-04). Ring collapse v7→single ring slot. Extra ring keys (ring2+) initialized per-species in create_character. Spell affixes renamed v8→v10 to avoid id collisions (of_storm→of_thundercaller, etc)."
+  },
+  "player_render": {
+    "has_equipment_overlay": true,
+    "overlay_slots": [
+      "weapon",
+      "shield",
+      "helm",
+      "armor",
+      "boots",
+      "gloves",
+      "cloak"
+    ],
+    "sprite_paths": [
+      "/Users/dyo/claude/botter/project/scripts/bot.gd",
+      "/Users/dyo/claude/botter/project/scripts/paperdoll_renderer.gd",
+      "/Users/dyo/claude/botter/project/scripts/actor.gd",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/body/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/helm/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/shield/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/boots/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/gloves/",
+      "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/"
+    ],
+    "render_code": "## EQUIPMENT OVERLAY RENDERING IN BOTTER\n\n### IMPLEMENTATION STATUS: FULLY IMPLEMENTED\nBotter renders a complete 7-layer equipment overlay system on the bot sprite in real-time.\n\n---\n\n### RENDERING ARCHITECTURE\n\n**Entry Point: Bot.gd::_refresh_gear_overlays (line 1026-1076)**\n- Called from `apply_gear()` (line 565) when equipment changes\n- Clears existing overlays, rebuilds fresh sprites each equip swap\n- Stores gear sprite references in `_gear_sprites` Dict (slot_id → Sprite2D)\n\n**Core Loop (bot.gd:1038-1062):**\n```gdscript\nfor slot_id in PaperdollRenderer.SLOT_Z.keys():\n    var path: String = PaperdollRenderer._resolve_overlay(slot_id, equipped, _items_db_cache)\n    if path == \"\":\n        continue\n    var sprite := Sprite2D.new()\n    sprite.texture = load(path)\n    sprite.centered = true\n    sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST\n    sprite.position = PaperdollRenderer.SLOT_OFFSETS.get(slot_id, Vector2.ZERO)\n    sprite.z_index = int(PaperdollRenderer.SLOT_Z[slot_id])\n    rig.add_child(sprite)\n    _gear_sprites[slot_id] = sprite\n```\n\n**Rendering Scope:**\n- Overlays are added as children to `rig` (Actor.gd:111), a Node2D that parents the base sprite\n- All overlays inherit rig's tweens: lunge animation, death spin, hit squish\n- Overlays also inherit rig's facing flip (`rig.scale.x = -1` when moving right)\n\n---\n\n### LAYERING Z-ORDER (PaperdollRenderer.gd:61-72)\n```\nLayer | Z-Index | Slot        | Description\n------|---------|-------------|------------------------\n6     | 6       | weapon      | Right hand (top-most, swings)\n5     | 5       | shield      | Left hand\n4     | 4       | helm        | Head/hat\n3     | 3       | gloves      | Hands\n2     | 2       | armor       | Body/torso\n1     | 1       | boots       | Feet\n-1    | -1      | cloak       | Back (behind base z=0)\n```\n\nBase sprite (bot.png or species sprite) is at z=0 in rig children order.\nShadow (-1) is added first in Actor._ready (line 119).\n\n---\n\n### SPRITE PATH RESOLUTION (PaperdollRenderer.gd:283-319)\n\n**Flow:**\n1. Equipped item instance → `base_id` field (e.g., \"iron_sword_5\")\n2. Look up item definition from items_db by base_id\n3. Read item's `overlay` field (explicit) or `tile` field (fallback)\n4. Strip extension: \"armor_chain.png\" → \"armor_chain\"\n5. Construct path: `res://assets/tiles/player/{SLOT_DIR}/{stem}.png`\n   - weapon: `res://assets/tiles/player/weapons/iron_sword_5.png`\n   - helm: `res://assets/tiles/player/helm/iron_helm.png`\n   - armor: `res://assets/tiles/player/body/armor_chain.png`\n   - etc.\n6. Fallback: If subdir found in stem (e.g., \"casters/staff_1\"), try basename only\n\n**Coverage by Asset (as of June 2026):**\n- weapons/: 131 sprites (all weapon bases)\n- body/: 52 sprites (armor)\n- helm/: 35 sprites\n- shield/: 29 sprites\n- boots/: 24 sprites\n- gloves/: 11 sprites\n- cloak/: 12 sprites\n\nAll 7 visible slots have substantial sprite libraries.\n\n---\n\n### POSITIONAL ANCHORING (PaperdollRenderer.gd:49-57)\n\nAll overlays render at `Vector2(0, 0)` relative to the rig origin:\n```gdscript\nconst SLOT_OFFSETS := {\n    \"weapon\": Vector2(0, 0),\n    \"shield\": Vector2(0, 0),\n    \"helm\":   Vector2(0, 0),\n    \"armor\":  Vector2(0, 0),\n    \"boots\":  Vector2(0, 0),\n    \"gloves\": Vector2(0, 0),\n    \"cloak\":  Vector2(0, 0),\n}\n```\n\n**Reason (paperdoll_renderer.gd:28-48):**\nDCSS-sourced sprites are pre-aligned by artists on 32×32 canvas:\n- Weapon hand grip positioned at the canvas location the player figure's hand occupies\n- Helmet centered on player head position\n- Boots aligned to player feet\n- No per-item offset needed; alignment is baked into the sprite art itself\n\n---\n\n### VISUAL EMBELLISHMENTS\n\n**Rarity Modulation & Glow (bot.gd:1050-1134)**\n- `_apply_rarity_decor()`: Modulates sprite color by item rarity (common/rare/legendary)\n- Weapon slot only gets glow shader (`item_glow.gdshader`)\n- Glow color driven by flavor tag (fire=orange, cold=blue, vampiric=red, etc.)\n- Glow pulses via Tween (skipped on web for performance)\n\n**Hand Enchant Ambience (bot.gd:1162-1228)**\n- Soft radial glow sprite under weapon hand when equipped item has a flavor tag\n- Position: `Vector2(-8.0, 1.0)` relative to rig (DCSS player sprite weapon-hand offset)\n- Auto-mirrors on rig flip (left-facing → right-facing movement)\n- Pulsing color animation (dim ↔ bright, 1.6s loop)\n- Stores in `_hand_enchant_sprite` field; auto-destroyed on re-equip\n\n**Per-Instance Recolor Shader (bot.gd:1179-1192)**\n- Items can roll a random hue/sat tint at drop time (stored in `inst.tint` field)\n- Applies `item_recolor.gdshader` to overlay sprite (unless glow shader already attached)\n- Overlay-specific tint option: `item.default_tint_overlay` overrides `item.default_tint`\n\n---\n\n### WEAPON-SPECIFIC FEATURES\n\n**Stored Reference (bot.gd:398, 1062):**\n```gdscript\nvar weapon_sprite: Sprite2D = null\n...\nweapon_sprite = _gear_sprites.get(\"weapon\", null)\n```\n\n**Swing Animation (bot.gd:1368-1593)**\n- 8-directional directional detection: N/S/E/W/NE/NW/SE/SW\n- Weapon archetype: polearm (thrust) vs heavy 2H (chop) vs light (slash) vs blade (default sweep)\n- Swing tweens rotate, scale, and translate weapon_sprite over 0.3s\n- Swing scale multiplier on crits (`_swing_scale()`)\n- Example: horizontal slash = rotate ±35° with -110° sweep over 0.08s (line 1466-1483)\n\n**Weapon Trail Emission (bot.gd:1373-1384)**\n- On swing, reads weapon's `flavor_tags` from items_db\n- Calls `WeaponTrails.emit_burst()` with flavor (fire/cold/vampiric/holy/poison/etc.)\n- Spawns particle effect from weapon_sprite position\n\n**Fire Weapon Light (bot.gd:1063-1069)**\n```gdscript\nif weapon_sprite != null:\n    var base_id: String = String(wpn.get(\"base_id\", \"\"))\n    var weapon_light_id: String = String(WEAPON_LIGHTS.get(base_id, \"\"))\n    if weapon_light_id != \"\":\n        LightSpec.attach(weapon_sprite, weapon_light_id, Vector2.ZERO)\n```\n- Hardcoded light sources for fire-tagged weapons:\n  - \"firestarter\" → \"firestarter\" light\n  - \"hellfire\" → \"hellfire\" light\n  - \"demon_blade\" → \"demon_blade\" light\n  - etc. (bot.gd:9-15)\n- Light child moves with weapon_sprite during swings\n\n**Crit Flash (bot.gd:1345-1366)**\n- White modulate pulse on weapon_sprite when attack crits\n- 0.16s tween fade from bright → neutral\n- Reuses existing shader/material, only tweens modulate\n\n---\n\n### DATA FLOW: ITEM → SCREEN\n\n1. **Drop / Equip (dungeon.gd)**\n   - Item instance created with `base_id`, `enchant`, `tint` fields\n   - Instance added to bot.equipped dict under slot key\n\n2. **UI Paperdoll & Live Bot (PaperdollRenderer.build_rig + Bot._refresh_gear_overlays)**\n   - Same `_resolve_overlay()` function used by both paths\n   - Ensures paperdoll preview matches in-game render\n\n3. **Stat Recompute (StatCalc.compute)**\n   - Item affixes folded into bot.damage, bot.armor, bot.crit_chance, etc.\n   - Spell augments & color flags (visual_umbral, visual_prismatic, etc.) applied\n\n4. **Combat → Animation**\n   - Bot.attempt_attack(): determines crit, updates weapon_sprite modulate\n   - Bot.swing_weapon(toward): 8-dir dispatch → swing tween + trail emission\n   - Actor.attack_lunge(): lunge tween on entire rig (including weapon)\n\n---\n\n### NOT CURRENTLY RENDERED\n\n**No Overlay Sprites For:**\n- ring, amulet (jewelry - no visual assets)\n- spell1-spell5 (spells - no equipment visual layer; only HUD bar icons)\n\n**Potential Future Additions:**\n- Per-slot offsets (currently all at 0,0) — would allow asymmetric poses\n- Shield swing animation (currently static)\n- Armor tinting (body recolor based on rarity, rare=gold, etc.)\n- Per-frame weapon pivoting during combat (locked at 0° currently)\n- Dual-wield visual (currently dual weapons block shield slot)\n- Visual effects on worn armor (cracks, glowing runes, etc.)\n\n---\n\n### KEY FILES & LINE REFERENCES\n\n**bot.gd:**\n- Line 398: `weapon_sprite` field declaration\n- Line 948: `_gear_sprites` field  \n- Line 1026-1076: `_refresh_gear_overlays()` — main overlay builder\n- Line 1050-1134: `_apply_rarity_decor()` — glow + modulate\n- Line 1162-1228: `_apply_hand_enchant_ambience()` — weapon hand glow\n- Line 1345-1366: `flash_weapon_crit()` — crit white flash\n- Line 1368-1593: `swing_weapon()` + 8-direction swing anims\n- Line 9-15: `WEAPON_LIGHTS` dict for fire weapon glow\n\n**paperdoll_renderer.gd:**\n- Line 49-57: `SLOT_OFFSETS` (all zeros)\n- Line 61-72: `SLOT_Z` layering order\n- Line 16-24: `SLOT_DIRS` asset directory map\n- Line 80-125: `build_rig()` — builds rig with overlays (used in UI)\n- Line 283-319: `_resolve_overlay()` — sprite path resolution\n- Line 170-181: `_apply_rarity_modulate()` — color tint by rarity\n- Line 182-225: `_apply_rarity_glow()` — weapon glow shader\n- Line 238-280: `_apply_hand_enchant()` — weapon hand glow (UI)\n\n**actor.gd:**\n- Line 32-37: rig Node2D & sprite Sprite2D setup\n- Line 111-113: rig creation & rig.position centering\n- Line 185-200: `_set_facing()` — rig.scale.x flip on movement\n\n**assets/tiles/player/**\n- weapons/: 131 weapon overlays\n- body/: 52 armor overlays\n- helm/: 35 helmet overlays\n- shield/: 29 shield overlays\n- boots/: 24 boot overlays\n- gloves/: 11 glove overlays\n- cloak/: 12 cloak overlays",
+    "notes": "COMPREHENSIVE FINDINGS:\n\nYES, Botter has a fully-implemented multi-layer equipment overlay system.\n\nWHAT'S RENDERED TODAY (7 visible slots):\n- weapon (hand-held, swings with combat, emits trails, can glow)\n- shield (static at z=5)\n- helm (head slot)\n- armor (body)\n- boots (feet)\n- gloves (hands)\n- cloak (back layer, z=-1 behind base)\n\nHOW IT WORKS:\n1. Item instances stored in Bot.equipped dict (slot_id → instance)\n2. Each instance has base_id that maps to items.json definition\n3. Item definition includes \"tile\" field (inventory art) or \"overlay\" field (explicit)\n4. Bot._refresh_gear_overlays() iterates SLOT_Z keys in z-order, resolves sprite path per item\n5. Creates fresh Sprite2D children under rig for each equipped slot\n6. Applies modulation (rarity color), glow shader (weapons only), hand enchant ambience\n7. Weapon sprite specifically stored for swing animation + trail emission\n\nSPRITE PATHS:\n- Convention: res://assets/tiles/player/{SLOT_DIR}/{item_stem}.png\n- Example: res://assets/tiles/player/weapons/iron_sword.png\n- All overlays render at Vector2(0,0) — pre-aligned by DCSS artists on 32×32 canvas\n- Fallback: strips subdir if initial lookup fails (e.g., \"casters/staff_1\" → \"staff_1.png\")\n\nVISUAL FEATURES:\n- Rarity modulation: common/rare/legendary tint on overlay color\n- Weapon glow: silhouette-following shader, color by flavor tag, pulsing on non-web\n- Hand enchant ambience: soft radial glow under weapon hand, auto-mirrors on facing flip\n- Per-instance recolor: hue/sat shader applied to overlay (rolled ~30% at drop time)\n- Weapon swing: 8-directional animations with archetype variants (polearm thrust vs heavy chop)\n- Crit flash: white modulate pulse on weapon sprite\n- Fire weapon light: hardcoded light children on fire-tagged weapons\n- Trail emission: flavor-specific particles on swing\n\nASSET COVERAGE:\nAll 7 rendered slots have comprehensive sprite libraries (12-131 variants per slot).\n\nNOT RENDERED:\n- Rings & amulets (no visual layer, only stat contribution)\n- Spells (HUD bar only, no equipment visual)\n\nPOTENTIAL ADDITIONS:\n- Per-slot offsets (asymmetric poses)\n- Shield swing animation\n- Armor tinting (currently static)\n- Dual-wield visual separation\n- On-equipment VFX (cracks, glowing runes, etc.)\n"
+  },
+  "atlas_survey": {
+    "categories": [
+      {
+        "category": "weapon_misc",
+        "count": 131,
+        "examples": [
+          "item/weapon/ancient_sword.png",
+          "item/weapon/ankus.png",
+          "item/weapon/artefact/spwpn_majin.png",
+          "item/weapon/artefact/spwpn_scepter_of_asmodeus.png",
+          "item/weapon/artefact/spwpn_scepter_of_asmodeus_2.png"
+        ]
+      },
+      {
+        "category": "mace_flail",
+        "count": 92,
+        "examples": [
+          "item/weapon/artefact/spwpn_mace_of_variability.png",
+          "item/weapon/artefact/spwpn_mace_of_variability_new.png",
+          "item/weapon/artefact/spwpn_mace_of_variability_old.png",
+          "item/weapon/bullwhip.png",
+          "item/weapon/bullwhip_2.png"
+        ]
+      },
+      {
+        "category": "misc",
+        "count": 75,
+        "examples": [
+          "item/misc/key.png",
+          "item/misc/magic_lamp.png",
+          "item/misc/mirror.png",
+          "item/misc/misc_bottle.png",
+          "item/misc/misc_box.png"
+        ]
+      },
+      {
+        "category": "book",
+        "count": 72,
+        "examples": [
+          "item/book/artefact/bookmark_new.png",
+          "item/book/artefact/bookmark_old.png",
+          "item/book/artefact/buckle_new.png",
+          "item/book/artefact/buckle_old.png",
+          "item/book/artefact/thick_new.png"
+        ]
+      },
+      {
+        "category": "long_blade",
+        "count": 42,
+        "examples": [
+          "item/weapon/double_sword.png",
+          "item/weapon/double_sword_2.png",
+          "item/weapon/double_sword_3.png",
+          "item/weapon/double_sword_new.png",
+          "item/weapon/double_sword_old.png"
+        ]
+      },
+      {
+        "category": "polearm",
+        "count": 41,
+        "examples": [
+          "item/weapon/artefact/spwpn_glaive_of_prune.png",
+          "item/weapon/artefact/spwpn_glaive_of_prune_new.png",
+          "item/weapon/artefact/spwpn_glaive_of_prune_old.png",
+          "item/weapon/artefact/spwpn_scythe_of_curses.png",
+          "item/weapon/artefact/spwpn_scythe_of_curses_new.png"
+        ]
+      },
+      {
+        "category": "axe",
+        "count": 37,
+        "examples": [
+          "item/weapon/artefact/urand_axe_of_woe.png",
+          "item/weapon/axe.png",
+          "item/weapon/battle_axe_1.png",
+          "item/weapon/battle_axe_2.png",
+          "item/weapon/battle_axe_3.png"
+        ]
+      },
+      {
+        "category": "shield",
+        "count": 37,
+        "examples": [
+          "item/armor/shields/buckler_1.png",
+          "item/armor/shields/buckler_1_new.png",
+          "item/armor/shields/buckler_1_old.png",
+          "item/armor/shields/buckler_2.png",
+          "item/armor/shields/buckler_2_new.png"
+        ]
+      },
+      {
+        "category": "medium_armor",
+        "count": 39,
+        "examples": [
+          "item/armor/artefact/urand_lightning_scales.png",
+          "item/armor/torso/blue_dragon_scale_mail.png",
+          "item/armor/torso/blue_dragon_scale_mail_new.png",
+          "item/armor/torso/blue_dragon_scale_mail_old.png",
+          "item/armor/torso/blue_dragon_scales.png"
+        ]
+      },
+      {
+        "category": "food",
+        "count": 39,
+        "examples": [
+          "item/food/apple.png",
+          "item/food/apricot_new.png",
+          "item/food/apricot_old.png",
+          "item/food/banana_new.png",
+          "item/food/banana_old.png"
+        ]
+      },
+      {
+        "category": "armor_misc",
+        "count": 51,
+        "examples": [
+          "item/armor/artefact/urand_alchemist.png",
+          "item/armor/artefact/urand_assassin.png",
+          "item/armor/artefact/urand_augmentation.png",
+          "item/armor/artefact/urand_bear.png",
+          "item/armor/artefact/urand_bk_barding.png"
+        ]
+      },
+      {
+        "category": "dragon_armor",
+        "count": 29,
+        "examples": [
+          "item/armor/artefact/urand_dragon_king.png",
+          "item/armor/artefact/urand_dragonmask.png",
+          "item/armor/artefact/urand_dragonskin.png",
+          "item/armor/torso/gold_dragon_armor.png",
+          "item/armor/torso/gold_dragon_armor_new.png"
+        ]
+      },
+      {
+        "category": "rod",
+        "count": 31,
+        "examples": [
+          "item/rod/rod_0.png",
+          "item/rod/rod_0_new.png",
+          "item/rod/rod_0_old.png",
+          "item/rod/rod_1.png",
+          "item/rod/rod_1_new.png"
+        ]
+      },
+      {
+        "category": "wand",
+        "count": 28,
+        "examples": [
+          "item/wand/gem_bone_new.png",
+          "item/wand/gem_bone_old.png",
+          "item/wand/gem_brass_new.png",
+          "item/wand/gem_brass_old.png",
+          "item/wand/gem_bronze_new.png"
+        ]
+      },
+      {
+        "category": "helm",
+        "count": 27,
+        "examples": [
+          "item/armor/headgear/cap_1.png",
+          "item/armor/headgear/cap_2.png",
+          "item/armor/headgear/cap_jester.png",
+          "item/armor/headgear/crested_helmet.png",
+          "item/armor/headgear/hat_1.png"
+        ]
+      },
+      {
+        "category": "amulet",
+        "count": 46,
+        "examples": [
+          "item/amulet/artefact/urand_air.png",
+          "item/amulet/artefact/urand_air_new.png",
+          "item/amulet/artefact/urand_air_old.png",
+          "item/amulet/artefact/urand_bloodlust.png",
+          "item/amulet/artefact/urand_bloodlust_new.png"
+        ]
+      },
+      {
+        "category": "ring",
+        "count": 23,
+        "examples": [
+          "item/ring/artefact/urand_mage.png",
+          "item/ring/artefact/urand_octoring.png",
+          "item/ring/artefact/urand_robustness.png",
+          "item/ring/artefact/urand_shadows.png",
+          "item/ring/artefact/urand_shadows_new.png"
+        ]
+      },
+      {
+        "category": "short_blade",
+        "count": 23,
+        "examples": [
+          "item/weapon/dagger.png",
+          "item/weapon/dagger_3.png",
+          "item/weapon/dagger_6.png",
+          "item/weapon/dagger_7.png",
+          "item/weapon/dagger_new.png"
+        ]
+      },
+      {
+        "category": "staff",
+        "count": 23,
+        "examples": [
+          "item/staff/staff_0.png",
+          "item/staff/staff_1.png",
+          "item/staff/staff_2.png",
+          "item/staff/staff_3.png",
+          "item/staff/staff_4.png"
+        ]
+      },
+      {
+        "category": "potion",
+        "count": 30,
+        "examples": [
+          "item/potion/black_new.png",
+          "item/potion/black_old.png",
+          "item/potion/brilliant_blue_new.png",
+          "item/potion/brilliant_blue_old.png",
+          "item/potion/brown_new.png"
+        ]
+      },
+      {
+        "category": "gloves",
+        "count": 15,
+        "examples": [
+          "item/armor/hands/gauntlet_1.png",
+          "item/armor/hands/glove_1.png",
+          "item/armor/hands/glove_1_new.png",
+          "item/armor/hands/glove_1_old.png",
+          "item/armor/hands/glove_2.png"
+        ]
+      },
+      {
+        "category": "gold",
+        "count": 15,
+        "examples": [
+          "item/gold/gold_pile.png",
+          "item/gold/gold_pile_1.png",
+          "item/gold/gold_pile_10.png",
+          "item/gold/gold_pile_16.png",
+          "item/gold/gold_pile_19.png"
+        ]
+      },
+      {
+        "category": "bow",
+        "count": 17,
+        "examples": [
+          "item/weapon/artefact/urand_storm_bow.png",
+          "item/weapon/hand_crossbow.png",
+          "item/weapon/hand_crossbow_2.png",
+          "item/weapon/ranged/bow_1.png",
+          "item/weapon/ranged/bow_2.png"
+        ]
+      },
+      {
+        "category": "heavy_armor",
+        "count": 8,
+        "examples": [
+          "item/armor/torso/banded_mail_1.png",
+          "item/armor/torso/banded_mail_2.png",
+          "item/armor/torso/crystal_plate_mail.png",
+          "item/armor/torso/orcish_plate_2.png",
+          "item/armor/torso/orcish_platemail.png"
+        ]
+      },
+      {
+        "category": "barding",
+        "count": 8,
+        "examples": [
+          "item/armor/bardings/centaur_barding_blue.png",
+          "item/armor/bardings/centaur_barding_magenta.png",
+          "item/armor/bardings/centaur_barding_metal.png",
+          "item/armor/bardings/centaur_barding_red.png",
+          "item/armor/bardings/naga_barding_blue.png"
+        ]
+      },
+      {
+        "category": "boots",
+        "count": 8,
+        "examples": [
+          "item/armor/feet/boots_1_brown_new.png",
+          "item/armor/feet/boots_1_brown_old.png",
+          "item/armor/feet/boots_2_jackboots.png",
+          "item/armor/feet/boots_3_stripe_new.png",
+          "item/armor/feet/boots_3_stripe_old.png"
+        ]
+      },
+      {
+        "category": "light_armor",
+        "count": 9,
+        "examples": [
+          "item/armor/back/cloak_1_leather.png",
+          "item/armor/headgear/elven_leather_helm.png",
+          "item/armor/torso/elven_leather_armor.png",
+          "item/armor/torso/leather_armor_1.png",
+          "item/armor/torso/leather_armor_2.png"
+        ]
+      },
+      {
+        "category": "robe",
+        "count": 11,
+        "examples": [
+          "item/armor/torso/robe_1.png",
+          "item/armor/torso/robe_1_new.png",
+          "item/armor/torso/robe_1_old.png",
+          "item/armor/torso/robe_2.png",
+          "item/armor/torso/robe_2_new.png"
+        ]
+      },
+      {
+        "category": "scroll",
+        "count": 12,
+        "examples": [
+          "item/scroll/blank_paper.png",
+          "item/scroll/scroll-blue.png",
+          "item/scroll/scroll-brown.png",
+          "item/scroll/scroll-cyan.png",
+          "item/scroll/scroll-green.png"
+        ]
+      },
+      {
+        "category": "sling",
+        "count": 10,
+        "examples": [
+          "item/weapon/ranged/greatsling.png",
+          "item/weapon/ranged/greatsling_2.png",
+          "item/weapon/ranged/sling_1.png",
+          "item/weapon/ranged/sling_2.png",
+          "item/weapon/ranged/sling_bullet_1.png"
+        ]
+      },
+      {
+        "category": "cloak",
+        "count": 4,
+        "examples": [
+          "item/armor/artefact/urand_ratskin_cloak.png",
+          "item/armor/back/cloak_2.png",
+          "item/armor/back/cloak_3.png",
+          "item/armor/back/cloak_4.png"
+        ]
+      },
+      {
+        "category": "crossbow",
+        "count": 3,
+        "examples": [
+          "item/weapon/ranged/arbalest_1.png",
+          "item/weapon/ranged/arbalest_2.png",
+          "item/weapon/ranged/arbalest_3.png"
+        ]
+      },
+      {
+        "category": "ranged_misc",
+        "count": 3,
+        "examples": [
+          "item/weapon/artefact/urand_blowgun.png",
+          "item/weapon/ranged/blowgun_1.png",
+          "item/weapon/ranged/blowgun_2.png"
+        ]
+      },
+      {
+        "category": "hide_armor",
+        "count": 1,
+        "examples": [
+          "item/armor/torso/troll_hide.png"
+        ]
+      },
+      {
+        "category": "thrown",
+        "count": 1,
+        "examples": [
+          "item/weapon/ranged/throwing_net.png"
+        ]
+      }
+    ],
+    "wearable_categories": [
+      "amulet",
+      "armor_misc",
+      "barding",
+      "boots",
+      "cloak",
+      "dragon_armor",
+      "gloves",
+      "heavy_armor",
+      "helm",
+      "hide_armor",
+      "light_armor",
+      "medium_armor",
+      "ring",
+      "robe",
+      "shield"
+    ],
+    "project_items_subdirs": [
+      "artefacts",
+      "casters",
+      "spells"
+    ],
+    "notes": "The tile_atlas.json contains 8,477 total tiles with 1,247 tagged as category='item'. Within items, there are 37 named subcategories plus a null category (404 items without explicit subcategory classification). Key findings: (1) Wearable slots are fully represented: amulets, rings, armor (body/chest/torso by weight class), helms/headgear, gloves, boots, shields, cloaks, and special/unique armor like dragon armor and barding for mounts. (2) Wieldable weapons span melee (long/short blades, axes, maces/flails, polearms), ranged (bows, crossbows, slings, blowguns), and specialty weapons (staves, rods, wands). (3) Consumables are well-represented: books, scrolls, potions, and food. (4) Miscellaneous category (75 items) covers keys, lamps, mirrors, bottles, boxes. (5) The dcss directory exists at /Users/dyo/claude/botter/dcss/ with subdirectories: Dungeon Crawl Stone Soup Full and Dungeon Crawl Stone Soup Supplemental. These contain item/, dungeon/, monster/, effect/, player/, gui/, and emissaries/ subdirectories as reference/import sources. (6) Project assets are organized into three main tile subdirectories: artefacts (unique/named items), casters (spell/magical asset graphics), and spells (spell visual effects). No candidate slots are missing from Botter's current wearable inventory—the system comprehensively covers armor, jewelry, and shields.\""
+  },
+  "dcss_conventions": {
+    "equipment_slots": [
+      {
+        "name": "SLOT_WEAPON",
+        "description": "Primary melee or ranged weapon"
+      },
+      {
+        "name": "SLOT_OFFHAND",
+        "description": "Off-hand weapon or shield; second weapon slot for dual-wielders"
+      },
+      {
+        "name": "SLOT_BODY_ARMOUR",
+        "description": "Main body armor (robes, leather, plate, dragon armor, etc.)"
+      },
+      {
+        "name": "SLOT_HELMET",
+        "description": "Head armor; provides AC and may grant resistances or special effects"
+      },
+      {
+        "name": "SLOT_GLOVES",
+        "description": "Hand protection; grants AC and potentially stat bonuses or resistances"
+      },
+      {
+        "name": "SLOT_BOOTS",
+        "description": "Foot protection; grants AC and may provide evasion or other bonuses"
+      },
+      {
+        "name": "SLOT_CLOAK",
+        "description": "Torso cover that overlays body armor; provides AC and resistances"
+      },
+      {
+        "name": "SLOT_BARDING",
+        "description": "Lower-body armor for mounted forms like Centaurs and Nagas; replaces or supplements boots"
+      },
+      {
+        "name": "SLOT_RING",
+        "description": "Finger slot; can hold two rings simultaneously; provides stat bonuses and various magical properties"
+      },
+      {
+        "name": "SLOT_AMULET",
+        "description": "Neck slot; grants special properties like flight, faith, regeneration, or resistances"
+      },
+      {
+        "name": "SLOT_GIZMO",
+        "description": "Unique slot for gizmos; grants magical bonuses tied to species abilities"
+      },
+      {
+        "name": "SLOT_WEAPON_OR_OFFHAND",
+        "description": "Flexible dual slot for Coglins to swap between two weapons"
+      },
+      {
+        "name": "SLOT_HAUNTED_AUX",
+        "description": "Special slot for Poltergeist haunting auxiliary armor pieces"
+      },
+      {
+        "name": "SLOT_TWOHANDER_ONLY",
+        "description": "Fortress Crab exclusive slot for two-handed weapons without shields"
+      }
+    ],
+    "item_types": [
+      {
+        "name": "OBJ_WEAPONS",
+        "description": "Melee weapons (swords, axes, spears, maces, flails, polearms), ranged weapons (bows, crossbows, slings), and unarmed combat staves",
+        "has_player_overlay_in_dcss": true
+      },
+      {
+        "name": "OBJ_ARMOUR",
+        "description": "Body armor, helmets, gloves, boots, cloaks, shields, and barding; all worn defensive equipment except jewelry",
+        "has_player_overlay_in_dcss": true
+      },
+      {
+        "name": "OBJ_JEWELLERY",
+        "description": "Rings and amulets; worn accessories that provide stats, resistances, or special abilities",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_MISSILES",
+        "description": "Projectiles (darts, javelins, stones, throwing nets, boomerangs) fired by ranged weapons or throwing",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_WANDS",
+        "description": "Evocable items that cast magical effects; rechargeable at mana fountains",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_SCROLLS",
+        "description": "One-use items read for immediate magical effects; identify, teleport, enchant, summoning, etc.",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_POTIONS",
+        "description": "Drinkable items providing immediate or cumulative effects; healing, stat boosts, resistances",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_BOOKS",
+        "description": "Grimoires containing spells for player training and memorization",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_STAVES",
+        "description": "Magical staves providing stat bonuses and spell bonuses; can also serve as weapon-like implements",
+        "has_player_overlay_in_dcss": true
+      },
+      {
+        "name": "OBJ_ORBS",
+        "description": "High-value items (Orbs of Zot) used to define dungeon progress and end-game goals",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_MISCELLANY",
+        "description": "Evocable items with diverse effects; boxes, decks of cards, horns, rods, and other artifacts",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_CORPSES",
+        "description": "Monster bodies used for butchering, dissection, or resurrection via necromancy",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_GOLD",
+        "description": "Currency and treasure; sole stackable inventory item",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_RUNES",
+        "description": "End-game quest items needed to access the final dungeon level",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_TALISMANS",
+        "description": "Species-specific evocable items tied to form-shifting and summoning abilities",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_GEMS",
+        "description": "Quest items tracking progress in specific branches; used for branch entry",
+        "has_player_overlay_in_dcss": false
+      },
+      {
+        "name": "OBJ_GIZMOS",
+        "description": "Worn items granting species-specific magical augmentations and bonuses",
+        "has_player_overlay_in_dcss": true
+      },
+      {
+        "name": "OBJ_BAUBLES",
+        "description": "Utility items with special effects tied to summoning and evocation",
+        "has_player_overlay_in_dcss": false
+      }
+    ],
+    "notes": "Equipment slots are differentiated between 'real' slots (SLOT_WEAPON through SLOT_GIZMO) that players can directly equip items into, flexible slots (SLOT_WEAPON_OR_OFFHAND, SLOT_HAUNTED_AUX) for special cases, and grouping slots (SLOT_ALL_ARMOUR, SLOT_ALL_JEWELLERY) used for queries. Player overlay rendering is determined by item type: worn equipment (weapons, armour, staves, gizmos) draws on the player sprite; consumables and utilities (potions, scrolls, wands) do not. Jewelry does not render as visual overlays despite being equipped."
+  },
+  "investigations": [
+    {
+      "key": "bow",
+      "name": "Bow",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 9,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: item/weapon/ranged/bow_1.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: item/weapon/ranged/bow_2.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: item/weapon/ranged/longbow.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: item/weapon/ranged/longbow_1.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: item/weapon/ranged/longbow_2.png"
+        ],
+        "notes": "9 inventory sprites total (bow_1, bow_2, longbow, longbow_1-3, shortbow_1-3). One urand artifact (urand_storm_bow) also present. All categorized as 'item' in tile_atlas.json under weapon/ranged subdirectory. No existing bow items in items.json yet."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 5,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: player/hand_right/bow.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: player/hand_right/bow_2.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: player/hand_right/bow_3.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: player/hand_right/bow_blue.png",
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json: player/hand_right/great_bow.png"
+        ],
+        "notes": "5 player-overlay sprites (bow, bow_2, bow_3, bow_blue, great_bow). All in hand_right/ category with 'player' classification in tile_atlas.json. DCSS follows convention of storing weapon overlays in hand1/hand2 directories with pre-aligned anchoring. These are ready for paperdoll rendering in Botter."
+      },
+      "dcss_mechanics": "In DCSS, bows (shortbow, orcbow, longbow) and crossbows (hand crossbows, triple crossbow) are OBJ_WEAPONS occupying SLOT_WEAPON, typically two-handed. Crossbows are identified separately via is_crossbow() function. Bows can spawn with brands (e.g., of_flaming, of_freezing) and ego types via choose_weapon_brand(). DCSS treats ranged weapons identically to melee weapons for equipment slot mechanics — they occupy the primary weapon slot and apply their damage_min/max and speed to attack calculations. Ammunition (darts, arrows, javelins) spawns separately as OBJ_MISSILES and is tracked in a quiver, not as worn inventory.",
+      "fit_assessment": {
+        "fit_score": "good",
+        "rationale": "Bows are two-handed ranged weapons with robust sprite coverage (9 inventory + 5 player overlays). They fit naturally into Botter's existing weapon slot as a variant weapon_class='ranged'. Unlike shields (inv_plus_positional), bows have full player overlay support, making them positional_required. The main design complexity is introducing a new weapon_class ('ranged') or repurposing the existing '2H' category. DCSS mechanics are straightforward (damage/speed/brand-driven like all weapons). Fit is 'good' rather than 'excellent' because ranged combat isn't yet modeled in Botter's core combat loop (Actor.gd uses melee-only swing logic); adding bow support would require damage model expansion.",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "Add bows as a 2H ranged weapon variant within the existing 'weapon' slot. Define weapon_class='ranged' (new enum) to distinguish from melee '1H'/'2H'/'caster'. Grant damage_min/max, speed, and ranged-exclusive affixes (of_precision, of_powershot, of_piercing) that enhance ranged damage calculations. Bows would drive a distinctly different playstyle: instead of melee-focused speed/armor synergies, ranged builds prioritize attack range, accuracy (via new affix), and projectile velocity. Paperdoll would render the 5 bow overlays in hand_right (weapon slot), providing immediate visual feedback that the bot is equipped for ranged combat. Unlike casters (which use melee swing animation), ranged weapons would eventually trigger a distinct 'bow draw' animation or projectile arc."
+    },
+    {
+      "key": "crossbow",
+      "name": "Crossbow — slower, heavier ranged",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 7,
+        "paths": [
+          "item/weapon/hand_crossbow.png",
+          "item/weapon/hand_crossbow_2.png",
+          "item/weapon/ranged/crossbow_1.png",
+          "item/weapon/ranged/crossbow_2.png",
+          "item/weapon/ranged/hand_crossbow.png",
+          "item/weapon/ranged/hand_crossbow_2.png",
+          "item/weapon/ranged/hand_crossbow_3.png"
+        ],
+        "notes": "7 inventory icons catalogued in tile_atlas.json. Found in dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/ (official DCSS source pack). Botter project/assets/tiles/items/ does NOT yet contain these files — they exist only in the gitignored dcss/ source pack, requiring extraction/import via sync_items pipeline."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 6,
+        "paths": [
+          "player/hand_right/crossbow.png",
+          "player/hand_right/crossbow_2.png",
+          "player/hand_right/crossbow_3.png",
+          "player/hand_right/crossbow_4.png",
+          "player/hand_right/hand_crossbow.png",
+          "player/hand_right/artefact/crossbow_fire.png"
+        ],
+        "notes": "6 player-overlay sprites catalogued in tile_atlas.json. All exist in dcss source pack at dcss/Dungeon Crawl Stone Soup Full/player/hand_right/ (main and artefact subdirs). DCSS hand_right sprites are pre-aligned to 32×32 canvas with grip anchored at player base's right-hand position per paperdoll_renderer.gd comments. DCSS convention: weapon overlays in hand1/hand2 (right/left hand), not hand_right — this naming signals right-hand exclusive orientation matching Botter's current weapon-slot rendering (z=6, topmost layer)."
+      },
+      "dcss_mechanics": "DCSS distinguishes WPN_ARBALEST (large, machinery-cranked, wind-up time) and WPN_TRIPLE_CROSSBOW (three-string siege design, \"considerable time to load and fire\"). Both are missile weapons competing with bows/slings/blowguns in the missile category, sharing the crossbows skill. Documented in item-prop-enum.h as weapon types alongside shortbow/longbow/sling. Ranged weapons vs melee trade off attack speed (higher delay/reload cost) for stand-off positioning and potentially higher per-shot damage. Botter currently has NO ranged weapons in items.json despite DCSS sprites and definitions being available.",
+      "fit_assessment": {
+        "fit_score": "excellent",
+        "implementation_complexity": "medium",
+        "rationale": "Crossbows are a critical missing archetype flagged in itemization-audit-2026-06-22 as 'Major finding B2: No ranged weapon archetype anywhere.' Inventory sprites (7) and player overlays (6) are production-ready in DCSS source pack. Audit explicitly names crossbows as strategic fill. Mechanically, crossbows differ from existing melee slots: slower attack speed (higher delay), heavier weight, ranged positioning, separate damage scaling (ranged vs melee skills in DCSS). In Botter, they would occupy the weapon slot but as a sub-archetype, opening build variety (ranged-crit vs melee-dps). No new UI required — weapon slot already handles all display. Complexity: medium (requires importing sprites via sync_items, authoring 5-15 crossbow base items with ranged stats, wiring attack speed to a separate ranged skill pool or damage formula). Low-risk because weapon slot is fully wired.",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "Crossbows should spawn as 1H and 2H variants (Hand Crossbow: 1H, fast 0.6-0.8 speed, 20-40 damage, supports shield-swap; Arbalest/Crossbow: 2H slow, 0.4-0.5 speed, 50-120 damage, heavy weight penalty) granting ranged-damage scaling via new affix pool gated to crossbow-only (e.g., of_piercing_shot, of_ricochet). They would feel distinct from existing weapon slots by introducing weapon-class identity (ranged vs melee) and speed/power tradeoff (slow + heavy for high damage). This makes crossbows a legitimate alternative path to crit-sword builds, unlocking theorycraft depth the audit found missing."
+    },
+    {
+      "key": "sling",
+      "name": "Sling",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 10,
+        "paths": [
+          "item/weapon/ranged/sling_1.png",
+          "item/weapon/ranged/sling_2.png",
+          "item/weapon/ranged/greatsling.png",
+          "item/weapon/ranged/greatsling_2.png",
+          "item/weapon/ranged/sling_bullet_1.png",
+          "item/weapon/ranged/sling_bullet_2.png"
+        ],
+        "notes": "Slings documented in tile_atlas.json with 10 subcategory entries total, including variants (sling_1, sling_2, greatsling, greatsling_2) plus projectile variants (sling_bullet_*). All paths are indexed in project/data/tile_atlas.json. Source sprites available in dcss/ directory but not yet imported into project assets/tiles/items/."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 2,
+        "paths": [
+          "player/hand_right/sling.png",
+          "player/hand_right/greatsling.png"
+        ],
+        "notes": "Player overlay sprites for slings exist in dcss source (Full and Supplemental packs), indexed in tile_atlas.json with category='player', location 'hand_right'. These render as equipment overlays when sling is equipped. Not yet imported into project/assets/tiles/player/weapons/; hand_right overlays conventionally drawn in-hand on right side of paperdoll."
+      },
+      "dcss_mechanics": "Sling is a light ranged weapon in DCSS (WPN_SLING). Base stats: 7 damage, 0 speed mod, base cost 14. Uses SK_RANGED_WEAPONS skill. Minimum size: SIZE_LITTLE (hobgoblins and smaller). Ammunition: uses sling bullets (MI_SLING_BULLET, removed as droppable item in modern DCSS). Damage type: DAMV_NON_MELEE. Affix category: RANGED_BRANDS (shared with bows). Available to multiple starting jobs including HexSlinger, and species like Coglins get specialized loadouts (prefer dual slings over single bow).",
+      "fit_assessment": {
+        "fit_score": "good",
+        "rationale": "Slings are a viable light ranged weapon slot candidate. Full sprite support exists (inventory + player overlays). DCSS treats them as weapon-class items with standard brands and skill scaling. In Botter context: slings would fill a light ranged niche distinct from heavier melee weapons. Challenge: Botter currently has no ranged weapons (only melee). Slings demand ammunition management (stones/bullets) which Botter doesn't currently model in its simplified loot/inventory system. This creates implementation friction—unlike existing weapon slots, slings require missile type tracking and consumption logic.",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "Slings would grant damage_min=7, damage_max=14, speed=0.0 (fast), damage_type='physical', weapon_class='1H', similar to darts but as equipped weapons. Unlike DCSS, Botter could treat sling ammunition as implicit (no separate stone inventory slot needed)—projectiles auto-replenish or are unlimited. Mechanically, slings would enable ranged-attack playstyles: lower per-hit damage than swords but faster attack rate, scaling with Finesse/Dexterity affixes. Visually distinct from the heavy sword/shield/armor focus: a nimble, hit-and-run feel. Would require new attack range/targeting logic if implemented for combat."
+    },
+    {
+      "key": "throwing_weapon",
+      "name": "Throwing Weapon (Javelin/Dart)",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 12,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/tomahawk_1.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/tomahawk_2.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/silver_tomahawk.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/steel_tomahawk.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/throwing_net.png"
+        ],
+        "notes": "Throwing weapons (tomahawks, nets) exist in DCSS as item/weapon/ranged/ inventory sprites. Darts and javelins appear only as projectile effect sprites (effect/javelin_*.png, effect/dart_*.png) in tile_atlas but lack corresponding equippable inventory item sprites. Tomahawks and throwing nets serve as available throwing-weapon inventory icons; ~12 variants present in DCSS Full pack including old/new versions. Project currently has no throwing_weapon slot defined in items.json; weapon slot (177 items) covers melee and all ranged weapons together."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 1,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_right/dart.png"
+        ],
+        "notes": "Single player overlay sprite exists for dart in hand_right directory (dart.png), confirming DCSS renders dart-throwing with a visible hand-held projectile overlay. No dedicated javelin/tomahawk hand overlays found; dart represents the throwing weapon posture. Project/assets/tiles/player/weapons/ contains 262 weapon overlays but none labeled as throwing-specific. Player overlay sprites are pre-aligned to 32x32 canvas with grip at player hand position (per paperdoll_renderer.gd comments). Positional rendering supported but limited to dart sprite availability."
+      },
+      "dcss_mechanics": "In DCSS, throwing weapons (OBJ_MISSILES class, darts/javelins/tomahawks) are fired using the SK_THROWING skill and inherit ranged_attack logic distinct from ranged weapon-based attacks (bows/crossbows). Throwing attacks employ the throwing() method to distinguish from ammunition-based ranged combat, applying SK_THROWING skill scaling. DCSS has no dedicated SLOT_THROWING equipment slot; instead, missiles (OBJ_MISSILES) are inventory-stackable consumables that launch from SLOT_WEAPON or are selected per-throw, unlike equipped weapons. Modern DCSS supports throwing nets with special ensnaring mechanics and various projectile brands (flame, frost, chaos) applied at throw-time.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Throwing_weapon has sprite support (dart overlay + tomahawk inventory icons) and clear DCSS precedent (SK_THROWING skill, OBJ_MISSILES class). However, it introduces a conceptual conflict with Botter's current design: DCSS treats throwing weapons as consumable-like (stackable, OBJ_MISSILES) without a dedicated equipment slot, whereas Botter's architecture assumes all slots (weapon, shield, etc.) are single-item equipped pieces with paperdoll overlays. Implementing throwing_weapon as a true equipment slot would diverge from DCSS mechanics (where you don't equip javelins, you consume them) and from Botter's existing slot paradigm (helm, boots, etc. are single items). Players would expect it to grant attack bonuses similar to weapon slot, but throwing in DCSS is skill-based scalable damage, not item-stat dependent.",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "If implemented, throwing_weapon should grant damage_min/max, attack_speed, and projectile_type (fire/frost/chaos/physical), similar to weapon slot but with throwing_range modifier and base two-handed scaling (javelins are typically 2H conceptually). Differentiate from weapon slot by: (1) visual distinctness (dart overlay worn at chest/ready position vs. right-hand weapon overlay), (2) stat weighting toward strength/finesse over intelligence, and (3) exclusive affixes tied to projectile mechanics (of_returning for bouncing, of_piercing for armor-pen, of_homing for accuracy bonus). This would feel like a second damage source that rewards different stat distributions than melee weapons and creates build variety by letting players dual-invest in throwing + spell damage instead of melee + shield."
+    },
+    {
+      "key": "quiver",
+      "name": "Quiver / Ammo Container",
+      "sprite_inventory": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "DCSS item pool includes 40 ranged projectile sprites (elven_arrow.png, orcish_arrow.png, silver_arrow.png, etc. in /Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/weapon/ranged/ and supplemental pack), but these are projectile ITEMS, not quiver/ammo container EQUIPMENT. No dedicated quiver icon exists in /Users/dyo/claude/botter/project/assets/tiles/items/ (309 total sprites scanned). Tile atlas search for 'quiver' in category==item or category==player yielded zero results. DCSS does not define a SLOT_QUIVER equipment slot — quiver mechanics in DCSS are action-based via quiver.h (fire actions, cycling, targeting) rather than equippable slots."
+      },
+      "sprite_positional": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "DCSS player sprite structure (/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/) defines 16 equipment overlay part categories: BASE, SHADOW, HALO, ENCH, CLOAK, BOOTS, LEG, BODY, ARM, HAND1, HAND1_MIRROR, HAND2, HAIR, BEARD, HELM, DRCWING. No QUIVER or projectile container category exists. HAND1/HAND2 (hand_right/hand_left in source) render weapons/shields only. Botter's paperdoll_renderer.gd and actor.gd layer 7 equipped slots (weapon, shield, helm, armor, boots, gloves, cloak) — no player overlay capability for quiver/ammo."
+      },
+      "dcss_mechanics": "In DCSS, quiver management is NOT an equipment slot mechanic (equipment-slot.h defines 19 slots: SLOT_WEAPON through SLOT_GIZMO, with no SLOT_QUIVER). Instead, quiver is an action-centric system (quiver.h): the player maintains a quiver_action (cycled via CMD_CYCLE_QUIVER_FORWARD/BACKWARD) that tracks the selected projectile or ability for fire actions (CMD_FIRE). Missiles (OBJ_MISSILES) are stackable inventory items, not worn equipment — they persist in inventory slots and are consumed on fire. The quiver action chains to the launcher weapon (if applicable) via get_launcher() context.",
+      "fit_assessment": {
+        "fit_score": "poor",
+        "rationale": "Quiver does not map cleanly to Botter's equipment-slot-based item system. DCSS implements quiver as a gameplay action (fire cycling + ammo selection) orthogonal to worn equipment slots; it has no player overlay sprite in DCSS and no dedicated inventory icon category. Adding quiver as a Botter equipment slot would require: (1) sourcing or creating a unique quiver icon (none exist in project/assets/tiles/items or tile_atlas.json), (2) inventing a fictitious equipment slot with unclear gameplay purpose (ammo is inventory-only in DCSS), and (3) establishing how quiver interacts with ranged weapons (launcher context) when Botter treats weapon and ammo as orthogonal. The mechanic conflicts with Botter's design where projectiles, if introduced at all, would likely be inventory consumables (like scrolls/potions), not equipped gear.",
+        "implementation_complexity": "high",
+        "visual_category": "consumable_no_inv"
+      },
+      "recommended_design": "Not recommended for Botter as an equipment slot. If ammo-based ranged combat were desired, implement projectiles as stackable inventory consumables (OBJ_MISSILES analogue) with a launcher weapon mechanics subsystem, rather than an equippable quiver slot. The quiver UI in Botter would better map to a fire-action doctrine rule (which action to cycle when player fires) than to paperdoll equipment. Projectiles should remain consumable, not worn.\""
+    },
+    {
+      "key": "wand",
+      "name": "Wand",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 39,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/wand_brass.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/wand_copper.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/wand_silver.png"
+        ],
+        "notes": "Three wand variants in project/assets/tiles/items/casters/; plus 39 DCSS wand sprites catalogued in tile_atlas.json under subcategory='wand' (gem_bone, gem_brass, gem_bronze, gem_iron, gem_ruby, lw_wand1-15, etc). All in 'item' category, not 'player'. Can be imported from DCSS source packs."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 3,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/wand_brass.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/wand_copper.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/wand_silver.png"
+        ],
+        "notes": "Three wand player overlays exist in project/assets/tiles/player/weapons/ alongside weapon overlays. Wands render in-hand as shown in paperdoll when equipped. No separate 'player' category wands in tile_atlas—these are authored specifically as hand-hold overlays, pre-aligned to 32×32 canvas."
+      },
+      "dcss_mechanics": "In DCSS, wands are OBJ_WANDS evocable items (not worn slots) that hold rechargeable charges. Each wand type has a base charge value (9-32 charges depending on type and item_level). Wands are not worn in an equipment slot (no SLOT_* assignment); they sit in the inventory and are activated via Evoke command. Charges deplete on use and regenerate at mana fountains. Wands are never shown on the player overlay in DCSS because they are utility items, not body-worn equipment like weapons or armor.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Wands have abundant inventory sprites (39 in DCSS catalog) and working player overlays (3 variants pre-authored). However, they conflict with Botter's design paradigm: Botter uses only worn equipment slots + autocast spells. Wands would be a third item category (not worn, not autocast), requiring new UI, management system, charge mechanics, and evocation triggers. Unlike rings/amulets (stat providers), wands demand active gameplay—players expect manual control or integrated cooldown tracking. The existing spell1-5 system already fills the 'limited-charge magical effect' niche; wands would feel redundant unless distinctly scoped (different effects, faster cool-downs, manual evoke vs. autocast).",
+        "implementation_complexity": "high",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "If implemented, wands should differ from spells by granting +Int, +Mana, +Mana-Regen (making them stat items like amulets/rings) with a passive charge-discharge mechanic tied to mana pools, rather than a manual evoke system. A wand in slot 'wand' could render in-hand (using existing player overlays in weapons/ folder) and provide utility-focused affixes (of_quickcast, of_resonance, of_channeling). The key differentiator: wands grant passive int/mana stats while spells grant active cast effects—this makes wands feel like a caster's stat-stick (comparable to how shields provide block%) rather than another spell slot. This preserves inventory clarity and ties to Botter's 'prebuilt loadouts' philosophy without requiring evoke UI."
+    },
+    {
+      "key": "staff",
+      "name": "Staff",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 8,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/staff_1.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/staff_3.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/staff_7.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/artefacts/wpn_spwpn_staff_of_olgreb.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/artefacts/wpn_spwpn_staff_of_dispater_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/quarterstaff_2.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/quarterstaff_3.png"
+        ],
+        "notes": "58 staff icon entries in tile_atlas.json under 'item/staff/*' path and artefact variants. Subdirectory: /Users/dyo/claude/botter/project/assets/tiles/items/casters/ contains 15 .png files (excluding .import); artefacts/ contains staff_of_* variants; root items/ contains quarterstaff variants. Botter currently uses these as 2H weapons."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 5,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/staff_1.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/staff_3.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/staff_7.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/quarterstaff_2.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/weapons/quarterstaff_3.png"
+        ],
+        "notes": "46 player overlay staves catalogued in tile_atlas.json under 'player/hand_right/*staff*' and 'player/hand_right/*quarterstaff*' paths. DCSS treats OBJ_STAVES as weapons with player overlay support (has_player_overlay_in_dcss: true). Currently rendered via paperdoll_renderer.gd as part of weapon slot with z=6 (topmost layer)."
+      },
+      "dcss_mechanics": "In DCSS, staves are a distinct item class (OBJ_STAVES) separate from standard weapons. They grant spell school bonuses: STAFF_FIRE, STAFF_COLD, STAFF_CONJURATION, STAFF_SUMMONING, STAFF_NECROMANCY, STAFF_AIR, STAFF_EARTH, and STAFF_ALCHEMY. Staves provide +N to casting power for spells of their associated school, boosting spell damage and efficacy without replacing weapon damage. They render as two-handed weapons with full player overlay support.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Staves are currently in Botter as 2H weapons (base_type='staff', slot='weapon'), not as a separate equipment slot. Promoting staves to a dedicated slot (slot='staff') would require: (1) splitting them from weapons, (2) deciding whether they should be exclusive to spellcasters or viable alongside weapons, (3) redesigning the two-handed logic. The DCSS precedent supports this (separate item class), and rich sprite coverage exists (46 player overlays, 58+ inventory sprites). However, this conflicts with Botter's existing weapon system where staves are viable damage-dealing 2H options. Value-add over weapon slot is moderate: spell schools are a new mechanical layer not currently in Botter's affix system, but this could be implemented as weapon affixes instead (e.g., 'fire_school_bonus +2' on a staff weapon).",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "A dedicated 'staff' slot would grant spell school bonuses (e.g., '+1 Fire Spell Power', '+2 Cold Spell Power') and scale spell damage for its school independently of the weapon. Unlike Botter's current spell-scaling affixes (spell_damage_pct, int_spell_dmg_pct), staves would provide school-specific boosts, letting players say 'I'm building a Fire mage with an Infernal Staff'. This would differentiate it from the weapon slot (which focuses on melee damage) and from rings/amulets (which provide generic stat bonuses). Players would notice staves enable specialist spell builds distinct from pure melee or magic-generic gear combinations.\""
+    },
+    {
+      "key": "shield",
+      "name": "Shield (Off-hand)",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 37,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/buckler_1_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/buckler_1_old.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/shield_2_kite.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/large_shield_1_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/shield_dd.png"
+        ],
+        "notes": "37 shield entries in tile_atlas.json under item/armor/shields/. All 18 PNG files in /Users/dyo/claude/botter/project/assets/tiles/items/ with shield/buckler/kite/tower names. Covers bucklers, kite shields, tower shields, and special variants (dwarven, elven, dd-specific). Inventory sprites already in Botter project."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 29,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/player/shield/buckler_1_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/shield/buckler_2_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/shield/dwarven_buckler_1.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/shield/large_shield_1_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/shield/shield_dd.png"
+        ],
+        "notes": "29 PNG player overlay sprites in /Users/dyo/claude/botter/project/assets/tiles/player/shield/. 45 entries in tile_atlas.json under player/hand_left/.*shield.* plus player/shield/ subdirectory. Left-hand overlay location (z=5, above armor/boots, below weapon). Rendered in paperdoll_renderer.gd at Vector2(0,0) offset. Sprites already integrated into atlas."
+      },
+      "dcss_mechanics": "In DCSS, SLOT_OFFHAND holds shields (OBJ_ARMOUR with ARM_BUCKLER, ARM_KITE_SHIELD, etc.) or dual-wield weapons. Shields provide armor class (AC) as base defense and trigger shield_block_succeeded() on successful blocks, enabling reactive on-block effects for unrandarts. Block chance and block_amount scale with shield size and enchantment. Shields occupy SLOT_OFFHAND exclusively from SLOT_MIN_ARMOUR to SLOT_MAX_ARMOUR range, requiring right-hand weapon OR two-handed weapon rules.",
+      "fit_assessment": {
+        "fit_score": "excellent",
+        "rationale": "Shield is ALREADY FULLY IMPLEMENTED in Botter. Present in items.json (38 entries), paperdoll_renderer.gd, save_state.gd equipped slots, and all sprite assets (29 player overlays, 37 inventory icons, 45 atlas entries). Block mechanics already functional (block_chance, block_amount properties in items). Renders correctly at z=5 in left-hand. No implementation work required—this is an existing, mature slot.",
+        "implementation_complexity": "low",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "Shield in Botter already grants armor + evasion + block_chance/block_amount (e.g., Iron Buckler: 7 armor, 1 evasion, 9% block chance, 5 block amount). It uses a generic affix pool (of_might, of_finesse, of_wisdom, of_vitality, resistance affixes, of_bulwark) smaller than armor/amulets. It differs from other slots by its defensive focus on reducing damage via block rather than stat scaling, making it feel like a dedicated mitigation tool rather than stat amplification. Block mechanics drive a \"shield-tank\" playstyle where successful blocks reset cooldowns or trigger retaliations."
+    },
+    {
+      "key": "cloak",
+      "name": "Cloak / cape — back armor",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 6,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/cloak_1_leather.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/cloak_2.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/cloak_3.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/cloak_4.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/urand_ratskin_cloak.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/artefacts/arm_urand_ratskin_cloak.png"
+        ],
+        "notes": "All 6 inventory sprites present in project/assets/tiles/items/. Catalog shows entries in tile_atlas.json under category 'item' with keys like 'item/armor/back/cloak_*' and 'item/armor/artefact/urand_ratskin_cloak.png'. 26 cloak items exist in items.json with slot='cloak'."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 12,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_1_leather.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_2.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_3.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_4.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_leather.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_silken.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_rangers.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_hooded.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_travelers.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_warlord.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_woven.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/player/cloak/cloak_wool.png"
+        ],
+        "notes": "12 player overlay sprites available in project/assets/tiles/player/cloak/. Tile_atlas.json catalogs 16 player entries (12 project locals + 4 DCSS player/cloak color variants: black, blue, brown, cyan, dragonskin, gray, green, magenta, ratskin, red, white, yellow). paperdoll_renderer.gd confirms 'cloak' in SLOT_DIRS, SLOT_Z=-1 (renders beneath base sprite as back-layer), SLOT_OFFSETS=(0,0)."
+      },
+      "dcss_mechanics": "DCSS SLOT_CLOAK (DCSS equivalent to Botter's cloak slot) is worn over armor and provides AC + resistances. In DCSS source (player-equip.cc line 202-215), cloak slot is restricted: cannot be worn by Octopodes, Formless mutants, or characters with high Weakness Stinger mutation. Cloaks rendered as back-layer overlay on player paperdoll (behind body armor, unlike other armor pieces). Generic armor-type item with no special evocation or form-triggered mechanics.",
+      "fit_assessment": {
+        "fit_score": "excellent",
+        "rationale": "Cloak is ALREADY FULLY IMPLEMENTED in Botter as a ninth equipment slot (confirmed in context: 'cloak' listed with count=26, 44-affix pool, player overlay z=-1, exclusive affix of_serpent_growth). All infrastructure exists: 26 items in items.json, 44 affixes apply_to cloak, 12 project player overlays + 16 atlas entries, paperdoll rendering at z=-1 (back-layer), base_type_affixes configured (agility/haste/regen/stamina weighting). This is not a candidate for investigation — it is a reference implementation of a completed slot addition (2026-06-05 per paperdoll_renderer.gd comment). No fit assessment needed; the slot is canonical and proven.",
+        "implementation_complexity": "low",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "CLOAK IS ALREADY SHIPPED. It grants armor + evasion (like armor but lighter, z=-1 back-layer rendering), scales from 36+ evasion at T5 (Ratskin Cloak), and includes the archetype-exclusive affix of_serpent_growth (hp_per_kill_cap, cloak-only). The slot differs from armor by rendering behind the player (z=-1 instead of z=2), making it visually distinct—players see a cape flowing beneath their breastplate rather than integrated into their chest piece. This back-layer rendering matches DCSS faithfully and gives cloaks a unique silhouette in both inventory icons and paperdoll previews.\""
+    },
+    {
+      "key": "belt",
+      "name": "Belt",
+      "sprite_inventory": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "No belt items exist in /Users/dyo/claude/botter/project/assets/tiles/items or in tile_atlas.json. The atlas contains 408 non-player inventory items (primarily weapons, armor variants, artefacts, casters, spells). Barding (centaur/naga lower body) exists as both inventory items (9 variants in item/armor/bardings/) and player overlays (10 variants in player/barding/), but zero belt inventory icons are present. Belt is declared in UI (outpost.gd::PAPERDOLL_RIGHT_COLUMN, SLOT_TOOLTIPS), but has no backend representation in items.json (0 belt items exist) or save_state slot initialization."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 4,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/body/belt_1.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/body/belt_2.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/body/belt_gray.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/legs/belt_redbrown.png"
+        ],
+        "notes": "4 player-overlay belt sprites indexed in tile_atlas.json: 2 in player/body/ (belt_1, belt_2 — variant set) and 2 in player/legs/ (belt_gray with BELT_GRAY enum + FIRST_NORM marker, belt_redbrown with BELT_REDBROWN enum). Sourced from DCSS pack, but NOT wired into Botter's paperdoll_renderer.gd (no entry in SLOT_DIRS, SLOT_Z, SLOT_OFFSETS). Botter currently renders only: weapon, shield, helm, armor, boots, gloves, cloak (7 slots). Belt is skipped by the overlay loop because it's absent from the renderer's z-order dict."
+      },
+      "dcss_mechanics": "DCSS does not have a SLOT_BELT. The equipment-slot.h enum lists 12 real slots: SLOT_WEAPON, SLOT_OFFHAND, SLOT_BODY_ARMOUR, SLOT_HELMET, SLOT_GLOVES, SLOT_BOOTS, SLOT_BARDING, SLOT_CLOAK, SLOT_RING, SLOT_AMULET, SLOT_GIZMO, plus flexible slots for special species. Barding (SLOT_BARDING) is the functional waist/lower-body slot for Centaurs and Nagas, replacing boots on those species. Belts in DCSS crawl are purely cosmetic body overlays (visual decoration on the player doll) with no mechanical inventory slot — they appear alongside armour but don't occupy an equipment slot.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Botter has UI scaffolding for belt (declared in PAPERDOLL_RIGHT_COLUMN and SLOT_TOOLTIPS in outpost.gd and hud_chrome.gd) and 4 player-overlay sprites exist in the atlas. However, there is NO backend implementation: zero belt items in items.json, no belt entry in save_state._backfill_equipped_slots(), no slot in paperdoll_renderer.gd's SLOT_DIRS/SLOT_Z/SLOT_OFFSETS, and belt is completely absent from the core SLOTS list. This represents an incomplete stub — the UI layer anticipated belt but the backend was never wired. Relative to DCSS, belt has no mechanical analogue (barding serves lower-body, rings/amulets fill jewelry slots); Botter would be adding a new mechanic not derived from DCSS rather than faithfully adapting one. Visual assets are available (via DCSS player overlay pack), reducing art implementation cost.",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "Add belt as a pure-stat waist slot (no damage/armor interaction) similar to amulet/ring but with a unique flavour: grant minor utility bonuses like +5% evasion, +2% movement speed, or elemental resistances (cold/fire/poison). Belt would render as a positional overlay on the bot (using the existing 4 DCSS player sprites) and draw from a new item category in items.json (starting with 15-20 common/uncommon belt items). Unlike barding (which is species-specific), belts would be universal — all species equip one. This would differentiate belt from the existing jewelry twins (ring grants pure stats + archetype-exclusive perks; amulet grants pure stats + largest affix pool). A visibly-worn belt on the paperdoll creates character silhouette variety and gives players another gear-slot to optimize without cluttering the defensive core (armor/helm/boots/shield)."
+    },
+    {
+      "key": "trinket",
+      "name": "Trinket (Generic Small Accessory / Charm)",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 50,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/agate.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/coral.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/pearl.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/urand_brooch_of_shielding_new.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/diamond.png"
+        ],
+        "notes": "50 unique ring sprites already cataloged in tile_atlas.json under 'item/ring/' and 46 amulet sprites under 'item/amulet/', totaling 96 jewelry-like inventory icons. These are small, ornamental items sized 278-1044 bytes PNG, suitable for trinket reuse. No explicit 'trinket' category exists yet, but the visual asset pool is abundant."
+      },
+      "sprite_positional": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "DCSS conventionally reserves player overlays for body-worn slots: weapons, shields, helms, armor, boots, gloves, cloaks, and barding. Jewelry (rings, amulets) and trinkets are never rendered ON the player—they have no body location. Botter paperdoll_renderer.gd hardcodes only 7 overlay slots: weapon, armor, helm, shield, boots, gloves, cloak (lines 16-24). No player/trinket/ directory exists in project/assets/tiles/player/. DCSS source (equipment-slot.h) confirms rings and amulets (SLOT_RING, SLOT_AMULET) are categorized under SLOT_ALL_JEWELLERY and lack player overlay support."
+      },
+      "dcss_mechanics": "DCSS treats rings and amulets (jewelry) as stat-only accessories bound to SLOT_RING and SLOT_AMULET. They grant attributes, resistances, special abilities, and enchantments but have no body location and never render on the player figure. The player-equip system (player-equip.h, equipment-slot.h) explicitly groups them as SLOT_ALL_JEWELLERY rather than armour. A \"trinket\" slot, if implemented, would most naturally align with DCSS's jewelry model—a wearable but non-visual item type.",
+      "fit_assessment": {
+        "fit_score": "good",
+        "rationale": "Trinket is mechanically sound and thematically strong. It reuses abundant existing jewelry sprite assets (96 inventory icons). However, implementation cost is moderate: save_state.gd must add a new slot key to the _backfill_equipped_slots array; items.json and the item generator must support a 'trinket' slot; and paperdoll_renderer.gd must NOT add trinket to SLOT_DIRS (since trinkets are non-visual). Risk is low because trinkets are abstract stat items like rings/amulets, requiring no paperdoll rendering.",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_only"
+      },
+      "recommended_design": "Botter trinkets would grant mid-tier stat bonuses (e.g., +1-2 to secondary attributes, or niche utility like +crit_chance, +heal_efficiency, spell_cooldown_pct) that don't overlap core amulet/ring roles. Unlike rings (defensive/stat focus) and amulets (largest pool, spell-centric), trinkets would offer small, character-defining perks: mobility, resource management, or exotic defenses. Players would notice trinkets as \"pocket-sized power\"—a slot that rewards curiosity without bloating the paperdoll."
+    },
+    {
+      "key": "talisman",
+      "name": "Talisman (DCSS form-shift item, 22 evocable species-specific forms)",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 22,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/talisman/blade.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/talisman/dragon.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/talisman/death.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/talisman/maw.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/talisman/sphinx.png"
+        ],
+        "notes": "All 22 talisman types (blade, dragon, death, maw, serpent, statue, storm, protean, vampire, rimehorn, spider, hive, aqua, sphinx, werewolf, inkwell, fortress, scarab, medusa, eel, spore, quill) have inventory sprites in the DCSS source, but ZERO are currently in Botter project/assets/tiles/items/. Must import from DCSS source during sync-items pipeline."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 89,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/player/transform/blade_form_humanoid.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/player/transform/dragon_form_red.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/player/transform/dragon_form_gargoyle.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/player/transform/maw_form0.png",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/player/transform/sphinx_form_default.png"
+        ],
+        "notes": "Full player-overlay coverage exists for talisman form-shifts (89 sprites across all species variants). Each talisman form has a humanoid base + species variants (felid, gargoyle, octopode, djinn, naga, etc). These are DIFFERENT from inventory sprites — pre-aligned to 32x32 canvas where the transformed body occupies the full sprite. NOT in Botter project/assets/tiles/player/ yet; must import from DCSS player/transform/ during sync-items."
+      },
+      "dcss_mechanics": "In DCSS, talismans are evocable items (OBJ_TALISMANS) that trigger on-equip form-shifting. When carried (not necessarily equipped), they grant artefact properties (shapeshift forms are artefacts). Evoking a talisman causes the player to shapeshift into that form (blade swarm, dragon, death lich, etc.) with form-specific combat abilities, resistances, and damage profiles. Talismans are 'species-agnostic' — any species can evoke any talisman, though form rendering differs by ancestry. Form shifts grant temporary transmutation-based bonuses (melee reroll, resistances, special attacks). Talismans are not equippable slots in DCSS (not SLOT_RING, SLOT_AMULET, etc.); they're inventory items cast via evocation.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "implementation_complexity": "high",
+        "rationale": "Talismans are mechanically distinct from every existing Botter slot: they're not passive worn stats (like ring/amulet), not equipment overlays with fixed positions (like weapon/armor), and not autocast spells. They represent temporary STATE CHANGE (player becomes a dragon, maw creature, etc.). Botter currently has no form-shift system, no transient stat-override system, and no UI for managing multiple form-state builds. The visual rendering complexity is HIGH: need 89 positional sprites + tile_atlas integration + new player overlay category. The gameplay complexity is MODERATE: each form would need ~5-10 form-specific stats/behaviors (damage profile, AC, resistances, special attacks). Integration with paperdoll_renderer requires new 'form' render layer that occludes the normal equipment stack. RISK: form-shifting breaks assumptions about bot appearance, equipment validity, and stat calculations. Gameplay payoff is HIGH (exciting transformation fantasy), but implementation touches core systems.",
+        "visual_category": "positional_required"
+      },
+      "recommended_design": "Talismans should be a NON-EQUIPABLE inventory item slot (like spells currently) that grants an alternate form the bot CAN ENTER but is NOT currently in. When active (e.g., autocast trigger or manual evoke), the bot's base sprite + equipment overlay stack is replaced by a full-body form sprite from the player/transform/ tree, and form-specific stat overrides (melee/AC/resistances) apply for the duration. Each talisman grants 3-5 form variants (dragon_form_red, dragon_form_green, etc.) chosen at spawn or via affix. Examples: Talisman of Dragon grants +50 melee, +15 AC, fire resistance, knockback on hit; Talisman of Sphinx grants evasion scaling, ranged damage bonus, flight properties. This would be the first 'temporary state-change' item in Botter, meaningfully different from passive equipment — players would notice the bot visibly transforming during key fights."
+    },
+    {
+      "key": "spellbook",
+      "name": "Spellbook",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 34,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/tome_indigo.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/tome_dogeared.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/tome_dead.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/books/book_of_the_dead.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/books/red.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/books/purple.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/books/blue.png"
+        ],
+        "notes": "3 tome variants in casters/; 31 colorful book variants in spells/books/ (cloth, leather, metal, parchment, plaid, etc.). Total ~34 unique inventory icons, all 32x32 PNG, indexed or readily available for paperdoll icon display."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 15,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_left/misc/book_black.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_left/misc/book_blue.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_left/misc/book_red.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_left/misc/book_cyan_dim.png",
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_left/misc/book_green_dim.png"
+        ],
+        "notes": "DCSS has 15 book sprites in player/hand_left/misc/ (held in left hand when equipped). Represents books gripped as off-hand items. However, Botter does not currently have a player overlay directory for spellbooks/casters. Adding one (project/assets/tiles/player/spellbook/) would require porting or creating sprites. Alternatively, books could render in hand_left position if mechanically treated as off-hand."
+      },
+      "dcss_mechanics": "In DCSS, spellbooks (OBJ_BOOKS) are NOT wearable equipment. They are pure inventory items read to memorize spells; no equipment slot exists for them (equipment-slot.h lists 12 slots, none for books). Books are consulted from inventory, not worn. Artefact books like Bookmark exist but don't grant equipment slots—they provide passive bonuses while in inventory.",
+      "fit_assessment": {
+        "fit_score": "poor",
+        "implementation_complexity": "high",
+        "visual_category": "inv_only",
+        "rationale": "Spellbooks are conceptually misaligned with Botter's equipment model. DCSS treats books as inventory consumables/tools, not worn gear. Botter already has a robust spell system (spell1-5 autocast slots holding 234 spell items, managed by doctrine). A 'spellbook' wearable slot would create: (1) design redundancy—spells already equip independently in dedicated slots; (2) semantic confusion—books in DCSS grant spell LEARNING, not stat bonuses (Botter's core affix currency). To make spellbooks mechanically distinct from existing spell slots, they'd need new affixes (spell_damage_boost, mana_reduction, cooldown_reduction_all, etc.), but these are better served by existing slots (amulet, ring). Inventory-only (consumable) spellbooks make sense narratively but violate Botter's 'all gear is equippable' principle. Player overlay would require new sprite infrastructure (spellbook directory + 15+ variants) or hand_left repurposing, adding implementation cost without gameplay clarity."
+      },
+      "recommended_design": "Skip spellbooks as a new equipment slot. Instead, enhance existing slots: (1) introduce spell-affinity affixes (of_spell_empowerment, of_mana_battery) to amulets/rings to grant spell-specific damage/cooldown/mana; (2) create \"grimoire\" weapon variants (off-hand orbs/wands that grant spell bonuses in weapon slot, with player overlay in hand_left). This reuses existing infrastructure while keeping spell power within the established doctrine + affix system. If narrative richness demands a \"spellbook\" item, implement it as a unique artefact within an existing slot (e.g., \"Tome of Power\" amulet with binding lore) rather than a new equippable slot."
+    },
+    {
+      "key": "rod",
+      "name": "Rod — evocable magic device",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 31,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json (31 entries): item/rod/rod_0.png through rod_9.png with _new/_old variants",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/item/rod/rod00.png through rod09.png"
+        ],
+        "notes": "Inventory sprites cataloged in tile_atlas.json (31 entries: rod_0–rod_9 with age variants, plus rod_forked). Basic item sprites from DCSS source available but not yet deployed to project/assets/tiles/items/. All entries tagged with subcategory='rod' in atlas."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 31,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json (31 entries): player/hand_right/rod_*.png (aries, blue, brown, emerald, forked, hammer, magenta, moon, ruby, thick with _new/_old variants)",
+          "/Users/dyo/claude/botter/dcss-source/crawl-ref/source/rltiles/UNUSED/worn/rods/ (10 files): rod_aries.png through rod_thick.png"
+        ],
+        "notes": "Player overlays cataloged in atlas but NOT deployed to project/assets/tiles/player/. Located in DCSS UNUSED archive (rltiles/UNUSED/worn/rods/). These are 32x32 PNG overlays for right hand. DCSS historically had rod overlays but phased them out (hence UNUSED). All 31 atlas entries reflect decorative variety (aries = zodiac sign, forked = design style, etc)."
+      },
+      "dcss_mechanics": "In DCSS, rods (OBJ_RODS) were historically an equipped item type (deprecated circa TAG_MAJOR_VERSION=34). Modern DCSS treats rods as evocable items (OBJ_MISCELLANY equivalent), similar to wands—they have charges, grant no weapon enchantment bonus, and are used via evocation skill. Lightning rod is a canonical example: it casts Thunderbolt on evocation. Rods carry spell abilities tied to Evocations skill, not a dedicated equipment slot.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Rods have rich sprite coverage (both inventory and positional overlays exist in DCSS source), but they conflict fundamentally with Botter's architecture. DCSS modernized rods away from being worn equipment—they're now evocable items like wands/miscellany (no dedicated slot). Botter's existing 'spell' slot already covers evocable spell-like items (spells with cooldowns, damage, casting costs). Adding rod as a separate wearable slot would diverge from DCSS canon and create confusion: is a rod a spell (spell1–spell5 slots) or equipment (like weapon/armor)? The paperdoll has no neck/torso-facing hand position to distinguish from weapon overlay without additional visual rejiggering.",
+        "implementation_complexity": "high",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "If pursuing a rod slot despite misalignment, design it as a consumable-like evocable: wearable in a dedicated 'rod' slot (left hand, off-hand position, or hand_left overlay), grants +Evocations skill and elemental/utility procs (lightning, cold, summoning affixes tied to Evocations doctrine), and competes with shield for off-hand real estate. Players would notice it as a tactical choice: sacrifice defense (shield) or magic utility slot (ring) for active evocable power. However, this replicates spell1–spell5 autocast spells already in Botter—recommend instead integrating rods INTO the spell system as a special 'evocable rod' subtype with longer cooldowns and higher damage, avoiding a new equipment slot altogether."
+    },
+    {
+      "key": "orb",
+      "name": "Orb (Off-hand Focus / Lantern)",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 3,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/orb_1.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/orb_2.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/casters/orb_crystal.png"
+        ],
+        "notes": "Orb inventory sprites exist in project/assets/tiles/items/casters/. All 3 are currently active (no .import orphans). Botter also has access to 2 additional DCSS source orbs at /Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/item/misc/misc_orb.png and misc_orb_2.png that could be imported if needed."
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 1,
+        "paths": [
+          "/Users/dyo/claude/botter/dcss/Dungeon Crawl Stone Soup Full/player/hand_right/misc/orb.png"
+        ],
+        "notes": "Single hand_right orb player overlay exists in DCSS. No hand_left version found. DCSS renders orbs in the right hand (primary weapon/focus position). The 309 hand_right sprites include this misc/orb.png entry. Technically possible to create a left-hand (off-hand) variant by mirroring or creating new art, but only one canonical DCSS overlay currently exists."
+      },
+      "dcss_mechanics": "In DCSS, orbs (ARM_ORB subtype) are ARMOUR items that equip in SLOT_OFFHAND like shields, providing defensive properties and magical bonuses. They are NOT part of OBJ_ORBS (which is the end-game Orb of Zot quest item). The item_equip_slot() function in player-equip.cc shows that OBJ_ORBS items cannot be equipped anywhere (return SLOT_UNUSED), but ARM_ORB variants (crystal ball of Wucad Mu, orb of Dispater, sphere of Battle, etc.) are equipped as off-hand defensive items alongside weapons.",
+      "fit_assessment": {
+        "fit_score": "excellent",
+        "rationale": "Orbs have abundant sprite art, DCSS has proven precedent for off-hand orb items, Botter already has 4 orb items (currently wrongly slotted as weapons). Creating a dedicated 'orb' equipment slot would resolve a design conflict: orbs are caster/focus items but currently occupy the weapon slot despite not being weapons. An off-hand orb slot would parallel shields (defensive focus) while allowing caster-specific affixes and mechanics (spell power, mana regen, spell cooldown reduction). The visual layer already exists in hand_right overlay, and paperdoll z-ordering can accommodate it at z=5 (same as shield, but could alternate or adjust based on whether both orb+shield can coexist).",
+        "implementation_complexity": "medium",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "New orb slot should sit in SLOT_OFFHAND equivalent (off-hand defensive/utility), holding caster-specific items that grant spell power (+Spellpower), mana regeneration (of_regeneration_mana), spell cooldown reduction, or wisdom/intelligence bonuses. Unlike shields (pure armor/block), orbs would emphasize magical offense and resource management—a mage's counter to warrior shields. Visually render at z=5 (same layer as shield, but left hand) or with a toggle to prevent both shield and orb from equipping simultaneously (dual-wield prevention, like 2H weapons vs. shields now). This would make orbs feel like a distinct playstyle choice: mages sacrifice physical defense (shield) for magical amplification (orb)."
+    },
+    {
+      "key": "second_ring",
+      "name": "Second Ring Slot",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 50,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/ring_gold_white.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/ring_sapphire.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/ring_engagement.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/urand_octoring.png"
+        ],
+        "notes": "tile_atlas.json contains 50 item/ring/* entries. Project has 15 PNG ring sprites. All reusable."
+      },
+      "sprite_positional": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "DCSS does not render jewelry on player paperdoll. No player/rings directory exists."
+      },
+      "dcss_mechanics": "DCSS SLOT_RING is a unified slot where players equip exactly two rings. Internally stored as separate slots but presented as one selectable location. Rings are OBJ_JEWELLERY (never have body overlays). Octopodes gain additional ring slots (8 total) through jewellery system, not armor slots.",
+      "fit_assessment": {
+        "fit_score": "excellent",
+        "rationale": "Botter already fully implements multi-ring architecture via ring_slot_ids/ring2/ring3/ring4 for species conversions. Add second_ring for all species by: backfilling ring2 in equips, leveraging existing slot resolution logic. Minimal implementation—just data and migrations.",
+        "implementation_complexity": "low",
+        "visual_category": "inv_only"
+      },
+      "recommended_design": "Second persistent ring slot for all species (now tied to Octopode/Naga only). Grants stat affixes from the same 64-affix ring pool, enabling dual-ring stat stacking: +Str on ring + +Str on ring2 scales damage together. Player notices immediate gear depth—build now includes two ring slots for stat combos, making each ring drop more meaningful in the loot economy."
+    },
+    {
+      "key": "banner",
+      "name": "Banner",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 5,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json (keys: item/armor/back/cloak_*.png)",
+          "item/armor/back/cloak_1_leather.png",
+          "item/armor/back/cloak_2.png",
+          "item/armor/back/cloak_3.png",
+          "item/armor/back/cloak_4.png"
+        ],
+        "notes": "No dedicated 'banner' inventory sprites in tile_atlas. Could reuse 4 cloak_back sprites or 1 artifact sprite. Currently only 'Beogh's Banner' unique exists in items.json, using cloak_1_leather.png"
+      },
+      "sprite_positional": {
+        "available": true,
+        "count_estimate": 17,
+        "paths": [
+          "/Users/dyo/claude/botter/project/data/tile_atlas.json (keys: player/cloak/*.png)",
+          "player/cloak/black.png",
+          "player/cloak/blue.png",
+          "player/cloak/brown.png",
+          "player/cloak/cyan.png",
+          "player/cloak/dragonskin.png",
+          "player/cloak/gray.png",
+          "player/cloak/green.png",
+          "player/cloak/magenta.png",
+          "player/cloak/ratskin.png",
+          "player/cloak/red.png"
+        ],
+        "notes": "Reuses existing 17 cloak player overlays (17 color variants). DCSS does not have player/banner directory. Cloaks render as back-layer (z=-1) and never appear on top of bot, same as what banners would need."
+      },
+      "dcss_mechanics": "DCSS has no dedicated SLOT_BANNER equipment slot. Banners, if implemented as wearable items, would be OBJ_ARMOUR type and map to existing slots (e.g., cloak). In DCSS, banners serve primarily as thematic decorations or god artifacts (e.g., Beogh-themed), not a core item class with unique mechanical properties separate from cloaks.",
+      "fit_assessment": {
+        "fit_score": "fair",
+        "rationale": "Banner is visually and mechanically distinct from cloak—it would render prominently and grant aura/giving effects—but DCSS provides no precedent for a separate banner slot. Implementation requires new slot mechanics, new affixes, and visual differentiation (banner shape distinct from flowing cloak). Thematically fits Botter's fantasy aesthetic, but adds complexity without DCSS foundation. Moderate risk of slot creep.",
+        "implementation_complexity": "high",
+        "visual_category": "inv_plus_positional"
+      },
+      "recommended_design": "A banner slot should grant 1–2 stat points (Strength/Constitution focus, befitting the \"lordly\" aesthetic) plus an aura affix like \"of_command\" (nearby allies gain +5% damage) or passive effects tied to rally mechanics. It differs from cloak by rendering upright behind the shoulders rather than draped, visible from front and back, with affixes centered on morale/companion bonuses instead of passive defenses. This would make banners a leadership item, compelling for summon-heavy or ally-synergy builds."
+    },
+    {
+      "key": "consumable_scroll_potion",
+      "name": "Consumable Scroll/Potion Slot",
+      "sprite_inventory": {
+        "available": true,
+        "count_estimate": 64,
+        "paths": [
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/scrolls/scroll.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/scrolls/scroll-blue.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/spells/scrolls/scroll-purple.png",
+          "/Users/dyo/claude/botter/project/assets/tiles/items/potion_red.png"
+        ],
+        "notes": "Scrolls: 35 PNG sprites in /project/assets/tiles/items/spells/scrolls/ (named, colored variants + labeled types). Potions: 1 in local assets + 52 unique potion variants from tile_atlas.json (item/potion/*.png), totaling ~64 unique icons via DCSS atlas. No .import duplication counted."
+      },
+      "sprite_positional": {
+        "available": false,
+        "count_estimate": 0,
+        "paths": [],
+        "notes": "No player overlay directory exists for scrolls or potions in /project/assets/tiles/player/ (only weapon/helm/armor/shield/boots/gloves/cloak present). DCSS source (/dcss/*/player/) also lacks scroll/potion player overlays — only body slots (body/boots/helm/gloves/cloak), not evocables. DCSS confirms OBJ_SCROLLS and OBJ_POTIONS both have has_player_overlay_in_dcss=false; they are non-wearable consumables."
+      },
+      "dcss_mechanics": "In DCSS, potions (OBJ_POTIONS) are quaffed one-use items providing immediate or cumulative effects (healing, stat boosts, resistances). Scrolls (OBJ_SCROLLS) are read-and-consume items triggering magical effects (identify, teleport, enchant, summoning). Both are non-equippable inventory items — they appear in loot and are used on demand, not worn like armor or weapons. They have no slots (not OBJ_ARMOUR or OBJ_JEWELLERY) and no paperdoll overlays.",
+      "fit_assessment": {
+        "fit_score": "poor",
+        "rationale": "Consumable scrolls/potions fundamentally violate Botter's equipment paradigm. Equipment slots in Botter (weapon/armor/helm/ring/spell) are persistent, grant stat affixes, and render on paperdoll. Consumables are one-use, non-equippable, and have zero game-mechanical reason to become an 'equipped' slot. DCSS never equipped them; Botter's existing writ system already handles consumable modifiers as single-use drops. Adding a consumable_scroll_potion slot would require: (1) new item type definition; (2) affix pool + enchant logic (pointless for one-use); (3) paperdoll rendering logic (unnecessary, no overlay exists); (4) save-state backfill. The UX would confuse players — why equip a potion that vanishes on use? Spells already fill this niche via spell1-5.",
+        "implementation_complexity": "high",
+        "visual_category": "consumable_no_inv"
+      },
+      "recommended_design": "Do not implement. Consumables belong in inventory-only UI, not equipped slots. If you want on-demand consumable effects in Botter, extend the writ system (one-use modifiers) or create a consumable-menu interaction rather than an equipment slot. Alternatively, if the goal is to make scrolls/potions harvestable as unique named variants (like spell items), keep them as inventory-only drops and handle them via spell-like doctrine triggers, not equipment."
+    }
+  ],
+  "report": {
+    "cross_cutting_notes": "**1. No ranged-attack code path exists.** `bot.gd::swing_weapon` (line 1368-1593) is hardcoded for 8-directional melee swing tweens. Adding bow/crossbow/sling means either (a) plumbing a new `fire_projectile` pipeline through `actor.gd` + `pathfinding.gd` (target-aware engagement range, projectile tween, hit resolution at point of impact, NEW set of weapon archetypes in `_swing_*` dispatch), or (b) shipping ranged weapons as \"melee with 1-2 tile reach\" stub — which trivializes the fantasy. This is the single biggest blocker; without it bow/sling/crossbow/throwing all reduce to reskins. **Pick this fight first or pick none of them.**\n\n**2. Off-hand slot = `shield` only today.** Adding orb / wand / second-weapon (dual-wield) competes for the existing `shield` slot. `save_state._backfill_equipped_slots` knows only `shield` for off-hand; `paperdoll_renderer.SLOT_Z` z=5 is shield-exclusive. Either extend to a true `offhand` slot id (rename `shield`→`offhand` with subtype field — schema migration v18) or gate orb/wand to \"shield-replaces\" mutex logic. The dual-wield mutex is also already noted as \"currently dual weapons block shield slot\" in `bot.gd` notes.\n\n**3. Affix `applies_to` is the gating bottleneck.** `affixes.json` has 0 affixes for new slots like `belt`/`trinket`/`offhand_orb`/`bow`. Adding a slot without authoring a slot-specific affix pool produces filler items (just generic of_might/of_finesse rolls). Budget ~15-25 new affixes per new slot to make it feel distinct (compare existing pools: amulet=83, weapon=80, gloves=64, ring=64, shield=19). Belt/trinket/orb need bespoke affix pools or they're stat sticks.\n\n**4. UI scaffolding for `belt` already exists but is orphaned.** `outpost.gd::PAPERDOLL_RIGHT_COLUMN` includes `belt`, and `SLOT_TOOLTIPS` has an entry, but `save_state.gd:410-412` canonical slot list does not. Either wire belt end-to-end or rip the dead UI references — current state is bug-bait (a future contributor will think belt is supported).\n\n**5. Schema migration cost is fixed and small.** `save_state.SCHEMA_VERSION=17`. Each new slot bumps version + adds a `_backfill_equipped_slots` line + initializer. This is the same cheap migration pattern that cloak (2026-06-05) and spells (v7) followed. Don't let \"schema work\" be a reason to defer slot adds — it's ~30 LOC.\n\n**6. Sprite import pipeline (`sync_items.py`) handles inv icons cleanly but player overlays are manual.** Bow/crossbow/sling positional sprites exist in `dcss/` source pack but are NOT yet copied into `project/assets/tiles/player/weapons/`. There's no automation for the player-overlay copy step — it's `cp` by hand. Worth a 1-line addition to `sync_items.py` to mirror `player/hand_right/*.png` into `project/assets/tiles/player/weapons/` based on item base_id. **Without this, new positional weapons silently fall back to default/missing overlays.**\n\n**7. Per-item z-ordering assumes 7 fixed layers.** `paperdoll_renderer.SLOT_Z` (lines 61-72) is a flat dict of 7 slots. Adding belt (waist, between armor z=2 and gloves z=3) or banner (back, conflicts with cloak z=-1) needs a z-order audit + possible non-integer / tier-based ordering. Banner specifically would either replace cloak visually or need a new z-tier ABOVE cloak (z=-2? z=0.5?) — figure out before authoring sprites.",
+    "current_state_summary": "Botter ships 14 canonical equipment slots: 9 gear (weapon, armor, helm, boots, shield, gloves, cloak, ring, amulet) + 5 spell (spell1-5). 7 of those gear slots render as paperdoll overlays via `paperdoll_renderer.gd` (z-order: cloak=-1, boots=1, armor=2, gloves=3, helm=4, shield=5, weapon=6); ring/amulet are stat-only with no visual layer. Sprite coverage is robust on rendered slots (12-131 variants each), the affix system has 18 slot-exclusive archetype affixes, and `save_state.SCHEMA_VERSION=17` has cleanly absorbed prior slot adds (cloak v?, spells v7). The biggest \"almost slots\" are belt (UI scaffolded in `outpost.gd::PAPERDOLL_RIGHT_COLUMN` but no backend) and second_ring (architecture exists for species conversions but not as a base slot).",
+    "top_recommendations": [
+      {
+        "name": "second_ring (universal ring2)",
+        "why": "Highest leverage / lowest risk. The architecture is ALREADY built — `save_state.ring_slot_ids()` handles multi-ring, Octopode/Naga already get ring2/ring3/ring4 via slot_conversions, and the 64-affix ring pool is mature. Promoting ring2 from species-conditional to universal doubles every player's ring-affix budget at zero new content cost. Loot economy benefit: rings drop at weight 10 in `loot_factory.SLOT_DROP_WEIGHTS` but currently feel low-impact because they're the only single-stack slot. Two slots = builds suddenly care about ring drops. Inventory icons already plentiful (50 atlas entries, 15 in project).",
+        "how": "1) `save_state.gd:410-412` — add 'ring2' to canonical equipped slots backfill. 2) `species_data.gd::slot_conversions` — make 'ring2' baseline (Octopode now grants ring3/ring4/ring5, Naga ring3). 3) Bump SCHEMA_VERSION to 18, add migration that initializes `equipped['ring2'] = null` for legacy saves. 4) `outpost.gd::PAPERDOLL_*_COLUMN` — slot ring2 next to ring. 5) No paperdoll change (jewelry has no overlay). 6) No new affixes needed (existing 64-affix ring pool covers both). Days, not weeks.",
+        "sprite_status": "inv: ~50 atlas entries (15 in project) | positional: N/A (jewelry never renders)",
+        "effort": "low"
+      },
+      {
+        "name": "belt (waist accessory)",
+        "why": "UI is already half-there — `outpost.gd::PAPERDOLL_RIGHT_COLUMN` and `SLOT_TOOLTIPS` reference belt; only the backend is missing. 4 player-overlay sprites exist in DCSS pack (player/body/belt_*, player/legs/belt_*). Mechanical niche: a utility-focused slot with mobility / regen / minor resist affixes — distinct from amulet (magic-stat focus) and ring (defensive/archetype). Adds character silhouette variety (visible waist piece) without competing for the heavy defensive core. Resolves the orphan-UI bug as a side effect.",
+        "how": "1) Import 4 belt overlays from `dcss/.../player/body|legs/belt_*.png` into `project/assets/tiles/player/belt/`. 2) Add 'belt' to `paperdoll_renderer.SLOT_DIRS` + `SLOT_Z` (z=2.5 between armor and gloves) + `SLOT_OFFSETS`. 3) Add to `save_state` canonical slots (v18 migration). 4) Author 12-20 belt items in `tools/items_belt_manifest.json`, run `/sync-items`. 5) Author 15-20 belt-flavored affixes (of_swift_steps movement_speed, of_warding minor resists, of_gladiator's_grit hp_regen) in `affixes.json` with `applies_to:['belt']`. 6) Add weight=8 in `loot_factory.SLOT_DROP_WEIGHTS`.",
+        "sprite_status": "inv: 0 (need to author OR composite from existing armor pieces) | positional: 4 in DCSS pack",
+        "effort": "medium"
+      },
+      {
+        "name": "offhand orb (caster off-hand)",
+        "why": "Solves a real design problem flagged in itemization context: 4 orbs currently exist in items.json wrongly slotted as weapons. Promoting orb to off-hand parallels DCSS canon (ARM_ORB in SLOT_OFFHAND alongside shields). Opens caster-vs-tank build identity: shield = block/AC, orb = spell power / mana regen / cooldown. This is the cleanest path to making spell builds feel mechanically distinct from melee builds without inventing a new wearable category. Sprite stack: 3 inventory in `casters/` already, hand_right overlay exists.",
+        "how": "Two-pronged. (a) Schema-level: extend off-hand to a single slot id with subtype — RENAME `shield`→`offhand` in save_state v18, with item.offhand_subtype ∈ {shield, orb}. OR keep `shield` but add new `orb` slot with mutex logic (`bot.gd::apply_gear` rejects orb if shield equipped, vice versa). The latter is safer for the existing 38 shield items + 19 shield-applies_to affixes. (b) Re-slot the 4 existing orb-wrong-slot items, author 10-15 more orb items with caster-flavor (Crystal Ball: +20% spell_damage; Orb of Wisdom: +mana_regen; Sphere of Conjuration: -10% spell_cooldown). 15-20 new affixes with `applies_to:['orb']`. Author player-overlay variant in hand_left (mirror existing hand_right orb sprite).",
+        "sprite_status": "inv: 3 in project + 2 in DCSS misc | positional: 1 hand_right (need hand_left mirror)",
+        "effort": "medium"
+      },
+      {
+        "name": "trinket (universal stat charm)",
+        "why": "Pure inventory-icon slot — zero player-overlay infrastructure needed, which sidesteps the biggest content cost. Reuses 50 ring + 46 amulet sprites as visual fodder (as-yet unbound to specific items in items.json). Mechanical niche: small character-defining perks (movement speed, crit_chance, heal_efficiency, spell_cooldown) that don't bloat the paperdoll. Players notice 'pocket-sized power' without a ring/amulet rebalance. Idle-game-friendly: more slots = more drops feel meaningful = stronger loot loop without raising the number ceiling.",
+        "how": "1) `save_state` v18 — add 'trinket'. 2) Author 20-30 trinket items in new manifest (`tools/items_trinkets_manifest.json`); cherry-pick visually distinctive sprites from gem/jewel pool (agate, coral, pearl, diamond, brooches). 3) Author 20-25 trinket affixes — biased toward niche utility: of_quickfoot (move_speed), of_jeweler's_eye (gold_find), of_resonance (mana_per_kill), of_alacrity (cast_speed). 4) Drop weight 8 in loot_factory. 5) NO paperdoll work. 6) Render in inventory + outpost paperdoll-right column.",
+        "sprite_status": "inv: 96 jewelry icons reusable (50 ring + 46 amulet atlas) | positional: N/A by design",
+        "effort": "low"
+      },
+      {
+        "name": "ranged-weapon archetype (bow + crossbow as one bet)",
+        "why": "Highest gameplay-shift potential, but ONLY worth doing if ranged combat is a real pillar — sprite coverage is excellent (bow: 9 inv + 5 positional; crossbow: 7 inv + 6 positional; sling: 10 inv + 2 positional), and itemization-audit-2026-06-22 explicitly flagged 'No ranged weapon archetype' as a major gap. Build identity payoff is huge: ranged-crit, kite, hit-and-run all become real archetypes in the doctrine system. **DO NOT ship this as 'melee with 1-tile reach' — that wastes the opportunity.**",
+        "how": "Plan-mode required (architecture change). 1) New `weapon_class='ranged'` enum in items.json schema. 2) New attack pipeline in `bot.gd` — `_fire_projectile(target, weapon_def)` parallel to swing_weapon, including target-acquisition at engagement_range > 1, projectile tween (reuse weapon-trail emitter shape), hit resolution at impact tile. 3) `pathfinding.gd` — add 'kite to engagement_range and hold' state. 4) Author 12-15 bows + 10-12 crossbows + 6-8 slings as base items (steal damage curves from DCSS yaml). 5) Ranged-exclusive affix pool (~25 affixes): of_piercing_shot, of_powershot, of_ricochet, of_homing, of_volley. 6) Reuse weapon slot id (no new slot needed) — discriminator is weapon_class. 7) Mutex 2H ranged with shield. Big bet, big payoff. Skip if other slots are higher priority for current tier.",
+        "sprite_status": "inv: bow 9 + crossbow 7 + sling 10 = 26 | positional: bow 5 + crossbow 6 + sling 2 = 13",
+        "effort": "high"
+      }
+    ],
+    "inv_only_options": [
+      {
+        "name": "trinket",
+        "fit": "good",
+        "note": "Reuses 96 jewelry sprites (50 ring + 46 amulet). Pure stat slot like ring/amulet — no paperdoll work. Best low-cost inventory-loop expansion. See top recommendations."
+      },
+      {
+        "name": "second_ring",
+        "fit": "excellent",
+        "note": "Architecture already exists via species ring conversions; just promote to universal. Top recommendation #1. Zero sprite work, zero new affixes."
+      },
+      {
+        "name": "spellbook (inventory-only, NOT equipment)",
+        "fit": "fair",
+        "note": "34 inv icons in project (casters/ + spells/books/) but spells already fill this niche via spell1-5 autocast. If shipped, do as a unique-artifact subclass of amulet (Tome of Power) NOT a new slot. Skip unless narrative-driven."
+      },
+      {
+        "name": "talisman (form-shift, special)",
+        "fit": "fair (inv-only at first; positional comes if forms ship)",
+        "note": "22 inv sprites + 89 positional form sprites in DCSS source. Shipping just the inventory icon is meaningless without the form-shift system underneath — talisman is properly a high-effort item, not an inv-only quick win. Defer."
+      },
+      {
+        "name": "wand (passive caster stat-stick reframe)",
+        "fit": "fair",
+        "note": "If implemented per recommended design (passive +Int/+Mana stat stick, NOT evocable), 39 inv sprites + 3 player overlays make it cheap. But conceptually overlaps trinket — pick one. Trinket wins on neutrality (any class), wand wins on caster theme. Don't ship both."
+      }
+    ],
+    "inv_plus_positional_options": [
+      {
+        "name": "bow",
+        "fit": "good (gated on ranged pipeline)",
+        "note": "9 inv + 5 positional sprites ready. Reuses weapon slot via weapon_class='ranged'. Worthless without the new attack pipeline (see cross-cutting #1). Bundle with crossbow."
+      },
+      {
+        "name": "crossbow",
+        "fit": "excellent (gated on ranged pipeline)",
+        "note": "7 inv + 6 positional. Audit-flagged gap. Distinct speed/power profile from bow (slow-heavy vs fast-light). Bundle with bow as one ranged-archetype bet."
+      },
+      {
+        "name": "sling",
+        "fit": "good (gated)",
+        "note": "10 inv + 2 positional. Light ranged niche. Lowest priority of the three ranged options — narrower sprite stack and weakest DCSS lore footprint."
+      },
+      {
+        "name": "throwing weapon (javelin/dart/tomahawk)",
+        "fit": "fair",
+        "note": "12 inv + 1 positional (just dart). Conceptual conflict: DCSS treats throwing as consumable-stack (OBJ_MISSILES), Botter assumes single-instance equipped pieces. If ranged ships, fold throwing into bow/crossbow as a thrown-weapon-class subtype rather than a new slot."
+      },
+      {
+        "name": "offhand orb",
+        "fit": "excellent",
+        "note": "3 inv + 1 positional (need hand_left mirror). Solves an existing wrong-slot bug for 4 orb items. Top recommendation #3."
+      },
+      {
+        "name": "staff (promote from weapon to dedicated slot)",
+        "fit": "fair",
+        "note": "58 inv + 46 positional. DCSS treats OBJ_STAVES as separate item class with spell-school bonuses. BUT — Botter staves already ship as 2H weapons; promoting to dedicated slot is a 'split, not add' operation with migration cost. School-bonus mechanic could be delivered as weapon-affixes instead. Skip the slot split, add the affixes."
+      },
+      {
+        "name": "rod",
+        "fit": "fair",
+        "note": "31 inv + 31 positional in DCSS UNUSED archive (DCSS itself deprecated rods). Overlaps spell1-5 autocast. Recommended to fold into spell system as a 'rod-class' spell subtype with longer cooldowns rather than a new equipment slot."
+      },
+      {
+        "name": "belt",
+        "fit": "good",
+        "note": "0 inv (must composite/author) + 4 positional in DCSS pack. UI orphan exists. Top recommendation #2."
+      },
+      {
+        "name": "banner",
+        "fit": "fair",
+        "note": "0 dedicated inv + 17 cloak overlays reusable. No DCSS precedent. Conflicts with cloak z=-1. If shipped, treat as a unique-artifact cloak subtype (Beogh's Banner already exists this way) rather than a new slot."
+      },
+      {
+        "name": "shield",
+        "fit": "excellent",
+        "note": "ALREADY SHIPPED (38 items, 29 positional, 19 affixes). Listed for completeness — no work needed."
+      },
+      {
+        "name": "cloak",
+        "fit": "excellent",
+        "note": "ALREADY SHIPPED (26 items, 12 positional, 44 affixes, z=-1). Listed for completeness — no work needed."
+      }
+    ],
+    "low_priority": [
+      {
+        "name": "quiver / ammo container",
+        "why_skip": "DCSS itself has no SLOT_QUIVER — quiver is an action-system for cycling missiles, not equipment. Botter has no missiles. Inventing it as a slot creates a fictitious mechanic with no asset support (zero quiver inv sprites, zero player overlays). If ranged combat ships, model ammo as implicit/unlimited — don't add a quiver slot."
+      },
+      {
+        "name": "consumable scroll/potion slot",
+        "why_skip": "Violates Botter's 'equipped slot = persistent stat-grant' paradigm. Consumables are one-use; equipping them is conceptually broken. DCSS confirms has_player_overlay_in_dcss=false on both. The writ system + spell1-5 already cover on-demand effects. Inventory-only drops are fine, but never as an equipment slot."
+      },
+      {
+        "name": "wand (evocable model)",
+        "why_skip": "Evocable-with-charges model conflicts with Botter's autocast architecture. spell1-5 already fill 'limited-use magical effect' niche. ONLY ship if redesigned as passive caster stat-stick (see inv_only_options). Evocable wands are a third item-management mode the game doesn't need."
+      },
+      {
+        "name": "spellbook (as new slot)",
+        "why_skip": "DCSS books are inventory-read-to-learn, not worn. Botter has no spell-learning loop (spells just equip directly into slots). A 'spellbook' wearable would either duplicate amulet's spell-augment role or invent learning mechanics that don't fit the idle frame. Use unique amulet artifacts (Tome of Power) instead."
+      },
+      {
+        "name": "rod (as new slot)",
+        "why_skip": "DCSS deprecated rods to OBJ_MISCELLANY. Adding a wearable rod slot diverges from canon AND duplicates spell-slot functionality. Better path: rod-flavored spell items in spell1-5 with longer cooldowns / higher damage."
+      },
+      {
+        "name": "barding",
+        "why_skip": "DCSS-canon species-specific (Centaur/Naga). Botter Naga already converts boots→ring rather than getting barding. Adding barding as a 7th species-conditional slot for Centaur (which Botter doesn't have) is solving a problem that doesn't exist. 8 inv + ~10 positional sprites available, but no audience."
+      },
+      {
+        "name": "gizmo (DCSS species-specific augment slot)",
+        "why_skip": "DCSS gizmo is Coglin-exclusive (a species Botter doesn't have). The mechanic — species-specific magical bonuses — is already covered by per-species starter spells and slot_conversions. No gameplay gap to fill."
+      },
+      {
+        "name": "talisman (form-shift, full implementation)",
+        "why_skip": "High-payoff but high-cost. Requires entire form-shift subsystem: state-change, sprite swap, stat overrides, duration tracking, affix interactions with form-state. None of those scaffolds exist. Defer until ranged-attack pipeline ships and the engine team has bandwidth for a major content tier; revisit then."
+      },
+      {
+        "name": "throwing-weapon as own slot",
+        "why_skip": "Distinct from bow/crossbow only conceptually. If ranged ships, fold into weapon_class='ranged' as thrown subtype. A separate slot duplicates infrastructure for 12 items — bad ratio."
+      }
+    ]
+  }
+}

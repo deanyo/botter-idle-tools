@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — DCSS Tile Atlas Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Atlas-specific layout. Shared palette + buttons + tooltips live in
+     portal.css. */
+  body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Header — title row + filter bar. Stickier and more compact. */
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px 6px;
+    flex-wrap: wrap;
+  }
+  .title-row h1 {
+    font-size: 15px;
+    margin: 0;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .title-row .home-link {
+    color: var(--muted);
+    font-size: 12px;
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .title-row .home-link:hover {
+    color: var(--accent);
+    border-color: var(--accent-dim);
+  }
+  .title-row .stats {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.3;
+    text-align: right;
+  }
+  .title-row .stats .breakdown {
+    font-size: 11px;
+    color: var(--muted);
+    opacity: 0.7;
+  }
+  /* Quick-filter chip strip — one click to jump to a thematic
+     subset (Races, Portals, Gods, Items, Monsters, Floors, Walls).
+     Faster than wading through the Category dropdown for the most-
+     reached-for sets. */
+  .quick-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 14px 8px;
+  }
+  .chip {
+    background: var(--panel);
+    border: 1px solid var(--border-strong);
+    color: var(--muted);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.1s, color 0.1s, background 0.1s;
+  }
+  .chip:hover {
+    border-color: var(--accent-dim);
+    color: var(--accent);
+  }
+  .chip.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .chip .count {
+    color: inherit;
+    opacity: 0.6;
+    margin-left: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 4px 14px 10px;
+    align-items: center;
+  }
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  /* portal.css owns base label/select/input styles. Atlas-specific
+     overrides only. */
+  input[type="text"] { min-width: 200px; }
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle label {
+    text-transform: none;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 0;
+  }
+
+  main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px;
+  }
+  .group {
+    margin-bottom: 24px;
+  }
+  .group-header {
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .group-header .count {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 11px;
+  }
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--cell-size, 80px), 1fr));
+    gap: 4px;
+  }
+  /* Atlas-specific tile styles — portal.css ships .tile-cell; the
+     atlas grid uses .tile (alias-shape) so add only the atlas-only
+     bits (variant/directional badges + name) on top. */
+  .tile {
+    background: var(--tile-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 4px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.1s, transform 0.1s;
+  }
+  .tile:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+  .tile img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    image-rendering: pixelated;
+    background: #000;
+  }
+  .tile .name {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .tile.dim { opacity: 0.25; }
+  .tile.directional::after {
+    content: "↻";
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    font-size: 10px;
+    color: #ffaa55;
+    text-shadow: 0 0 2px #000;
+  }
+  .tile.variant::before {
+    content: attr(data-vidx);
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    font-size: 8px;
+    color: #88aaff;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  /* Detail panel — slide in from the right instead of bottom strip;
+     gives more room for the JSON metadata + makes browsing easier. */
+  #detail {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 380px;
+    max-width: 90vw;
+    background: var(--panel);
+    border-left: 2px solid var(--accent-dim);
+    padding: 16px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.18s ease;
+    z-index: 10;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+  }
+  #detail.open { transform: translateX(0); }
+  #detail .close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1;
+  }
+  #detail .close:hover { color: var(--accent); }
+  #detail .preview {
+    width: 192px;
+    height: 192px;
+    image-rendering: pixelated;
+    background: #000;
+    border: 1px solid var(--border-strong);
+    margin: 0 auto 12px;
+    display: block;
+    object-fit: contain;
+  }
+  #detail h2 {
+    font-size: 14px;
+    color: var(--accent);
+    margin: 0 0 6px;
+    word-break: break-all;
+  }
+  #detail .filename {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    word-break: break-all;
+  }
+  #detail .copy-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+  #detail .copy-row .key {
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+  #detail .copy-row code {
+    background: rgba(255,255,255,0.04);
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #detail button.copy {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  #detail button.copy:hover {
+    background: rgba(255, 184, 77, 0.18);
+    color: #ffd089;
+  }
+  #detail button.copy.flash {
+    background: rgba(95, 200, 120, 0.20);
+    border-color: var(--good);
+    color: var(--good);
+  }
+  #detail .meta-block {
+    margin-top: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  #detail .meta-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 3px 0;
+    font-size: 11px;
+    border-bottom: 1px dashed var(--border);
+  }
+  #detail .meta-row:last-child { border-bottom: 0; }
+  #detail .meta-row .k {
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+  }
+  #detail .meta-row .v {
+    color: var(--text);
+    text-align: right;
+    word-break: break-word;
+  }
+  #detail .tag {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 10px;
+    margin: 1px 2px 1px 0;
+  }
+
+  /* Tile-tooltip variant badges. Tooltip box itself comes from
+     .portal-tooltip in portal.css. */
+  .portal-tooltip .badges { margin-top: 3px; }
+  .portal-tooltip .badge-d,
+  .portal-tooltip .badge-v {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 9px;
+    margin-right: 4px;
+  }
+  .portal-tooltip .badge-d { background: rgba(255,170,85,0.15); color: #ffaa55; }
+  .portal-tooltip .badge-v { background: rgba(136,170,255,0.15); color: #88aaff; }
+</style>
+</head>
+<body>
+
+<nav class="portal-nav" data-active="atlas" data-title="Tile Atlas"></nav>
+<header>
+  <div class="title-row">
+    <div class="stats">
+      <div id="stats-line">loading…</div>
+      <div class="breakdown" id="stats-breakdown"></div>
+    </div>
+  </div>
+  <div class="quick-chips" id="quick-chips"></div>
+  <div class="controls">
+    <div class="control-group">
+      <label>Category</label>
+      <select id="filter-category"><option value="">all</option></select>
+    </div>
+
+    <div class="control-group">
+      <label>Group by</label>
+      <select id="group-by">
+        <option value="subdir">subfolder</option>
+        <option value="biome">biome tag</option>
+        <option value="category">category</option>
+        <option value="subcategory">subcategory</option>
+        <option value="class">class hint</option>
+        <option value="variant_set">variant set</option>
+        <option value="none">none</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>Biome</label>
+      <select id="filter-biome"><option value="">any</option></select>
+    </div>
+
+    <div class="control-group">
+      <label>Class</label>
+      <select id="filter-class"><option value="">any</option></select>
+    </div>
+
+    <div class="control-group">
+      <label>Subcat</label>
+      <select id="filter-subcategory"><option value="">any</option></select>
+    </div>
+
+    <div class="control-group">
+      <label>Search</label>
+      <input id="search" type="text" placeholder="filename, enum, path…" autocomplete="off">
+    </div>
+
+    <div class="control-group">
+      <label>Size</label>
+      <select id="cell-size">
+        <option value="56">small</option>
+        <option value="80" selected>medium</option>
+        <option value="120">large</option>
+        <option value="160">huge</option>
+      </select>
+    </div>
+
+    <div class="control-group toggle">
+      <input type="checkbox" id="hide-directional">
+      <label for="hide-directional">hide directional</label>
+    </div>
+
+    <div class="control-group toggle">
+      <input type="checkbox" id="only-variants">
+      <label for="only-variants">variants only</label>
+    </div>
+
+    <div class="control-group toggle">
+      <input type="checkbox" id="hide-variants">
+      <label for="hide-variants">primary only</label>
+    </div>
+
+    <button class="clear-btn" id="clear-filters" title="Reset filters">clear</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="empty">Loading atlas…</div>
+</main>
+
+<aside id="detail" aria-hidden="true">
+  <span class="close" onclick="closeDetail()">✕</span>
+  <img id="detail-img" class="preview" alt="">
+  <h2 id="detail-title"></h2>
+  <div class="filename" id="detail-filename"></div>
+
+  <div class="copy-row">
+    <span class="key">res path</span>
+    <code id="copy-res"></code>
+    <button class="copy" data-target="copy-res">copy</button>
+  </div>
+  <div class="copy-row">
+    <span class="key">filename</span>
+    <code id="copy-filename"></code>
+    <button class="copy" data-target="copy-filename">copy</button>
+  </div>
+  <div class="copy-row">
+    <span class="key">enum</span>
+    <code id="copy-enum"></code>
+    <button class="copy" data-target="copy-enum">copy</button>
+  </div>
+
+  <div class="meta-block" id="detail-meta"></div>
+</aside>
+
+<div class="kbd-hint">
+  <kbd>/</kbd> search · <kbd>Esc</kbd> close
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const ATLAS_PATH = "data/tile_atlas.json";
+// Tiles live under three roots — DCSS Full, DCSS Supplemental, and the
+// project-local copy under assets/tiles/. Loader tries them in
+// order on <img> error so any path resolves regardless of source.
+const TILE_ROOTS = [
+  "dcss/Dungeon Crawl Stone Soup Full/",
+  "dcss/Dungeon Crawl Stone Soup Supplemental/",
+  "assets/tiles/",
+];
+
+let atlas = {};
+let entries = [];
+
+async function load() {
+  try {
+    const res = await fetch(ATLAS_PATH);
+    atlas = await res.json();
+  } catch (e) {
+    document.getElementById("main").innerHTML = `<div class="empty error">Failed to load atlas: ${e.message}<br><br>Run a local web server first:<br><code style="background:#000;padding:4px 8px;border-radius:3px">python3 -m http.server 8080</code><br>then open <code>http://localhost:8080/tools/atlas_viewer.html</code></div>`;
+    return;
+  }
+  entries = Object.entries(atlas).map(([k,v]) => ({...v, _key: k}));
+  populateFilters();
+  buildChips();
+  render();
+}
+
+// ----- Quick-filter chips -------------------------------------------
+// Each chip is a thematic predicate. Click toggles it on/off. Active
+// chip overrides Category/Subcat/Biome filters; toggling it off
+// returns to the dropdown-based filters. Counts are precomputed once.
+//
+// Predicates use atlas key path prefixes + categories rather than
+// brittle regex on filenames. New chips: add a row here and
+// buildChips() picks it up automatically.
+const CHIPS = [
+  {
+    id: "races",
+    label: "Races",
+    match: e => (e._key || "").startsWith("player/")
+                || e.category === "species"
+                || e.category === "player_part",
+  },
+  {
+    id: "portals",
+    label: "Portals",
+    match: e => (e._key || "").startsWith("dungeon/gateways/")
+                || (e.filename || "").startsWith("enter_")
+                || (e.filename || "").startsWith("exit_")
+                || e.category === "gateway",
+  },
+  {
+    id: "gods",
+    label: "Gods",
+    match: e => (e._key || "").startsWith("dungeon/altars/")
+                || e.category === "altar",
+  },
+  {
+    id: "monsters",
+    label: "Monsters",
+    match: e => e.category === "monster",
+  },
+  {
+    id: "items",
+    label: "Items",
+    match: e => e.category === "item",
+  },
+  {
+    id: "floors",
+    label: "Floors",
+    match: e => e.category === "floor",
+  },
+  {
+    id: "walls",
+    label: "Walls",
+    match: e => e.category === "wall",
+  },
+  {
+    id: "effects",
+    label: "Effects",
+    match: e => e.category === "effect",
+  },
+  {
+    id: "gui",
+    label: "GUI / Spells",
+    match: e => e.category === "gui",
+  },
+];
+
+let activeChip = null;
+
+function buildChips() {
+  const root = document.getElementById("quick-chips");
+  root.innerHTML = "";
+  // "All" chip — clears the active chip.
+  const all = document.createElement("span");
+  all.className = "chip" + (activeChip ? "" : " active");
+  all.textContent = "All";
+  all.dataset.id = "";
+  all.onclick = () => { activeChip = null; refreshChips(); render(); };
+  root.appendChild(all);
+  for (const def of CHIPS) {
+    const count = entries.reduce((n, e) => n + (def.match(e) ? 1 : 0), 0);
+    const el = document.createElement("span");
+    el.className = "chip" + (activeChip === def.id ? " active" : "");
+    el.dataset.id = def.id;
+    el.innerHTML = `${def.label}<span class="count">${count.toLocaleString()}</span>`;
+    el.onclick = () => {
+      activeChip = (activeChip === def.id) ? null : def.id;
+      refreshChips();
+      render();
+    };
+    root.appendChild(el);
+  }
+}
+
+function refreshChips() {
+  const root = document.getElementById("quick-chips");
+  for (const c of root.children) {
+    const id = c.dataset.id || null;
+    c.classList.toggle("active", (id || null) === (activeChip || null));
+  }
+}
+
+function populateFilters() {
+  const cats = new Set();
+  const biomes = new Set();
+  const classes = new Set();
+  const subs = new Set();
+  for (const e of entries) {
+    if (e.category) cats.add(e.category);
+    for (const b of e.biome_tags || []) biomes.add(b);
+    for (const c of e.class_hints || []) classes.add(c);
+    if (e.subcategory) subs.add(e.subcategory);
+  }
+  fillSelect("filter-category", cats);
+  fillSelect("filter-biome", biomes);
+  fillSelect("filter-class", classes);
+  fillSelect("filter-subcategory", subs);
+}
+
+function fillSelect(id, set) {
+  const sel = document.getElementById(id);
+  for (const v of [...set].sort()) {
+    const o = document.createElement("option");
+    o.value = v;
+    o.textContent = v;
+    sel.appendChild(o);
+  }
+}
+
+function filteredEntries() {
+  const cat = document.getElementById("filter-category").value;
+  const biome = document.getElementById("filter-biome").value;
+  const cls = document.getElementById("filter-class").value;
+  const sub = document.getElementById("filter-subcategory").value;
+  const q = document.getElementById("search").value.toLowerCase();
+  const hideDir = document.getElementById("hide-directional").checked;
+  const onlyVar = document.getElementById("only-variants").checked;
+  const hideVar = document.getElementById("hide-variants").checked;
+  const chipDef = activeChip ? CHIPS.find(c => c.id === activeChip) : null;
+
+  return entries.filter(e => {
+    if (chipDef && !chipDef.match(e)) return false;
+    if (cat && e.category !== cat) return false;
+    if (biome && !(e.biome_tags || []).includes(biome)) return false;
+    if (cls && !(e.class_hints || []).includes(cls)) return false;
+    if (sub && e.subcategory !== sub) return false;
+    if (hideDir && e.directional) return false;
+    if (onlyVar && !e.is_variant) return false;
+    if (hideVar && e.is_variant) return false;
+    if (q) {
+      const blob = (e._key + " " + (e.enum || "") + " " + (e.filename || "") +
+                    " " + (e.extra_enums || []).join(" ")).toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function groupKey(e, mode) {
+  switch (mode) {
+    case "subdir": {
+      const parts = e._key.split("/");
+      return parts.slice(0, -1).join("/") || "(root)";
+    }
+    case "biome":
+      return (e.biome_tags || ["(untagged)"]).join(", ");
+    case "category":
+      return e.category || "(none)";
+    case "subcategory":
+      return e.subcategory || "(none)";
+    case "class":
+      return (e.class_hints || ["(untagged)"]).join(", ");
+    case "variant_set":
+      return e.variant_set || "(single)";
+    default:
+      return "all";
+  }
+}
+
+function updateStats(filtered) {
+  const total = entries.length;
+  const f = filtered.length;
+  document.getElementById("stats-line").textContent =
+    `${f.toLocaleString()} of ${total.toLocaleString()} tiles`;
+  // Breakdown — top categories in the filtered set so the user can
+  // see at a glance "this filter has 200 monster + 80 player tiles."
+  const byCat = new Map();
+  for (const e of filtered) {
+    const c = e.category || "?";
+    byCat.set(c, (byCat.get(c) || 0) + 1);
+  }
+  const top = [...byCat.entries()].sort((a,b) => b[1] - a[1]).slice(0, 4);
+  document.getElementById("stats-breakdown").textContent =
+    top.map(([k,v]) => `${k} ${v.toLocaleString()}`).join(" · ");
+}
+
+function render() {
+  const filtered = filteredEntries();
+  const mode = document.getElementById("group-by").value;
+  updateStats(filtered);
+
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+
+  if (filtered.length === 0) {
+    main.innerHTML = `<div class="empty">No tiles match. <a href="#" onclick="clearFilters();return false">Clear filters</a>.</div>`;
+    return;
+  }
+
+  if (mode === "none") {
+    const div = document.createElement("div");
+    div.className = "group";
+    const head = document.createElement("div");
+    head.className = "group-header";
+    head.innerHTML = `<span>all</span><span class="count">${filtered.length}</span>`;
+    div.appendChild(head);
+    div.appendChild(renderTiles(filtered));
+    main.appendChild(div);
+    return;
+  }
+
+  const groups = new Map();
+  for (const e of filtered) {
+    const k = groupKey(e, mode);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(e);
+  }
+
+  const sortedGroups = [...groups.entries()].sort((a,b) => b[1].length - a[1].length);
+  for (const [k, list] of sortedGroups) {
+    const div = document.createElement("div");
+    div.className = "group";
+    const head = document.createElement("div");
+    head.className = "group-header";
+    head.innerHTML = `<span>${escapeHtml(k)}</span><span class="count">${list.length.toLocaleString()}</span>`;
+    div.appendChild(head);
+    div.appendChild(renderTiles(list.slice(0, 500)));
+    if (list.length > 500) {
+      const more = document.createElement("div");
+      more.className = "empty";
+      more.textContent = `… ${list.length - 500} more (refine filter to see them all)`;
+      div.appendChild(more);
+    }
+    main.appendChild(div);
+  }
+}
+
+function renderTiles(list) {
+  const wrap = document.createElement("div");
+  wrap.className = "tiles";
+  for (const e of list) {
+    const cell = document.createElement("div");
+    cell.className = "tile";
+    if (e.directional) cell.classList.add("directional");
+    if (e.is_variant) {
+      cell.classList.add("variant");
+      cell.dataset.vidx = e.variant_index ?? "v";
+    }
+    const img = document.createElement("img");
+    img.src = TILE_ROOTS[0] + e._key;
+    let rootIdx = 0;
+    img.onerror = () => {
+      rootIdx++;
+      if (rootIdx < TILE_ROOTS.length) {
+        img.src = TILE_ROOTS[rootIdx] + e._key;
+      } else {
+        cell.classList.add("dim");
+        img.onerror = null;
+      }
+    };
+    img.alt = e.filename || "";
+    img.loading = "lazy";
+    cell.appendChild(img);
+    const name = document.createElement("div");
+    name.className = "name";
+    name.textContent = e.filename || "?";
+    cell.appendChild(name);
+    cell.onclick = () => showDetail(e);
+    cell.onmouseenter = (ev) => showTip(ev, e);
+    cell.onmouseleave = hideTip;
+    cell.onmousemove = moveTip;
+    wrap.appendChild(cell);
+  }
+  return wrap;
+}
+
+let _tip = null;
+function showTip(ev, e) {
+  hideTip();
+  _tip = document.createElement("div");
+  _tip.className = "portal-tooltip";
+  const badges = [];
+  if (e.directional) badges.push(`<span class="badge-d">↻ directional${e.direction ? " " + escapeHtml(e.direction) : ""}</span>`);
+  if (e.is_variant) badges.push(`<span class="badge-v">variant ${e.variant_index ?? "?"}${e.variant_set ? " of " + escapeHtml(e.variant_set) : ""}</span>`);
+  _tip.innerHTML = `
+    <div><span class="key">${escapeHtml(e.filename || "?")}</span></div>
+    <div class="path">${escapeHtml(e._key)}</div>
+    ${e.enum ? `<div>enum: ${escapeHtml(e.enum)}</div>` : ""}
+    ${e.category ? `<div>${escapeHtml(e.category)}${e.subcategory ? " / " + escapeHtml(e.subcategory) : ""}</div>` : ""}
+    ${badges.length ? `<div class="badges">${badges.join("")}</div>` : ""}
+  `;
+  document.body.appendChild(_tip);
+  moveTip(ev);
+}
+function moveTip(ev) {
+  if (!_tip) return;
+  const pad = 14;
+  let x = ev.clientX + pad;
+  let y = ev.clientY + pad;
+  const rect = _tip.getBoundingClientRect();
+  if (x + rect.width > window.innerWidth - 4) x = ev.clientX - rect.width - pad;
+  if (y + rect.height > window.innerHeight - 4) y = ev.clientY - rect.height - pad;
+  _tip.style.left = x + "px";
+  _tip.style.top = y + "px";
+}
+function hideTip() {
+  if (_tip) { _tip.remove(); _tip = null; }
+}
+
+function resPathFor(e) {
+  // Project-local tiles get a `res://` path; everything else falls back
+  // to the relative atlas path.
+  return "res://assets/tiles/" + e._key;
+}
+
+function showDetail(e) {
+  hideTip();
+  const detail = document.getElementById("detail");
+  detail.setAttribute("aria-hidden", "false");
+  const img = document.getElementById("detail-img");
+  img.src = TILE_ROOTS[0] + e._key;
+  let r = 0;
+  img.onerror = () => {
+    r++;
+    if (r < TILE_ROOTS.length) {
+      img.src = TILE_ROOTS[r] + e._key;
+    } else {
+      img.style.opacity = "0.3";
+      img.onerror = null;
+    }
+  };
+  img.style.opacity = "1";
+  document.getElementById("detail-title").textContent = e.filename || e._key;
+  document.getElementById("detail-filename").textContent = e._key;
+  document.getElementById("copy-res").textContent = resPathFor(e);
+  document.getElementById("copy-filename").textContent = (e.filename || "") + ".png";
+  document.getElementById("copy-enum").textContent = e.enum || "(none)";
+  // Meta rows
+  const meta = document.getElementById("detail-meta");
+  meta.innerHTML = "";
+  const fields = [
+    ["Category", e.category],
+    ["Subcategory", e.subcategory],
+    ["Direction", e.direction],
+    ["Directional", e.directional ? "yes" : null],
+    ["Variant set", e.variant_set],
+    ["Variant index", e.variant_index],
+    ["Variant", e.is_variant ? "yes" : null],
+    ["Weight", e.weight && e.weight !== 1 ? e.weight : null],
+    ["Parts cat", e.parts_ctg],
+  ];
+  for (const [k, v] of fields) {
+    if (v == null || v === "") continue;
+    const row = document.createElement("div");
+    row.className = "meta-row";
+    row.innerHTML = `<span class="k">${escapeHtml(k)}</span><span class="v">${escapeHtml(String(v))}</span>`;
+    meta.appendChild(row);
+  }
+  if (e.biome_tags && e.biome_tags.length) {
+    const row = document.createElement("div");
+    row.className = "meta-row";
+    row.innerHTML = `<span class="k">Biome tags</span><span class="v">${e.biome_tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</span>`;
+    meta.appendChild(row);
+  }
+  if (e.class_hints && e.class_hints.length) {
+    const row = document.createElement("div");
+    row.className = "meta-row";
+    row.innerHTML = `<span class="k">Class hints</span><span class="v">${e.class_hints.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</span>`;
+    meta.appendChild(row);
+  }
+  if (e.extra_enums && e.extra_enums.length) {
+    const row = document.createElement("div");
+    row.className = "meta-row";
+    row.innerHTML = `<span class="k">Extra enums</span><span class="v">${e.extra_enums.map(t => `<code>${escapeHtml(t)}</code>`).join(", ")}</span>`;
+    meta.appendChild(row);
+  }
+  detail.classList.add("open");
+}
+
+function closeDetail() {
+  const d = document.getElementById("detail");
+  d.classList.remove("open");
+  d.setAttribute("aria-hidden", "true");
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+}
+
+let _toastTO = null;
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(_toastTO);
+  _toastTO = setTimeout(() => t.classList.remove("show"), 1400);
+}
+
+// Copy buttons inside the detail panel.
+document.getElementById("detail").addEventListener("click", (ev) => {
+  const btn = ev.target.closest("button.copy");
+  if (!btn) return;
+  const targetId = btn.dataset.target;
+  const text = document.getElementById(targetId).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add("flash");
+    btn.textContent = "copied";
+    setTimeout(() => {
+      btn.classList.remove("flash");
+      btn.textContent = "copy";
+    }, 900);
+    toast(`Copied: ${text}`);
+  }).catch(() => {
+    // Fallback for environments without clipboard API permission.
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    ta.remove();
+    toast("Copied (fallback)");
+  });
+});
+
+function clearFilters() {
+  for (const id of ["filter-category","filter-biome","filter-class","filter-subcategory"]) {
+    document.getElementById(id).value = "";
+  }
+  document.getElementById("search").value = "";
+  document.getElementById("hide-directional").checked = false;
+  document.getElementById("only-variants").checked = false;
+  document.getElementById("hide-variants").checked = false;
+  activeChip = null;
+  refreshChips();
+  render();
+}
+document.getElementById("clear-filters").addEventListener("click", clearFilters);
+
+// Cell-size slider — drives the CSS variable so the grid retiles.
+document.getElementById("cell-size").addEventListener("change", (ev) => {
+  document.documentElement.style.setProperty("--cell-size", ev.target.value + "px");
+});
+
+for (const id of ["filter-category","filter-biome","filter-class","filter-subcategory","group-by","hide-directional","only-variants","hide-variants"]) {
+  document.getElementById(id).addEventListener("change", render);
+}
+let searchTO;
+document.getElementById("search").addEventListener("input", () => {
+  clearTimeout(searchTO);
+  searchTO = setTimeout(render, 200);
+});
+
+// Keyboard shortcuts: / focuses search, Esc closes detail or clears
+// search if it has focus + content.
+document.addEventListener("keydown", (ev) => {
+  const search = document.getElementById("search");
+  if (ev.key === "/" && document.activeElement !== search) {
+    ev.preventDefault();
+    search.focus();
+    search.select();
+    return;
+  }
+  if (ev.key === "Escape") {
+    if (document.getElementById("detail").classList.contains("open")) {
+      closeDetail();
+    } else if (document.activeElement === search && search.value) {
+      search.value = "";
+      render();
+    } else if (document.activeElement === search) {
+      search.blur();
+    }
+  }
+});
+
+load();
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>

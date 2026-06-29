@@ -1,0 +1,1111 @@
+{
+  "format_version": 1,
+  "slot": "boots",
+  "notes": "Source of truth for the item editor (boots tab). DCSS base type from item-prop.cc: boots (AC 1) with egos for flying/stealth/rampaging/earth. Sparse base sprite library (8 tiles), so T4-T5 leans on artefact-flavored uniques (fencer/assassin/thief/flash).",
+  "base_types": {
+    "sandals": {
+      "label": "Sandals",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 0,
+      "flavor": "Open-toed footwear. Light, swift, fragile."
+    },
+    "shoes": {
+      "label": "Shoes",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 1,
+      "flavor": "Soft-soled. Sneaks well, blocks little."
+    },
+    "leather_boots": {
+      "label": "Leather Boots",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 1,
+      "flavor": "Standard ankle-height boots."
+    },
+    "iron_boots": {
+      "label": "Iron Boots",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 1,
+      "flavor": "Steel toe, plated shins. Loud. Solid."
+    },
+    "greaves": {
+      "label": "Greaves",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 1,
+      "flavor": "Knee-height plate over boot. Heaviest standard."
+    },
+    "treads": {
+      "label": "Treads",
+      "category": "boots",
+      "dcss_base": "boots",
+      "dcss_ac": 1,
+      "flavor": "Endgame boots \u2014 flavor-laden uniques live here."
+    }
+  },
+  "flavor_tags": {
+    "swiftness": {
+      "color": "#aaddff",
+      "desc": "Future: +move speed. Currently: Agility affix bonus."
+    },
+    "stealth": {
+      "color": "#666688",
+      "desc": "Future: lower aggro range. Currently: Agility affix bonus."
+    },
+    "rampaging": {
+      "color": "#ff8844",
+      "desc": "Future: charge attacks gain bonus damage. Currently: Strength affix bonus."
+    },
+    "earth": {
+      "color": "#998866",
+      "desc": "Future: grants stomp/AoE on charge. Currently: Stamina affix bonus."
+    },
+    "flying": {
+      "color": "#aaddff",
+      "desc": "Future: ignore terrain damage (lava, water slow). Currently: Agility affix bonus."
+    },
+    "fortified": {
+      "color": "#aaccdd",
+      "desc": "Future: flat damage reduction. Currently: Stamina affix bonus."
+    },
+    "footwork": {
+      "color": "#cc88ff",
+      "desc": "Future: dodge chance. Currently: Crit affix bonus."
+    },
+    "thunderous": {
+      "color": "#ffaa44",
+      "desc": "Future: stomp emit shockwave on charge. Currently: Strength affix bonus."
+    }
+  },
+  "items": [
+    {
+      "id": "worn_sandals",
+      "name": "Worn Sandals",
+      "slot": "boots",
+      "rarity": "common",
+      "tile": "low_boots.png",
+      "base_type": "sandals",
+      "armor": 3,
+      "evasion": 4,
+      "item_tier": 1,
+      "flavor_tags": [
+        "swiftness"
+      ],
+      "lore": "Soles thinner than mood.",
+      "drop_weights": [
+        80,
+        15,
+        0,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8,
+        "of_smoldering_step": 5,
+        "of_warden_step": 5,
+        "of_devastation": 4,
+        "of_steadfast": 4
+      }
+    },
+    {
+      "id": "soft_shoes",
+      "name": "Soft Shoes",
+      "slot": "boots",
+      "rarity": "common",
+      "tile": "boots_3_stripe_old.png",
+      "base_type": "shoes",
+      "armor": 3,
+      "evasion": 4,
+      "item_tier": 1,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "Quieter than the bot wearing them.",
+      "drop_weights": [
+        75,
+        18,
+        2,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      }
+    },
+    {
+      "id": "leather_boots",
+      "name": "Leather Boots",
+      "slot": "boots",
+      "rarity": "common",
+      "tile": "boots_1_brown_new.png",
+      "base_type": "leather_boots",
+      "armor": 3,
+      "evasion": 4,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Cracked, weather-beaten, comfortable.",
+      "drop_weights": [
+        70,
+        22,
+        4,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      }
+    },
+    {
+      "id": "studded_boots",
+      "name": "Studded Boots",
+      "slot": "boots",
+      "rarity": "uncommon",
+      "tile": "boots_2_jackboots.png",
+      "base_type": "leather_boots",
+      "armor": 3,
+      "evasion": 4,
+      "item_tier": 1,
+      "flavor_tags": [],
+      "lore": "Brass studs. Loud on stone.",
+      "drop_weights": [
+        55,
+        35,
+        5,
+        0,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      }
+    },
+    {
+      "id": "scouts_treads",
+      "name": "Scout's Treads",
+      "slot": "boots",
+      "rarity": "uncommon",
+      "tile": "boots_4_green.png",
+      "base_type": "leather_boots",
+      "armor": 5,
+      "evasion": 6,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "lore": "Patterned to match the forest floor \u2014 and the boots that crossed it.",
+      "drop_weights": [
+        15,
+        65,
+        25,
+        3,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "overlay": "boots_scouts"
+    },
+    {
+      "id": "soldier_greaves",
+      "name": "Soldier's Greaves",
+      "slot": "boots",
+      "rarity": "uncommon",
+      "tile": "boots_iron_2.png",
+      "base_type": "greaves",
+      "armor": 5,
+      "evasion": 6,
+      "item_tier": 2,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "lore": "Government issue. Blood-stained at the seams.",
+      "drop_weights": [
+        12,
+        60,
+        28,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.05,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 0.8,
+        "mode": "colorize",
+        "colorize_strength": 0.45
+      },
+      "overlay": "boots_soldier_greaves"
+    },
+    {
+      "id": "ranger_boots",
+      "name": "Ranger Boots",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_3_stripe_new.png",
+      "base_type": "leather_boots",
+      "armor": 5,
+      "evasion": 7,
+      "item_tier": 2,
+      "flavor_tags": [
+        "stealth",
+        "footwork"
+      ],
+      "lore": "Soft soles, double-stitched. Worn by those who don't want to be heard.",
+      "drop_weights": [
+        8,
+        55,
+        32,
+        5,
+        0
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "overlay": "boots_ranger"
+    },
+    {
+      "id": "ironshod_boots",
+      "name": "Ironshod Boots",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_iron_2.png",
+      "base_type": "iron_boots",
+      "armor": 7,
+      "evasion": 10,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified",
+        "thunderous"
+      ],
+      "lore": "Iron plates over felt. Heavy enough to be heard.",
+      "drop_weights": [
+        0,
+        18,
+        60,
+        22,
+        4
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 220,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "overlay": "boots_ironshod"
+    },
+    {
+      "id": "swiftstep_boots",
+      "name": "Swiftstep Boots",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_1_brown_old.png",
+      "base_type": "leather_boots",
+      "armor": 7,
+      "evasion": 10,
+      "item_tier": 3,
+      "flavor_tags": [
+        "swiftness",
+        "footwork"
+      ],
+      "lore": "Lightly enchanted. Each step shorter than the last.",
+      "drop_weights": [
+        0,
+        15,
+        58,
+        25,
+        5
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      }
+    },
+    {
+      "id": "sentinel_greaves",
+      "name": "Sentinel Greaves",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_iron_2.png",
+      "base_type": "greaves",
+      "armor": 7,
+      "evasion": 10,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortified",
+        "rampaging"
+      ],
+      "lore": "Built for the watch. Built for the charge.",
+      "drop_weights": [
+        0,
+        12,
+        55,
+        28,
+        8
+      ],
+      "unique": false,
+      "enchant_chance": 0.1,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 10,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "overlay": "boots_sentinel"
+    },
+    {
+      "id": "vanguard_sabatons",
+      "name": "Vanguard Sabatons",
+      "slot": "boots",
+      "rarity": "epic",
+      "tile": "boots_iron_2.png",
+      "base_type": "greaves",
+      "armor": 11,
+      "evasion": 15,
+      "item_tier": 4,
+      "flavor_tags": [
+        "fortified",
+        "rampaging",
+        "earth"
+      ],
+      "lore": "First through the breach. Last to leave the field.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        58,
+        30
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 220,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "overlay": "boots_vanguard"
+    },
+    {
+      "id": "stormrunner_boots",
+      "name": "Stormrunner Boots",
+      "slot": "boots",
+      "rarity": "epic",
+      "tile": "boots_4_green.png",
+      "base_type": "leather_boots",
+      "armor": 11,
+      "evasion": 15,
+      "item_tier": 4,
+      "flavor_tags": [
+        "swiftness",
+        "flying",
+        "footwork"
+      ],
+      "lore": "Lightning never quite catches them.",
+      "drop_weights": [
+        0,
+        0,
+        10,
+        55,
+        35
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "overlay": "boots_stormrunner"
+    },
+    {
+      "id": "earthshaker_treads",
+      "name": "Earthshaker Treads",
+      "slot": "boots",
+      "rarity": "epic",
+      "tile": "boots_iron_2.png",
+      "base_type": "treads",
+      "armor": 11,
+      "evasion": 15,
+      "item_tier": 4,
+      "flavor_tags": [
+        "earth",
+        "thunderous"
+      ],
+      "lore": "Each step leaves a shallow crater in stone.",
+      "drop_weights": [
+        0,
+        0,
+        8,
+        55,
+        38
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 30,
+        "sat": 1.0,
+        "mode": "colorize"
+      },
+      "overlay": "boots_earthshaker"
+    },
+    {
+      "id": "windwalker_boots",
+      "name": "Windwalkers",
+      "slot": "boots",
+      "rarity": "epic",
+      "tile": "boots_3_stripe_new.png",
+      "base_type": "treads",
+      "armor": 16,
+      "evasion": 21,
+      "item_tier": 5,
+      "flavor_tags": [
+        "swiftness",
+        "flying"
+      ],
+      "lore": "Heels barely brush the ground.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        18,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "overlay": "boots_windwalker"
+    },
+    {
+      "id": "march_of_kings",
+      "name": "March of Kings",
+      "slot": "boots",
+      "rarity": "epic",
+      "tile": "boots_iron_2.png",
+      "base_type": "greaves",
+      "armor": 16,
+      "evasion": 21,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "rampaging",
+        "fortified"
+      ],
+      "lore": "Worn at the head of the column. Always.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        14,
+        70
+      ],
+      "unique": false,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_berserker": 8
+      },
+      "default_tint": {
+        "hue": 50,
+        "sat": 1.1,
+        "mode": "normal"
+      },
+      "overlay": "boots_march_of_kings"
+    },
+    {
+      "id": "assassins_boots",
+      "name": "Assassin's Boots",
+      "slot": "boots",
+      "rarity": "legendary",
+      "tile": "urand_assassin.png",
+      "base_type": "shoes",
+      "armor": 18,
+      "evasion": 24,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "swiftness"
+      ],
+      "lore": "Silent on stone, silent on grass, silent on graves.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        25
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_crit"
+      ],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10
+      }
+    },
+    {
+      "id": "treads_apocalypse",
+      "name": "Treads of Apocalypse",
+      "slot": "boots",
+      "rarity": "legendary",
+      "tile": "boots_iron_2.png",
+      "base_type": "treads",
+      "armor": 18,
+      "evasion": 24,
+      "item_tier": 5,
+      "flavor_tags": [
+        "earth",
+        "thunderous",
+        "rampaging"
+      ],
+      "lore": "What the wearer steps on does not get up.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.0,
+        "mode": "colorize"
+      },
+      "overlay": "boots_apocalypse"
+    },
+    {
+      "id": "lightning_scales",
+      "name": "Lightning Scales",
+      "slot": "boots",
+      "rarity": "legendary",
+      "tile": "urand_lightning_scales.png",
+      "base_type": "iron_boots",
+      "armor": 18,
+      "evasion": 24,
+      "item_tier": 5,
+      "flavor_tags": [
+        "thorns",
+        "elemental"
+      ],
+      "lore": "Crackles when struck. Doesn't always wait to be struck.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        5,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10
+      },
+      "overlay": "boots_iron_2",
+      "default_tint": {
+        "hue": 210,
+        "sat": 1.0,
+        "mode": "normal"
+      }
+    },
+    {
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 30,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 22,
+        "of_devotion": 30,
+        "of_holy_resist": 22,
+        "of_berserker": 8
+      },
+      "armor": 3,
+      "base_type": "sandals",
+      "default_tint": {
+        "hue": 45.5,
+        "mode": "shimmer",
+        "sat": 0.991
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 4,
+      "flavor_tags": [
+        "swiftness",
+        "holy"
+      ],
+      "id": "worn_sandals_sunsteel",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "The metal is warm even at midnight. Undead dare not touch it.",
+      "name": "Sunsteel Worn Sandals",
+      "rarity": "rare",
+      "slot": "boots",
+      "tile": "low_boots.png",
+      "unique": false,
+      "recolor_of": "worn_sandals"
+    },
+    {
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 24,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_shadows": 32,
+        "of_dark_resist": 22,
+        "of_lifesteal": 18,
+        "of_berserker": 8
+      },
+      "armor": 3,
+      "base_type": "leather_boots",
+      "default_tint": {
+        "hue": 280.7,
+        "mode": "normal",
+        "sat": 0.976
+      },
+      "drop_weights": [
+        60,
+        12,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 4,
+      "flavor_tags": [
+        "dark"
+      ],
+      "id": "leather_boots_voidwrought",
+      "implicit_affixes": [],
+      "item_tier": 1,
+      "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
+      "name": "Voidwrought Leather Boots",
+      "rarity": "uncommon",
+      "slot": "boots",
+      "tile": "boots_1_brown_new.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_finesse": 36,
+        "of_might": 12,
+        "of_wisdom": 22,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_holy_resist": 18,
+        "of_devotion": 14,
+        "of_berserker": 8
+      },
+      "armor": 5,
+      "base_type": "greaves",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.92,
+          0.92,
+          0.96
+        ]
+      },
+      "drop_weights": [
+        25,
+        60,
+        12,
+        0,
+        0
+      ],
+      "enchant_chance": 0.05,
+      "evasion": 6,
+      "flavor_tags": [
+        "fortified"
+      ],
+      "id": "soldier_greaves_pale",
+      "implicit_affixes": [],
+      "item_tier": 2,
+      "lore": "Bleached past white into a color the eye cannot name.",
+      "name": "Pale Soldier's Greaves",
+      "overlay": "boots_soldier_greaves",
+      "rarity": "uncommon",
+      "slot": "boots",
+      "tile": "boots_iron_2.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_finesse": 40,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_int_mastery": 18,
+        "of_quickcast": 14,
+        "of_resonance": 14,
+        "of_berserker": 8
+      },
+      "armor": 5,
+      "base_type": "leather_boots",
+      "default_tint": {
+        "hue": 221.8,
+        "mode": "normal",
+        "sat": 1.083
+      },
+      "drop_weights": [
+        25,
+        60,
+        12,
+        0,
+        0
+      ],
+      "enchant_chance": 0.1,
+      "evasion": 7,
+      "flavor_tags": [
+        "stealth",
+        "footwork"
+      ],
+      "id": "ranger_boots_nightblue",
+      "implicit_affixes": [],
+      "item_tier": 2,
+      "lore": "Indigo so dark it reads as black until light hits the right angle.",
+      "name": "Nightblue Ranger Boots",
+      "overlay": "boots_ranger",
+      "rarity": "rare",
+      "slot": "boots",
+      "tile": "boots_3_stripe_new.png",
+      "unique": false
+    },
+    {
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 26,
+        "of_wisdom": 10,
+        "of_vitality": 36,
+        "of_the_bear": 46,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_sharpness": 14,
+        "of_berserker": 8
+      },
+      "armor": 11,
+      "base_type": "treads",
+      "default_tint": {
+        "hue": 0.0,
+        "mode": "colorize",
+        "sat": 1.0,
+        "target_rgb": [
+          0.55,
+          0.58,
+          0.62
+        ]
+      },
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enchant_chance": 0.18,
+      "evasion": 15,
+      "flavor_tags": [
+        "earth",
+        "thunderous"
+      ],
+      "id": "earthshaker_treads_ironclad",
+      "implicit_affixes": [],
+      "item_tier": 4,
+      "lore": "Plain forged iron, but heavier than the metal alone explains.",
+      "name": "Ironclad Earthshaker Treads",
+      "overlay": "boots_earthshaker",
+      "rarity": "epic",
+      "slot": "boots",
+      "tile": "boots_iron_2.png",
+      "unique": false,
+      "recolor_of": "earthshaker_treads"
+    },
+    {
+      "id": "spriggan_leaf_boots",
+      "name": "Leaf-Light Slippers",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_4_green.png",
+      "base_type": "sandals",
+      "armor": 2,
+      "evasion": 12,
+      "item_tier": 3,
+      "flavor_tags": [
+        "swiftness",
+        "footwork"
+      ],
+      "lore": "Stitched from dryad-blessed leaves. The wearer steps on tomorrow's grass.",
+      "drop_weights": [
+        0,
+        0,
+        12,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "fae",
+      "implicit_affixes": [
+        "of_haste"
+      ],
+      "affix_pool": {
+        "of_finesse": 14
+      }
+    },
+    {
+      "id": "halfling_lucky_treads",
+      "name": "Lucky Treads",
+      "slot": "boots",
+      "rarity": "rare",
+      "tile": "boots_3_stripe_new.png",
+      "base_type": "sandals",
+      "armor": 5,
+      "evasion": 12,
+      "item_tier": 3,
+      "flavor_tags": [
+        "fortune",
+        "footwork"
+      ],
+      "lore": "Worn-in soles. Always step on the right side of the doorway.",
+      "drop_weights": [
+        0,
+        8,
+        40,
+        30,
+        8
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "requires_innate_tag": "lucky",
+      "implicit_affixes": [
+        "of_plunder"
+      ],
+      "affix_pool": {
+        "of_finesse": 14,
+        "of_haste": 14,
+        "of_the_cat": 12,
+        "of_regen": 8,
+        "of_smoldering_step": 6,
+        "of_warden_step": 6,
+        "of_abundance": 5
+      },
+      "default_tint": {
+        "hue": 50,
+        "sat": 1.1,
+        "mode": "normal"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2628 @@
+{
+  "biomes": {
+    "dungeon": {
+      "display_name": "the Dungeon",
+      "flavor": "The first descent. Stone corridors and stitched-together rooms; everything kills in one or two hits if you stop paying attention.",
+      "color_grade": {
+        "tint": [
+          0.95,
+          0.97,
+          1.05
+        ],
+        "saturation": 0.85,
+        "contrast": 1.05,
+        "vignette": 0.25,
+        "vignette_tint": [
+          0.04,
+          0.04,
+          0.07
+        ]
+      },
+      "floor_primary": [
+        "dungeon"
+      ],
+      "floor_accent": [
+        "@dungeon_dark_blood_8",
+        "@dungeon_dark_blood_9",
+        "@dungeon_dark_blood_10",
+        "@dungeon_dark_blood_11"
+      ],
+      "wall_primary": [
+        "dungeon"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        0.95,
+        0.92,
+        0.88,
+        1
+      ],
+      "darkness": 0.15,
+      "enemy_pool": [
+        "rat",
+        "bat",
+        "grey_rat",
+        "quokka",
+        "goblin",
+        "kobold",
+        "hobgoblin",
+        "big_kobold",
+        "jackal",
+        "giant_cockroach",
+        "skeleton",
+        "orc"
+      ],
+      "vault_themes": [
+        "dungeon"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 100
+        },
+        {
+          "id": "flame_0",
+          "weight": 30
+        },
+        {
+          "id": "campfire",
+          "weight": 12
+        }
+      ],
+      "ambient_density": 0.012,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "caves_tight",
+          "weight": 1
+        }
+      ],
+      "floor_secondary": [
+        "@dungeon_alt_7",
+        "@dungeon_alt_6",
+        "@dungeon_alt_5",
+        "@dungeon_alt_4",
+        "@dungeon_alt_3",
+        "@dungeon_alt_2",
+        "@dungeon_alt_1",
+        "@dungeon_alt_0"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 1,
+          "prefixes": [
+            "@dungeon_alt_0",
+            "@dungeon_alt_1",
+            "@dungeon_alt_2",
+            "@dungeon_alt_3",
+            "@dungeon_alt_4",
+            "@dungeon_alt_5"
+          ]
+        }
+      ],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "liquid_type": "",
+      "tier": 1,
+      "cr_recommended": 20,
+      "boss_id": "boss_sigmund"
+    },
+    "dungeon_dark": {
+      "display_name": "the Dark Dungeon",
+      "flavor": "The torches go out a level deep. Same stones, different nightmare \u2014 silhouettes and ambushes where the light should have been.",
+      "color_grade": {
+        "tint": [
+          0.85,
+          0.9,
+          1.0
+        ],
+        "saturation": 0.75,
+        "contrast": 1.1,
+        "vignette": 0.4,
+        "vignette_tint": [
+          0.01,
+          0.01,
+          0.04
+        ]
+      },
+      "floor_primary": [
+        "dungeon_dark"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "dungeon_dark"
+      ],
+      "wall_accent": [
+        "@dungeon_dark_2",
+        "@dungeon_dark_1"
+      ],
+      "modulate": [
+        0.78,
+        0.74,
+        0.85,
+        1
+      ],
+      "darkness": 0.4,
+      "enemy_pool": [
+        "skeleton",
+        "zombie",
+        "wraith",
+        "kobold",
+        "goblin",
+        "orc",
+        "orc_warrior",
+        "death_knight",
+        "wolf",
+        "hell_hound"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "crypt"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 60
+        },
+        {
+          "id": "flame_0",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.018,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_tight",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "floor_secondary": [
+        "@dungeon_dark_alt_0",
+        "@dungeon_dark_alt_1",
+        "@dungeon_dark_alt_2",
+        "@dungeon_dark_alt_3",
+        "@dungeon_dark_alt_4",
+        "@dungeon_dark_alt_5"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 1,
+          "prefixes": []
+        }
+      ],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 1,
+      "cr_recommended": 20,
+      "boss_id": "boss_eustachio",
+      "liquid_type": "water"
+    },
+    "mines": {
+      "display_name": "the Orcish Mines",
+      "flavor": "Orcish picks struck this rock for a hundred years. Echoes of work-songs, mounds of scrap iron, and the orcs themselves still digging.",
+      "color_grade": {
+        "tint": [
+          1.1,
+          1.0,
+          0.85
+        ],
+        "saturation": 0.9,
+        "contrast": 1.05,
+        "brightness": -0.02,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.06,
+          0.04,
+          0.01
+        ]
+      },
+      "floor_primary": [
+        "mines"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "mines"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1.05,
+        0.95,
+        0.85,
+        1
+      ],
+      "darkness": 0.35,
+      "enemy_pool": [
+        "orc",
+        "goblin",
+        "kobold",
+        "hobgoblin",
+        "gnoll",
+        "big_kobold",
+        "dwarf",
+        "orc_warrior",
+        "ogre"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "mines",
+        "orc"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 70
+        },
+        {
+          "id": "sparkles_1",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "caves",
+      "layouts": [
+        {
+          "id": "caves",
+          "weight": 3
+        },
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        }
+      ],
+      "floor_secondary": [
+        "@dungeon_9",
+        "@dungeon_8",
+        "@dungeon_7",
+        "@dungeon_6",
+        "@dungeon_5",
+        "@dungeon_4",
+        "@dungeon_3",
+        "@dungeon_2",
+        "@dungeon_11",
+        "@dungeon_0"
+      ],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 1,
+      "cr_recommended": 20,
+      "boss_id": "boss_blork"
+    },
+    "lair": {
+      "display_name": "the Lair",
+      "flavor": "Damp earth and gnawed bones. Beasts run in packs here; the air smells of fur and bog. No walls \u2014 only territory.",
+      "color_grade": {
+        "tint": [
+          1.0,
+          1.08,
+          0.95
+        ],
+        "saturation": 1.15,
+        "contrast": 1.0,
+        "vignette": 0.2,
+        "vignette_tint": [
+          0.03,
+          0.05,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "lair"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "lair"
+      ],
+      "wall_accent": [
+        "@orc_3",
+        "@orc_4",
+        "@orc_5"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 12,
+          "prefixes": [
+            "@tree_1_yellow",
+            "@dungeon_alt_0",
+            "@dungeon_alt_1",
+            "@dungeon_alt_2",
+            "@dungeon_alt_4",
+            "@dungeon_alt_5",
+            "@dungeon_alt_2"
+          ]
+        }
+      ],
+      "modulate": [
+        0.9,
+        1.05,
+        0.85,
+        1
+      ],
+      "darkness": 0.2,
+      "enemy_pool": [
+        "rat",
+        "giant_rat",
+        "jackal",
+        "wolf",
+        "black_bear",
+        "grizzly_bear",
+        "wyvern",
+        "komodo_dragon",
+        "hippogriff",
+        "yak",
+        "death_yak"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 60
+        },
+        {
+          "id": "mold_2",
+          "weight": 60
+        },
+        {
+          "id": "flame_0",
+          "weight": 20
+        }
+      ],
+      "ambient_density": 0.018,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 4
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "basic",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "grass",
+        "density": 0.85,
+        "patch_density": 0.06,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [
+        "moss"
+      ],
+      "sigil_set": [],
+      "tier": 2,
+      "cr_recommended": 120,
+      "boss_id": "boss_kirke"
+    },
+    "forest": {
+      "display_name": "the Forest",
+      "flavor": "Crooked oaks lean inward as if listening. Spriggans and faerie things flit between trunks; the bark is older than your bot.",
+      "color_grade": {
+        "tint": [
+          0.95,
+          1.1,
+          0.9
+        ],
+        "saturation": 1.1,
+        "contrast": 1.02,
+        "vignette": 0.2,
+        "vignette_tint": [
+          0.02,
+          0.06,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "forest"
+      ],
+      "floor_accent": [
+        "forest_alt"
+      ],
+      "wall_primary": [
+        "forest"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 30,
+          "prefixes": [
+            "@tree_1_lightred",
+            "@forest_alt_0",
+            "@forest_alt_1",
+            "@forest_alt_2",
+            "@forest_alt_3"
+          ]
+        }
+      ],
+      "modulate": [
+        0.85,
+        1.05,
+        0.85,
+        1
+      ],
+      "darkness": 0.3,
+      "enemy_pool": [
+        "rat",
+        "bat",
+        "wolf_spider",
+        "wolf",
+        "elf",
+        "centaur",
+        "deep_elf_knight",
+        "manticore",
+        "dryad",
+        "black_bear"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "forest",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 50
+        },
+        {
+          "id": "mold_2",
+          "weight": 50
+        },
+        {
+          "id": "flame_0",
+          "weight": 15
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 5
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "grass",
+        "density": 0.95,
+        "patch_density": 0.1,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "sigil_set": [],
+      "tier": 2,
+      "cr_recommended": 120,
+      "boss_id": "boss_erolcha"
+    },
+    "swamp": {
+      "display_name": "the Swamp",
+      "flavor": "Brackish water, drowned roots, things that aren't logs. Step wrong and the floor breathes. Hydras at the bottom.",
+      "color_grade": {
+        "tint": [
+          0.95,
+          1.0,
+          0.78
+        ],
+        "saturation": 0.75,
+        "contrast": 1.05,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.05,
+          0.06,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "swamp"
+      ],
+      "floor_accent": [
+        "swamp_alt"
+      ],
+      "wall_primary": [
+        "swamp"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 25,
+          "prefixes": [
+            "@deep_water_murky_0"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@deep_water_0"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@mangrove_1"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@mangrove_2"
+          ]
+        },
+        {
+          "weight": 10,
+          "prefixes": [
+            "@mangrove_3"
+          ]
+        }
+      ],
+      "modulate": [
+        0.85,
+        1,
+        0.8,
+        1
+      ],
+      "darkness": 0.4,
+      "enemy_pool": [
+        "swamp_dragon",
+        "hydra",
+        "crocodile",
+        "slime_creature",
+        "ghost",
+        "wraith",
+        "necrophage",
+        "rotting_devil"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "swamp",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 80
+        },
+        {
+          "id": "mold_2",
+          "weight": 50
+        },
+        {
+          "id": "flame_0",
+          "weight": 10
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "caves",
+      "layouts": [
+        {
+          "id": "caves",
+          "weight": 4
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "dirt",
+        "density": 0.85,
+        "patch_density": 0.05,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "sigil_set": [],
+      "tier": 3,
+      "cr_recommended": 280,
+      "boss_id": "boss_lernaean"
+    },
+    "snake": {
+      "display_name": "the Snake Pit",
+      "flavor": "Coiled caverns of scoured stone. Naga twine in patrol-spirals; the floor is warm wherever they've recently passed.",
+      "color_grade": {
+        "tint": [
+          1.05,
+          1.05,
+          0.78
+        ],
+        "saturation": 0.85,
+        "contrast": 1.05,
+        "vignette": 0.25,
+        "vignette_tint": [
+          0.06,
+          0.06,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "snake"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "snake"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "darkness": 0.25,
+      "enemy_pool": [
+        "adder",
+        "water_moccasin",
+        "black_mamba",
+        "anaconda",
+        "naga",
+        "salamander",
+        "komodo_dragon",
+        "hippogriff",
+        "sphinx"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "snake",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "orb",
+          "weight": 50
+        },
+        {
+          "id": "orb_glow_0",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.012,
+      "layout": "caves_tight",
+      "layouts": [
+        {
+          "id": "caves_tight",
+          "weight": 4
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "dirt",
+        "density": 0.55,
+        "patch_density": 0.02,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "wall_alternates": [],
+      "sigil_set": [],
+      "tier": 3,
+      "cr_recommended": 280,
+      "boss_id": "boss_aizul"
+    },
+    "shoals": {
+      "display_name": "the Shoals",
+      "flavor": "Salt-bleached reef and tide pools at the edge of the world. Merfolk hunt in lines; the sea lifts the cavern floor.",
+      "color_grade": {
+        "tint": [
+          0.95,
+          1.05,
+          1.1
+        ],
+        "saturation": 1.1,
+        "brightness": 0.03,
+        "vignette": 0.18,
+        "vignette_tint": [
+          0.02,
+          0.05,
+          0.06
+        ]
+      },
+      "floor_primary": [
+        "shoals"
+      ],
+      "floor_accent": [
+        "shoals_alt",
+        "shoals_rocks"
+      ],
+      "wall_primary": [
+        "shoals"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 35,
+          "prefixes": [
+            "@deep_water_0"
+          ]
+        },
+        {
+          "weight": 25,
+          "prefixes": [
+            "@deep_water_1"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@shallow_water_2"
+          ]
+        }
+      ],
+      "modulate": [
+        1,
+        1.05,
+        1.1,
+        1
+      ],
+      "darkness": 0.1,
+      "enemy_pool": [
+        "snapping_turtle",
+        "alligator_snapping_turtle",
+        "crocodile",
+        "manticore",
+        "hippogriff",
+        "cyclops",
+        "stone_giant",
+        "frost_giant"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "shoals",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "crystal_orb",
+          "weight": 50
+        },
+        {
+          "id": "orb_glow_1",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.01,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 4
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "shallow_water_wave",
+        "density": 0.6,
+        "patch_density": 0,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "sigil_set": [],
+      "tier": 3,
+      "cr_recommended": 280,
+      "boss_id": "boss_ilsuiw"
+    },
+    "orc": {
+      "display_name": "the Orc Hold",
+      "flavor": "Beogh's stronghold. Banners, butcher tables, an altar slick with blessing-blood. The warband is here, and so is its warlord.",
+      "color_grade": {
+        "tint": [
+          1.1,
+          0.92,
+          0.78
+        ],
+        "saturation": 0.88,
+        "contrast": 1.08,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.06,
+          0.03,
+          0.01
+        ]
+      },
+      "floor_primary": [
+        "orc"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "orc"
+      ],
+      "wall_accent": [
+        "@forest_alt_0",
+        "@forest_alt_1",
+        "@forest_alt_2",
+        "@forest_alt_3"
+      ],
+      "modulate": [
+        1,
+        0.95,
+        0.85,
+        1
+      ],
+      "darkness": 0.3,
+      "enemy_pool": [
+        "orc",
+        "goblin",
+        "kobold",
+        "hobgoblin",
+        "big_kobold",
+        "gnoll",
+        "orc_warrior",
+        "orc_priest",
+        "orc_knight",
+        "ogre",
+        "two_headed_ogre",
+        "troll"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "orc",
+        "mines"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 80
+        },
+        {
+          "id": "flame_0",
+          "weight": 40
+        },
+        {
+          "id": "flame_1",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "caves_open",
+          "weight": 1
+        }
+      ],
+      "floor_secondary": [
+        "@tomb_0",
+        "@tomb_5",
+        "@tomb_4",
+        "@tomb_2",
+        "@tomb_1"
+      ],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 2,
+      "cr_recommended": 120,
+      "boss_id": "boss_grum",
+      "liquid_type": "water"
+    },
+    "vaults": {
+      "display_name": "the Vaults",
+      "flavor": "Geometric halls of polished stone, cut by guildsmiths. Rare loot, regimented patrols, and a Vault Sentinel that does not blink.",
+      "color_grade": {
+        "tint": [
+          0.98,
+          1.0,
+          1.05
+        ],
+        "saturation": 0.95,
+        "contrast": 1.08,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.04,
+          0.04,
+          0.06
+        ]
+      },
+      "floor_primary": [
+        "vaults"
+      ],
+      "floor_accent": [
+        "vaults_pattern"
+      ],
+      "wall_primary": "vaults",
+      "wall_accent": [
+        "vaults_alt",
+        "vaults_alt2"
+      ],
+      "modulate": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "darkness": 0.1,
+      "enemy_pool": [
+        "orc_knight",
+        "orc_warlord",
+        "death_knight",
+        "deep_elf_knight",
+        "centaur_warrior",
+        "manticore",
+        "anubis_guard",
+        "vampire_knight",
+        "iron_dragon",
+        "stone_giant"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "vaults"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 80
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 50
+        },
+        {
+          "id": "orb",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        },
+        {
+          "id": "caves_tight",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "tier": 4,
+      "cr_recommended": 600,
+      "boss_id": "boss_frederick"
+    },
+    "crypt": {
+      "display_name": "the Crypt",
+      "flavor": "Catacombs lit by lichlight. The dead don't know they're dead. Wraiths drift through walls; mummies count their prayers.",
+      "color_grade": {
+        "tint": [
+          0.85,
+          0.92,
+          1.05
+        ],
+        "saturation": 0.65,
+        "contrast": 1.1,
+        "vignette": 0.4,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.05
+        ]
+      },
+      "floor_primary": [
+        "crypt"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "crypt"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 15,
+          "prefixes": [
+            "@crumbled_column",
+            "@crypt_alt_0",
+            "@crypt_alt_1",
+            "@crypt_alt_2",
+            "@crypt_alt_3",
+            "@crypt_alt_4",
+            "@crypt_alt_5"
+          ]
+        },
+        {
+          "weight": 10,
+          "prefixes": [
+            "@boulder"
+          ]
+        }
+      ],
+      "modulate": [
+        0.7,
+        0.7,
+        0.85,
+        1
+      ],
+      "darkness": 0.55,
+      "enemy_pool": [
+        "skeleton",
+        "zombie",
+        "wraith",
+        "ghost",
+        "death_knight",
+        "vampire_knight",
+        "lich",
+        "mummy"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "crypt"
+      ],
+      "ambient_decor": [
+        {
+          "id": "flame_0",
+          "weight": 70
+        },
+        {
+          "id": "flame_1",
+          "weight": 60
+        },
+        {
+          "id": "flame_2",
+          "weight": 40
+        },
+        {
+          "id": "orb_glow_0",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.022,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_tight",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        1
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "@tomb_alt_0",
+        "@tomb_alt_1",
+        "@tomb_alt_2",
+        "@tomb_alt_3"
+      ],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "boss_id": "boss_boris"
+    },
+    "tomb": {
+      "display_name": "the Tomb",
+      "flavor": "A pyramid of pharaohs and their grudges. Every chamber a curse, every corridor older than the dungeon itself.",
+      "color_grade": {
+        "tint": [
+          1.1,
+          1.05,
+          0.85
+        ],
+        "saturation": 0.8,
+        "contrast": 1.05,
+        "vignette": 0.25,
+        "vignette_tint": [
+          0.06,
+          0.05,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "tomb"
+      ],
+      "floor_accent": [
+        "tomb_alt"
+      ],
+      "wall_primary": [
+        "tomb"
+      ],
+      "wall_accent": [
+        "tomb_alt"
+      ],
+      "modulate": [
+        1.05,
+        1,
+        0.75,
+        1
+      ],
+      "darkness": 0.2,
+      "enemy_pool": [
+        "skeleton",
+        "zombie",
+        "mummy",
+        "greater_mummy",
+        "sphinx",
+        "anubis_guard",
+        "wraith",
+        "lich"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "tomb",
+        "crypt"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 60
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 50
+        },
+        {
+          "id": "flame_0",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_tight",
+          "weight": 2
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "liquid_type": "",
+      "floor_secondary": [],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "boss_id": "boss_menkaure"
+    },
+    "forge": {
+      "display_name": "the Forge",
+      "flavor": "Demonic workshops where weapons drink heat instead of metal. Lava channels, anvils that hum on their own, and the smith-king at the heart.",
+      "color_grade": {
+        "tint": [
+          1.2,
+          0.95,
+          0.75
+        ],
+        "saturation": 1.2,
+        "contrast": 1.15,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.1,
+          0.02,
+          0.0
+        ]
+      },
+      "floor_primary": [
+        "forge"
+      ],
+      "floor_accent": [
+        "forge_alt"
+      ],
+      "wall_primary": [
+        "@forge_alt_5",
+        "@forge_alt_4",
+        "@forge_alt_3",
+        "@forge_alt_2",
+        "@forge_alt_1",
+        "@forge_alt_0"
+      ],
+      "wall_accent": [
+        "@forge_7",
+        "@forge_6",
+        "@forge_5",
+        "@forge_4",
+        "@forge_3",
+        "@forge_2",
+        "@forge_1",
+        "@forge_0"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 20,
+          "prefixes": [
+            "@lava_0"
+          ]
+        }
+      ],
+      "modulate": [
+        1.15,
+        0.9,
+        0.7,
+        1
+      ],
+      "darkness": 0.5,
+      "enemy_pool": [
+        "hell_hound",
+        "fire_giant",
+        "fire_dragon",
+        "manticore",
+        "cyclops",
+        "ogre",
+        "troll",
+        "deep_troll",
+        "balrug"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "forge",
+        "zot"
+      ],
+      "ambient_decor": [
+        {
+          "id": "flame_0",
+          "weight": 100
+        },
+        {
+          "id": "flame_1",
+          "weight": 80
+        },
+        {
+          "id": "flame_2",
+          "weight": 60
+        }
+      ],
+      "ambient_density": 0.03,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "basic",
+          "weight": 1
+        }
+      ],
+      "liquid_type": "lava",
+      "floor_secondary": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_azrael"
+    },
+    "glacier": {
+      "display_name": "the Glacier",
+      "flavor": "Blue ice in slabs the size of houses. Frostbite kills as fast as the ice giants do; the cold has weight.",
+      "color_grade": {
+        "tint": [
+          0.82,
+          0.95,
+          1.15
+        ],
+        "saturation": 0.75,
+        "contrast": 1.05,
+        "brightness": 0.05,
+        "vignette": 0.22,
+        "vignette_tint": [
+          0.02,
+          0.04,
+          0.08
+        ]
+      },
+      "floor_primary": [
+        "glacier"
+      ],
+      "floor_accent": [
+        "glacier_alt"
+      ],
+      "wall_primary": [
+        "glacier"
+      ],
+      "wall_accent": [
+        "glacier_alt"
+      ],
+      "modulate": [
+        0.85,
+        0.95,
+        1.15,
+        1
+      ],
+      "darkness": 0.15,
+      "enemy_pool": [
+        "ice_beast",
+        "ice_dragon",
+        "wraith",
+        "frost_giant",
+        "skeleton",
+        "lich",
+        "deep_troll"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "glacier",
+        "crypt"
+      ],
+      "ambient_decor": [
+        {
+          "id": "crystal_orb",
+          "weight": 80
+        },
+        {
+          "id": "orb_glow_1",
+          "weight": 60
+        },
+        {
+          "id": "orb",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.018,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "basic",
+          "weight": 1
+        }
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_antaeus"
+    },
+    "slime": {
+      "display_name": "the Slime Pits",
+      "flavor": "Acidic chambers where the floor pulses. Jellies split and re-form; the Royal Jelly at the bottom is not a metaphor.",
+      "color_grade": {
+        "tint": [
+          0.9,
+          1.1,
+          0.8
+        ],
+        "saturation": 1.05,
+        "contrast": 1.0,
+        "vignette": 0.25,
+        "vignette_tint": [
+          0.02,
+          0.05,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "dungeon"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "slime"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 25,
+          "prefixes": [
+            "@deep_water_murky_0"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@mold_1"
+          ]
+        },
+        {
+          "weight": 15,
+          "prefixes": [
+            "@mold_2"
+          ]
+        }
+      ],
+      "modulate": [
+        0.85,
+        1.05,
+        0.7,
+        1
+      ],
+      "darkness": 0.4,
+      "enemy_pool": [
+        "slime_creature",
+        "jelly",
+        "ooze",
+        "acid_blob",
+        "death_ooze",
+        "azure_jelly"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "slime"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 80
+        },
+        {
+          "id": "mold_2",
+          "weight": 80
+        },
+        {
+          "id": "orb_glow_0",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.025,
+      "layout": "caves",
+      "layouts": [
+        {
+          "id": "caves",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 1
+        },
+        {
+          "id": "caves_tight",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "slime_overlay",
+        "density": 0.85,
+        "patch_density": 0,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "sigil_set": [],
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_dissolution"
+    },
+    "hive": {
+      "display_name": "the Hive",
+      "flavor": "Honeycomb walls and the buzz of a thousand wings. Bees defend territory like an army; the queen is the size of a cart.",
+      "color_grade": {
+        "tint": [
+          1.15,
+          1.0,
+          0.7
+        ],
+        "saturation": 1.05,
+        "contrast": 1.0,
+        "vignette": 0.22,
+        "vignette_tint": [
+          0.06,
+          0.04,
+          0.01
+        ]
+      },
+      "floor_primary": [
+        "mines"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "hive"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1.05,
+        1,
+        0.7,
+        1
+      ],
+      "darkness": 0.25,
+      "enemy_pool": [
+        "butterfly",
+        "wolf_spider",
+        "giant_cockroach",
+        "wolf",
+        "centaur"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "hive",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 50
+        },
+        {
+          "id": "sparkles_1",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.018,
+      "layout": "caves_tight",
+      "layouts": [
+        {
+          "id": "caves_tight",
+          "weight": 4
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "dirt",
+        "density": 0.85,
+        "patch_density": 0.04,
+        "patches": []
+      },
+      "floor_secondary": [
+        "@hive_3",
+        "@hive_2",
+        "@hive_1",
+        "@hive_0"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 12,
+          "prefixes": [
+            "@forest_alt_3",
+            "@forest_alt_0",
+            "@forest_alt_1",
+            "@forest_alt_2"
+          ]
+        }
+      ],
+      "sigil_set": [],
+      "tier": 3,
+      "cr_recommended": 280,
+      "boss_id": "boss_gastronok"
+    },
+    "labyrinth": {
+      "display_name": "the Labyrinth",
+      "flavor": "A maze that rearranges itself when you blink. The Minotaur is somewhere in here, and so is everyone who ever entered.",
+      "color_grade": {
+        "tint": [
+          0.98,
+          0.96,
+          1.02
+        ],
+        "saturation": 0.8,
+        "contrast": 1.05,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.04,
+          0.04,
+          0.05
+        ]
+      },
+      "floor_primary": [
+        "labyrinth"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "labyrinth"
+      ],
+      "wall_accent": [
+        "labyrinth_alt"
+      ],
+      "modulate": [
+        0.95,
+        0.9,
+        0.85,
+        1
+      ],
+      "darkness": 0.45,
+      "enemy_pool": [
+        "centaur_warrior",
+        "manticore",
+        "death_knight",
+        "vampire_knight",
+        "cyclops",
+        "deep_troll",
+        "iron_dragon"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "vaults"
+      ],
+      "ambient_decor": [
+        {
+          "id": "magic_lamp",
+          "weight": 80
+        },
+        {
+          "id": "zot_pillar",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.012,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 4
+        },
+        {
+          "id": "caves_tight",
+          "weight": 3
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus",
+        "x-shaped"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "floor_secondary": [
+        "@mines_0",
+        "@mines_1",
+        "@mines_2",
+        "@mines_3",
+        "@mines_4",
+        "@mines_5",
+        "@mines_6",
+        "@mines_7",
+        "@mines_8"
+      ],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_killer_klown"
+    },
+    "abyss": {
+      "display_name": "the Abyss",
+      "flavor": "The walls drift. Geometry won't hold still long enough to map. Things from outside the dungeon hunt here; reality is the prey.",
+      "color_grade": {
+        "tint": [
+          1.0,
+          0.75,
+          1.1
+        ],
+        "saturation": 1.2,
+        "contrast": 0.95,
+        "brightness": -0.03,
+        "vignette": 0.35,
+        "vignette_tint": [
+          0.06,
+          0.02,
+          0.08
+        ]
+      },
+      "floor_primary": [
+        "abyss"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "abyss"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1,
+        0.7,
+        0.85,
+        1
+      ],
+      "darkness": 0.55,
+      "enemy_pool": [
+        "wraith",
+        "lich",
+        "vampire_knight",
+        "death_knight",
+        "deep_troll",
+        "balrug",
+        "iron_dragon"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "abyss",
+        "pandemonium",
+        "zot"
+      ],
+      "ambient_decor": [
+        {
+          "id": "orb_glow_0",
+          "weight": 80
+        },
+        {
+          "id": "orb_glow_1",
+          "weight": 80
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "caves",
+      "layouts": [
+        {
+          "id": "caves",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        },
+        {
+          "id": "basic",
+          "weight": 1
+        }
+      ],
+      "liquid_type": "lava",
+      "floor_secondary": [
+        "@dungeon_dark_alt_0",
+        "@dungeon_dark_alt_1",
+        "@dungeon_dark_alt_2",
+        "@dungeon_dark_alt_3",
+        "@dungeon_dark_alt_4",
+        "@dungeon_dark_alt_5"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 1,
+          "prefixes": []
+        }
+      ],
+      "edge_overlay": {
+        "patches": []
+      },
+      "sigil_set": [],
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_mnoleg"
+    },
+    "pandemonium": {
+      "display_name": "Pandemonium",
+      "flavor": "An infinite plane of demon-lord palaces. Each lord wants something different; none of them want you to leave.",
+      "color_grade": {
+        "tint": [
+          1.1,
+          1.05,
+          0.65
+        ],
+        "saturation": 1.25,
+        "contrast": 1.15,
+        "vignette": 0.35,
+        "vignette_tint": [
+          0.08,
+          0.05,
+          0.0
+        ]
+      },
+      "floor_primary": [
+        "pandemonium"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "pandemonium"
+      ],
+      "wall_accent": [
+        "@forge_alt_5",
+        "@forge_alt_4",
+        "@forge_alt_3",
+        "@forge_alt_1",
+        "@forge_alt_2",
+        "@forge_alt_0"
+      ],
+      "modulate": [
+        1.1,
+        0.75,
+        0.75,
+        1
+      ],
+      "darkness": 0.5,
+      "enemy_pool": [
+        "balrug",
+        "fire_giant",
+        "fire_dragon",
+        "lich",
+        "vampire_knight",
+        "deep_troll"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "pandemonium",
+        "abyss",
+        "zot"
+      ],
+      "ambient_decor": [
+        {
+          "id": "flame_0",
+          "weight": 80
+        },
+        {
+          "id": "flame_2",
+          "weight": 60
+        },
+        {
+          "id": "zot_pillar",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.025,
+      "layout": "caves_open",
+      "layouts": [
+        {
+          "id": "caves_open",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "basic",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        2,
+        3
+      ],
+      "liquid_type": "lava",
+      "floor_secondary": [
+        "@vaults_alt3_0",
+        "@vaults_alt3_1",
+        "@vaults_alt3_2",
+        "@vaults_alt3_3"
+      ],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_cerebov"
+    },
+    "zot": {
+      "display_name": "the Realm of Zot",
+      "flavor": "The deepest sanctum. Orbs of menacing power; the Orb of Zot itself, and the killers it's worth.",
+      "color_grade": {
+        "tint": [
+          1.05,
+          0.85,
+          1.1
+        ],
+        "saturation": 1.2,
+        "contrast": 1.1,
+        "vignette": 0.3,
+        "vignette_tint": [
+          0.05,
+          0.03,
+          0.07
+        ]
+      },
+      "floor_primary": [
+        "zot"
+      ],
+      "floor_accent": [],
+      "wall_primary": "zot",
+      "wall_accent": [],
+      "modulate": [
+        0.95,
+        0.9,
+        1.15,
+        1
+      ],
+      "darkness": 0.4,
+      "enemy_pool": [
+        "lich",
+        "death_knight",
+        "golden_dragon",
+        "iron_dragon",
+        "quicksilver_dragon",
+        "shadow_dragon",
+        "fire_giant",
+        "frost_giant",
+        "stone_giant",
+        "ettin",
+        "minotaur",
+        "ancient_lich"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "zot",
+        "vaults",
+        "depths"
+      ],
+      "ambient_decor": [
+        {
+          "id": "zot_pillar",
+          "weight": 100
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 60
+        },
+        {
+          "id": "crystal_orb",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.025,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        },
+        {
+          "id": "caves_tight",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        2,
+        3
+      ],
+      "tier": 5,
+      "cr_recommended": 1100,
+      "boss_id": "boss_tiamat"
+    },
+    "elf": {
+      "display_name": "the Elven Halls",
+      "flavor": "Mirrored halls and cool-burning lanterns. Elven mages cast in unison; even the silence is choreographed.",
+      "color_grade": {
+        "tint": [
+          0.95,
+          0.92,
+          1.1
+        ],
+        "saturation": 1.05,
+        "contrast": 1.0,
+        "vignette": 0.22,
+        "vignette_tint": [
+          0.03,
+          0.03,
+          0.06
+        ]
+      },
+      "floor_primary": [
+        "elf"
+      ],
+      "floor_accent": [
+        "elf_frame"
+      ],
+      "wall_primary": [
+        "elf"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1.05,
+        1,
+        1.15,
+        1
+      ],
+      "darkness": 0.18,
+      "enemy_pool": [
+        "deep_elf_knight",
+        "deep_elf_mage",
+        "deep_elf_pyromancer",
+        "deep_elf_sorcerer",
+        "centaur_warrior",
+        "sphinx",
+        "manticore"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "elf",
+        "vaults"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern_gold",
+          "weight": 70
+        },
+        {
+          "id": "orb_glow_1",
+          "weight": 30
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 25
+        }
+      ],
+      "ambient_density": 0.018,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "floor_secondary": [],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "boss_id": "boss_enchantress"
+    },
+    "spider": {
+      "display_name": "the Spider Nest",
+      "flavor": "Webbing in the corners, cocoons in the alcoves, eyes everywhere. Spiders the size of dogs, spiders the size of horses.",
+      "color_grade": {
+        "tint": [
+          0.92,
+          0.85,
+          0.95
+        ],
+        "saturation": 0.7,
+        "contrast": 1.1,
+        "vignette": 0.38,
+        "vignette_tint": [
+          0.04,
+          0.03,
+          0.05
+        ]
+      },
+      "floor_primary": [
+        "mines"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "spider"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "weight": 8,
+          "prefixes": [
+            "tree"
+          ]
+        }
+      ],
+      "modulate": [
+        0.9,
+        0.95,
+        0.85,
+        1
+      ],
+      "darkness": 0.55,
+      "enemy_pool": [
+        "redback",
+        "jumping_spider",
+        "wolf_spider",
+        "orb_spider",
+        "giant_spider",
+        "steam_dragon"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "spider",
+        "lair"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 50
+        },
+        {
+          "id": "mold_2",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "caves",
+      "layouts": [
+        {
+          "id": "caves",
+          "weight": 3
+        },
+        {
+          "id": "caves_tight",
+          "weight": 2
+        }
+      ],
+      "edge_overlay": {
+        "prefix": "dirt",
+        "density": 0.85,
+        "patch_density": 0.04,
+        "patches": []
+      },
+      "liquid_type": "water",
+      "floor_secondary": [],
+      "sigil_set": [],
+      "tier": 3,
+      "cr_recommended": 280,
+      "boss_id": "boss_jorgrun"
+    },
+    "temple": {
+      "display_name": "the Ecumenical Temple",
+      "flavor": "A neutral ground at the dungeon's surface \u2014 every god's altar in a single hall. Bless here; the gods watch the rest of the run.",
+      "color_grade": {
+        "tint": [
+          1.1,
+          1.03,
+          0.85
+        ],
+        "saturation": 0.95,
+        "brightness": 0.04,
+        "contrast": 1.0,
+        "vignette": 0.2,
+        "vignette_tint": [
+          0.06,
+          0.05,
+          0.02
+        ]
+      },
+      "floor_primary": [
+        "temple"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "temple"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        1.05,
+        1.05,
+        0.95,
+        1
+      ],
+      "darkness": 0.05,
+      "enemy_pool": [],
+      "vault_themes": [
+        "dungeon",
+        "vaults"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 100
+        },
+        {
+          "id": "lantern_gold",
+          "weight": 60
+        }
+      ],
+      "ambient_density": 0.022,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves_open",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "floor_secondary": [],
+      "wall_alternates": [],
+      "edge_overlay": {
+        "patches": []
+      },
+      "liquid_type": "water",
+      "tier": 2,
+      "cr_recommended": 120,
+      "boss_id": "boss_psyche"
+    },
+    "depths": {
+      "display_name": "the Depths",
+      "flavor": "Deeper still than the Vaults \u2014 natural caverns warped by long pressure. The bridge between civilization and the bottom of the world.",
+      "color_grade": {
+        "tint": [
+          0.78,
+          0.85,
+          1.05
+        ],
+        "saturation": 0.65,
+        "contrast": 1.12,
+        "brightness": -0.02,
+        "vignette": 0.42,
+        "vignette_tint": [
+          0.01,
+          0.02,
+          0.06
+        ]
+      },
+      "floor_primary": [
+        "depths"
+      ],
+      "floor_accent": [
+        "depths_alt"
+      ],
+      "wall_primary": [
+        "depths"
+      ],
+      "wall_accent": [],
+      "modulate": [
+        0.85,
+        0.85,
+        1.05,
+        1
+      ],
+      "darkness": 0.45,
+      "enemy_pool": [
+        "deep_troll",
+        "fire_giant",
+        "frost_giant",
+        "stone_giant",
+        "iron_dragon",
+        "golden_dragon",
+        "quicksilver_dragon",
+        "shadow_dragon",
+        "death_knight",
+        "lich"
+      ],
+      "vault_themes": [
+        "dungeon",
+        "depths",
+        "vaults",
+        "zot"
+      ],
+      "ambient_decor": [
+        {
+          "id": "crystal_orb",
+          "weight": 60
+        },
+        {
+          "id": "orb_glow_0",
+          "weight": 40
+        },
+        {
+          "id": "lantern_gold",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.014,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 3
+        },
+        {
+          "id": "caves",
+          "weight": 2
+        },
+        {
+          "id": "caves_tight",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [
+        "sigil_circle",
+        "sigil_cross",
+        "sigil_rhombus"
+      ],
+      "sigil_density": [
+        1,
+        2
+      ],
+      "floor_secondary": [
+        "@zot_9",
+        "@zot_8",
+        "@zot_11",
+        "@zot_10",
+        "@zot_7",
+        "@zot_5"
+      ],
+      "wall_alternates": [
+        {
+          "weight": 1,
+          "prefixes": [
+            "@vaults_alt_0",
+            "@vaults_alt_1",
+            "@vaults_alt_2",
+            "@vaults_alt_3",
+            "@vaults_alt_4",
+            "@vaults_alt_5"
+          ]
+        }
+      ],
+      "edge_overlay": {
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "boss_id": "boss_polyphemus"
+    }
+  },
+  "run_plans": [
+    {
+      "name": "classic",
+      "weight": 6,
+      "floors": [
+        "dungeon",
+        "dungeon",
+        "mines",
+        "lair",
+        "lair",
+        "swamp",
+        "crypt",
+        "crypt",
+        "vaults",
+        "zot"
+      ]
+    },
+    {
+      "name": "ascent",
+      "weight": 4,
+      "floors": [
+        "dungeon",
+        "mines",
+        "lair",
+        "forest",
+        "snake",
+        "swamp",
+        "tomb",
+        "vaults",
+        "crypt",
+        "zot"
+      ]
+    },
+    {
+      "name": "the_descent",
+      "weight": 4,
+      "floors": [
+        "dungeon",
+        "dungeon",
+        "lair",
+        "swamp",
+        "orc",
+        "crypt",
+        "forge",
+        "forge",
+        "abyss",
+        "zot"
+      ]
+    },
+    {
+      "name": "frozen_path",
+      "weight": 3,
+      "floors": [
+        "dungeon",
+        "lair",
+        "shoals",
+        "snake",
+        "tomb",
+        "glacier",
+        "glacier",
+        "vaults",
+        "crypt",
+        "zot"
+      ]
+    },
+    {
+      "name": "infernal",
+      "weight": 3,
+      "floors": [
+        "dungeon",
+        "dungeon_dark",
+        "mines",
+        "orc",
+        "lair",
+        "slime",
+        "forge",
+        "forge",
+        "pandemonium",
+        "zot"
+      ]
+    },
+    {
+      "name": "labyrinthine",
+      "weight": 2,
+      "floors": [
+        "dungeon",
+        "lair",
+        "swamp",
+        "snake",
+        "vaults",
+        "labyrinth",
+        "labyrinth",
+        "tomb",
+        "crypt",
+        "zot"
+      ]
+    },
+    {
+      "name": "broken",
+      "weight": 1,
+      "floors": [
+        "dungeon",
+        "hive",
+        "lair",
+        "slime",
+        "swamp",
+        "abyss",
+        "pandemonium",
+        "abyss",
+        "forge",
+        "zot"
+      ]
+    },
+    {
+      "name": "stoneheart",
+      "weight": 3,
+      "floors": [
+        "dungeon",
+        "dungeon",
+        "vaults",
+        "vaults",
+        "crypt",
+        "tomb",
+        "depths",
+        "depths",
+        "vaults",
+        "zot"
+      ]
+    },
+    {
+      "name": "elven_path",
+      "weight": 2,
+      "floors": [
+        "dungeon",
+        "lair",
+        "lair",
+        "elf",
+        "elf",
+        "vaults",
+        "crypt",
+        "depths",
+        "depths",
+        "zot"
+      ]
+    },
+    {
+      "name": "wild",
+      "weight": 2,
+      "floors": [
+        "dungeon",
+        "lair",
+        "spider",
+        "spider",
+        "snake",
+        "swamp",
+        "shoals",
+        "vaults",
+        "depths",
+        "zot"
+      ]
+    }
+  ]
+}

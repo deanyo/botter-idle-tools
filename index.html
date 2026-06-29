@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Authoring Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Browser-based editors for authoring biomes, items, affixes, and tiles for Botter — the DCSS-port idle game.">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Page-specific tweaks for the index. The shared palette + card +
+     button styles come from portal.css. */
+  body { line-height: 1.55; }
+  body > header.hero {
+    padding: 48px 24px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  body > header.hero h1 {
+    font-size: 36px;
+    margin: 0 0 12px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  body > header.hero p {
+    color: var(--muted);
+    margin: 0 auto;
+    max-width: 720px;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  main h2 {
+    font-size: 20px;
+    margin: 32px 0 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card { padding: 20px; border-radius: 8px; }
+  .card .title { font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 13px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .share {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 32px;
+  }
+  .share code {
+    background: rgba(255,255,255,0.05);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent-dim); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>Botter Authoring Portal</h1>
+  <p>Browser-based editors for biomes, items, affixes, and tiles. Author content locally, export JSON, share back via GitHub issues / Discord.</p>
+</header>
+<main>
+
+<h2>Editors</h2>
+<div class="grid">
+
+  <a class="card" href="atlas_viewer.html">
+    <span class="badge live">live</span>
+    <span class="title">Tile Atlas Viewer</span>
+    <p>Browse all 6,945 DCSS tiles by category, biome, class, or subdir. Filter, search, click to copy paths. Read-only — pairs with the editors below.</p>
+  </a>
+
+  <a class="card" href="biome_editor.html">
+    <span class="badge live">live</span>
+    <span class="title">Biome Editor</span>
+    <p>Visual editor for floor, wall, edge-overlay, and sigil sets per biome. Replace tiles by picker. Exports a complete <code>biomes.json</code>.</p>
+  </a>
+
+  <a class="card" href="item_editor.html">
+    <span class="badge live">live</span>
+    <span class="title">Item Editor</span>
+    <p>Slot-tabbed editor (1H sword / helm / armor / shield / boots / ring / amulet). Edit stats, drop weights, flavor tags, lore. Exports per-slot JSON slices.</p>
+  </a>
+
+  <a class="card" href="affix_editor.html">
+    <span class="badge live">live</span>
+    <span class="title">Affix / Enchant Editor</span>
+    <p>Author new affixes (rarity-tiered stat bonuses) with a color picker, stat dropdown, and live preview card. Exports a complete <code>affixes.json</code>.</p>
+  </a>
+
+  <a class="card" href="drop_tuning.html">
+    <span class="badge live">live</span>
+    <span class="title">Drop Tuning</span>
+    <p>Centralized sliders for every drop-rate dial: meta-rarity, quality tail bias, enchant chance, enchant-combo chance, recolor odds. Exports <code>drop_tuning.json</code>.</p>
+  </a>
+
+  <a class="card" href="roll_flowchart.html">
+    <span class="badge live">live</span>
+    <span class="title">Item Roll Flowchart</span>
+    <p>Visual reference: every way an item can roll, from Common junk to Sublime Primal Prismatic. Tooltip cards mirror the in-game widget so you can read the same fields the player sees.</p>
+  </a>
+
+  <a class="card" href="build_matrix.html">
+    <span class="badge live">live</span>
+    <span class="title">Build Matrix</span>
+    <p>15 species × 10 spell archetypes grid. Cells coloured VIABLE / WEAK / UNBUILT / NO ANCHOR. Click a cell to see the item pool, lane match, and the <code>/equip</code> command for the build.</p>
+  </a>
+
+  <a class="card" href="enemy_resistance_editor.html">
+    <span class="badge live">live</span>
+    <span class="title">Enemy Resistances</span>
+    <p>Sortable table of every enemy × element with red/green coding. Edit per-enemy resistances inline; export an updated <code>enemies.json</code>. Pairs with the <code>resistances</code> field read by <code>actor.gd::_apply_typed_damage</code>.</p>
+  </a>
+
+  <a class="card" href="slot_proposal.html">
+    <span class="badge live">live</span>
+    <span class="title">Slot Proposal</span>
+    <p>Research-backed proposal for new equipment slots — bows, belts, trinkets, orbs, second ring, talismans. Each candidate scored for sprite availability (inv vs positional), DCSS fit, effort. Top recommendations ranked. Click any card for full detail.</p>
+  </a>
+
+</div>
+
+<h2>Sharing what you build</h2>
+<div class="share">
+  <p>Each editor has an <strong>⬇ Export</strong> button that downloads JSON. To share your design:</p>
+  <ol>
+    <li>Hit Export and save the file locally.</li>
+    <li>Open a <a href="https://github.com/deanyo/botter-idle/issues/new" target="_blank" rel="noopener">GitHub issue</a> with the JSON contents (or a Discord post if linked from the project).</li>
+    <li>If it gets accepted, your file lands in <code>data/</code> next release.</li>
+  </ol>
+  <p class="meta">No backend, no auth, no upload — your work stays local until you choose to share it.</p>
+</div>
+
+<h2>Working locally</h2>
+<div class="share">
+  <p>Clone the repo, then serve <code>tools/</code> over HTTP so the editors can <code>fetch()</code> data files (browsers block <code>file://</code> fetch):</p>
+  <pre style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 4px; font-size: 12px; overflow-x: auto;">
+git clone https://github.com/deanyo/botter-idle.git
+cd botter-idle
+python3 -m http.server 8080
+# then open http://localhost:8080/tools/</pre>
+</div>
+
+</main>
+<footer>
+  <p>Botter is a DCSS-port idle game. Tiles © RLTiles / DCSS contributors (CC0). Source: <a href="https://github.com/deanyo/botter-idle" target="_blank" rel="noopener">github.com/deanyo/botter-idle</a></p>
+</footer>
+</body>
+</html>

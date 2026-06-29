@@ -1,0 +1,182 @@
+{
+  "spell_fireball": {
+    "primary_stat": "int",
+    "cooldown": 1.6,
+    "damage": 18,
+    "range_cells": 8,
+    "projectile": "res://assets/tiles/projectiles/fireball.png",
+    "trail_flavor": "fire",
+    "element": "fire",
+    "projectile_speed": 320.0
+  },
+  "spell_axes": {
+    "primary_stat": "str",
+    "cooldown": 5.0,
+    "damage": 14,
+    "range_cells": 2,
+    "projectile": "res://assets/tiles/items/hand_axe.png",
+    "trail_flavor": "thunderous",
+    "element": "",
+    "projectile_speed": 0.0
+  },
+  "spell_holy_beam": {
+    "primary_stat": "str",
+    "cooldown": 3.2,
+    "damage": 26,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "holy",
+    "element": "holy",
+    "projectile_speed": 0.0
+  },
+  "spell_chain_lightning": {
+    "primary_stat": "dex",
+    "cooldown": 2.4,
+    "damage": 16,
+    "range_cells": 7,
+    "projectile": "",
+    "trail_flavor": "thunderous",
+    "element": "thunderous",
+    "projectile_speed": 0.0
+  },
+  "spell_frost_nova": {
+    "primary_stat": "int",
+    "cooldown": 4.0,
+    "damage": 16,
+    "range_cells": 3,
+    "projectile": "",
+    "trail_flavor": "cold",
+    "element": "cold",
+    "projectile_speed": 0.0
+  },
+  "spell_magic_dart": {
+    "primary_stat": "dex",
+    "cooldown": 0.7,
+    "damage": 14,
+    "range_cells": 9,
+    "projectile": "res://assets/tiles/projectiles/magic_dart.png",
+    "trail_flavor": "arcane",
+    "element": "",
+    "projectile_speed": 420.0
+  },
+  "spell_iron_shot": {
+    "primary_stat": "str",
+    "cooldown": 3.5,
+    "damage": 32,
+    "range_cells": 9,
+    "projectile": "res://assets/tiles/projectiles/iron_shot.png",
+    "trail_flavor": "earth",
+    "element": "",
+    "projectile_speed": 220.0
+  },
+  "spell_sandblast": {
+    "primary_stat": "str",
+    "cooldown": 2.6,
+    "damage": 30,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "earth",
+    "element": "",
+    "projectile_speed": 0.0
+  },
+  "spell_drain": {
+    "primary_stat": "int",
+    "cooldown": 2.4,
+    "damage": 22,
+    "range_cells": 8,
+    "projectile": "res://assets/tiles/projectiles/drain.png",
+    "trail_flavor": "dark",
+    "element": "dark",
+    "projectile_speed": 280.0
+  },
+  "spell_shatter": {
+    "primary_stat": "str",
+    "cooldown": 5.0,
+    "damage": 28,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "earth",
+    "element": "",
+    "projectile_speed": 0.0
+  },
+  "spell_bone_spear": {
+    "primary_stat": "str",
+    "cooldown": 1.8,
+    "damage": 22,
+    "range_cells": 7,
+    "projectile": "res://assets/tiles/spells/effects/crystal_spear3.png",
+    "trail_flavor": "earth",
+    "element": "",
+    "projectile_speed": 360.0
+  },
+  "spell_venom_cloud": {
+    "primary_stat": "int",
+    "cooldown": 4.5,
+    "damage": 2,
+    "range_cells": 5,
+    "projectile": "",
+    "trail_flavor": "poison",
+    "element": "poison",
+    "projectile_speed": 0.0
+  },
+  "spell_stormcaller_totem": {
+    "primary_stat": "dex",
+    "cooldown": 6.0,
+    "damage": 12,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "thunderous",
+    "element": "thunderous",
+    "projectile_speed": 0.0
+  },
+  "spell_curse_brittlebone": {
+    "primary_stat": "dex",
+    "cooldown": 8.0,
+    "damage": 1,
+    "range_cells": 6,
+    "projectile": "",
+    "trail_flavor": "dark",
+    "element": "dark",
+    "projectile_speed": 0.0
+  },
+  "spell_wrath_charge": {
+    "primary_stat": "str",
+    "cooldown": 9.0,
+    "damage": 0,
+    "range_cells": 0,
+    "projectile": "",
+    "trail_flavor": "brutal",
+    "element": "",
+    "projectile_speed": 0.0
+  },
+  "spell_echo_lance": {
+    "primary_stat": "dex",
+    "cooldown": 1.4,
+    "damage": 11,
+    "range_cells": 8,
+    "projectile": "res://assets/tiles/spells/effects/bolt5.png",
+    "trail_flavor": "thunderous",
+    "element": "thunderous",
+    "projectile_speed": 480.0
+  },
+  "spell_wisp_servant": {
+    "primary_stat": "int",
+    "cooldown": 7.0,
+    "damage": 4,
+    "range_cells": 4,
+    "projectile": "res://assets/tiles/spells/effects/orb_glow1.png",
+    "trail_flavor": "arcane",
+    "element": "",
+    "projectile_speed": 220.0
+  },
+  "spell_ember_bloom": {
+    "primary_stat": "int",
+    "cooldown": 5.0,
+    "damage": 2,
+    "range_cells": 4,
+    "projectile": "",
+    "trail_flavor": "fire",
+    "element": "fire",
+    "projectile_speed": 0.0
+  }
+}

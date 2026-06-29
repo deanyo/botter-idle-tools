@@ -1,0 +1,67 @@
+{
+  "_doc": "Daily shop modifiers — one rolled per refresh cycle (~15 minutes real-time). Each modifier biases buy/sell rates so the player has a reason to check the shop frequently. buy_mult applies to PRICES the shop charges (lower = better for player); sell_mult applies to GOLD the shop pays (higher = better for player). Apply only when the slot/rarity matches.",
+  "modifiers": [
+    {
+      "id": "weapon_day",
+      "name": "Weapon Day",
+      "description": "Shop pays 2× for weapons; weapons cost 30% less.",
+      "buy_mult": 0.7,
+      "sell_mult": 2.0,
+      "applies_slot": "weapon"
+    },
+    {
+      "id": "armor_day",
+      "name": "Armor Day",
+      "description": "Shop pays 2× for armor pieces; armor costs 30% less.",
+      "buy_mult": 0.7,
+      "sell_mult": 2.0,
+      "applies_slots": ["armor", "helm", "boots", "shield"]
+    },
+    {
+      "id": "trinket_day",
+      "name": "Trinket Day",
+      "description": "Shop pays 2× for rings & amulets; jewellery costs 30% less.",
+      "buy_mult": 0.7,
+      "sell_mult": 2.0,
+      "applies_slots": ["ring", "amulet"]
+    },
+    {
+      "id": "rare_collector",
+      "name": "Rare Collector",
+      "description": "Shop pays 3× for rare-or-better items.",
+      "buy_mult": 1.0,
+      "sell_mult": 3.0,
+      "applies_min_rarity": "rare"
+    },
+    {
+      "id": "legendary_seeker",
+      "name": "Legendary Seeker",
+      "description": "Shop pays 5× for legendaries.",
+      "buy_mult": 1.0,
+      "sell_mult": 5.0,
+      "applies_min_rarity": "legendary"
+    },
+    {
+      "id": "fire_sale",
+      "name": "Fire Sale",
+      "description": "Everything in stock is 40% off.",
+      "buy_mult": 0.6,
+      "sell_mult": 1.0
+    },
+    {
+      "id": "high_demand",
+      "name": "High Demand",
+      "description": "Shop pays 1.5× for everything you sell.",
+      "buy_mult": 1.0,
+      "sell_mult": 1.5
+    },
+    {
+      "id": "scarcity",
+      "name": "Scarcity",
+      "description": "Stock is 50% more expensive but doubled in quality.",
+      "buy_mult": 1.5,
+      "sell_mult": 1.0,
+      "stock_quality_bonus": 1
+    }
+  ]
+}

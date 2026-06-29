@@ -1,0 +1,69 @@
+{
+  "_comment": "Permanent gold-sink upgrades. Stats stack ON TOP of gear in bot.gd::recompute_stats. Costs are per-rank (rank 1 of conditioning = 50g, rank 2 = 150g, ...). 'stat' fields map to the engine's stat names so adding new upgrades is a data-only change.",
+
+  "upgrades": [
+    {
+      "id": "conditioning",
+      "name": "Conditioning",
+      "desc": "+5 base HP per rank.",
+      "stat": "max_hp",
+      "per_rank": 5,
+      "max_rank": 5,
+      "costs": [50, 150, 300, 600, 1200]
+    },
+    {
+      "id": "combat_training",
+      "name": "Combat Training",
+      "desc": "+1 base ATK per rank.",
+      "stat": "atk",
+      "per_rank": 1,
+      "max_rank": 5,
+      "costs": [80, 250, 500, 1000, 2000]
+    },
+    {
+      "id": "toughening",
+      "name": "Toughening",
+      "desc": "+1 base DEF per rank.",
+      "stat": "def",
+      "per_rank": 1,
+      "max_rank": 5,
+      "costs": [100, 300, 600, 1200, 2400]
+    },
+    {
+      "id": "quick_reflexes",
+      "name": "Quick Reflexes",
+      "desc": "+2% crit chance per rank.",
+      "stat": "crit_chance",
+      "per_rank": 2,
+      "max_rank": 2,
+      "costs": [200, 500]
+    },
+    {
+      "id": "loot_sense",
+      "name": "Loot Sense",
+      "desc": "+10% loot rarity bias per rank.",
+      "stat": "loot_rarity_bonus",
+      "per_rank": 10,
+      "max_rank": 2,
+      "costs": [300, 800]
+    },
+    {
+      "id": "pouch",
+      "name": "Pouch",
+      "desc": "+10 inventory cap per rank.",
+      "stat": "inventory_cap",
+      "per_rank": 10,
+      "max_rank": 3,
+      "costs": [500, 1000, 2000]
+    },
+    {
+      "id": "vault_expansion",
+      "name": "Vault Expansion",
+      "desc": "+250 stash cap per rank. Hoards grow with the gold sink.",
+      "stat": "stash_cap",
+      "per_rank": 250,
+      "max_rank": 4,
+      "costs": [2000, 6000, 18000, 50000]
+    }
+  ]
+}

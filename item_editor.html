@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Item Editor</title>
+<link rel="stylesheet" href="portal.css">
+<style id="slot-tab-style">
+  /* Slot tabs across the top — reuse portal palette. */
+  #slot-tabs {
+    display: flex; gap: 2px; align-items: center; margin-right: 8px;
+  }
+  .slot-tab {
+    padding: 4px 10px; font-size: 12px; cursor: pointer;
+    border: 1px solid var(--border-strong);
+    background: var(--bg); color: var(--muted); border-radius: 3px; font-weight: 600;
+  }
+  .slot-tab:hover { border-color: var(--accent-dim); color: var(--text); }
+  .slot-tab.active {
+    background: var(--panel-2); border-color: var(--accent-dim); color: var(--accent);
+  }
+  .slot-tab .slot-count { font-size: 10px; color: var(--muted); margin-left: 4px; }
+  .slot-tab.active .slot-count { color: var(--accent); }
+</style>
+<style>
+  /* Item-editor specific layout. Shared palette + form controls in
+     portal.css. Tier color tags + rarity tags below remain local. */
+  :root {
+    --tier1: #aaaaaa;
+    --tier2: #6699ff;
+    --tier3: #88dd66;
+    --tier4: #ffaa44;
+    --tier5: #ff6655;
+  }
+  body {
+    display: flex; flex-direction: column; height: 100vh; overflow: hidden;
+  }
+  #topbar {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    padding: 8px 14px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+  }
+  #topbar .spacer { flex: 1; }
+  /* Editor uses .active for selected toggles. */
+  button.active { background: var(--panel-2); border-color: var(--accent-dim); color: var(--accent); }
+
+  /* ---- Layout ---- */
+  #body { display: flex; flex: 1; overflow: hidden; }
+
+  #sidebar {
+    width: 210px; flex-shrink: 0; background: var(--panel);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  #sidebar-head { padding: 8px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  #sidebar-head h2 { font-size: 12px; margin: 0 0 6px; color: var(--accent); }
+  #type-list { flex: 1; overflow-y: auto; padding: 4px; }
+  .type-item {
+    padding: 5px 8px; cursor: pointer; border-radius: 3px; font-size: 12px;
+    border: 1px solid transparent;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .type-item:hover { background: var(--panel-2); }
+  .type-item.active { background: var(--panel-2); border-color: var(--accent); color: var(--accent); }
+  .type-count { font-size: 10px; color: var(--muted); }
+
+  #main-area { flex: 1; display: flex; overflow: hidden; }
+
+  #item-grid-col {
+    flex: 1; overflow-y: auto; padding: 14px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  /* Tier sections */
+  .tier-section { }
+  .tier-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    padding: 6px 8px; background: var(--panel); border-radius: 4px;
+    border-left: 3px solid var(--tier1);
+  }
+  .tier-header.t2 { border-color: var(--tier2); }
+  .tier-header.t3 { border-color: var(--tier3); }
+  .tier-header.t4 { border-color: var(--tier4); }
+  .tier-header.t5 { border-color: var(--tier5); }
+  .tier-header h3 { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+  .tier-badge {
+    display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px;
+    font-weight: 600; color: #000;
+    background: var(--tier1);
+  }
+  .tier-badge.t2 { background: var(--tier2); }
+  .tier-badge.t3 { background: var(--tier3); }
+  .tier-badge.t4 { background: var(--tier4); }
+  .tier-badge.t5 { background: var(--tier5); }
+  .tier-note { font-size: 11px; color: var(--muted); }
+
+  /* Item cards */
+  .item-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .item-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 5px;
+    padding: 8px; width: 140px; cursor: pointer; position: relative;
+    transition: border-color .15s;
+  }
+  .item-card:hover { border-color: var(--accent); }
+  .item-card.selected { border-color: var(--accent); background: var(--panel-2); }
+  .item-card.dirty::after {
+    content: "●"; position: absolute; top: 4px; right: 6px;
+    color: var(--warn); font-size: 10px;
+  }
+  .item-card .sprite-wrap {
+    width: 64px; height: 64px; background: var(--tile-bg);
+    border: 1px solid var(--border); border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 6px;
+  }
+  .item-card img { width: 64px; height: 64px; image-rendering: pixelated; }
+  .item-card .card-name {
+    font-size: 11px; font-weight: 600; text-align: center;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-bottom: 4px;
+  }
+  .item-card .card-meta {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;
+  }
+  .rarity-pill {
+    font-size: 9px; padding: 1px 5px; border-radius: 8px; font-weight: 600;
+    color: #000;
+  }
+  .rarity-common    { background: var(--rarity-common);    color: #333; }
+  .rarity-uncommon  { background: var(--rarity-uncommon);  }
+  .rarity-rare      { background: var(--rarity-rare);      color: #222; }
+  .rarity-epic      { background: var(--rarity-epic);      }
+  .rarity-legendary { background: var(--rarity-legendary); }
+  .unique-badge {
+    font-size: 9px; padding: 1px 4px; border-radius: 2px;
+    background: #553300; color: #ffdd88; border: 1px solid #886622;
+  }
+  .card-stats { font-size: 10px; color: var(--muted); text-align: center; margin-bottom: 4px; }
+  .card-stats span { color: var(--text); }
+  .drop-bar {
+    display: flex; height: 4px; border-radius: 2px; overflow: hidden; gap: 1px;
+    margin-top: 4px;
+  }
+  .drop-bar-seg { flex: 1; height: 100%; border-radius: 1px; }
+  .tag-strip { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; margin-top: 4px; }
+  .flavor-tag {
+    font-size: 8px; padding: 0 4px; border-radius: 6px; border: 1px solid;
+    white-space: nowrap;
+  }
+
+  /* Edit panel — when an item opens, the grid hides and the editor
+     gets full main-area width up to ~880px. Two-column form layout
+     so the field labels + inputs sit side by side instead of
+     stacking in a 340px squeeze. 2026-06-05 layout overhaul. */
+  #edit-panel {
+    flex: 1; background: var(--panel);
+    border-left: 1px solid var(--border);
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  #edit-panel.hidden { display: none; }
+  /* When editor is open, the grid column collapses so the editor
+     gets the full middle pane. Class added/removed by openEdit/closeEdit. */
+  #main-area.editing #item-grid-col { display: none; }
+  #edit-head {
+    padding: 12px 16px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px; background: var(--panel-2);
+  }
+  #edit-head h2 { margin: 0; font-size: 16px; flex: 1; color: var(--accent); }
+  #edit-body {
+    flex: 1; overflow-y: auto; padding: 20px 28px;
+    max-width: 880px; width: 100%;
+  }
+
+  .field-group {
+    margin-bottom: 16px;
+    background: var(--bg);
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .field-group label {
+    display: block; margin-bottom: 6px; font-size: 12px; color: var(--text);
+    font-weight: 600;
+  }
+  .field-group > label:first-child {
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .field-group input[type="text"] { width: 100%; padding: 6px 8px; font-size: 13px; }
+  .field-group input[type="number"] { width: 84px; padding: 5px 6px; font-size: 13px; }
+  .field-group textarea { font-size: 12px; min-height: 60px; padding: 8px; }
+  .field-row {
+    display: flex; gap: 10px; align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .field-row:last-child { margin-bottom: 0; }
+  .field-row label { min-width: auto; margin-bottom: 0; font-weight: 400; color: var(--muted); }
+
+  /* Tier buttons in edit panel */
+  .tier-btn-row { display: flex; gap: 4px; }
+  .tier-btn {
+    flex: 1; padding: 4px 2px; font-size: 11px; font-weight: 600; text-align: center;
+    border-radius: 3px; cursor: pointer; border: 1px solid var(--border);
+    background: var(--bg); color: var(--muted);
+  }
+  .tier-btn.active { color: #000; border-color: transparent; }
+
+  /* Weapon stat presets — same shape as tier buttons (consistent
+     selector pattern across the editor: tier-btn, tag-toggle,
+     preset-btn all use the same chip-on-grid style). 2026-06-05. */
+  .preset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 4px;
+  }
+  .preset-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: left;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    transition: border-color .1s, background .1s, transform .1s;
+  }
+  .preset-btn:hover { border-color: var(--accent); background: var(--panel-2); transform: translateY(-1px); }
+  .preset-btn .preset-stats {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .tier-btn.t1.active { background: var(--tier1); }
+  .tier-btn.t2.active { background: var(--tier2); }
+  .tier-btn.t3.active { background: var(--tier3); }
+  .tier-btn.t4.active { background: var(--tier4); }
+  .tier-btn.t5.active { background: var(--tier5); }
+
+  /* Drop weight sliders */
+  .drop-weight-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .drop-weight-row label { width: 28px; text-align: right; color: var(--muted); font-size: 11px; margin-bottom: 0; }
+  .drop-weight-row .dw-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+  .drop-weight-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+  .drop-weight-row .dw-val { width: 28px; font-size: 11px; text-align: right; }
+
+  /* Flavor tag grid */
+  .tag-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  /* Single chip style — used by every "click to toggle" pill in the
+     editor: combat tags, enchant pool, implicit affixes. Was three
+     classes (tag-toggle / tag-chip / chip) with .tag-chip never
+     defined, so implicit affixes rendered as unstyled spans. Unified
+     2026-06-05 — both classes resolve to the same look. */
+  .tag-toggle, .tag-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    user-select: none;
+    transition: border-color .1s, background .1s, color .1s;
+  }
+  .tag-toggle:hover, .tag-chip:hover { border-color: var(--accent); color: var(--text); }
+  .tag-toggle.on, .tag-chip.on { color: #000; font-weight: 600; }
+
+  /* Sprite preview in edit — left side carries TWO previews
+     side-by-side: inventory icon (item/...) and paperdoll overlay
+     (player/<slot>/...). They use different sprite trees in DCSS so
+     authors need to set them independently. */
+  #edit-sprite-wrap, #edit-overlay-wrap {
+    width: 96px; height: 96px; background: var(--tile-bg); border: 1px solid var(--border);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  #edit-sprite-wrap img {
+    width: 96px; height: 96px; image-rendering: pixelated;
+  }
+  /* Paperdoll preview — base sprite + overlay layered like the in-
+     game widget. Both children absolute-position to the same square so
+     the overlay sits on top of the base. 3× upscale on a 32×32 base. */
+  #edit-overlay-wrap {
+    width: 96px; height: 96px;
+    overflow: hidden;
+  }
+  #edit-overlay-wrap .layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 96px; height: 96px;
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+  /* Tiny corner labels so it's obvious which preview is which. */
+  #edit-sprite-wrap::after, #edit-overlay-wrap::after {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  #edit-sprite-wrap::after { content: "inventory"; }
+  #edit-overlay-wrap::after { content: "on bot"; }
+  .edit-sprite-row {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 22px;  /* extra space for the corner labels */
+  }
+  .edit-sprite-row .right { flex: 1; }
+
+  /* Picker modal */
+  #picker { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: none; align-items: center; justify-content: center; z-index: 100; }
+  #picker.open { display: flex; }
+  #picker-inner { background: var(--picker-bg); border: 1px solid var(--accent); border-radius: 6px; width: 90%; max-width: 1100px; max-height: 85vh; display: flex; flex-direction: column; }
+  #picker-head { padding: 8px 12px; border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: center; }
+  #picker-head input { flex: 1; }
+  #picker-filter { display: flex; gap: 4px; }
+  #picker-grid {
+    flex: 1; overflow-y: auto; padding: 14px;
+    display: grid;
+    /* Picker tile size — driven by --pick-size CSS variable. Default
+       192px so layered paperdoll thumbs (small base + overlay) actually
+       read; the previous 144px default left only ~96px of image area
+       after padding + name strip, which made overlay sprites look like
+       tiny rectangles. Ctrl+wheel + the +/- buttons adjust live. */
+    grid-template-columns: repeat(auto-fill, minmax(var(--pick-size, 192px), 1fr));
+    gap: 10px;
+  }
+  .pick-cell {
+    background: var(--tile-bg); border: 1px solid var(--border); border-radius: 4px;
+    padding: 4px 4px 6px; text-align: center; cursor: pointer;
+    transition: border-color 0.1s, transform 0.1s, box-shadow 0.1s;
+    /* Make the entire cell click-target — fixes the "selecting a
+       sprite doesn't work" reports where clicks landed on padding
+       gaps and missed both the image and the name label. */
+    user-select: none;
+    display: flex; flex-direction: column; gap: 4px;
+    /* Explicit height = square image area + name strip + padding so
+       grid rows don't squash the image when content count > visible
+       row count. Without this, with 300+ cells in the picker the
+       layout engine on some browsers compressed the row height to
+       fit within the modal viewport, leaving image cells sliced to
+       3-4px tall. The +28px is room for the .pick-name label. */
+    min-height: calc(var(--pick-size, 192px) + 28px);
+  }
+  .pick-cell:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(255, 184, 77, 0.25);
+    transform: translateY(-1px);
+  }
+  /* Picker thumbnail. The "on bot" mode renders the same paperdoll
+     preview shape as the edit panel (base + overlay layered) so the
+     player sees how the sprite will look on the bot, not just the
+     raw 32×32 art. .pick-cell.layered uses position:relative for
+     stacked .layer children. */
+  .pick-cell img {
+    width: 100%; aspect-ratio: 1;
+    object-fit: contain; image-rendering: pixelated; background: #000;
+    pointer-events: none;  /* let the cell click handler win */
+    border-radius: 2px;
+    /* Keep the cell square even before the image natural-dimensions
+       resolve. Without min-height, lazy/erroring images collapse the
+       row to ~3px tall on Firefox/WebKit grid auto-tracks. */
+    min-height: var(--pick-size, 192px);
+  }
+  .pick-cell.layered .pick-img-wrap {
+    position: relative;
+    width: 100%; aspect-ratio: 1;
+    background: #000; border-radius: 2px;
+    /* See note above — same defensive min-height for the layered
+       variant where the wrap holds two absolute-positioned images. */
+    min-height: var(--pick-size, 192px);
+    /* Layered paperdoll preview — checkered backdrop helps the bot
+       silhouette read against varying overlay colors. */
+    background-image:
+      linear-gradient(45deg, #0a0a0a 25%, transparent 25%),
+      linear-gradient(-45deg, #0a0a0a 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #0a0a0a 75%),
+      linear-gradient(-45deg, transparent 75%, #0a0a0a 75%);
+    background-size: 12px 12px;
+    background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+    background-color: #050505;
+  }
+  .pick-cell.layered .pick-img-wrap .layer {
+    position: absolute; inset: 0;
+    image-rendering: pixelated; object-fit: contain;
+    pointer-events: none;
+  }
+  .pick-cell .pick-name {
+    font-size: 11px; color: var(--muted);
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    margin-top: 0;
+    pointer-events: none;
+    line-height: 1.4;
+  }
+  #picker-zoom {
+    display: flex; align-items: center; gap: 4px;
+    color: var(--muted); font-size: 11px;
+  }
+  #picker-zoom button {
+    width: 24px; height: 24px;
+    padding: 0; line-height: 1;
+    font-size: 14px;
+  }
+
+  #status { padding: 8px 14px; font-size: 11px; color: var(--good); }
+  #status.warn { color: var(--warn); }
+</style>
+</head>
+<body>
+
+<nav class="portal-nav" data-active="items" data-title="Item Editor"></nav>
+
+<div id="topbar">
+  <div id="slot-tabs"></div>
+  <div id="status"></div>
+  <div class="spacer"></div>
+  <button onclick="addItem()">+ New item</button>
+  <button onclick="forceRefreshData()" title="Bypass CDN cache and re-fetch all data files. Use after pushing a change you want to see immediately.">🔄 Refresh data</button>
+  <button onclick="document.getElementById('import-file-input').click()" title="Import a previously-exported JSON file. Merges per-item: preserves fields the export doesn't carry (no schema loss when the editor's allowlist drifts).">⬆ Import</button>
+  <input type="file" id="import-file-input" accept="application/json,.json" style="display:none" onchange="importJSON(event)">
+  <button class="primary" onclick="exportJSON()" title="Download a JSON file with every item in this slot. Drop it into data/ to ship.">⬇ Export this slot</button>
+</div>
+
+<div id="body">
+  <aside id="sidebar">
+    <div id="sidebar-head">
+      <h2>Base Type</h2>
+      <input type="text" id="search" placeholder="Search items…" oninput="applyFilters()" style="width:100%;font-size:12px;">
+    </div>
+    <div id="type-list"></div>
+  </aside>
+
+  <div id="main-area">
+    <div id="item-grid-col"></div>
+    <div id="edit-panel" class="hidden">
+      <div id="edit-head">
+        <h2 id="edit-title">Edit Item</h2>
+        <button onclick="exportSingleItem()" title="Download this item as JSON. Share via GitHub issue / Discord to submit it.">⬇ Save item</button>
+        <button onclick="copySingleItemToClipboard()" title="Copy this item's JSON so you can paste it into a chat / issue">⧉ Copy</button>
+        <button onclick="deleteItem()" style="color:#ff8888;font-size:11px;">Delete</button>
+        <button onclick="closeEdit()">✕</button>
+      </div>
+      <div id="edit-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Picker modal -->
+<div id="picker">
+  <div id="picker-inner">
+    <div id="picker-head">
+      <strong>Pick Sprite</strong>
+      <div id="picker-filter">
+        <!-- Rebuilt by renderPickerFilterBar() per active slot -->
+      </div>
+      <input type="text" id="picker-search" placeholder="filter…" oninput="renderPicker()">
+      <div id="picker-zoom" title="Zoom thumbnail size (Ctrl+wheel inside the grid)">
+        <button onclick="adjustPickerZoom(-32)">−</button>
+        <span id="picker-zoom-val">192px</span>
+        <button onclick="adjustPickerZoom(32)">+</button>
+      </div>
+      <button onclick="closePicker()">Close</button>
+    </div>
+    <div id="picker-grid" onwheel="onPickerWheel(event)"></div>
+  </div>
+</div>
+
+<script>
+const ATLAS_PATH    = "data/tile_atlas.json";
+const AFFIXES_PATH  = "data/affixes.json";
+// Item sprites are flattened into assets/tiles/items/ at
+// build time (sync_items.py drops them there with the basename
+// items.json's `tile` field expects). The editor preview reads from
+// that path FIRST so it matches what the game actually shows.
+// dcss/... still serves as a fallback for sprite-picker browsing
+// of un-imported tiles.
+const ITEM_TILE_BASE = "assets/tiles/items/";
+const TILE_BASE      = "dcss/Dungeon Crawl Stone Soup Full/";
+const TILE_BASE_SUP  = "dcss/Dungeon Crawl Stone Soup Supplemental/";
+
+// Per-slot config: manifest path + picker root + export name + label.
+// picker_roots controls which atlas paths the sprite picker offers when
+// the user clicks "Browse sprites…". Listed in display order in the tab strip.
+// `picker_roots` is the inventory-icon source tree (item/...).
+// `overlay_roots` is the hand/body/cloak-aligned source tree
+// (player/...). The two trees are separate in DCSS because the
+// inventory icons are drawn diagonally for the bag, while the
+// paperdoll overlays are pre-aligned to the bot's grip / body /
+// head positions. See paperdoll_renderer.gd::_resolve_overlay.
+const SLOTS = [
+  { id:'weapon', label:'Weapons',
+    // Two manifests merge into one tab — 1H swords (items_manifest.json)
+    // and the rest (items_weapons_extended_manifest.json). The single
+    // tab + sectioned filter chips replaces the old "1H Swords" /
+    // "Weapons (extended)" split. 2026-06-05.
+    manifests:['items_manifest.json','items_weapons_extended_manifest.json'],
+    export_key:'items_weapons', export_file:'items_weapons.json',
+    picker_roots:['item/weapon/','item/weapon/artefact/'],
+    overlay_roots:['player/hand_right/','player/hand1/'],
+    picker_extras:[
+      { key:'swords',     label:'Swords',
+        keywords:['dagger','knife','short_sword','falchion','long_sword','scimitar','rapier','katana','sabre','quickblade','ancient_sword','demon_blade','elven','orcish','cutlass'] },
+      { key:'axes',       label:'Axes',
+        keywords:['axe','battle_axe','war_axe','hand_axe','broad_axe','executioner_axe'] },
+      { key:'maces',      label:'Maces / Flails',
+        keywords:['mace','morningstar','eveningstar','flail','hammer','club','ankus'] },
+      { key:'polearms',   label:'Polearms',
+        keywords:['spear','halberd','bardiche','scythe','trident'] },
+      { key:'2h_swords',  label:'2H Swords',
+        keywords:['greatsword','claymore','double_sword','triple_sword'] },
+      { key:'staves',     label:'Staves',
+        keywords:['quarterstaff','lajatang','staff'] },
+      { key:'exotics',    label:'Exotics',
+        keywords:['bullwhip','demon_whip','whip'] },
+      { key:'artefact',   label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'helm', label:'Helms',
+    manifest:'items_helms_manifest.json',
+    export_key:'items_helms', export_file:'items_helms.json',
+    picker_roots:['item/armor/headgear/','item/armor/artefact/'],
+    overlay_roots:['player/head/'],
+    picker_extras:[
+      { key:'hat', label:'Hats/Caps', keywords:['hat','cap','hood','cornuthaum','jester'] },
+      { key:'helmet', label:'Helmets', keywords:['helmet','helm','crown'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'armor', label:'Armor',
+    manifest:'items_armor_manifest.json',
+    export_key:'items_armor', export_file:'items_armor.json',
+    picker_roots:['item/armor/torso/','item/armor/artefact/'],
+    overlay_roots:['player/body/'],
+    picker_extras:[
+      { key:'cloth', label:'Cloth/Leather', keywords:['robe','leather','animal_skin'] },
+      { key:'mail', label:'Mail', keywords:['chain','ring_mail','scale','splint','banded'] },
+      { key:'plate', label:'Plate/Crystal', keywords:['plate','crystal'] },
+      { key:'dragon', label:'Dragon', keywords:['dragon'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'shield', label:'Shields',
+    manifest:'items_shields_manifest.json',
+    export_key:'items_shields', export_file:'items_shields.json',
+    picker_roots:['item/armor/shields/','item/armor/artefact/'],
+    overlay_roots:['player/hand_left/','player/hand2/'],
+    picker_extras:[
+      { key:'buckler', label:'Bucklers', keywords:['buckler'] },
+      { key:'shield', label:'Shields', keywords:['shield','lshield'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'boots', label:'Boots',
+    manifest:'items_boots_manifest.json',
+    export_key:'items_boots', export_file:'items_boots.json',
+    picker_roots:['item/armor/feet/','item/armor/artefact/'],
+    overlay_roots:['player/boots/'],
+    picker_extras:[
+      { key:'boots', label:'Boots', keywords:['boot','low_boot'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'ring', label:'Rings',
+    manifest:'items_rings_manifest.json',
+    export_key:'items_rings', export_file:'items_rings.json',
+    picker_roots:['item/ring/'],
+    overlay_roots:[],  // jewelry doesn't render on the paperdoll
+    picker_extras:[
+      { key:'ring', label:'Rings', keywords:['ring_','agate','brass','bronze','clay','copper','coral','diamond','emerald','glass','gold','granite','iron','jade','moonstone','opal','pearl','plain','ruby','silver','steel','tiger_eye','tourmaline','wooden'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'amulet', label:'Amulets',
+    manifest:'items_amulets_manifest.json',
+    export_key:'items_amulets', export_file:'items_amulets.json',
+    picker_roots:['item/amulet/'],
+    overlay_roots:[],  // jewelry doesn't render on the paperdoll
+    picker_extras:[
+      { key:'amulet', label:'Amulets', keywords:['amulet','bone','cameo','celtic','crystal','cylinder','eye','face','penta','ring_','stone'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'gloves', label:'Gloves',
+    manifest:'items_gloves_manifest.json',
+    export_key:'items_gloves', export_file:'items_gloves.json',
+    picker_roots:['item/armor/hands/','item/armor/artefact/'],
+    overlay_roots:['player/gloves/'],
+    picker_extras:[
+      { key:'gloves', label:'Gloves', keywords:['glove','gauntlet','mitt'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+  { id:'cloak', label:'Cloaks',
+    manifest:'items_cloaks_manifest.json',
+    export_key:'items_cloaks', export_file:'items_cloaks.json',
+    picker_roots:['item/armor/back/','item/armor/artefact/'],
+    overlay_roots:['player/cloak/'],
+    picker_extras:[
+      { key:'cloak', label:'Cloaks', keywords:['cloak','cape','scarf'] },
+      { key:'artefact', label:'Artefacts', path_includes:'/artefact/' }
+    ] },
+];
+
+const TIER_COLORS = ['','#aaaaaa','#6699ff','#88dd66','#ffaa44','#ff6655'];
+const TIER_LABELS = ['','Tier 1 — Dungeon','Tier 2 — Surface','Tier 3 — Wilds','Tier 4 — Vaults','Tier 5 — Planes'];
+const TIER_NOTES  = ['',
+  'Drops in T1 (Dungeon/Mines). Common to uncommon.',
+  'Drops mainly in T1–T2. Uncommon to rare.',
+  'Drops mainly in T2–T3. Rare.',
+  'Drops mainly in T3–T4. Epic.',
+  'Drops only in T4–T5. Epic to legendary. Uniques live here.'
+];
+const RARITIES    = ['common','uncommon','rare','epic','legendary'];
+const RARITY_COLORS = {common:'#cccccc',uncommon:'#6699ff',rare:'#ffdd44',epic:'#ff8833',legendary:'#ff5544'};
+
+let activeSlot = SLOTS[0];
+let manifest  = {};
+// Live affixes registry — fetched from data/affixes.json on
+// init. Used to populate the per-item affix-pool UI dynamically (no
+// more hardcoded v1 affix list). Each entry has id, name, family,
+// kind, stat, applies_to, tiers.
+let affixesRegistry = { affixes: [], byId: {} };
+let atlas     = {};
+let items     = [];   // working copy for the active slot
+let dirty     = new Set();
+let activeType = '__all__';
+let selectedId = null;
+let pickerCallback = null;
+let pickerCategory = 'all';
+// Per-slot working copies — switching tabs preserves your edits in memory
+// (they only persist to disk via Export).
+const slotState = {}; // id -> {manifest, items, dirty}
+
+// GitHub Pages serves data files via Fastly. With the cache-buster
+// nonce we tried earlier, every fetch was a cache MISS that hit the
+// origin — but Fastly also negative-caches 404s, so when an edge node
+// briefly 404'd a path during a deploy, the cache-buster URLs pinned
+// that 404 to the user's edge for ~10 minutes (different nonces all
+// hashed to the same cached negative response).
+//
+// Default to cache-friendly URLs — the regular CDN cache serves 200s
+// fast and consistently. When the user explicitly wants fresh data
+// (after pushing a change), they hit the "🔄 Force refresh data"
+// button which appends a one-shot nonce and bypasses both browser
+// and CDN cache for the next set of fetches.
+let _forceRefreshOnce = false;
+function noCache(url) {
+  if (!_forceRefreshOnce) return url;
+  return url + (url.includes('?') ? '&' : '') + '_v=' + Date.now();
+}
+
+// Robust JSON fetch with diagnostic errors. The bare `fetch().then(r => r.json())`
+// pattern hides the URL on parse failure — when GitHub Pages returns
+// an HTML 404 page mid-deploy, the user just sees "JSON.parse: unexpected
+// character at line 1 column 1" with no clue which file failed. Wrap so
+// the error surface includes URL + HTTP status + a snippet of the body.
+async function fetchJson(url) {
+  const r = await fetch(noCache(url));
+  const text = await r.text();
+  if (!r.ok) {
+    throw new Error(`${url} → HTTP ${r.status} ${r.statusText}`);
+  }
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    const snippet = text.slice(0, 80).replace(/\s+/g, ' ');
+    throw new Error(`${url} → not JSON (got: "${snippet}…"). Try a hard refresh (Cmd-Shift-R / Ctrl-F5).`);
+  }
+}
+
+// ---------- Boot ----------
+// Set of basenames that EXIST in assets/tiles/items/ (with
+// optional subdir prefix for artefacts/spells). The picker filters
+// its candidate list against this — picking a tile that doesn't ship
+// produces a blank inventory icon at runtime, which used to be a
+// silent failure mode the user only noticed in the editor preview.
+//
+// Schema: a Set of strings like
+//   "urand_air_new.png"             (top-level)
+//   "artefacts/wpn_urand_axe_of_woe.png"  (subdir)
+// matching what items.json's `tile` field expects.
+let shippedTiles = new Set();
+// Same shape, for player overlays — keys are bare basenames since
+// paperdoll_renderer.gd::_resolve_overlay strips path before looking
+// in player/<slot_dir>/<stem>.png.
+let shippedOverlays = {weapons: new Set(), body: new Set(), helm: new Set(),
+                      shield: new Set(), boots: new Set(), gloves: new Set(),
+                      cloak: new Set()};
+
+async function init() {
+  setStatus('Loading…');
+  try {
+    atlas = await fetchJson(ATLAS_PATH);
+    // Fetch the tile-dir manifest (built by tools/build_tile_dir_
+    // manifest.py — checked in). Use it to constrain the picker to
+    // sprites that actually exist on disk + ship in the build.
+    try {
+      const tdm = await fetchJson('data/tile_dir_manifest.json');
+      const top = (tdm['res://assets/tiles/items/'] || []);
+      const arte = (tdm['res://assets/tiles/items/artefacts/'] || []);
+      const spells = (tdm['res://assets/tiles/items/spells/'] || []);
+      shippedTiles = new Set([
+        ...top,
+        ...arte.map(n => 'artefacts/' + n),
+        ...spells.map(n => 'spells/' + n),
+      ]);
+      for (const sub of ['weapons','body','helm','shield','boots','gloves','cloak']) {
+        const arr = tdm['res://assets/tiles/player/' + sub + '/'] || [];
+        shippedOverlays[sub] = new Set(arr);
+      }
+    } catch (e) {
+      console.warn('tile_dir_manifest.json missing — picker will show ALL atlas tiles (including unshipped):', e);
+    }
+    // Fetch affixes registry — drives the affix-pool UI for every item.
+    try {
+      const a = await fetchJson(AFFIXES_PATH);
+      affixesRegistry.affixes = a.affixes || [];
+      affixesRegistry.byId = {};
+      for (const af of affixesRegistry.affixes) affixesRegistry.byId[af.id] = af;
+    } catch (e) {
+      console.warn('Could not load affixes.json:', e);
+    }
+    renderSlotTabs();
+    await loadSlot(SLOTS[0]);
+    setStatus('');
+  } catch(e) {
+    setStatus('Load error: '+e.message, true);
+    console.error('Load error:', e);
+  }
+}
+
+// Force-refresh handler — bypass CDN cache for the next round of
+// fetches by appending a one-shot nonce. Resets state, drops cached
+// per-slot manifests, re-runs init(). Use when you've pushed a
+// change and want to see it before the 10-minute CDN TTL expires.
+async function forceRefreshData() {
+  _forceRefreshOnce = true;
+  // Drop per-slot caches so loadSlot re-fetches from origin.
+  for (const k of Object.keys(slotState)) delete slotState[k];
+  allWeaponTiles = [];
+  allOverlayTiles = [];
+  await init();
+  _forceRefreshOnce = false;
+}
+
+// Filter affixes to those whose applies_to matches the given slot.
+// Family filter optional ('generic'/'class'/'archetype'). Returns
+// list sorted by family then name for stable display.
+function affixesForSlot(slot, family) {
+  const out = [];
+  for (const af of affixesRegistry.affixes) {
+    const applies = af.applies_to || [];
+    if (!applies.includes(slot) && !applies.includes('any')) continue;
+    if (family && (af.family || 'generic') !== family) continue;
+    out.push(af);
+  }
+  out.sort((a,b) => {
+    const fa = a.family || 'generic', fb = b.family || 'generic';
+    if (fa !== fb) return fa < fb ? -1 : 1;
+    return (a.name||a.id) < (b.name||b.id) ? -1 : 1;
+  });
+  return out;
+}
+
+// Color helper — mirrors UITheme.affix_stat_color() in GDScript so the
+// editor preview reads with the same per-stat tint as the in-game
+// tooltip.
+function affixColorFor(stat) {
+  const map = {
+    str:'#f24d4d', dex:'#80f266', int:'#73d9ff',
+    hp:'#5fc878', hp_regen:'#a85eff', armor:'#bababa', evasion:'#dadada',
+    crit_chance:'#ffd84d', haste_pct:'#ffaa3a', lifesteal_pct:'#d83a3a',
+    spell_cdr_pct:'#b18ddf', spell_proj_bonus:'#cdb0ff',
+    spell_proj_speed_pct:'#cdb0ff', spell_area_pct:'#a890ff',
+    spell_duration_pct:'#9bb6ff', spell_damage_pct:'#a3aaff',
+    str_spell_dmg_pct:'#e07b9a', dex_spell_dmg_pct:'#9be08a',
+    int_spell_dmg_pct:'#88c0e0',
+    physical_extra:'#ebebd8', fire_extra:'#ff8c2e', cold_extra:'#73d9ff',
+    lightning_extra:'#a6ccff', holy_extra:'#ffea8c',
+    poison_extra:'#80f266', dark_extra:'#8c4ddc',
+    fire_res:'#cc6e26', cold_res:'#5cadcc', lightning_res:'#85a6cc',
+    holy_res:'#ccba6e', poison_res:'#66c252', dark_res:'#704bb0',
+  };
+  return map[stat] || '#ffb84d';
+}
+
+function renderSlotTabs() {
+  const div = document.getElementById('slot-tabs');
+  div.innerHTML = '';
+  SLOTS.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'slot-tab' + (s.id===activeSlot.id ? ' active' : '');
+    el.dataset.slot = s.id;
+    el.innerHTML = `${s.label}<span class="slot-count" id="slot-count-${s.id}"></span>`;
+    el.onclick = () => loadSlot(s);
+    div.appendChild(el);
+  });
+}
+
+function updateSlotCount(slotId, n) {
+  const el = document.getElementById('slot-count-'+slotId);
+  if (el) el.textContent = n != null ? '('+n+')' : '';
+}
+
+async function loadSlot(slot) {
+  // Persist current state in memory before switching
+  if (activeSlot && manifest && manifest.items) {
+    slotState[activeSlot.id] = { manifest, items, dirty: new Set(dirty) };
+  }
+  activeSlot = slot;
+  selectedId = null;
+  activeType = '__all__';
+  // The old #topbar-title was removed when the shared portal nav
+  // landed — guard the lookup so a missing element doesn't blow up
+  // switchSlot. The page's title chip on the nav is set via the
+  // data-title attribute and doesn't need per-slot updates.
+  const titleEl = document.getElementById('topbar-title');
+  if (titleEl) titleEl.textContent = 'Item Editor — ' + slot.label;
+  // Refresh active highlight on tabs
+  document.querySelectorAll('.slot-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.slot === slot.id));
+  // Reuse cached state if we've already loaded this slot
+  const cached = slotState[slot.id];
+  if (cached) {
+    manifest = cached.manifest;
+    items = cached.items;
+    dirty = cached.dirty;
+  } else {
+    // A slot can declare either a single manifest (legacy) or a list
+    // of manifests that get merged. Used by the unified Weapons tab
+    // which pulls from both items_manifest.json (1H swords) and
+    // items_weapons_extended_manifest.json. 2026-06-05.
+    const manifestPaths = slot.manifests || (slot.manifest ? [slot.manifest] : []);
+    if (manifestPaths.length === 0) {
+      setStatus('Slot ' + slot.id + ' has no manifest configured', true);
+      return;
+    }
+    try {
+      const manifests = await Promise.all(manifestPaths.map(p => fetchJson(p)));
+      // Merge: first manifest wins on top-level metadata (base_types,
+      // flavor_tags); items[] from every manifest concatenate.
+      manifest = JSON.parse(JSON.stringify(manifests[0]));
+      manifest.items = manifests.flatMap(m => m.items || []);
+      // Merge base_types + flavor_tags so the dropdowns include
+      // entries from the secondary manifest (axes, polearms, etc.).
+      for (let i = 1; i < manifests.length; i++) {
+        Object.assign(manifest.base_types || {}, manifests[i].base_types || {});
+        Object.assign(manifest.flavor_tags || {}, manifests[i].flavor_tags || {});
+      }
+      items = JSON.parse(JSON.stringify(manifest.items));
+      dirty = new Set();
+    } catch(e) {
+      setStatus('Failed to load manifests for ' + slot.id + ': ' + e.message, true);
+      return;
+    }
+  }
+  // Reset picker state for this slot — picker_roots + overlay_roots
+  // change per slot so both cached lists need to rebuild.
+  allWeaponTiles = [];
+  allOverlayTiles = [];
+  pickerCategory = 'all';
+  closeEdit();
+  renderSidebar();
+  renderGrid();
+  updateSlotCount(slot.id, items.length);
+}
+
+function setStatus(msg, warn=false) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = warn ? 'warn' : '';
+}
+
+// ---------- Sidebar ----------
+function renderSidebar() {
+  const div = document.getElementById('type-list');
+  const counts = {};
+  items.forEach(it => { counts[it.base_type] = (counts[it.base_type]||0)+1; });
+  const types = ['__all__', ...Object.keys(manifest.base_types||{})];
+  div.innerHTML = '';
+  types.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'type-item' + (t===activeType ? ' active' : '');
+    const label = t==='__all__' ? 'All' : (manifest.base_types[t]?.label || t);
+    const count = t==='__all__' ? items.length : (counts[t]||0);
+    el.innerHTML = `<span>${label}</span><span class="type-count">${count}</span>`;
+    el.onclick = () => { activeType=t; renderSidebar(); renderGrid(); };
+    div.appendChild(el);
+  });
+}
+
+// ---------- Main grid ----------
+function applyFilters() { renderGrid(); }
+
+function filteredItems() {
+  const q = document.getElementById('search').value.toLowerCase();
+  return items.filter(it => {
+    if (activeType !== '__all__' && it.base_type !== activeType) return false;
+    if (q && !it.name.toLowerCase().includes(q) && !it.id.includes(q)) return false;
+    return true;
+  });
+}
+
+function renderGrid() {
+  const col = document.getElementById('item-grid-col');
+  const visible = filteredItems();
+
+  // Group by item_tier
+  const byTier = {1:[],2:[],3:[],4:[],5:[]};
+  visible.forEach(it => (byTier[it.item_tier]||byTier[5]).push(it));
+
+  col.innerHTML = '';
+  for (let t=1; t<=5; t++) {
+    if (!byTier[t].length) continue;
+    const sec = document.createElement('div');
+    sec.className = 'tier-section';
+    sec.innerHTML = `
+      <div class="tier-header t${t}">
+        <span class="tier-badge t${t}">T${t}</span>
+        <h3>${TIER_LABELS[t]}</h3>
+        <span class="tier-note">${TIER_NOTES[t]}</span>
+      </div>
+      <div class="item-grid" id="grid-t${t}"></div>
+    `;
+    col.appendChild(sec);
+    const grid = sec.querySelector('.item-grid');
+    byTier[t].forEach(it => grid.appendChild(makeCard(it)));
+  }
+}
+
+function makeCard(it) {
+  const card = document.createElement('div');
+  card.className = 'item-card' + (it.id===selectedId?' selected':'') + (dirty.has(it.id)?' dirty':'');
+  card.dataset.id = it.id;
+
+  const dw = it.drop_weights || [0,0,0,0,0];
+  const maxW = Math.max(...dw, 1);
+  const segs = dw.map((w,i) => {
+    const pct = Math.round(w/maxW*100);
+    const alpha = pct > 0 ? 0.3 + pct/100*0.7 : 0.05;
+    return `<div class="drop-bar-seg" style="background:${TIER_COLORS[i+1]};opacity:${alpha}" title="T${i+1}: ${w}"></div>`;
+  }).join('');
+
+  const tags = (it.flavor_tags||[]).map(tag => {
+    const info = manifest.flavor_tags?.[tag] || {};
+    return `<span class="flavor-tag" style="color:${info.color||'#aaa'};border-color:${info.color||'#555'}">${tag}</span>`;
+  }).join('');
+
+  const rarityColor = RARITY_COLORS[it.rarity]||'#ccc';
+  const textColor = ['common','uncommon','rare'].includes(it.rarity) ? '#000' : '#fff';
+
+  // Apply the authored recolor (default_tint) to the card sprite via
+  // CSS filter so the grid view reflects what the player will see.
+  // Uses recolorPreviewStyle from the recolor section. 2026-06-05.
+  const cardTintStyle = recolorPreviewStyle(it.default_tint || {});
+  card.innerHTML = `
+    <div class="sprite-wrap"><img style="${cardTintStyle}" src="${tileUrl(it.tile)}" onerror="if(!this.dataset.f){this.dataset.f='1';this.src='${tileUrlDcssFull(it.tile)}'}else if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(it.tile)}'}else{this.src='';this.style.display='none'}"></div>
+    <div class="card-name">${it.name}</div>
+    <div class="card-meta">
+      <span class="rarity-pill rarity-${it.rarity}" style="background:${rarityColor};color:${textColor}">${it.rarity}</span>
+      ${it.unique ? '<span class="unique-badge">unique</span>' : ''}
+    </div>
+    <div class="card-stats">${(it.damage_min || it.damage_max) ? `Dmg <span>${it.damage_min||0}-${it.damage_max||0}</span> ${it.damage_type ? '<span style="opacity:0.7">'+it.damage_type+'</span>' : ''} ${it.speed ? '<span style="opacity:0.6">'+it.speed+'s</span>' : ''}` : ''}${it.armor ? ` Armor <span>${it.armor}</span>` : ''}${it.evasion ? ` Eva <span>${it.evasion}%</span>` : ''}</div>
+    <div class="drop-bar" title="Drop weight per dungeon tier">${segs}</div>
+    <div class="tag-strip">${tags}</div>
+  `;
+  card.onclick = () => openEdit(it.id);
+  return card;
+}
+
+function tileUrl(path) {
+  // The editor preview pulls from the flattened items/ dir first
+  // (matches what the game renders). Sprite picker uses TILE_BASE
+  // for browsing the full dcss tree — those paths get a prefix
+  // there. If the items/ image 404s, the <img onerror> falls
+  // through to TILE_BASE.
+  return ITEM_TILE_BASE + path;
+}
+// Fallback used by <img onerror>. Tries dcss/Full first (most items
+// live there) then dcss/Supplemental. Caller chains these with a
+// nested onerror — see makeCard / renderEditBody.
+function tileUrlDcssFull(path) { return TILE_BASE + path; }
+function tileUrlDcssSupp(path) { return TILE_BASE_SUP + path; }
+
+// Mirrors paperdoll_renderer.gd::SLOT_DIRS so the editor can preview
+// the actual on-doll sprite. Slots without an entry (ring, amulet,
+// spell) don't render on the paperdoll. 2026-06-05.
+const PAPERDOLL_SLOT_DIRS = {
+  weapon: 'weapons/', armor: 'body/', helm: 'helm/',
+  shield: 'shield/', boots: 'boots/',
+  gloves: 'gloves/', cloak: 'cloak/',
+};
+const PAPERDOLL_BASE = "assets/tiles/player/";
+// Base bot sprite for the paperdoll preview — same one paperdoll_renderer
+// uses for the in-game rig. Spriggan female default; falls back to
+// the generic bot.png if absent. 2026-06-05.
+const BASE_SPRITE_URL = "assets/tiles/player/spriggan_female.png";
+// Resolve the paperdoll overlay sprite for an item — exact mirror of
+// paperdoll_renderer.gd::_resolve_overlay. Falls back to inventory
+// tile stem when no `overlay` field is set, so existing items keep
+// working. Returns "" for slots without paperdoll rendering.
+function overlayUrl(it) {
+  const slot = it.slot;
+  const dir = PAPERDOLL_SLOT_DIRS[slot];
+  if (!dir) return "";
+  let stem = it.overlay || (it.tile || "").replace(/\.png$/, "");
+  if (!stem) return "";
+  return PAPERDOLL_BASE + dir + stem + ".png";
+}
+
+// Fallback chain for missing paperdoll overlay sprites. When the
+// project's player/<slot>/<stem>.png 404s, try the DCSS source trees
+// (player/<dcss_subdir>/<stem>.png) so authors at least see SOMETHING
+// — even if that something is the inventory icon as a stand-in.
+// 2026-06-05 — handles the ~8 unrand items whose overlay isn't yet
+// synced into the project.
+const DCSS_OVERLAY_DIRS = {
+  weapon: ['player/hand_right/', 'player/hand1/'],
+  shield: ['player/hand_left/', 'player/hand2/'],
+  armor:  ['player/body/'],
+  helm:   ['player/head/'],
+  boots:  ['player/boots/'],
+  gloves: ['player/gloves/'],
+  cloak:  ['player/cloak/'],
+};
+function overlayFallback(img, itemId) {
+  const it = items.find(x => x.id === itemId);
+  if (!it) {
+    img.style.opacity = '0.25';
+    return;
+  }
+  const stem = (it.overlay || (it.tile || '').replace(/\.png$/, ''));
+  if (!stem) {
+    img.style.opacity = '0.25';
+    return;
+  }
+  // Cycle through DCSS source dirs for this slot, then DCSS supp,
+  // then fall back to the inventory icon as a last-ditch placeholder.
+  // 2026-06-05 — picker can pick a sprite that hasn't been synced
+  // into project yet; the fallback walks the same trees the sprite
+  // came from so the editor always shows the right pixels.
+  let step = parseInt(img.dataset.fallbackStep || '0', 10);
+  const dirs = DCSS_OVERLAY_DIRS[it.slot] || [];
+  if (step < dirs.length) {
+    img.dataset.fallbackStep = String(step + 1);
+    img.src = TILE_BASE + dirs[step] + stem + '.png';
+    return;
+  }
+  // Try DCSS Supplemental tree at the dir for this slot.
+  if (!img.dataset.suppTried) {
+    img.dataset.suppTried = '1';
+    if (dirs.length > 0) {
+      img.src = TILE_BASE_SUP + dirs[0] + stem + '.png';
+      return;
+    }
+  }
+  // Final fallback: the inventory icon (so the user sees SOMETHING).
+  if (!img.dataset.invFallback) {
+    img.dataset.invFallback = '1';
+    img.src = tileUrl(it.tile);
+    img.title = 'No paperdoll sprite found — showing inventory icon as placeholder. Run tools/sync_items.py to copy DCSS source into the project.';
+    img.style.opacity = '0.55';
+    return;
+  }
+  img.style.opacity = '0.25';
+  img.title = 'No paperdoll sprite available for this item.';
+}
+
+// ---------- Edit panel ----------
+function openEdit(id) {
+  selectedId = id;
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  // Switch the layout into editing mode — collapses the card grid so
+  // the edit panel gets the full middle pane (was 340px squeezed
+  // alongside the grid). 2026-06-05.
+  document.getElementById('main-area').classList.add('editing');
+  document.getElementById('edit-panel').classList.remove('hidden');
+  document.getElementById('edit-title').textContent = it.name;
+  renderEditBody(it);
+}
+
+function closeEdit() {
+  selectedId = null;
+  document.getElementById('main-area').classList.remove('editing');
+  document.getElementById('edit-panel').classList.add('hidden');
+  renderGrid();
+}
+
+function renderEditBody(it) {
+  const body = document.getElementById('edit-body');
+  const flavorKeys = Object.keys(manifest.flavor_tags||{});
+  const tierBtns = [1,2,3,4,5].map(t =>
+    `<button class="tier-btn t${t}${it.item_tier===t?' active':''}" onclick="setField('${it.id}','item_tier',${t});renderEditBody(items.find(x=>x.id==='${it.id}'))">T${t}</button>`
+  ).join('');
+  const rarityOpts = RARITIES.map(r =>
+    `<option value="${r}"${it.rarity===r?' selected':''}>${r}</option>`
+  ).join('');
+  const baseTypeOpts = Object.keys(manifest.base_types||{}).map(t =>
+    `<option value="${t}"${it.base_type===t?' selected':''}>${manifest.base_types[t].label}</option>`
+  ).join('');
+
+  const dwRows = [1,2,3,4,5].map(t => {
+    const w = it.drop_weights[t-1]||0;
+    return `<div class="drop-weight-row">
+      <span class="dw-dot" style="background:${TIER_COLORS[t]}"></span>
+      <label>T${t}</label>
+      <input type="range" min="0" max="100" value="${w}" oninput="setDW('${it.id}',${t-1},this.value);this.nextElementSibling.textContent=this.value">
+      <span class="dw-val">${w}</span>
+    </div>`;
+  }).join('');
+
+  const tagGrid = flavorKeys.map(tag => {
+    const on = (it.flavor_tags||[]).includes(tag);
+    const info = manifest.flavor_tags[tag];
+    return `<button class="tag-toggle${on?' on':''}" style="${on?'background:'+info.color+';color:#000;border-color:'+info.color:''}"
+      onclick="toggleTag('${it.id}','${tag}')" title="${info.desc}">${tag}</button>`;
+  }).join('');
+  // Same tag toggles, but bound to it.enchant_pool — selects which
+  // flavors are eligible to be rolled on a drop. Empty pool = any
+  // flavor allowed (matches dungeon._create_item_instance fallback).
+  const enchantPoolGrid = flavorKeys.map(tag => {
+    const on = (it.enchant_pool||[]).includes(tag);
+    const info = manifest.flavor_tags[tag];
+    return `<button class="tag-toggle${on?' on':''}" style="${on?'background:'+info.color+';color:#000;border-color:'+info.color:''}"
+      onclick="toggleEnchantPool('${it.id}','${tag}')" title="${info.desc}">${tag}</button>`;
+  }).join('');
+
+  // Affix pool override — dynamic from affixes.json (item-overhaul v2).
+  // Filtered to only affixes whose applies_to covers this item's slot.
+  // Each row gets a slider + the affix's stat color chip + family tag.
+  // When any value > 0, this dict replaces the global pool. All zero =
+  // ignore (no rolls — the item drops with no affixes).
+  const ap = it.affix_pool || {};
+  const slotAffixes = affixesForSlot(it.slot);
+  let lastFamily = '';
+  const affixPoolRows = slotAffixes.map(af => {
+    const w = ap[af.id] || 0;
+    const fam = af.family || 'generic';
+    let header = '';
+    if (fam !== lastFamily) {
+      const famLabel = fam.charAt(0).toUpperCase() + fam.slice(1);
+      header = `<div style="grid-column:1/-1;margin-top:8px;font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:0.05em">${famLabel} affixes</div>`;
+      lastFamily = fam;
+    }
+    const swatch = `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${affixColorFor(af.stat)};margin-right:6px;vertical-align:middle"></span>`;
+    return `${header}<div class="drop-weight-row">
+      <label style="min-width:130px">${swatch}${af.name||af.id}</label>
+      <input type="range" min="0" max="100" value="${w}" oninput="setAffixPool('${it.id}','${af.id}',+this.value);this.nextElementSibling.textContent=this.value">
+      <span class="dw-val">${w}</span>
+    </div>`;
+  }).join('');
+
+  // Implicit affixes — chip picker driven by affixesRegistry. Click
+  // toggles. Filtered to affixes that apply to this slot AND aren't
+  // archetype-flag types unless this is a spell tome.
+  const implicits = it.implicit_affixes || [];
+  const implicitChips = slotAffixes
+    .filter(af => (af.family || 'generic') !== 'archetype' || it.slot === 'spell')
+    .map(af => {
+      const on = implicits.includes(af.id);
+      const color = affixColorFor(af.stat);
+      const onStyle = on ? `background:${color};color:#000;border-color:${color}` : `border-color:${color}`;
+      return `<button class="tag-toggle${on?' on':''}" data-implicit="${af.id}" style="${onStyle}" onclick="toggleImplicit('${it.id}','${af.id}')" title="${(af.desc||'').replace(/"/g,'&quot;')}">${af.name||af.id}</button>`;
+    }).join('');
+
+  body.innerHTML = `
+    <div class="edit-sprite-row">
+      <div id="edit-sprite-wrap" title="Inventory icon (the diagonal sprite the player sees in the bag)">
+        <img id="edit-sprite-img" style="${recolorPreviewStyle(it.default_tint || {})}" src="${tileUrl(it.tile)}" onerror="if(!this.dataset.f){this.dataset.f='1';this.src='${tileUrlDcssFull(it.tile)}'}else if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(it.tile)}'}else{this.src='';this.style.display='none'}">
+      </div>
+      ${PAPERDOLL_SLOT_DIRS[it.slot] ? `
+        <div id="edit-overlay-wrap" title="Paperdoll sprite (how this item looks held / worn on the bot)">
+          <img class="layer" id="edit-overlay-base" src="${BASE_SPRITE_URL}" alt="">
+          <img class="layer" id="edit-overlay-img" style="${recolorPreviewStyle(it.default_tint_overlay || it.default_tint || {})}" src="${overlayUrl(it)}"
+               onerror="overlayFallback(this, '${it.id}')">
+        </div>
+      ` : ''}
+      <div class="right">
+        <div class="field-group">
+          <label>Inventory icon (sprite filename)</label>
+          <input type="text" style="width:100%;font-size:11px" value="${it.tile}" id="tile-path-input"
+            onchange="setField('${it.id}','tile',this.value);refreshSpritePreviews('${it.id}')">
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">The diagonal sprite shown in the bag + on the floor when dropped.</div>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <button onclick="openPicker('${it.id}','inventory')">Browse inventory icons…</button>
+        </div>
+        ${PAPERDOLL_SLOT_DIRS[it.slot] ? `
+          <div class="field-group">
+            <label>Paperdoll sprite (overlay)</label>
+            <input type="text" style="width:100%;font-size:11px" value="${it.overlay || ''}" id="overlay-path-input"
+              placeholder="(matches inventory filename)"
+              onchange="setOverlayField('${it.id}',this.value);refreshSpritePreviews('${it.id}')">
+            <div style="font-size:10px;color:var(--muted);margin-top:2px">How the item renders held / worn on the bot. Leave blank to reuse the inventory filename.</div>
+          </div>
+          <div style="display:flex;gap:6px">
+            <button onclick="openPicker('${it.id}','overlay')">Browse paperdoll sprites…</button>
+            <button onclick="clearOverlay('${it.id}')" class="subtle" title="Clear the override and fall back to the inventory filename">Clear</button>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Display name</label>
+      <input type="text" value="${it.name}" onchange="setField('${it.id}','name',this.value);document.getElementById('edit-title').textContent=this.value;renderGrid()">
+    </div>
+
+    <div class="field-group">
+      <label>Internal ID</label>
+      <input type="text" value="${it.id}" style="color:var(--muted);font-size:11px" readonly>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Locked once created — used to reference this item in saves.</div>
+    </div>
+
+    <div class="field-group">
+      <label>Item family</label>
+      <select onchange="setField('${it.id}','base_type',this.value)">${baseTypeOpts}</select>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Sets the weapon shape (e.g. all "long_sword" items share the same hand-pose on the bot).</div>
+    </div>
+
+    <div class="field-group">
+      <label>Power level</label>
+      <div class="tier-btn-row">${tierBtns}</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">T1 = early floors → T5 = endgame. Drives base stat scaling.</div>
+    </div>
+
+    <div class="field-group">
+      <label>Rarity</label>
+      <select onchange="setField('${it.id}','rarity',this.value)">${rarityOpts}</select>
+      &nbsp;<label><input type="checkbox"${it.unique?' checked':''} onchange="setField('${it.id}','unique',this.checked)"> Named unique (only one drops per run)</label>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Common = no random bonuses, Uncommon = 1, Rare = 2, Epic = 3, Legendary = 4.</div>
+    </div>
+
+    <div class="field-group">
+      <label>Base stats</label>
+      ${(it.slot === 'weapon' || it.slot === 'spell') ? `
+        ${it.slot === 'weapon' ? `
+          <div style="margin-bottom:8px">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px">Quick presets — click to fill in damage / swing-time / hand count for a typical archetype, then tweak below.</div>
+            <div class="preset-grid">${weaponPresetButtons(it)}</div>
+          </div>
+        ` : ''}
+        <div class="field-row">
+          <span style="font-size:11px;color:var(--muted)">Min damage</span>
+          <input type="number" value="${it.damage_min||0}" min="0" max="999" onchange="setField('${it.id}','damage_min',+this.value)">
+          <span style="font-size:11px;color:var(--muted)">Max damage</span>
+          <input type="number" value="${it.damage_max||0}" min="0" max="999" onchange="setField('${it.id}','damage_max',+this.value)">
+          <span style="font-size:11px;color:var(--muted)">Damage type</span>
+          <select onchange="setField('${it.id}','damage_type',this.value)">
+            ${["physical","fire","cold","lightning","holy","poison","dark"].map(t => `<option value="${t}" ${t === (it.damage_type || 'physical') ? 'selected' : ''}>${t}</option>`).join("")}
+          </select>
+        </div>
+        ${it.slot === 'weapon' ? `
+          <div class="field-row">
+            <span style="font-size:11px;color:var(--muted)">Swing time (s)</span>
+            <input type="number" value="${it.speed||1.0}" min="0.1" max="3.0" step="0.05" onchange="setField('${it.id}','speed',+this.value)">
+            <span style="font-size:11px;color:var(--muted)">Hands</span>
+            <select onchange="setField('${it.id}','weapon_class',this.value)">
+              ${[["1H","One-handed"],["2H","Two-handed (no shield)"],["dual","Dual-wield (no shield)"]].map(([v,lbl]) => `<option value="${v}" ${v === (it.weapon_class || '1H') ? 'selected' : ''}>${lbl}</option>`).join("")}
+            </select>
+          </div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px">Lower swing time = faster attacks. Two-handed and dual-wield clear the shield slot when equipped.</div>
+        ` : `
+          <div class="field-row">
+            <span style="font-size:11px;color:var(--muted)">Cooldown (s)</span>
+            <input type="number" value="${it.spell_cooldown||3.0}" min="0.5" max="20" step="0.1" onchange="setField('${it.id}','spell_cooldown',+this.value)">
+            <span style="font-size:11px;color:var(--muted)">Scales with</span>
+            <select onchange="setField('${it.id}','primary_stat',this.value)">
+              ${[["str","Strength"],["dex","Dexterity"],["int","Intelligence"]].map(([v,lbl]) => `<option value="${v}" ${v === (it.primary_stat || 'int') ? 'selected' : ''}>${lbl}</option>`).join("")}
+            </select>
+          </div>
+        `}
+      ` : (["armor","helm","boots","gloves","cloak","shield"].includes(it.slot) ? `
+        <div class="field-row">
+          <span style="font-size:11px;color:var(--muted)">Armor</span>
+          <input type="number" value="${it.armor||0}" min="0" max="200" onchange="setField('${it.id}','armor',+this.value)">
+          <span style="font-size:11px;color:var(--muted)">Evasion %</span>
+          <input type="number" value="${it.evasion||0}" min="0" max="50" onchange="setField('${it.id}','evasion',+this.value)">
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Armor flat-reduces incoming damage. Evasion is the % chance to dodge entirely.</div>
+      ` : `
+        <div style="font-size:11px;color:var(--muted)">Jewelry has no base stats — all bonuses come from the rolled bonuses below.</div>
+      `)}
+    </div>
+
+    <div class="field-group">
+      <label>Built-in bonuses (always present on every drop)</label>
+      <div class="tag-grid">${implicitChips}</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        Click to toggle. Use for named uniques whose identity IS the bonus (e.g. Vampire's Tooth always has lifesteal).
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Combat tags (always-on procs)</label>
+      <div class="tag-grid">${tagGrid}</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        These fire in combat — vampiric = lifesteal on hit, fire = burn DoT, holy = bonus vs undead, etc. They also color the in-game tooltip glow.
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Random enchant chance: <span style="color:var(--accent)">${Math.round((it.enchant_chance||0)*100)}%</span></label>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input type="range" min="0" max="100" step="1"
+          value="${Math.round((it.enchant_chance||0)*100)}"
+          oninput="setField('${it.id}','enchant_chance',this.value/100);this.previousElementSibling.querySelector('span').textContent=this.value+'%';this.nextElementSibling.textContent=this.value+'%'"
+          style="flex:1">
+        <span style="min-width:48px;text-align:right;font-variant-numeric:tabular-nums">${Math.round((it.enchant_chance||0)*100)}%</span>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        Chance per drop to add ONE bonus combat tag on top of the always-on tags above. 0% = no random enchant. 100% = always rolls one (use for uniques where the random flavor is part of the design).
+      </div>
+      <div style="margin-top:6px">
+        <label style="font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0">Possible random tags <span style="opacity:0.7">(leave all off to allow any)</span></label>
+        <div class="tag-grid" style="margin-top:4px">${enchantPoolGrid}</div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Bonus weights (which random bonuses prefer to roll on this item)</label>
+      ${affixPoolRows}
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        Higher weight = more likely. Leave all at 0 to use the default pool for this item family.
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Where it drops</label>
+      ${dwRows}
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        T1 = early floors → T5 = endgame. Higher = more likely to appear in that tier. Set 0 to lock out a tier.
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Inventory icon recolor (permanent)</label>
+      ${recolorSection(it, 'inventory')}
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">
+        Optional. Locks a recolor onto every drop of this item — e.g. all Soulhungers always render inverted. Without one, drops randomly roll a recolor based on the global drop-tuning rates.
+      </div>
+    </div>
+
+    ${PAPERDOLL_SLOT_DIRS[it.slot] ? `
+      <div class="field-group">
+        <label>Paperdoll sprite recolor (permanent, on-character only)</label>
+        ${recolorSection(it, 'overlay')}
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">
+          Optional. Recolors ONLY the on-character sprite — independent of the inventory icon. Useful when you want the iconic art kept in the bag but a different hue on the bot (e.g. a green Serpent's Whip in inventory but a red blood-stained whip when wielded). Leave on "None" to mirror the inventory icon's tint.
+        </div>
+      </div>
+    ` : ''}
+
+    <div class="field-group">
+      <label>Lore (flavor text shown in the tooltip)</label>
+      <textarea onchange="setField('${it.id}','lore',this.value)">${it.lore||''}</textarea>
+    </div>
+
+    ${it.unique ? `<div class="field-group">
+      <label>Design notes (not shown in-game)</label>
+      <textarea onchange="setField('${it.id}','future_mechanic',this.value)" placeholder="Mechanic ideas, balance notes, art references…">${it.future_mechanic||''}</textarea>
+    </div>` : ''}
+
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">
+      <button class="primary" onclick="applyEdit()">Save changes</button>
+      <span style="font-size:11px;color:var(--muted);margin-left:8px">Changes are kept locally until you hit Export at the top.</span>
+    </div>
+  `;
+}
+
+// Recolor controls — reads/writes a tint dict on the item. `surface` is
+// 'inventory' (default — writes it.default_tint) or 'overlay' (writes
+// it.default_tint_overlay, only renders for paperdoll-slotted items).
+// Mirrors the live game shader (item_recolor.gdshader) — same modes +
+// ranges.
+function recolorSection(it, surface) {
+  surface = surface || 'inventory';
+  const tintKey = surface === 'overlay' ? 'default_tint_overlay' : 'default_tint';
+  const previewIdSuffix = surface === 'overlay' ? '-overlay' : '';
+  const t = it[tintKey] || {};
+  const mode = t.mode || 'none';
+  const hue = (t.hue == null) ? 0 : Math.round(t.hue);
+  const sat = (t.sat == null) ? 1.0 : t.sat;
+  const modes = [
+    ['none',      'None — random per drop'],
+    ['normal',    'Solid hue (works on colorful sprites)'],
+    ['colorize',  'Colorize (paints white/grey sprites)'],
+    ['shimmer',   'Shimmer — animated highlight sweep'],
+    ['inverted',  'Inverted — colors swapped'],
+    ['prismatic', 'Prismatic — hue cycles in real time'],
+  ];
+  const opts = modes.map(([v,lbl]) => `<option value="${v}" ${v===mode?'selected':''}>${lbl}</option>`).join('');
+  let html = `
+    <div class="field-row">
+      <span style="font-size:11px;color:var(--muted)">Effect</span>
+      <select onchange="setRecolorMode('${it.id}',this.value,'${tintKey}')">${opts}</select>
+    </div>`;
+  if (mode !== 'none') {
+    // Preview source: inventory tile by default; for the overlay
+    // surface, render the bot base layered with the overlay sprite
+    // (same shape as the edit-panel paperdoll preview) so the author
+    // sees the recolor in the real on-character context. Falls back
+    // to the inventory tile when no overlay is resolvable.
+    let previewBlock;
+    if (surface === 'overlay') {
+      const overlaySrc = overlayUrl(it);
+      previewBlock = `
+        <div style="display:inline-block;width:96px;height:96px;background:#000;border:1px solid var(--border-strong);border-radius:3px;position:relative">
+          <img src="${BASE_SPRITE_URL}" style="position:absolute;inset:0;width:96px;height:96px;image-rendering:pixelated">
+          <img id="recolor-preview${previewIdSuffix}-${it.id}" src="${overlaySrc}"
+               style="position:absolute;inset:0;width:96px;height:96px;image-rendering:pixelated;${recolorPreviewStyle(t)}">
+        </div>`;
+    } else {
+      previewBlock = `
+        <div style="display:inline-block;width:96px;height:96px;background:#000;border:1px solid var(--border-strong);border-radius:3px;position:relative">
+          <img id="recolor-preview${previewIdSuffix}-${it.id}" src="${tileUrl(it.tile)}"
+               style="width:96px;height:96px;image-rendering:pixelated;${recolorPreviewStyle(t)}"
+               onerror="if(!this.dataset.f){this.dataset.f='1';this.src='${tileUrlDcssFull(it.tile)}'}else if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(it.tile)}'}">
+        </div>`;
+    }
+    html += `
+      <div class="field-row">
+        <span style="font-size:11px;color:var(--muted)">Hue</span>
+        <input type="range" min="0" max="360" step="5" value="${hue}"
+          oninput="setRecolorField('${it.id}','hue',+this.value,'${tintKey}');this.nextElementSibling.textContent=this.value+'°'">
+        <span style="min-width:42px;text-align:right;font-variant-numeric:tabular-nums">${hue}°</span>
+      </div>
+      <div class="field-row">
+        <span style="font-size:11px;color:var(--muted)">Saturation</span>
+        <input type="range" min="0" max="2" step="0.05" value="${sat}"
+          oninput="setRecolorField('${it.id}','sat',+this.value,'${tintKey}');this.nextElementSibling.textContent=this.value">
+        <span style="min-width:42px;text-align:right;font-variant-numeric:tabular-nums">${sat}</span>
+      </div>
+      <div style="margin-top:6px">
+        ${previewBlock}
+        <div style="font-size:10px;color:var(--muted);margin-top:4px;display:inline-block;vertical-align:top;margin-left:8px;max-width:240px">
+          Preview is a CSS-filter approximation — the in-game shader may render slightly differently, especially on darker palettes.
+        </div>
+      </div>`;
+  }
+  return html;
+}
+
+// CSS-filter approximation of the live game shader for the editor
+// preview. Not pixel-perfect (CSS filter chains aren't HSV), but close
+// enough to pick a hue + saturation that lands in the right ballpark.
+function recolorPreviewStyle(t) {
+  if (!t || !t.mode || t.mode === 'none') return '';
+  const hue = t.hue || 0;
+  const sat = (t.sat == null) ? 1 : t.sat;
+  // Colorize mode is hard to approximate with CSS filters alone
+  // (hue-rotate is a no-op on white). Use a sepia → hue-rotate
+  // chain instead — sepia first paints the sprite warm-orange,
+  // then hue-rotate sweeps to the requested target. Crude vs the
+  // GLSL shader but close enough for editor preview.
+  if (t.mode === 'colorize') {
+    // sepia = 1 produces RGB ≈ (~0.7, ~0.5, ~0.3); hue-rotate then
+    // sweeps that anchor color around the wheel. Add saturation
+    // multiplier so the colorize strength reads roughly right.
+    const offset = ((hue - 30 + 360) % 360);  // sepia base sits ~30°
+    return `filter: sepia(1) saturate(${(sat * 1.6).toFixed(2)}) hue-rotate(${offset}deg) brightness(1.0)`;
+  }
+  const filters = [`hue-rotate(${hue}deg)`, `saturate(${sat})`];
+  if (t.mode === 'inverted') filters.push('invert(1)');
+  if (t.mode === 'shimmer') filters.push('brightness(1.15)');
+  return 'filter:' + filters.join(' ');
+}
+
+function setRecolorMode(id, mode, tintKey) {
+  tintKey = tintKey || 'default_tint';
+  const it = items.find(x => x.id === id);
+  if (!it) return;
+  if (mode === 'none') {
+    delete it[tintKey];
+  } else {
+    if (!it[tintKey]) it[tintKey] = {hue: 0, sat: 1.0};
+    it[tintKey].mode = mode;
+  }
+  dirty.add(id);
+  renderEditBody(it);
+}
+
+function setRecolorField(id, key, val, tintKey) {
+  tintKey = tintKey || 'default_tint';
+  const it = items.find(x => x.id === id);
+  if (!it || !it[tintKey]) return;
+  it[tintKey][key] = val;
+  dirty.add(id);
+  // Live-update the preview filters without a full panel rebuild so
+  // slider drags stay smooth. Each tint surface drives different DOM:
+  //   default_tint          → inventory sprite + card thumb + recolor
+  //                           preview thumb under inventory sliders.
+  //                           Also drives the on-character overlay
+  //                           UNLESS the item authors a separate
+  //                           default_tint_overlay (then overlay
+  //                           reads from that instead — runtime
+  //                           recolor_material_for_overlay logic).
+  //   default_tint_overlay  → on-character overlay sprite + recolor
+  //                           preview thumb under overlay sliders.
+  const styleSuffix = recolorPreviewStyle(it[tintKey]);
+  const previewSuffix = tintKey === 'default_tint_overlay' ? '-overlay' : '';
+  const previewImg = document.getElementById('recolor-preview' + previewSuffix + '-' + id);
+  if (previewImg) {
+    // Overlay preview is layered (absolute-positioned over base
+    // sprite); inventory preview is a single image filling the box.
+    if (tintKey === 'default_tint_overlay') {
+      previewImg.style.cssText = 'position:absolute;inset:0;width:96px;height:96px;image-rendering:pixelated;' + styleSuffix;
+    } else {
+      previewImg.style.cssText = 'width:96px;height:96px;image-rendering:pixelated;' + styleSuffix;
+    }
+  }
+  if (tintKey === 'default_tint') {
+    // Inventory tint drives both the inventory icon and (via
+    // fallback) the on-character overlay when no overlay-specific
+    // tint is authored.
+    const editImg = document.getElementById('edit-sprite-img');
+    if (editImg) editImg.style.cssText = styleSuffix;
+    if (!it.default_tint_overlay) {
+      const overlayImg = document.getElementById('edit-overlay-img');
+      if (overlayImg) overlayImg.style.cssText = styleSuffix;
+    }
+    const cardImg = document.querySelector(`[data-id="${id}"] .sprite-wrap img`);
+    if (cardImg) cardImg.style.cssText = styleSuffix;
+  } else {
+    // Overlay-specific tint — only updates the on-character preview.
+    const overlayImg = document.getElementById('edit-overlay-img');
+    if (overlayImg) overlayImg.style.cssText = styleSuffix;
+  }
+}
+
+function applyEdit() {
+  setStatus('Changes staged — use Export to write items.json.');
+  setTimeout(() => setStatus(''), 2000);
+}
+
+// ---------- Field mutations ----------
+function setField(id, key, val) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  it[key] = val;
+  dirty.add(id);
+  updateCard(id);
+}
+
+// Weapon stat presets. Each entry is a baseline DPS curve at a given
+// rarity tier — matches the spread already shipping in items.json so a
+// new item drops cleanly into the existing tier curve without manual
+// math. Damage values are pre-affix; tier/rarity scaling lives on top.
+// Player presses one, the inputs get filled, then they tweak.
+// 2026-06-05.
+const WEAPON_PRESETS = [
+  // label, dmg_min, dmg_max, speed, hands, item_tier, rarity, weapon_class
+  // -- 1H ----------------------------------------------------------
+  { label:'Common Dagger',    dmg_min:4,  dmg_max:8,   speed:0.45, weapon_class:'1H', item_tier:1, rarity:'common' },
+  { label:'Common Sword',     dmg_min:8,  dmg_max:15,  speed:0.6,  weapon_class:'1H', item_tier:1, rarity:'common' },
+  { label:'Uncommon Sword',   dmg_min:12, dmg_max:22,  speed:0.6,  weapon_class:'1H', item_tier:2, rarity:'uncommon' },
+  { label:'Rare Sword',       dmg_min:20, dmg_max:36,  speed:0.55, weapon_class:'1H', item_tier:3, rarity:'rare' },
+  { label:'Epic Sword',       dmg_min:32, dmg_max:58,  speed:0.55, weapon_class:'1H', item_tier:4, rarity:'epic' },
+  { label:'Legendary Sword',  dmg_min:50, dmg_max:90,  speed:0.55, weapon_class:'1H', item_tier:5, rarity:'legendary' },
+  { label:'Fast Rapier',      dmg_min:14, dmg_max:24,  speed:0.40, weapon_class:'1H', item_tier:3, rarity:'rare' },
+  { label:'Heavy Mace',       dmg_min:24, dmg_max:42,  speed:0.75, weapon_class:'1H', item_tier:3, rarity:'rare' },
+  // -- 2H ----------------------------------------------------------
+  { label:'2H Greatsword',    dmg_min:34, dmg_max:62,  speed:0.85, weapon_class:'2H', item_tier:3, rarity:'rare' },
+  { label:'2H Epic Greatsword',dmg_min:54,dmg_max:96,  speed:0.85, weapon_class:'2H', item_tier:4, rarity:'epic' },
+  { label:'2H Legendary',     dmg_min:80, dmg_max:140, speed:0.90, weapon_class:'2H', item_tier:5, rarity:'legendary' },
+  { label:'2H Polearm',       dmg_min:38, dmg_max:68,  speed:0.95, weapon_class:'2H', item_tier:3, rarity:'rare' },
+  { label:'2H Battleaxe',     dmg_min:42, dmg_max:78,  speed:1.05, weapon_class:'2H', item_tier:3, rarity:'rare' },
+  // -- Dual ---------------------------------------------------------
+  { label:'Dual Daggers',     dmg_min:6,  dmg_max:11,  speed:0.35, weapon_class:'dual', item_tier:1, rarity:'common' },
+  { label:'Dual Rare',        dmg_min:14, dmg_max:24,  speed:0.40, weapon_class:'dual', item_tier:3, rarity:'rare' },
+  { label:'Dual Legendary',   dmg_min:32, dmg_max:58,  speed:0.40, weapon_class:'dual', item_tier:5, rarity:'legendary' },
+];
+
+function weaponPresetButtons(it) {
+  return WEAPON_PRESETS.map((p, idx) => `
+    <button class="preset-btn" onclick="applyWeaponPreset('${it.id}', ${idx})"
+      title="${p.dmg_min}-${p.dmg_max} dmg · ${p.speed}s · ${p.weapon_class} · T${p.item_tier} · ${p.rarity}">
+      ${p.label}
+      <span class="preset-stats">${p.dmg_min}–${p.dmg_max} · ${p.speed}s · ${p.weapon_class}</span>
+    </button>
+  `).join('');
+}
+
+function applyWeaponPreset(id, presetIdx) {
+  const it = items.find(x => x.id === id);
+  const p = WEAPON_PRESETS[presetIdx];
+  if (!it || !p) return;
+  it.damage_min = p.dmg_min;
+  it.damage_max = p.dmg_max;
+  it.speed = p.speed;
+  it.weapon_class = p.weapon_class;
+  it.item_tier = p.item_tier;
+  it.rarity = p.rarity;
+  // Steer drop_weights toward the preset's tier so the new item shows
+  // up at sensible floors. Single-tier-100 — author can broaden later.
+  const dw = [0, 0, 0, 0, 0];
+  dw[p.item_tier - 1] = 100;
+  it.drop_weights = dw;
+  dirty.add(id);
+  updateCard(id);
+  renderEditBody(it);
+}
+function setDW(id, idx, val) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  it.drop_weights[idx] = +val;
+  dirty.add(id);
+  updateCard(id);
+}
+function toggleTag(id, tag) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  if (!it.flavor_tags) it.flavor_tags=[];
+  const i = it.flavor_tags.indexOf(tag);
+  if (i>=0) it.flavor_tags.splice(i,1); else it.flavor_tags.push(tag);
+  dirty.add(id);
+  updateCard(id);
+  renderEditBody(it);
+}
+
+// Implicit affix chip toggle. implicit_affixes is the always-present
+// affix list — stamped on every drop in addition to rolled affixes.
+// Used for uniques (e.g. Vampire's Tooth → ['of_lifesteal']).
+function toggleImplicit(id, affixId) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  if (!it.implicit_affixes) it.implicit_affixes = [];
+  const i = it.implicit_affixes.indexOf(affixId);
+  if (i>=0) it.implicit_affixes.splice(i,1);
+  else it.implicit_affixes.push(affixId);
+  dirty.add(id);
+  renderEditBody(it);
+}
+
+// Per-item enchant pool toggle. enchant_pool is the allowlist of
+// flavors that can roll on a drop when enchant_chance fires.
+function toggleEnchantPool(id, tag) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  if (!it.enchant_pool) it.enchant_pool=[];
+  const i = it.enchant_pool.indexOf(tag);
+  if (i>=0) it.enchant_pool.splice(i,1); else it.enchant_pool.push(tag);
+  dirty.add(id);
+  renderEditBody(it);
+}
+
+// Per-item affix_pool weight setter. When any weight > 0, the dict
+// replaces the base_type/global pool at roll time. Setting all
+// weights back to 0 deletes the field so the item inherits defaults.
+function setAffixPool(id, affixId, weight) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  if (!it.affix_pool) it.affix_pool = {};
+  if (weight > 0) {
+    it.affix_pool[affixId] = weight;
+  } else {
+    delete it.affix_pool[affixId];
+  }
+  if (Object.keys(it.affix_pool).length === 0) delete it.affix_pool;
+  dirty.add(id);
+}
+function updateCard(id) {
+  const it = items.find(x=>x.id===id);
+  if (!it) return;
+  const oldCard = document.querySelector(`.item-card[data-id="${id}"]`);
+  if (oldCard) {
+    const newCard = makeCard(it);
+    oldCard.replaceWith(newCard);
+  }
+}
+
+function addItem() {
+  const id = 'new_'+activeSlot.id+'_' + Date.now();
+  // Pull a sensible default from the manifest's first item so per-slot
+  // defaults (sprite, base_type, atk/def/hp shape) come along for the ride.
+  const tplSrc = items[0] || {};
+  const tpl = {
+    id,
+    name: 'New ' + activeSlot.label.replace(/s$/,''),
+    slot: activeSlot.id,
+    base_type: tplSrc.base_type || Object.keys(manifest.base_types || {})[0] || '',
+    item_tier: 3,
+    rarity: 'rare',
+    tile: tplSrc.tile || '',
+    atk: 0, def: 0, hp: 0,
+    flavor_tags: [], lore: '',
+    drop_weights: [0, 0, 100, 0, 0],
+    unique: false
+  };
+  // Weapon-slot defaults — start from the "Rare Sword" preset so a
+  // brand-new weapon already has playable damage numbers instead of
+  // 0/0/0. Author hits "+ New item", picks a preset to refine, then
+  // tweaks. Saves a hand-math round.
+  if (activeSlot.id === 'weapon') {
+    const seed = WEAPON_PRESETS.find(p => p.label === 'Rare Sword') || WEAPON_PRESETS[0];
+    tpl.damage_min = seed.dmg_min;
+    tpl.damage_max = seed.dmg_max;
+    tpl.damage_type = 'physical';
+    tpl.speed = seed.speed;
+    tpl.weapon_class = seed.weapon_class;
+    tpl.item_tier = seed.item_tier;
+    tpl.rarity = seed.rarity;
+    tpl.enchant_chance = 0.10;
+  }
+  items.push(tpl);
+  dirty.add(id);
+  updateSlotCount(activeSlot.id, items.length);
+  renderSidebar();
+  renderGrid();
+  openEdit(id);
+}
+
+function deleteItem() {
+  if (!selectedId) return;
+  if (!confirm('Delete '+selectedId+'?')) return;
+  items = items.filter(x=>x.id!==selectedId);
+  dirty.delete(selectedId);
+  selectedId = null;
+  closeEdit();
+  renderSidebar();
+  renderGrid();
+  updateSlotCount(activeSlot.id, items.length);
+}
+
+// ---------- Sprite picker ----------
+// pickerMode is "inventory" (default — sets it.tile from item/...
+// trees) or "overlay" (sets it.overlay from player/... trees). The
+// two trees are visually different in DCSS, so authors choose them
+// independently. 2026-06-05.
+let pickerItemId = null;
+let pickerMode = 'inventory';
+let allWeaponTiles = [];
+let allOverlayTiles = [];
+
+// Stems we know are generic positional weapon/gear sprites — i.e.
+// drawn aligned to a hand/body/head canvas position, suitable for any
+// item of the right shape. DCSS's player/hand_right tree mixes these
+// with character-named one-off sprites (aragorn, frodo, gandalf,
+// enchantress_dagger) and ranged-weapon poses (bow, crossbow, dart,
+// blowgun) that should NEVER appear as picker options for melee items.
+//
+// We filter the overlay list down to entries whose basename starts
+// with one of these prefixes. Per-character art still ships in the
+// project for the items that actually use them, but never appears as
+// a candidate for a fresh authoring choice. 2026-06-05.
+const GENERIC_OVERLAY_PREFIXES = {
+  // Melee weapons (player/hand_right)
+  weapon: [
+    'dagger', 'knife', 'short_sword', 'long_sword', 'falchion',
+    'rapier', 'scimitar', 'sabre', 'cutlass', 'katana', 'broadsword',
+    'demonblade', 'demon_blade', 'heavy_sword', 'great_sword',
+    'greatsword', 'claymore', 'double_sword', 'triple_sword',
+    'mace', 'morningstar', 'eveningstar', 'flail', 'hammer',
+    'club', 'giant_club', 'great_mace', 'large_mace', 'rod_hammer',
+    'axe', 'battleaxe', 'broad_axe', 'hand_axe', 'war_axe',
+    'spear', 'halberd', 'bardiche', 'glaive', 'trident', 'fork',
+    'scythe', 'lance', 'pole',
+    'quarterstaff', 'staff', 'lajatang',
+    'whip',
+  ],
+  // Off-hand sprites for shields (player/hand_left) — DCSS ships
+  // lshield_*, buckler_*, plus a few named exceptions we want to allow.
+  shield: [
+    'buckler', 'lshield', 'shield_kite', 'shield_round', 'shield_diamond',
+    'shield_holy', 'shield_dd', 'shield_donald', 'shield_goblin',
+    'shield_draconic', 'gong', 'bullseye',
+  ],
+  // Body torsos (player/body) — exclude full-figure dragon armor variants
+  // we DON'T want and accept the named common-shape items.
+  armor: [
+    'jacket', 'chainmail', 'scalemail', 'half_plate', 'plate',
+    'bplate', 'leather_jacket', 'robe', 'shoulder_pad',
+    'dragon_armor', 'dragon_scale', 'crystal_plate', 'green_chain',
+    'lears_chain', 'plate_and_cloth', 'deep_troll', 'iron_plate',
+  ],
+  helm: [
+    'cap', 'hat', 'helm', 'fhelm', 'hood', 'crown', 'cone',
+    'feather', 'horn', 'turban', 'plume', 'visor', 'mask',
+    'bandana', 'helmet', 'full_', 'mitre',
+  ],
+  boots: [
+    'long', 'short', 'middle', 'mesh', 'pj', 'spider',
+    'slippers', 'hooves', 'seven_league',
+  ],
+  gloves: [
+    'glove', 'gauntlet', 'mitten', 'claws',
+  ],
+  cloak: [
+    'black', 'blue', 'brown', 'cyan', 'gray', 'green',
+    'magenta', 'red', 'white', 'yellow', 'dragonskin',
+    'ratskin', 'scarf',
+  ],
+};
+
+function _isGenericOverlay(slotId, basename) {
+  const prefixes = GENERIC_OVERLAY_PREFIXES[slotId] || [];
+  if (prefixes.length === 0) return true;  // unknown slot — pass everything
+  for (const p of prefixes) {
+    if (basename.startsWith(p)) return true;
+  }
+  return false;
+}
+
+// Resolve the basename a picked atlas key would store on the item.
+// Mirrors the on-disk layout under assets/tiles/items/:
+//   - artefact subfolder -> "artefacts/wpn_<stem>.png" or "artefacts/<stem>.png"
+//   - spell subfolder -> "spells/<stem>.png"
+//   - everything else -> "<stem>.png"
+// Returns null when no shipped file matches the atlas key. Lets the
+// picker hide tiles that would render blank at runtime.
+function shippedBasenameForAtlasKey(atlasKey) {
+  const stem = atlasKey.split('/').pop();          // e.g. "urand_axe_of_woe.png"
+  const isArtefact = atlasKey.includes('/artefact/');
+  const isSpell = atlasKey.includes('/spells/') || atlasKey.includes('/spell/');
+  // Try direct stem at top level first (the common case).
+  if (shippedTiles.has(stem)) return stem;
+  // Artefact: try "artefacts/<stem>" and "artefacts/wpn_<stem>" /
+  // "artefacts/arm_<stem>" — sync_items.py historically prefixed
+  // weapons with `wpn_` and armor with `arm_` when copying into the
+  // artefacts subdir.
+  if (isArtefact) {
+    if (shippedTiles.has('artefacts/' + stem)) return 'artefacts/' + stem;
+    const withWpn = 'artefacts/wpn_' + stem;
+    if (shippedTiles.has(withWpn)) return withWpn;
+    const withArm = 'artefacts/arm_' + stem;
+    if (shippedTiles.has(withArm)) return withArm;
+  }
+  if (isSpell && shippedTiles.has('spells/' + stem)) return 'spells/' + stem;
+  return null;
+}
+
+function buildWeaponTileList() {
+  // Pull all atlas paths under any of the active slot's picker_roots
+  // (inventory icons) and overlay_roots (paperdoll overlays). Both
+  // lists rebuild when activeSlot changes via switchSlot.
+  //
+  // Inventory tiles are filtered to ones that EXIST in
+  // assets/tiles/items/ — picks that resolve to a missing file
+  // render as blank icons at runtime, which used to be a silent
+  // failure mode. shippedTiles is loaded from tile_dir_manifest.json
+  // at boot.
+  //
+  // Overlay list is filtered to GENERIC positional sprites — strips
+  // out character-named one-offs (aragorn, frodo) and shape-specific
+  // sprites that don't belong in a generic-melee picker (bow,
+  // crossbow, blowgun, dart). Artefact subfolder is also excluded
+  // so authors don't accidentally pick a unique's bespoke art for a
+  // common item. 2026-06-05.
+  const invRoots = activeSlot.picker_roots || [];
+  const ovRoots = activeSlot.overlay_roots || [];
+  // Each entry stores the atlas-key (for the thumbnail URL) and the
+  // basename that would land on the item. Only keep atlas keys that
+  // resolve to a shipped file. Skip the filter when shippedTiles
+  // hasn't loaded (e.g. running from local file:// without the
+  // manifest available) so the picker still works in that fallback.
+  const filterByShipped = shippedTiles.size > 0;
+  allWeaponTiles = Object.keys(atlas)
+    .filter(k => invRoots.some(r => k.startsWith(r)))
+    .filter(k => !filterByShipped || shippedBasenameForAtlasKey(k) !== null)
+    .sort();
+  // Player overlays use bare stems (no subdir prefix). Filter against
+  // shippedOverlays[<slot_dir>] to mirror what paperdoll_renderer
+  // can actually render.
+  const slotDir = (activeSlot.overlay_roots && activeSlot.overlay_roots[0] || '').replace('player/','').replace(/\/$/,'');
+  const overlaySet = shippedOverlays[slotDir];
+  allOverlayTiles = Object.keys(atlas)
+    .filter(k => ovRoots.some(r => k.startsWith(r)))
+    .filter(k => !k.includes('/artefact/'))
+    .filter(k => _isGenericOverlay(activeSlot.id, k.split('/').pop().replace('.png', '')))
+    .filter(k => !filterByShipped || !overlaySet || overlaySet.has(k.split('/').pop()))
+    .sort();
+}
+
+function renderPickerFilterBar() {
+  const bar = document.getElementById('picker-filter');
+  bar.innerHTML = '';
+  // Title hint — flips per pickerMode so the user knows whether they
+  // are picking the inventory or paperdoll sprite.
+  const title = document.querySelector('#picker-head strong');
+  if (title) {
+    title.textContent = pickerMode === 'overlay'
+      ? 'Pick paperdoll sprite (how it looks on the bot)'
+      : 'Pick inventory icon (how it looks in the bag)';
+  }
+  // Filter chips only apply to the inventory tree (which has hand-
+  // tagged categories); the overlay tree is small and doesn't need
+  // them — show a single "All" for clarity.
+  if (pickerMode === 'overlay') {
+    const btn = document.createElement('button');
+    btn.textContent = 'All paperdoll sprites';
+    btn.classList.add('active');
+    bar.appendChild(btn);
+    return;
+  }
+  const buttons = [{ key:'all', label:'All '+activeSlot.label }, ...(activeSlot.picker_extras || [])];
+  buttons.forEach(b => {
+    const btn = document.createElement('button');
+    btn.textContent = b.label;
+    btn.onclick = () => setPickerCategory(b.key, btn);
+    if (b.key === pickerCategory) btn.classList.add('active');
+    bar.appendChild(btn);
+  });
+}
+
+function setPickerCategory(cat, btn) {
+  pickerCategory = cat;
+  document.querySelectorAll('#picker-filter button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPicker();
+}
+
+// Picker thumbnail size — bigger sprites are essential for the
+// overlay-mode picker where authors compare 32×32 silhouettes.
+// Persisted to localStorage so the zoom level survives across reloads.
+// 2026-06-05.
+let pickerZoom = parseInt(localStorage.getItem('item_editor_picker_zoom') || '192', 10);
+function _applyPickerZoom() {
+  pickerZoom = Math.max(96, Math.min(480, pickerZoom));
+  document.documentElement.style.setProperty('--pick-size', pickerZoom + 'px');
+  const lbl = document.getElementById('picker-zoom-val');
+  if (lbl) lbl.textContent = pickerZoom + 'px';
+  localStorage.setItem('item_editor_picker_zoom', String(pickerZoom));
+}
+function adjustPickerZoom(delta) {
+  pickerZoom += delta;
+  _applyPickerZoom();
+}
+function onPickerWheel(ev) {
+  // Ctrl+wheel = zoom; bare wheel = native scroll.
+  if (!ev.ctrlKey && !ev.metaKey) return;
+  ev.preventDefault();
+  pickerZoom += (ev.deltaY < 0 ? 16 : -16);
+  _applyPickerZoom();
+}
+
+function openPicker(id, mode) {
+  pickerItemId = id;
+  pickerMode = mode || 'inventory';
+  if (!allWeaponTiles.length && !allOverlayTiles.length) buildWeaponTileList();
+  pickerCategory = 'all';
+  _applyPickerZoom();
+  renderPickerFilterBar();
+  document.getElementById('picker').classList.add('open');
+  document.getElementById('picker-search').value = '';
+  renderPicker();
+}
+function closePicker() { document.getElementById('picker').classList.remove('open'); }
+
+function renderPicker() {
+  const q = document.getElementById('picker-search').value.toLowerCase();
+  const grid = document.getElementById('picker-grid');
+  grid.innerHTML = '';
+
+  let tiles = pickerMode === 'overlay' ? allOverlayTiles : allWeaponTiles;
+  if (pickerMode !== 'overlay' && pickerCategory !== 'all') {
+    const cfg = (activeSlot.picker_extras || []).find(e => e.key === pickerCategory);
+    if (cfg) {
+      if (cfg.path_includes) tiles = tiles.filter(k => k.includes(cfg.path_includes));
+      else if (cfg.keywords) tiles = tiles.filter(k => cfg.keywords.some(kw => k.includes(kw)));
+    }
+  }
+  if (q) tiles = tiles.filter(k => k.includes(q));
+
+  tiles.slice(0,300).forEach(path => {
+    const cell = document.createElement('div');
+    cell.className = 'pick-cell';
+    const shortName = path.split('/').pop().replace('.png','');
+    // Picker thumbnails read from dcss/Full (the source-of-truth tree
+    // with category subfolders). The CHOSEN value stored on the item
+    // is the basename only, because items.json's `tile` and `overlay`
+    // fields are basename-only (sync_items.py flattens DCSS into
+    // assets/tiles/items/ and player/<slot>/ at build time).
+    if (pickerMode === 'overlay') {
+      // Layered preview: base bot sprite + the candidate overlay on
+      // top, so authors see how the paperdoll WILL look without
+      // needing to commit + reload. Same shape as the edit-panel
+      // preview. 2026-06-05.
+      cell.classList.add('layered');
+      cell.innerHTML = `
+        <div class="pick-img-wrap">
+          <img class="layer" src="${BASE_SPRITE_URL}" alt="">
+          <img class="layer" src="${tileUrlDcssFull(path)}"
+               onerror="if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(path)}'}else{this.style.display='none'}">
+        </div>
+        <div class="pick-name">${shortName}</div>
+      `;
+    } else {
+      cell.innerHTML = `
+        <img src="${tileUrlDcssFull(path)}" onerror="if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(path)}'}else{this.parentElement.style.opacity='.3'}">
+        <div class="pick-name">${shortName}</div>
+      `;
+    }
+    cell.onclick = () => {
+      const it = items.find(x=>x.id===pickerItemId);
+      if (it) {
+        if (pickerMode === 'overlay') {
+          // Paperdoll overlay: store the bare stem (no .png) so it
+          // matches paperdoll_renderer's `stem + ".png"` concatenation.
+          const stem = path.split('/').pop().replace(/\.png$/, '');
+          setOverlayField(pickerItemId, stem);
+          const inp = document.getElementById('overlay-path-input');
+          if (inp) inp.value = stem;
+        } else {
+          // Inventory icon: resolve to the basename that's actually
+          // shipped under assets/tiles/items/. Some sprites
+          // live in subdirs (artefacts/, spells/) and some artefact
+          // weapons ship with a `wpn_` / `arm_` prefix that the DCSS
+          // atlas doesn't carry. shippedBasenameForAtlasKey handles
+          // all the variants. Falls back to the raw basename when the
+          // shipped manifest hasn't loaded.
+          const basename = shippedBasenameForAtlasKey(path) || path.split('/').pop();
+          setField(pickerItemId, 'tile', basename);
+          const inp = document.getElementById('tile-path-input');
+          if (inp) inp.value = basename;
+        }
+        refreshSpritePreviews(pickerItemId);
+      }
+      closePicker();
+    };
+    grid.appendChild(cell);
+  });
+  if (!grid.children.length) grid.innerHTML = '<div style="color:var(--muted);padding:16px">No tiles match</div>';
+}
+
+// Set the per-item paperdoll overlay override. Empty string deletes
+// the field so the resolver falls back to the inventory tile stem.
+function setOverlayField(id, val) {
+  const it = items.find(x => x.id === id);
+  if (!it) return;
+  const trimmed = String(val || '').trim();
+  if (trimmed === '') {
+    delete it.overlay;
+  } else {
+    it.overlay = trimmed;
+  }
+  dirty.add(id);
+}
+
+function clearOverlay(id) {
+  setOverlayField(id, '');
+  const inp = document.getElementById('overlay-path-input');
+  if (inp) inp.value = '';
+  refreshSpritePreviews(id);
+}
+
+// Re-resolve both preview <img> srcs from the live item state so an
+// inventory or overlay change updates without a full panel rebuild.
+// Picks up authored `default_tint` via the recolor preview filter
+// already on the elements.
+function refreshSpritePreviews(id) {
+  const it = items.find(x => x.id === id);
+  if (!it) return;
+  const inv = document.getElementById('edit-sprite-img');
+  if (inv) {
+    inv.dataset.f = ''; inv.dataset.s = '';
+    inv.src = tileUrl(it.tile || '');
+    inv.style.display = '';
+  }
+  const ov = document.getElementById('edit-overlay-img');
+  if (ov) {
+    ov.style.opacity = '1';
+    ov.title = '';
+    ov.dataset.fallbackStep = '0';
+    ov.dataset.invFallback = '';
+    ov.src = overlayUrl(it);
+  }
+  // Card thumbnail in the grid.
+  const cardImg = document.querySelector(`[data-id="${id}"] .sprite-wrap img`);
+  if (cardImg) {
+    cardImg.dataset.f = ''; cardImg.dataset.s = '';
+    cardImg.src = tileUrl(it.tile || '');
+    cardImg.style.display = '';
+  }
+}
+
+// ---------- Export ----------
+// Build the export payload for one item. Pre-fix this hand-listed an
+// allowlist of fields, which silently dropped everything else
+// (weapon damage_min/max/speed/damage_type/weapon_class, armor's
+// armor/evasion, spells' spell_cooldown/primary_stat,
+// requires_innate_tag, implicit_affixes, recolor_of, _balance_bumps).
+// Now: start from the full loaded item dict (which IS the
+// items.json shape — manifest sync mirrors items.json verbatim) and
+// drop only legacy / always-zero noise. Any new schema field added
+// to items.json automatically rides through.
+function exportableItem(it) {
+  const out = {};
+  for (const k of Object.keys(it)) {
+    const v = it[k];
+    // Legacy v1 stats — items.json v2 has weapon damage_min/max +
+    // armor/evasion instead. Drop atk/def/hp when zero so the export
+    // doesn't carry stale zeroes the runtime ignores anyway.
+    if ((k === 'atk' || k === 'def' || k === 'hp') && (!v || v === 0)) continue;
+    // Empty containers — keep schema clean.
+    if (Array.isArray(v) && v.length === 0 && k !== 'drop_weights' && k !== 'flavor_tags') continue;
+    if (v && typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length === 0) continue;
+    // Tints with no mode are no-ops.
+    if ((k === 'default_tint' || k === 'default_tint_overlay') && (!v || !v.mode || v.mode === 'none')) continue;
+    out[k] = v;
+  }
+  // Ensure the canonical-order required keys exist even if the loaded
+  // item is missing one — keeps every export entry shaped uniformly.
+  if (!('flavor_tags' in out)) out.flavor_tags = [];
+  if (!('drop_weights' in out)) out.drop_weights = [0,0,0,0,0];
+  if (!('lore' in out)) out.lore = '';
+  if (!('unique' in out)) out.unique = false;
+  return out;
+}
+
+// Field-by-field merge of an imported entry into the in-memory item.
+// The KEY rule: only OVERWRITE fields the import explicitly carries.
+// Anything missing from the import (because the exporter dropped it,
+// or the file is older than a schema bump) is left intact. This is
+// the inverse of the prior bug where a round-trip Export→Import
+// silently lost weapon stats / requires_innate_tag / implicit_affixes.
+function mergeImportedItem(target, incoming) {
+  for (const k of Object.keys(incoming)) {
+    // Skip metadata that's not a real schema field.
+    if (k.startsWith('_')) continue;
+    // Skip legacy v1 zeroes (atk/def/hp); items.json v2 doesn't carry
+    // them and the runtime ignores them.
+    if ((k === 'atk' || k === 'def' || k === 'hp') && (!incoming[k])) continue;
+    target[k] = incoming[k];
+  }
+  return target;
+}
+
+async function importJSON(event) {
+  const file = event.target.files && event.target.files[0];
+  // Reset the input so picking the same file twice still triggers change.
+  event.target.value = '';
+  if (!file) return;
+  let parsed;
+  try {
+    const text = await file.text();
+    parsed = JSON.parse(text);
+  } catch (e) {
+    setStatus('Import failed: ' + e.message, true);
+    return;
+  }
+  // Two payload shapes are accepted:
+  //   1. Bulk export — top-level has _slot + an items_<slot> array.
+  //   2. Single-item snapshot — top-level IS the item dict (has id+slot).
+  let importedItems = null;
+  let importedSlot = null;
+  if (Array.isArray(parsed)) {
+    importedItems = parsed;
+  } else if (parsed && typeof parsed === 'object') {
+    if (parsed._slot) importedSlot = parsed._slot;
+    // Find the array key — usually `items_<slot>`, but accept `items` too.
+    for (const k of Object.keys(parsed)) {
+      if (Array.isArray(parsed[k]) && parsed[k].length && parsed[k][0] && parsed[k][0].id) {
+        importedItems = parsed[k];
+        break;
+      }
+    }
+    if (!importedItems && parsed.id && parsed.slot) {
+      importedItems = [parsed];                    // single-item shape
+      importedSlot = importedSlot || parsed.slot;
+    }
+  }
+  if (!importedItems) {
+    setStatus('Import failed: no items[] array or single-item dict found in JSON.', true);
+    return;
+  }
+  // Slot-mismatch guard. The active slot's `items[]` is what we'll
+  // mutate; refuse to import a different slot's payload silently.
+  if (importedSlot && importedSlot !== activeSlot.id) {
+    if (!confirm(`Import file targets slot "${importedSlot}" but active slot is "${activeSlot.id}". Switch tabs first, or click OK to import anyway (only matching-slot items will land).`)) {
+      return;
+    }
+  }
+  // Diff: classify each imported entry as new / changed / unchanged.
+  const byId = new Map(items.map(x => [x.id, x]));
+  const planned = {new: [], changed: [], unchanged: [], wrongSlot: []};
+  for (const inc of importedItems) {
+    if (!inc || !inc.id) continue;
+    if (inc.slot && inc.slot !== activeSlot.id) {
+      planned.wrongSlot.push(inc.id);
+      continue;
+    }
+    const cur = byId.get(inc.id);
+    if (!cur) {
+      planned.new.push(inc);
+    } else {
+      // Test: would the merge actually change any field?
+      const probe = JSON.parse(JSON.stringify(cur));
+      mergeImportedItem(probe, inc);
+      if (JSON.stringify(probe) !== JSON.stringify(cur)) {
+        planned.changed.push({inc, cur});
+      } else {
+        planned.unchanged.push(inc.id);
+      }
+    }
+  }
+  // Confirm before applying. Skip the prompt when there's nothing to do.
+  const total = planned.new.length + planned.changed.length;
+  if (total === 0) {
+    setStatus(`Import: no changes (${planned.unchanged.length} unchanged, ${planned.wrongSlot.length} wrong-slot).`);
+    setTimeout(() => setStatus(''), 4000);
+    return;
+  }
+  const summary = [
+    `${planned.new.length} new item(s)`,
+    `${planned.changed.length} changed item(s)`,
+    `${planned.unchanged.length} unchanged`,
+    planned.wrongSlot.length ? `${planned.wrongSlot.length} skipped (wrong slot)` : null,
+  ].filter(Boolean).join(', ');
+  if (!confirm(`Import "${file.name}":\n\n${summary}\n\nApply now?`)) {
+    setStatus('Import cancelled.');
+    setTimeout(() => setStatus(''), 2400);
+    return;
+  }
+  // Apply.
+  for (const inc of planned.new) {
+    // Strip metadata keys (_balance_bumps etc are real schema; _note isn't).
+    const fresh = {};
+    mergeImportedItem(fresh, inc);
+    items.push(fresh);
+    dirty.add(inc.id);
+  }
+  for (const {inc, cur} of planned.changed) {
+    mergeImportedItem(cur, inc);
+    dirty.add(inc.id);
+  }
+  // Re-cache the per-slot state so a tab switch + back doesn't blow
+  // the imported edits away. Same shape switchSlot uses.
+  if (slotState[activeSlot.id]) {
+    slotState[activeSlot.id] = {manifest, items, dirty: new Set(dirty)};
+  }
+  closeEdit();
+  renderSidebar();
+  renderGrid();
+  updateSlotCount(activeSlot.id, items.length);
+  setStatus(`Imported "${file.name}" — ${summary}. Hit ⬇ Export to write items.json.`);
+  setTimeout(() => setStatus(''), 6000);
+}
+
+function exportJSON() {
+  // Build items.json-compatible slice for the active slot.
+  const slot = activeSlot;
+  const out = {
+    "_note": "Auto-generated by item_editor.html. Merge into data/items.json (the items[] array).",
+    "_generated": new Date().toISOString(),
+    "_slot": slot.id,
+    [slot.export_key]: items.map(exportableItem),
+  };
+
+  const blob = new Blob([JSON.stringify(out, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = slot.export_file;
+  a.click();
+  dirty.clear();
+  setStatus('Saved '+slot.export_file+' — share to submit, or drop into the game files.');
+  setTimeout(() => setStatus(''), 4000);
+  renderSidebar();
+  renderGrid();
+}
+
+// One-item snapshot — the same shape items.json's items[] entries
+// have, so a reviewer can paste it straight into the array. Used by
+// the share-back loop where someone authors ONE item and posts it.
+function singleItemPayload(it) {
+  // Reuse the shared exporter so single-item payloads carry the same
+  // schema-preserving fields as the bulk export.
+  const payload = exportableItem(it);
+  // Make sure slot is filled in — single-item payloads are sometimes
+  // pasted into items.json by hand.
+  if (!payload.slot) payload.slot = activeSlot.id;
+  // Legacy callers expected explicit zeros for atk/def/hp on the
+  // share-back snapshot. Nothing reads them anymore; keeping the
+  // payload clean.
+  return payload;
+}
+
+// Removed: hand-listed export allowlist that silently dropped
+// weapon stats / armor stats / spell stats / requires_innate_tag /
+// implicit_affixes / recolor_of. exportableItem() above replaces it.
+
+function exportSingleItem() {
+  if (!selectedId) return;
+  const it = items.find(x => x.id === selectedId);
+  if (!it) return;
+  const json = JSON.stringify(singleItemPayload(it), null, 2) + '\n';
+  const blob = new Blob([json], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `item_${it.id}.json`;
+  a.click();
+  setStatus('Exported item_'+it.id+'.json');
+  setTimeout(() => setStatus(''), 2400);
+}
+
+async function copySingleItemToClipboard() {
+  if (!selectedId) return;
+  const it = items.find(x => x.id === selectedId);
+  if (!it) return;
+  const json = JSON.stringify(singleItemPayload(it), null, 2) + '\n';
+  try {
+    await navigator.clipboard.writeText(json);
+    setStatus('Copied "'+it.id+'" JSON to clipboard.');
+    setTimeout(() => setStatus(''), 2400);
+  } catch (e) {
+    setStatus('Clipboard write blocked — use ⬇ Export instead.', true);
+    setTimeout(() => setStatus(''), 3500);
+  }
+}
+
+// ---------- Drop weight visualiser legend ----------
+function renderDropLegend() {
+  // Shown in topbar
+  const legend = TIER_COLORS.slice(1).map((c,i) =>
+    `<span style="display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--muted)">
+      <span style="width:10px;height:10px;border-radius:50%;background:${c};display:inline-block"></span>T${i+1}
+    </span>`
+  ).join(' ');
+  const el = document.createElement('div');
+  el.style = 'display:flex;gap:6px;align-items:center;font-size:11px;color:var(--muted)';
+  el.innerHTML = 'Drop bar: ' + legend;
+  document.getElementById('topbar').insertBefore(el, document.getElementById('topbar').querySelector('.spacer'));
+}
+
+init().then(renderDropLegend);
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>

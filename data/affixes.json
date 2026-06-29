@@ -1,0 +1,4673 @@
+{
+  "_doc": "Item-overhaul v2 affixes (2026-06-04). Three families: generic (apply to any spell + any gear), class (boost one Str/Dex/Int spell class), archetype (per-spell uniques, only via implicit_affixes). Tiers are [min, max] 2-arrays per rarity (common\u2192legendary) so each affix rolls a real range. AffixSystem.roll_affixes_for picks an integer in [min, max] inclusive at the correct rarity tier. Range damage affixes (e.g. of_embers) emit two values: bonus_min and bonus_max for the X-Y damage line in tooltips. The 'kind' field on each affix tells the formatter how to display it ('flat', 'pct', 'range', 'flag').",
+  "_format_version": 3,
+  "rarity_affix_count": {
+    "common": 1,
+    "uncommon": 2,
+    "rare": 3,
+    "epic": 4,
+    "legendary": 5
+  },
+  "rarity_tier_index": {
+    "common": 0,
+    "uncommon": 1,
+    "rare": 2,
+    "epic": 3,
+    "legendary": 4
+  },
+  "affixes": [
+    {
+      "id": "of_might",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Might",
+      "stat": "str",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "weapon",
+        "armor",
+        "boots",
+        "shield"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_finesse",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Finesse",
+      "stat": "dex",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "weapon",
+        "armor",
+        "boots",
+        "shield"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_wisdom",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Wisdom",
+      "stat": "int",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "weapon",
+        "armor",
+        "boots",
+        "shield",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_vitality",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Vitality",
+      "stat": "hp",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "cloak",
+        "armor",
+        "boots"
+      ],
+      "tiers": [
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          32
+        ],
+        [
+          32,
+          55
+        ],
+        [
+          55,
+          90
+        ],
+        [
+          90,
+          130
+        ]
+      ]
+    },
+    {
+      "id": "of_the_bear",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Bear",
+      "stat": "armor",
+      "applies_to": [
+        "helm",
+        "cloak",
+        "armor",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          20,
+          35
+        ]
+      ]
+    },
+    {
+      "id": "of_the_cat",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Cat",
+      "stat": "evasion",
+      "applies_to": [
+        "cloak",
+        "boots",
+        "gloves",
+        "helm"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          14,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "of_quickcast",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Quickcast",
+      "stat": "spell_cdr_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          16,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "of_resonance",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Resonance",
+      "stat": "spell_area_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          40,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "of_lingering",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Lingering",
+      "stat": "spell_duration_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          8,
+          15
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          25,
+          35
+        ],
+        [
+          35,
+          50
+        ],
+        [
+          50,
+          65
+        ]
+      ]
+    },
+    {
+      "id": "of_velocity",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Velocity",
+      "stat": "spell_proj_speed_pct",
+      "applies_to": [
+        "gloves",
+        "ring",
+        "amulet",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          8,
+          15
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          25,
+          35
+        ],
+        [
+          35,
+          50
+        ],
+        [
+          50,
+          65
+        ]
+      ]
+    },
+    {
+      "id": "of_multicast",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Multicast",
+      "stat": "spell_proj_bonus",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "of_channeling",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Channeling",
+      "stat": "spell_damage_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          30
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          45,
+          65
+        ]
+      ]
+    },
+    {
+      "id": "of_sharpness",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Sharpness",
+      "stat": "physical_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          12,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "of_embers",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Embers",
+      "stat": "fire_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_frost",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Frost",
+      "stat": "cold_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_storms",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Storms",
+      "stat": "lightning_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_devotion",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Devotion",
+      "stat": "holy_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_venom",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Venom",
+      "stat": "poison_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_shadows",
+      "family": "generic",
+      "kind": "range",
+      "name": "of Shadows",
+      "stat": "dark_extra",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring",
+        "amulet",
+        "helm",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_fire_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Fire Resistance",
+      "stat": "fire_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_cold_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Cold Resistance",
+      "stat": "cold_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_lightning_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Lightning Resistance",
+      "stat": "lightning_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_holy_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Holy Resistance",
+      "stat": "holy_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_poison_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Poison Resistance",
+      "stat": "poison_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_dark_resist",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Dark Resistance",
+      "stat": "dark_res",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "ring",
+        "amulet",
+        "boots",
+        "gloves",
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_crit",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Crit",
+      "stat": "crit_chance",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "gloves",
+        "weapon",
+        "helm"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          16,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "of_haste",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Haste",
+      "stat": "haste_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "gloves",
+        "boots",
+        "cloak",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          3,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          24,
+          32
+        ]
+      ]
+    },
+    {
+      "id": "of_lifesteal",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Lifesteal",
+      "stat": "lifesteal_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_regen",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Regen",
+      "stat": "hp_regen",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "cloak",
+        "armor",
+        "boots",
+        "helm"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "of_str_mastery",
+      "family": "class",
+      "kind": "pct",
+      "name": "of Strength Mastery",
+      "stat": "str_spell_dmg_pct",
+      "applies_to": [
+        "helm",
+        "amulet",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          40,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "of_dex_mastery",
+      "family": "class",
+      "kind": "pct",
+      "name": "of Dexterity Mastery",
+      "stat": "dex_spell_dmg_pct",
+      "applies_to": [
+        "helm",
+        "amulet",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          40,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "of_int_mastery",
+      "family": "class",
+      "kind": "pct",
+      "name": "of Intelligence Mastery",
+      "stat": "int_spell_dmg_pct",
+      "applies_to": [
+        "helm",
+        "amulet",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          40,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "bleeding_edge",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Bleeding Edge",
+      "stat": "spell_axes_bleed",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "comet_trail",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Comet Trail",
+      "stat": "spell_fireball_ground",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "frostbite",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Frostbite",
+      "stat": "spell_frost_root",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "storm_brand",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Storm Brand",
+      "stat": "spell_chain_extra_jumps",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "radiance",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Radiance",
+      "stat": "spell_holy_radiance",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "splintering_volley",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Splintering Volley",
+      "stat": "spell_dart_split",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "earthbreaker",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Earthbreaker",
+      "stat": "spell_iron_dust",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "blinding_grit",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Blinding Grit",
+      "stat": "spell_sandblast_blind",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "ravenous",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Ravenous",
+      "stat": "spell_drain_buff",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "aftershock",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "Aftershock",
+      "stat": "spell_shatter_aftershock",
+      "applies_to": [
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_pyromancer",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Pyromancer",
+      "stat": "fire_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_cryomancer",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Cryomancer",
+      "stat": "cold_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_thundercaller",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Thundercaller",
+      "stat": "lightning_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_zealot",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Zealot",
+      "stat": "holy_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_pestcaller",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Pestcaller",
+      "stat": "poison_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_nightcaller",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Nightcaller",
+      "stat": "dark_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_sage",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Sage",
+      "stat": "sage_per_unspent_pct",
+      "applies_to": [
+        "amulet",
+        "helm",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          20,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "of_berserker",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Berserker",
+      "stat": "berserker_peak_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "boots"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          16,
+          20
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_raging",
+          "label": "Berserker: HP low + peak ramp active",
+          "type": "bool",
+          "impl": "of_berserker:is_raging"
+        }
+      ]
+    },
+    {
+      "id": "of_hunter",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Hunter",
+      "stat": "hunter_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet",
+        "spell"
+      ],
+      "tiers": [
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          18,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "of_echoes",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Echoes",
+      "stat": "echo_every_n",
+      "applies_to": [
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          8,
+          8
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "of_tempest",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Tempest",
+      "stat": "tempest_dmg_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "ring"
+      ],
+      "tiers": [
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          26
+        ],
+        [
+          26,
+          34
+        ],
+        [
+          34,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "of_sundering",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Sundering",
+      "stat": "sundering_per_stack",
+      "applies_to": [
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          9,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_bloodletting",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Bloodletting",
+      "stat": "bloodletting_per_stack",
+      "applies_to": [
+        "weapon",
+        "ring",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "of_plunder",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Plunder",
+      "stat": "gold_drop_pct",
+      "applies_to": [
+        "amulet",
+        "cloak"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          20,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_avarice",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Avarice",
+      "stat": "gold_pickup_radius_cells",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "cloak",
+        "gloves",
+        "boots"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "of_scribe",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Scribe",
+      "stat": "spell_tome_drop_pct",
+      "applies_to": [
+        "helm",
+        "amulet",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          14,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "of_berserker_rage",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Berserker's Rage",
+      "stat": "str_dmg_per5_peak_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          4,
+          6
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          20,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "of_synergy",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Synergy",
+      "stat": "synergy_pct",
+      "applies_to": [
+        "amulet",
+        "spell",
+        "ring"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          10,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_executioner",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Executioner",
+      "stat": "crit_multiplier_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "gloves",
+        "weapon",
+        "helm"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "of_warding",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Warding",
+      "stat": "block_chance",
+      "applies_to": [
+        "shield",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "of_bulwark",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Bulwark",
+      "stat": "block_amount",
+      "applies_to": [
+        "shield",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          11,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "of_bleed_on_miss",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Sickle",
+      "stat": "bleed_on_miss",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_prospecting",
+      "family": "archetype",
+      "kind": "pct",
+      "name": "of Prospecting",
+      "stat": "gold_drop_pct",
+      "applies_to": [
+        "weapon",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          10,
+          10
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          25,
+          25
+        ],
+        [
+          30,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "of_dancing",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Dance",
+      "stat": "dancing_blade",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_polymorph",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of Polymorph",
+      "stat": "polymorph_first_kill",
+      "applies_to": [
+        "amulet"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_wolf_kinship",
+      "family": "archetype",
+      "kind": "pct",
+      "name": "of Wolf Kinship",
+      "stat": "wolf_kinship_pct",
+      "applies_to": [
+        "gloves"
+      ],
+      "tiers": [
+        [
+          8,
+          10
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          22,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "of_holy_anchor",
+      "family": "archetype",
+      "kind": "flat",
+      "name": "of Holy Anchor",
+      "stat": "anchor_regen",
+      "applies_to": [
+        "helm"
+      ],
+      "tiers": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "of_serpent_growth",
+      "family": "archetype",
+      "kind": "flat",
+      "name": "of Serpent Growth",
+      "stat": "hp_per_kill_cap",
+      "applies_to": [
+        "cloak"
+      ],
+      "tiers": [
+        [
+          120,
+          120
+        ],
+        [
+          160,
+          160
+        ],
+        [
+          200,
+          200
+        ],
+        [
+          260,
+          260
+        ],
+        [
+          330,
+          330
+        ]
+      ]
+    },
+    {
+      "id": "of_tidesong",
+      "family": "archetype",
+      "kind": "pct",
+      "name": "of Tidesong",
+      "stat": "tidesong_water_pct",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          15,
+          15
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          25,
+          25
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_serpent_venom",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of Serpent Venom",
+      "stat": "venom_on_hit",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_phylactery",
+      "family": "archetype",
+      "kind": "pct",
+      "name": "of the Phylactery",
+      "stat": "phylactery_revive_pct",
+      "applies_to": [
+        "amulet"
+      ],
+      "tiers": [
+        [
+          15,
+          15
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          25,
+          25
+        ],
+        [
+          30,
+          30
+        ],
+        [
+          35,
+          35
+        ]
+      ]
+    },
+    {
+      "id": "of_vault_key",
+      "family": "archetype",
+      "kind": "flat",
+      "name": "of the Vault Key",
+      "stat": "extra_chests_per_floor",
+      "applies_to": [
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_five_heads",
+      "family": "archetype",
+      "kind": "pct",
+      "name": "of the Five Heads",
+      "stat": "fifth_cast_pct",
+      "applies_to": [
+        "helm"
+      ],
+      "tiers": [
+        [
+          8,
+          10
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          22,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "of_executioner_pact",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Executioner's Pact",
+      "stat": "low_hp_target_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          26,
+          32
+        ],
+        [
+          32,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_glass_cannon",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Glass Cannon",
+      "stat": "glass_cannon_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          6,
+          10
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          25,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "of_revenant",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Revenant",
+      "stat": "low_hp_dr_pct",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "boots"
+      ],
+      "tiers": [
+        [
+          5,
+          8
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          25,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "of_kingslayer",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Kingslayer",
+      "stat": "boss_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet",
+        "spell"
+      ],
+      "tiers": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          26,
+          32
+        ],
+        [
+          32,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_butcher",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Butcher",
+      "stat": "pack_dmg_per_enemy_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "of_unbroken",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Unbroken",
+      "stat": "full_hp_armor_pct",
+      "applies_to": [
+        "armor",
+        "shield",
+        "helm"
+      ],
+      "tiers": [
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ],
+        [
+          45,
+          60
+        ],
+        [
+          60,
+          75
+        ]
+      ]
+    },
+    {
+      "id": "of_serrated_edge",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Serrated Edge",
+      "stat": "weapon_bleed_per_sec",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    {
+      "id": "of_zealous_strike",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Zealous Strike",
+      "stat": "holy_dot_per_sec",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          13,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "of_avenger",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Avenger",
+      "stat": "revenge_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring"
+      ],
+      "tiers": [
+        [
+          10,
+          15
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          28,
+          35
+        ],
+        [
+          35,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_first_strike",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the First Strike",
+      "stat": "first_hit_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          18,
+          28
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          48,
+          65
+        ],
+        [
+          65,
+          85
+        ],
+        [
+          85,
+          110
+        ]
+      ]
+    },
+    {
+      "id": "of_drainblade",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Drainblade",
+      "stat": "hp_per_kill_flat",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          18,
+          24
+        ]
+      ]
+    },
+    {
+      "id": "of_armor_breaker",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Armor Breaker",
+      "stat": "melee_armor_pen_pct",
+      "applies_to": [
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          6,
+          10
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          28,
+          36
+        ]
+      ]
+    },
+    {
+      "id": "of_unwavering_focus",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Unwavering Focus",
+      "stat": "spell_resist_pen_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          6,
+          8
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          26,
+          35
+        ]
+      ]
+    },
+    {
+      "id": "of_hunter_mark",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Hunter's Mark",
+      "stat": "crit_mark_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "ring",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          25,
+          32
+        ],
+        [
+          32,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_recoup",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Recoup",
+      "stat": "recoup_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "cloak",
+        "helm"
+      ],
+      "tiers": [
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          17,
+          22
+        ],
+        [
+          22,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "of_smoldering_step",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Smoldering Step",
+      "stat": "move_spell_dmg_pct",
+      "applies_to": [
+        "boots",
+        "cloak"
+      ],
+      "tiers": [
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          25,
+          32
+        ],
+        [
+          32,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_thorns",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Thorns",
+      "stat": "thorns_flat",
+      "applies_to": [
+        "armor",
+        "shield",
+        "helm",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          15,
+          20
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:has_thorn_return",
+          "label": "Thorns: any return-damage source equipped",
+          "type": "bool",
+          "impl": "of_thorns:has_thorn_return"
+        }
+      ]
+    },
+    {
+      "id": "of_aegis_thorns",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Aegis Thorns",
+      "stat": "block_thorns_flat",
+      "applies_to": [
+        "shield"
+      ],
+      "tiers": [
+        [
+          5,
+          8
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          16,
+          22
+        ],
+        [
+          22,
+          30
+        ],
+        [
+          30,
+          42
+        ]
+      ]
+    },
+    {
+      "id": "of_vulnerability_mark",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Vulnerability Mark",
+      "stat": "first_hit_mark_pct",
+      "applies_to": [
+        "weapon"
+      ],
+      "tiers": [
+        [
+          6,
+          8
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          18,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_doomstrike",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Doomstrike",
+      "stat": "doomstrike_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring"
+      ],
+      "tiers": [
+        [
+          30,
+          45
+        ],
+        [
+          45,
+          60
+        ],
+        [
+          60,
+          75
+        ],
+        [
+          75,
+          90
+        ],
+        [
+          85,
+          100
+        ]
+      ]
+    },
+    {
+      "id": "of_riposte_strike",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Riposte Strike",
+      "stat": "riposte_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          25,
+          30
+        ],
+        [
+          30,
+          38
+        ],
+        [
+          38,
+          46
+        ],
+        [
+          46,
+          54
+        ],
+        [
+          54,
+          60
+        ]
+      ]
+    },
+    {
+      "id": "of_overflowing_chalice",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Overflowing Chalice",
+      "stat": "high_hp_cdr_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          15,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "of_tactician",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Tactician",
+      "stat": "kill_streak_cdr_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "ring",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "of_chainspark",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Chainspark",
+      "stat": "crit_chain_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring"
+      ],
+      "tiers": [
+        [
+          15,
+          20
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          28,
+          36
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          50
+        ]
+      ]
+    },
+    {
+      "id": "of_warden_step",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Warden Step",
+      "stat": "step_pulse_pct",
+      "applies_to": [
+        "boots",
+        "cloak"
+      ],
+      "tiers": [
+        [
+          20,
+          28
+        ],
+        [
+          28,
+          38
+        ],
+        [
+          38,
+          50
+        ],
+        [
+          50,
+          65
+        ],
+        [
+          65,
+          80
+        ]
+      ]
+    },
+    {
+      "id": "of_abundance",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Abundance",
+      "stat": "loot_quantity_pct",
+      "applies_to": [
+        "amulet",
+        "cloak",
+        "ring"
+      ],
+      "tiers": [
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          25,
+          32
+        ]
+      ]
+    },
+    {
+      "id": "of_obstinance",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Obstinance",
+      "stat": "damage_taken_pct",
+      "applies_to": [
+        "armor",
+        "helm",
+        "cloak",
+        "boots",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "of_lingering_pestilence",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Lingering Pestilence",
+      "stat": "dot_duration_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          25,
+          40
+        ],
+        [
+          40,
+          55
+        ],
+        [
+          55,
+          70
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:has_long_dot",
+          "label": "DoT extension: dot_duration_pct > 0",
+          "type": "bool",
+          "impl": "of_lingering_pestilence:has_long_dot"
+        }
+      ]
+    },
+    {
+      "id": "of_unique_slayer",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Unique Slayer",
+      "stat": "damage_vs_unique_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          20,
+          26
+        ],
+        [
+          26,
+          32
+        ],
+        [
+          32,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_desperation",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Desperation",
+      "stat": "low_hp_dmg_pct",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "amulet",
+        "ring"
+      ],
+      "tiers": [
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          25,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "of_devastation",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Devastation",
+      "stat": "crit_multiplier_pct",
+      "applies_to": [
+        "ring",
+        "cloak",
+        "boots"
+      ],
+      "tiers": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          14,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "of_iron_aegis",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Iron Aegis",
+      "stat": "block_chance",
+      "applies_to": [
+        "gloves",
+        "helm"
+      ],
+      "tiers": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          15
+        ]
+      ]
+    },
+    {
+      "id": "of_steadfast",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Steadfast",
+      "stat": "block_amount",
+      "applies_to": [
+        "armor",
+        "boots",
+        "helm"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "of_arcane_pool",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Arcane Pool",
+      "stat": "mana_max_flat",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "ring",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_arcane_flow",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Arcane Flow",
+      "stat": "mana_regen_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "ring",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          25,
+          35
+        ]
+      ]
+    },
+    {
+      "id": "of_meditation",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Meditation",
+      "stat": "mana_regen_flat",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "of_thrift",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Thrift",
+      "stat": "mana_cost_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          -5,
+          -3
+        ],
+        [
+          -8,
+          -5
+        ],
+        [
+          -12,
+          -8
+        ],
+        [
+          -18,
+          -12
+        ],
+        [
+          -25,
+          -18
+        ]
+      ]
+    },
+    {
+      "id": "of_arcane_battery",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Arcane Battery",
+      "stat": "mana_floor_start_flat",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_overflow_strike",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Overflow Strike",
+      "stat": "mana_on_hit_flat",
+      "applies_to": [
+        "weapon",
+        "gloves"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          8
+        ]
+      ]
+    },
+    {
+      "_doc": "Tier 2 mana-rework 2026-06-17 \u2014 aurastacker / archmage affix lane. of_zeal reduces aura reservation cost so a small-pool build can fit more auras. of_archmage scales spell damage with cast cost \u2014 the aurastacker payoff (gives up pool to fit auras \u2192 bigger casts hit proportionally harder). Both route through existing caps so number ceiling holds.",
+      "id": "of_zeal",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Zeal",
+      "stat": "aura_reservation_pct",
+      "applies_to": [
+        "helm",
+        "armor",
+        "gloves",
+        "amulet",
+        "cloak",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          -10,
+          -8
+        ],
+        [
+          -15,
+          -12
+        ],
+        [
+          -22,
+          -17
+        ],
+        [
+          -30,
+          -23
+        ],
+        [
+          -40,
+          -30
+        ]
+      ]
+    },
+    {
+      "id": "of_archmage",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Archmage",
+      "stat": "archmage_per_mana_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "spell",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          0.4,
+          0.6
+        ],
+        [
+          0.6,
+          0.9
+        ],
+        [
+          0.9,
+          1.3
+        ],
+        [
+          1.3,
+          1.7
+        ],
+        [
+          1.7,
+          2.2
+        ]
+      ]
+    },
+    {
+      "_doc": "Tier 3 mana-rework 2026-06-17 \u2014 build-expression affixes. Each enables a distinct caster archetype. high_tide rewards keeping the pool topped (Battlemage). siphon refunds mana on spell-hit (Sustain). clarity gives free-cast procs (lucky-feeling). mind_over_matter converts mana into a damage shield (Tanky-Mage). overflow_strike+evade complete the STR/DEX sustain stories.",
+      "id": "of_high_tide",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the High Tide",
+      "stat": "high_mana_spell_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "spell",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          22,
+          30
+        ],
+        [
+          30,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "of_arcane_siphon",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of the Arcane Siphon",
+      "stat": "mana_on_spell_hit_flat",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "of_arcane_clarity",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Arcane Clarity",
+      "stat": "free_cast_proc_pct",
+      "applies_to": [
+        "spell",
+        "amulet",
+        "helm",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          16,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "of_mind_over_matter",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of Mind over Matter",
+      "stat": "mana_shield_pct",
+      "applies_to": [
+        "helm",
+        "amulet",
+        "cloak",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          10,
+          12
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          22,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "of_overflow_evade",
+      "family": "generic",
+      "kind": "flat",
+      "name": "of Overflow Evade",
+      "stat": "mana_on_evade_flat",
+      "applies_to": [
+        "boots",
+        "cloak"
+      ],
+      "tiers": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          8
+        ]
+      ]
+    },
+    {
+      "_doc": "PLAYTEST 2026-06-15 #28 + 2026-06-11sec #15 \u2014 visual-flair affixes. Lift prismatic/inverse/twisted/umbral from authored items to rollable affixes. flag-kind: writes a boolean stat on the bot at recompute. Visual rendering reads the stat via UITheme.flavor_color_for / item_cell.gd's flavor-tag pipeline. Mechanic: actor.gd reads each visual_* field from the bot. Common+ across slots so any drop can roll prestige.",
+      "id": "of_umbral",
+      "family": "generic",
+      "kind": "flag",
+      "name": "of Umbra",
+      "stat": "visual_umbral",
+      "applies_to": [
+        "weapon",
+        "armor",
+        "helm",
+        "cloak",
+        "gloves",
+        "boots",
+        "ring",
+        "amulet",
+        "shield",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_twisted",
+      "family": "generic",
+      "kind": "flag",
+      "name": "of Twist",
+      "stat": "visual_twisted",
+      "applies_to": [
+        "weapon",
+        "armor",
+        "helm",
+        "cloak",
+        "gloves",
+        "boots",
+        "ring",
+        "amulet",
+        "shield",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_prismatic",
+      "family": "generic",
+      "kind": "flag",
+      "name": "of Prism",
+      "stat": "visual_prismatic",
+      "applies_to": [
+        "weapon",
+        "armor",
+        "helm",
+        "cloak",
+        "gloves",
+        "boots",
+        "ring",
+        "amulet",
+        "shield",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_inverse",
+      "family": "generic",
+      "kind": "flag",
+      "name": "of Inversion",
+      "stat": "visual_inverse",
+      "applies_to": [
+        "weapon",
+        "armor",
+        "helm",
+        "cloak",
+        "gloves",
+        "boots",
+        "ring",
+        "amulet",
+        "shield",
+        "spell"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "of_kiter",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Kiter",
+      "stat": "is_kiting_flag",
+      "applies_to": [
+        "boots",
+        "cloak",
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_kiting",
+          "label": "Kiter: enemy near AND flee-vector exists",
+          "type": "bool",
+          "impl": "of_kiter:is_kiting"
+        }
+      ]
+    },
+    {
+      "id": "of_executioner_doctrine",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Executioner",
+      "stat": "is_executing_flag",
+      "applies_to": [
+        "weapon",
+        "gloves",
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_executing",
+          "label": "Executioner: target HP below finisher threshold",
+          "type": "bool",
+          "impl": "of_executioner_doctrine:is_executing"
+        }
+      ]
+    },
+    {
+      "id": "of_glass_cannon_doctrine",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Glass Cannon",
+      "stat": "is_glass_cannon_flag",
+      "applies_to": [
+        "weapon",
+        "ring",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_glass_cannon",
+          "label": "Glass Cannon: bot HP at full-strength threshold",
+          "type": "bool",
+          "impl": "of_glass_cannon_doctrine:is_glass_cannon"
+        }
+      ]
+    },
+    {
+      "id": "of_hunter_doctrine",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Hunter",
+      "stat": "is_hunting_boss_flag",
+      "applies_to": [
+        "weapon",
+        "amulet",
+        "helm"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_hunting_boss",
+          "label": "Hunter: bound target is a boss",
+          "type": "bool",
+          "impl": "of_hunter_doctrine:is_hunting_boss"
+        }
+      ]
+    },
+    {
+      "id": "of_pacifist",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Pacifist",
+      "stat": "is_pacifist_flag",
+      "applies_to": [
+        "boots",
+        "cloak",
+        "ring"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_pacifist",
+          "label": "Pacifist: no enemy adjacent",
+          "type": "bool",
+          "impl": "of_pacifist:is_pacifist"
+        }
+      ]
+    },
+    {
+      "id": "of_grinder",
+      "family": "archetype",
+      "kind": "flag",
+      "name": "of the Grinder",
+      "stat": "is_grinding_flag",
+      "applies_to": [
+        "cloak",
+        "boots",
+        "amulet"
+      ],
+      "tiers": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "predicates": [
+        {
+          "id": "AFFIX:is_grinding",
+          "label": "Grinder: enemies alive or loot visible on floor",
+          "type": "bool",
+          "impl": "of_grinder:is_grinding"
+        }
+      ]
+    }
+  ]
+}

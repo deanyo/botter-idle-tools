@@ -1,0 +1,440 @@
+{
+  "_doc": "Botter species roster \u2014 DCSS-faithful subset. Primary axes are str/dex/int (added 2026-06-04 with the autocast-spells pivot). str scales melee damage + max HP, dex scales crit + haste, int scales spell damage + spell area + DoT effectiveness. Each species adds str_flat/dex_flat/int_flat to the base 5/5/5 starting allocation. Existing pct multipliers (hp_pct, atk_pct, def_pct, haste_pct) stay as innate-species multipliers on top of the derived stats \u2014 back-compat with all existing balance work. Picked at character creation; locked per character.",
+  "_format_version": 2,
+  "species": [
+    {
+      "id": "human",
+      "name": "Human",
+      "sprite": "human_female.png",
+      "lore": "Versatile and unremarkable. The baseline against which all others are measured. Slight XP boost from adaptability.",
+      "hp_pct": 0,
+      "atk_pct": 0,
+      "def_pct": 0,
+      "haste_pct": 0,
+      "crit_flat": 0,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 5,
+      "loot_pct": 0,
+      "innate_tags": [
+        "human"
+      ],
+      "str_flat": 1,
+      "dex_flat": 1,
+      "int_flat": 1,
+      "signature": {
+        "id": "human_flexibility",
+        "kind": "highest_stat_pct",
+        "value": 5,
+        "desc": "+5% to your highest primary stat (auto-detects build)."
+      }
+    },
+    {
+      "id": "spriggan",
+      "name": "Spriggan",
+      "sprite": "spriggan_female.png",
+      "lore": "Forest-folk. Tiny and frail, but blindingly fast \u2014 both in step and in swing. The bot's original silhouette.",
+      "hp_pct": -30,
+      "atk_pct": -10,
+      "def_pct": 10,
+      "haste_pct": 20,
+      "crit_flat": 5,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "forest",
+        "fae"
+      ],
+      "str_flat": -2,
+      "dex_flat": 5,
+      "int_flat": 1,
+      "signature": {
+        "id": "spriggan_quickfoot",
+        "kind": "evasion_flat",
+        "value": 8,
+        "desc": "+8% innate evasion (small-creature dodge)."
+      }
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "sprite": "minotaur_male.png",
+      "lore": "Born to fight. Crushing strength, thick hide, slower swings than humans but each one bites deeper.",
+      "hp_pct": 10,
+      "atk_pct": 20,
+      "def_pct": 0,
+      "haste_pct": -5,
+      "crit_flat": 10,
+      "regen_flat": 0,
+      "aggro_flat": 1,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "bovine",
+        "champion"
+      ],
+      "str_flat": 5,
+      "dex_flat": 0,
+      "int_flat": -2,
+      "signature": {
+        "id": "minotaur_brute_swing",
+        "kind": "every_nth_armor_pen",
+        "value": 5,
+        "desc": "Every 5th hit ignores enemy armor entirely."
+      }
+    },
+    {
+      "id": "naga",
+      "name": "Naga",
+      "sprite": "naga_female.png",
+      "lore": "Coiled serpent-folk. Heavy frame, slow on the move, but recovers wounds with quiet patience. Cannot wear boots \u2014 no feet to put them on.",
+      "hp_pct": 20,
+      "atk_pct": 0,
+      "def_pct": 10,
+      "haste_pct": -15,
+      "crit_flat": 0,
+      "regen_flat": 0.5,
+      "aggro_flat": -1,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "serpentine",
+        "coldblooded"
+      ],
+      "slot_conversions": {
+        "boots": "ring"
+      },
+      "str_flat": 3,
+      "dex_flat": -2,
+      "int_flat": 3,
+      "signature": {
+        "id": "naga_serpent_blood",
+        "kind": "poison_immune_threshold",
+        "value": 100,
+        "desc": "100% poison resistance threshold + immune to slow."
+      }
+    },
+    {
+      "id": "tengu",
+      "name": "Tengu",
+      "sprite": "tengu_wingless_brown_female.png",
+      "lore": "Crow-folk. Quick on the wing, sharp of eye. Aggressive and frail \u2014 strikes first, dies first.",
+      "hp_pct": -10,
+      "atk_pct": 0,
+      "def_pct": -10,
+      "haste_pct": 15,
+      "crit_flat": 5,
+      "regen_flat": 0,
+      "aggro_flat": 1,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "avian",
+        "windborn"
+      ],
+      "str_flat": 0,
+      "dex_flat": 4,
+      "int_flat": 0,
+      "signature": {
+        "id": "tengu_swift_arrow",
+        "kind": "spell_proj_speed_flat",
+        "value": 25,
+        "desc": "+25% projectile speed for spells (sky-blooded reflexes)."
+      }
+    },
+    {
+      "id": "troll",
+      "name": "Troll",
+      "sprite": "troll_male.png",
+      "lore": "Ravenous regenerators. Knit flesh as fast as enemies tear it. Slow learners, but they outlast everything.",
+      "hp_pct": 30,
+      "atk_pct": 10,
+      "def_pct": -5,
+      "haste_pct": -10,
+      "crit_flat": 0,
+      "regen_flat": 1.5,
+      "aggro_flat": 0,
+      "xp_pct": -10,
+      "loot_pct": 0,
+      "innate_tags": [
+        "regen",
+        "primal"
+      ],
+      "str_flat": 5,
+      "dex_flat": -2,
+      "int_flat": -3,
+      "signature": {
+        "id": "troll_inverted_regen",
+        "kind": "missing_hp_regen_pct",
+        "value": 4,
+        "desc": "Regen scales with missing HP \u2014 at 0% HP regens at +4\u00d7 base rate (DCSS troll shape)."
+      }
+    },
+    {
+      "id": "octopode",
+      "name": "Octopode",
+      "sprite": "octopode_1.png",
+      "lore": "Tentacled scavengers. No torso for armor, no feet for boots, no head for helms \u2014 but tentacles for trinkets. Fortune-favored finders.",
+      "hp_pct": -5,
+      "atk_pct": 0,
+      "def_pct": -5,
+      "haste_pct": 0,
+      "crit_flat": 5,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 20,
+      "innate_tags": [
+        "aquatic",
+        "many-armed"
+      ],
+      "slot_conversions": {
+        "armor": "ring",
+        "boots": "ring",
+        "helm": "ring"
+      },
+      "str_flat": 1,
+      "dex_flat": 2,
+      "int_flat": 1,
+      "signature": {
+        "id": "octopode_eight_arms",
+        "kind": "ring_dr_skip",
+        "value": 0,
+        "desc": "Ring affixes ignore per-affix-id DR with each other (rings stack at full effectiveness)."
+      }
+    },
+    {
+      "id": "demonspawn",
+      "name": "Demonspawn",
+      "sprite": "demonspawn_red_male.png",
+      "lore": "Born of mortal flesh and infernal fire. Sharp claws, sharper instincts. Hated by the holy.",
+      "hp_pct": 0,
+      "atk_pct": 10,
+      "def_pct": 0,
+      "haste_pct": 0,
+      "crit_flat": 10,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 10,
+      "loot_pct": 0,
+      "innate_tags": [
+        "demon"
+      ],
+      "str_flat": 2,
+      "dex_flat": 1,
+      "int_flat": 1,
+      "signature": {
+        "id": "demonspawn_hellfire_pact",
+        "kind": "fire_pact",
+        "value": 25,
+        "params": {
+          "holy_taken_pct": 25
+        },
+        "desc": "+25% fire-spell damage. Take +25% holy damage."
+      }
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "sprite": "vampire_female.png",
+      "lore": "Undying drinker of the living. Drains life from every strike. Slow to bleed.",
+      "hp_pct": -5,
+      "atk_pct": 5,
+      "def_pct": 0,
+      "haste_pct": 0,
+      "crit_flat": 5,
+      "regen_flat": 0.5,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "vampiric",
+        "undead"
+      ],
+      "str_flat": 1,
+      "dex_flat": 2,
+      "int_flat": 1,
+      "signature": {
+        "id": "vampire_blood_thirst",
+        "kind": "lifesteal_cap_bump",
+        "value": 5,
+        "desc": "Lifesteal cap raised from 15% to 20%."
+      }
+    },
+    {
+      "id": "mummy",
+      "name": "Mummy",
+      "sprite": "mummy_female.png",
+      "lore": "Bound in linen and ancient curses. Brittle, slow, but rich in the wisdom of the tomb.",
+      "hp_pct": 0,
+      "atk_pct": -10,
+      "def_pct": 10,
+      "haste_pct": -5,
+      "crit_flat": 0,
+      "regen_flat": -0.5,
+      "aggro_flat": 0,
+      "xp_pct": 20,
+      "loot_pct": 0,
+      "innate_tags": [
+        "undead",
+        "ancient"
+      ],
+      "str_flat": -2,
+      "dex_flat": -2,
+      "int_flat": 6,
+      "signature": {
+        "id": "mummy_dryflesh",
+        "kind": "undead_immunities",
+        "value": 0,
+        "desc": "Immune to bleed, poison, and lifesteal-against (dry bone yields no blood)."
+      }
+    },
+    {
+      "id": "hill_orc",
+      "name": "Hill Orc",
+      "sprite": "lorc_male_0.png",
+      "lore": "Mountain raiders. Sturdy as stone, mean as winter. They take what they want and leave little behind.",
+      "hp_pct": 10,
+      "atk_pct": 10,
+      "def_pct": 5,
+      "haste_pct": 0,
+      "crit_flat": 0,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 10,
+      "innate_tags": [
+        "orcish",
+        "raider"
+      ],
+      "str_flat": 4,
+      "dex_flat": 0,
+      "int_flat": 0,
+      "signature": {
+        "id": "hill_orc_berserker_rage",
+        "kind": "low_hp_rage",
+        "value": 50,
+        "params": {
+          "haste_pct": 50,
+          "duration_s": 8.0,
+          "threshold_pct": 30
+        },
+        "desc": "At <30% HP: +50% damage and +50% haste for 8s. Once per floor."
+      }
+    },
+    {
+      "id": "deep_elf",
+      "name": "Deep Elf",
+      "sprite": "deep_elf_female.png",
+      "lore": "Refined cave-dwellers. Frail, but their precision and learning make every strike count.",
+      "hp_pct": -15,
+      "atk_pct": 0,
+      "def_pct": -10,
+      "haste_pct": 5,
+      "crit_flat": 15,
+      "regen_flat": 0,
+      "aggro_flat": 1,
+      "xp_pct": 10,
+      "loot_pct": 0,
+      "innate_tags": [
+        "elf",
+        "scholar"
+      ],
+      "str_flat": -2,
+      "dex_flat": 1,
+      "int_flat": 5,
+      "signature": {
+        "id": "deep_elf_scholar",
+        "kind": "spell_damage_cap_bump",
+        "value": 30,
+        "desc": "spell_damage_pct cap raised from 120 to 150."
+      }
+    },
+    {
+      "id": "gargoyle",
+      "name": "Gargoyle",
+      "sprite": "gargoyle_male.png",
+      "lore": "Carved of living stone. Ponderous, unflinching, nearly indestructible.",
+      "hp_pct": -10,
+      "atk_pct": 0,
+      "def_pct": 30,
+      "haste_pct": -10,
+      "crit_flat": 0,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 0,
+      "innate_tags": [
+        "construct",
+        "stone"
+      ],
+      "str_flat": 3,
+      "dex_flat": -2,
+      "int_flat": 1,
+      "signature": {
+        "id": "gargoyle_living_stone",
+        "kind": "hp_pct_armor_scaler",
+        "value": 50,
+        "desc": "+50% armor while at full HP, scales down linearly to +0% at 0% HP."
+      }
+    },
+    {
+      "id": "halfling",
+      "name": "Halfling",
+      "sprite": "halfling_female.png",
+      "lore": "Small, lucky, and disarmingly cheerful. They find shiny things and stay out of harm's way.",
+      "hp_pct": -20,
+      "atk_pct": -5,
+      "def_pct": 0,
+      "haste_pct": 10,
+      "crit_flat": 10,
+      "regen_flat": 0,
+      "aggro_flat": -1,
+      "xp_pct": 0,
+      "loot_pct": 15,
+      "innate_tags": [
+        "small",
+        "lucky"
+      ],
+      "str_flat": -2,
+      "dex_flat": 5,
+      "int_flat": 1,
+      "signature": {
+        "id": "halfling_lucky_pockets",
+        "kind": "loot_quantity_flat",
+        "value": 10,
+        "desc": "+10% loot quantity (extra-drop chance)."
+      }
+    },
+    {
+      "id": "kobold",
+      "name": "Kobold",
+      "sprite": "kobold_female_new.png",
+      "lore": "Twitchy little hunters. Quick fingers, quicker feet, and a knack for spotting the gold first.",
+      "hp_pct": -25,
+      "atk_pct": 0,
+      "def_pct": -5,
+      "haste_pct": 10,
+      "crit_flat": 5,
+      "regen_flat": 0,
+      "aggro_flat": 0,
+      "xp_pct": 0,
+      "loot_pct": 20,
+      "innate_tags": [
+        "small",
+        "scavenger"
+      ],
+      "str_flat": -2,
+      "dex_flat": 4,
+      "int_flat": 0,
+      "signature": {
+        "id": "kobold_scavenger",
+        "kind": "on_kill_extra_gold",
+        "value": 25,
+        "desc": "25% chance on kill to find extra gold (scavenger flavor)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,2204 @@
+{
+  "rat": {
+    "name": "Rat",
+    "tile": "rat.png",
+    "hp": 8,
+    "atk": 2,
+    "def": 0,
+    "speed": 0.6,
+    "xp": 2,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false
+  },
+  "bat": {
+    "name": "Bat",
+    "tile": "bat.png",
+    "hp": 6,
+    "atk": 2,
+    "def": 0,
+    "speed": 0.9,
+    "xp": 2,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false
+  },
+  "grey_rat": {
+    "name": "Grey Rat",
+    "tile": "grey_rat.png",
+    "hp": 10,
+    "atk": 3,
+    "def": 0,
+    "speed": 0.65,
+    "xp": 3,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false
+  },
+  "butterfly": {
+    "name": "Butterfly",
+    "tile": "butterfly.png",
+    "hp": 4,
+    "atk": 1,
+    "def": 0,
+    "speed": 1.1,
+    "xp": 1,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false
+  },
+  "quokka": {
+    "name": "Quokka",
+    "tile": "quokka.png",
+    "hp": 9,
+    "atk": 2,
+    "def": 0,
+    "speed": 0.7,
+    "xp": 2,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false
+  },
+  "jelly": {
+    "name": "Jelly",
+    "tile": "jelly.png",
+    "hp": 14,
+    "atk": 3,
+    "def": 1,
+    "speed": 0.4,
+    "xp": 4,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "centre",
+    "resistances": {
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "goblin": {
+    "name": "Goblin",
+    "tile": "goblin.png",
+    "hp": 12,
+    "atk": 4,
+    "def": 1,
+    "speed": 0.7,
+    "xp": 5,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false
+  },
+  "kobold": {
+    "name": "Kobold",
+    "tile": "kobold.png",
+    "hp": 10,
+    "atk": 5,
+    "def": 0,
+    "speed": 0.8,
+    "xp": 5,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false
+  },
+  "giant_cockroach": {
+    "name": "Giant Cockroach",
+    "tile": "giant_cockroach.png",
+    "hp": 11,
+    "atk": 3,
+    "def": 1,
+    "speed": 0.7,
+    "xp": 4,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "centre"
+  },
+  "jackal": {
+    "name": "Jackal",
+    "tile": "jackal.png",
+    "hp": 14,
+    "atk": 5,
+    "def": 0,
+    "speed": 0.85,
+    "xp": 6,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false
+  },
+  "adder": {
+    "name": "Adder",
+    "tile": "adder.png",
+    "hp": 12,
+    "atk": 6,
+    "def": 1,
+    "speed": 0.7,
+    "xp": 6,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "ball_python": {
+    "name": "Ball Python",
+    "tile": "ball_python.png",
+    "hp": 16,
+    "atk": 5,
+    "def": 1,
+    "speed": 0.6,
+    "xp": 7,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "ooze": {
+    "name": "Ooze",
+    "tile": "ooze.png",
+    "hp": 18,
+    "atk": 4,
+    "def": 1,
+    "speed": 0.45,
+    "xp": 6,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "centre",
+    "resistances": {
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "acid_blob": {
+    "name": "Acid Blob",
+    "tile": "acid_blob.png",
+    "hp": 20,
+    "atk": 5,
+    "def": 2,
+    "speed": 0.45,
+    "xp": 8,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.45,
+    "visual_anchor": "centre",
+    "resistances": {
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "hobgoblin": {
+    "name": "Hobgoblin",
+    "tile": "hobgoblin.png",
+    "hp": 18,
+    "atk": 6,
+    "def": 1,
+    "speed": 0.7,
+    "xp": 7,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.3,
+    "visual_anchor": "centre"
+  },
+  "big_kobold": {
+    "name": "Big Kobold",
+    "tile": "big_kobold.png",
+    "hp": 16,
+    "atk": 6,
+    "def": 1,
+    "speed": 0.75,
+    "xp": 7,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false
+  },
+  "gnoll": {
+    "name": "Gnoll",
+    "tile": "gnoll.png",
+    "hp": 22,
+    "atk": 7,
+    "def": 2,
+    "speed": 0.7,
+    "xp": 9,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false
+  },
+  "orc": {
+    "name": "Orc",
+    "tile": "orc.png",
+    "hp": 22,
+    "atk": 7,
+    "def": 2,
+    "speed": 0.7,
+    "xp": 10,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false
+  },
+  "skeleton": {
+    "name": "Skeleton",
+    "tile": "skeleton.png",
+    "hp": 16,
+    "atk": 6,
+    "def": 2,
+    "speed": 0.6,
+    "xp": 8,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "wolf": {
+    "name": "Wolf",
+    "tile": "wolf.png",
+    "hp": 26,
+    "atk": 9,
+    "def": 2,
+    "speed": 0.85,
+    "xp": 12,
+    "min_floor": 3,
+    "tier": 3,
+    "boss": false
+  },
+  "wolf_spider": {
+    "name": "Wolf Spider",
+    "tile": "wolf_spider.png",
+    "hp": 22,
+    "atk": 8,
+    "def": 2,
+    "speed": 0.85,
+    "xp": 11,
+    "min_floor": 3,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "holy": -10,
+      "poison": 50
+    }
+  },
+  "hound": {
+    "name": "Hound",
+    "tile": "hound.png",
+    "hp": 24,
+    "atk": 9,
+    "def": 2,
+    "speed": 0.85,
+    "xp": 11,
+    "min_floor": 3,
+    "tier": 3,
+    "boss": false
+  },
+  "black_bear": {
+    "name": "Black Bear",
+    "tile": "black_bear.png",
+    "hp": 32,
+    "atk": 10,
+    "def": 3,
+    "speed": 0.65,
+    "xp": 14,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "black_mamba": {
+    "name": "Black Mamba",
+    "tile": "black_mamba.png",
+    "hp": 24,
+    "atk": 11,
+    "def": 2,
+    "speed": 0.85,
+    "xp": 14,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "crocodile": {
+    "name": "Crocodile",
+    "tile": "crocodile.png",
+    "hp": 30,
+    "atk": 11,
+    "def": 4,
+    "speed": 0.6,
+    "xp": 14,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "komodo": {
+    "name": "Komodo Dragon",
+    "tile": "komodo.png",
+    "hp": 30,
+    "atk": 11,
+    "def": 3,
+    "speed": 0.65,
+    "xp": 14,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "orc_warrior": {
+    "name": "Orc Warrior",
+    "tile": "orc_warrior.png",
+    "hp": 30,
+    "atk": 11,
+    "def": 3,
+    "speed": 0.7,
+    "xp": 15,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "orc_priest": {
+    "name": "Orc Priest",
+    "tile": "orc_priest.png",
+    "hp": 26,
+    "atk": 10,
+    "def": 2,
+    "speed": 0.7,
+    "xp": 14,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "centaur": {
+    "name": "Centaur",
+    "tile": "centaur.png",
+    "hp": 28,
+    "atk": 12,
+    "def": 3,
+    "speed": 0.9,
+    "xp": 16,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "ice_beast": {
+    "name": "Ice Beast",
+    "tile": "ice_beast.png",
+    "hp": 32,
+    "atk": 11,
+    "def": 4,
+    "speed": 0.65,
+    "xp": 16,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false,
+    "light_spec": "ice_creature",
+    "resistances": {
+      "cold": 75,
+      "fire": -40
+    }
+  },
+  "dwarf": {
+    "name": "Dwarf",
+    "tile": "dwarf.png",
+    "hp": 30,
+    "atk": 12,
+    "def": 4,
+    "speed": 0.65,
+    "xp": 16,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "elf": {
+    "name": "Elf",
+    "tile": "elf.png",
+    "hp": 26,
+    "atk": 12,
+    "def": 3,
+    "speed": 0.85,
+    "xp": 16,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false
+  },
+  "wraith": {
+    "name": "Wraith",
+    "tile": "wraith.png",
+    "hp": 28,
+    "atk": 12,
+    "def": 3,
+    "speed": 0.7,
+    "xp": 16,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 50,
+      "holy": -50,
+      "physical": 50,
+      "poison": 75
+    }
+  },
+  "zombie": {
+    "name": "Zombie",
+    "tile": "zombie.png",
+    "hp": 38,
+    "atk": 9,
+    "def": 3,
+    "speed": 0.45,
+    "xp": 13,
+    "min_floor": 4,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "hell_hound": {
+    "name": "Hell Hound",
+    "tile": "hell_hound.png",
+    "hp": 30,
+    "atk": 13,
+    "def": 3,
+    "speed": 0.85,
+    "xp": 18,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "dark": 25,
+      "fire": 50,
+      "holy": -40
+    }
+  },
+  "death_yak": {
+    "name": "Death Yak",
+    "tile": "death_yak.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 22,
+    "min_floor": 5,
+    "tier": 4,
+    "boss": false
+  },
+  "elephant": {
+    "name": "Elephant",
+    "tile": "elephant.png",
+    "hp": 60,
+    "atk": 13,
+    "def": 5,
+    "speed": 0.6,
+    "xp": 24,
+    "min_floor": 5,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "ground"
+  },
+  "orc_knight": {
+    "name": "Orc Knight",
+    "tile": "orc_knight.png",
+    "hp": 50,
+    "atk": 15,
+    "def": 5,
+    "speed": 0.7,
+    "xp": 25,
+    "min_floor": 5,
+    "tier": 4,
+    "boss": false
+  },
+  "centaur_warrior": {
+    "name": "Centaur Warrior",
+    "tile": "centaur_warrior.png",
+    "hp": 45,
+    "atk": 16,
+    "def": 5,
+    "speed": 0.9,
+    "xp": 26,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false
+  },
+  "cyclops": {
+    "name": "Cyclops",
+    "tile": "cyclops.png",
+    "hp": 65,
+    "atk": 17,
+    "def": 5,
+    "speed": 0.55,
+    "xp": 30,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "fire": 25
+    }
+  },
+  "ogre": {
+    "name": "Ogre",
+    "tile": "ogre.png",
+    "hp": 55,
+    "atk": 16,
+    "def": 4,
+    "speed": 0.55,
+    "xp": 26,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": 25
+    }
+  },
+  "troll": {
+    "name": "Troll",
+    "tile": "troll.png",
+    "hp": 70,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.65,
+    "xp": 34,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": -50,
+      "poison": 25
+    }
+  },
+  "anubis_guard": {
+    "name": "Anubis Guard",
+    "tile": "anubis_guard.png",
+    "hp": 60,
+    "atk": 17,
+    "def": 6,
+    "speed": 0.7,
+    "xp": 32,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "death_knight": {
+    "name": "Death Knight",
+    "tile": "death_knight.png",
+    "hp": 65,
+    "atk": 18,
+    "def": 6,
+    "speed": 0.7,
+    "xp": 34,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "deep_elf_knight": {
+    "name": "Deep Elf Knight",
+    "tile": "deep_elf_knight.png",
+    "hp": 50,
+    "atk": 19,
+    "def": 5,
+    "speed": 0.85,
+    "xp": 32,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false
+  },
+  "manticore": {
+    "name": "Manticore",
+    "tile": "manticore.png",
+    "hp": 70,
+    "atk": 19,
+    "def": 5,
+    "speed": 0.7,
+    "xp": 36,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": 25
+    }
+  },
+  "fire_giant": {
+    "name": "Fire Giant",
+    "tile": "fire_giant.png",
+    "hp": 95,
+    "atk": 22,
+    "def": 6,
+    "speed": 0.55,
+    "xp": 50,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "light_spec": "fire_creature",
+    "resistances": {
+      "cold": -40,
+      "fire": 75
+    }
+  },
+  "hill_giant": {
+    "name": "Hill Giant",
+    "tile": "hill_giant.png",
+    "hp": 100,
+    "atk": 21,
+    "def": 6,
+    "speed": 0.55,
+    "xp": 50,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground"
+  },
+  "dragon": {
+    "name": "Dragon",
+    "tile": "dragon.png",
+    "hp": 130,
+    "atk": 26,
+    "def": 8,
+    "speed": 0.65,
+    "xp": 80,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "fire": 25
+    }
+  },
+  "ice_dragon": {
+    "name": "Ice Dragon",
+    "tile": "ice_dragon.png",
+    "hp": 120,
+    "atk": 25,
+    "def": 7,
+    "speed": 0.65,
+    "xp": 75,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "light_spec": "ice_creature",
+    "resistances": {
+      "cold": 75,
+      "fire": -40
+    }
+  },
+  "fire_dragon": {
+    "name": "Fire Dragon",
+    "tile": "fire_dragon.png",
+    "hp": 120,
+    "atk": 27,
+    "def": 7,
+    "speed": 0.7,
+    "xp": 80,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "light_spec": "fire_creature",
+    "resistances": {
+      "cold": -40,
+      "fire": 75
+    }
+  },
+  "iron_dragon": {
+    "name": "Iron Dragon",
+    "tile": "iron_dragon.png",
+    "hp": 150,
+    "atk": 24,
+    "def": 10,
+    "speed": 0.5,
+    "xp": 85,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "lightning": 50
+    },
+    "visual_scale": 1.5,
+    "visual_anchor": "ground"
+  },
+  "lich": {
+    "name": "Lich",
+    "tile": "lich.png",
+    "hp": 105,
+    "atk": 25,
+    "def": 7,
+    "speed": 0.7,
+    "xp": 75,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 75,
+      "holy": -50,
+      "poison": 75
+    }
+  },
+  "vampire_knight": {
+    "name": "Vampire Knight",
+    "tile": "vampire_knight.png",
+    "hp": 100,
+    "atk": 24,
+    "def": 7,
+    "speed": 0.75,
+    "xp": 75,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "lightning": 50,
+      "poison": 50
+    }
+  },
+  "orc_warlord": {
+    "name": "Orc Warlord",
+    "tile": "orc_warlord.png",
+    "hp": 110,
+    "atk": 23,
+    "def": 7,
+    "speed": 0.7,
+    "xp": 70,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false
+  },
+  "deep_troll": {
+    "name": "Deep Troll",
+    "tile": "deep_troll.png",
+    "hp": 130,
+    "atk": 24,
+    "def": 7,
+    "speed": 0.65,
+    "xp": 80,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "fire": -50,
+      "poison": 25
+    }
+  },
+  "anaconda": {
+    "name": "Anaconda",
+    "tile": "anaconda.png",
+    "hp": 36,
+    "atk": 12,
+    "def": 3,
+    "speed": 0.6,
+    "xp": 20,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "dryad": {
+    "name": "Dryad",
+    "tile": "dryad.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 28,
+    "min_floor": 6,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "poison": 50,
+      "fire": -25
+    }
+  },
+  "frost_giant": {
+    "name": "Frost Giant",
+    "tile": "frost_giant.png",
+    "hp": 110,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 60,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "light_spec": "ice_creature",
+    "resistances": {
+      "cold": 75,
+      "fire": -40
+    }
+  },
+  "balrug": {
+    "name": "Balrug",
+    "tile": "balrug.png",
+    "hp": 130,
+    "atk": 26,
+    "def": 8,
+    "speed": 0.7,
+    "xp": 90,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "dark": 25,
+      "fire": 50,
+      "holy": -40
+    }
+  },
+  "cacodemon": {
+    "name": "Cacodemon",
+    "tile": "cacodemon.png",
+    "hp": 120,
+    "atk": 24,
+    "def": 7,
+    "speed": 0.7,
+    "xp": 80,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.6,
+    "visual_anchor": "ground",
+    "light_spec": "fire_creature",
+    "resistances": {
+      "cold": -40,
+      "dark": 25,
+      "fire": 75,
+      "holy": -40
+    }
+  },
+  "blue_devil": {
+    "name": "Blue Devil",
+    "tile": "blue_devil.png",
+    "hp": 70,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.8,
+    "xp": 40,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "dark": 25,
+      "fire": 25,
+      "holy": -40,
+      "lightning": 50
+    }
+  },
+  "blizzard_demon": {
+    "name": "Blizzard Demon",
+    "tile": "blizzard_demon.png",
+    "hp": 95,
+    "atk": 22,
+    "def": 6,
+    "speed": 0.7,
+    "xp": 55,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.55,
+    "visual_anchor": "ground",
+    "light_spec": "ice_creature",
+    "resistances": {
+      "cold": 75,
+      "dark": 25,
+      "fire": -40,
+      "holy": -40
+    }
+  },
+  "minotaur": {
+    "name": "Minotaur",
+    "tile": "minotaur_boss.png",
+    "hp": 200,
+    "atk": 32,
+    "def": 10,
+    "speed": 0.7,
+    "xp": 200,
+    "min_floor": 10,
+    "tier": 5,
+    "boss": true
+  },
+  "golden_dragon": {
+    "name": "Golden Dragon",
+    "tile": "golden_dragon_boss.png",
+    "hp": 250,
+    "atk": 35,
+    "def": 12,
+    "speed": 0.65,
+    "xp": 250,
+    "min_floor": 10,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.6,
+    "visual_anchor": "ground",
+    "resistances": {
+      "fire": 25
+    }
+  },
+  "redback": {
+    "name": "Redback",
+    "tile": "redback.png",
+    "hp": 28,
+    "atk": 10,
+    "def": 1,
+    "speed": 1.0,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "holy": -10,
+      "poison": 50
+    }
+  },
+  "jumping_spider": {
+    "name": "Jumping Spider",
+    "tile": "jumping_spider.png",
+    "hp": 22,
+    "atk": 9,
+    "def": 1,
+    "speed": 1.2,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "holy": -10,
+      "poison": 50
+    }
+  },
+  "orb_spider": {
+    "name": "Orb Spider",
+    "tile": "orb_spider.png",
+    "hp": 35,
+    "atk": 12,
+    "def": 2,
+    "speed": 0.8,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "holy": -10,
+      "poison": 50
+    }
+  },
+  "giant_spider": {
+    "name": "Giant Spider",
+    "tile": "giant_spider.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 2,
+    "speed": 0.9,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "centre",
+    "resistances": {
+      "holy": -10,
+      "poison": 50
+    }
+  },
+  "water_moccasin": {
+    "name": "Water Moccasin",
+    "tile": "water_moccasin.png",
+    "hp": 18,
+    "atk": 7,
+    "def": 0,
+    "speed": 0.9,
+    "xp": 5,
+    "min_floor": 5,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "lightning": -25,
+      "poison": 25
+    }
+  },
+  "salamander": {
+    "name": "Salamander",
+    "tile": "salamander.png",
+    "hp": 45,
+    "atk": 13,
+    "def": 2,
+    "speed": 0.8,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false,
+    "light_spec": "fire_creature",
+    "resistances": {
+      "cold": -40,
+      "fire": 75
+    }
+  },
+  "naga": {
+    "name": "Naga",
+    "tile": "naga.png",
+    "hp": 40,
+    "atk": 12,
+    "def": 2,
+    "speed": 0.8,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "yak": {
+    "name": "Yak",
+    "tile": "yak.png",
+    "hp": 30,
+    "atk": 10,
+    "def": 1,
+    "speed": 0.8,
+    "xp": 6,
+    "min_floor": 6,
+    "tier": 2,
+    "boss": false
+  },
+  "hydra": {
+    "name": "Hydra",
+    "tile": "lich.png",
+    "hp": 90,
+    "atk": 18,
+    "def": 3,
+    "speed": 0.7,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "lightning": -25
+    },
+    "visual_scale": 1.5,
+    "visual_anchor": "ground"
+  },
+  "hippogriff": {
+    "name": "Hippogriff",
+    "tile": "hippogriff.png",
+    "hp": 38,
+    "atk": 12,
+    "def": 1,
+    "speed": 1.0,
+    "xp": 6,
+    "min_floor": 6,
+    "tier": 3,
+    "boss": false
+  },
+  "komodo_dragon": {
+    "name": "Komodo Dragon",
+    "tile": "komodo_dragon.png",
+    "hp": 55,
+    "atk": 14,
+    "def": 2,
+    "speed": 0.8,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "grizzly_bear": {
+    "name": "Grizzly Bear",
+    "tile": "grizzly_bear.png",
+    "hp": 60,
+    "atk": 15,
+    "def": 2,
+    "speed": 0.7,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false
+  },
+  "giant_rat": {
+    "name": "Giant Rat",
+    "tile": "giant_rat.png",
+    "hp": 14,
+    "atk": 5,
+    "def": 0,
+    "speed": 0.8,
+    "xp": 4,
+    "min_floor": 4,
+    "tier": 1,
+    "boss": false,
+    "visual_scale": 1.35,
+    "visual_anchor": "centre"
+  },
+  "snapping_turtle": {
+    "name": "Snapping Turtle",
+    "tile": "snapping_turtle.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.6,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false
+  },
+  "alligator_snapping_turtle": {
+    "name": "Alligator Snapping Turtle",
+    "tile": "snapping_turtle.png",
+    "hp": 75,
+    "atk": 17,
+    "def": 5,
+    "speed": 0.6,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "cold": -25,
+      "poison": 25
+    }
+  },
+  "swamp_dragon": {
+    "name": "Swamp Dragon",
+    "tile": "swamp_dragon.png",
+    "hp": 80,
+    "atk": 18,
+    "def": 3,
+    "speed": 0.8,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "lightning": -25
+    },
+    "visual_scale": 1.5,
+    "visual_anchor": "ground"
+  },
+  "steam_dragon": {
+    "name": "Steam Dragon",
+    "tile": "steam_dragon.png",
+    "hp": 60,
+    "atk": 15,
+    "def": 2,
+    "speed": 0.9,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "fire": 50,
+      "cold": 50
+    }
+  },
+  "mummy": {
+    "name": "Mummy",
+    "tile": "mummy.png",
+    "hp": 30,
+    "atk": 10,
+    "def": 2,
+    "speed": 0.6,
+    "xp": 5,
+    "min_floor": 5,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.3,
+    "visual_anchor": "centre",
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "fire": -25,
+      "holy": -50,
+      "poison": 75
+    }
+  },
+  "greater_mummy": {
+    "name": "Greater Mummy",
+    "tile": "mummy.png",
+    "hp": 80,
+    "atk": 18,
+    "def": 3,
+    "speed": 0.6,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "fire": -25,
+      "holy": -50,
+      "poison": 75
+    }
+  },
+  "sphinx": {
+    "name": "Sphinx",
+    "tile": "sphinx.png",
+    "hp": 70,
+    "atk": 16,
+    "def": 3,
+    "speed": 0.8,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "holy": 75,
+      "dark": -50
+    }
+  },
+  "ghost": {
+    "name": "Ghost",
+    "tile": "ghost.png",
+    "hp": 25,
+    "atk": 11,
+    "def": 0,
+    "speed": 1.0,
+    "xp": 5,
+    "min_floor": 5,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 50,
+      "holy": -50,
+      "physical": 50,
+      "poison": 75
+    }
+  },
+  "necrophage": {
+    "name": "Necrophage",
+    "tile": "necrophage.png",
+    "hp": 40,
+    "atk": 12,
+    "def": 1,
+    "speed": 0.8,
+    "xp": 6,
+    "min_floor": 6,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": 25,
+      "dark": 50,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "ancient_lich": {
+    "name": "Ancient Lich",
+    "tile": "lich.png",
+    "hp": 130,
+    "atk": 22,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 10,
+    "min_floor": 10,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 75,
+      "holy": -50,
+      "lightning": 50,
+      "poison": 75
+    }
+  },
+  "slime_creature": {
+    "name": "Slime Creature",
+    "tile": "jelly.png",
+    "hp": 40,
+    "atk": 10,
+    "def": 0,
+    "speed": 0.7,
+    "xp": 6,
+    "min_floor": 6,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 1.4,
+    "visual_anchor": "centre",
+    "resistances": {
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "death_ooze": {
+    "name": "Death Ooze",
+    "tile": "ooze.png",
+    "hp": 65,
+    "atk": 14,
+    "def": 2,
+    "speed": 0.6,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.45,
+    "visual_anchor": "centre",
+    "resistances": {
+      "dark": 25,
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "azure_jelly": {
+    "name": "Azure Jelly",
+    "tile": "jelly.png",
+    "hp": 55,
+    "atk": 12,
+    "def": 1,
+    "speed": 0.7,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "centre",
+    "resistances": {
+      "cold": 50,
+      "fire": -25,
+      "physical": 25,
+      "poison": 75
+    }
+  },
+  "deep_elf_mage": {
+    "name": "Deep Elf Mage",
+    "tile": "deep_elf_mage.png",
+    "hp": 50,
+    "atk": 16,
+    "def": 1,
+    "speed": 0.9,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false
+  },
+  "deep_elf_pyromancer": {
+    "name": "Deep Elf Pyromancer",
+    "tile": "deep_elf_pyromancer.png",
+    "hp": 55,
+    "atk": 18,
+    "def": 1,
+    "speed": 0.9,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "fire": 50,
+      "cold": -25
+    }
+  },
+  "deep_elf_sorcerer": {
+    "name": "Deep Elf Sorcerer",
+    "tile": "deep_elf_sorcerer.png",
+    "hp": 70,
+    "atk": 20,
+    "def": 2,
+    "speed": 0.9,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "dark": 50,
+      "holy": -25
+    }
+  },
+  "stone_giant": {
+    "name": "Stone Giant",
+    "tile": "stone_giant.png",
+    "hp": 100,
+    "atk": 20,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "lightning": 50
+    },
+    "visual_scale": 1.5,
+    "visual_anchor": "ground"
+  },
+  "ettin": {
+    "name": "Ettin",
+    "tile": "ettin.png",
+    "hp": 110,
+    "atk": 21,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 4,
+    "boss": false
+  },
+  "two_headed_ogre": {
+    "name": "Two-Headed Ogre",
+    "tile": "two_headed_ogre.png",
+    "hp": 75,
+    "atk": 17,
+    "def": 2,
+    "speed": 0.7,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "fire": -50,
+      "poison": 25
+    }
+  },
+  "rotting_devil": {
+    "name": "Rotting Devil",
+    "tile": "rotting_devil.png",
+    "hp": 60,
+    "atk": 15,
+    "def": 2,
+    "speed": 0.8,
+    "xp": 8,
+    "min_floor": 8,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "dark": 50,
+      "fire": 25,
+      "holy": -40,
+      "poison": 50
+    }
+  },
+  "wyvern": {
+    "name": "Wyvern",
+    "tile": "iron_dragon.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 2,
+    "speed": 1.0,
+    "xp": 7,
+    "min_floor": 7,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "poison": 50,
+      "cold": -25
+    }
+  },
+  "shadow_dragon": {
+    "name": "Shadow Dragon",
+    "tile": "shadow_dragon.png",
+    "hp": 140,
+    "atk": 22,
+    "def": 4,
+    "speed": 0.8,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.5,
+    "visual_anchor": "ground",
+    "resistances": {
+      "dark": 75,
+      "holy": -25
+    }
+  },
+  "quicksilver_dragon": {
+    "name": "Quicksilver Dragon",
+    "tile": "quicksilver_dragon.png",
+    "hp": 130,
+    "atk": 23,
+    "def": 3,
+    "speed": 1.0,
+    "xp": 9,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "lightning": 50
+    },
+    "visual_scale": 1.55,
+    "visual_anchor": "ground"
+  },
+  "boss_sigmund": {
+    "name": "Sigmund",
+    "tile": "boss_sigmund.png",
+    "hp": 90,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.55,
+    "xp": 220,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": true,
+    "visual_scale": 1.0,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.55
+      },
+      {
+        "type": "dark",
+        "fraction": 0.45
+      }
+    ],
+    "resistances": {
+      "dark": 50,
+      "cold": 50,
+      "poison": 75,
+      "holy": -50
+    }
+  },
+  "boss_eustachio": {
+    "name": "Eustachio",
+    "tile": "boss_eustachio.png",
+    "hp": 90,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.55,
+    "xp": 220,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": true,
+    "visual_scale": 1.0,
+    "damage_split": [
+      {
+        "type": "dark",
+        "fraction": 0.7
+      },
+      {
+        "type": "physical",
+        "fraction": 0.3
+      }
+    ],
+    "resistances": {
+      "dark": 75,
+      "cold": 25,
+      "holy": -50
+    }
+  },
+  "boss_blork": {
+    "name": "Blork the Orc",
+    "tile": "boss_blork.png",
+    "hp": 90,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.55,
+    "xp": 220,
+    "min_floor": 1,
+    "tier": 1,
+    "boss": true,
+    "visual_scale": 1.0,
+    "resistances": {}
+  },
+  "boss_kirke": {
+    "name": "Kirke",
+    "tile": "boss_kirke.png",
+    "hp": 130,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.55,
+    "xp": 320,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": true,
+    "visual_scale": 1.05,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.5
+      },
+      {
+        "type": "poison",
+        "fraction": 0.5
+      }
+    ],
+    "resistances": {
+      "dark": 50,
+      "poison": 25,
+      "holy": -25
+    }
+  },
+  "boss_erolcha": {
+    "name": "Erolcha",
+    "tile": "boss_erolcha.png",
+    "hp": 130,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.55,
+    "xp": 320,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": true,
+    "visual_scale": 1.1,
+    "resistances": {}
+  },
+  "boss_grum": {
+    "name": "Grum",
+    "tile": "boss_grum.png",
+    "hp": 130,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.55,
+    "xp": 320,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": true,
+    "visual_scale": 1.05,
+    "resistances": {}
+  },
+  "boss_psyche": {
+    "name": "Psyche the Witch",
+    "tile": "boss_psyche.png",
+    "hp": 130,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.55,
+    "xp": 320,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": true,
+    "visual_scale": 1.0,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.4
+      },
+      {
+        "type": "dark",
+        "fraction": 0.6
+      }
+    ],
+    "resistances": {
+      "dark": 75,
+      "holy": -50
+    }
+  },
+  "boss_aizul": {
+    "name": "Aizul",
+    "tile": "boss_aizul.png",
+    "hp": 180,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 460,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": true,
+    "visual_scale": 1.1,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.4
+      },
+      {
+        "type": "poison",
+        "fraction": 0.6
+      }
+    ],
+    "resistances": {
+      "poison": 75,
+      "cold": -25
+    }
+  },
+  "boss_ilsuiw": {
+    "name": "Ilsuiw the Tideborn",
+    "tile": "boss_ilsuiw.png",
+    "hp": 180,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 460,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": true,
+    "visual_scale": 1.1,
+    "damage_split": [
+      {
+        "type": "cold",
+        "fraction": 0.55
+      },
+      {
+        "type": "physical",
+        "fraction": 0.45
+      }
+    ],
+    "resistances": {
+      "cold": 50,
+      "poison": 25,
+      "fire": -25
+    }
+  },
+  "boss_lernaean": {
+    "name": "The Lernaean Hydra",
+    "tile": "boss_lernaean.png",
+    "hp": 180,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 460,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": true,
+    "visual_scale": 1.3,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.55
+      },
+      {
+        "type": "poison",
+        "fraction": 0.45
+      }
+    ],
+    "resistances": {
+      "poison": 75,
+      "cold": -25,
+      "physical": 25
+    }
+  },
+  "boss_jorgrun": {
+    "name": "Jorgrun the Spider",
+    "tile": "boss_jorgrun.png",
+    "hp": 180,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 460,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": true,
+    "visual_scale": 1.15,
+    "resistances": {
+      "physical": 25
+    }
+  },
+  "boss_gastronok": {
+    "name": "Gastronok",
+    "tile": "boss_gastronok.png",
+    "hp": 180,
+    "atk": 22,
+    "def": 7,
+    "speed": 0.55,
+    "xp": 460,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": true,
+    "visual_scale": 1.15,
+    "damage_split": [
+      {
+        "type": "poison",
+        "fraction": 0.65
+      },
+      {
+        "type": "physical",
+        "fraction": 0.35
+      }
+    ],
+    "resistances": {
+      "poison": 75,
+      "fire": -25
+    }
+  },
+  "boss_frederick": {
+    "name": "Frederick",
+    "tile": "boss_frederick.png",
+    "hp": 230,
+    "atk": 26,
+    "def": 9,
+    "speed": 0.55,
+    "xp": 620,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": true,
+    "visual_scale": 1.1,
+    "damage_split": [
+      {
+        "type": "holy",
+        "fraction": 0.65
+      },
+      {
+        "type": "physical",
+        "fraction": 0.35
+      }
+    ],
+    "resistances": {
+      "holy": 75,
+      "dark": -50
+    }
+  },
+  "boss_boris": {
+    "name": "Boris the Lich",
+    "tile": "boss_boris.png",
+    "hp": 230,
+    "atk": 26,
+    "def": 9,
+    "speed": 0.55,
+    "xp": 620,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": true,
+    "visual_scale": 1.1,
+    "damage_split": [
+      {
+        "type": "dark",
+        "fraction": 0.85
+      },
+      {
+        "type": "physical",
+        "fraction": 0.15
+      }
+    ],
+    "resistances": {
+      "dark": 75,
+      "cold": 50,
+      "poison": 75,
+      "holy": -50
+    }
+  },
+  "boss_menkaure": {
+    "name": "Menkaure the Pharaoh",
+    "tile": "boss_menkaure.png",
+    "hp": 230,
+    "atk": 26,
+    "def": 9,
+    "speed": 0.55,
+    "xp": 620,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": true,
+    "visual_scale": 1.2,
+    "damage_split": [
+      {
+        "type": "dark",
+        "fraction": 0.55
+      },
+      {
+        "type": "physical",
+        "fraction": 0.45
+      }
+    ],
+    "resistances": {
+      "dark": 50,
+      "cold": 50,
+      "poison": 75,
+      "holy": -50
+    }
+  },
+  "boss_enchantress": {
+    "name": "The Enchantress",
+    "tile": "boss_enchantress.png",
+    "hp": 230,
+    "atk": 26,
+    "def": 9,
+    "speed": 0.55,
+    "xp": 620,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": true,
+    "visual_scale": 1.1,
+    "damage_split": [
+      {
+        "type": "dark",
+        "fraction": 0.65
+      },
+      {
+        "type": "physical",
+        "fraction": 0.35
+      }
+    ],
+    "resistances": {
+      "dark": 50,
+      "holy": -25,
+      "physical": 10
+    }
+  },
+  "boss_polyphemus": {
+    "name": "Polyphemus",
+    "tile": "boss_polyphemus.png",
+    "hp": 230,
+    "atk": 26,
+    "def": 9,
+    "speed": 0.55,
+    "xp": 620,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": true,
+    "visual_scale": 1.25,
+    "resistances": {}
+  },
+  "boss_azrael": {
+    "name": "Azrael the Inferno",
+    "tile": "boss_azrael.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.25,
+    "damage_split": [
+      {
+        "type": "fire",
+        "fraction": 0.75
+      },
+      {
+        "type": "physical",
+        "fraction": 0.25
+      }
+    ],
+    "resistances": {
+      "fire": 75,
+      "cold": -50
+    }
+  },
+  "boss_antaeus": {
+    "name": "Antaeus the Cold",
+    "tile": "boss_antaeus.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.3,
+    "damage_split": [
+      {
+        "type": "cold",
+        "fraction": 0.7
+      },
+      {
+        "type": "physical",
+        "fraction": 0.3
+      }
+    ],
+    "resistances": {
+      "cold": 75,
+      "fire": -50,
+      "physical": 25
+    }
+  },
+  "boss_dissolution": {
+    "name": "Dissolution",
+    "tile": "boss_dissolution.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.25,
+    "damage_split": [
+      {
+        "type": "poison",
+        "fraction": 1.0
+      }
+    ],
+    "resistances": {
+      "physical": 50,
+      "fire": -50,
+      "poison": 75
+    }
+  },
+  "boss_killer_klown": {
+    "name": "Killer Klown",
+    "tile": "boss_killer_klown.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.2,
+    "damage_split": [
+      {
+        "type": "physical",
+        "fraction": 0.4
+      },
+      {
+        "type": "fire",
+        "fraction": 0.2
+      },
+      {
+        "type": "cold",
+        "fraction": 0.2
+      },
+      {
+        "type": "lightning",
+        "fraction": 0.2
+      }
+    ],
+    "resistances": {
+      "fire": 25,
+      "cold": 25,
+      "lightning": 25,
+      "poison": 25,
+      "holy": -25
+    }
+  },
+  "boss_mnoleg": {
+    "name": "Mnoleg",
+    "tile": "boss_mnoleg.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.3,
+    "damage_split": [
+      {
+        "type": "dark",
+        "fraction": 0.6
+      },
+      {
+        "type": "physical",
+        "fraction": 0.4
+      }
+    ],
+    "resistances": {
+      "dark": 75,
+      "holy": -50,
+      "fire": 25
+    }
+  },
+  "boss_cerebov": {
+    "name": "Cerebov",
+    "tile": "boss_cerebov.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.4,
+    "damage_split": [
+      {
+        "type": "fire",
+        "fraction": 0.5
+      },
+      {
+        "type": "dark",
+        "fraction": 0.5
+      }
+    ],
+    "resistances": {
+      "fire": 75,
+      "cold": -25,
+      "holy": -50
+    }
+  },
+  "boss_tiamat": {
+    "name": "Tiamat the Many",
+    "tile": "boss_tiamat.png",
+    "hp": 280,
+    "atk": 32,
+    "def": 11,
+    "speed": 0.55,
+    "xp": 820,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": true,
+    "visual_scale": 1.4,
+    "damage_split": [
+      {
+        "type": "fire",
+        "fraction": 0.25
+      },
+      {
+        "type": "cold",
+        "fraction": 0.25
+      },
+      {
+        "type": "lightning",
+        "fraction": 0.25
+      },
+      {
+        "type": "poison",
+        "fraction": 0.25
+      }
+    ],
+    "resistances": {
+      "fire": 50,
+      "cold": 50,
+      "lightning": 50,
+      "poison": 50,
+      "holy": -25
+    }
+  }
+}

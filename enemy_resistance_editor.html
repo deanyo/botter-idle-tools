@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Enemy Resistance Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main {
+    flex: 1;
+    padding: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .toolbar {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .toolbar label { font-size: 11px; color: var(--muted); }
+  .toolbar input[type=text],
+  .toolbar select { font-size: 12px; }
+  .toolbar .spacer { flex: 1; }
+  .legend {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+    border: 1px solid var(--border);
+  }
+  .stats { color: var(--muted); font-size: 11px; }
+
+  table.res {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 11px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  table.res th, table.res td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  table.res thead th {
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  table.res thead th.sort-asc::after { content: " ▲"; }
+  table.res thead th.sort-desc::after { content: " ▼"; }
+  table.res tbody td.id-col {
+    text-align: left;
+    font-family: ui-monospace, monospace;
+    color: var(--text);
+  }
+  table.res tbody td.name-col {
+    text-align: left;
+    color: var(--muted);
+  }
+  table.res tbody td.tier-col,
+  table.res tbody td.boss-col {
+    color: var(--muted);
+  }
+  table.res tbody td.r-cell {
+    font-family: ui-monospace, monospace;
+    cursor: text;
+    min-width: 48px;
+  }
+  table.res tbody td.r-cell input {
+    width: 38px;
+    text-align: center;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+  }
+  table.res tbody td.r-cell input:focus {
+    outline: 1px solid var(--accent);
+  }
+  table.res tbody tr:hover td { background: rgba(255,255,255,0.025); }
+
+  /* Resistance value coloring. Background tint scales with magnitude.
+     Red = vulnerable (negative); Green = resistant (positive); empty = 0. */
+  .r-pos-1 { background: rgba(60, 180, 90, 0.15); color: #6dd089; }
+  .r-pos-2 { background: rgba(60, 180, 90, 0.30); color: #8fdfa6; }
+  .r-pos-3 { background: rgba(60, 180, 90, 0.45); color: #b1eec0; }
+  .r-neg-1 { background: rgba(220, 70, 70, 0.15); color: #e88a8a; }
+  .r-neg-2 { background: rgba(220, 70, 70, 0.30); color: #f0a9a9; }
+  .r-neg-3 { background: rgba(220, 70, 70, 0.45); color: #f6c8c8; }
+  .r-zero  { color: #555; }
+
+  .footer-note {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .footer-note code { font-size: 10px; }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="enemies" data-title="Enemy Resistances"></nav>
+<script src="portal_nav.js" defer></script>
+
+<main>
+  <div class="toolbar">
+    <label>Filter:
+      <input type="text" id="filter-text" placeholder="rat, dragon, boss…" />
+    </label>
+    <label>Show:
+      <select id="filter-show">
+        <option value="all">All enemies</option>
+        <option value="any-res" selected>Any resistance set</option>
+        <option value="no-res">No resistance set</option>
+        <option value="boss">Bosses only</option>
+        <option value="non-boss">Non-bosses only</option>
+      </select>
+    </label>
+    <label>Tier:
+      <select id="filter-tier">
+        <option value="any">Any</option>
+        <option value="1">T1</option>
+        <option value="2">T2</option>
+        <option value="3">T3</option>
+        <option value="4">T4</option>
+        <option value="5">T5</option>
+      </select>
+    </label>
+    <span class="legend">
+      <span><span class="swatch" style="background:rgba(60,180,90,0.45);"></span>resist</span>
+      <span><span class="swatch" style="background:rgba(220,70,70,0.45);"></span>vuln</span>
+      <span><span class="swatch" style="background:transparent;"></span>0%</span>
+    </span>
+    <span class="spacer"></span>
+    <span class="stats" id="stats"></span>
+    <button id="btn-export">⬇ Export enemies.json</button>
+  </div>
+
+  <table class="res" id="grid">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <p class="footer-note">
+    Edits stay in the browser until you hit Export. The download is a
+    full <code>enemies.json</code> with your changes merged into the
+    existing file (everything outside the resistance dict is preserved
+    verbatim). Drop the downloaded file into <code>data/</code>
+    to apply.
+    Damage-type keys: <code>fire / cold / lightning / holy / poison / dark / physical</code>.
+    Range: <code>-100 .. +75</code> (clamped to match the player-side
+    cap at <code>stat_calc.gd:311</code>).
+  </p>
+</main>
+
+<script>
+const ENEMIES_URL = "data/enemies.json";
+const ELEMENTS = ["fire", "cold", "lightning", "holy", "poison", "dark", "physical"];
+
+let RAW_DOC = null;          // raw parsed JSON, source of truth on disk
+let ROWS = [];               // [{id, def, res}] — `res` is the editable copy
+let SORT_KEY = "id";
+let SORT_DIR = 1;            // 1 asc, -1 desc
+
+function clamp(n) {
+  if (Number.isNaN(n)) return 0;
+  return Math.max(-100, Math.min(75, Math.round(n)));
+}
+
+function classForVal(v) {
+  if (v === 0 || v === null || v === undefined) return "r-zero";
+  if (v > 0) {
+    if (v >= 60) return "r-pos-3";
+    if (v >= 30) return "r-pos-2";
+    return "r-pos-1";
+  }
+  if (v <= -60) return "r-neg-3";
+  if (v <= -30) return "r-neg-2";
+  return "r-neg-1";
+}
+
+function buildHead() {
+  const thead = document.querySelector("#grid thead");
+  const cols = [
+    {key: "id", label: "Enemy ID"},
+    {key: "name", label: "Name"},
+    {key: "tier", label: "Tier"},
+    {key: "boss", label: "Type"},
+    ...ELEMENTS.map(e => ({key: e, label: e})),
+  ];
+  const tr = document.createElement("tr");
+  cols.forEach(c => {
+    const th = document.createElement("th");
+    th.textContent = c.label;
+    th.dataset.key = c.key;
+    if (c.key === SORT_KEY) th.classList.add(SORT_DIR > 0 ? "sort-asc" : "sort-desc");
+    th.addEventListener("click", () => {
+      if (SORT_KEY === c.key) SORT_DIR = -SORT_DIR;
+      else { SORT_KEY = c.key; SORT_DIR = 1; }
+      buildHead();
+      render();
+    });
+    tr.appendChild(th);
+  });
+  thead.replaceChildren(tr);
+}
+
+function bossLabel(def) {
+  if (def.boss) return "boss";
+  return "";
+}
+
+function passesFilter(row) {
+  const ftext = document.getElementById("filter-text").value.trim().toLowerCase();
+  if (ftext) {
+    const hay = (row.id + " " + (row.def.name || "")).toLowerCase();
+    if (!hay.includes(ftext)) return false;
+  }
+  const show = document.getElementById("filter-show").value;
+  const hasAny = ELEMENTS.some(e => (row.res[e] || 0) !== 0);
+  if (show === "any-res" && !hasAny) return false;
+  if (show === "no-res" && hasAny) return false;
+  if (show === "boss" && !row.def.boss) return false;
+  if (show === "non-boss" && row.def.boss) return false;
+  const tier = document.getElementById("filter-tier").value;
+  if (tier !== "any" && String(row.def.tier || "") !== tier) return false;
+  return true;
+}
+
+function compareRows(a, b) {
+  const k = SORT_KEY;
+  let av, bv;
+  if (k === "id") { av = a.id; bv = b.id; }
+  else if (k === "name") { av = a.def.name || a.id; bv = b.def.name || b.id; }
+  else if (k === "tier") { av = a.def.tier || 0; bv = b.def.tier || 0; }
+  else if (k === "boss") { av = a.def.boss ? 1 : 0; bv = b.def.boss ? 1 : 0; }
+  else { av = a.res[k] || 0; bv = b.res[k] || 0; }
+  if (av < bv) return -1 * SORT_DIR;
+  if (av > bv) return  1 * SORT_DIR;
+  // Stable secondary by id.
+  return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+}
+
+function render() {
+  const tbody = document.querySelector("#grid tbody");
+  const rows = ROWS.filter(passesFilter).sort(compareRows);
+  const frag = document.createDocumentFragment();
+  for (const row of rows) {
+    const tr = document.createElement("tr");
+    tr.dataset.id = row.id;
+
+    const tdId = document.createElement("td");
+    tdId.className = "id-col";
+    tdId.textContent = row.id;
+    tr.appendChild(tdId);
+
+    const tdName = document.createElement("td");
+    tdName.className = "name-col";
+    tdName.textContent = row.def.name || "";
+    tr.appendChild(tdName);
+
+    const tdTier = document.createElement("td");
+    tdTier.className = "tier-col";
+    tdTier.textContent = "T" + (row.def.tier || "?");
+    tr.appendChild(tdTier);
+
+    const tdBoss = document.createElement("td");
+    tdBoss.className = "boss-col";
+    tdBoss.textContent = bossLabel(row.def);
+    tr.appendChild(tdBoss);
+
+    for (const el of ELEMENTS) {
+      const td = document.createElement("td");
+      td.className = "r-cell";
+      const val = row.res[el] || 0;
+      td.classList.add(classForVal(val));
+      const inp = document.createElement("input");
+      inp.type = "number";
+      inp.min = -100;
+      inp.max = 75;
+      inp.step = 5;
+      inp.value = val === 0 ? "" : val;
+      inp.placeholder = "0";
+      inp.dataset.elem = el;
+      inp.addEventListener("change", () => {
+        const v = clamp(parseInt(inp.value, 10));
+        if (v === 0) delete row.res[el]; else row.res[el] = v;
+        // Re-render this row only (cheaper than full rebuild on every keystroke).
+        for (const td2 of tr.querySelectorAll("td.r-cell")) {
+          td2.classList.remove("r-pos-1", "r-pos-2", "r-pos-3", "r-neg-1", "r-neg-2", "r-neg-3", "r-zero");
+        }
+        const newRow = renderRowCells(row);
+        tr.replaceWith(newRow);
+        updateStats();
+      });
+      td.appendChild(inp);
+      tr.appendChild(td);
+    }
+
+    frag.appendChild(tr);
+  }
+  tbody.replaceChildren(frag);
+  updateStats();
+}
+
+function renderRowCells(row) {
+  const tr = document.createElement("tr");
+  tr.dataset.id = row.id;
+  const tdId = document.createElement("td");
+  tdId.className = "id-col";
+  tdId.textContent = row.id;
+  tr.appendChild(tdId);
+  const tdName = document.createElement("td");
+  tdName.className = "name-col";
+  tdName.textContent = row.def.name || "";
+  tr.appendChild(tdName);
+  const tdTier = document.createElement("td");
+  tdTier.className = "tier-col";
+  tdTier.textContent = "T" + (row.def.tier || "?");
+  tr.appendChild(tdTier);
+  const tdBoss = document.createElement("td");
+  tdBoss.className = "boss-col";
+  tdBoss.textContent = bossLabel(row.def);
+  tr.appendChild(tdBoss);
+  for (const el of ELEMENTS) {
+    const td = document.createElement("td");
+    td.className = "r-cell";
+    const val = row.res[el] || 0;
+    td.classList.add(classForVal(val));
+    const inp = document.createElement("input");
+    inp.type = "number";
+    inp.min = -100;
+    inp.max = 75;
+    inp.step = 5;
+    inp.value = val === 0 ? "" : val;
+    inp.placeholder = "0";
+    inp.dataset.elem = el;
+    inp.addEventListener("change", () => {
+      const v = clamp(parseInt(inp.value, 10));
+      if (v === 0) delete row.res[el]; else row.res[el] = v;
+      const newRow = renderRowCells(row);
+      tr.replaceWith(newRow);
+      updateStats();
+    });
+    td.appendChild(inp);
+    tr.appendChild(td);
+  }
+  return tr;
+}
+
+function updateStats() {
+  const total = ROWS.length;
+  const withRes = ROWS.filter(r => ELEMENTS.some(e => (r.res[e] || 0) !== 0)).length;
+  document.getElementById("stats").textContent =
+    `${withRes}/${total} enemies have resistances set.`;
+}
+
+function exportJSON() {
+  // Deep-copy the on-disk doc, then stamp the edited resistance dicts
+  // back in. Empty dicts get dropped so the JSON stays compact.
+  const out = JSON.parse(JSON.stringify(RAW_DOC));
+  for (const row of ROWS) {
+    const clean = {};
+    for (const el of ELEMENTS) {
+      const v = row.res[el] || 0;
+      if (v !== 0) clean[el] = v;
+    }
+    if (Object.keys(clean).length > 0) {
+      out[row.id] = out[row.id] || {};
+      // Sort keys to keep the diff stable across runs.
+      const sorted = {};
+      for (const k of Object.keys(clean).sort()) sorted[k] = clean[k];
+      out[row.id].resistances = sorted;
+    } else if (out[row.id]) {
+      delete out[row.id].resistances;
+    }
+  }
+  // Match the existing file: 2-space indent, no trailing newline.
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "enemies.json";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
+}
+
+async function init() {
+  const r = await fetch(ENEMIES_URL);
+  if (!r.ok) {
+    document.getElementById("stats").textContent =
+      "Failed to load enemies.json — serve over http://localhost (browsers block file:// fetch).";
+    return;
+  }
+  RAW_DOC = await r.json();
+  ROWS = Object.keys(RAW_DOC).map(id => ({
+    id,
+    def: RAW_DOC[id],
+    res: { ...(RAW_DOC[id].resistances || {}) },
+  }));
+  buildHead();
+  render();
+  document.getElementById("filter-text").addEventListener("input", render);
+  document.getElementById("filter-show").addEventListener("change", render);
+  document.getElementById("filter-tier").addEventListener("change", render);
+  document.getElementById("btn-export").addEventListener("click", exportJSON);
+}
+
+init();
+</script>
+</body>
+</html>

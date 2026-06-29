@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Drop Tuning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Drop-tuning specific layout. Shared palette + buttons in portal.css. */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .spacer { flex: 1; }
+  main {
+    flex: 1; overflow: auto; padding: 24px; max-width: 900px; margin: 0 auto; width: 100%;
+  }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  section h2 { margin: 0 0 6px; color: var(--accent); font-size: 14px; }
+  section .doc { color: var(--muted); font-size: 11px; margin-bottom: 14px; line-height: 1.5; }
+  .slider-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 90px 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .slider-row:last-child { border-bottom: none; }
+  .slider-row label {
+    font-size: 12px;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: normal;
+  }
+  .slider-row .help {
+    grid-column: 2 / -1;
+    font-size: 10px;
+    color: var(--muted);
+    padding-top: 2px;
+    margin: 0;
+  }
+  .slider-row input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .slider-row .val {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .slider-row .raw {
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+  }
+  #status { color: var(--muted); font-size: 11px; }
+  #status.warn { color: var(--bad); }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="drops" data-title="Drop Rates"></nav>
+<header>
+  <span class="spacer"></span>
+  <span id="status"></span>
+  <button onclick="copyToClipboard()" title="Copy all drop rates as JSON">⧉ Copy JSON</button>
+  <button class="primary" onclick="exportJSON()" title="Download all drop rates as a single JSON file">⬇ Export</button>
+  <button onclick="resetToDefaults()">Reset</button>
+</header>
+
+<main id="root"></main>
+
+<script>
+const TUNING_PATH = "data/drop_tuning.json";
+
+// Slider-row schema. Each entry drives a single tunable. The key
+// path is dotted (e.g. "meta_rarity.primal_chance"); slider min/max
+// is a sane editing band; format controls how the value renders.
+const SLIDERS = [
+  // Meta-rarity
+  { section: "meta_rarity",
+    title: "Meta-rarity",
+    doc: "Independent of rarity tier. Stacks with quality + base rarity. Primal = +50% baseline, Ancient = +20% baseline. Affixes unaffected (have their own tier band).",
+    rows: [
+      { key: "primal_chance",  label: "Primal chance",  min: 0, max: 0.05,  step: 0.0005, fmt: "pct3" },
+      { key: "ancient_chance", label: "Ancient chance", min: 0, max: 0.10,  step: 0.001,  fmt: "pct2" },
+    ],
+  },
+  // Quality
+  { section: "quality",
+    title: "Quality tail",
+    doc: "Multiplier applied to the tail weights (Rusted/Worn/Battered + Mastercrafted/Masterwork). 1.0 = ship default, 2.0 = double tail probability, 0.5 = halve.",
+    rows: [
+      { key: "tail_weight_mult", label: "Tail weight mult", min: 0, max: 5.0, step: 0.05, fmt: "x" },
+    ],
+  },
+  // Enchants
+  { section: "enchant",
+    title: "Enchants",
+    doc: "global_chance_mult scales every item's authored enchant_chance — set to 0 to disable enchants globally. combo_chance is the secondary roll AFTER the first enchant lands; if it fires + the resulting pair has a registered combo, both flavors are replaced by the compound.",
+    rows: [
+      { key: "global_chance_mult", label: "Enchant chance ×", min: 0, max: 5.0, step: 0.05, fmt: "x" },
+      { key: "combo_chance",       label: "Combo chance",     min: 0, max: 0.50, step: 0.005, fmt: "pct1" },
+    ],
+  },
+  // Tint / recolor
+  { section: "tint_recolor",
+    title: "Tint / recolor",
+    doc: "Per-instance hue/sat recolor rolls (drives item_recolor.gdshader). any_tint_chance is the cumulative chance of getting ANY tint; the rare-mode chances (shimmer/inverted/prismatic) are sub-bands within that.",
+    rows: [
+      { key: "any_tint_chance",  label: "Any tint chance",  min: 0, max: 1.0,   step: 0.01,   fmt: "pct1" },
+      { key: "shimmer_chance",   label: "Shimmer chance",   min: 0, max: 0.10,  step: 0.001,  fmt: "pct2" },
+      { key: "inverted_chance",  label: "Inverted chance",  min: 0, max: 0.05,  step: 0.0005, fmt: "pct3" },
+      { key: "prismatic_chance", label: "Prismatic chance", min: 0, max: 0.02,  step: 0.0002, fmt: "pct3" },
+    ],
+  },
+];
+
+// Defaults — must match the GDScript fallbacks in DropTuning.gd.
+const DEFAULTS = {
+  meta_rarity: { primal_chance: 0.001, ancient_chance: 0.011 },
+  quality:     { tail_weight_mult: 1.0 },
+  enchant:     { global_chance_mult: 1.0, combo_chance: 0.03 },
+  tint_recolor:{ any_tint_chance: 0.30, shimmer_chance: 0.005, inverted_chance: 0.001, prismatic_chance: 0.0005 },
+};
+
+let doc = JSON.parse(JSON.stringify(DEFAULTS));
+let dirty = false;
+
+async function load() {
+  try {
+    const res = await fetch(TUNING_PATH);
+    if (res.ok) {
+      const parsed = await res.json();
+      // Merge fetched keys onto defaults so missing fields fall back.
+      for (const sec of Object.keys(DEFAULTS)) {
+        if (parsed[sec]) {
+          doc[sec] = Object.assign({}, DEFAULTS[sec], parsed[sec]);
+        }
+      }
+    }
+  } catch (e) {
+    setStatus("Couldn't load drop_tuning.json — using defaults.", true);
+  }
+  render();
+}
+
+function render() {
+  const root = document.getElementById("root");
+  root.innerHTML = "";
+  for (const section of SLIDERS) {
+    const el = document.createElement("section");
+    let html = `<h2>${section.title}</h2><div class="doc">${escapeHtml(section.doc)}</div>`;
+    for (const row of section.rows) {
+      const v = (doc[section.section] || {})[row.key];
+      const cur = (v === undefined ? DEFAULTS[section.section][row.key] : v);
+      html += `
+        <div class="slider-row">
+          <label>${row.label}</label>
+          <input type="range" min="${row.min}" max="${row.max}" step="${row.step}" value="${cur}"
+                 oninput="setKey('${section.section}','${row.key}',+this.value)">
+          <span class="val" id="val-${section.section}-${row.key}">${formatVal(cur, row.fmt)}</span>
+          <span class="raw">raw ${cur}</span>
+        </div>
+      `;
+    }
+    el.innerHTML = html;
+    root.appendChild(el);
+  }
+}
+
+function setKey(section, key, val) {
+  if (!doc[section]) doc[section] = {};
+  doc[section][key] = val;
+  dirty = true;
+  // Update the val + raw spans inline without re-rendering.
+  const valEl = document.getElementById(`val-${section}-${key}`);
+  if (valEl) {
+    const fmt = lookupFmt(section, key);
+    valEl.textContent = formatVal(val, fmt);
+    if (valEl.nextElementSibling) valEl.nextElementSibling.textContent = `raw ${val}`;
+  }
+  setStatus("● unsaved");
+}
+
+function lookupFmt(section, key) {
+  for (const s of SLIDERS) {
+    if (s.section !== section) continue;
+    for (const r of s.rows) if (r.key === key) return r.fmt;
+  }
+  return "raw";
+}
+
+function formatVal(v, fmt) {
+  switch (fmt) {
+    case "pct1":  return (v * 100).toFixed(1) + "%";
+    case "pct2":  return (v * 100).toFixed(2) + "%";
+    case "pct3":  return (v * 100).toFixed(3) + "%";
+    case "x":     return v.toFixed(2) + "×";
+    default:      return String(v);
+  }
+}
+
+function exportJSON() {
+  const out = Object.assign(
+    { _doc: "Drop tuning — edit via tools/drop_tuning.html. Runtime reads in DropTuning.gd; missing keys fall back to hardcoded defaults.", _format_version: 1 },
+    doc,
+  );
+  const json = JSON.stringify(out, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "drop_tuning.json";
+  a.click();
+  URL.revokeObjectURL(url);
+  setStatus("Exported drop_tuning.json — drop into data/");
+}
+
+async function copyToClipboard() {
+  const out = Object.assign(
+    { _doc: "Drop tuning — edited via tools/drop_tuning.html.", _format_version: 1 },
+    doc,
+  );
+  const json = JSON.stringify(out, null, 2);
+  try {
+    await navigator.clipboard.writeText(json);
+    setStatus("Copied JSON to clipboard.");
+  } catch (e) {
+    setStatus("Clipboard write blocked — use ⬇ Export instead.", true);
+  }
+}
+
+function resetToDefaults() {
+  if (!confirm("Reset all values to ship defaults?")) return;
+  doc = JSON.parse(JSON.stringify(DEFAULTS));
+  dirty = true;
+  setStatus("Reset to defaults.");
+  render();
+}
+
+function setStatus(msg, warn = false) {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.className = warn ? "warn" : "";
+  if (msg && !warn) setTimeout(() => {
+    if (el.textContent === msg) el.textContent = "";
+  }, 3000);
+}
+
+function escapeHtml(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  }[c]));
+}
+
+load();
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>

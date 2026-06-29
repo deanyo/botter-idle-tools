@@ -1,0 +1,113 @@
+{
+  "_doc": "Centralized drop-rate tuning. The Drop Tuning portal page edits this file via export/clipboard. Runtime reads it on dungeon start and at quality.gd / dungeon._create_item_instance call sites. Anything not present falls back to the hardcoded default in the consuming module so removing a key doesn't break the game.",
+  "_format_version": 1,
+  "meta_rarity": {
+    "primal_chance": 0.001,
+    "ancient_chance": 0.011,
+    "_doc": "Independent of rarity tier. Stacks with quality + base rarity. Primal = +50% baseline, Ancient = +20% baseline. Affixes unaffected (have their own tier band)."
+  },
+  "quality": {
+    "tail_weight_mult": 1.0,
+    "_doc": "Multiplier applied to the tail weights (Rusted/Worn/Battered + Mastercrafted/Masterwork) so a tuner can make extreme rolls more or less common without rewriting the table. 1.0 = ship default. 2.0 = double tail probability. 0.5 = halve. \u00a72.B (2026-06-13): split tail_weight_mult into low_quality_tail_mult + high_quality_tail_mult so the authoring portal can dial each tail independently. Legacy tail_weight_mult honored as fallback if a split key is absent.",
+    "low_quality_tail_mult": 1.0,
+    "high_quality_tail_mult": 1.0
+  },
+  "enchant": {
+    "global_chance_mult": 1.0,
+    "combo_chance": 0.30,
+    "_doc": "global_chance_mult scales every item's authored enchant_chance \u2014 set to 0 to disable enchant rolls globally; set to 2 to double everything. combo_chance is the secondary roll AFTER the first enchant lands; if it fires + the resulting pair has a registered combo, both flavors are replaced by the compound."
+  },
+  "tint_recolor": {
+    "any_tint_chance": 0.05,
+    "shimmer_chance": 0.005,
+    "inverted_chance": 0.001,
+    "prismatic_chance": 0.0005,
+    "_doc": "Per-instance hue/sat recolor rolls (drives item_recolor.gdshader). Adjust to make recolored drops more or less common."
+  },
+  "tier_drop_band": {
+    "_doc": "Per-tier \u00d7 floor-band rarity weights consumed by loot_factory.gd::roll_rarity (Beat-2 \u00a72.A wires consumption \u2014 Beat-1 \u00a71.I authors the data). Each entry is [common, uncommon, rare, epic, legendary] weight at that source tier \u00d7 floor band. Beat-2 wiring also applies boss_step (boss kills bump rarity by N tiers) / elite_step / trash_ceiling (trash mobs cap at this rarity). Source: balance_pass_2026-06-11 A7-pool-001/002/004 + synthesis \u00a72.4.",
+    "T1": {
+      "1-3": [
+        30,
+        50,
+        15,
+        4,
+        1
+      ],
+      "4-6": [
+        25,
+        45,
+        22,
+        6,
+        2
+      ]
+    },
+    "T2": {
+      "1-3": [
+        22,
+        38,
+        28,
+        9,
+        3
+      ],
+      "4-6": [
+        18,
+        32,
+        30,
+        14,
+        6
+      ]
+    },
+    "T3": {
+      "1-3": [
+        15,
+        28,
+        30,
+        18,
+        9
+      ],
+      "4-6": [
+        10,
+        22,
+        30,
+        22,
+        16
+      ]
+    },
+    "T4": {
+      "1-3": [
+        8,
+        18,
+        28,
+        24,
+        22
+      ],
+      "4-6": [
+        4,
+        12,
+        24,
+        28,
+        32
+      ]
+    },
+    "T5": {
+      "1-3": [
+        3,
+        10,
+        22,
+        28,
+        37
+      ],
+      "4-6": [
+        0,
+        6,
+        18,
+        30,
+        46
+      ]
+    },
+    "boss_step": 1,
+    "elite_step": 1,
+    "trash_ceiling": "uncommon"
+  }
+}

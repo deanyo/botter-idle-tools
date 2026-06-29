@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Item Roll Flowchart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Roll-flowchart specific layout. Shared palette + buttons in
+     portal.css. Tooltips here are intentionally close to the in-game
+     ItemTooltip widget — same color logic, same line shapes — so this
+     page also serves as a reference for what tooltip text means. */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  main {
+    flex: 1;
+    padding: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .intro {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 760px;
+    margin: 0 auto 24px;
+    padding: 14px 18px;
+    background: var(--panel);
+    border-left: 3px solid var(--accent-dim);
+    border-radius: 3px;
+  }
+  .intro strong { color: var(--accent); }
+  .intro code {
+    background: rgba(255,255,255,0.05);
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 11px;
+  }
+
+  h2.stage-header {
+    color: var(--accent);
+    font-size: 18px;
+    margin: 36px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .stage-doc {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 16px;
+    max-width: 760px;
+    line-height: 1.5;
+  }
+  .stage-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Tooltip card — mirrors the in-game ItemTooltip widget. */
+  .tt {
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    padding: 10px 14px;
+    width: 280px;
+    font-size: 12px;
+    line-height: 1.45;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .tt .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .tt .sprite {
+    width: 56px;
+    height: 56px;
+    background: #000;
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    image-rendering: pixelated;
+  }
+  .tt .sprite img {
+    width: 56px; height: 56px;
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+  .tt .titles { flex: 1; }
+  .tt .title-line {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .tt .rarity-line {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tt .meta-rarity-line {
+    font-size: 10px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tt .stat-line {
+    color: var(--text);
+    margin: 2px 0;
+  }
+  .tt .stat-line .label { color: var(--muted); }
+  .tt .stat-line .val { color: #d8d8d8; font-variant-numeric: tabular-nums; }
+  .tt .affix-line {
+    color: var(--accent);
+    margin: 2px 0;
+    font-size: 11px;
+  }
+  .tt .tag-line {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 4px;
+  }
+  .tt .tag {
+    display: inline-block;
+    padding: 0 5px;
+    margin-right: 3px;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+  .tt .lore {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 11px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--border);
+  }
+  .tt .meta-badge {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    padding: 2px 8px;
+    border-radius: 9px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .tt .roll-label {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  /* Rarity tints applied to the tooltip border + title. */
+  .tt.r-common    { border-color: var(--rarity-common); }
+  .tt.r-common    .title-line, .tt.r-common    .rarity-line { color: var(--rarity-common); }
+  .tt.r-uncommon  { border-color: var(--rarity-uncommon); }
+  .tt.r-uncommon  .title-line, .tt.r-uncommon  .rarity-line { color: var(--rarity-uncommon); }
+  .tt.r-rare      { border-color: var(--rarity-rare); }
+  .tt.r-rare      .title-line, .tt.r-rare      .rarity-line { color: var(--rarity-rare); }
+  .tt.r-epic      { border-color: var(--rarity-epic); }
+  .tt.r-epic      .title-line, .tt.r-epic      .rarity-line { color: var(--rarity-epic); }
+  .tt.r-legendary { border-color: var(--rarity-legendary); }
+  .tt.r-legendary .title-line, .tt.r-legendary .rarity-line { color: var(--rarity-legendary); }
+
+  /* Meta-rarity badges. */
+  .meta-ancient { background: rgba(255,200,80,0.18); color: #ffc850; border: 1px solid #ffc850; }
+  .meta-primal  { background: rgba(255,80,80,0.20); color: #ff5050;  border: 1px solid #ff5050; }
+
+  /* Recolor mode preview filters. */
+  .recolor-shimmer { animation: shimmerSweep 2.4s linear infinite; }
+  @keyframes shimmerSweep {
+    0%   { filter: brightness(1.0); }
+    50%  { filter: brightness(1.4); }
+    100% { filter: brightness(1.0); }
+  }
+  .recolor-prismatic { animation: prismaticHue 4s linear infinite; }
+  @keyframes prismaticHue {
+    0%   { filter: hue-rotate(0deg)   saturate(1.2); }
+    50%  { filter: hue-rotate(180deg) saturate(1.2); }
+    100% { filter: hue-rotate(360deg) saturate(1.2); }
+  }
+  .recolor-inverted { filter: invert(1) saturate(1.0); }
+  .recolor-hue60    { filter: hue-rotate(60deg)  saturate(1.0); }
+  .recolor-hue180   { filter: hue-rotate(180deg) saturate(1.0); }
+  .recolor-hue300   { filter: hue-rotate(300deg) saturate(1.0); }
+
+  /* Drop-rate chart at the top — visualises how many drops actually
+     reach each branch of the tree. */
+  .rates-table {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 0 auto 28px;
+    max-width: 760px;
+    font-size: 12px;
+  }
+  .rates-table h3 {
+    margin: 0 0 8px;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+  .rates-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .rates-table td {
+    padding: 3px 6px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .rates-table td:first-child { color: var(--muted); }
+  .rates-table td:last-child {
+    text-align: right;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, monospace;
+  }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="flowchart" data-title="Roll Flowchart"></nav>
+
+<main>
+  <div class="intro">
+    <strong>Every way an item can roll, in one place.</strong>
+    When the dungeon spawns a piece of loot, it walks through several
+    rolls — rarity, quality, recolor, enchant, meta-rarity. Each roll
+    is independent, and most stack. This page shows what the tooltip
+    looks like at every stop along the way, so you can read the same
+    fields the player sees.
+    <br><br>
+    Drop-rate numbers come from
+    <code>data/drop_tuning.json</code> + the per-item rarity table.
+    Tooltips here use the same color logic as the in-game widget, so
+    a <em>Legendary Vampire's Tooth · Ancient</em> here looks like the
+    one that drops in a dungeon.
+  </div>
+
+  <div class="rates-table">
+    <h3>Approximate drop rates (out of 1000 drops)</h3>
+    <table id="rates-table-body"></table>
+  </div>
+
+  <h2 class="stage-header">1 · Base rarity roll</h2>
+  <div class="stage-doc">
+    Every drop rolls one of five rarities. <strong>Rarity decides the affix
+    count</strong> (Common = 0, Uncommon = 1, Rare = 2, Epic = 3, Legendary = 4)
+    and tints the tooltip border. Junk-tier commons make up the bulk of
+    drops; legendaries are floor-tier-gated (T1 and T2 floors can't roll one).
+  </div>
+  <div class="stage-row" id="row-rarity"></div>
+
+  <h2 class="stage-header">2 · Quality (rusted → masterwork)</h2>
+  <div class="stage-doc">
+    Independent of rarity. Multiplies the item's base stats by 0.80 → 1.20
+    in 20 steps. Most rolls land near the middle (Standard / Polished);
+    extreme tails are rare. A common Rusted Dagger has the lowest possible
+    damage; a legendary Sublime Demon Blade has the highest.
+  </div>
+  <div class="stage-row" id="row-quality"></div>
+
+  <h2 class="stage-header">3 · Recolor (per-instance look)</h2>
+  <div class="stage-doc">
+    ~30% of drops roll a hue shift. Tinier slices roll Shimmer (~0.5%),
+    Inverted (~0.1%), Prismatic (~0.05%) — the rarest and shiniest.
+    Recolors carry a small stat lean (red → strength, blue → regen, etc).
+    Items can author a <strong>permanent</strong> recolor via the item editor's
+    "Look" section, in which case every drop renders that way.
+  </div>
+  <div class="stage-row" id="row-recolor"></div>
+
+  <h2 class="stage-header">4 · Enchant — bonus combat tag</h2>
+  <div class="stage-doc">
+    Each item has its own enchant chance (0% on commons, up to 100% on
+    flavor-defining uniques). On a hit, one bonus tag rolls from the
+    item's possible-tags pool: vampiric, fire, cold, holy, dark, etc.
+    These stack on top of the item's always-on tags.
+  </div>
+  <div class="stage-row" id="row-enchant"></div>
+
+  <h2 class="stage-header">5 · Enchant combo (rare double-roll)</h2>
+  <div class="stage-doc">
+    A second enchant roll fires after the first hits, gated by
+    <code>enchant.combo_chance</code> (~3%). If the resulting pair has
+    a registered combo (e.g. <em>fire + cold = Bloodfire</em>), both
+    flavors are <em>replaced</em> by the compound name with a unique
+    color and effect. ~21 combo recipes shipped today.
+  </div>
+  <div class="stage-row" id="row-combo"></div>
+
+  <h2 class="stage-header">6 · Meta-rarity (Ancient · Primal)</h2>
+  <div class="stage-doc">
+    Independent of every other roll. <strong>Ancient</strong> (~1.1%) bumps
+    every base + bonus stat by +20% and adds a gold tint to the tooltip
+    header. <strong>Primal</strong> (~0.1%) — the rarest stamp in the
+    game — bumps stats by +50% and renders deep red. Stacks with
+    legendary + double-enchant + recolor for endgame chase items.
+  </div>
+  <div class="stage-row" id="row-meta"></div>
+
+  <h2 class="stage-header">7 · The full stack</h2>
+  <div class="stage-doc">
+    What it looks like when every roll lands in the player's favor.
+    Realistically, the chance of seeing one of these in a single playthrough
+    is ~1 in 50,000 drops — the chase reward.
+  </div>
+  <div class="stage-row" id="row-everything"></div>
+</main>
+
+<script>
+const ITEM_TILE_BASE = "assets/tiles/items/";
+const TILE_BASE      = "dcss/Dungeon Crawl Stone Soup Full/";
+// Try project/items first (flat), then DCSS pack under item/weapon/.
+// item/weapon/ is where DCSS keeps the inventory-icon sprites for all
+// the weapons we use here. Fallback chain is silent — sprites that
+// genuinely don't exist anywhere just hide cleanly. 2026-06-05.
+const FALLBACK_SRC = (path) =>
+  `<img src="${ITEM_TILE_BASE}${path}" onerror="if(!this.dataset.f){this.dataset.f='1';this.src='${TILE_BASE}item/weapon/${path}'}else if(!this.dataset.s){this.dataset.s='1';this.src='${TILE_BASE}${path}'}else{this.style.display='none'}">`;
+
+// Tooltip builder — renders a card with the same field shape as the
+// in-game ItemTooltip widget. Each field is optional so we can demo
+// the progression cleanly.
+//   { name, slot, sprite (path), rarity, meta?, stats[], affixes[], tags[],
+//     enchant?, combo?, lore?, recolor?, qualityLabel?, rollLabel? }
+function tooltip(o) {
+  const card = document.createElement('div');
+  card.className = 'tt r-' + o.rarity;
+  let html = '';
+  // Meta-rarity badge (Ancient / Primal).
+  if (o.meta === 'ancient' || o.meta === 'primal') {
+    html += `<span class="meta-badge meta-${o.meta}">${o.meta}</span>`;
+  }
+  // Header — sprite + title + rarity line.
+  const recolorClass = o.recolor ? 'recolor-' + o.recolor : '';
+  const qualityPrefix = o.qualityLabel ? `${o.qualityLabel} ` : '';
+  const rarityLine = `${capitalize(o.rarity)}${o.qualityLabel ? '' : ''}${o.dual ? ' · Dual' : (o.twoHanded ? ' · 2H' : '')}`;
+  html += `
+    <div class="header">
+      <div class="sprite ${recolorClass}">${FALLBACK_SRC(o.sprite)}</div>
+      <div class="titles">
+        <div class="title-line">${qualityPrefix}${o.name}</div>
+        <div class="rarity-line">${rarityLine}</div>
+        ${o.meta === 'ancient' ? `<div class="meta-rarity-line" style="color:#ffc850">+20% all stats</div>` : ''}
+        ${o.meta === 'primal'  ? `<div class="meta-rarity-line" style="color:#ff5050">+50% all stats</div>` : ''}
+      </div>
+    </div>
+  `;
+  // Base stats.
+  if (o.stats && o.stats.length) {
+    for (const s of o.stats) {
+      html += `<div class="stat-line"><span class="label">${s.label}:</span> <span class="val">${s.val}</span></div>`;
+    }
+  }
+  // Rolled affixes (one line each, accent-colored).
+  if (o.affixes && o.affixes.length) {
+    for (const a of o.affixes) {
+      html += `<div class="affix-line">${a}</div>`;
+    }
+  }
+  // Combat tags row.
+  if (o.tags && o.tags.length) {
+    const tags = o.tags.map(t => {
+      const c = TAG_COLORS[t.toLowerCase()] || '#aaa';
+      return `<span class="tag" style="color:${c}">${t}</span>`;
+    }).join('');
+    html += `<div class="tag-line">${tags}</div>`;
+  }
+  // Combo enchant — single bold colored line.
+  if (o.combo) {
+    html += `<div class="affix-line" style="color:${o.combo.color};font-weight:600">⚡ ${o.combo.name}</div>`;
+    html += `<div class="tag-line" style="color:${o.combo.color};opacity:0.85">${o.combo.desc}</div>`;
+  }
+  // Lore line.
+  if (o.lore) {
+    html += `<div class="lore">${o.lore}</div>`;
+  }
+  // Roll label under the card.
+  if (o.rollLabel) {
+    html += `<div class="roll-label">${o.rollLabel}</div>`;
+  }
+  card.innerHTML = html;
+  // Roll labels need a tall enough card-row gap so they don't overlap
+  // the next stage. We add bottom margin via outer wrapper.
+  const wrap = document.createElement('div');
+  wrap.style.marginBottom = o.rollLabel ? '24px' : '0';
+  wrap.appendChild(card);
+  return wrap;
+}
+
+const TAG_COLORS = {
+  vampiric: '#d83838', fire: '#ff8d2e', cold: '#73d8ff',
+  holy: '#ffeb8c', poison: '#80f266', thunderous: '#a6cdff',
+  dark: '#8c4dd8', arcane: '#b366ff', brutal: '#f24d4d',
+  fortified: '#bfbfd9', dual: '#d9d9f2', earth: '#a68059',
+  lordly: '#ffd973', dragon_bane: '#d9802e', elemental: '#80ffd9',
+  willpower: '#d9b3ff', stealth: '#4d4d80',
+};
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function row(rowId, cards) {
+  const el = document.getElementById(rowId);
+  for (const c of cards) el.appendChild(c);
+}
+
+// ------- Rates table -------
+function renderRates() {
+  const rows = [
+    ['Common (junk)', '600 / 1000'],
+    ['Uncommon',     '250 / 1000'],
+    ['Rare',         '120 / 1000'],
+    ['Epic',          '25 / 1000'],
+    ['Legendary',      '5 / 1000'],
+    ['', ''],
+    ['Quality: Standard / Polished', '~700 / 1000'],
+    ['Quality: extreme tails (Rusted / Sublime)', '~5 / 1000'],
+    ['', ''],
+    ['Recolored: any hue', '300 / 1000'],
+    ['Recolored: Shimmer',     '5 / 1000'],
+    ['Recolored: Inverted',    '1 / 1000'],
+    ['Recolored: Prismatic',   '0.5 / 1000'],
+    ['', ''],
+    ['Meta: Ancient (+20%)', '11 / 1000'],
+    ['Meta: Primal (+50%)',   '1 / 1000'],
+    ['Combo enchant (after first hit)', '30 / 1000'],
+  ];
+  const tb = document.getElementById('rates-table-body');
+  for (const [k, v] of rows) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = k ? `<td>${k}</td><td>${v}</td>` : `<td colspan="2" style="border:0"></td>`;
+    tb.appendChild(tr);
+  }
+}
+
+// ------- Stage 1: rarity progression -------
+const RARITY_ROW = [
+  { name: 'Rusty Dagger',    sprite: 'dagger_new.png', rarity: 'common',
+    stats: [{label:'Damage', val:'4-7'}, {label:'Speed', val:'0.55s'}],
+    tags: ['physical'], rollLabel: 'Common — no bonuses' },
+  { name: 'Iron Dagger',     sprite: 'dagger_new.png', rarity: 'uncommon',
+    stats: [{label:'Damage', val:'7-11'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 4 Strength'],
+    tags: ['physical'], rollLabel: '+1 affix' },
+  { name: 'Steel Dagger',    sprite: 'dagger_3.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'12-19'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 6 Strength', '+ 8% Crit'],
+    tags: ['physical'], rollLabel: '+2 affixes' },
+  { name: 'Quickblade',      sprite: 'quickblade.png', rarity: 'epic',
+    stats: [{label:'Damage', val:'18-26'}, {label:'Speed', val:'0.40s'}],
+    affixes: ['+ 11 Dexterity', '+ 14% Haste', '+ 6% Lifesteal'],
+    tags: ['physical'], rollLabel: '+3 affixes' },
+  { name: "Vampire's Tooth", sprite: 'spwpn_vampires_tooth.png', rarity: 'legendary',
+    stats: [{label:'Damage', val:'48-79'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 18 Strength', '+ 22% Haste', '+ 15% Crit', '+ 12% Lifesteal'],
+    tags: ['vampiric'],
+    lore: 'A serrated fang that drinks deep with every bite.',
+    rollLabel: '+4 affixes + built-in vampiric' },
+];
+
+// ------- Stage 2: quality -------
+const QUALITY_ROW = [
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    qualityLabel: 'Rusted', stats: [{label:'Damage', val:'9-15'}],
+    affixes: ['+ 5 Strength', '+ 4% Crit'],
+    rollLabel: '0.80× stats' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength', '+ 5% Crit'],
+    rollLabel: 'Standard (1.00×)' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    qualityLabel: 'Mastercrafted', stats: [{label:'Damage', val:'17-26'}],
+    affixes: ['+ 8 Strength', '+ 6% Crit'],
+    rollLabel: '1.15× stats' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    qualityLabel: 'Sublime', stats: [{label:'Damage', val:'19-30'}],
+    affixes: ['+ 8 Strength', '+ 7% Crit'],
+    rollLabel: '1.20× stats — extreme tail' },
+];
+
+// ------- Stage 3: recolor -------
+const RECOLOR_ROW = [
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength'],
+    rollLabel: 'No recolor (~70%)' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    recolor: 'hue180',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength', '+ 4 Regen (lean)'],
+    rollLabel: 'Hue shift (~30%)' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    recolor: 'shimmer',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength', '+ 6% Crit (lean)'],
+    rollLabel: 'Shimmer (0.5%)' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    recolor: 'inverted',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength', '+ 5% Haste (lean)'],
+    rollLabel: 'Inverted (0.1%)' },
+  { name: 'Long Sword', sprite: 'long_sword_1_new.png', rarity: 'rare',
+    recolor: 'prismatic',
+    stats: [{label:'Damage', val:'14-22'}],
+    affixes: ['+ 7 Strength', '+ 8% spell damage (lean)'],
+    rollLabel: 'Prismatic (0.05%)' },
+];
+
+// ------- Stage 4: enchant -------
+const ENCHANT_ROW = [
+  { name: 'Iron Mace', sprite: 'mace_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'18-30'}],
+    affixes: ['+ 6 Strength'],
+    rollLabel: 'No enchant' },
+  { name: 'Iron Mace', sprite: 'mace_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'18-30'}],
+    affixes: ['+ 6 Strength'], tags: ['fire'],
+    rollLabel: '+ Fire enchant' },
+  { name: 'Iron Mace', sprite: 'mace_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'18-30'}],
+    affixes: ['+ 6 Strength'], tags: ['vampiric'],
+    rollLabel: '+ Vampiric enchant' },
+  { name: 'Iron Mace', sprite: 'mace_1_new.png', rarity: 'rare',
+    stats: [{label:'Damage', val:'18-30'}],
+    affixes: ['+ 6 Strength'], tags: ['holy'],
+    rollLabel: '+ Holy enchant' },
+];
+
+// ------- Stage 5: combo -------
+const COMBO_ROW = [
+  { name: 'Spiked Mace', sprite: 'mace_1_new.png', rarity: 'epic',
+    stats: [{label:'Damage', val:'24-38'}],
+    affixes: ['+ 9 Strength', '+ 12% Crit'],
+    tags: ['fire', 'cold'],
+    rollLabel: 'Both fire + cold rolled — no combo registered',
+  },
+  { name: 'Spiked Mace', sprite: 'mace_1_new.png', rarity: 'epic',
+    stats: [{label:'Damage', val:'24-38'}],
+    affixes: ['+ 9 Strength', '+ 12% Crit'],
+    combo: { name: 'Bloodfire', color: '#ff4488', desc: 'Lifesteal hits leave a 2s burn DoT.' },
+    rollLabel: 'fire + vampiric → Bloodfire combo',
+  },
+  { name: 'Spiked Mace', sprite: 'mace_1_new.png', rarity: 'epic',
+    stats: [{label:'Damage', val:'24-38'}],
+    affixes: ['+ 9 Strength', '+ 12% Crit'],
+    combo: { name: 'Cleansing Frost', color: '#aae6ff', desc: 'Cold hits restore 1% HP and shed any DoT.' },
+    rollLabel: 'cold + holy → Cleansing Frost combo',
+  },
+];
+
+// ------- Stage 6: meta -------
+const META_ROW = [
+  { name: 'Demon Blade', sprite: 'demon_blade.png', rarity: 'legendary',
+    stats: [{label:'Damage', val:'48-79'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 14 Strength', '+ 18% Crit', '+ 22% Haste', '+ 12% Lifesteal'],
+    tags: ['demon'],
+    rollLabel: 'Legendary — baseline',
+  },
+  { name: 'Demon Blade', sprite: 'demon_blade.png', rarity: 'legendary',
+    meta: 'ancient',
+    stats: [{label:'Damage', val:'58-95'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 17 Strength', '+ 22% Crit', '+ 26% Haste', '+ 14% Lifesteal'],
+    tags: ['demon'],
+    rollLabel: '+20% across the board',
+  },
+  { name: 'Demon Blade', sprite: 'demon_blade.png', rarity: 'legendary',
+    meta: 'primal',
+    stats: [{label:'Damage', val:'72-119'}, {label:'Speed', val:'0.55s'}],
+    affixes: ['+ 21 Strength', '+ 27% Crit', '+ 33% Haste', '+ 18% Lifesteal'],
+    tags: ['demon'],
+    rollLabel: '+50% across the board — ~1 in 1000',
+  },
+];
+
+// ------- Stage 7: the full chase -------
+const EVERYTHING_ROW = [
+  { name: "Vampire's Tooth", sprite: 'spwpn_vampires_tooth.png', rarity: 'legendary',
+    qualityLabel: 'Sublime', meta: 'primal', recolor: 'prismatic',
+    stats: [{label:'Damage', val:'95-148'}, {label:'Speed', val:'0.50s'}],
+    affixes: ['+ 27 Strength', '+ 32% Haste', '+ 24% Crit', '+ 21% Lifesteal'],
+    tags: ['vampiric'],
+    combo: { name: 'Bloodfire', color: '#ff4488', desc: 'Lifesteal hits leave a 2s burn DoT.' },
+    lore: 'A serrated fang that drinks deep with every bite.',
+    rollLabel: 'Sublime · Primal · Prismatic · Bloodfire combo',
+  },
+];
+
+renderRates();
+row('row-rarity',     RARITY_ROW.map(tooltip));
+row('row-quality',    QUALITY_ROW.map(tooltip));
+row('row-recolor',    RECOLOR_ROW.map(tooltip));
+row('row-enchant',    ENCHANT_ROW.map(tooltip));
+row('row-combo',      COMBO_ROW.map(tooltip));
+row('row-meta',       META_ROW.map(tooltip));
+row('row-everything', EVERYTHING_ROW.map(tooltip));
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>

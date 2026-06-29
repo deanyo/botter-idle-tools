@@ -1,0 +1,409 @@
+/* Botter Authoring Portal — shared theme.
+ *
+ * One source of truth for palette, buttons, form controls, modals, and
+ * tooltips across the index page and every editor (atlas, biome, item,
+ * affix, drop tuning). Mirrors the in-game UI palette: amber accent on
+ * OLED-pure-black, no cool-blue bleed.
+ *
+ * Editors that previously had their own :root palette should remove it
+ * and import this stylesheet via:
+ *   <link rel="stylesheet" href="portal.css">
+ *
+ * Editor-specific layout (biome panes, item slot tabs, etc.) stays in
+ * the editor's own <style> block.
+ */
+
+:root {
+  --bg: #0a0a0d;
+  --panel: #15151c;
+  --panel-2: #1c1c25;
+  --panel-hover: #1c1c25;
+  --border: #2a2a35;
+  --border-strong: #3a3a45;
+  --text: #e4e4e8;
+  --muted: #8a8a95;
+  --accent: #ffb84d;
+  --accent-dim: #b88836;
+  --accent-soft: rgba(255, 184, 77, 0.10);
+  --tile-bg: #000;
+  --picker-bg: #15151c;
+
+  /* Status colors. */
+  --good: #5fc878;
+  --warn: #ffaa55;
+  --bad: #f06464;
+
+  /* Rarity tints — match UITheme.gd's COL_RARITY for cross-tool
+     consistency between the editor preview cards and in-game tooltips. */
+  --rarity-common: #d8d8d8;
+  --rarity-uncommon: #66b3ff;
+  --rarity-rare: #ffe04d;
+  --rarity-epic: #ff8033;
+  --rarity-legendary: #ff4d4d;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: #ffd089; }
+
+/* Type scale matches the in-game UI: 14/13/12/11. */
+h1 { font-size: 15px; margin: 0; color: var(--accent); font-weight: 600; letter-spacing: 0.5px; }
+h2 { font-size: 14px; color: var(--accent); margin: 16px 0 8px; }
+h3 {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 8px 0 4px;
+}
+
+/* Form controls. */
+button, select, input[type="text"], input[type="number"], input[type="search"], textarea {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  padding: 4px 8px;
+  border-radius: 3px;
+  font: inherit;
+}
+button { cursor: pointer; transition: border-color 0.1s, color 0.1s, background 0.1s; }
+button:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+button:focus, select:focus, input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-dim);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+}
+button.primary {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+button.primary:hover {
+  background: #ffc870;
+  color: #000;
+}
+button.danger { color: var(--bad); border-color: rgba(240,100,100,0.4); }
+button.danger:hover { color: #ff8888; border-color: var(--bad); }
+button.subtle {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-size: 11px;
+}
+button.subtle:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+input[type="text"], input[type="search"] { min-width: 160px; }
+input[type="number"] { width: 70px; }
+input[type="checkbox"] { accent-color: var(--accent); margin: 0; }
+
+label {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+textarea {
+  resize: vertical;
+  font: 12px ui-monospace, "SF Mono", Menlo, monospace;
+  padding: 6px 8px;
+  width: 100%;
+}
+
+/* Header — title row across the top of every editor. */
+header.portal-header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+header.portal-header h1 { color: var(--accent); }
+header.portal-header .stats {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Back-to-portal pill — works in any header. */
+.home-link {
+  color: var(--muted);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.home-link:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+/* Shared cross-page navigation. Renders as a row of pill links across
+   the top of every editor + viewer page. Active page is highlighted.
+   Drop a `<nav class="portal-nav" data-active="atlas"></nav>` into the
+   page and call portalNav() at the end of the body to populate it.
+   2026-06-05 — replaces the per-page hand-rolled link rows. */
+.portal-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.portal-nav .nav-home {
+  color: var(--muted);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-right: 6px;
+}
+.portal-nav .nav-home:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+.portal-nav a.nav-link {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+}
+.portal-nav a.nav-link:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.portal-nav a.nav-link.active {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--accent-soft);
+}
+.portal-nav .nav-spacer { flex: 1; }
+.portal-nav .nav-title {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Cards — used on the index page, run report, etc. */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.card:hover {
+  background: var(--panel-hover);
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+.card.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.card .title {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Badges. */
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+.badge.live { background: rgba(95, 200, 120, 0.15); color: var(--good); }
+.badge.beta { background: var(--accent-soft); color: var(--accent); }
+.badge.soon { background: rgba(138, 138, 149, 0.15); color: var(--muted); }
+
+/* Pills — small inline tags inside editors. */
+.pill {
+  display: inline-block;
+  padding: 1px 7px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.pill.accent { color: var(--accent); border-color: var(--accent-dim); background: var(--accent-soft); }
+
+/* Tile cells — used in atlas, biome editor, item editor, picker grids.
+   Match the in-game item-cell aesthetic: small dark bg, thin border,
+   amber hover. */
+.tile-cell, .pick-cell {
+  background: var(--tile-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 4px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.tile-cell:hover, .pick-cell:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+.tile-cell img, .pick-cell img {
+  image-rendering: pixelated;
+  background: #000;
+  object-fit: contain;
+}
+
+/* Modal / picker. Centered overlay with amber border accent. */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal.open { display: flex; }
+.modal-inner {
+  background: var(--picker-bg);
+  border: 1px solid var(--accent-dim);
+  border-radius: 6px;
+  width: 90%;
+  max-width: 1100px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+.modal-head {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.modal-head h2 { margin: 0; font-size: 13px; }
+
+/* Tooltip — matches the in-game ItemTooltip widget feel. */
+.portal-tooltip {
+  position: fixed;
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  border-left: 2px solid var(--accent-dim);
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  pointer-events: none;
+  z-index: 200;
+  max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  color: var(--text);
+}
+.portal-tooltip .key { color: var(--accent); font-weight: 600; }
+.portal-tooltip .path {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--muted);
+  font-size: 10px;
+  word-break: break-all;
+}
+
+/* Toast — slide-up bottom-center confirmation. */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel);
+  border: 1px solid var(--good);
+  color: var(--good);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 220;
+  opacity: 0;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+/* Empty state — centered "no results" message. */
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 40px;
+}
+.empty.error { color: var(--bad); }
+
+/* Help text under field rows. */
+.help {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 6px 0 12px;
+  line-height: 1.5;
+}
+
+/* Inline keyboard-key hint, e.g. "/ search · Esc close" footer. */
+.kbd-hint {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  color: var(--muted);
+  font-size: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.kbd-hint kbd {
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  padding: 0 4px;
+  font-family: ui-monospace, monospace;
+  color: var(--accent);
+}
