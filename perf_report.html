@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Perf Audit 2026-07-01</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  body { padding: 24px; overflow-y: auto; }
+  main { max-width: 1100px; margin: 0 auto; }
+  header.hero {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+  header.hero h1 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    color: var(--accent);
+  }
+  header.hero .sub {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  section { margin: 32px 0; }
+  section h2 {
+    margin: 0 0 12px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  p.lede { color: var(--muted); margin: 0 0 20px; max-width: 780px; line-height: 1.55; }
+
+  /* Metric bar chart. */
+  .bars { display: grid; gap: 14px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 10px; align-items: center; }
+  .bar-label {
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .bar-track {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    height: 26px;
+  }
+  .bar-fill {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+    color: #0a0a0d;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .bar-fill.pre  { background: linear-gradient(90deg, #f06464, #ff8b6b); }
+  .bar-fill.post { background: linear-gradient(90deg, #5fc878, #97d8a3); }
+  .bar-header { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 10px; margin-bottom: 6px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .bar-header span:nth-child(2) { color: #f06464; }
+  .bar-header span:nth-child(3) { color: #5fc878; }
+
+  /* Delta chip. */
+  .delta {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: rgba(95, 200, 120, 0.15);
+    color: var(--good);
+    border: 1px solid rgba(95, 200, 120, 0.35);
+  }
+  .delta.regress { background: rgba(240, 100, 100, 0.15); color: var(--bad); border-color: rgba(240, 100, 100, 0.35); }
+
+  /* Histogram. */
+  .hist-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .hist { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 14px; }
+  .hist h3 { margin: 0 0 4px; color: var(--accent); font-size: 13px; }
+  .hist .caption { color: var(--muted); font-size: 11px; margin: 0 0 10px; }
+  .hist svg { display: block; width: 100%; height: 220px; }
+  .legend { display: flex; gap: 14px; font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .legend .swatch.pre  { background: #f06464; }
+  .legend .swatch.post { background: #5fc878; }
+
+  /* Fixes list. */
+  .fixes { display: grid; gap: 10px; margin-top: 12px; }
+  .fix {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .fix-title { font-size: 13px; color: var(--accent); font-weight: 600; margin: 0 0 4px; }
+  .fix-file  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); font-size: 11px; }
+  .fix-desc  { color: var(--text); font-size: 12px; margin: 6px 0 0; line-height: 1.5; }
+
+  /* Tier tag. */
+  .tier { display: inline-block; padding: 1px 7px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; border-radius: 3px; margin-right: 8px; }
+  .tier.t0 { background: rgba(240, 100, 100, 0.18); color: #ff8b6b; }
+  .tier.t1 { background: rgba(255, 170, 85, 0.18); color: var(--warn); }
+
+  footer { color: var(--muted); font-size: 11px; margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--border); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 3px; color: var(--accent); font-size: 11px; }
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Perf audit 2026-07-01 — Tier 0 &amp; 1 shipped</h1>
+    <div class="sub">Multi-agent audit → 60 findings → prioritised checklist → 10 fixes landed. Numbers below are 5-run headless grinds at <code>--preset t3</code>, same command pre and post.</div>
+  </header>
+
+  <section>
+    <h2>Frame time — full-run distribution</h2>
+    <p class="lede">
+      The <code>[perf]</code> line emits every 240 frames. Average, p50, p95, p99, and max across
+      all samples in a 5-run grind. Frame budget for 60 fps is 16.67ms; anything above that is a
+      dropped frame.
+    </p>
+
+    <div class="bar-header">
+      <span>metric</span><span>PRE — before audit</span><span>POST — Tier 0 + 1</span>
+    </div>
+    <div class="bars" id="frame-bars"></div>
+  </section>
+
+  <section>
+    <h2>Floor build — spawn cost</h2>
+    <p class="lede">
+      <code>[build-floor]</code>'s <code>spawn_ms</code>: how long enemy instantiation blocks the
+      main thread when a floor is generated. Pre-fix, up to 350 mobs materialised on a single frame;
+      post-fix, pack leaders spawn synchronously and packmates drain 4/frame from
+      <code>wave_spawner.gd::drain_initial()</code>.
+    </p>
+
+    <div class="bar-header">
+      <span>metric</span><span>PRE</span><span>POST</span>
+    </div>
+    <div class="bars" id="spawn-bars"></div>
+  </section>
+
+  <section>
+    <h2>Perf-spike counter</h2>
+    <p class="lede">
+      Frames &gt; 50ms fire a <code>[perf-spike]</code> log line with node/draw/obj counts.
+      Total across 5 runs.
+    </p>
+    <div class="bar-header">
+      <span>metric</span><span>PRE</span><span>POST</span>
+    </div>
+    <div class="bars" id="spike-bars"></div>
+  </section>
+
+  <section>
+    <h2>Distribution — histograms</h2>
+    <p class="lede">
+      Averages hide tail behavior. These histograms show <em>where</em> frames land — the goal is
+      to collapse the tail into a tight cluster near the mean, not just lower the average.
+    </p>
+    <div class="hist-wrap">
+      <div class="hist">
+        <h3>Frame time</h3>
+        <p class="caption">Frame ms samples across 5 runs. Overlaid: PRE red, POST green.</p>
+        <svg id="hist-frame" viewBox="0 0 500 220" preserveAspectRatio="none"></svg>
+        <div class="legend">
+          <span><span class="swatch pre"></span>PRE (n=<span id="pre-frame-n"></span>)</span>
+          <span><span class="swatch post"></span>POST (n=<span id="post-frame-n"></span>)</span>
+        </div>
+      </div>
+      <div class="hist">
+        <h3>Floor spawn ms</h3>
+        <p class="caption">Per-floor spawn cost across 5 runs. Overlaid: PRE red, POST green.</p>
+        <svg id="hist-spawn" viewBox="0 0 500 220" preserveAspectRatio="none"></svg>
+        <div class="legend">
+          <span><span class="swatch pre"></span>PRE (n=<span id="pre-spawn-n"></span>)</span>
+          <span><span class="swatch post"></span>POST (n=<span id="post-spawn-n"></span>)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What shipped</h2>
+    <p class="lede">
+      Every fix is a real code change with a file:line in the checklist. Tier 0 = playtest
+      blockers or S-effort quick wins. Tier 1 = P1 with M-effort. See
+      <code>docs/perf-audit-2026-07-01/PERF_CHECKLIST.md</code> for full tier breakdown.
+    </p>
+    <div class="fixes">
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>Glow-material cache keyed on color only</div>
+        <div class="fix-file">bot.gd:1088 · paperdoll_renderer.gd:154</div>
+        <div class="fix-desc">Slider drags on FX Tuner used to compile a fresh Web GL program per step because <code>strength</code> and <code>thickness</code> lived in the cache key. Now uniform mutations on the cached material — no recompile.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>VideoSettings.load_settings cache</div>
+        <div class="fix-file">video_settings.gd:203</div>
+        <div class="fix-desc">Combat-hot config reads (<code>tunable()</code>, <code>is_effect_enabled()</code>) fired 15-25× per frame and re-parsed <code>user://video_settings.json</code> from disk each time. Now O(1) Dict lookups; cache invalidated only on <code>save_settings()</code>.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>Fog nearest-8 light sort</div>
+        <div class="fix-file">fog_overlay.gd:126</div>
+        <div class="fix-desc">Web-GL fragment cost caps active lights at 8. Pre-fix picked arbitrary 8; now sorts world lights by distance-to-bot before the slice — near-bot torch always wins.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>Autosave chain redundant reload</div>
+        <div class="fix-file">dungeon.gd:2603</div>
+        <div class="fix-desc">Autosave was doing <code>flush_to_save()</code> then <code>SaveState.save_state(SaveState.load_state())</code> — 3 JSON parses + 2 writes per 60s tick. Dropped the redundant reload.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>Boss + portal texture prewarm</div>
+        <div class="fix-file">biome_data.gd:151 · dungeon.gd:2436 · outpost.gd:187</div>
+        <div class="fix-desc">Boss textures lived outside <code>enemy_pool</code> and portal biomes were never in the outpost's unlocked walk. Now prewarmed proactively at Outpost across all <code>Portal.PORTAL_KINDS</code> and defensively at portal entry.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Tier 0</span>Initial spawn stagger</div>
+        <div class="fix-file">dungeon.gd:5251 · wave_spawner.gd</div>
+        <div class="fix-desc">Pre-fix <code>_spawn_packs</code> synchronously instantiated up to 350 mobs on floor build. Now spawns pack leaders synchronously (floor reads populated immediately) and queues packmates into <code>wave.pending_initial_spawns</code> drained 4/frame from <code>_process</code>.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t1">Tier 1</span>Autosave retry-delay skip</div>
+        <div class="fix-file">save_state.gd:1024 · run_state.gd:420</div>
+        <div class="fix-desc"><code>_save_wrapper</code> gained <code>retry_delay_ms</code>. Autosave path passes 0 — no <code>OS.delay_msec(1000)</code> stall in <code>_process</code> on transient FS contention. Quit/menu/shop keep the 1s default.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t1">Tier 1</span>Compact save JSON</div>
+        <div class="fix-file">save_state.gd:1082</div>
+        <div class="fix-desc">Dropped 2-space indent from <code>JSON.stringify</code> on save. Verified live save file shrunk ~14KB → ~5.7KB (60% reduction). Halves stringify+parse cost.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t1">Tier 1</span>Migration walker across all containers</div>
+        <div class="fix-file">save_state.gd::_walk_all_item_containers</div>
+        <div class="fix-desc"><code>_migrate_to_v8/v10/v13</code> now route through one helper that hits equipped + inventory + stash + orphaned_items. Pre-fix, several migrations skipped stash and orphaned_items — Steam-Cloud-tanking silent stat loss.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t0">Playbook</span>Rules 1, 3, 4 amended + new Rule 7</div>
+        <div class="fix-file">CLAUDE.md — HTML5 perf playbook</div>
+        <div class="fix-desc">Rule 1 (cache-key vs uniform mutation), Rule 3 (data-driven prewarm — walk JSON, no hand-lists), Rule 4 (ms-budget stagger), new Rule 7 (config reads are hot-path). Post-amend re-sweep found three new drift sites (portal gateways, ambient decor, spell projectile textures) — all fixed inline.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Data source: <code>logs/grind/20260701-141813_16x_5runs.log</code> (PRE, commit 30d9c65) &amp;
+    <code>logs/grind/20260701-141424_16x_5runs.log</code> (POST, commit 471d466). 5 runs each,
+    <code>--preset t3</code>, headless native. Full checklist at
+    <code>docs/perf-audit-2026-07-01/PERF_CHECKLIST.md</code>.
+  </footer>
+</main>
+
+<script>
+"use strict";
+
+const PRE_FRAME_MS  = [5.86,6.38,3.38,3.77,3.39,2.60,3.17,4.89,6.69,8.12,7.29,6.09,6.09,6.28,10.91,4.68,4.04,3.10,2.47,2.12,2.24,2.31,2.22,2.30,2.60,2.66,4.40,6.85,6.47,6.90,8.40,4.88,3.37,2.89,5.15,7.73,5.15,7.92,6.88,3.15,8.58,4.58,5.54,4.65,3.98,3.01,5.85,8.24,6.50,6.79,7.34,4.79,5.61,6.85,5.56,6.44,5.48,6.17,9.14,10.46,5.12,2.70,6.21,9.43,8.58,7.61,8.49,17.37,8.28,5.26,6.63,6.61,6.02,6.66,4.84,6.02,7.96,7.06,5.65,6.82,9.81,7.91];
+const POST_FRAME_MS = [2.72,3.35,2.93,3.16,3.03,3.15,3.11,3.58,3.06,2.91,2.70,3.03,2.84,2.97,2.75,2.73,3.05,3.61,3.20,3.54,3.17,3.17,3.00,3.21,3.19,3.12,2.87,3.00,2.70,2.81,2.95,3.23,3.00,2.99,2.97,3.22,3.41,3.28,2.84,3.06,2.73,2.74,2.12,2.61,2.85,2.50,2.66,2.69,2.38,2.55,2.49,2.65,2.78,3.06,2.94,2.83,2.98,2.38,3.27,2.90,2.68,2.83,2.82,2.70,3.77];
+const PRE_SPAWN_MS  = [57.9,98.7,133.9,106.7,163.2,150.0,21.6,88.1,173.0,278.9,134.6,180.9,40.9,99.9,126.4,174.4,36.0,55.4,105.4,158.2,83.2,260.3,29.0,108.1,95.8,196.2,118.2,195.2,177.3];
+const POST_SPAWN_MS = [11.8,14.2,45.6,20.3,47.3,31.1,21.0,29.6,34.3,34.2,18.6,14.0,22.3,26.6,35.1,48.3,13.2,18.3,13.8,46.6,37.3,20.3,15.7,22.1,19.4,20.4];
+const PRE_SPIKE_COUNT = 312;
+const POST_SPIKE_COUNT = 78;
+
+function stats(arr) {
+  if (arr.length === 0) return { n: 0 };
+  const sorted = [...arr].sort((a, b) => a - b);
+  const q = p => sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))];
+  return {
+    n: sorted.length,
+    avg: sorted.reduce((s, v) => s + v, 0) / sorted.length,
+    p50: q(0.5), p95: q(0.95), p99: q(0.99),
+    max: sorted[sorted.length - 1],
+  };
+}
+
+function fmt(v) { return v.toFixed(2); }
+function pct(pre, post) {
+  if (pre === 0) return "";
+  const d = ((post - pre) / pre) * 100;
+  const cls = d < 0 ? "delta" : "delta regress";
+  const sign = d >= 0 ? "+" : "";
+  return `<span class="${cls}">${sign}${d.toFixed(0)}%</span>`;
+}
+
+function renderBars(rootId, rows, unit) {
+  const root = document.getElementById(rootId);
+  const maxVal = Math.max(...rows.flatMap(r => [r.pre, r.post]));
+  const scale = v => Math.max(2, (v / maxVal) * 100);
+  root.innerHTML = rows.map(r => `
+    <div class="bar-row">
+      <div class="bar-label">${r.label}</div>
+      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%">${fmt(r.pre)}${unit}</div></div>
+      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%">${fmt(r.post)}${unit} ${pct(r.pre, r.post)}</div></div>
+    </div>
+  `).join("");
+}
+
+function renderIntBars(rootId, rows) {
+  const root = document.getElementById(rootId);
+  const maxVal = Math.max(...rows.flatMap(r => [r.pre, r.post]));
+  const scale = v => Math.max(2, (v / maxVal) * 100);
+  root.innerHTML = rows.map(r => `
+    <div class="bar-row">
+      <div class="bar-label">${r.label}</div>
+      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%">${r.pre}</div></div>
+      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%">${r.post} ${pct(r.pre, r.post)}</div></div>
+    </div>
+  `).join("");
+}
+
+function histogram(values, binWidth) {
+  const bins = new Map();
+  for (const v of values) {
+    const b = Math.floor(v / binWidth);
+    bins.set(b, (bins.get(b) || 0) + 1);
+  }
+  return bins;
+}
+
+function renderHist(svgId, preArr, postArr, binWidth, xMax, xUnit) {
+  const svg = document.getElementById(svgId);
+  const W = 500, H = 220, PAD_L = 34, PAD_R = 8, PAD_T = 8, PAD_B = 26;
+  const plotW = W - PAD_L - PAD_R, plotH = H - PAD_T - PAD_B;
+  const preBins  = histogram(preArr, binWidth);
+  const postBins = histogram(postArr, binWidth);
+  const nBins = Math.ceil(xMax / binWidth);
+  const maxCount = Math.max(
+    0,
+    ...[...preBins.values()],
+    ...[...postBins.values()],
+  );
+  const xFor = i => PAD_L + (i * plotW / nBins);
+  const wFor = () => plotW / nBins - 1;
+  const hFor = c => (c / maxCount) * plotH;
+
+  const bars = [];
+  for (let i = 0; i < nBins; i++) {
+    const preC  = preBins.get(i)  || 0;
+    const postC = postBins.get(i) || 0;
+    // PRE bars first (behind), then POST (in front, offset half-width for readability).
+    if (preC > 0) {
+      const h = hFor(preC);
+      bars.push(`<rect x="${xFor(i)}" y="${PAD_T + plotH - h}" width="${wFor() * 0.55}" height="${h}" fill="#f06464" opacity="0.75"/>`);
+    }
+    if (postC > 0) {
+      const h = hFor(postC);
+      const bx = xFor(i) + wFor() * 0.45;
+      bars.push(`<rect x="${bx}" y="${PAD_T + plotH - h}" width="${wFor() * 0.55}" height="${h}" fill="#5fc878" opacity="0.85"/>`);
+    }
+  }
+
+  // X axis ticks — label every 2 bins.
+  const ticks = [];
+  for (let i = 0; i <= nBins; i += 2) {
+    const x = xFor(i);
+    ticks.push(`<line x1="${x}" y1="${PAD_T + plotH}" x2="${x}" y2="${PAD_T + plotH + 4}" stroke="#3a3a45"/>`);
+    ticks.push(`<text x="${x}" y="${PAD_T + plotH + 16}" fill="#8a8a95" font-size="9" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">${(i * binWidth).toFixed(0)}</text>`);
+  }
+  ticks.push(`<text x="${W / 2}" y="${H - 4}" fill="#8a8a95" font-size="10" text-anchor="middle">ms (bin=${binWidth})</text>`);
+
+  // Y axis + gridlines.
+  const yTicks = [];
+  const yStep = Math.max(1, Math.ceil(maxCount / 4));
+  for (let c = 0; c <= maxCount; c += yStep) {
+    const y = PAD_T + plotH - hFor(c);
+    yTicks.push(`<line x1="${PAD_L}" y1="${y}" x2="${W - PAD_R}" y2="${y}" stroke="#2a2a35" stroke-dasharray="2,3"/>`);
+    yTicks.push(`<text x="${PAD_L - 4}" y="${y + 3}" fill="#8a8a95" font-size="9" text-anchor="end" font-family="ui-monospace, Menlo, monospace">${c}</text>`);
+  }
+
+  svg.innerHTML = [
+    `<line x1="${PAD_L}" y1="${PAD_T}" x2="${PAD_L}" y2="${PAD_T + plotH}" stroke="#3a3a45"/>`,
+    `<line x1="${PAD_L}" y1="${PAD_T + plotH}" x2="${W - PAD_R}" y2="${PAD_T + plotH}" stroke="#3a3a45"/>`,
+    ...yTicks,
+    ...ticks,
+    ...bars,
+  ].join("");
+}
+
+// ---- Frame stats ----
+const preF  = stats(PRE_FRAME_MS);
+const postF = stats(POST_FRAME_MS);
+renderBars("frame-bars", [
+  { label: "avg", pre: preF.avg, post: postF.avg },
+  { label: "p50", pre: preF.p50, post: postF.p50 },
+  { label: "p95", pre: preF.p95, post: postF.p95 },
+  { label: "p99", pre: preF.p99, post: postF.p99 },
+  { label: "max", pre: preF.max, post: postF.max },
+], "ms");
+
+// ---- Spawn stats ----
+const preS  = stats(PRE_SPAWN_MS);
+const postS = stats(POST_SPAWN_MS);
+renderBars("spawn-bars", [
+  { label: "avg", pre: preS.avg, post: postS.avg },
+  { label: "p50", pre: preS.p50, post: postS.p50 },
+  { label: "p95", pre: preS.p95, post: postS.p95 },
+  { label: "max", pre: preS.max, post: postS.max },
+], "ms");
+
+// ---- Spike counts ----
+renderIntBars("spike-bars", [
+  { label: "spike count", pre: PRE_SPIKE_COUNT, post: POST_SPIKE_COUNT },
+]);
+
+// ---- Histograms ----
+renderHist("hist-frame", PRE_FRAME_MS, POST_FRAME_MS, 1, 20, "ms");
+document.getElementById("pre-frame-n").textContent  = PRE_FRAME_MS.length;
+document.getElementById("post-frame-n").textContent = POST_FRAME_MS.length;
+
+renderHist("hist-spawn", PRE_SPAWN_MS, POST_SPAWN_MS, 20, 300, "ms");
+document.getElementById("pre-spawn-n").textContent  = PRE_SPAWN_MS.length;
+document.getElementById("post-spawn-n").textContent = POST_SPAWN_MS.length;
+</script>
+</body>
+</html>

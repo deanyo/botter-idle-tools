@@ -50,7 +50,8 @@
         "jackal",
         "giant_cockroach",
         "skeleton",
-        "orc"
+        "orc",
+        "kobold_demonologist"
       ],
       "vault_themes": [
         "dungeon"
@@ -163,7 +164,11 @@
         "orc_warrior",
         "death_knight",
         "wolf",
-        "hell_hound"
+        "hell_hound",
+        "orc_wizard",
+        "kobold_demonologist",
+        "wight",
+        "giant_scorpion"
       ],
       "vault_themes": [
         "dungeon",
@@ -261,7 +266,11 @@
         "big_kobold",
         "dwarf",
         "orc_warrior",
-        "ogre"
+        "ogre",
+        "orc_wizard",
+        "gnoll_shaman",
+        "gnoll_sergeant",
+        "deep_dwarf"
       ],
       "vault_themes": [
         "dungeon",
@@ -377,7 +386,9 @@
         "komodo_dragon",
         "hippogriff",
         "yak",
-        "death_yak"
+        "death_yak",
+        "fire_bat",
+        "dire_elephant"
       ],
       "vault_themes": [
         "dungeon",
@@ -694,7 +705,11 @@
         "salamander",
         "komodo_dragon",
         "hippogriff",
-        "sphinx"
+        "sphinx",
+        "naga_warrior",
+        "naga_mage",
+        "naga_ritualist",
+        "naga_sharpshooter"
       ],
       "vault_themes": [
         "dungeon",
@@ -801,7 +816,9 @@
         "hippogriff",
         "cyclops",
         "stone_giant",
-        "frost_giant"
+        "frost_giant",
+        "tengu_warrior",
+        "tengu_conjurer"
       ],
       "vault_themes": [
         "dungeon",
@@ -893,7 +910,10 @@
         "orc_knight",
         "ogre",
         "two_headed_ogre",
-        "troll"
+        "troll",
+        "orc_wizard",
+        "orc_sorcerer",
+        "orc_high_priest"
       ],
       "vault_themes": [
         "dungeon",
@@ -993,7 +1013,10 @@
         "anubis_guard",
         "vampire_knight",
         "iron_dragon",
-        "stone_giant"
+        "stone_giant",
+        "orc_sorcerer",
+        "deep_dwarf",
+        "emperor_scorpion"
       ],
       "vault_themes": [
         "dungeon",
@@ -1103,7 +1126,12 @@
         "death_knight",
         "vampire_knight",
         "lich",
-        "mummy"
+        "mummy",
+        "wight",
+        "flying_skull",
+        "freezing_wraith",
+        "mummy_priest",
+        "phantom"
       ],
       "vault_themes": [
         "dungeon",
@@ -1211,7 +1239,10 @@
         "sphinx",
         "anubis_guard",
         "wraith",
-        "lich"
+        "lich",
+        "flying_skull",
+        "mummy_priest",
+        "phantom"
       ],
       "vault_themes": [
         "dungeon",
@@ -1329,7 +1360,14 @@
         "ogre",
         "troll",
         "deep_troll",
-        "balrug"
+        "balrug",
+        "rock_troll",
+        "iron_troll",
+        "red_devil",
+        "iron_devil",
+        "sun_demon",
+        "smoke_demon",
+        "fire_bat"
       ],
       "vault_themes": [
         "dungeon",
@@ -1421,7 +1459,8 @@
         "frost_giant",
         "skeleton",
         "lich",
-        "deep_troll"
+        "deep_troll",
+        "freezing_wraith"
       ],
       "vault_themes": [
         "dungeon",
@@ -1714,7 +1753,9 @@
         "vampire_knight",
         "cyclops",
         "deep_troll",
-        "iron_dragon"
+        "iron_dragon",
+        "tengu_warrior",
+        "tengu_conjurer"
       ],
       "vault_themes": [
         "dungeon",
@@ -1812,7 +1853,11 @@
         "death_knight",
         "deep_troll",
         "balrug",
-        "iron_dragon"
+        "iron_dragon",
+        "iron_devil",
+        "smoke_demon",
+        "soul_eater",
+        "phantom"
       ],
       "vault_themes": [
         "dungeon",
@@ -1919,7 +1964,13 @@
         "fire_dragon",
         "lich",
         "vampire_knight",
-        "deep_troll"
+        "deep_troll",
+        "iron_troll",
+        "red_devil",
+        "iron_devil",
+        "sun_demon",
+        "smoke_demon",
+        "soul_eater"
       ],
       "vault_themes": [
         "dungeon",
@@ -2117,7 +2168,12 @@
         "deep_elf_sorcerer",
         "centaur_warrior",
         "sphinx",
-        "manticore"
+        "manticore",
+        "deep_elf_priest",
+        "deep_elf_annihilator",
+        "deep_elf_death_mage",
+        "deep_elf_high_priest",
+        "deep_elf_master_archer"
       ],
       "vault_themes": [
         "dungeon",
@@ -2215,7 +2271,9 @@
         "wolf_spider",
         "orb_spider",
         "giant_spider",
-        "steam_dragon"
+        "steam_dragon",
+        "giant_scorpion",
+        "emperor_scorpion"
       ],
       "vault_themes": [
         "dungeon",
@@ -2387,7 +2445,13 @@
         "quicksilver_dragon",
         "shadow_dragon",
         "death_knight",
-        "lich"
+        "lich",
+        "deep_elf_annihilator",
+        "deep_elf_death_mage",
+        "deep_elf_master_archer",
+        "rock_troll",
+        "iron_troll",
+        "dire_elephant"
       ],
       "vault_themes": [
         "dungeon",

@@ -9,7 +9,8 @@
     "xp": 2,
     "min_floor": 1,
     "tier": 1,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "bat": {
     "name": "Bat",
@@ -21,7 +22,8 @@
     "xp": 2,
     "min_floor": 1,
     "tier": 1,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "grey_rat": {
     "name": "Grey Rat",
@@ -33,7 +35,8 @@
     "xp": 3,
     "min_floor": 1,
     "tier": 1,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "butterfly": {
     "name": "Butterfly",
@@ -45,7 +48,8 @@
     "xp": 1,
     "min_floor": 1,
     "tier": 1,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "quokka": {
     "name": "Quokka",
@@ -57,7 +61,8 @@
     "xp": 2,
     "min_floor": 1,
     "tier": 1,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "jelly": {
     "name": "Jelly",
@@ -88,7 +93,8 @@
     "xp": 5,
     "min_floor": 2,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "kobold": {
     "name": "Kobold",
@@ -100,7 +106,9 @@
     "xp": 5,
     "min_floor": 2,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash",
+    "ranged_attack_id": "shoot_arrow"
   },
   "giant_cockroach": {
     "name": "Giant Cockroach",
@@ -114,7 +122,8 @@
     "tier": 2,
     "boss": false,
     "visual_scale": 1.4,
-    "visual_anchor": "centre"
+    "visual_anchor": "centre",
+    "attack_kind": "bite"
   },
   "jackal": {
     "name": "Jackal",
@@ -126,7 +135,8 @@
     "xp": 6,
     "min_floor": 2,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "adder": {
     "name": "Adder",
@@ -142,7 +152,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "ball_python": {
     "name": "Ball Python",
@@ -158,7 +169,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "ooze": {
     "name": "Ooze",
@@ -210,7 +222,8 @@
     "tier": 2,
     "boss": false,
     "visual_scale": 1.3,
-    "visual_anchor": "centre"
+    "visual_anchor": "centre",
+    "attack_kind": "slash"
   },
   "big_kobold": {
     "name": "Big Kobold",
@@ -222,7 +235,9 @@
     "xp": 7,
     "min_floor": 2,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash",
+    "ranged_attack_id": "shoot_arrow"
   },
   "gnoll": {
     "name": "Gnoll",
@@ -234,7 +249,8 @@
     "xp": 9,
     "min_floor": 3,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "claw"
   },
   "orc": {
     "name": "Orc",
@@ -246,7 +262,8 @@
     "xp": 10,
     "min_floor": 3,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "skeleton": {
     "name": "Skeleton",
@@ -276,7 +293,8 @@
     "xp": 12,
     "min_floor": 3,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "claw"
   },
   "wolf_spider": {
     "name": "Wolf Spider",
@@ -292,7 +310,8 @@
     "resistances": {
       "holy": -10,
       "poison": 50
-    }
+    },
+    "attack_kind": "bite"
   },
   "hound": {
     "name": "Hound",
@@ -304,7 +323,8 @@
     "xp": 11,
     "min_floor": 3,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "claw"
   },
   "black_bear": {
     "name": "Black Bear",
@@ -316,7 +336,8 @@
     "xp": 14,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "claw"
   },
   "black_mamba": {
     "name": "Black Mamba",
@@ -332,7 +353,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "crocodile": {
     "name": "Crocodile",
@@ -348,7 +370,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "komodo": {
     "name": "Komodo Dragon",
@@ -364,7 +387,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "orc_warrior": {
     "name": "Orc Warrior",
@@ -376,7 +400,8 @@
     "xp": 15,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "orc_priest": {
     "name": "Orc Priest",
@@ -388,7 +413,8 @@
     "xp": 14,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "centaur": {
     "name": "Centaur",
@@ -400,7 +426,9 @@
     "xp": 16,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "headbutt",
+    "ranged_attack_id": "shoot_arrow"
   },
   "ice_beast": {
     "name": "Ice Beast",
@@ -417,7 +445,8 @@
     "resistances": {
       "cold": 75,
       "fire": -40
-    }
+    },
+    "attack_kind": "claw"
   },
   "dwarf": {
     "name": "Dwarf",
@@ -429,7 +458,8 @@
     "xp": 16,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "elf": {
     "name": "Elf",
@@ -441,7 +471,8 @@
     "xp": 16,
     "min_floor": 4,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "wraith": {
     "name": "Wraith",
@@ -496,7 +527,8 @@
       "dark": 25,
       "fire": 50,
       "holy": -40
-    }
+    },
+    "attack_kind": "claw"
   },
   "death_yak": {
     "name": "Death Yak",
@@ -508,7 +540,8 @@
     "xp": 22,
     "min_floor": 5,
     "tier": 4,
-    "boss": false
+    "boss": false,
+    "attack_kind": "headbutt"
   },
   "elephant": {
     "name": "Elephant",
@@ -522,7 +555,8 @@
     "tier": 4,
     "boss": false,
     "visual_scale": 1.4,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "orc_knight": {
     "name": "Orc Knight",
@@ -534,7 +568,8 @@
     "xp": 25,
     "min_floor": 5,
     "tier": 4,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "centaur_warrior": {
     "name": "Centaur Warrior",
@@ -546,7 +581,9 @@
     "xp": 26,
     "min_floor": 6,
     "tier": 4,
-    "boss": false
+    "boss": false,
+    "attack_kind": "headbutt",
+    "ranged_attack_id": "shoot_arrow"
   },
   "cyclops": {
     "name": "Cyclops",
@@ -563,7 +600,8 @@
     "visual_anchor": "ground",
     "resistances": {
       "fire": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "ogre": {
     "name": "Ogre",
@@ -578,7 +616,8 @@
     "boss": false,
     "resistances": {
       "fire": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "troll": {
     "name": "Troll",
@@ -594,7 +633,8 @@
     "resistances": {
       "fire": -50,
       "poison": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "anubis_guard": {
     "name": "Anubis Guard",
@@ -612,7 +652,8 @@
       "dark": 50,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "attack_kind": "slash"
   },
   "death_knight": {
     "name": "Death Knight",
@@ -630,7 +671,8 @@
       "dark": 50,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "attack_kind": "slash"
   },
   "deep_elf_knight": {
     "name": "Deep Elf Knight",
@@ -642,7 +684,8 @@
     "xp": 32,
     "min_floor": 7,
     "tier": 4,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "manticore": {
     "name": "Manticore",
@@ -657,7 +700,8 @@
     "boss": false,
     "resistances": {
       "fire": 25
-    }
+    },
+    "attack_kind": "claw"
   },
   "fire_giant": {
     "name": "Fire Giant",
@@ -676,7 +720,8 @@
     "resistances": {
       "cold": -40,
       "fire": 75
-    }
+    },
+    "attack_kind": "slam"
   },
   "hill_giant": {
     "name": "Hill Giant",
@@ -690,7 +735,8 @@
     "tier": 4,
     "boss": false,
     "visual_scale": 1.5,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "dragon": {
     "name": "Dragon",
@@ -707,7 +753,8 @@
     "visual_anchor": "ground",
     "resistances": {
       "fire": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "ice_dragon": {
     "name": "Ice Dragon",
@@ -726,7 +773,8 @@
     "resistances": {
       "cold": 75,
       "fire": -40
-    }
+    },
+    "attack_kind": "slam"
   },
   "fire_dragon": {
     "name": "Fire Dragon",
@@ -745,7 +793,8 @@
     "resistances": {
       "cold": -40,
       "fire": 75
-    }
+    },
+    "attack_kind": "slam"
   },
   "iron_dragon": {
     "name": "Iron Dragon",
@@ -762,7 +811,8 @@
       "lightning": 50
     },
     "visual_scale": 1.5,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "lich": {
     "name": "Lich",
@@ -799,7 +849,8 @@
       "holy": -40,
       "lightning": 50,
       "poison": 50
-    }
+    },
+    "attack_kind": "slash"
   },
   "orc_warlord": {
     "name": "Orc Warlord",
@@ -811,7 +862,8 @@
     "xp": 70,
     "min_floor": 8,
     "tier": 5,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "deep_troll": {
     "name": "Deep Troll",
@@ -827,7 +879,8 @@
     "resistances": {
       "fire": -50,
       "poison": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "anaconda": {
     "name": "Anaconda",
@@ -843,7 +896,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "tail_whip"
   },
   "dryad": {
     "name": "Dryad",
@@ -859,7 +913,8 @@
     "resistances": {
       "poison": 50,
       "fire": -25
-    }
+    },
+    "attack_kind": "slash"
   },
   "frost_giant": {
     "name": "Frost Giant",
@@ -878,7 +933,8 @@
     "resistances": {
       "cold": 75,
       "fire": -40
-    }
+    },
+    "attack_kind": "slam"
   },
   "balrug": {
     "name": "Balrug",
@@ -895,7 +951,8 @@
       "dark": 25,
       "fire": 50,
       "holy": -40
-    }
+    },
+    "attack_kind": "slash"
   },
   "cacodemon": {
     "name": "Cacodemon",
@@ -916,7 +973,8 @@
       "dark": 25,
       "fire": 75,
       "holy": -40
-    }
+    },
+    "attack_kind": "bite"
   },
   "blue_devil": {
     "name": "Blue Devil",
@@ -934,7 +992,8 @@
       "fire": 25,
       "holy": -40,
       "lightning": 50
-    }
+    },
+    "attack_kind": "slash"
   },
   "blizzard_demon": {
     "name": "Blizzard Demon",
@@ -967,7 +1026,8 @@
     "xp": 200,
     "min_floor": 10,
     "tier": 5,
-    "boss": true
+    "boss": true,
+    "attack_kind": "headbutt"
   },
   "golden_dragon": {
     "name": "Golden Dragon",
@@ -984,7 +1044,8 @@
     "visual_anchor": "ground",
     "resistances": {
       "fire": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "redback": {
     "name": "Redback",
@@ -1000,7 +1061,8 @@
     "resistances": {
       "holy": -10,
       "poison": 50
-    }
+    },
+    "attack_kind": "bite"
   },
   "jumping_spider": {
     "name": "Jumping Spider",
@@ -1016,7 +1078,8 @@
     "resistances": {
       "holy": -10,
       "poison": 50
-    }
+    },
+    "attack_kind": "bite"
   },
   "orb_spider": {
     "name": "Orb Spider",
@@ -1032,7 +1095,8 @@
     "resistances": {
       "holy": -10,
       "poison": 50
-    }
+    },
+    "attack_kind": "bite"
   },
   "giant_spider": {
     "name": "Giant Spider",
@@ -1050,7 +1114,8 @@
     "resistances": {
       "holy": -10,
       "poison": 50
-    }
+    },
+    "attack_kind": "bite"
   },
   "water_moccasin": {
     "name": "Water Moccasin",
@@ -1067,7 +1132,8 @@
       "cold": -25,
       "lightning": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "salamander": {
     "name": "Salamander",
@@ -1084,7 +1150,9 @@
     "resistances": {
       "cold": -40,
       "fire": 75
-    }
+    },
+    "attack_kind": "tail_whip",
+    "ranged_attack_id": "throw_javelin"
   },
   "naga": {
     "name": "Naga",
@@ -1100,7 +1168,9 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "tail_whip",
+    "ranged_attack_id": "throw_javelin"
   },
   "yak": {
     "name": "Yak",
@@ -1112,7 +1182,8 @@
     "xp": 6,
     "min_floor": 6,
     "tier": 2,
-    "boss": false
+    "boss": false,
+    "attack_kind": "headbutt"
   },
   "hydra": {
     "name": "Hydra",
@@ -1129,7 +1200,8 @@
       "lightning": -25
     },
     "visual_scale": 1.5,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "tail_whip"
   },
   "hippogriff": {
     "name": "Hippogriff",
@@ -1141,7 +1213,8 @@
     "xp": 6,
     "min_floor": 6,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "headbutt"
   },
   "komodo_dragon": {
     "name": "Komodo Dragon",
@@ -1159,7 +1232,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "grizzly_bear": {
     "name": "Grizzly Bear",
@@ -1171,7 +1245,8 @@
     "xp": 7,
     "min_floor": 7,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "claw"
   },
   "giant_rat": {
     "name": "Giant Rat",
@@ -1185,7 +1260,8 @@
     "tier": 1,
     "boss": false,
     "visual_scale": 1.35,
-    "visual_anchor": "centre"
+    "visual_anchor": "centre",
+    "attack_kind": "bite"
   },
   "snapping_turtle": {
     "name": "Snapping Turtle",
@@ -1197,7 +1273,8 @@
     "xp": 7,
     "min_floor": 7,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "bite"
   },
   "alligator_snapping_turtle": {
     "name": "Alligator Snapping Turtle",
@@ -1213,7 +1290,8 @@
     "resistances": {
       "cold": -25,
       "poison": 25
-    }
+    },
+    "attack_kind": "bite"
   },
   "swamp_dragon": {
     "name": "Swamp Dragon",
@@ -1230,7 +1308,8 @@
       "lightning": -25
     },
     "visual_scale": 1.5,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "steam_dragon": {
     "name": "Steam Dragon",
@@ -1248,7 +1327,8 @@
     "resistances": {
       "fire": 50,
       "cold": 50
-    }
+    },
+    "attack_kind": "slam"
   },
   "mummy": {
     "name": "Mummy",
@@ -1269,7 +1349,8 @@
       "fire": -25,
       "holy": -50,
       "poison": 75
-    }
+    },
+    "attack_kind": "slam"
   },
   "greater_mummy": {
     "name": "Greater Mummy",
@@ -1290,7 +1371,8 @@
       "fire": -25,
       "holy": -50,
       "poison": 75
-    }
+    },
+    "attack_kind": "slam"
   },
   "sphinx": {
     "name": "Sphinx",
@@ -1308,7 +1390,8 @@
     "resistances": {
       "holy": 75,
       "dark": -50
-    }
+    },
+    "attack_kind": "slam"
   },
   "ghost": {
     "name": "Ghost",
@@ -1345,7 +1428,8 @@
       "dark": 50,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "attack_kind": "claw"
   },
   "ancient_lich": {
     "name": "Ancient Lich",
@@ -1435,7 +1519,8 @@
     "xp": 7,
     "min_floor": 7,
     "tier": 3,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slash"
   },
   "deep_elf_pyromancer": {
     "name": "Deep Elf Pyromancer",
@@ -1451,7 +1536,8 @@
     "resistances": {
       "fire": 50,
       "cold": -25
-    }
+    },
+    "attack_kind": "slash"
   },
   "deep_elf_sorcerer": {
     "name": "Deep Elf Sorcerer",
@@ -1467,7 +1553,8 @@
     "resistances": {
       "dark": 50,
       "holy": -25
-    }
+    },
+    "attack_kind": "slash"
   },
   "stone_giant": {
     "name": "Stone Giant",
@@ -1484,7 +1571,8 @@
       "lightning": 50
     },
     "visual_scale": 1.5,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "ettin": {
     "name": "Ettin",
@@ -1496,7 +1584,8 @@
     "xp": 9,
     "min_floor": 9,
     "tier": 4,
-    "boss": false
+    "boss": false,
+    "attack_kind": "slam"
   },
   "two_headed_ogre": {
     "name": "Two-Headed Ogre",
@@ -1512,7 +1601,8 @@
     "resistances": {
       "fire": -50,
       "poison": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "rotting_devil": {
     "name": "Rotting Devil",
@@ -1530,7 +1620,8 @@
       "fire": 25,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "attack_kind": "claw"
   },
   "wyvern": {
     "name": "Wyvern",
@@ -1546,7 +1637,8 @@
     "resistances": {
       "poison": 50,
       "cold": -25
-    }
+    },
+    "attack_kind": "tail_whip"
   },
   "shadow_dragon": {
     "name": "Shadow Dragon",
@@ -1564,7 +1656,8 @@
     "resistances": {
       "dark": 75,
       "holy": -25
-    }
+    },
+    "attack_kind": "slam"
   },
   "quicksilver_dragon": {
     "name": "Quicksilver Dragon",
@@ -1581,7 +1674,8 @@
       "lightning": 50
     },
     "visual_scale": 1.55,
-    "visual_anchor": "ground"
+    "visual_anchor": "ground",
+    "attack_kind": "slam"
   },
   "boss_sigmund": {
     "name": "Sigmund",
@@ -1610,7 +1704,8 @@
       "cold": 50,
       "poison": 75,
       "holy": -50
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_eustachio": {
     "name": "Eustachio",
@@ -1638,7 +1733,8 @@
       "dark": 75,
       "cold": 25,
       "holy": -50
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_blork": {
     "name": "Blork the Orc",
@@ -1652,7 +1748,8 @@
     "tier": 1,
     "boss": true,
     "visual_scale": 1.0,
-    "resistances": {}
+    "resistances": {},
+    "attack_kind": "slash"
   },
   "boss_kirke": {
     "name": "Kirke",
@@ -1694,7 +1791,8 @@
     "tier": 2,
     "boss": true,
     "visual_scale": 1.1,
-    "resistances": {}
+    "resistances": {},
+    "attack_kind": "slam"
   },
   "boss_grum": {
     "name": "Grum",
@@ -1708,7 +1806,8 @@
     "tier": 2,
     "boss": true,
     "visual_scale": 1.05,
-    "resistances": {}
+    "resistances": {},
+    "attack_kind": "slash"
   },
   "boss_psyche": {
     "name": "Psyche the Witch",
@@ -1735,7 +1834,8 @@
     "resistances": {
       "dark": 75,
       "holy": -50
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_aizul": {
     "name": "Aizul",
@@ -1762,7 +1862,8 @@
     "resistances": {
       "poison": 75,
       "cold": -25
-    }
+    },
+    "attack_kind": "tail_whip"
   },
   "boss_ilsuiw": {
     "name": "Ilsuiw the Tideborn",
@@ -1790,7 +1891,8 @@
       "cold": 50,
       "poison": 25,
       "fire": -25
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_lernaean": {
     "name": "The Lernaean Hydra",
@@ -1818,7 +1920,8 @@
       "poison": 75,
       "cold": -25,
       "physical": 25
-    }
+    },
+    "attack_kind": "tail_whip"
   },
   "boss_jorgrun": {
     "name": "Jorgrun the Spider",
@@ -1834,7 +1937,8 @@
     "visual_scale": 1.15,
     "resistances": {
       "physical": 25
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_gastronok": {
     "name": "Gastronok",
@@ -1888,7 +1992,8 @@
     "resistances": {
       "holy": 75,
       "dark": -50
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_boris": {
     "name": "Boris the Lich",
@@ -1946,7 +2051,8 @@
       "cold": 50,
       "poison": 75,
       "holy": -50
-    }
+    },
+    "attack_kind": "slam"
   },
   "boss_enchantress": {
     "name": "The Enchantress",
@@ -1974,7 +2080,8 @@
       "dark": 50,
       "holy": -25,
       "physical": 10
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_polyphemus": {
     "name": "Polyphemus",
@@ -1988,7 +2095,8 @@
     "tier": 4,
     "boss": true,
     "visual_scale": 1.25,
-    "resistances": {}
+    "resistances": {},
+    "attack_kind": "slam"
   },
   "boss_azrael": {
     "name": "Azrael the Inferno",
@@ -2043,7 +2151,8 @@
       "cold": 75,
       "fire": -50,
       "physical": 25
-    }
+    },
+    "attack_kind": "slam"
   },
   "boss_dissolution": {
     "name": "Dissolution",
@@ -2105,7 +2214,8 @@
       "lightning": 25,
       "poison": 25,
       "holy": -25
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_mnoleg": {
     "name": "Mnoleg",
@@ -2161,7 +2271,8 @@
       "fire": 75,
       "cold": -25,
       "holy": -50
-    }
+    },
+    "attack_kind": "slash"
   },
   "boss_tiamat": {
     "name": "Tiamat the Many",
@@ -2199,6 +2310,577 @@
       "lightning": 50,
       "poison": 50,
       "holy": -25
-    }
+    },
+    "attack_kind": "slam"
+  },
+  "kobold_demonologist": {
+    "name": "Kobold Demonologist",
+    "tile": "kobold_demonologist.png",
+    "hp": 20,
+    "atk": 6,
+    "def": 1,
+    "speed": 0.9,
+    "xp": 6,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "fire": 25,
+      "dark": 25
+    },
+    "attack_kind": "slash"
+  },
+  "naga_sharpshooter": {
+    "name": "Naga Sharpshooter",
+    "tile": "naga_sharpshooter.png",
+    "hp": 75,
+    "atk": 17,
+    "def": 4,
+    "speed": 0.6,
+    "xp": 32,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.15,
+    "resistances": {
+      "poison": 75
+    },
+    "attack_kind": "tail_whip",
+    "ranged_attack_id": "shoot_arrow"
+  },
+  "naga_ritualist": {
+    "name": "Naga Ritualist",
+    "tile": "naga_ritualist.png",
+    "hp": 50,
+    "atk": 12,
+    "def": 2,
+    "speed": 0.6,
+    "xp": 14,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.1,
+    "resistances": {
+      "poison": 75,
+      "dark": 25
+    },
+    "attack_kind": "tail_whip"
+  },
+  "deep_elf_master_archer": {
+    "name": "Deep Elf Master Archer",
+    "tile": "deep_elf_master_archer.png",
+    "hp": 100,
+    "atk": 24,
+    "def": 6,
+    "speed": 0.9,
+    "xp": 70,
+    "min_floor": 8,
+    "tier": 5,
+    "boss": false,
+    "attack_kind": "slash",
+    "ranged_attack_id": "shoot_arrow"
+  },
+  "tengu_warrior": {
+    "name": "Tengu Warrior",
+    "tile": "tengu_warrior.png",
+    "hp": 45,
+    "atk": 14,
+    "def": 3,
+    "speed": 1.1,
+    "xp": 15,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "ranged_attack_id": "shoot_arrow",
+    "attack_kind": "slash"
+  },
+  "tengu_conjurer": {
+    "name": "Tengu Conjurer",
+    "tile": "tengu_conjurer.png",
+    "hp": 40,
+    "atk": 12,
+    "def": 2,
+    "speed": 1.0,
+    "xp": 14,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "attack_kind": "slash"
+  },
+  "orc_wizard": {
+    "name": "Orc Wizard",
+    "tile": "orc_wizard.png",
+    "hp": 22,
+    "atk": 7,
+    "def": 1,
+    "speed": 0.9,
+    "xp": 8,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "attack_kind": "slash"
+  },
+  "orc_sorcerer": {
+    "name": "Orc Sorcerer",
+    "tile": "orc_sorcerer.png",
+    "hp": 70,
+    "atk": 17,
+    "def": 4,
+    "speed": 0.9,
+    "xp": 40,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": 50
+    },
+    "attack_kind": "slash"
+  },
+  "orc_high_priest": {
+    "name": "Orc High Priest",
+    "tile": "orc_high_priest.png",
+    "hp": 80,
+    "atk": 16,
+    "def": 5,
+    "speed": 0.9,
+    "xp": 42,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "holy": 25
+    },
+    "attack_kind": "slash"
+  },
+  "deep_elf_priest": {
+    "name": "Deep Elf Priest",
+    "tile": "deep_elf_priest.png",
+    "hp": 38,
+    "atk": 12,
+    "def": 2,
+    "speed": 0.9,
+    "xp": 12,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "holy": 25
+    },
+    "attack_kind": "slash"
+  },
+  "deep_elf_annihilator": {
+    "name": "Deep Elf Annihilator",
+    "tile": "deep_elf_annihilator.png",
+    "hp": 105,
+    "atk": 25,
+    "def": 6,
+    "speed": 0.9,
+    "xp": 80,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "fire": 50,
+      "cold": 50
+    },
+    "attack_kind": "slash"
+  },
+  "deep_elf_death_mage": {
+    "name": "Deep Elf Death Mage",
+    "tile": "deep_elf_death_mage.png",
+    "hp": 100,
+    "atk": 22,
+    "def": 5,
+    "speed": 0.9,
+    "xp": 78,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "dark": 50,
+      "cold": 25
+    },
+    "attack_kind": "slash"
+  },
+  "deep_elf_high_priest": {
+    "name": "Deep Elf High Priest",
+    "tile": "deep_elf_high_priest.png",
+    "hp": 95,
+    "atk": 23,
+    "def": 6,
+    "speed": 0.9,
+    "xp": 78,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "holy": 50
+    },
+    "attack_kind": "slash"
+  },
+  "naga_warrior": {
+    "name": "Naga Warrior",
+    "tile": "naga_warrior.png",
+    "hp": 85,
+    "atk": 19,
+    "def": 6,
+    "speed": 0.6,
+    "xp": 45,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.2,
+    "resistances": {
+      "poison": 75
+    },
+    "attack_kind": "tail_whip",
+    "ranged_attack_id": "throw_javelin"
+  },
+  "naga_mage": {
+    "name": "Naga Mage",
+    "tile": "naga_mage.png",
+    "hp": 70,
+    "atk": 16,
+    "def": 4,
+    "speed": 0.6,
+    "xp": 38,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.15,
+    "resistances": {
+      "poison": 75,
+      "fire": 25
+    },
+    "attack_kind": "tail_whip"
+  },
+  "gnoll_shaman": {
+    "name": "Gnoll Shaman",
+    "tile": "gnoll_shaman.png",
+    "hp": 20,
+    "atk": 6,
+    "def": 1,
+    "speed": 0.9,
+    "xp": 7,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "attack_kind": "claw"
+  },
+  "gnoll_sergeant": {
+    "name": "Gnoll Sergeant",
+    "tile": "gnoll_sergeant.png",
+    "hp": 40,
+    "atk": 13,
+    "def": 3,
+    "speed": 0.9,
+    "xp": 13,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "attack_kind": "claw"
+  },
+  "deep_dwarf": {
+    "name": "Deep Dwarf",
+    "tile": "deep_dwarf.png",
+    "hp": 50,
+    "atk": 14,
+    "def": 4,
+    "speed": 0.9,
+    "xp": 15,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "dark": 25
+    },
+    "attack_kind": "slash"
+  },
+  "iron_troll": {
+    "name": "Iron Troll",
+    "tile": "iron_troll.png",
+    "hp": 130,
+    "atk": 26,
+    "def": 8,
+    "speed": 0.7,
+    "xp": 88,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.25,
+    "resistances": {
+      "fire": -50,
+      "physical": 50
+    },
+    "attack_kind": "slam"
+  },
+  "rock_troll": {
+    "name": "Rock Troll",
+    "tile": "rock_troll.png",
+    "hp": 95,
+    "atk": 20,
+    "def": 5,
+    "speed": 0.75,
+    "xp": 55,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.2,
+    "resistances": {
+      "physical": 25
+    },
+    "attack_kind": "slam"
+  },
+  "red_devil": {
+    "name": "Red Devil",
+    "tile": "red_devil.png",
+    "hp": 50,
+    "atk": 13,
+    "def": 3,
+    "speed": 0.9,
+    "xp": 16,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "fire": 50
+    },
+    "attack_kind": "slash"
+  },
+  "iron_devil": {
+    "name": "Iron Devil",
+    "tile": "iron_devil.png",
+    "hp": 90,
+    "atk": 18,
+    "def": 8,
+    "speed": 0.75,
+    "xp": 55,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.1,
+    "resistances": {
+      "physical": 50,
+      "fire": 25
+    },
+    "attack_kind": "slam"
+  },
+  "sun_demon": {
+    "name": "Sun Demon",
+    "tile": "sun_demon.png",
+    "hp": 110,
+    "atk": 23,
+    "def": 5,
+    "speed": 0.95,
+    "xp": 85,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.15,
+    "resistances": {
+      "fire": 100,
+      "cold": -50
+    },
+    "attack_kind": "slash"
+  },
+  "smoke_demon": {
+    "name": "Smoke Demon",
+    "tile": "smoke_demon.png",
+    "hp": 75,
+    "atk": 16,
+    "def": 3,
+    "speed": 1.0,
+    "xp": 45,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": 50,
+      "physical": 25
+    },
+    "attack_kind": "claw"
+  },
+  "soul_eater": {
+    "name": "Soul Eater",
+    "tile": "soul_eater.png",
+    "hp": 105,
+    "atk": 24,
+    "def": 5,
+    "speed": 1.0,
+    "xp": 82,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "resistances": {
+      "dark": 50,
+      "cold": 25
+    },
+    "attack_kind": "claw"
+  },
+  "wight": {
+    "name": "Wight",
+    "tile": "wight.png",
+    "hp": 22,
+    "atk": 7,
+    "def": 2,
+    "speed": 0.9,
+    "xp": 8,
+    "min_floor": 3,
+    "tier": 2,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 50,
+      "poison": 100,
+      "holy": -25
+    },
+    "attack_kind": "slash"
+  },
+  "flying_skull": {
+    "name": "Flying Skull",
+    "tile": "flying_skull.png",
+    "hp": 30,
+    "atk": 10,
+    "def": 1,
+    "speed": 1.2,
+    "xp": 11,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "cold": 50,
+      "dark": 50,
+      "poison": 100,
+      "holy": -25
+    },
+    "attack_kind": "bite"
+  },
+  "freezing_wraith": {
+    "name": "Freezing Wraith",
+    "tile": "freezing_wraith.png",
+    "hp": 60,
+    "atk": 15,
+    "def": 2,
+    "speed": 1.0,
+    "xp": 32,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "cold": 100,
+      "dark": 50,
+      "poison": 100,
+      "holy": -25
+    },
+    "attack_kind": "claw"
+  },
+  "mummy_priest": {
+    "name": "Mummy Priest",
+    "tile": "mummy_priest.png",
+    "hp": 70,
+    "atk": 16,
+    "def": 4,
+    "speed": 0.7,
+    "xp": 40,
+    "min_floor": 7,
+    "tier": 4,
+    "boss": false,
+    "resistances": {
+      "fire": -50,
+      "cold": 50,
+      "dark": 50,
+      "poison": 100,
+      "holy": -50
+    },
+    "attack_kind": "slam"
+  },
+  "phantom": {
+    "name": "Phantom",
+    "tile": "phantom.png",
+    "hp": 35,
+    "atk": 12,
+    "def": 2,
+    "speed": 1.0,
+    "xp": 12,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "resistances": {
+      "physical": 50,
+      "dark": 50,
+      "poison": 100,
+      "holy": -25
+    },
+    "attack_kind": "claw"
+  },
+  "fire_bat": {
+    "name": "Fire Bat",
+    "tile": "fire_bat.png",
+    "hp": 15,
+    "atk": 5,
+    "def": 0,
+    "speed": 1.4,
+    "xp": 5,
+    "min_floor": 2,
+    "tier": 2,
+    "boss": false,
+    "visual_scale": 0.95,
+    "resistances": {
+      "fire": 100,
+      "cold": -50
+    },
+    "attack_kind": "bite"
+  },
+  "giant_scorpion": {
+    "name": "Giant Scorpion",
+    "tile": "giant_scorpion.png",
+    "hp": 45,
+    "atk": 13,
+    "def": 3,
+    "speed": 0.8,
+    "xp": 15,
+    "min_floor": 5,
+    "tier": 3,
+    "boss": false,
+    "visual_scale": 1.15,
+    "resistances": {
+      "poison": 75
+    },
+    "attack_kind": "bite"
+  },
+  "emperor_scorpion": {
+    "name": "Emperor Scorpion",
+    "tile": "emperor_scorpion.png",
+    "hp": 85,
+    "atk": 18,
+    "def": 5,
+    "speed": 0.8,
+    "xp": 50,
+    "min_floor": 8,
+    "tier": 4,
+    "boss": false,
+    "visual_scale": 1.3,
+    "resistances": {
+      "poison": 100,
+      "physical": 25
+    },
+    "attack_kind": "bite"
+  },
+  "dire_elephant": {
+    "name": "Dire Elephant",
+    "tile": "dire_elephant.png",
+    "hp": 145,
+    "atk": 26,
+    "def": 8,
+    "speed": 0.7,
+    "xp": 90,
+    "min_floor": 9,
+    "tier": 5,
+    "boss": false,
+    "visual_scale": 1.55,
+    "resistances": {
+      "physical": 25
+    },
+    "attack_kind": "slam"
   }
 }
