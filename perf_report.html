@@ -31,46 +31,63 @@
   }
   p.lede { color: var(--muted); margin: 0 0 20px; max-width: 780px; line-height: 1.55; }
 
-  /* Metric bar chart. */
-  .bars { display: grid; gap: 14px; }
-  .bar-row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 10px; align-items: center; }
+  /* Metric bar chart. Layout: label | PRE bar+num | POST bar+num | delta.
+     Numbers live OUTSIDE the bar in their own column so short bars still
+     read cleanly. Bar fills the whole track with proportional width. */
+  .bars { display: grid; gap: 12px; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px 1fr 90px 68px;
+    gap: 8px;
+    align-items: center;
+  }
   .bar-label {
     color: var(--muted);
     font-size: 12px;
     text-align: right;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   }
+  .bar-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    text-align: right;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .bar-num.pre  { color: #ff8b6b; }
+  .bar-num.post { color: #5fc878; }
   .bar-track {
     position: relative;
     background: var(--panel-2);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    height: 26px;
+    border-radius: 3px;
+    height: 18px;
+    overflow: hidden;
   }
   .bar-fill {
     position: absolute;
     top: 0; bottom: 0; left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 8px;
-    color: #0a0a0d;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-    font-weight: 600;
-    border-radius: 3px;
-    white-space: nowrap;
+    border-radius: 2px;
   }
-  .bar-fill.pre  { background: linear-gradient(90deg, #f06464, #ff8b6b); }
-  .bar-fill.post { background: linear-gradient(90deg, #5fc878, #97d8a3); }
-  .bar-header { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 10px; margin-bottom: 6px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
-  .bar-header span:nth-child(2) { color: #f06464; }
-  .bar-header span:nth-child(3) { color: #5fc878; }
+  .bar-fill.pre  { background: linear-gradient(90deg, #b53939, #f06464); }
+  .bar-fill.post { background: linear-gradient(90deg, #3aa55a, #5fc878); }
+  .bar-header {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px 1fr 90px 68px;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .bar-header .h-pre  { color: #f06464; grid-column: 2 / span 2; }
+  .bar-header .h-post { color: #5fc878; grid-column: 4 / span 2; }
+  .bar-header .h-delta { text-align: center; }
 
-  /* Delta chip. */
+  /* Delta chip — sits in its own grid column so it can't collide with bars. */
   .delta {
     display: inline-block;
-    margin-left: 8px;
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 11px;
@@ -78,15 +95,18 @@
     background: rgba(95, 200, 120, 0.15);
     color: var(--good);
     border: 1px solid rgba(95, 200, 120, 0.35);
+    text-align: center;
+    white-space: nowrap;
   }
   .delta.regress { background: rgba(240, 100, 100, 0.15); color: var(--bad); border-color: rgba(240, 100, 100, 0.35); }
+  .delta.zero    { background: rgba(138, 138, 149, 0.12); color: var(--muted); border-color: rgba(138, 138, 149, 0.30); }
 
   /* Histogram. */
   .hist-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
   .hist { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 14px; }
   .hist h3 { margin: 0 0 4px; color: var(--accent); font-size: 13px; }
   .hist .caption { color: var(--muted); font-size: 11px; margin: 0 0 10px; }
-  .hist svg { display: block; width: 100%; height: 220px; }
+  .hist svg { display: block; width: 100%; height: 260px; }
   .legend { display: flex; gap: 14px; font-size: 11px; color: var(--muted); margin-top: 8px; }
   .legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
   .legend .swatch.pre  { background: #f06464; }
@@ -130,7 +150,10 @@
     </p>
 
     <div class="bar-header">
-      <span>metric</span><span>PRE — before audit</span><span>POST — Tier 0 + 1</span>
+      <span>metric</span>
+      <span class="h-pre">PRE — before audit</span>
+      <span class="h-post">POST — Tier 0 + 1</span>
+      <span class="h-delta">delta</span>
     </div>
     <div class="bars" id="frame-bars"></div>
   </section>
@@ -145,7 +168,10 @@
     </p>
 
     <div class="bar-header">
-      <span>metric</span><span>PRE</span><span>POST</span>
+      <span>metric</span>
+      <span class="h-pre">PRE</span>
+      <span class="h-post">POST</span>
+      <span class="h-delta">delta</span>
     </div>
     <div class="bars" id="spawn-bars"></div>
   </section>
@@ -157,7 +183,10 @@
       Total across 5 runs.
     </p>
     <div class="bar-header">
-      <span>metric</span><span>PRE</span><span>POST</span>
+      <span>metric</span>
+      <span class="h-pre">PRE</span>
+      <span class="h-post">POST</span>
+      <span class="h-delta">delta</span>
     </div>
     <div class="bars" id="spike-bars"></div>
   </section>
@@ -282,8 +311,8 @@ function stats(arr) {
 }
 
 function fmt(v) { return v.toFixed(2); }
-function pct(pre, post) {
-  if (pre === 0) return "";
+function pctChip(pre, post) {
+  if (pre === 0 || pre === post) return `<span class="delta zero">0%</span>`;
   const d = ((post - pre) / pre) * 100;
   const cls = d < 0 ? "delta" : "delta regress";
   const sign = d >= 0 ? "+" : "";
@@ -293,12 +322,17 @@ function pct(pre, post) {
 function renderBars(rootId, rows, unit) {
   const root = document.getElementById(rootId);
   const maxVal = Math.max(...rows.flatMap(r => [r.pre, r.post]));
-  const scale = v => Math.max(2, (v / maxVal) * 100);
+  // Bar fill scales to 100% of track width; number sits in its own column
+  // so short bars can't have text overflowing them.
+  const scale = v => Math.max(1, (v / maxVal) * 100);
   root.innerHTML = rows.map(r => `
     <div class="bar-row">
       <div class="bar-label">${r.label}</div>
-      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%">${fmt(r.pre)}${unit}</div></div>
-      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%">${fmt(r.post)}${unit} ${pct(r.pre, r.post)}</div></div>
+      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%"></div></div>
+      <div class="bar-num pre">${fmt(r.pre)}${unit}</div>
+      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%"></div></div>
+      <div class="bar-num post">${fmt(r.post)}${unit}</div>
+      <div>${pctChip(r.pre, r.post)}</div>
     </div>
   `).join("");
 }
@@ -306,12 +340,15 @@ function renderBars(rootId, rows, unit) {
 function renderIntBars(rootId, rows) {
   const root = document.getElementById(rootId);
   const maxVal = Math.max(...rows.flatMap(r => [r.pre, r.post]));
-  const scale = v => Math.max(2, (v / maxVal) * 100);
+  const scale = v => Math.max(1, (v / maxVal) * 100);
   root.innerHTML = rows.map(r => `
     <div class="bar-row">
       <div class="bar-label">${r.label}</div>
-      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%">${r.pre}</div></div>
-      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%">${r.post} ${pct(r.pre, r.post)}</div></div>
+      <div class="bar-track"><div class="bar-fill pre"  style="width:${scale(r.pre)}%"></div></div>
+      <div class="bar-num pre">${r.pre}</div>
+      <div class="bar-track"><div class="bar-fill post" style="width:${scale(r.post)}%"></div></div>
+      <div class="bar-num post">${r.post}</div>
+      <div>${pctChip(r.pre, r.post)}</div>
     </div>
   `).join("");
 }
@@ -327,7 +364,7 @@ function histogram(values, binWidth) {
 
 function renderHist(svgId, preArr, postArr, binWidth, xMax, xUnit) {
   const svg = document.getElementById(svgId);
-  const W = 500, H = 220, PAD_L = 34, PAD_R = 8, PAD_T = 8, PAD_B = 26;
+  const W = 500, H = 260, PAD_L = 40, PAD_R = 10, PAD_T = 10, PAD_B = 32;
   const plotW = W - PAD_L - PAD_R, plotH = H - PAD_T - PAD_B;
   const preBins  = histogram(preArr, binWidth);
   const postBins = histogram(postArr, binWidth);
@@ -342,18 +379,18 @@ function renderHist(svgId, preArr, postArr, binWidth, xMax, xUnit) {
   const hFor = c => (c / maxCount) * plotH;
 
   const bars = [];
+  const halfW = wFor() * 0.48;  // 48% each so a small gap sits between PRE/POST at the same x.
   for (let i = 0; i < nBins; i++) {
     const preC  = preBins.get(i)  || 0;
     const postC = postBins.get(i) || 0;
-    // PRE bars first (behind), then POST (in front, offset half-width for readability).
     if (preC > 0) {
       const h = hFor(preC);
-      bars.push(`<rect x="${xFor(i)}" y="${PAD_T + plotH - h}" width="${wFor() * 0.55}" height="${h}" fill="#f06464" opacity="0.75"/>`);
+      bars.push(`<rect x="${xFor(i)}" y="${PAD_T + plotH - h}" width="${halfW}" height="${h}" fill="#f06464"/>`);
     }
     if (postC > 0) {
       const h = hFor(postC);
-      const bx = xFor(i) + wFor() * 0.45;
-      bars.push(`<rect x="${bx}" y="${PAD_T + plotH - h}" width="${wFor() * 0.55}" height="${h}" fill="#5fc878" opacity="0.85"/>`);
+      const bx = xFor(i) + halfW + wFor() * 0.04;
+      bars.push(`<rect x="${bx}" y="${PAD_T + plotH - h}" width="${halfW}" height="${h}" fill="#5fc878"/>`);
     }
   }
 
