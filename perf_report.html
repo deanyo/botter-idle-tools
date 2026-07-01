@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- perf-audit-2026-07-01 chart-layout v2 -->
+<!-- perf-audit-2026-07-01 chart-layout v3 (Tier 0..3 sections) -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -130,6 +130,21 @@
   .tier { display: inline-block; padding: 1px 7px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; border-radius: 3px; margin-right: 8px; }
   .tier.t0 { background: rgba(240, 100, 100, 0.18); color: #ff8b6b; }
   .tier.t1 { background: rgba(255, 170, 85, 0.18); color: var(--warn); }
+  .tier.t2 { background: rgba(255, 224, 77, 0.14); color: var(--rarity-rare); }
+  .tier.t3 { background: rgba(102, 179, 255, 0.14); color: var(--rarity-uncommon); }
+  .tier.pb { background: rgba(255, 184, 77, 0.14); color: var(--accent); }
+
+  /* Section header inside "What shipped" for tier grouping. */
+  .fix-tier-hdr {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 18px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .fix-tier-hdr:first-child { margin-top: 0; }
 
   footer { color: var(--muted); font-size: 11px; margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--border); }
   code { background: var(--panel-2); padding: 1px 5px; border-radius: 3px; color: var(--accent); font-size: 11px; }
@@ -138,8 +153,8 @@
 <body>
 <main>
   <header class="hero">
-    <h1>Perf audit 2026-07-01 — Tier 0 &amp; 1 shipped</h1>
-    <div class="sub">Multi-agent audit → 60 findings → prioritised checklist → 10 fixes landed. Numbers below are 5-run headless grinds at <code>--preset t3</code>, same command pre and post.</div>
+    <h1>Perf audit 2026-07-01 — Tier 0, 1, 2 &amp; 3 shipped</h1>
+    <div class="sub">Multi-agent audit → 60 findings → prioritised checklist → 32 fixes landed across four tiers. Numbers below are 5-run headless grinds at <code>--preset t3</code>, same command pre-audit vs post-Tier-1 (Tier 2 &amp; 3 also verified — see HANDOVER.md).</div>
   </header>
 
   <section>
@@ -223,11 +238,17 @@
   <section>
     <h2>What shipped</h2>
     <p class="lede">
-      Every fix is a real code change with a file:line in the checklist. Tier 0 = playtest
-      blockers or S-effort quick wins. Tier 1 = P1 with M-effort. See
-      <code>docs/perf-audit-2026-07-01/PERF_CHECKLIST.md</code> for full tier breakdown.
+      Every fix is a real code change with a file:line in the checklist.
+      <strong>Tier 0</strong> — playtest blockers or S-effort quick wins on P0/P1.
+      <strong>Tier 1</strong> — P1 with M-effort.
+      <strong>Tier 2</strong> — P2 playbook regressions + allocation-churn cleanup.
+      <strong>Tier 3</strong> — P3 defensive / hygiene. See
+      <code>docs/perf-audit-2026-07-01/PERF_CHECKLIST.md</code> for the full checklist including deferred items.
     </p>
     <div class="fixes">
+
+      <div class="fix-tier-hdr">Tier 0 — playtest blockers &amp; S-effort quick wins</div>
+
       <div class="fix">
         <div class="fix-title"><span class="tier t0">Tier 0</span>Glow-material cache keyed on color only</div>
         <div class="fix-file">bot.gd:1088 · paperdoll_renderer.gd:154</div>
@@ -258,6 +279,9 @@
         <div class="fix-file">dungeon.gd:5251 · wave_spawner.gd</div>
         <div class="fix-desc">Pre-fix <code>_spawn_packs</code> synchronously instantiated up to 350 mobs on floor build. Now spawns pack leaders synchronously (floor reads populated immediately) and queues packmates into <code>wave.pending_initial_spawns</code> drained 4/frame from <code>_process</code>.</div>
       </div>
+
+      <div class="fix-tier-hdr">Tier 1 — P1, M-effort</div>
+
       <div class="fix">
         <div class="fix-title"><span class="tier t1">Tier 1</span>Autosave retry-delay skip</div>
         <div class="fix-file">save_state.gd:1024 · run_state.gd:420</div>
@@ -273,11 +297,136 @@
         <div class="fix-file">save_state.gd::_walk_all_item_containers</div>
         <div class="fix-desc"><code>_migrate_to_v8/v10/v13</code> now route through one helper that hits equipped + inventory + stash + orphaned_items. Pre-fix, several migrations skipped stash and orphaned_items — Steam-Cloud-tanking silent stat loss.</div>
       </div>
+
+      <div class="fix-tier-hdr">Playbook — CLAUDE.md HTML5 rules amended + new Rule 7</div>
+
       <div class="fix">
-        <div class="fix-title"><span class="tier t0">Playbook</span>Rules 1, 3, 4 amended + new Rule 7</div>
+        <div class="fix-title"><span class="tier pb">Playbook</span>Rules 1, 3, 4 amended + new Rule 7</div>
         <div class="fix-file">CLAUDE.md — HTML5 perf playbook</div>
         <div class="fix-desc">Rule 1 (cache-key vs uniform mutation), Rule 3 (data-driven prewarm — walk JSON, no hand-lists), Rule 4 (ms-budget stagger), new Rule 7 (config reads are hot-path). Post-amend re-sweep found three new drift sites (portal gateways, ambient decor, spell projectile textures) — all fixed inline.</div>
       </div>
+
+      <div class="fix-tier-hdr">Tier 2 — P2, playbook regressions + allocation cleanup</div>
+
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>Glow-cache dedup into UITheme</div>
+        <div class="fix-file">ui_theme.gd::glow_material_for · bot.gd · paperdoll_renderer.gd</div>
+        <div class="fix-desc">Bot rig and paperdoll each maintained their own <code>_glow_mat_cache</code> — every (color) tuple compiled TWICE on Web GL. Both now delegate to <code>UITheme.glow_material_for</code>. Playbook rule 1 doctrine — one shader program per unique visual.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>_vis_material static shared instance</div>
+        <div class="fix-file">map_renderer.gd:334</div>
+        <div class="fix-desc">Was <code>ShaderMaterial.new()</code> per floor build. Grid size and tile size are game-constants; only <code>memory_strength</code> is variable and mutable via uniform. Static shared instance reused across every floor.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>TileSet cache-key uniqueness</div>
+        <div class="fix-file">map_renderer.gd:309</div>
+        <div class="fix-desc">Cache key was <code>biome_id + count</code>. Two floors of the same biome with different vault decor rosters could hash-collide and bind the wrong TileSet. Now composite key includes sorted resource-path signature — impossible to collide.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>AmbientDecor visibility gate</div>
+        <div class="fix-file">ambient_decor.gd:141,143</div>
+        <div class="fix-desc">Fog-hidden decor kept running noise sampling in <code>_process</code> AND its ember emitter kept spawning particles nothing rendered. Now early-returns + pauses <code>ember_emitter.emitting</code> when hidden.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>GrindLog print gate</div>
+        <div class="fix-file">grind_log.gd:20</div>
+        <div class="fix-desc">51 call sites fire per kill/loot/pack. Unconditional <code>print()</code> was dumping them all into the browser console on every player run. Now gated behind <code>_enabled</code> — only fires in grind mode.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>Data-driven prewarm coverage</div>
+        <div class="fix-file">biome_data.gd::prewarm_biome</div>
+        <div class="fix-desc">Portal gateways, ambient decor tiles, spell projectiles, item-glow materials — all four now walked from their underlying data structure (<code>Portal.PORTAL_KINDS</code>, <code>AmbientDecor.DECOR_SPECS</code>, <code>SpellData.ARCHETYPES</code>, <code>UITheme.FLAVOR_COLORS</code>). Adding a new entry auto-covers prewarm.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>HUD debug + minimap 4Hz throttle</div>
+        <div class="fix-file">dungeon.gd:1259,1268</div>
+        <div class="fix-desc">Debug HUD build ran every frame (~10 string allocs + 3 arrays + <code>Performance.get_monitor</code> per frame). Folded into the same 4Hz throttle as the minimap refresh.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>_gather_lights reusable Dict pool</div>
+        <div class="fix-file">dungeon.gd:5013</div>
+        <div class="fix-desc">Was allocating a fresh Array + N Dicts every frame — up to 60 Dict allocs/frame on Forge. Now mutates a reusable pool in place; only trims overshoot.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>stat_panel hash key drop gold+xp</div>
+        <div class="fix-file">hud_chrome.gd:3255</div>
+        <div class="fix-desc"><code>StatCalc.compute</code> doesn't derive stats from <code>bot.gold</code> or <code>bot.xp</code>. They were in the hash key so every kill / gold pickup / XP tick forced a full StatCalc recompute + panel re-render. Dropped both from the tuple.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>ItemsDb consolidation (6 sites)</div>
+        <div class="fix-file">outpost.gd · main_menu.gd · shop.gd · doctrine_screen.gd</div>
+        <div class="fix-desc">Six <code>_load_items()</code> hand-rolls each parsed the ~875KB <code>items.json</code> from disk on every open. All now delegate to <code>ItemsDb.items()</code> which caches the parse once at startup.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>VaultLibrary preload at boot</div>
+        <div class="fix-file">vault_library.gd::preload_all · main.gd</div>
+        <div class="fix-desc">First Deploy paid the ~0.9MB vault-bundle parse cost synchronously. Now warmed at <code>main._ready</code> alongside <code>ItemsDb.preload_all()</code> so outpost → dungeon transition doesn't stall.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>Outpost prewarm priority</div>
+        <div class="fix-file">outpost.gd:187</div>
+        <div class="fix-desc">Reordered so <code>state.last_branch</code> warms first — an impatient Deploy click doesn't hit an unwarmed biome.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t2">Tier 2</span>RunState.journal per-floor cap</div>
+        <div class="fix-file">run_state.gd:377</div>
+        <div class="fix-desc">Journal events grew unbounded — a 30-floor run accumulated ~3000 entries deep-copied on <code>end_run</code>. Now capped at 64 per floor with pop-front on overflow.</div>
+      </div>
+
+      <div class="fix-tier-hdr">Tier 3 — P3, defensive / hygiene</div>
+
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Pathfinding Dict-set + skip walkable writes</div>
+        <div class="fix-file">pathfinding.gd:23</div>
+        <div class="fix-desc"><code>IMPASSABLE_CELLS</code> now a Dictionary for O(1) lookup instead of array <code>in</code> scan. Also skip <code>set_point_solid(false)</code> — <code>AStarGrid2D</code> defaults to non-solid, so we only need to write TRUE for wall cells.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Autosave duplicate(true) drop</div>
+        <div class="fix-file">run_state.gd:417</div>
+        <div class="fix-desc">Autosave was recursively cloning full inventory + equipped every 60s tick (~3000 allocs on stash-heavy save). <code>SaveState.save_state</code> doesn't mutate what it reads, so the deep copy was pure waste. <code>end_run</code> keeps its duplicate since output feeds both persistence AND the run report.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>_pending_texture_set companion Dict</div>
+        <div class="fix-file">map_renderer.gd:87</div>
+        <div class="fix-desc">Dedup on <code>_register_texture</code> was <code>tex in _pending_textures</code> — O(N) linear scan. Companion Dict-set gives O(1). On floors with 100 unique tiles the pre-fix cost was O(N²) per tileset build.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Minimap signature cheap-hash</div>
+        <div class="fix-file">hud_chrome.gd:3967</div>
+        <div class="fix-desc">Was <code>grid.hash()</code> — recursively hashed all 80 rows every 0.25s (~7ms). Now uses <code>grid[0].hash() + row count + fog size</code>. Detects both descent (row 0 changes) and fog-reveal growth in &lt;0.1ms.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Tooltip position early-return</div>
+        <div class="fix-file">hud_chrome.gd:596</div>
+        <div class="fix-desc"><code>_process</code> re-clamped tooltip position + re-flowed compare-panels every frame while any tooltip was up. Now early-returns when mouse position + tooltip size both match last frame; skips clamp + fanout on stable hovers.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Spell iter_order lazy-duplicate</div>
+        <div class="fix-file">spell_system.gd:93</div>
+        <div class="fix-desc">Every tick did <code>SPELL_SLOTS.duplicate()</code> even when mana wasn't starved. Non-starved path now iterates the const directly; the duplicate happens only in the rare mana-starvation branch.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>GridPanel set_grid early-return</div>
+        <div class="fix-file">grid_panel.gd:58</div>
+        <div class="fix-desc"><code>TargetFrame</code> re-called <code>set_grid</code> every AI tick with usually-identical inputs. Pre-fix, each call queued a stale <code>call_deferred</code> entry even though <code>_apply_grid</code> would dedup. Now short-circuits before the queue push.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>update_buffs coarse-hash + hoisted Callable</div>
+        <div class="fix-file">hud_chrome.gd:2665</div>
+        <div class="fix-desc">Fast pre-check <code>statuses.hash() ^ floor(now_ms/250)</code> catches the "stable buffs" common case in &lt;1µs. Sort Callable hoisted to a static function so no per-frame Callable allocation.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>tick_statuses expired-scratch reuse</div>
+        <div class="fix-file">actor.gd:2379</div>
+        <div class="fix-desc">Was allocating fresh <code>Array[String]</code> every frame per actor even when no statuses expired — ~150 wasted allocs/frame at 150 alive enemies. Now reuses <code>_expired_scratch</code> member with <code>.clear()</code> at tick start.</div>
+      </div>
+      <div class="fix">
+        <div class="fix-title"><span class="tier t3">Tier 3</span>Dead damaged signal removed</div>
+        <div class="fix-file">actor.gd:7</div>
+        <div class="fix-desc"><code>signal damaged</code> had zero external <code>connect()</code> sites but was emitted 7+ places per hit including reflect / thorns cascades. Deleted signal + all 6 emit sites — pure hygiene, no behavior change.</div>
+      </div>
+
     </div>
   </section>
 
