@@ -5,36 +5,36 @@
       "flavor": "The first descent. Stone corridors and stitched-together rooms; everything kills in one or two hits if you stop paying attention.",
       "color_grade": {
         "tint": [
-          0.95,
-          0.97,
-          1.05
+          1.04,
+          1.0,
+          0.93
         ],
-        "saturation": 0.85,
-        "contrast": 1.05,
-        "vignette": 0.25,
+        "shadow_tint": [
+          0.88,
+          0.9,
+          1.04
+        ],
+        "saturation": 0.95,
+        "contrast": 1.03,
+        "vignette": 0.2,
         "vignette_tint": [
+          0.05,
           0.04,
-          0.04,
-          0.07
+          0.03
         ]
       },
       "floor_primary": [
-        "dungeon"
+        "dungeon_alt"
       ],
-      "floor_accent": [
-        "@dungeon_dark_blood_8",
-        "@dungeon_dark_blood_9",
-        "@dungeon_dark_blood_10",
-        "@dungeon_dark_blood_11"
-      ],
+      "floor_accent": [],
       "wall_primary": [
         "dungeon"
       ],
       "wall_accent": [],
       "modulate": [
+        0.98,
         0.95,
-        0.92,
-        0.88,
+        0.9,
         1
       ],
       "darkness": 0.15,
@@ -86,16 +86,7 @@
           "weight": 1
         }
       ],
-      "floor_secondary": [
-        "@dungeon_alt_7",
-        "@dungeon_alt_6",
-        "@dungeon_alt_5",
-        "@dungeon_alt_4",
-        "@dungeon_alt_3",
-        "@dungeon_alt_2",
-        "@dungeon_alt_1",
-        "@dungeon_alt_0"
-      ],
+      "floor_secondary": [],
       "wall_alternates": [
         {
           "weight": 1,
@@ -116,7 +107,17 @@
       "liquid_type": "",
       "tier": 1,
       "cr_recommended": 20,
-      "boss_id": "boss_sigmund"
+      "boss_id": "boss_sigmund",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 1.2,
+        "color": [
+          0.85,
+          0.82,
+          0.75
+        ],
+        "add": true
+      }
     },
     "dungeon_dark": {
       "display_name": "the Dark Dungeon",
@@ -127,13 +128,18 @@
           0.9,
           1.0
         ],
-        "saturation": 0.75,
+        "saturation": 0.85,
         "contrast": 1.1,
         "vignette": 0.4,
         "vignette_tint": [
           0.01,
           0.01,
           0.04
+        ],
+        "shadow_tint": [
+          0.8,
+          0.82,
+          1.0
         ]
       },
       "floor_primary": [
@@ -215,13 +221,24 @@
         }
       ],
       "edge_overlay": {
+        "shadow": "dark",
         "patches": []
       },
       "sigil_set": [],
       "tier": 1,
       "cr_recommended": 20,
       "boss_id": "boss_eustachio",
-      "liquid_type": "water"
+      "liquid_type": "water",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 1.2,
+        "color": [
+          0.6,
+          0.62,
+          0.7
+        ],
+        "add": true
+      }
     },
     "mines": {
       "display_name": "the Orcish Mines",
@@ -322,7 +339,17 @@
       "sigil_set": [],
       "tier": 1,
       "cr_recommended": 20,
-      "boss_id": "boss_blork"
+      "boss_id": "boss_blork",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 1.6,
+        "color": [
+          0.9,
+          0.8,
+          0.6
+        ],
+        "add": true
+      }
     },
     "lair": {
       "display_name": "the Lair",
@@ -358,13 +385,7 @@
         {
           "weight": 12,
           "prefixes": [
-            "@tree_1_yellow",
-            "@dungeon_alt_0",
-            "@dungeon_alt_1",
-            "@dungeon_alt_2",
-            "@dungeon_alt_4",
-            "@dungeon_alt_5",
-            "@dungeon_alt_2"
+            "@tree_1_yellow"
           ]
         }
       ],
@@ -424,12 +445,6 @@
           "weight": 1
         }
       ],
-      "edge_overlay": {
-        "prefix": "grass",
-        "density": 0.85,
-        "patch_density": 0.06,
-        "patches": []
-      },
       "liquid_type": "water",
       "floor_secondary": [
         "moss"
@@ -437,7 +452,17 @@
       "sigil_set": [],
       "tier": 2,
       "cr_recommended": 120,
-      "boss_id": "boss_kirke"
+      "boss_id": "boss_kirke",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.7,
+        "color": [
+          0.7,
+          0.75,
+          0.5
+        ],
+        "add": true
+      }
     },
     "forest": {
       "display_name": "the Forest",
@@ -464,18 +489,20 @@
         "forest_alt"
       ],
       "wall_primary": [
-        "forest"
+        "@tree_1_lightred",
+        "@tree_2_lightred",
+        "@tree_1_yellow",
+        "@tree_2_yellow",
+        "@tree_1_red"
       ],
       "wall_accent": [],
       "wall_alternates": [
         {
-          "weight": 30,
+          "weight": 10,
           "prefixes": [
-            "@tree_1_lightred",
-            "@forest_alt_0",
-            "@forest_alt_1",
-            "@forest_alt_2",
-            "@forest_alt_3"
+            "@forest_0",
+            "@forest_1",
+            "@forest_2"
           ]
         }
       ],
@@ -529,18 +556,23 @@
           "weight": 1
         }
       ],
-      "edge_overlay": {
-        "prefix": "grass",
-        "density": 0.95,
-        "patch_density": 0.1,
-        "patches": []
-      },
       "liquid_type": "water",
       "floor_secondary": [],
       "sigil_set": [],
       "tier": 2,
       "cr_recommended": 120,
-      "boss_id": "boss_erolcha"
+      "boss_id": "boss_erolcha",
+      "atmosphere": {
+        "kind": "snow",
+        "density": 0.7,
+        "speed": 0.5,
+        "size": 1.3,
+        "color": [
+          0.62,
+          0.72,
+          0.38
+        ]
+      }
     },
     "swamp": {
       "display_name": "the Swamp",
@@ -551,7 +583,7 @@
           1.0,
           0.78
         ],
-        "saturation": 0.75,
+        "saturation": 0.9,
         "contrast": 1.05,
         "vignette": 0.3,
         "vignette_tint": [
@@ -661,7 +693,17 @@
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
-      "boss_id": "boss_lernaean"
+      "boss_id": "boss_lernaean",
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.6,
+        "speed": 0.6,
+        "color": [
+          0.55,
+          1.0,
+          0.4
+        ]
+      }
     },
     "snake": {
       "display_name": "the Snake Pit",
@@ -750,7 +792,17 @@
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
-      "boss_id": "boss_aizul"
+      "boss_id": "boss_aizul",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.6,
+        "color": [
+          0.65,
+          0.7,
+          0.45
+        ],
+        "add": true
+      }
     },
     "shoals": {
       "display_name": "the Shoals",
@@ -858,7 +910,17 @@
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
-      "boss_id": "boss_ilsuiw"
+      "boss_id": "boss_ilsuiw",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.8,
+        "speed": 1.4,
+        "color": [
+          0.8,
+          0.92,
+          1.0
+        ]
+      }
     },
     "orc": {
       "display_name": "the Orc Hold",
@@ -871,7 +933,7 @@
         ],
         "saturation": 0.88,
         "contrast": 1.08,
-        "vignette": 0.3,
+        "vignette": 0.22,
         "vignette_tint": [
           0.06,
           0.03,
@@ -965,7 +1027,12 @@
       "tier": 2,
       "cr_recommended": 120,
       "boss_id": "boss_grum",
-      "liquid_type": "water"
+      "liquid_type": "water",
+      "atmosphere": {
+        "kind": "embers",
+        "density": 1.0,
+        "speed": 0.7
+      }
     },
     "vaults": {
       "display_name": "the Vaults",
@@ -991,7 +1058,9 @@
       "floor_accent": [
         "vaults_pattern"
       ],
-      "wall_primary": "vaults",
+      "wall_primary": [
+        "vaults"
+      ],
       "wall_accent": [
         "vaults_alt",
         "vaults_alt2"
@@ -1063,24 +1132,34 @@
       ],
       "tier": 4,
       "cr_recommended": 600,
-      "boss_id": "boss_frederick"
+      "boss_id": "boss_frederick",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.6,
+        "add": true
+      }
     },
     "crypt": {
       "display_name": "the Crypt",
       "flavor": "Catacombs lit by lichlight. The dead don't know they're dead. Wraiths drift through walls; mummies count their prayers.",
       "color_grade": {
         "tint": [
-          0.85,
-          0.92,
-          1.05
+          1.02,
+          1.0,
+          0.92
         ],
-        "saturation": 0.65,
+        "saturation": 0.85,
         "contrast": 1.1,
-        "vignette": 0.4,
+        "vignette": 0.3,
         "vignette_tint": [
           0.02,
           0.02,
           0.05
+        ],
+        "shadow_tint": [
+          0.72,
+          0.78,
+          1.0
         ]
       },
       "floor_primary": [
@@ -1095,13 +1174,7 @@
         {
           "weight": 15,
           "prefixes": [
-            "@crumbled_column",
-            "@crypt_alt_0",
-            "@crypt_alt_1",
-            "@crypt_alt_2",
-            "@crypt_alt_3",
-            "@crypt_alt_4",
-            "@crypt_alt_5"
+            "@crumbled_column"
           ]
         },
         {
@@ -1188,11 +1261,16 @@
         "@tomb_alt_3"
       ],
       "edge_overlay": {
+        "shadow": "dark",
         "patches": []
       },
       "tier": 4,
       "cr_recommended": 600,
-      "boss_id": "boss_boris"
+      "boss_id": "boss_boris",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.8
+      }
     },
     "tomb": {
       "display_name": "the Tomb",
@@ -1292,7 +1370,17 @@
       },
       "tier": 4,
       "cr_recommended": 600,
-      "boss_id": "boss_menkaure"
+      "boss_id": "boss_menkaure",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 1.0,
+        "color": [
+          0.85,
+          0.75,
+          0.5
+        ],
+        "add": true
+      }
     },
     "forge": {
       "display_name": "the Forge",
@@ -1310,6 +1398,11 @@
           0.1,
           0.02,
           0.0
+        ],
+        "shadow_tint": [
+          0.85,
+          0.62,
+          0.55
         ]
       },
       "floor_primary": [
@@ -1412,7 +1505,10 @@
       "sigil_set": [],
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_azrael"
+      "boss_id": "boss_azrael",
+      "atmosphere": {
+        "kind": "embers"
+      }
     },
     "glacier": {
       "display_name": "the Glacier",
@@ -1423,7 +1519,7 @@
           0.95,
           1.15
         ],
-        "saturation": 0.75,
+        "saturation": 0.9,
         "contrast": 1.05,
         "brightness": 0.05,
         "vignette": 0.22,
@@ -1431,6 +1527,11 @@
           0.02,
           0.04,
           0.08
+        ],
+        "shadow_tint": [
+          0.8,
+          0.88,
+          1.1
         ]
       },
       "floor_primary": [
@@ -1498,7 +1599,9 @@
         }
       ],
       "liquid_type": "water",
-      "floor_secondary": [],
+      "floor_secondary": [
+        "glacier_alt"
+      ],
       "wall_alternates": [],
       "edge_overlay": {
         "patches": []
@@ -1506,7 +1609,10 @@
       "sigil_set": [],
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_antaeus"
+      "boss_id": "boss_antaeus",
+      "atmosphere": {
+        "kind": "snow"
+      }
     },
     "slime": {
       "display_name": "the Slime Pits",
@@ -1614,7 +1720,17 @@
       "sigil_set": [],
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_dissolution"
+      "boss_id": "boss_dissolution",
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.5,
+        "speed": 0.5,
+        "color": [
+          0.5,
+          1.0,
+          0.3
+        ]
+      }
     },
     "hive": {
       "display_name": "the Hive",
@@ -1709,7 +1825,17 @@
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
-      "boss_id": "boss_gastronok"
+      "boss_id": "boss_gastronok",
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.7,
+        "speed": 0.8,
+        "color": [
+          1.0,
+          0.85,
+          0.3
+        ]
+      }
     },
     "labyrinth": {
       "display_name": "the Labyrinth",
@@ -1810,7 +1936,12 @@
       },
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_killer_klown"
+      "boss_id": "boss_killer_klown",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.5,
+        "add": true
+      }
     },
     "abyss": {
       "display_name": "the Abyss",
@@ -1911,12 +2042,22 @@
         }
       ],
       "edge_overlay": {
+        "shadow": "dark",
         "patches": []
       },
       "sigil_set": [],
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_mnoleg"
+      "boss_id": "boss_mnoleg",
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.8,
+        "color": [
+          0.7,
+          0.4,
+          1.0
+        ]
+      }
     },
     "pandemonium": {
       "display_name": "Pandemonium",
@@ -2030,7 +2171,16 @@
       },
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_cerebov"
+      "boss_id": "boss_cerebov",
+      "atmosphere": {
+        "kind": "embers",
+        "density": 0.8,
+        "color": [
+          1.0,
+          0.3,
+          0.5
+        ]
+      }
     },
     "zot": {
       "display_name": "the Realm of Zot",
@@ -2048,13 +2198,20 @@
           0.05,
           0.03,
           0.07
+        ],
+        "shadow_tint": [
+          0.82,
+          0.72,
+          1.08
         ]
       },
       "floor_primary": [
         "zot"
       ],
       "floor_accent": [],
-      "wall_primary": "zot",
+      "wall_primary": [
+        "zot"
+      ],
       "wall_accent": [],
       "modulate": [
         0.95,
@@ -2124,7 +2281,10 @@
       ],
       "tier": 5,
       "cr_recommended": 1100,
-      "boss_id": "boss_tiamat"
+      "boss_id": "boss_tiamat",
+      "atmosphere": {
+        "kind": "sparks"
+      }
     },
     "elf": {
       "display_name": "the Elven Halls",
@@ -2222,7 +2382,16 @@
       },
       "tier": 4,
       "cr_recommended": 600,
-      "boss_id": "boss_enchantress"
+      "boss_id": "boss_enchantress",
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.4,
+        "color": [
+          0.6,
+          0.7,
+          1.0
+        ]
+      }
     },
     "spider": {
       "display_name": "the Spider Nest",
@@ -2233,9 +2402,9 @@
           0.85,
           0.95
         ],
-        "saturation": 0.7,
+        "saturation": 0.85,
         "contrast": 1.1,
-        "vignette": 0.38,
+        "vignette": 0.3,
         "vignette_tint": [
           0.04,
           0.03,
@@ -2243,7 +2412,7 @@
         ]
       },
       "floor_primary": [
-        "mines"
+        "spider"
       ],
       "floor_accent": [],
       "wall_primary": [
@@ -2303,9 +2472,9 @@
         }
       ],
       "edge_overlay": {
-        "prefix": "dirt",
-        "density": 0.85,
-        "patch_density": 0.04,
+        "prefix": "cobweb",
+        "density": 0.45,
+        "patch_density": 0,
         "patches": []
       },
       "liquid_type": "water",
@@ -2313,7 +2482,17 @@
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
-      "boss_id": "boss_jorgrun"
+      "boss_id": "boss_jorgrun",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.5,
+        "color": [
+          0.85,
+          0.85,
+          0.8
+        ],
+        "add": true
+      }
     },
     "temple": {
       "display_name": "the Ecumenical Temple",
@@ -2397,25 +2576,40 @@
       "liquid_type": "water",
       "tier": 2,
       "cr_recommended": 120,
-      "boss_id": "boss_psyche"
+      "boss_id": "boss_psyche",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.5,
+        "color": [
+          1.0,
+          0.85,
+          0.6
+        ],
+        "add": true
+      }
     },
     "depths": {
       "display_name": "the Depths",
       "flavor": "Deeper still than the Vaults \u2014 natural caverns warped by long pressure. The bridge between civilization and the bottom of the world.",
       "color_grade": {
         "tint": [
-          0.78,
-          0.85,
-          1.05
+          0.95,
+          0.95,
+          1.0
         ],
-        "saturation": 0.65,
+        "saturation": 0.85,
         "contrast": 1.12,
         "brightness": -0.02,
-        "vignette": 0.42,
+        "vignette": 0.32,
         "vignette_tint": [
           0.01,
           0.02,
           0.06
+        ],
+        "shadow_tint": [
+          0.7,
+          0.76,
+          1.05
         ]
       },
       "floor_primary": [
@@ -2425,9 +2619,11 @@
         "depths_alt"
       ],
       "wall_primary": [
+        "dungeon_dark"
+      ],
+      "wall_accent": [
         "depths"
       ],
-      "wall_accent": [],
       "modulate": [
         0.85,
         0.85,
@@ -2520,11 +2716,22 @@
         }
       ],
       "edge_overlay": {
+        "shadow": "dark",
         "patches": []
       },
       "tier": 4,
       "cr_recommended": 600,
-      "boss_id": "boss_polyphemus"
+      "boss_id": "boss_polyphemus",
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.6,
+        "color": [
+          0.6,
+          0.65,
+          0.8
+        ],
+        "add": true
+      }
     }
   },
   "run_plans": [
