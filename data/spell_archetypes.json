@@ -1,8 +1,9 @@
 {
-	"_doc": "Spell archetype definitions — RUNTIME SOURCE OF TRUTH (loaded by spell_data.gd::_ensure_loaded). Edit via the Spell Showcase dev tool + export, or by hand. mana_cost + blurb folded in from the former _MANA_COST_TABLE / SPELL_BLURBS. Design rationale lives in docs/spell_archetypes_notes.md.",
+	"_doc": "Spell archetype definitions \u2014 RUNTIME SOURCE OF TRUTH (loaded by spell_data.gd::_ensure_loaded). Edit via the Spell Showcase dev tool + export, or by hand. mana_cost + blurb folded in from the former _MANA_COST_TABLE / SPELL_BLURBS. Design rationale lives in docs/spell_archetypes_notes.md.",
 	"_format_version": 1,
 	"archetypes": {
 		"spell_aura_communion": {
+			"school": "arcane",
 			"blurb": "Utility aura. Reserves 10 mana while active; kills within 6 cells refund 1 mana. Self-feeds on kill velocity.",
 			"class": "utility",
 			"cooldown": 11.0,
@@ -18,6 +19,7 @@
 			"trail_flavor": "wisdom"
 		},
 		"spell_aura_grace": {
+			"school": "physical",
 			"blurb": "Defensive aura. Reserves 10 mana while active; grants +10% evasion. One-per-defensive-lane. Indefinite duration.",
 			"class": "utility",
 			"cooldown": 11.0,
@@ -33,6 +35,7 @@
 			"trail_flavor": "footwork"
 		},
 		"spell_aura_warding": {
+			"school": "arcane",
 			"blurb": "Defensive aura. Reserves 10 mana while active; -15% incoming spell/elemental damage. One-per-defensive-lane.",
 			"class": "utility",
 			"cooldown": 11.0,
@@ -48,6 +51,7 @@
 			"trail_flavor": "wisdom"
 		},
 		"spell_aura_wisdom": {
+			"school": "arcane",
 			"blurb": "Offensive aura. Reserves 12 mana while active; +20% INT-spell damage AND +15% spell cooldown reduction. One-per-offensive-lane.",
 			"class": "utility",
 			"cooldown": 11.0,
@@ -63,6 +67,7 @@
 			"trail_flavor": "wisdom"
 		},
 		"spell_axes": {
+			"school": "physical",
 			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown). +1 axe per Spell Projectile affix.",
 			"cooldown": 5.0,
 			"damage": 14,
@@ -75,6 +80,7 @@
 			"trail_flavor": "thunderous"
 		},
 		"spell_blade_dance": {
+			"school": "physical",
 			"blurb": "Whirling melee spin in a 4-tile ring around you. Hits every enemy in the ring (DEX-scaling physical, not spell damage).",
 			"cooldown": 2.4,
 			"damage": 24,
@@ -87,6 +93,7 @@
 			"trail_flavor": "physical"
 		},
 		"spell_bolt_long_cd": {
+			"school": "fire",
 			"blurb": "Slow heavy bolt to the nearest enemy. Hits hard but cycles slowly (long cooldown).",
 			"cooldown": 12.0,
 			"damage": 110,
@@ -99,7 +106,8 @@
 			"trail_flavor": "fire"
 		},
 		"spell_bone_spear": {
-			"blurb": "Fast piercing shot — passes through enemies and bounces off the first wall once.",
+			"school": "physical",
+			"blurb": "Fast piercing shot \u2014 passes through enemies and bounces off the first wall once.",
 			"cooldown": 1.8,
 			"damage": 22,
 			"element": "",
@@ -111,6 +119,7 @@
 			"trail_flavor": "earth"
 		},
 		"spell_chain_lightning": {
+			"school": "lightning",
 			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
 			"cooldown": 2.4,
 			"damage": 16,
@@ -123,6 +132,7 @@
 			"trail_flavor": "thunderous"
 		},
 		"spell_choking_cloud": {
+			"school": "dark",
 			"blurb": "Drops a long-lived dark cloud. Damages enemies inside on every tick (longer DoT window than Venom Cloud).",
 			"cooldown": 4.5,
 			"damage": 2,
@@ -136,6 +146,7 @@
 			"trail_flavor": "dark"
 		},
 		"spell_curse_brittlebone": {
+			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
 			"cooldown": 8.0,
@@ -149,6 +160,7 @@
 			"trail_flavor": "dark"
 		},
 		"spell_curse_frailty": {
+			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
 			"cooldown": 8.0,
@@ -162,6 +174,7 @@
 			"trail_flavor": "dark"
 		},
 		"spell_drain": {
+			"school": "dark",
 			"blurb": "Homing dark bolt. Heals you for a portion of damage dealt (% scales with the Drain Buff affix).",
 			"cooldown": 2.4,
 			"damage": 22,
@@ -174,6 +187,7 @@
 			"trail_flavor": "dark"
 		},
 		"spell_echo_lance": {
+			"school": "lightning",
 			"blurb": "Lance pierces the first enemy in line, then ricochets once to a nearby unhit enemy (each gets a separate damage roll).",
 			"cooldown": 1.4,
 			"damage": 11,
@@ -186,6 +200,7 @@
 			"trail_flavor": "thunderous"
 		},
 		"spell_ember_bloom": {
+			"school": "fire",
 			"blurb": "Drops a fire patch on the nearest enemy. Burns enemies standing inside for several seconds (duration scales with Spell Duration).",
 			"cooldown": 5.0,
 			"damage": 2,
@@ -199,6 +214,7 @@
 			"trail_flavor": "fire"
 		},
 		"spell_fireball": {
+			"school": "fire",
 			"blurb": "Lobs a fireball at the nearest enemy. Explodes for AoE damage on impact. AoE radius scales with Spell Area.",
 			"cooldown": 1.6,
 			"damage": 18,
@@ -211,6 +227,7 @@
 			"trail_flavor": "fire"
 		},
 		"spell_frost_nova": {
+			"school": "cold",
 			"blurb": "Radial cold burst around you. Briefly freezes hit enemies. Range scales with Spell Area; freeze duration scales with Spell Duration.",
 			"cooldown": 4.0,
 			"damage": 16,
@@ -223,6 +240,7 @@
 			"trail_flavor": "cold"
 		},
 		"spell_holy_beam": {
+			"school": "holy",
 			"blurb": "Holy-element cone toward the nearest enemy. Damages every enemy caught in the arc. Range scales with Spell Area.",
 			"cooldown": 3.2,
 			"damage": 26,
@@ -235,7 +253,8 @@
 			"trail_flavor": "holy"
 		},
 		"spell_iron_shot": {
-			"blurb": "Heavy slow piercing shot — passes through every enemy in its line and hits each once.",
+			"school": "physical",
+			"blurb": "Heavy slow piercing shot \u2014 passes through every enemy in its line and hits each once.",
 			"cooldown": 3.5,
 			"damage": 32,
 			"element": "",
@@ -247,7 +266,8 @@
 			"trail_flavor": "earth"
 		},
 		"spell_magic_dart": {
-			"blurb": "Fast arcane bolt — always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
+			"school": "arcane",
+			"blurb": "Fast arcane bolt \u2014 always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
 			"cooldown": 0.7,
 			"damage": 14,
 			"element": "",
@@ -259,6 +279,7 @@
 			"trail_flavor": "arcane"
 		},
 		"spell_sandblast": {
+			"school": "physical",
 			"blurb": "Forward-sweeping dust vortex. Damages every enemy in the swept path. Sweep length scales with Spell Area.",
 			"cooldown": 2.6,
 			"damage": 30,
@@ -271,6 +292,7 @@
 			"trail_flavor": "earth"
 		},
 		"spell_shatter": {
+			"school": "physical",
 			"blurb": "Radial physical AoE around you. Briefly stuns hit enemies. Aftershock affix triggers a delayed second AoE 0.6s later.",
 			"cooldown": 5.0,
 			"damage": 28,
@@ -283,6 +305,7 @@
 			"trail_flavor": "earth"
 		},
 		"spell_static_field": {
+			"school": "lightning",
 			"blurb": "Plants a longer-lived totem than Stormcaller. Continuously zaps the closest enemy in range.",
 			"cooldown": 4.5,
 			"damage": 8,
@@ -296,6 +319,7 @@
 			"trail_flavor": "thunderous"
 		},
 		"spell_stormcaller_totem": {
+			"school": "lightning",
 			"blurb": "Plants a totem that zaps the nearest enemy each tick. Brief lifetime, hard per-zap hits.",
 			"cooldown": 6.0,
 			"damage": 12,
@@ -309,6 +333,7 @@
 			"trail_flavor": "thunderous"
 		},
 		"spell_thorn_aura": {
+			"school": "physical",
 			"blurb": "Offensive aura (premium). Reserves 14 mana while active; pulses periodic damage to nearby enemies. One-per-offensive-lane.",
 			"cooldown": 12.0,
 			"damage": 6,
@@ -324,6 +349,7 @@
 			"trail_flavor": "thorns"
 		},
 		"spell_venom_cloud": {
+			"school": "poison",
 			"blurb": "Drops a poison cloud at the nearest enemy. Damages enemies standing in it every tick (cloud duration scales with Spell Duration).",
 			"cooldown": 4.5,
 			"damage": 2,
@@ -337,6 +363,7 @@
 			"trail_flavor": "poison"
 		},
 		"spell_wisp_servant": {
+			"school": "arcane",
 			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Spell Projectile affix.",
 			"cooldown": 7.0,
 			"damage": 4,
@@ -349,7 +376,8 @@
 			"trail_flavor": "arcane"
 		},
 		"spell_wrath_charge": {
-			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed — Spell Duration does NOT extend it.",
+			"school": "physical",
+			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed \u2014 Spell Duration does NOT extend it.",
 			"class": "utility",
 			"cooldown": 9.0,
 			"damage": 0,
