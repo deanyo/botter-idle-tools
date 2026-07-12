@@ -77,7 +77,7 @@
 			"projectile": "res://assets/tiles/items/hand_axe.png",
 			"projectile_speed": 0.0,
 			"range_cells": 2,
-			"trail_flavor": "thunderous"
+			"trail_flavor": "earth"
 		},
 		"spell_blade_dance": {
 			"school": "physical",
