@@ -8382,7 +8382,9 @@
         "of_devastation": 5,
         "of_arcane_pool": 6,
         "of_arcane_flow": 6,
-        "of_arcane_battery": 5
+        "of_arcane_battery": 5,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8442,7 +8444,9 @@
         "of_synergy": 8,
         "of_executioner": 8,
         "of_avenger": 5,
-        "of_recoup": 5
+        "of_recoup": 5,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8498,7 +8502,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8556,7 +8562,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8616,7 +8624,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8672,7 +8682,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8733,7 +8745,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8793,7 +8807,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8855,7 +8871,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8916,7 +8934,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -8976,7 +8996,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9037,7 +9059,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9097,7 +9121,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9158,7 +9184,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9219,7 +9247,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9280,7 +9310,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9341,7 +9373,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9403,7 +9437,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9482,7 +9518,9 @@
         "of_devastation": 5,
         "of_arcane_pool": 8,
         "of_arcane_flow": 8,
-        "of_arcane_battery": 6
+        "of_arcane_battery": 6,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9544,7 +9582,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9607,7 +9647,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9670,7 +9712,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9731,7 +9775,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9793,7 +9839,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9853,7 +9901,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9915,7 +9965,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -9976,7 +10028,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10038,7 +10092,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10096,7 +10152,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10156,7 +10214,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10219,7 +10279,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10280,7 +10342,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10339,7 +10403,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10400,7 +10466,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10460,7 +10528,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10518,7 +10588,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10578,7 +10650,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10636,7 +10710,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10698,7 +10774,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10759,7 +10837,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10819,7 +10899,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10880,7 +10962,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -10942,7 +11026,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11004,7 +11090,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11065,7 +11153,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11126,7 +11216,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11188,7 +11280,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11252,7 +11346,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11314,7 +11410,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11375,7 +11473,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11430,7 +11530,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11485,7 +11587,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11539,7 +11643,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11595,7 +11701,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11649,7 +11757,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11705,7 +11815,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11767,7 +11879,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11830,7 +11944,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11886,7 +12002,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -11947,7 +12065,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -16022,7 +16142,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 10.0,
@@ -16078,7 +16200,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16136,7 +16260,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 50.0,
@@ -16194,7 +16320,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 270.0,
@@ -16252,7 +16380,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 210.0,
@@ -16306,7 +16436,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16361,7 +16493,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16416,7 +16550,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16471,7 +16607,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16526,7 +16664,9 @@
         "of_thundercaller": 30,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16581,7 +16721,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16636,7 +16778,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16691,7 +16835,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16746,7 +16892,9 @@
         "of_thundercaller": 30,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16801,7 +16949,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16856,7 +17006,9 @@
         "of_thundercaller": 8,
         "of_zealot": 30,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -16911,7 +17063,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -16966,7 +17120,9 @@
         "of_thundercaller": 8,
         "of_zealot": 30,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -17021,7 +17177,9 @@
         "of_thundercaller": 30,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 280.0,
@@ -17076,7 +17234,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0.0,
@@ -17131,7 +17291,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -17182,7 +17344,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17233,7 +17397,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17284,7 +17450,9 @@
         "of_thundercaller": 30,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17335,7 +17503,9 @@
         "of_thundercaller": 8,
         "of_zealot": 30,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17388,7 +17558,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "hue": 280.0,
@@ -17446,7 +17618,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -17499,7 +17673,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 30.0,
@@ -17558,7 +17734,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17611,7 +17789,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -17662,7 +17842,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       }
     },
     {
@@ -17714,7 +17896,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -17765,7 +17949,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -17817,7 +18003,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 30
+        "of_nightcaller": 30,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -17869,7 +18057,9 @@
         "of_thundercaller": 8,
         "of_zealot": 8,
         "of_pestcaller": 8,
-        "of_nightcaller": 8
+        "of_nightcaller": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -18195,7 +18385,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -18258,7 +18450,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_guardian",
       "default_tint": {
@@ -18527,7 +18721,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_flight",
       "default_tint": {
@@ -18657,7 +18853,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_evasion",
       "default_tint": {
@@ -19298,7 +19496,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -19543,7 +19743,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_vitality",
       "default_tint": {
@@ -19662,7 +19864,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -20212,7 +20416,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_reflection",
       "default_tint": {
@@ -20711,7 +20917,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_air",
       "default_tint": {
@@ -20993,7 +21201,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_strength",
       "default_tint": {
@@ -21180,7 +21390,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_regen",
       "default_tint": {
@@ -21434,7 +21646,9 @@
         "of_pestcaller": 8,
         "of_nightcaller": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_guardian",
       "default_tint": {
@@ -21506,7 +21720,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -21757,7 +21973,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -21828,7 +22046,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -21900,7 +22120,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -22084,7 +22306,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -22386,7 +22610,9 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -22643,7 +22869,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_stealth",
       "default_tint": {
@@ -22774,7 +23002,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_acrobat",
       "default_tint": {
@@ -22901,7 +23131,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -22977,7 +23209,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_rage",
       "default_tint": {
@@ -23156,7 +23390,9 @@
         "of_berserker_rage": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "amulet_faith",
       "default_tint": {
@@ -23463,7 +23699,9 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -23715,7 +23953,9 @@
       "affix_pool": {
         "of_cryomancer": 16,
         "of_finesse": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -23972,7 +24212,9 @@
       "affix_pool": {
         "of_might": 16,
         "of_pyromancer": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0,
@@ -24012,7 +24254,9 @@
       "affix_pool": {
         "of_pyromancer": 18,
         "of_int_mastery": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0,
@@ -24706,7 +24950,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -24761,7 +25007,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -24822,7 +25070,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -24883,7 +25133,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -24944,7 +25196,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25005,7 +25259,9 @@
         "of_tempest": 8,
         "of_synergy": 8,
         "of_executioner": 8,
-        "of_sundering": 8
+        "of_sundering": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25064,7 +25320,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -25117,7 +25375,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25176,7 +25436,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25235,7 +25497,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25294,7 +25558,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25353,7 +25619,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25413,7 +25681,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -25467,7 +25737,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25527,7 +25799,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25587,7 +25861,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25647,7 +25923,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25707,7 +25985,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_storms": 8
+        "of_storms": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25766,7 +26046,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -25819,7 +26101,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25878,7 +26162,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25937,7 +26223,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -25996,7 +26284,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26055,7 +26345,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26114,7 +26406,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -26167,7 +26461,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26226,7 +26522,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26285,7 +26583,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26344,7 +26644,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26403,7 +26705,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26463,7 +26767,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -26517,7 +26823,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26577,7 +26885,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26637,7 +26947,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26697,7 +27009,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26757,7 +27071,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -26816,7 +27132,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       }
     },
     {
@@ -26869,7 +27187,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "mode": "colorize",
@@ -26928,7 +27248,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "mode": "colorize",
@@ -26987,7 +27309,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "mode": "colorize",
@@ -27046,7 +27370,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "mode": "colorize",
@@ -27105,7 +27431,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       },
       "default_tint": {
         "mode": "colorize",
@@ -27164,7 +27492,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -27217,7 +27547,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -27276,7 +27608,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -27335,7 +27669,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -27394,7 +27730,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -27453,7 +27791,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "mode": "colorize",
@@ -28148,7 +28488,9 @@
         "of_quickcast": 14,
         "of_velocity": 12,
         "of_lifesteal": 8,
-        "of_hunter": 8
+        "of_hunter": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -28186,7 +28528,9 @@
         "of_resonance": 10,
         "of_lingering": 10,
         "of_channeling": 12,
-        "of_haste": 8
+        "of_haste": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 5,
@@ -28810,7 +29154,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -28863,7 +29209,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -28916,7 +29264,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -28969,7 +29319,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -29022,7 +29374,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       }
     },
     {
@@ -29076,7 +29430,9 @@
         "of_hunter": 8,
         "of_tempest": 8,
         "of_synergy": 8,
-        "of_finesse": 20
+        "of_finesse": 20,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -29129,7 +29485,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 8,
+        "of_mystic": 30
       }
     },
     {
@@ -29367,7 +29725,9 @@
         "of_sage": 8,
         "of_hunter": 8,
         "of_tempest": 8,
-        "of_synergy": 8
+        "of_synergy": 8,
+        "of_brawler": 30,
+        "of_mystic": 8
       }
     },
     {
@@ -36042,7 +36402,9 @@
         "of_embers": 20,
         "of_lifesteal": 16,
         "of_fire_resist": 14,
-        "of_might": 10
+        "of_might": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 12.0,
@@ -36227,7 +36589,9 @@
         "of_channeling": 20,
         "of_wisdom": 16,
         "of_embers": 12,
-        "of_quickcast": 10
+        "of_quickcast": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1
     },
@@ -36266,7 +36630,9 @@
         "of_channeling": 20,
         "of_wisdom": 16,
         "of_storms": 12,
-        "of_velocity": 10
+        "of_velocity": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36308,7 +36674,9 @@
         "of_channeling": 22,
         "of_wisdom": 18,
         "of_frost": 14,
-        "of_quickcast": 10
+        "of_quickcast": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36471,7 +36839,9 @@
         "of_channeling": 20,
         "of_might": 18,
         "of_devotion": 14,
-        "of_wisdom": 10
+        "of_wisdom": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36513,7 +36883,9 @@
         "of_channeling": 22,
         "of_might": 18,
         "of_devotion": 16,
-        "of_kingslayer": 12
+        "of_kingslayer": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36556,7 +36928,9 @@
         "of_channeling": 22,
         "of_might": 20,
         "of_devotion": 18,
-        "of_kingslayer": 14
+        "of_kingslayer": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36600,7 +36974,9 @@
         "of_wisdom": 22,
         "of_quickcast": 18,
         "of_meditation": 14,
-        "of_cryomancer": 10
+        "of_cryomancer": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1
     },
@@ -36637,7 +37013,9 @@
         "of_arcane_pool": 22,
         "of_wisdom": 18,
         "of_shadows": 14,
-        "of_meditation": 10
+        "of_meditation": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36680,7 +37058,9 @@
         "of_arcane_pool": 22,
         "of_wisdom": 20,
         "of_storms": 16,
-        "of_quickcast": 14
+        "of_quickcast": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36759,7 +37139,9 @@
         "of_int_mastery": 22,
         "of_wisdom": 18,
         "of_nightcaller": 14,
-        "of_quickcast": 12
+        "of_quickcast": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36799,7 +37181,9 @@
         "of_int_mastery": 22,
         "of_nightcaller": 22,
         "of_arcane_pool": 16,
-        "of_wisdom": 14
+        "of_wisdom": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -36890,7 +37274,9 @@
         "of_venom": 22,
         "of_lingering_pestilence": 18,
         "of_channeling": 16,
-        "of_quickcast": 12
+        "of_quickcast": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -36935,7 +37321,9 @@
         "of_storms": 22,
         "of_chainspark": 18,
         "of_channeling": 16,
-        "of_might": 14
+        "of_might": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -36980,7 +37368,9 @@
         "of_frost": 22,
         "of_resonance": 20,
         "of_channeling": 18,
-        "of_quickcast": 14
+        "of_quickcast": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -37025,7 +37415,9 @@
         "of_embers": 22,
         "of_lifesteal": 18,
         "of_channeling": 16,
-        "of_arcane_pool": 12
+        "of_arcane_pool": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "enchant_chance": 0.0,
       "unique": true

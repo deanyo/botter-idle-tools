@@ -1755,6 +1755,82 @@
       ]
     },
     {
+      "id": "of_brawler",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Brawler",
+      "stat": "physical_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "of_mystic",
+      "family": "generic",
+      "kind": "pct",
+      "name": "of the Mystic",
+      "stat": "arcane_dmg_pct",
+      "applies_to": [
+        "amulet",
+        "ring",
+        "helm",
+        "gloves",
+        "cloak",
+        "spell",
+        "weapon"
+      ],
+      "tiers": [
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          22,
+          32
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
       "id": "of_sage",
       "family": "generic",
       "kind": "pct",
