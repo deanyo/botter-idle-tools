@@ -294,7 +294,13 @@ async function load() {
   ]);
   DATA.items = items.items || [];
   DATA.species = species.species || [];
-  DATA.archetypes = Object.entries(archetypes).map(([id, def]) => ({ id, ...def }));
+  // spell_archetypes.json is now the runtime source of truth and nests the
+  // table under `archetypes` (alongside _doc/_format_version). Fall back to
+  // the old flat top-level shape for older mirrors. 2026-07-12.
+  const archMap = archetypes.archetypes || archetypes;
+  DATA.archetypes = Object.entries(archMap)
+    .filter(([id]) => !id.startsWith('_'))
+    .map(([id, def]) => ({ id, ...def }));
   render();
 }
 
