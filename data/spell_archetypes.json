@@ -92,6 +92,19 @@
 			"range_cells": 4,
 			"trail_flavor": "physical"
 		},
+		"spell_cleave": {
+			"school": "physical",
+			"blurb": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and briefly staggers them. The slow counterpart to Blade Dance's fast flurry.",
+			"cooldown": 5.0,
+			"damage": 60,
+			"element": "",
+			"mana_cost": 12,
+			"primary_stat": "str",
+			"projectile": "",
+			"projectile_speed": 0.0,
+			"range_cells": 3,
+			"trail_flavor": "brutal"
+		},
 		"spell_bolt_long_cd": {
 			"school": "fire",
 			"blurb": "Slow heavy bolt to the nearest enemy. Hits hard but cycles slowly (long cooldown).",
@@ -376,12 +389,12 @@
 			"trail_flavor": "arcane"
 		},
 		"spell_wrath_charge": {
-			"school": "physical",
+			"school": "fire",
 			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed \u2014 Spell Duration does NOT extend it.",
 			"class": "utility",
 			"cooldown": 9.0,
 			"damage": 0,
-			"element": "",
+			"element": "fire",
 			"mana_cost": 10,
 			"primary_stat": "str",
 			"projectile": "",
