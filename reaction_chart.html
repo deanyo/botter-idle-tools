@@ -78,6 +78,10 @@
   .rcard.amp { border-top-color: #5fbfff; }
   .rcard.amp h3 { color: #5fbfff; }
   .tag.amp { background: rgba(95,191,255,0.12); color: #5fbfff; }
+  /* Planned (not-yet-built) cards: muted + dashed so they read as future,
+     not shipped. */
+  .rcard.planned { border-top: 3px dashed var(--border-strong); opacity: 0.82; }
+  .rcard.planned h3 { color: var(--muted); }
   .rcard h3 { margin: 0 0 4px; font-size: 15px; color: var(--accent); }
   .rcard .combo { font-size: 12px; color: var(--text); margin-bottom: 10px; }
   .rcard .combo b { color: var(--text); }
@@ -123,6 +127,9 @@
 
   <h2 class="sec">Which school applies which status</h2>
   <table class="applier-table" id="applierTable"></table>
+
+  <h2 class="sec">Planned — not yet built</h2>
+  <div class="cards" id="plannedCards"></div>
 
   <div class="note">
     <b>Design status:</b> this is the ratified matrix from a multi-agent
@@ -246,6 +253,32 @@ const APPLIERS = [
   ["arcane", "(detonator)", "universal Unravel — cashes out any DoT"],
 ];
 
+// Mined from DOS2's full surface/status table — deferred to later sessions,
+// NOT part of the ratified core above. Shown so the visible artifact
+// reflects what's planned, clearly marked as future.
+const PLANNED = [
+  {
+    name: "Decaying", kind: "Anti-heal curse", where: "Dark expansion",
+    what: "A curse that INVERTS healing into damage (regen, lifesteal, heal-on-hit all flip sign). The roster's missing anti-heal counter.",
+    dep: "COUPLED: needs healer / active-regen / lifesteal enemy archetypes added first — else it counters nothing.",
+  },
+  {
+    name: "Necrofire", kind: "Behaviour affix", where: "Behaviour-gear",
+    what: "Unquenchable spreading burn — a unique fire item: 'your Ignites leave Necrofire, can't be cleansed, spreads on death.' Turns Ignite into a persistent-DoT build.",
+    dep: "Rides the spread hop-cap + reaction-depth guards like any spread.",
+  },
+  {
+    name: "Web / Root", kind: "Control status", where: "Poison/Physical trapper",
+    what: "Immobilize that STILL lets the target attack — distinct from freeze/stun (which stop everything). Fills a control gap for a trapper flavor.",
+    dep: "New STATUS_DEFS entry; movement-gate reads it in pathfinding/AI.",
+  },
+  {
+    name: "Blessed cleanse", kind: "Guardian aura", where: "Holy pillar",
+    what: "Auras that cleanse debuffs + apply haste/regen/fortify. The good half of DOS2's Blessed tier.",
+    dep: "Folds into the Holy Guardian pillar — lower priority (overlaps existing aura plans).",
+  },
+];
+
 // --- render the grid ---
 const ROWS = ["fire","physical","lightning","cold","holy","arcane","kill"];
 const COLS = ["wet","poisoned","frozen","shocked","cursed","dot"];
@@ -310,7 +343,18 @@ function buildAppliers(){
   t.innerHTML = h;
 }
 
-buildGrid(); buildLegend(); buildCards(); buildAppliers();
+function buildPlanned(){
+  const c = document.getElementById("plannedCards");
+  c.innerHTML = PLANNED.map(p => `
+    <div class="rcard planned">
+      <span class="fun" style="color:var(--muted)">${p.where}</span>
+      <h3>${p.name}<span class="tag">${p.kind}</span></h3>
+      <div class="row"><span class="lbl">What</span><span class="val">${p.what}</span></div>
+      <div class="row"><span class="lbl">Note</span><span class="val" style="color:var(--muted)">${p.dep}</span></div>
+    </div>`).join("");
+}
+
+buildGrid(); buildLegend(); buildCards(); buildAppliers(); buildPlanned();
 </script>
 </body>
 </html>
