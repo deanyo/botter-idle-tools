@@ -57,6 +57,11 @@
   .rx:hover { background: var(--accent-soft); }
   .rx .name { font-size: 11.5px; font-weight: 700; color: var(--accent); line-height: 1.1; }
   .rx .kind { font-size: 9.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  /* Amplifier cells (wet) read cyan — they make the NEXT hit harder rather
+     than consuming+bursting, so they're visually distinct from the amber
+     burst reactions. */
+  .rx.amp .name { color: #5fbfff; }
+  .rx.amp:hover { background: rgba(95,191,255,0.10); }
   .el-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; }
 
   .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 0 0 30px; font-size: 11px; color: var(--muted); }
@@ -70,6 +75,9 @@
     border-radius: 6px; padding: 16px; border-top: 3px solid var(--accent-dim);
   }
   .rcard.flagship { border-top-color: var(--accent); }
+  .rcard.amp { border-top-color: #5fbfff; }
+  .rcard.amp h3 { color: #5fbfff; }
+  .tag.amp { background: rgba(95,191,255,0.12); color: #5fbfff; }
   .rcard h3 { margin: 0 0 4px; font-size: 15px; color: var(--accent); }
   .rcard .combo { font-size: 12px; color: var(--text); margin-bottom: 10px; }
   .rcard .combo b { color: var(--text); }
@@ -148,6 +156,7 @@ const EL = {
   kill:      { label: "On kill",   color: "#f06464" },
 };
 const ST = {
+  wet:      { label: "Wet",      color: "#5fbfff" },
   poisoned: { label: "Poisoned", color: "#8fe06f" },
   frozen:   { label: "Frozen",   color: "#8fd8ff" },
   shocked:  { label: "Shocked",  color: "#ffe066" },
@@ -205,11 +214,30 @@ const MATRIX = [
     spread: "Single-target. Per-target cooldown so apply→Unravel→reapply can't be pumped.",
     perf: "Derives remaining = ceil((expires−now)/interval)×amount (no ticks_left field exists). Consuming the DoT removes the tick object.",
   },
+  // --- The AMPLIFIER layer (wet) — DOS2's connective tissue. NOT a
+  // consume-and-burst reaction: wet makes the NEXT cold/lightning hit
+  // land harder. Folded into Cold, not a 9th school.
+  {
+    id: "electrocute", name: "Electrocute", kind: "Amplifier", flagship: false, fun: 4, amp: true,
+    trigger: "lightning", target: "wet",
+    combo: "<b>Lightning</b> hit on a <b>wet</b> enemy",
+    effect: "The iconic water-electrifies combo: a wet target takes bonus lightning AND escalates shock→STUN in a single hit (no second-hit setup needed).",
+    spread: "Single-target. Presence-triggered (wet present → escalate), no counter. Stun carries the hard-CC cooldown.",
+    perf: "O(1) wet check in the amp block; bonus rides the global post-amp damage clamp.",
+  },
+  {
+    id: "deepchill", name: "Deep Chill", kind: "Amplifier", flagship: false, fun: 4, amp: true,
+    trigger: "cold", target: "wet",
+    combo: "<b>Cold</b> hit on a <b>wet</b> enemy",
+    effect: "Wet fast-tracks the chill→freeze ladder — a wet target freezes in one hit instead of laddering up. This is the SETUP that feeds the flagship Shatter loop.",
+    spread: "Single-target. Consumes wet → applies frozen (subject to the hard-CC cooldown).",
+    perf: "O(1). 'Soak, freeze, shatter' is the Cold build's marquee chain; wet is its opener.",
+  },
 ];
 
 const APPLIERS = [
   ["fire", "burning", "damaging clock + the Ignite detonator"],
-  ["cold", "chilled → frozen", "the freeze half of the flagship Shatter loop"],
+  ["cold", "chilled → frozen · wet", "the freeze half of Shatter + the wet amplifier"],
   ["lightning", "shocked", "amp + chain (Chain Overload)"],
   ["poison", "poisoned", "fuel — cashed out by fire (Ignite) / arcane (Unravel)"],
   ["physical", "bleeding / sunder", "the Shatter trigger + DoT fuel"],
@@ -219,8 +247,8 @@ const APPLIERS = [
 ];
 
 // --- render the grid ---
-const ROWS = ["fire","physical","lightning","holy","arcane","kill"];
-const COLS = ["poisoned","frozen","shocked","cursed","dot"];
+const ROWS = ["fire","physical","lightning","cold","holy","arcane","kill"];
+const COLS = ["wet","poisoned","frozen","shocked","cursed","dot"];
 function dot(color){ return `<span class="el-dot" style="background:${color}"></span>`; }
 
 function buildGrid(){
@@ -234,7 +262,7 @@ function buildGrid(){
     for (const c of COLS){
       const rx = MATRIX.find(m => m.trigger === r && m.target === c);
       if (rx){
-        body += `<td class="cell"><div class="rx" data-id="${rx.id}">
+        body += `<td class="cell"><div class="rx${rx.amp?' amp':''}" data-id="${rx.id}">
           <span class="name">${rx.name}</span>
           <span class="kind">${rx.kind}</span></div></td>`;
       } else {
@@ -256,15 +284,16 @@ function buildGrid(){
 function buildLegend(){
   const l = document.getElementById("legend");
   l.innerHTML = "<span><b style='color:var(--accent)'>Flagship</b> = a build's marquee combo</span>"
+    + "<span><b style='color:#5fbfff'>Amplifier</b> = makes the next hit harder (not a burst)</span>"
     + ROWS.map(r => `<span>${dot(EL[r].color)} ${EL[r].label}</span>`).join("");
 }
 
 function buildCards(){
   const c = document.getElementById("cards");
   c.innerHTML = MATRIX.map(m => `
-    <div class="rcard ${m.flagship?'flagship':''}" id="card-${m.id}">
+    <div class="rcard ${m.flagship?'flagship':''}${m.amp?' amp':''}" id="card-${m.id}">
       <span class="fun">${'★'.repeat(m.fun)}</span>
-      <h3>${m.name}${m.flagship?'<span class="tag flag">flagship</span>':`<span class="tag">${m.kind}</span>`}</h3>
+      <h3>${m.name}${m.flagship?'<span class="tag flag">flagship</span>':(m.amp?'<span class="tag amp">amplifier</span>':`<span class="tag">${m.kind}</span>`)}</h3>
       <div class="combo">${dot(EL[m.trigger].color)} ${m.combo}</div>
       <div class="row"><span class="lbl">Effect</span><span class="val">${m.effect}</span></div>
       <div class="row"><span class="lbl">Spread</span><span class="val">${m.spread}</span></div>
