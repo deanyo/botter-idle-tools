@@ -17,6 +17,7 @@
     { id: 'affixes',   href: 'affix_editor.html',  label: 'Bonuses' },
     { id: 'drops',     href: 'drop_tuning.html',   label: 'Drop rates' },
     { id: 'flowchart', href: 'roll_flowchart.html',label: 'Roll flowchart' },
+    { id: 'reactions', href: 'reaction_chart.html', label: 'Reactions' },
     { id: 'matrix',    href: 'build_matrix.html', label: 'Build matrix' },
     { id: 'enemies',   href: 'enemy_resistance_editor.html', label: 'Enemies' },
     { id: 'proposal',  href: 'slot_proposal.html', label: 'Slot proposal' },

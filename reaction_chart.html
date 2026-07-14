@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Spell Reaction Chart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Reaction-chart specific layout. Shared palette + nav in portal.css /
+     portal_nav.js. This page is a READ-ONLY reference: it renders the
+     ratified spell-combo matrix (docs/spell-mechanical-diversity-plan.md
+     "THE RATIFIED REACTION MATRIX") from an embedded data table that is
+     the single source of truth — the design doc and this page must stay
+     in sync (see MATRIX const below). DOS2-style grid + detail cards. */
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex; align-items: center; gap: 14px; flex-shrink: 0;
+  }
+  main { flex: 1; padding: 24px; max-width: 1180px; margin: 0 auto; width: 100%; }
+  .intro {
+    color: var(--muted); font-size: 13px; line-height: 1.55;
+    max-width: 820px; margin: 0 auto 28px; padding: 14px 18px;
+    background: var(--panel); border-left: 3px solid var(--accent-dim);
+    border-radius: 3px;
+  }
+  .intro strong { color: var(--accent); }
+  .intro code { background: rgba(255,255,255,0.05); padding: 1px 5px; border-radius: 2px; font-size: 11px; }
+
+  /* ---- The DOS2-style grid ---- */
+  .grid-wrap { overflow-x: auto; margin-bottom: 36px; }
+  table.grid { border-collapse: collapse; margin: 0 auto; }
+  table.grid th, table.grid td {
+    border: 1px solid var(--border); text-align: center;
+    padding: 0; width: 120px; height: 68px; vertical-align: middle;
+  }
+  table.grid thead th {
+    background: var(--panel-2); color: var(--muted); font-weight: 600;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    height: 42px; padding: 4px 8px;
+  }
+  table.grid th.rowhead {
+    background: var(--panel-2); color: var(--text); text-align: right;
+    padding-right: 12px; font-size: 12px; width: 150px;
+  }
+  table.grid th.rowhead .el-dot { margin-left: 6px; }
+  td.cell { position: relative; }
+  td.cell.empty { background: var(--bg); }
+  td.cell.empty::after { content: "·"; color: #333; font-size: 18px; }
+  .rx {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 6px 4px; cursor: pointer; height: 100%; justify-content: center;
+    transition: background 0.12s;
+  }
+  .rx:hover { background: var(--accent-soft); }
+  .rx .name { font-size: 11.5px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+  .rx .kind { font-size: 9.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .el-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 0 0 30px; font-size: 11px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+
+  /* ---- Detail cards ---- */
+  h2 { text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .rcard {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 6px; padding: 16px; border-top: 3px solid var(--accent-dim);
+  }
+  .rcard.flagship { border-top-color: var(--accent); }
+  .rcard h3 { margin: 0 0 4px; font-size: 15px; color: var(--accent); }
+  .rcard .combo { font-size: 12px; color: var(--text); margin-bottom: 10px; }
+  .rcard .combo b { color: var(--text); }
+  .rcard .row { display: flex; gap: 8px; font-size: 11.5px; margin: 5px 0; line-height: 1.4; }
+  .rcard .row .lbl { color: var(--muted); min-width: 62px; flex-shrink: 0; text-transform: uppercase; font-size: 10px; letter-spacing: 0.4px; padding-top: 1px; }
+  .rcard .row .val { color: var(--text); }
+  .rcard .fun { float: right; font-size: 10px; color: var(--accent-dim); }
+  .tag { display: inline-block; font-size: 9.5px; padding: 1px 6px; border-radius: 3px; background: var(--panel-2); color: var(--muted); margin-left: 6px; letter-spacing: 0.3px; }
+  .tag.flag { background: var(--accent-soft); color: var(--accent); }
+
+  h2.sec { margin-top: 40px; }
+  .applier-table { margin: 0 auto; border-collapse: collapse; font-size: 12px; }
+  .applier-table td, .applier-table th { border: 1px solid var(--border); padding: 6px 12px; }
+  .applier-table th { background: var(--panel-2); color: var(--accent); font-size: 11px; }
+  .applier-table td.school { font-weight: 600; }
+  .note { max-width: 820px; margin: 20px auto 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+  .note b { color: var(--warn); }
+</style>
+</head>
+<body>
+<header>
+  <nav class="portal-nav" data-active="reactions" data-title="Reaction Chart"></nav>
+</header>
+<main>
+  <div class="intro">
+    <strong>Spell Reaction Chart.</strong> Botter's status-combo system,
+    DOS2-style: one element hitting an enemy that already carries a status
+    triggers a <strong>reaction</strong>. Because the bot plays itself, you
+    author combos at the <em>loadout</em> screen — equip spells whose
+    statuses feed each other — and read the payoff in the combat log/VFX.
+    This is the ratified core (see <code>docs/spell-mechanical-diversity-plan.md</code>);
+    it's the design spec for Phase-3 combat, not all shipped yet.
+    Read the grid: <strong>row = the element you hit with</strong>,
+    <strong>column = the status already on the target</strong>, cell = the
+    reaction. Click any reaction for detail.
+  </div>
+
+  <div class="grid-wrap"><table class="grid" id="grid"></table></div>
+  <div class="legend" id="legend"></div>
+
+  <h2>The core reactions</h2>
+  <div class="cards" id="cards"></div>
+
+  <h2 class="sec">Which school applies which status</h2>
+  <table class="applier-table" id="applierTable"></table>
+
+  <div class="note">
+    <b>Design status:</b> this is the ratified matrix from a multi-agent
+    design + adversarial review pass (2026-07-14). Magnitudes are BANDS
+    flagged to a later balance pass, never final numbers. Build order,
+    performance guardrails (spatial grid, reaction-depth anti-cascade,
+    hard-CC cooldowns), and the cut reactions (Thermal Shock, Deep Freeze,
+    etc.) live in the design doc.
+  </div>
+</main>
+
+<script src="portal_nav.js" defer></script>
+<script>
+// ============================================================
+// SOURCE OF TRUTH — the ratified reaction matrix.
+// Mirrors docs/spell-mechanical-diversity-plan.md "THE RATIFIED
+// REACTION MATRIX". Keep the two in sync: if a reaction changes here,
+// change the doc, and vice versa.
+// ============================================================
+
+// Element / status display colors (match the in-game school + status tints).
+const EL = {
+  fire:      { label: "Fire",      color: "#ff7a33" },
+  physical:  { label: "Physical",  color: "#c8c4a8" },
+  lightning: { label: "Lightning", color: "#ffe066" },
+  holy:      { label: "Holy",      color: "#fff0b0" },
+  arcane:    { label: "Arcane",    color: "#c76bff" },
+  dark:      { label: "Dark",      color: "#9b59d0" },
+  cold:      { label: "Cold",      color: "#8fd8ff" },
+  poison:    { label: "Poison",    color: "#8fe06f" },
+  kill:      { label: "On kill",   color: "#f06464" },
+};
+const ST = {
+  poisoned: { label: "Poisoned", color: "#8fe06f" },
+  frozen:   { label: "Frozen",   color: "#8fd8ff" },
+  shocked:  { label: "Shocked",  color: "#ffe066" },
+  cursed:   { label: "Cursed",   color: "#c76bff" },
+  dot:      { label: "Any DoT",  color: "#ff9a66" },
+};
+
+// The teachable core — 6 reactions. Grid position = [trigger element][target status].
+const MATRIX = [
+  {
+    id: "ignite", name: "Ignite", kind: "AoE burst", flagship: true, fun: 5,
+    trigger: "fire", target: "poisoned",
+    combo: "<b>Fire</b> hit on a <b>poisoned</b> enemy",
+    effect: "Consumes the poison → AoE fire burst (poison-derived, hard-capped ~200) and applies burning to survivors.",
+    spread: "AoE, ≤6 nearest, 1 generation (no chain).",
+    perf: "Gated on the enemy spatial grid (AoE); reaction-depth guard stops Ignite→Ignite cascades.",
+  },
+  {
+    id: "shatter", name: "Shatter", kind: "ST burst", flagship: true, fun: 5,
+    trigger: "physical", target: "frozen",
+    combo: "<b>Physical</b> hit on a <b>frozen</b> enemy",
+    effect: "Consumes the freeze → armour-ignoring burst, 25-30% of max HP (cap ~250). Splinter shards to ≤3 nearby.",
+    spread: "Single-target + ≤3 shards. Per-target cooldown so the freeze→shatter conveyor can't repeat every cycle.",
+    perf: "Single-target core ships first; shards gate on the spatial grid. O(1) frozen check.",
+  },
+  {
+    id: "chain_overload", name: "Chain Overload", kind: "Chain + stun", flagship: true, fun: 4,
+    trigger: "lightning", target: "shocked",
+    combo: "<b>Lightning</b> hit on a <b>shocked</b> enemy",
+    effect: "Extra chain jumps (hard-capped 6 total) AND a short stun as the escalation — one reaction, merged from two.",
+    spread: "Chaining, ≤6 total jumps (reuses the existing hop-capped loop with a per-cast budget).",
+    perf: "Reuses the bounded chain loop; shocked read is O(1). Stun carries a per-target cooldown.",
+  },
+  {
+    id: "doom", name: "Doom", kind: "On-death nova", flagship: true, fun: 5,
+    trigger: "kill", target: "cursed",
+    combo: "Any <b>kill</b> of a <b>cursed</b> enemy",
+    effect: "Dark nova to ≤5 nearby + curse spreads to ≤3 of them. Curse is the passive amplifier; Doom is its death payoff.",
+    spread: "AoE on death, 1 generation, per-frame budget ≤8 detonations.",
+    perf: "Deferred queue — fires AFTER the enemy loop, never mid-iteration. Gated on the spatial grid.",
+  },
+  {
+    id: "purge", name: "Purge", kind: "ST burst", flagship: false, fun: 4,
+    trigger: "holy", target: "cursed",
+    combo: "<b>Holy</b> hit on a <b>cursed</b> enemy",
+    effect: "Consumes the curse → holy burst (cap ~200). If it kills, Doom does NOT fire — the RPS counter to a dark build.",
+    spread: "Single-target. Consumes curse before damage resolves, so Doom's death check sees no curse.",
+    perf: "O(1). Dark wants curse to persist for Doom; holy cashes it out — element choice is board-state dependent.",
+  },
+  {
+    id: "unravel", name: "Arcane Unravel", kind: "Detonator", flagship: false, fun: 5,
+    trigger: "arcane", target: "dot",
+    combo: "<b>Arcane</b> hit on any DoT (<b>burning / poisoned / bleeding</b>)",
+    effect: "Consumes the remaining DoT → instant burst ≤100% of what's left (a real burst-vs-sustained tradeoff). Combos with fire, poison AND physical.",
+    spread: "Single-target. Per-target cooldown so apply→Unravel→reapply can't be pumped.",
+    perf: "Derives remaining = ceil((expires−now)/interval)×amount (no ticks_left field exists). Consuming the DoT removes the tick object.",
+  },
+];
+
+const APPLIERS = [
+  ["fire", "burning", "damaging clock + the Ignite detonator"],
+  ["cold", "chilled → frozen", "the freeze half of the flagship Shatter loop"],
+  ["lightning", "shocked", "amp + chain (Chain Overload)"],
+  ["poison", "poisoned", "fuel — cashed out by fire (Ignite) / arcane (Unravel)"],
+  ["physical", "bleeding / sunder", "the Shatter trigger + DoT fuel"],
+  ["holy", "holy_mark / blinded", "anti-curse Purge + execute-setter"],
+  ["dark", "cursed", "passive amplifier + the Doom death payoff"],
+  ["arcane", "(detonator)", "universal Unravel — cashes out any DoT"],
+];
+
+// --- render the grid ---
+const ROWS = ["fire","physical","lightning","holy","arcane","kill"];
+const COLS = ["poisoned","frozen","shocked","cursed","dot"];
+function dot(color){ return `<span class="el-dot" style="background:${color}"></span>`; }
+
+function buildGrid(){
+  const t = document.getElementById("grid");
+  let head = `<thead><tr><th class="rowhead"></th>`;
+  for (const c of COLS) head += `<th>${dot(ST[c].color)} ${ST[c].label}</th>`;
+  head += `</tr></thead>`;
+  let body = "<tbody>";
+  for (const r of ROWS){
+    body += `<tr><th class="rowhead">${EL[r].label} ${dot(EL[r].color)}</th>`;
+    for (const c of COLS){
+      const rx = MATRIX.find(m => m.trigger === r && m.target === c);
+      if (rx){
+        body += `<td class="cell"><div class="rx" data-id="${rx.id}">
+          <span class="name">${rx.name}</span>
+          <span class="kind">${rx.kind}</span></div></td>`;
+      } else {
+        body += `<td class="cell empty"></td>`;
+      }
+    }
+    body += `</tr>`;
+  }
+  body += "</tbody>";
+  t.innerHTML = head + body;
+  t.querySelectorAll(".rx").forEach(el => el.addEventListener("click", () => {
+    const card = document.getElementById("card-" + el.dataset.id);
+    if (card){ card.scrollIntoView({behavior:"smooth", block:"center"});
+      card.style.transition="box-shadow .2s"; card.style.boxShadow="0 0 0 2px var(--accent)";
+      setTimeout(()=>card.style.boxShadow="", 900); }
+  }));
+}
+
+function buildLegend(){
+  const l = document.getElementById("legend");
+  l.innerHTML = "<span><b style='color:var(--accent)'>Flagship</b> = a build's marquee combo</span>"
+    + ROWS.map(r => `<span>${dot(EL[r].color)} ${EL[r].label}</span>`).join("");
+}
+
+function buildCards(){
+  const c = document.getElementById("cards");
+  c.innerHTML = MATRIX.map(m => `
+    <div class="rcard ${m.flagship?'flagship':''}" id="card-${m.id}">
+      <span class="fun">${'★'.repeat(m.fun)}</span>
+      <h3>${m.name}${m.flagship?'<span class="tag flag">flagship</span>':`<span class="tag">${m.kind}</span>`}</h3>
+      <div class="combo">${dot(EL[m.trigger].color)} ${m.combo}</div>
+      <div class="row"><span class="lbl">Effect</span><span class="val">${m.effect}</span></div>
+      <div class="row"><span class="lbl">Spread</span><span class="val">${m.spread}</span></div>
+      <div class="row"><span class="lbl">Perf</span><span class="val">${m.perf}</span></div>
+    </div>`).join("");
+}
+
+function buildAppliers(){
+  const t = document.getElementById("applierTable");
+  let h = "<tr><th>School</th><th>Applies</th><th>Role in the web</th></tr>";
+  for (const [s, applies, role] of APPLIERS){
+    h += `<tr><td class="school" style="color:${EL[s]?EL[s].color:'#fff'}">${EL[s]?EL[s].label:s}</td><td>${applies}</td><td style="color:var(--muted)">${role}</td></tr>`;
+  }
+  t.innerHTML = h;
+}
+
+buildGrid(); buildLegend(); buildCards(); buildAppliers();
+</script>
+</body>
+</html>
