@@ -16,7 +16,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 6,
 			"reservation": 10,
-			"trail_flavor": "wisdom"
+			"trail_flavor": "wisdom",
+			"icon": "recall.png"
 		},
 		"spell_aura_grace": {
 			"school": "physical",
@@ -32,7 +33,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 3,
 			"reservation": 10,
-			"trail_flavor": "footwork"
+			"trail_flavor": "footwork",
+			"icon": "awaken_armour.png"
 		},
 		"spell_aura_warding": {
 			"school": "arcane",
@@ -48,7 +50,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 3,
 			"reservation": 10,
-			"trail_flavor": "wisdom"
+			"trail_flavor": "wisdom",
+			"icon": "ozocubus_armour.png"
 		},
 		"spell_aura_wisdom": {
 			"school": "arcane",
@@ -64,7 +67,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 3,
 			"reservation": 12,
-			"trail_flavor": "wisdom"
+			"trail_flavor": "wisdom",
+			"icon": "corona.png"
 		},
 		"spell_axes": {
 			"school": "physical",
@@ -77,7 +81,8 @@
 			"projectile": "res://assets/tiles/items/hand_axe.png",
 			"projectile_speed": 0.0,
 			"range_cells": 2,
-			"trail_flavor": "earth"
+			"trail_flavor": "earth",
+			"icon": "diamond_sawblades.png"
 		},
 		"spell_blade_dance": {
 			"school": "physical",
@@ -90,7 +95,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 4,
-			"trail_flavor": "physical"
+			"trail_flavor": "physical",
+			"icon": "tukimas_dance.png"
 		},
 		"spell_cleave": {
 			"school": "physical",
@@ -103,7 +109,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 3,
-			"trail_flavor": "brutal"
+			"trail_flavor": "brutal",
+			"icon": "rending_blade.png"
 		},
 		"spell_bolt_long_cd": {
 			"school": "fire",
@@ -116,7 +123,8 @@
 			"projectile": "res://assets/tiles/projectiles/fireball.png",
 			"projectile_speed": 360.0,
 			"range_cells": 10,
-			"trail_flavor": "fire"
+			"trail_flavor": "fire",
+			"icon": "bolt_of_fire.png"
 		},
 		"spell_bone_spear": {
 			"school": "physical",
@@ -129,7 +137,8 @@
 			"projectile": "res://assets/tiles/spells/effects/crystal_spear2.png",
 			"projectile_speed": 360.0,
 			"range_cells": 7,
-			"trail_flavor": "earth"
+			"trail_flavor": "earth",
+			"icon": "grave_claw.png"
 		},
 		"spell_chain_lightning": {
 			"school": "lightning",
@@ -142,7 +151,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 7,
-			"trail_flavor": "thunderous"
+			"trail_flavor": "thunderous",
+			"icon": "chain_lightning.png"
 		},
 		"spell_choking_cloud": {
 			"school": "dark",
@@ -156,7 +166,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 5,
 			"tick": true,
-			"trail_flavor": "dark"
+			"trail_flavor": "dark",
+			"icon": "corpse_rot.png"
 		},
 		"spell_curse_brittlebone": {
 			"school": "dark",
@@ -170,7 +181,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 6,
-			"trail_flavor": "dark"
+			"trail_flavor": "dark",
+			"icon": "agony.png"
 		},
 		"spell_curse_frailty": {
 			"school": "dark",
@@ -184,7 +196,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 6,
-			"trail_flavor": "dark"
+			"trail_flavor": "dark",
+			"icon": "enfeeble.png"
 		},
 		"spell_drain": {
 			"school": "dark",
@@ -197,7 +210,8 @@
 			"projectile": "res://assets/tiles/projectiles/drain.png",
 			"projectile_speed": 280.0,
 			"range_cells": 8,
-			"trail_flavor": "dark"
+			"trail_flavor": "dark",
+			"icon": "vampiric_draining.png"
 		},
 		"spell_echo_lance": {
 			"school": "lightning",
@@ -210,7 +224,8 @@
 			"projectile": "res://assets/tiles/spells/effects/bolt2.png",
 			"projectile_speed": 480.0,
 			"range_cells": 8,
-			"trail_flavor": "thunderous"
+			"trail_flavor": "thunderous",
+			"icon": "lightning_bolt.png"
 		},
 		"spell_ember_bloom": {
 			"school": "fire",
@@ -224,7 +239,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 4,
 			"tick": true,
-			"trail_flavor": "fire"
+			"trail_flavor": "fire",
+			"icon": "sticky_flame.png"
 		},
 		"spell_fireball": {
 			"school": "fire",
@@ -237,7 +253,8 @@
 			"projectile": "res://assets/tiles/projectiles/fireball.png",
 			"projectile_speed": 320.0,
 			"range_cells": 8,
-			"trail_flavor": "fire"
+			"trail_flavor": "fire",
+			"icon": "fireball.png"
 		},
 		"spell_frost_nova": {
 			"school": "cold",
@@ -250,7 +267,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 3,
-			"trail_flavor": "cold"
+			"trail_flavor": "cold",
+			"icon": "ozocubus_refrigeration.png"
 		},
 		"spell_holy_beam": {
 			"school": "holy",
@@ -263,7 +281,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 4,
-			"trail_flavor": "holy"
+			"trail_flavor": "holy",
+			"icon": "bolt_of_light.png"
 		},
 		"spell_iron_shot": {
 			"school": "physical",
@@ -276,7 +295,8 @@
 			"projectile": "res://assets/tiles/projectiles/iron_shot.png",
 			"projectile_speed": 220.0,
 			"range_cells": 9,
-			"trail_flavor": "earth"
+			"trail_flavor": "earth",
+			"icon": "iron_shot.png"
 		},
 		"spell_magic_dart": {
 			"school": "arcane",
@@ -289,7 +309,8 @@
 			"projectile": "res://assets/tiles/projectiles/magic_dart.png",
 			"projectile_speed": 420.0,
 			"range_cells": 9,
-			"trail_flavor": "arcane"
+			"trail_flavor": "arcane",
+			"icon": "magic_dart.png"
 		},
 		"spell_sandblast": {
 			"school": "physical",
@@ -302,7 +323,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 4,
-			"trail_flavor": "earth"
+			"trail_flavor": "earth",
+			"icon": "sandblast.png"
 		},
 		"spell_shatter": {
 			"school": "physical",
@@ -315,7 +337,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 4,
-			"trail_flavor": "earth"
+			"trail_flavor": "earth",
+			"icon": "shatter.png"
 		},
 		"spell_static_field": {
 			"school": "lightning",
@@ -329,7 +352,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 6,
 			"tick": true,
-			"trail_flavor": "thunderous"
+			"trail_flavor": "thunderous",
+			"icon": "fulminant_prism.png"
 		},
 		"spell_stormcaller_totem": {
 			"school": "lightning",
@@ -343,7 +367,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 4,
 			"tick": true,
-			"trail_flavor": "thunderous"
+			"trail_flavor": "thunderous",
+			"icon": "forge_lightning_spire.png"
 		},
 		"spell_thorn_aura": {
 			"school": "physical",
@@ -359,7 +384,8 @@
 			"range_cells": 3,
 			"reservation": 14,
 			"tick": true,
-			"trail_flavor": "thorns"
+			"trail_flavor": "thorns",
+			"icon": "olgrebs_toxic_radiance.png"
 		},
 		"spell_venom_cloud": {
 			"school": "poison",
@@ -373,7 +399,8 @@
 			"projectile_speed": 0.0,
 			"range_cells": 5,
 			"tick": true,
-			"trail_flavor": "poison"
+			"trail_flavor": "poison",
+			"icon": "poisonous_cloud.png"
 		},
 		"spell_wisp_servant": {
 			"school": "arcane",
@@ -386,7 +413,8 @@
 			"projectile": "res://assets/tiles/spells/effects/orb_glow1.png",
 			"projectile_speed": 220.0,
 			"range_cells": 4,
-			"trail_flavor": "arcane"
+			"trail_flavor": "arcane",
+			"icon": "spellspark_servitor.png"
 		},
 		"spell_wrath_charge": {
 			"school": "fire",
@@ -400,7 +428,8 @@
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 0,
-			"trail_flavor": "brutal"
+			"trail_flavor": "brutal",
+			"icon": "berserker_rage.png"
 		}
 	}
 }
