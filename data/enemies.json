@@ -10,7 +10,8 @@
     "min_floor": 1,
     "tier": 1,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "bat": {
     "name": "Bat",
@@ -23,7 +24,8 @@
     "min_floor": 1,
     "tier": 1,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "flutter"
   },
   "grey_rat": {
     "name": "Grey Rat",
@@ -36,7 +38,8 @@
     "min_floor": 1,
     "tier": 1,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "butterfly": {
     "name": "Butterfly",
@@ -49,7 +52,8 @@
     "min_floor": 1,
     "tier": 1,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "flutter"
   },
   "quokka": {
     "name": "Quokka",
@@ -62,7 +66,8 @@
     "min_floor": 1,
     "tier": 1,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "jelly": {
     "name": "Jelly",
@@ -81,7 +86,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "goblin": {
     "name": "Goblin",
@@ -94,7 +100,8 @@
     "min_floor": 2,
     "tier": 2,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "kobold": {
     "name": "Kobold",
@@ -108,7 +115,8 @@
     "tier": 2,
     "boss": false,
     "attack_kind": "slash",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "walk"
   },
   "giant_cockroach": {
     "name": "Giant Cockroach",
@@ -123,7 +131,8 @@
     "boss": false,
     "visual_scale": 1.4,
     "visual_anchor": "centre",
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "jackal": {
     "name": "Jackal",
@@ -136,7 +145,8 @@
     "min_floor": 2,
     "tier": 2,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "adder": {
     "name": "Adder",
@@ -153,7 +163,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "slither"
   },
   "ball_python": {
     "name": "Ball Python",
@@ -170,7 +181,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "slither"
   },
   "ooze": {
     "name": "Ooze",
@@ -189,7 +201,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "acid_blob": {
     "name": "Acid Blob",
@@ -208,7 +221,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "hobgoblin": {
     "name": "Hobgoblin",
@@ -223,7 +237,8 @@
     "boss": false,
     "visual_scale": 1.3,
     "visual_anchor": "centre",
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "big_kobold": {
     "name": "Big Kobold",
@@ -237,7 +252,8 @@
     "tier": 2,
     "boss": false,
     "attack_kind": "slash",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "walk"
   },
   "gnoll": {
     "name": "Gnoll",
@@ -250,7 +266,8 @@
     "min_floor": 3,
     "tier": 2,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "orc": {
     "name": "Orc",
@@ -263,7 +280,8 @@
     "min_floor": 3,
     "tier": 2,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "skeleton": {
     "name": "Skeleton",
@@ -281,7 +299,8 @@
       "dark": 50,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "locomotion": "walk"
   },
   "wolf": {
     "name": "Wolf",
@@ -294,7 +313,8 @@
     "min_floor": 3,
     "tier": 3,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "wolf_spider": {
     "name": "Wolf Spider",
@@ -311,7 +331,8 @@
       "holy": -10,
       "poison": 50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "hound": {
     "name": "Hound",
@@ -324,7 +345,8 @@
     "min_floor": 3,
     "tier": 3,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "black_bear": {
     "name": "Black Bear",
@@ -337,7 +359,8 @@
     "min_floor": 4,
     "tier": 3,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "black_mamba": {
     "name": "Black Mamba",
@@ -354,7 +377,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "slither"
   },
   "crocodile": {
     "name": "Crocodile",
@@ -371,7 +395,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "komodo": {
     "name": "Komodo Dragon",
@@ -388,7 +413,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "orc_warrior": {
     "name": "Orc Warrior",
@@ -401,7 +427,8 @@
     "min_floor": 4,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "orc_priest": {
     "name": "Orc Priest",
@@ -414,7 +441,8 @@
     "min_floor": 4,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "centaur": {
     "name": "Centaur",
@@ -428,7 +456,8 @@
     "tier": 3,
     "boss": false,
     "attack_kind": "headbutt",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "walk"
   },
   "ice_beast": {
     "name": "Ice Beast",
@@ -446,7 +475,8 @@
       "cold": 75,
       "fire": -40
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "dwarf": {
     "name": "Dwarf",
@@ -459,7 +489,8 @@
     "min_floor": 4,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "elf": {
     "name": "Elf",
@@ -472,7 +503,8 @@
     "min_floor": 4,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "wraith": {
     "name": "Wraith",
@@ -491,7 +523,8 @@
       "holy": -50,
       "physical": 50,
       "poison": 75
-    }
+    },
+    "locomotion": "hover"
   },
   "zombie": {
     "name": "Zombie",
@@ -509,7 +542,8 @@
       "dark": 50,
       "holy": -40,
       "poison": 50
-    }
+    },
+    "locomotion": "walk"
   },
   "hell_hound": {
     "name": "Hell Hound",
@@ -528,7 +562,8 @@
       "fire": 50,
       "holy": -40
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "death_yak": {
     "name": "Death Yak",
@@ -541,7 +576,8 @@
     "min_floor": 5,
     "tier": 4,
     "boss": false,
-    "attack_kind": "headbutt"
+    "attack_kind": "headbutt",
+    "locomotion": "stomp"
   },
   "elephant": {
     "name": "Elephant",
@@ -556,7 +592,8 @@
     "boss": false,
     "visual_scale": 1.4,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "orc_knight": {
     "name": "Orc Knight",
@@ -569,7 +606,8 @@
     "min_floor": 5,
     "tier": 4,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "centaur_warrior": {
     "name": "Centaur Warrior",
@@ -583,7 +621,8 @@
     "tier": 4,
     "boss": false,
     "attack_kind": "headbutt",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "walk"
   },
   "cyclops": {
     "name": "Cyclops",
@@ -601,7 +640,8 @@
     "resistances": {
       "fire": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "ogre": {
     "name": "Ogre",
@@ -617,7 +657,8 @@
     "resistances": {
       "fire": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "troll": {
     "name": "Troll",
@@ -634,7 +675,8 @@
       "fire": -50,
       "poison": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "anubis_guard": {
     "name": "Anubis Guard",
@@ -653,7 +695,8 @@
       "holy": -40,
       "poison": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "death_knight": {
     "name": "Death Knight",
@@ -672,7 +715,8 @@
       "holy": -40,
       "poison": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_knight": {
     "name": "Deep Elf Knight",
@@ -685,7 +729,8 @@
     "min_floor": 7,
     "tier": 4,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "manticore": {
     "name": "Manticore",
@@ -701,7 +746,8 @@
     "resistances": {
       "fire": 25
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "hover"
   },
   "fire_giant": {
     "name": "Fire Giant",
@@ -721,7 +767,8 @@
       "cold": -40,
       "fire": 75
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "hill_giant": {
     "name": "Hill Giant",
@@ -736,7 +783,8 @@
     "boss": false,
     "visual_scale": 1.5,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "dragon": {
     "name": "Dragon",
@@ -754,7 +802,8 @@
     "resistances": {
       "fire": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "ice_dragon": {
     "name": "Ice Dragon",
@@ -774,7 +823,8 @@
       "cold": 75,
       "fire": -40
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "fire_dragon": {
     "name": "Fire Dragon",
@@ -794,7 +844,8 @@
       "cold": -40,
       "fire": 75
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "iron_dragon": {
     "name": "Iron Dragon",
@@ -812,7 +863,8 @@
     },
     "visual_scale": 1.5,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "lich": {
     "name": "Lich",
@@ -830,7 +882,8 @@
       "dark": 75,
       "holy": -50,
       "poison": 75
-    }
+    },
+    "locomotion": "hover"
   },
   "vampire_knight": {
     "name": "Vampire Knight",
@@ -850,7 +903,8 @@
       "lightning": 50,
       "poison": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "orc_warlord": {
     "name": "Orc Warlord",
@@ -863,7 +917,8 @@
     "min_floor": 8,
     "tier": 5,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_troll": {
     "name": "Deep Troll",
@@ -880,7 +935,8 @@
       "fire": -50,
       "poison": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "anaconda": {
     "name": "Anaconda",
@@ -897,7 +953,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "dryad": {
     "name": "Dryad",
@@ -914,7 +971,8 @@
       "poison": 50,
       "fire": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "frost_giant": {
     "name": "Frost Giant",
@@ -934,7 +992,8 @@
       "cold": 75,
       "fire": -40
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "balrug": {
     "name": "Balrug",
@@ -952,7 +1011,8 @@
       "fire": 50,
       "holy": -40
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "cacodemon": {
     "name": "Cacodemon",
@@ -974,7 +1034,8 @@
       "fire": 75,
       "holy": -40
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "stomp"
   },
   "blue_devil": {
     "name": "Blue Devil",
@@ -993,7 +1054,8 @@
       "holy": -40,
       "lightning": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "blizzard_demon": {
     "name": "Blizzard Demon",
@@ -1014,7 +1076,8 @@
       "dark": 25,
       "fire": -40,
       "holy": -40
-    }
+    },
+    "locomotion": "stomp"
   },
   "minotaur": {
     "name": "Minotaur",
@@ -1027,7 +1090,8 @@
     "min_floor": 10,
     "tier": 5,
     "boss": true,
-    "attack_kind": "headbutt"
+    "attack_kind": "headbutt",
+    "locomotion": "stomp"
   },
   "golden_dragon": {
     "name": "Golden Dragon",
@@ -1045,7 +1109,8 @@
     "resistances": {
       "fire": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "redback": {
     "name": "Redback",
@@ -1062,7 +1127,8 @@
       "holy": -10,
       "poison": 50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "jumping_spider": {
     "name": "Jumping Spider",
@@ -1079,7 +1145,8 @@
       "holy": -10,
       "poison": 50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "orb_spider": {
     "name": "Orb Spider",
@@ -1096,7 +1163,8 @@
       "holy": -10,
       "poison": 50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "giant_spider": {
     "name": "Giant Spider",
@@ -1115,7 +1183,8 @@
       "holy": -10,
       "poison": 50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "water_moccasin": {
     "name": "Water Moccasin",
@@ -1133,7 +1202,8 @@
       "lightning": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "slither"
   },
   "salamander": {
     "name": "Salamander",
@@ -1152,7 +1222,8 @@
       "fire": 75
     },
     "attack_kind": "tail_whip",
-    "ranged_attack_id": "throw_javelin"
+    "ranged_attack_id": "throw_javelin",
+    "locomotion": "slither"
   },
   "naga": {
     "name": "Naga",
@@ -1170,7 +1241,8 @@
       "poison": 25
     },
     "attack_kind": "tail_whip",
-    "ranged_attack_id": "throw_javelin"
+    "ranged_attack_id": "throw_javelin",
+    "locomotion": "slither"
   },
   "yak": {
     "name": "Yak",
@@ -1183,7 +1255,8 @@
     "min_floor": 6,
     "tier": 2,
     "boss": false,
-    "attack_kind": "headbutt"
+    "attack_kind": "headbutt",
+    "locomotion": "walk"
   },
   "hydra": {
     "name": "Hydra",
@@ -1201,7 +1274,8 @@
     },
     "visual_scale": 1.5,
     "visual_anchor": "ground",
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "hippogriff": {
     "name": "Hippogriff",
@@ -1214,7 +1288,8 @@
     "min_floor": 6,
     "tier": 3,
     "boss": false,
-    "attack_kind": "headbutt"
+    "attack_kind": "headbutt",
+    "locomotion": "walk"
   },
   "komodo_dragon": {
     "name": "Komodo Dragon",
@@ -1233,7 +1308,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "grizzly_bear": {
     "name": "Grizzly Bear",
@@ -1246,7 +1322,8 @@
     "min_floor": 7,
     "tier": 3,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "giant_rat": {
     "name": "Giant Rat",
@@ -1261,7 +1338,8 @@
     "boss": false,
     "visual_scale": 1.35,
     "visual_anchor": "centre",
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "snapping_turtle": {
     "name": "Snapping Turtle",
@@ -1274,7 +1352,8 @@
     "min_floor": 7,
     "tier": 3,
     "boss": false,
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "alligator_snapping_turtle": {
     "name": "Alligator Snapping Turtle",
@@ -1291,7 +1370,8 @@
       "cold": -25,
       "poison": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "walk"
   },
   "swamp_dragon": {
     "name": "Swamp Dragon",
@@ -1309,7 +1389,8 @@
     },
     "visual_scale": 1.5,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "steam_dragon": {
     "name": "Steam Dragon",
@@ -1328,7 +1409,8 @@
       "fire": 50,
       "cold": 50
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "mummy": {
     "name": "Mummy",
@@ -1350,7 +1432,8 @@
       "holy": -50,
       "poison": 75
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "greater_mummy": {
     "name": "Greater Mummy",
@@ -1372,7 +1455,8 @@
       "holy": -50,
       "poison": 75
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "sphinx": {
     "name": "Sphinx",
@@ -1391,7 +1475,8 @@
       "holy": 75,
       "dark": -50
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "ghost": {
     "name": "Ghost",
@@ -1410,7 +1495,8 @@
       "holy": -50,
       "physical": 50,
       "poison": 75
-    }
+    },
+    "locomotion": "hover"
   },
   "necrophage": {
     "name": "Necrophage",
@@ -1429,7 +1515,8 @@
       "holy": -40,
       "poison": 50
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "ancient_lich": {
     "name": "Ancient Lich",
@@ -1448,7 +1535,8 @@
       "holy": -50,
       "lightning": 50,
       "poison": 75
-    }
+    },
+    "locomotion": "hover"
   },
   "slime_creature": {
     "name": "Slime Creature",
@@ -1467,7 +1555,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "death_ooze": {
     "name": "Death Ooze",
@@ -1487,7 +1576,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "azure_jelly": {
     "name": "Azure Jelly",
@@ -1507,7 +1597,8 @@
       "fire": -25,
       "physical": 25,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "deep_elf_mage": {
     "name": "Deep Elf Mage",
@@ -1520,7 +1611,8 @@
     "min_floor": 7,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_pyromancer": {
     "name": "Deep Elf Pyromancer",
@@ -1537,7 +1629,8 @@
       "fire": 50,
       "cold": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_sorcerer": {
     "name": "Deep Elf Sorcerer",
@@ -1554,7 +1647,8 @@
       "dark": 50,
       "holy": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "stone_giant": {
     "name": "Stone Giant",
@@ -1572,7 +1666,8 @@
     },
     "visual_scale": 1.5,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "ettin": {
     "name": "Ettin",
@@ -1585,7 +1680,8 @@
     "min_floor": 9,
     "tier": 4,
     "boss": false,
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "two_headed_ogre": {
     "name": "Two-Headed Ogre",
@@ -1602,7 +1698,8 @@
       "fire": -50,
       "poison": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "rotting_devil": {
     "name": "Rotting Devil",
@@ -1621,7 +1718,8 @@
       "holy": -40,
       "poison": 50
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "wyvern": {
     "name": "Wyvern",
@@ -1638,7 +1736,8 @@
       "poison": 50,
       "cold": -25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "hover"
   },
   "shadow_dragon": {
     "name": "Shadow Dragon",
@@ -1657,7 +1756,8 @@
       "dark": 75,
       "holy": -25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "quicksilver_dragon": {
     "name": "Quicksilver Dragon",
@@ -1675,7 +1775,8 @@
     },
     "visual_scale": 1.55,
     "visual_anchor": "ground",
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "boss_sigmund": {
     "name": "Sigmund",
@@ -1705,7 +1806,8 @@
       "poison": 75,
       "holy": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_eustachio": {
     "name": "Eustachio",
@@ -1734,7 +1836,8 @@
       "cold": 25,
       "holy": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_blork": {
     "name": "Blork the Orc",
@@ -1749,7 +1852,8 @@
     "boss": true,
     "visual_scale": 1.0,
     "resistances": {},
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_kirke": {
     "name": "Kirke",
@@ -1777,7 +1881,8 @@
       "dark": 50,
       "poison": 25,
       "holy": -25
-    }
+    },
+    "locomotion": "slither"
   },
   "boss_erolcha": {
     "name": "Erolcha",
@@ -1792,7 +1897,8 @@
     "boss": true,
     "visual_scale": 1.1,
     "resistances": {},
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "boss_grum": {
     "name": "Grum",
@@ -1807,7 +1913,8 @@
     "boss": true,
     "visual_scale": 1.05,
     "resistances": {},
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_psyche": {
     "name": "Psyche the Witch",
@@ -1835,7 +1942,8 @@
       "dark": 75,
       "holy": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_aizul": {
     "name": "Aizul",
@@ -1863,7 +1971,8 @@
       "poison": 75,
       "cold": -25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "boss_ilsuiw": {
     "name": "Ilsuiw the Tideborn",
@@ -1892,7 +2001,8 @@
       "poison": 25,
       "fire": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "slither"
   },
   "boss_lernaean": {
     "name": "The Lernaean Hydra",
@@ -1921,7 +2031,8 @@
       "cold": -25,
       "physical": 25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "boss_jorgrun": {
     "name": "Jorgrun the Spider",
@@ -1938,7 +2049,8 @@
     "resistances": {
       "physical": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_gastronok": {
     "name": "Gastronok",
@@ -1965,7 +2077,8 @@
     "resistances": {
       "poison": 75,
       "fire": -25
-    }
+    },
+    "locomotion": "ooze"
   },
   "boss_frederick": {
     "name": "Frederick",
@@ -1993,7 +2106,8 @@
       "holy": 75,
       "dark": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_boris": {
     "name": "Boris the Lich",
@@ -2022,7 +2136,8 @@
       "cold": 50,
       "poison": 75,
       "holy": -50
-    }
+    },
+    "locomotion": "hover"
   },
   "boss_menkaure": {
     "name": "Menkaure the Pharaoh",
@@ -2052,7 +2167,8 @@
       "poison": 75,
       "holy": -50
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "boss_enchantress": {
     "name": "The Enchantress",
@@ -2081,7 +2197,8 @@
       "holy": -25,
       "physical": 10
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "scuttle"
   },
   "boss_polyphemus": {
     "name": "Polyphemus",
@@ -2096,7 +2213,8 @@
     "boss": true,
     "visual_scale": 1.25,
     "resistances": {},
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "boss_azrael": {
     "name": "Azrael the Inferno",
@@ -2123,7 +2241,8 @@
     "resistances": {
       "fire": 75,
       "cold": -50
-    }
+    },
+    "locomotion": "walk"
   },
   "boss_antaeus": {
     "name": "Antaeus the Cold",
@@ -2152,7 +2271,8 @@
       "fire": -50,
       "physical": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "boss_dissolution": {
     "name": "Dissolution",
@@ -2176,7 +2296,8 @@
       "physical": 50,
       "fire": -50,
       "poison": 75
-    }
+    },
+    "locomotion": "ooze"
   },
   "boss_killer_klown": {
     "name": "Killer Klown",
@@ -2215,7 +2336,8 @@
       "poison": 25,
       "holy": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_mnoleg": {
     "name": "Mnoleg",
@@ -2243,7 +2365,8 @@
       "dark": 75,
       "holy": -50,
       "fire": 25
-    }
+    },
+    "locomotion": "walk"
   },
   "boss_cerebov": {
     "name": "Cerebov",
@@ -2272,7 +2395,8 @@
       "cold": -25,
       "holy": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "boss_tiamat": {
     "name": "Tiamat the Many",
@@ -2311,7 +2435,8 @@
       "poison": 50,
       "holy": -25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "hover"
   },
   "kobold_demonologist": {
     "name": "Kobold Demonologist",
@@ -2328,7 +2453,8 @@
       "fire": 25,
       "dark": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "naga_sharpshooter": {
     "name": "Naga Sharpshooter",
@@ -2346,7 +2472,8 @@
       "poison": 75
     },
     "attack_kind": "tail_whip",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "slither"
   },
   "naga_ritualist": {
     "name": "Naga Ritualist",
@@ -2364,7 +2491,8 @@
       "poison": 75,
       "dark": 25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "deep_elf_master_archer": {
     "name": "Deep Elf Master Archer",
@@ -2378,7 +2506,8 @@
     "tier": 5,
     "boss": false,
     "attack_kind": "slash",
-    "ranged_attack_id": "shoot_arrow"
+    "ranged_attack_id": "shoot_arrow",
+    "locomotion": "walk"
   },
   "tengu_warrior": {
     "name": "Tengu Warrior",
@@ -2392,7 +2521,8 @@
     "tier": 3,
     "boss": false,
     "ranged_attack_id": "shoot_arrow",
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "tengu_conjurer": {
     "name": "Tengu Conjurer",
@@ -2405,7 +2535,8 @@
     "min_floor": 5,
     "tier": 3,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "orc_wizard": {
     "name": "Orc Wizard",
@@ -2418,7 +2549,8 @@
     "min_floor": 3,
     "tier": 2,
     "boss": false,
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "orc_sorcerer": {
     "name": "Orc Sorcerer",
@@ -2434,7 +2566,8 @@
     "resistances": {
       "fire": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "orc_high_priest": {
     "name": "Orc High Priest",
@@ -2450,7 +2583,8 @@
     "resistances": {
       "holy": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_priest": {
     "name": "Deep Elf Priest",
@@ -2466,7 +2600,8 @@
     "resistances": {
       "holy": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_annihilator": {
     "name": "Deep Elf Annihilator",
@@ -2483,7 +2618,8 @@
       "fire": 50,
       "cold": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_death_mage": {
     "name": "Deep Elf Death Mage",
@@ -2500,7 +2636,8 @@
       "dark": 50,
       "cold": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "deep_elf_high_priest": {
     "name": "Deep Elf High Priest",
@@ -2516,7 +2653,8 @@
     "resistances": {
       "holy": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "naga_warrior": {
     "name": "Naga Warrior",
@@ -2534,7 +2672,8 @@
       "poison": 75
     },
     "attack_kind": "tail_whip",
-    "ranged_attack_id": "throw_javelin"
+    "ranged_attack_id": "throw_javelin",
+    "locomotion": "slither"
   },
   "naga_mage": {
     "name": "Naga Mage",
@@ -2552,7 +2691,8 @@
       "poison": 75,
       "fire": 25
     },
-    "attack_kind": "tail_whip"
+    "attack_kind": "tail_whip",
+    "locomotion": "slither"
   },
   "gnoll_shaman": {
     "name": "Gnoll Shaman",
@@ -2565,7 +2705,8 @@
     "min_floor": 3,
     "tier": 2,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "gnoll_sergeant": {
     "name": "Gnoll Sergeant",
@@ -2578,7 +2719,8 @@
     "min_floor": 5,
     "tier": 3,
     "boss": false,
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "scuttle"
   },
   "deep_dwarf": {
     "name": "Deep Dwarf",
@@ -2594,7 +2736,8 @@
     "resistances": {
       "dark": 25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "iron_troll": {
     "name": "Iron Troll",
@@ -2612,7 +2755,8 @@
       "fire": -50,
       "physical": 50
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "rock_troll": {
     "name": "Rock Troll",
@@ -2629,7 +2773,8 @@
     "resistances": {
       "physical": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   },
   "red_devil": {
     "name": "Red Devil",
@@ -2645,7 +2790,8 @@
     "resistances": {
       "fire": 50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "iron_devil": {
     "name": "Iron Devil",
@@ -2663,7 +2809,8 @@
       "physical": 50,
       "fire": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "sun_demon": {
     "name": "Sun Demon",
@@ -2681,7 +2828,8 @@
       "fire": 100,
       "cold": -50
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "walk"
   },
   "smoke_demon": {
     "name": "Smoke Demon",
@@ -2698,7 +2846,8 @@
       "fire": 50,
       "physical": 25
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "walk"
   },
   "soul_eater": {
     "name": "Soul Eater",
@@ -2715,7 +2864,8 @@
       "dark": 50,
       "cold": 25
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "hover"
   },
   "wight": {
     "name": "Wight",
@@ -2734,7 +2884,8 @@
       "poison": 100,
       "holy": -25
     },
-    "attack_kind": "slash"
+    "attack_kind": "slash",
+    "locomotion": "hover"
   },
   "flying_skull": {
     "name": "Flying Skull",
@@ -2753,7 +2904,8 @@
       "poison": 100,
       "holy": -25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "hover"
   },
   "freezing_wraith": {
     "name": "Freezing Wraith",
@@ -2772,7 +2924,8 @@
       "poison": 100,
       "holy": -25
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "hover"
   },
   "mummy_priest": {
     "name": "Mummy Priest",
@@ -2792,7 +2945,8 @@
       "poison": 100,
       "holy": -50
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "walk"
   },
   "phantom": {
     "name": "Phantom",
@@ -2811,7 +2965,8 @@
       "poison": 100,
       "holy": -25
     },
-    "attack_kind": "claw"
+    "attack_kind": "claw",
+    "locomotion": "hover"
   },
   "fire_bat": {
     "name": "Fire Bat",
@@ -2829,7 +2984,8 @@
       "fire": 100,
       "cold": -50
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "flutter"
   },
   "giant_scorpion": {
     "name": "Giant Scorpion",
@@ -2846,7 +3002,8 @@
     "resistances": {
       "poison": 75
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "emperor_scorpion": {
     "name": "Emperor Scorpion",
@@ -2864,7 +3021,8 @@
       "poison": 100,
       "physical": 25
     },
-    "attack_kind": "bite"
+    "attack_kind": "bite",
+    "locomotion": "scuttle"
   },
   "dire_elephant": {
     "name": "Dire Elephant",
@@ -2881,6 +3039,7 @@
     "resistances": {
       "physical": 25
     },
-    "attack_kind": "slam"
+    "attack_kind": "slam",
+    "locomotion": "stomp"
   }
 }
