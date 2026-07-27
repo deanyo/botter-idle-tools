@@ -34,12 +34,13 @@
   --bad: #f06464;
 
   /* Rarity tints — match UITheme.gd's COL_RARITY for cross-tool
-     consistency between the editor preview cards and in-game tooltips. */
-  --rarity-common: #d8d8d8;
-  --rarity-uncommon: #66b3ff;
-  --rarity-rare: #ffe04d;
-  --rarity-epic: #ff8033;
-  --rarity-legendary: #ff4d4d;
+     consistency between the editor preview cards and in-game tooltips.
+     #186 ramp (Option A): green/blue/purple/orange, red = danger only. */
+  --rarity-common: #d9d9d9;
+  --rarity-uncommon: #4dd166;
+  --rarity-rare: #4d9fff;
+  --rarity-epic: #b366ff;
+  --rarity-legendary: #ff9a2e;
 }
 
 * { box-sizing: border-box; }
