@@ -230,12 +230,21 @@ const STATS = [
   { id: "holy_res",             label: "Holy resistance %" },
   { id: "poison_res",           label: "Poison resistance %" },
   { id: "dark_res",             label: "Dark resistance %" },
-  // Archetype unique-affix flags (one per spell).
+  // Archetype BEHAVIOUR flags — one per spell archetype. All ten are listed
+  // (2026-07-28); this dropdown carried only the first five, so the other
+  // behaviour stats couldn't be picked in the editor at all. Player-facing
+  // copy lives in affix_system.gd::_STAT_DESCRIPTIONS — these labels are just
+  // the picker's shorthand, keep them terse.
   { id: "spell_axes_bleed",          label: "Spinning Axes leave bleed (flag)" },
   { id: "spell_fireball_ground",     label: "Fireball ignites ground (flag)" },
-  { id: "spell_frost_root",          label: "Frost Nova roots (flag)" },
-  { id: "spell_chain_extra_jumps",   label: "Chain Lightning extra jumps (flag)" },
-  { id: "spell_holy_radiance",       label: "Holy Beam radiance (flag)" },
+  { id: "spell_frost_root",          label: "Frost Nova deepens freeze (flag)" },
+  { id: "spell_chain_extra_jumps",   label: "Chain Lightning extra jumps (value)" },
+  { id: "spell_holy_radiance",       label: "Holy Beam blesses caster (flag)" },
+  { id: "spell_dart_split",          label: "Magic Dart splits (flag)" },
+  { id: "spell_iron_dust",           label: "Iron Shot slows on pierce (flag)" },
+  { id: "spell_sandblast_blind",     label: "Sandblast blinds (flag)" },
+  { id: "spell_drain_buff",          label: "Drain lifesteal buff (flag)" },
+  { id: "spell_shatter_aftershock",  label: "Shatter aftershock (flag)" },
 ];
 
 const RARITY_TIERS = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -401,12 +410,18 @@ function rarityHexForStat(stat) {
     case "holy_res":             return "#ccba6e";
     case "poison_res":           return "#66c252";
     case "dark_res":             return "#704bb0";
-    // Archetype unique-affix flags — gold (item-defining).
+    // Archetype behaviour flags — gold (item-defining). All ten, matching
+    // ui_theme.gd's map (which already had all ten while this copy had five).
     case "spell_axes_bleed":
     case "spell_fireball_ground":
     case "spell_frost_root":
     case "spell_chain_extra_jumps":
-    case "spell_holy_radiance":  return "#ffd478";
+    case "spell_holy_radiance":
+    case "spell_dart_split":
+    case "spell_iron_dust":
+    case "spell_sandblast_blind":
+    case "spell_drain_buff":
+    case "spell_shatter_aftershock": return "#ffd478";
   }
   return "#ffb84d";
 }
@@ -490,6 +505,8 @@ function renderEditor() {
       </div>
       <label>Applies to</label>
       <input id="f-applies" type="text" value="${escapeAttr((a.applies_to || ['any']).join(', '))}">
+      <label>Base types <span class="help" style="margin-left:6px">blank = any; restricts a behaviour affix to the archetype(s) whose _fire_* body reads its flag</span></label>
+      <input id="f-basetypes" type="text" value="${escapeAttr((a.base_types || []).join(', '))}">
       <label>Family</label>
       <select id="f-family">
         ${["generic","class","archetype"].map(fam => `<option value="${fam}" ${fam === (a.family || 'generic') ? 'selected' : ''}>${fam}</option>`).join("")}
@@ -545,6 +562,14 @@ function renderEditor() {
   document.getElementById("f-applies").oninput = () => {
     const list = document.getElementById("f-applies").value.split(",").map(s => s.trim()).filter(Boolean);
     mutate(a, "applies_to", list.length ? list : ["any"]);
+  };
+  // base_types is OMITTED when blank rather than written as [] — absent means
+  // "unrestricted" in AffixSystem.affix_allows_base_type, and an empty array
+  // in the JSON would be noise on all 123 unrestricted affixes.
+  document.getElementById("f-basetypes").oninput = () => {
+    const list = document.getElementById("f-basetypes").value.split(",").map(s => s.trim()).filter(Boolean);
+    if (list.length) mutate(a, "base_types", list);
+    else { delete a.base_types; dirty = true; render(); }
   };
   document.getElementById("f-family").onchange = () => mutate(a, "family", document.getElementById("f-family").value);
   document.getElementById("f-kind").onchange = () => mutate(a, "kind", document.getElementById("f-kind").value);

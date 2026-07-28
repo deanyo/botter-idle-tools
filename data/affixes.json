@@ -1,5 +1,5 @@
 {
-  "_doc": "Item-overhaul v2 affixes (2026-06-04). Three families: generic (apply to any spell + any gear), class (boost one Str/Dex/Int spell class), archetype (per-spell uniques, only via implicit_affixes). Tiers are [min, max] 2-arrays per rarity (common\u2192legendary) so each affix rolls a real range. AffixSystem.roll_affixes_for picks an integer in [min, max] inclusive at the correct rarity tier. Range damage affixes (e.g. of_embers) emit two values: bonus_min and bonus_max for the X-Y damage line in tooltips. The 'kind' field on each affix tells the formatter how to display it ('flat', 'pct', 'range', 'flag').",
+  "_doc": "Item-overhaul v2 affixes (2026-06-04). Three families: generic (apply to any spell + any gear), class (boost one Str/Dex/Int spell class), archetype (behaviour affixes that rewrite what one spell DOES; reachable both as implicit_affixes on a signature item and as a weighted roll from a rare+ item's affix_pool, and restricted to their own archetype by the optional `base_types` field). Tiers are [min, max] 2-arrays per rarity (common\u2192legendary) so each affix rolls a real range. AffixSystem.roll_affixes_for picks an integer in [min, max] inclusive at the correct rarity tier. Range damage affixes (e.g. of_embers) emit two values: bonus_min and bonus_max for the X-Y damage line in tooltips. The 'kind' field on each affix tells the formatter how to display it ('flat', 'pct', 'range', 'flag').",
   "_format_version": 3,
   "rarity_affix_count": {
     "common": 1,
@@ -1236,6 +1236,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_axes"
       ]
     },
     {
@@ -1268,6 +1271,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_fireball"
       ]
     },
     {
@@ -1300,6 +1306,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_frost_nova"
       ]
     },
     {
@@ -1332,6 +1341,9 @@
           2,
           2
         ]
+      ],
+      "base_types": [
+        "spell_chain_lightning"
       ]
     },
     {
@@ -1364,6 +1376,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_holy_beam"
       ]
     },
     {
@@ -1396,6 +1411,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_magic_dart"
       ]
     },
     {
@@ -1428,6 +1446,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_iron_shot"
       ]
     },
     {
@@ -1460,6 +1481,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_sandblast"
       ]
     },
     {
@@ -1492,6 +1516,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_drain"
       ]
     },
     {
@@ -1524,6 +1551,9 @@
           1,
           1
         ]
+      ],
+      "base_types": [
+        "spell_shatter"
       ]
     },
     {
