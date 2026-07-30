@@ -1,8 +1,10 @@
 {
-	"_doc": "Spell archetype definitions \u2014 RUNTIME SOURCE OF TRUTH (loaded by spell_data.gd::_ensure_loaded). Edit via the Spell Showcase dev tool + export, or by hand. mana_cost + blurb folded in from the former _MANA_COST_TABLE / SPELL_BLURBS. Design rationale lives in docs/spell_archetypes_notes.md.",
+	"_doc": "Spell archetype definitions. `shape` is the DISPATCH KEY (spell_system.gd::_dispatch_fire matches on it, not on base_type) — every archetype must carry one, and each shape maps to exactly one _fire_* body — RUNTIME SOURCE OF TRUTH (loaded by spell_data.gd::_ensure_loaded). Edit via the Spell Showcase dev tool + export, or by hand. mana_cost + blurb folded in from the former _MANA_COST_TABLE / SPELL_BLURBS. Design rationale lives in docs/spell_archetypes_notes.md.",
 	"_format_version": 1,
 	"archetypes": {
 		"spell_aura_communion": {
+			"shape": "aura",
+			"aura_id": "communion",
 			"school": "arcane",
 			"blurb": "Utility aura. Reserves 10 mana while active; kills within 6 cells refund 1 mana. Self-feeds on kill velocity.",
 			"class": "utility",
@@ -20,6 +22,8 @@
 			"icon": "recall.png"
 		},
 		"spell_aura_grace": {
+			"shape": "aura",
+			"aura_id": "grace",
 			"school": "physical",
 			"blurb": "Defensive aura. Reserves 10 mana while active; grants +10% evasion. One-per-defensive-lane. Indefinite duration.",
 			"class": "utility",
@@ -37,6 +41,8 @@
 			"icon": "awaken_armour.png"
 		},
 		"spell_aura_warding": {
+			"shape": "aura",
+			"aura_id": "warding",
 			"school": "arcane",
 			"blurb": "Defensive aura. Reserves 10 mana while active; -15% incoming spell/elemental damage. One-per-defensive-lane.",
 			"class": "utility",
@@ -54,6 +60,8 @@
 			"icon": "ozocubus_armour.png"
 		},
 		"spell_aura_wisdom": {
+			"shape": "aura",
+			"aura_id": "wisdom",
 			"school": "arcane",
 			"blurb": "Offensive aura. Reserves 12 mana while active; +20% INT-spell damage AND +15% spell cooldown reduction. One-per-offensive-lane.",
 			"class": "utility",
@@ -71,6 +79,7 @@
 			"icon": "corona.png"
 		},
 		"spell_axes": {
+			"shape": "orbit",
 			"school": "physical",
 			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown). +1 axe per Spell Projectile affix.",
 			"cooldown": 5.0,
@@ -85,6 +94,25 @@
 			"icon": "diamond_sawblades.png"
 		},
 		"spell_blade_dance": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "cone",
+				"visual": "blade_fan",
+				"aim_mode": "nearest",
+				"tint_flavor": "fortified",
+				"status": {
+					"id": "bleeding",
+					"dur": 3.0,
+					"scale_duration": true
+				},
+				"second_beat": {
+					"kind": "corridor",
+					"delay": 0.25,
+					"damage_mult": 0.35,
+					"half_width_cells": 0.65,
+					"tint_flavor": "swiftness"
+				}
+			},
 			"school": "physical",
 			"blurb": "Whirling melee spin in a 4-tile ring around you. Hits every enemy in the ring (DEX-scaling physical, not spell damage).",
 			"cooldown": 2.4,
@@ -99,6 +127,18 @@
 			"icon": "tukimas_dance.png"
 		},
 		"spell_cleave": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "cone",
+				"visual": "cleave_arc",
+				"aim_mode": "nearest",
+				"tint_flavor": "brutal",
+				"status": {
+					"id": "slowed",
+					"dur": 1.0,
+					"scale_duration": true
+				}
+			},
 			"school": "physical",
 			"blurb": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and briefly staggers them. The slow counterpart to Blade Dance's fast flurry.",
 			"cooldown": 5.0,
@@ -113,6 +153,23 @@
 			"icon": "rending_blade.png"
 		},
 		"spell_bolt_long_cd": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "line",
+				"visual": "lance",
+				"aim_mode": "candidate",
+				"tint_flavor": "fire",
+				"require_candidates": true,
+				"half_width_px": 14.0,
+				"falloff_per_hit": 0.85,
+				"falloff_floor": 0.25,
+				"status": {
+					"id": "marked",
+					"dur": 3.0,
+					"scale_duration": false
+				},
+				"fire_burst_signature": 1.3
+			},
 			"school": "fire",
 			"blurb": "Slow heavy bolt to the nearest enemy. Hits hard but cycles slowly (long cooldown).",
 			"cooldown": 12.0,
@@ -127,8 +184,20 @@
 			"icon": "bolt_of_fire.png"
 		},
 		"spell_bone_spear": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "bone",
+				"target_mode": "cycle",
+				"scale_boost": 2.0,
+				"proj_flags": {
+					"bounce_mode": true,
+					"bounce_max": 4,
+					"bounce_falloff": 0.7,
+					"bone_trail_mode": true
+				}
+			},
 			"school": "physical",
-			"blurb": "Fast piercing shot \u2014 passes through enemies and bounces off the first wall once.",
+			"blurb": "Fast piercing shot — passes through enemies and bounces off the first wall once.",
 			"cooldown": 1.8,
 			"damage": 22,
 			"element": "",
@@ -141,6 +210,7 @@
 			"icon": "grave_claw.png"
 		},
 		"spell_chain_lightning": {
+			"shape": "arc",
 			"school": "lightning",
 			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
 			"cooldown": 2.4,
@@ -155,6 +225,20 @@
 			"icon": "chain_lightning.png"
 		},
 		"spell_choking_cloud": {
+			"shape": "cloud",
+			"shape_params": {
+				"delivery": "drop",
+				"lifetime_base": 6.0,
+				"radius_base": 2.5,
+				"tint_flavor": "dark",
+				"flavor_default": "miasma",
+				"use_preset_key": true,
+				"drift": "inward",
+				"tick_status": {
+					"id": "blinded",
+					"dur": 2.0
+				}
+			},
 			"school": "dark",
 			"blurb": "Drops a long-lived dark cloud. Damages enemies inside on every tick (longer DoT window than Venom Cloud).",
 			"cooldown": 4.5,
@@ -170,6 +254,18 @@
 			"icon": "corpse_rot.png"
 		},
 		"spell_curse_brittlebone": {
+			"shape": "curse",
+			"shape_params": {
+				"target_mode": "n_nearest",
+				"tint_flavor": "bone",
+				"status": {
+					"id": "cursed",
+					"dur": 4.0
+				},
+				"marker": "res://assets/tiles/spells/effects/crystal_spear0.png",
+				"marker_rotation": "jitter",
+				"tether": true
+			},
 			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
@@ -185,6 +281,24 @@
 			"icon": "agony.png"
 		},
 		"spell_curse_frailty": {
+			"shape": "curse",
+			"shape_params": {
+				"target_mode": "aoe_around_nearest",
+				"tint_flavor": "dark",
+				"tint_fallback": [
+					0.45,
+					0.2,
+					0.55
+				],
+				"status": {
+					"id": "weakened",
+					"dur": 5.0
+				},
+				"aoe_radius_cells": 3.0,
+				"base_cap": 3,
+				"umbra_collapse": true,
+				"miasma": true
+			},
 			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
@@ -200,6 +314,21 @@
 			"icon": "enfeeble.png"
 		},
 		"spell_drain": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "vampiric",
+				"target_mode": "distribute",
+				"lifesteal_bot": true,
+				"proj_flags": {
+					"lifesteal_pct": 35.0,
+					"drain_tether_mode": true
+				},
+				"affix_flags": {
+					"spell_drain_buff": {
+						"lifesteal_buff_bot": true
+					}
+				}
+			},
 			"school": "dark",
 			"blurb": "Homing dark bolt. Heals you for a portion of damage dealt (% scales with the Drain Buff affix).",
 			"cooldown": 2.4,
@@ -214,6 +343,19 @@
 			"icon": "vampiric_draining.png"
 		},
 		"spell_echo_lance": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "thunderous",
+				"target_mode": "cycle",
+				"proj_flags": {
+					"bounce_mode": true,
+					"bounce_max": 1,
+					"bounce_falloff": 1.0,
+					"echo_flash_mode": true,
+					"spark_trail_mode": true,
+					"use_additive_sprite": true
+				}
+			},
 			"school": "lightning",
 			"blurb": "Lance pierces the first enemy in line, then ricochets once to a nearby unhit enemy (each gets a separate damage roll).",
 			"cooldown": 1.4,
@@ -228,6 +370,32 @@
 			"icon": "lightning_bolt.png"
 		},
 		"spell_ember_bloom": {
+			"shape": "cloud",
+			"shape_params": {
+				"delivery": "lob",
+				"lifetime_base": 5.0,
+				"radius_base": 2.0,
+				"tint_flavor": "fire",
+				"flavor_default": "fire",
+				"use_preset_key": false,
+				"color_force": [
+					0.95,
+					0.55,
+					0.2
+				],
+				"drift": "falling",
+				"lob": {
+					"sprite_fallback": "res://assets/tiles/spells/effects/cloud_blastmotes0.png",
+					"use_resolver": true,
+					"trail": "fire",
+					"speed": 300.0
+				},
+				"tick_status": {
+					"id": "burning",
+					"dur": 4.0
+				},
+				"burst": "fire"
+			},
 			"school": "fire",
 			"blurb": "Drops a fire patch on the nearest enemy. Burns enemies standing inside for several seconds (duration scales with Spell Duration).",
 			"cooldown": 5.0,
@@ -243,6 +411,13 @@
 			"icon": "sticky_flame.png"
 		},
 		"spell_fireball": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "fire",
+				"target_mode": "distribute",
+				"fire_signature": true,
+				"burning_patch_affix": "spell_fireball_ground"
+			},
 			"school": "fire",
 			"blurb": "Lobs a fireball at the nearest enemy. Explodes for AoE damage on impact. AoE radius scales with Spell Area.",
 			"cooldown": 1.6,
@@ -257,6 +432,7 @@
 			"icon": "fireball.png"
 		},
 		"spell_frost_nova": {
+			"shape": "nova",
 			"school": "cold",
 			"blurb": "Radial cold burst around you. Briefly freezes hit enemies. Range scales with Spell Area; freeze duration scales with Spell Duration.",
 			"cooldown": 4.0,
@@ -271,6 +447,13 @@
 			"icon": "ozocubus_refrigeration.png"
 		},
 		"spell_holy_beam": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "cone",
+				"visual": "cone",
+				"aim_mode": "nearest",
+				"radiance_affix": "spell_holy_radiance"
+			},
 			"school": "holy",
 			"blurb": "Holy-element cone toward the nearest enemy. Damages every enemy caught in the arc. Range scales with Spell Area.",
 			"cooldown": 3.2,
@@ -285,8 +468,26 @@
 			"icon": "bolt_of_light.png"
 		},
 		"spell_iron_shot": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "earth",
+				"target_mode": "first",
+				"single_shot": true,
+				"scale_boost": 2.0,
+				"physical_impact": true,
+				"proj_flags": {
+					"piercing": true,
+					"pierce_falloff": 0.75
+				},
+				"affix_flags": {
+					"spell_iron_dust": {
+						"pierce_apply_status": "slowed",
+						"pierce_apply_duration": 1.5
+					}
+				}
+			},
 			"school": "physical",
-			"blurb": "Heavy slow piercing shot \u2014 passes through every enemy in its line and hits each once.",
+			"blurb": "Heavy slow piercing shot — passes through every enemy in its line and hits each once.",
 			"cooldown": 3.5,
 			"damage": 32,
 			"element": "",
@@ -299,8 +500,26 @@
 			"icon": "iron_shot.png"
 		},
 		"spell_magic_dart": {
+			"shape": "bolt",
+			"shape_params": {
+				"tint_flavor": "arcane",
+				"tint_fallback": [
+					0.85,
+					0.55,
+					1.0
+				],
+				"target_mode": "distribute",
+				"scale_boost": 1.6,
+				"sprite_cycle": "res://assets/tiles/spells/effects/force_lance%d.png",
+				"sprite_cycle_frames": 8,
+				"split_affix": "spell_dart_split",
+				"proj_flags": {
+					"fragment_on_impact": true,
+					"apply_mark_stack": true
+				}
+			},
 			"school": "arcane",
-			"blurb": "Fast arcane bolt \u2014 always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
+			"blurb": "Fast arcane bolt — always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
 			"cooldown": 0.7,
 			"damage": 14,
 			"element": "",
@@ -313,6 +532,19 @@
 			"icon": "magic_dart.png"
 		},
 		"spell_sandblast": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "corridor",
+				"visual": "corridor_dust",
+				"aim_mode": "nearest",
+				"tint_flavor": "dust",
+				"half_width_cells": 0.75,
+				"affix_status": {
+					"affix": "spell_sandblast_blind",
+					"id": "blinded",
+					"dur": 2.0
+				}
+			},
 			"school": "physical",
 			"blurb": "Forward-sweeping dust vortex. Damages every enemy in the swept path. Sweep length scales with Spell Area.",
 			"cooldown": 2.6,
@@ -327,6 +559,27 @@
 			"icon": "sandblast.png"
 		},
 		"spell_shatter": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "cone",
+				"visual": "shockwave",
+				"aim_mode": "nearest",
+				"tint_flavor": "earth",
+				"status": {
+					"id": "stunned",
+					"dur": 0.6,
+					"scale_duration": false
+				},
+				"second_beat": {
+					"affix": "spell_shatter_aftershock",
+					"kind": "shockwave",
+					"delay": 0.4,
+					"dist_mult": 0.7,
+					"angle_mult": 0.85,
+					"damage_mult": 0.5,
+					"tint_flavor": "earth"
+				}
+			},
 			"school": "physical",
 			"blurb": "Radial physical AoE around you. Briefly stuns hit enemies. Aftershock affix triggers a delayed second AoE 0.6s later.",
 			"cooldown": 5.0,
@@ -341,6 +594,27 @@
 			"icon": "shatter.png"
 		},
 		"spell_static_field": {
+			"shape": "cloud",
+			"shape_params": {
+				"delivery": "drop",
+				"origin_mode": "self",
+				"require_target": false,
+				"lifetime_base": 6.0,
+				"radius_base": 1.5,
+				"tint_flavor": "lightning",
+				"tint_fallback": [
+					0.45,
+					0.65,
+					1.0
+				],
+				"flavor_default": "",
+				"use_preset_key": false,
+				"static_grid": true,
+				"tick_status": {
+					"id": "shocked",
+					"dur": 2.0
+				}
+			},
 			"school": "lightning",
 			"blurb": "Plants a longer-lived totem than Stormcaller. Continuously zaps the closest enemy in range.",
 			"cooldown": 4.5,
@@ -356,6 +630,7 @@
 			"icon": "fulminant_prism.png"
 		},
 		"spell_stormcaller_totem": {
+			"shape": "totem",
 			"school": "lightning",
 			"blurb": "Plants a totem that zaps the nearest enemy each tick. Brief lifetime, hard per-zap hits.",
 			"cooldown": 6.0,
@@ -371,6 +646,8 @@
 			"icon": "forge_lightning_spire.png"
 		},
 		"spell_thorn_aura": {
+			"shape": "aura",
+			"aura_id": "thorn_aura",
 			"school": "physical",
 			"blurb": "Offensive aura (premium). Reserves 14 mana while active; pulses periodic damage to nearby enemies. One-per-offensive-lane.",
 			"cooldown": 12.0,
@@ -388,6 +665,28 @@
 			"icon": "olgrebs_toxic_radiance.png"
 		},
 		"spell_venom_cloud": {
+			"shape": "cloud",
+			"shape_params": {
+				"delivery": "lob",
+				"lifetime_base": 8.0,
+				"radius_base": 2.0,
+				"tint_flavor": "poison",
+				"flavor_default": "poison",
+				"use_preset_key": true,
+				"lob": {
+					"sprite": "res://assets/tiles/spells/effects/poison_arrow6.png",
+					"scale_boost": 1.5,
+					"trail": "poison",
+					"additive": true,
+					"brighten_green": 0.15,
+					"speed": 320.0
+				},
+				"burst": "poison",
+				"tick_status": {
+					"id": "poisoned",
+					"dur": 2.0
+				}
+			},
 			"school": "poison",
 			"blurb": "Drops a poison cloud at the nearest enemy. Damages enemies standing in it every tick (cloud duration scales with Spell Duration).",
 			"cooldown": 4.5,
@@ -403,6 +702,7 @@
 			"icon": "poisonous_cloud.png"
 		},
 		"spell_wisp_servant": {
+			"shape": "minion",
 			"school": "arcane",
 			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Spell Projectile affix.",
 			"cooldown": 7.0,
@@ -417,8 +717,9 @@
 			"icon": "spellspark_servitor.png"
 		},
 		"spell_wrath_charge": {
+			"shape": "buff",
 			"school": "fire",
-			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed \u2014 Spell Duration does NOT extend it.",
+			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed — Spell Duration does NOT extend it.",
 			"class": "utility",
 			"cooldown": 9.0,
 			"damage": 0,
@@ -431,5 +732,6 @@
 			"trail_flavor": "brutal",
 			"icon": "berserker_rage.png"
 		}
-	}
+	},
+	"_notes_shape_params": "`shape_params` carries the per-archetype knobs its shape's _fire_* body reads. Before S3 these were magic numbers hardcoded in 25 near-duplicate fire bodies; a new archetype is now a JSON entry, not a new function."
 }
