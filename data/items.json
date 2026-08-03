@@ -7646,7 +7646,7 @@
         "stealth",
         "swiftness"
       ],
-      "lore": "Patterned to match the forest floor \u2014 and the boots that crossed it.",
+      "lore": "Patterned to match the forest floor — and the boots that crossed it.",
       "drop_weights": [
         15,
         65,
@@ -12232,7 +12232,7 @@
       "flavor_tags": [
         "fortified"
       ],
-      "lore": "Articulated steel \u2014 every knuckle covers itself.",
+      "lore": "Articulated steel — every knuckle covers itself.",
       "drop_weights": [
         5,
         40,
@@ -13044,7 +13044,7 @@
       "speed": 0.65,
       "item_tier": 3,
       "flavor_tags": [],
-      "lore": "Steel forged tight \u2014 splits more than wood now.",
+      "lore": "Steel forged tight — splits more than wood now.",
       "drop_weights": [
         0,
         15,
@@ -13256,7 +13256,7 @@
       "flavor_tags": [
         "arcane"
       ],
-      "lore": "Runes dyed dark in the blade \u2014 no one remembers their meaning.",
+      "lore": "Runes dyed dark in the blade — no one remembers their meaning.",
       "drop_weights": [
         0,
         0,
@@ -13596,7 +13596,7 @@
       "flavor_tags": [
         "slaying"
       ],
-      "lore": "Steel forged thick \u2014 splits shields like kindling.",
+      "lore": "Steel forged thick — splits shields like kindling.",
       "drop_weights": [
         0,
         15,
@@ -16108,13 +16108,13 @@
       "flavor_tags": [
         "fire"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -16166,13 +16166,13 @@
       "spell_cooldown": 34.5,
       "item_tier": 1,
       "flavor_tags": [],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -16226,13 +16226,13 @@
       "flavor_tags": [
         "holy"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -16286,13 +16286,13 @@
       "flavor_tags": [
         "thunderous"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -16346,13 +16346,13 @@
       "flavor_tags": [
         "cold"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -16391,861 +16391,6 @@
       }
     },
     {
-      "id": "starter_human_spell",
-      "name": "Apprentice Fireball",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_fireball",
-      "primary_stat": "int",
-      "damage_min": 15,
-      "damage_max": 21,
-      "damage_type": "fire",
-      "spell_cooldown": 27.4,
-      "item_tier": 1,
-      "flavor_tags": [
-        "fire"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 30,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "human"
-    },
-    {
-      "id": "starter_spriggan_spell",
-      "name": "Forest Spinners",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_axes",
-      "primary_stat": "str",
-      "damage_min": 19,
-      "damage_max": 25,
-      "damage_type": "physical",
-      "spell_cooldown": 34.5,
-      "item_tier": 1,
-      "flavor_tags": [
-        "earth"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 30,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "forest"
-    },
-    {
-      "id": "starter_minotaur_spell",
-      "name": "Whirling Axes",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_axes",
-      "primary_stat": "str",
-      "damage_min": 19,
-      "damage_max": 25,
-      "damage_type": "physical",
-      "spell_cooldown": 34.5,
-      "item_tier": 1,
-      "flavor_tags": [
-        "brutal"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 30,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "bovine"
-    },
-    {
-      "id": "starter_naga_spell",
-      "name": "Coiled Frost",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_frost_nova",
-      "primary_stat": "int",
-      "damage_min": 18,
-      "damage_max": 22,
-      "damage_type": "cold",
-      "spell_cooldown": 32.4,
-      "item_tier": 1,
-      "flavor_tags": [
-        "cold"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 30,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "serpentine"
-    },
-    {
-      "id": "starter_tengu_spell",
-      "name": "Storm-Caw",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_chain_lightning",
-      "primary_stat": "dex",
-      "damage_min": 14,
-      "damage_max": 18,
-      "damage_type": "lightning",
-      "spell_cooldown": 29.1,
-      "item_tier": 1,
-      "flavor_tags": [
-        "thunderous"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 30,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "avian"
-    },
-    {
-      "id": "starter_troll_spell",
-      "name": "Heavy Cleavers",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_axes",
-      "primary_stat": "str",
-      "damage_min": 19,
-      "damage_max": 25,
-      "damage_type": "physical",
-      "spell_cooldown": 34.5,
-      "item_tier": 1,
-      "flavor_tags": [
-        "earth"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 30,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "regen"
-    },
-    {
-      "id": "starter_octopode_spell",
-      "name": "Ink Burst",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_frost_nova",
-      "primary_stat": "int",
-      "damage_min": 18,
-      "damage_max": 22,
-      "damage_type": "dark",
-      "spell_cooldown": 32.4,
-      "item_tier": 1,
-      "flavor_tags": [
-        "dark"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 30,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "aquatic"
-    },
-    {
-      "id": "starter_demonspawn_spell",
-      "name": "Hellfire Orbs",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_axes",
-      "primary_stat": "str",
-      "damage_min": 19,
-      "damage_max": 25,
-      "damage_type": "fire",
-      "spell_cooldown": 34.5,
-      "item_tier": 1,
-      "flavor_tags": [
-        "fire"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 30,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "demon"
-    },
-    {
-      "id": "starter_vampire_spell",
-      "name": "Blood Arc",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_chain_lightning",
-      "primary_stat": "dex",
-      "damage_min": 14,
-      "damage_max": 18,
-      "damage_type": "dark",
-      "spell_cooldown": 29.1,
-      "item_tier": 1,
-      "flavor_tags": [
-        "vampiric"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 30,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "vampiric"
-    },
-    {
-      "id": "starter_mummy_spell",
-      "name": "Curse Cloud",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_frost_nova",
-      "primary_stat": "int",
-      "damage_min": 18,
-      "damage_max": 22,
-      "damage_type": "dark",
-      "spell_cooldown": 32.4,
-      "item_tier": 1,
-      "flavor_tags": [
-        "dark"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 30,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "ancient"
-    },
-    {
-      "id": "starter_hill_orc_spell",
-      "name": "Battle Cry",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_holy_beam",
-      "primary_stat": "str",
-      "damage_min": 22,
-      "damage_max": 30,
-      "damage_type": "holy",
-      "spell_cooldown": 30.7,
-      "item_tier": 1,
-      "flavor_tags": [
-        "holy"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 30,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "orcish"
-    },
-    {
-      "id": "starter_deep_elf_spell",
-      "name": "Elven Bolt",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_fireball",
-      "primary_stat": "int",
-      "damage_min": 15,
-      "damage_max": 21,
-      "damage_type": "physical",
-      "spell_cooldown": 27.4,
-      "item_tier": 1,
-      "flavor_tags": [
-        "arcane"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 30,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "elf"
-    },
-    {
-      "id": "starter_gargoyle_spell",
-      "name": "Stone Beam",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_holy_beam",
-      "primary_stat": "str",
-      "damage_min": 22,
-      "damage_max": 30,
-      "damage_type": "holy",
-      "spell_cooldown": 30.7,
-      "item_tier": 1,
-      "flavor_tags": [
-        "holy"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 30,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "construct"
-    },
-    {
-      "id": "starter_halfling_spell",
-      "name": "Sling Spark",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_chain_lightning",
-      "primary_stat": "dex",
-      "damage_min": 14,
-      "damage_max": 18,
-      "damage_type": "lightning",
-      "spell_cooldown": 29.1,
-      "item_tier": 1,
-      "flavor_tags": [
-        "thunderous"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 30,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 8,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 280.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "lucky"
-    },
-    {
-      "id": "starter_kobold_spell",
-      "name": "Throwing Daggers",
-      "slot": "spell",
-      "rarity": "common",
-      "tile": "spells/scrolls/scroll.png",
-      "base_type": "spell_axes",
-      "primary_stat": "str",
-      "damage_min": 19,
-      "damage_max": 25,
-      "damage_type": "poison",
-      "spell_cooldown": 34.5,
-      "item_tier": 1,
-      "flavor_tags": [
-        "poison"
-      ],
-      "lore": "Innate to your species \u2014 runs in the blood.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [],
-      "affix_pool": {
-        "of_wisdom": 14,
-        "of_quickcast": 22,
-        "of_resonance": 20,
-        "of_lingering": 18,
-        "of_velocity": 12,
-        "of_multicast": 10,
-        "of_channeling": 22,
-        "of_str_mastery": 8,
-        "of_dex_mastery": 8,
-        "of_int_mastery": 8,
-        "of_crit": 12,
-        "of_haste": 12,
-        "of_lifesteal": 6,
-        "of_pyromancer": 8,
-        "of_cryomancer": 8,
-        "of_thundercaller": 8,
-        "of_zealot": 8,
-        "of_pestcaller": 8,
-        "of_nightcaller": 8,
-        "of_brawler": 30,
-        "of_mystic": 8
-      },
-      "default_tint": {
-        "hue": 0.0,
-        "sat": 0.85,
-        "mode": "colorize"
-      },
-      "requires_innate_tag": "scavenger"
-    },
-    {
       "id": "spell_magic_dart",
       "name": "Magic Dart Scroll",
       "slot": "spell",
@@ -17261,13 +16406,13 @@
       "flavor_tags": [
         "arcane"
       ],
-      "lore": "A simple cantrip \u2014 fast, frequent, surprisingly effective at scale.",
+      "lore": "A simple cantrip — fast, frequent, surprisingly effective at scale.",
       "drop_weights": [
-        70,
+        45,
+        35,
         40,
-        10,
-        3,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -17321,13 +16466,13 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "Hurls a dense iron slug \u2014 slow, but it crashes through ranks.",
+      "lore": "Hurls a dense iron slug — slow, but it crashes through ranks.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        20,
-        5,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -17376,13 +16521,13 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A short, brutal cone of grit \u2014 flays anything in arm's reach.",
+      "lore": "A short, brutal cone of grit — flays anything in arm's reach.",
       "drop_weights": [
-        55,
+        45,
         35,
-        10,
-        3,
-        0
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -17439,11 +16584,11 @@
       ],
       "lore": "A thready bolt that returns a portion of life to its caster.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        20,
-        5,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -17492,13 +16637,13 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A radial concussion \u2014 the ground itself moves with you.",
+      "lore": "A radial concussion — the ground itself moves with you.",
       "drop_weights": [
-        10,
-        30,
-        50,
-        20,
-        5
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -18082,7 +17227,7 @@
         "of_crit"
       ],
       "item_tier": 3,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Silver Rapier",
       "rarity": "rare",
       "slot": "weapon",
@@ -18146,7 +17291,7 @@
         "of_first_strike"
       ],
       "item_tier": 3,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Steel Spear",
       "rarity": "rare",
       "slot": "weapon",
@@ -18277,7 +17422,7 @@
         "of_haste"
       ],
       "item_tier": 1,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Bone Knife",
       "rarity": "uncommon",
       "slot": "weapon",
@@ -18349,7 +17494,7 @@
         "of_haste"
       ],
       "item_tier": 1,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Copper Ring",
       "rarity": "uncommon",
       "slot": "ring",
@@ -19106,7 +18251,7 @@
         "of_finesse"
       ],
       "item_tier": 5,
-      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
+      "lore": "Every glance reveals a new color, each one a real one — somewhere.",
       "name": "Prismatic Robe of Folly",
       "rarity": "legendary",
       "slot": "armor",
@@ -19913,7 +19058,7 @@
         "of_warding"
       ],
       "item_tier": 5,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Sigil of the Last Line",
       "rarity": "epic",
       "slot": "amulet",
@@ -20123,7 +19268,7 @@
         "of_the_cat"
       ],
       "item_tier": 1,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Traveler's Cloak",
       "overlay": "cloak_travelers",
       "rarity": "uncommon",
@@ -20756,7 +19901,7 @@
         "of_warding"
       ],
       "item_tier": 5,
-      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
+      "lore": "Every glance reveals a new color, each one a real one — somewhere.",
       "name": "Prismatic The Gong",
       "rarity": "legendary",
       "slot": "shield",
@@ -21012,7 +20157,7 @@
         "of_crit"
       ],
       "item_tier": 4,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Steel Long Sword",
       "rarity": "rare",
       "slot": "weapon",
@@ -22955,7 +22100,7 @@
         "of_executioner"
       ],
       "item_tier": 4,
-      "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
+      "lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
       "name": "Mossy Runed Bardiche",
       "rarity": "epic",
       "slot": "weapon",
@@ -24383,13 +23528,13 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A bouncing splinter of bone \u2014 once thrown, it finds the rest of the room.",
+      "lore": "A bouncing splinter of bone — once thrown, it finds the rest of the room.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24442,11 +23587,11 @@
       ],
       "lore": "A green miasma that lingers and reads each enemy's lungs.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24497,11 +23642,11 @@
       ],
       "lore": "Plant the totem; the lightning answers the rod.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24553,11 +23698,11 @@
       ],
       "lore": "A whispered name; the cursed flinch from blows that haven't landed yet.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24608,11 +23753,11 @@
       ],
       "lore": "A bellowed word. For four seconds, every blow remembers grudges.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24661,13 +23806,13 @@
       "flavor_tags": [
         "thunderous"
       ],
-      "lore": "A line of lightning that strikes twice \u2014 never thrice.",
+      "lore": "A line of lightning that strikes twice — never thrice.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24719,11 +23864,11 @@
       ],
       "lore": "A bound spark. It does not wander; it waits beside you.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -24774,11 +23919,11 @@
       ],
       "lore": "Where the petals fall, the fire grows.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26131,11 +25276,11 @@
       ],
       "lore": "A black miasma that smothers torchlight and lung alike.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26186,11 +25331,11 @@
       ],
       "lore": "Hex-bones, ground fine. Sprinkle to crack their courage.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26241,11 +25386,11 @@
       ],
       "lore": "A single bolt that takes its time and ends the conversation.",
       "drop_weights": [
-        0,
-        5,
-        30,
-        12,
-        3
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26296,11 +25441,11 @@
       ],
       "lore": "Footwork drilled until the blade arrives unannounced.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26351,11 +25496,11 @@
       ],
       "lore": "One swing, wide as a doorway. Whatever stood in front no longer does.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26406,11 +25551,11 @@
       ],
       "lore": "Hum of the air just before the strike never quite leaves.",
       "drop_weights": [
-        60,
-        30,
-        8,
-        2,
-        0
+        45,
+        35,
+        40,
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26461,11 +25606,11 @@
       ],
       "lore": "Footwork etched onto vellum. Read once, walk lightly forever.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        18,
-        4,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26517,11 +25662,11 @@
       ],
       "lore": "A halo of remembered books. Knowledge keeps you while you cast.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        18,
-        4,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26757,11 +25902,11 @@
       ],
       "lore": "A standing field of brambles that drinks blood by the second.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        18,
-        4,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26812,11 +25957,11 @@
       ],
       "lore": "Sigils that drink the breath of incoming spells.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        18,
-        4,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -26854,11 +25999,11 @@
       ],
       "lore": "The dying call lends their last breath to the living mage.",
       "drop_weights": [
+        45,
+        35,
         40,
-        50,
-        18,
-        4,
-        0
+        22,
+        8
       ],
       "unique": false,
       "enchant_chance": 0.1,
@@ -27387,7 +26532,7 @@
         "holy"
       ],
       "two_handed": false,
-      "lore": "Authority embodied \u2014 the strike of a king.",
+      "lore": "Authority embodied — the strike of a king.",
       "affix_pool": {
         "of_zealot": 24,
         "of_channeling": 20,
@@ -27990,7 +27135,7 @@
       "spell_cooldown": 34.5,
       "item_tier": 3,
       "flavor_tags": [],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         20,
@@ -28049,7 +27194,7 @@
       "spell_cooldown": 34.5,
       "item_tier": 5,
       "flavor_tags": [],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         0,
@@ -28111,7 +27256,7 @@
       "flavor_tags": [
         "fire"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         20,
@@ -28172,7 +27317,7 @@
       "flavor_tags": [
         "fire"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         0,
@@ -28234,7 +27379,7 @@
       "flavor_tags": [
         "cold"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         20,
@@ -28295,7 +27440,7 @@
       "flavor_tags": [
         "cold"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         0,
@@ -28357,7 +27502,7 @@
       "flavor_tags": [
         "thunderous"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         20,
@@ -28418,7 +27563,7 @@
       "flavor_tags": [
         "thunderous"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         0,
@@ -28480,7 +27625,7 @@
       "flavor_tags": [
         "holy"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         20,
@@ -28541,7 +27686,7 @@
       "flavor_tags": [
         "holy"
       ],
-      "lore": "An autocast tome \u2014 pages crackle as the spell readies itself.",
+      "lore": "An autocast tome — pages crackle as the spell readies itself.",
       "drop_weights": [
         0,
         0,
@@ -28603,7 +27748,7 @@
       "flavor_tags": [
         "arcane"
       ],
-      "lore": "A simple cantrip \u2014 fast, frequent, surprisingly effective at scale.",
+      "lore": "A simple cantrip — fast, frequent, surprisingly effective at scale.",
       "drop_weights": [
         0,
         20,
@@ -28664,7 +27809,7 @@
       "flavor_tags": [
         "arcane"
       ],
-      "lore": "A simple cantrip \u2014 fast, frequent, surprisingly effective at scale.",
+      "lore": "A simple cantrip — fast, frequent, surprisingly effective at scale.",
       "drop_weights": [
         0,
         0,
@@ -28726,7 +27871,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "Hurls a dense iron slug \u2014 slow, but it crashes through ranks.",
+      "lore": "Hurls a dense iron slug — slow, but it crashes through ranks.",
       "drop_weights": [
         0,
         20,
@@ -28782,7 +27927,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "Hurls a dense iron slug \u2014 slow, but it crashes through ranks.",
+      "lore": "Hurls a dense iron slug — slow, but it crashes through ranks.",
       "drop_weights": [
         0,
         0,
@@ -28839,7 +27984,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A short, brutal cone of grit \u2014 flays anything in arm's reach.",
+      "lore": "A short, brutal cone of grit — flays anything in arm's reach.",
       "drop_weights": [
         0,
         20,
@@ -28900,7 +28045,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A short, brutal cone of grit \u2014 flays anything in arm's reach.",
+      "lore": "A short, brutal cone of grit — flays anything in arm's reach.",
       "drop_weights": [
         0,
         0,
@@ -29077,7 +28222,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A radial concussion \u2014 the ground itself moves with you.",
+      "lore": "A radial concussion — the ground itself moves with you.",
       "drop_weights": [
         0,
         20,
@@ -29133,7 +28278,7 @@
       "flavor_tags": [
         "earth"
       ],
-      "lore": "A radial concussion \u2014 the ground itself moves with you.",
+      "lore": "A radial concussion — the ground itself moves with you.",
       "drop_weights": [
         0,
         0,
