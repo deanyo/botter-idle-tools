@@ -1,5 +1,5 @@
 {
-  "_doc": "Item-overhaul v2 affixes (2026-06-04). Three families: generic (apply to any spell + any gear), class (boost one Str/Dex/Int spell class), archetype (behaviour affixes that rewrite what one spell DOES; reachable both as implicit_affixes on a signature item and as a weighted roll from a rare+ item's affix_pool, and restricted to their own archetype by the optional `base_types` field). Tiers are [min, max] 2-arrays per rarity (common\u2192legendary) so each affix rolls a real range. AffixSystem.roll_affixes_for picks an integer in [min, max] inclusive at the correct rarity tier. Range damage affixes (e.g. of_embers) emit two values: bonus_min and bonus_max for the X-Y damage line in tooltips. The 'kind' field on each affix tells the formatter how to display it ('flat', 'pct', 'range', 'flag').",
+  "_doc": "Item-overhaul v2 affixes (2026-06-04). Three families: generic (apply to any spell + any gear), class (boost one Str/Dex/Int spell class), archetype (behaviour affixes that rewrite what one spell DOES; reachable both as implicit_affixes on a signature item and as a weighted roll from a rare+ item's affix_pool, and restricted to their own archetype by the optional `base_types` field). Tiers are [min, max] 2-arrays per rarity (common→legendary) so each affix rolls a real range. AffixSystem.roll_affixes_for picks an integer in [min, max] inclusive at the correct rarity tier. Range damage affixes (e.g. of_embers) emit two values: bonus_min and bonus_max for the X-Y damage line in tooltips. The 'kind' field on each affix tells the formatter how to display it ('flat', 'pct', 'range', 'flag').",
   "_format_version": 3,
   "rarity_affix_count": {
     "common": 1,
@@ -111,8 +111,7 @@
         "weapon",
         "armor",
         "boots",
-        "shield",
-        "spell"
+        "shield"
       ],
       "tiers": [
         [
@@ -258,7 +257,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -295,7 +293,6 @@
         "ring",
         "helm",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -331,7 +328,6 @@
         "amulet",
         "ring",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -367,7 +363,6 @@
         "gloves",
         "ring",
         "amulet",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -402,7 +397,6 @@
       "applies_to": [
         "amulet",
         "ring",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -440,7 +434,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -511,8 +504,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -548,8 +540,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -585,8 +576,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -622,8 +612,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -659,8 +648,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -696,8 +684,7 @@
         "gloves",
         "ring",
         "amulet",
-        "helm",
-        "spell"
+        "helm"
       ],
       "tiers": [
         [
@@ -1110,7 +1097,6 @@
       "applies_to": [
         "helm",
         "amulet",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1145,7 +1131,6 @@
       "applies_to": [
         "helm",
         "amulet",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1180,7 +1165,6 @@
       "applies_to": [
         "helm",
         "amulet",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1207,356 +1191,6 @@
       ]
     },
     {
-      "id": "bleeding_edge",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Bleeding Edge",
-      "stat": "spell_axes_bleed",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_axes"
-      ]
-    },
-    {
-      "id": "comet_trail",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Comet Trail",
-      "stat": "spell_fireball_ground",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_fireball"
-      ]
-    },
-    {
-      "id": "frostbite",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Frostbite",
-      "stat": "spell_frost_root",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_frost_nova"
-      ]
-    },
-    {
-      "id": "storm_brand",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Storm Brand",
-      "stat": "spell_chain_extra_jumps",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          2,
-          2
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          2,
-          2
-        ]
-      ],
-      "base_types": [
-        "spell_chain_lightning"
-      ]
-    },
-    {
-      "id": "radiance",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Radiance",
-      "stat": "spell_holy_radiance",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_holy_beam"
-      ]
-    },
-    {
-      "id": "splintering_volley",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Splintering Volley",
-      "stat": "spell_dart_split",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_magic_dart"
-      ]
-    },
-    {
-      "id": "earthbreaker",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Earthbreaker",
-      "stat": "spell_iron_dust",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_iron_shot"
-      ]
-    },
-    {
-      "id": "blinding_grit",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Blinding Grit",
-      "stat": "spell_sandblast_blind",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_sandblast"
-      ]
-    },
-    {
-      "id": "ravenous",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Ravenous",
-      "stat": "spell_drain_buff",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_drain"
-      ]
-    },
-    {
-      "id": "aftershock",
-      "family": "archetype",
-      "kind": "flag",
-      "name": "Aftershock",
-      "stat": "spell_shatter_aftershock",
-      "applies_to": [
-        "spell"
-      ],
-      "tiers": [
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          1,
-          1
-        ]
-      ],
-      "base_types": [
-        "spell_shatter"
-      ]
-    },
-    {
       "id": "of_pyromancer",
       "family": "generic",
       "kind": "pct",
@@ -1568,7 +1202,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1606,7 +1239,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1644,7 +1276,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1682,7 +1313,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1720,7 +1350,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1758,7 +1387,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1796,7 +1424,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1834,7 +1461,6 @@
         "helm",
         "gloves",
         "cloak",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1869,7 +1495,6 @@
       "applies_to": [
         "amulet",
         "helm",
-        "spell",
         "weapon"
       ],
       "tiers": [
@@ -1946,8 +1571,7 @@
       "applies_to": [
         "weapon",
         "gloves",
-        "amulet",
-        "spell"
+        "amulet"
       ],
       "tiers": [
         [
@@ -2012,7 +1636,6 @@
       "name": "of the Tempest",
       "stat": "tempest_dmg_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "ring"
       ],
@@ -2251,7 +1874,6 @@
       "stat": "synergy_pct",
       "applies_to": [
         "amulet",
-        "spell",
         "ring"
       ],
       "tiers": [
@@ -2877,8 +2499,7 @@
       "applies_to": [
         "weapon",
         "gloves",
-        "amulet",
-        "spell"
+        "amulet"
       ],
       "tiers": [
         [
@@ -3179,7 +2800,6 @@
       "name": "of Unwavering Focus",
       "stat": "spell_resist_pen_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "helm",
         "weapon"
@@ -3490,7 +3110,6 @@
       "name": "of the Overflowing Chalice",
       "stat": "high_hp_cdr_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "weapon"
       ],
@@ -3524,7 +3143,6 @@
       "name": "of the Tactician",
       "stat": "kill_streak_cdr_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "ring",
         "weapon"
@@ -3909,7 +3527,6 @@
       "name": "of the Arcane Pool",
       "stat": "mana_max_flat",
       "applies_to": [
-        "spell",
         "amulet",
         "ring",
         "weapon"
@@ -3944,7 +3561,6 @@
       "name": "of the Arcane Flow",
       "stat": "mana_regen_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "ring",
         "helm",
@@ -3980,7 +3596,6 @@
       "name": "of Meditation",
       "stat": "mana_regen_flat",
       "applies_to": [
-        "spell",
         "amulet",
         "helm",
         "weapon"
@@ -4015,7 +3630,6 @@
       "name": "of Thrift",
       "stat": "mana_cost_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "helm",
         "weapon"
@@ -4111,7 +3725,7 @@
       ]
     },
     {
-      "_doc": "Tier 2 mana-rework 2026-06-17 \u2014 aurastacker / archmage affix lane. of_zeal reduces aura reservation cost so a small-pool build can fit more auras. of_archmage scales spell damage with cast cost \u2014 the aurastacker payoff (gives up pool to fit auras \u2192 bigger casts hit proportionally harder). Both route through existing caps so number ceiling holds.",
+      "_doc": "Tier 2 mana-rework 2026-06-17 — aurastacker / archmage affix lane. of_zeal reduces aura reservation cost so a small-pool build can fit more auras. of_archmage scales spell damage with cast cost — the aurastacker payoff (gives up pool to fit auras → bigger casts hit proportionally harder). Both route through existing caps so number ceiling holds.",
       "id": "of_zeal",
       "family": "generic",
       "kind": "pct",
@@ -4157,7 +3771,6 @@
       "applies_to": [
         "amulet",
         "ring",
-        "spell",
         "helm",
         "weapon"
       ],
@@ -4185,7 +3798,7 @@
       ]
     },
     {
-      "_doc": "Tier 3 mana-rework 2026-06-17 \u2014 build-expression affixes. Each enables a distinct caster archetype. high_tide rewards keeping the pool topped (Battlemage). siphon refunds mana on spell-hit (Sustain). clarity gives free-cast procs (lucky-feeling). mind_over_matter converts mana into a damage shield (Tanky-Mage). overflow_strike+evade complete the STR/DEX sustain stories.",
+      "_doc": "Tier 3 mana-rework 2026-06-17 — build-expression affixes. Each enables a distinct caster archetype. high_tide rewards keeping the pool topped (Battlemage). siphon refunds mana on spell-hit (Sustain). clarity gives free-cast procs (lucky-feeling). mind_over_matter converts mana into a damage shield (Tanky-Mage). overflow_strike+evade complete the STR/DEX sustain stories.",
       "id": "of_high_tide",
       "family": "generic",
       "kind": "pct",
@@ -4194,7 +3807,6 @@
       "applies_to": [
         "amulet",
         "ring",
-        "spell",
         "helm",
         "weapon"
       ],
@@ -4228,7 +3840,6 @@
       "name": "of the Arcane Siphon",
       "stat": "mana_on_spell_hit_flat",
       "applies_to": [
-        "spell",
         "amulet",
         "ring"
       ],
@@ -4262,7 +3873,6 @@
       "name": "of Arcane Clarity",
       "stat": "free_cast_proc_pct",
       "applies_to": [
-        "spell",
         "amulet",
         "helm",
         "weapon"
@@ -4359,7 +3969,7 @@
       ]
     },
     {
-      "_doc": "PLAYTEST 2026-06-15 #28 + 2026-06-11sec #15 \u2014 visual-flair affixes. Lift prismatic/inverse/twisted/umbral from authored items to rollable affixes. flag-kind: writes a boolean stat on the bot at recompute. Visual rendering reads the stat via UITheme.flavor_color_for / item_cell.gd's flavor-tag pipeline. Mechanic: actor.gd reads each visual_* field from the bot. Common+ across slots so any drop can roll prestige.",
+      "_doc": "PLAYTEST 2026-06-15 #28 + 2026-06-11sec #15 — visual-flair affixes. Lift prismatic/inverse/twisted/umbral from authored items to rollable affixes. flag-kind: writes a boolean stat on the bot at recompute. Visual rendering reads the stat via UITheme.flavor_color_for / item_cell.gd's flavor-tag pipeline. Mechanic: actor.gd reads each visual_* field from the bot. Common+ across slots so any drop can roll prestige.",
       "id": "of_umbral",
       "family": "generic",
       "kind": "flag",
@@ -4374,8 +3984,7 @@
         "boots",
         "ring",
         "amulet",
-        "shield",
-        "spell"
+        "shield"
       ],
       "tiers": [
         [
@@ -4415,8 +4024,7 @@
         "boots",
         "ring",
         "amulet",
-        "shield",
-        "spell"
+        "shield"
       ],
       "tiers": [
         [
@@ -4456,8 +4064,7 @@
         "boots",
         "ring",
         "amulet",
-        "shield",
-        "spell"
+        "shield"
       ],
       "tiers": [
         [
@@ -4497,8 +4104,7 @@
         "boots",
         "ring",
         "amulet",
-        "shield",
-        "spell"
+        "shield"
       ],
       "tiers": [
         [

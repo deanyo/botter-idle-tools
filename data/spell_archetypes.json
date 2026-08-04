@@ -8,7 +8,7 @@
 			"school": "arcane",
 			"blurb": "Utility aura. Reserves 10 mana while active; kills within 6 cells refund 1 mana. Self-feeds on kill velocity.",
 			"class": "utility",
-			"cooldown": 11.0,
+			"cooldown": 5.2,
 			"damage": 0,
 			"element": "",
 			"lane": "utility",
@@ -27,7 +27,7 @@
 			"school": "physical",
 			"blurb": "Defensive aura. Reserves 10 mana while active; grants +10% evasion. One-per-defensive-lane. Indefinite duration.",
 			"class": "utility",
-			"cooldown": 11.0,
+			"cooldown": 5.2,
 			"damage": 0,
 			"element": "",
 			"lane": "defensive",
@@ -46,7 +46,7 @@
 			"school": "arcane",
 			"blurb": "Defensive aura. Reserves 10 mana while active; -15% incoming spell/elemental damage. One-per-defensive-lane.",
 			"class": "utility",
-			"cooldown": 11.0,
+			"cooldown": 5.2,
 			"damage": 0,
 			"element": "",
 			"lane": "defensive",
@@ -65,7 +65,7 @@
 			"school": "arcane",
 			"blurb": "Offensive aura. Reserves 12 mana while active; +20% INT-spell damage AND +15% spell cooldown reduction. One-per-offensive-lane.",
 			"class": "utility",
-			"cooldown": 11.0,
+			"cooldown": 5.2,
 			"damage": 0,
 			"element": "",
 			"lane": "offensive",
@@ -81,17 +81,24 @@
 		"spell_axes": {
 			"shape": "orbit",
 			"school": "physical",
-			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown). +1 axe per Spell Projectile affix.",
-			"cooldown": 5.0,
+			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown) and leaves them bleeding. +1 axe per Spell Projectile affix.",
+			"cooldown": 13.8,
 			"damage": 14,
 			"element": "",
 			"mana_cost": 8,
 			"primary_stat": "str",
-			"projectile": "res://assets/tiles/spells/weapons/hand_axe_new.png",
+			"projectile": "res://assets/tiles/spells/weapons/battle_axe_steel.png",
 			"projectile_speed": 0.0,
 			"range_cells": 2,
-			"trail_flavor": "earth",
-			"icon": "diamond_sawblades.png"
+			"trail_flavor": "fortified",
+			"icon": "diamond_sawblades.png",
+			"shape_params": {
+				"status": {
+					"id": "bleeding",
+					"dur": 2.0,
+					"scale_duration": true
+				}
+			}
 		},
 		"spell_blade_dance": {
 			"shape": "sweep",
@@ -115,7 +122,7 @@
 			},
 			"school": "physical",
 			"blurb": "Whirling melee spin in a 4-tile ring around you. Hits every enemy in the ring (DEX-scaling physical, not spell damage).",
-			"cooldown": 2.4,
+			"cooldown": 4.8,
 			"damage": 24,
 			"element": "",
 			"mana_cost": 8,
@@ -132,7 +139,7 @@
 				"hit_test": "cone",
 				"visual": "cleave_arc",
 				"aim_mode": "nearest",
-				"tint_flavor": "brutal",
+				"tint_flavor": "footwork",
 				"status": {
 					"id": "slowed",
 					"dur": 1.0,
@@ -141,15 +148,15 @@
 			},
 			"school": "physical",
 			"blurb": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and briefly staggers them. The slow counterpart to Blade Dance's fast flurry.",
-			"cooldown": 5.0,
-			"damage": 60,
+			"cooldown": 9.6,
+			"damage": 30,
 			"element": "",
 			"mana_cost": 12,
 			"primary_stat": "str",
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 3,
-			"trail_flavor": "brutal",
+			"trail_flavor": "footwork",
 			"icon": "rending_blade.png"
 		},
 		"spell_bolt_long_cd": {
@@ -172,7 +179,7 @@
 			},
 			"school": "fire",
 			"blurb": "Slow heavy bolt to the nearest enemy. Hits hard but cycles slowly (long cooldown).",
-			"cooldown": 12.0,
+			"cooldown": 12.8,
 			"damage": 110,
 			"element": "fire",
 			"mana_cost": 18,
@@ -198,7 +205,7 @@
 			},
 			"school": "physical",
 			"blurb": "Fast piercing shot — passes through enemies and bounces off the first wall once.",
-			"cooldown": 1.8,
+			"cooldown": 2.4,
 			"damage": 22,
 			"element": "",
 			"mana_cost": 9,
@@ -213,7 +220,7 @@
 			"shape": "arc",
 			"school": "lightning",
 			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
-			"cooldown": 2.4,
+			"cooldown": 11.6,
 			"damage": 16,
 			"element": "thunderous",
 			"mana_cost": 8,
@@ -241,7 +248,7 @@
 			},
 			"school": "dark",
 			"blurb": "Drops a long-lived dark cloud. Damages enemies inside on every tick (longer DoT window than Venom Cloud).",
-			"cooldown": 4.5,
+			"cooldown": 7.2,
 			"damage": 2,
 			"element": "dark",
 			"mana_cost": 9,
@@ -269,7 +276,7 @@
 			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
-			"cooldown": 8.0,
+			"cooldown": 12.8,
 			"damage": 1,
 			"element": "dark",
 			"mana_cost": 8,
@@ -302,7 +309,7 @@
 			"school": "dark",
 			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
 			"class": "utility",
-			"cooldown": 8.0,
+			"cooldown": 9.6,
 			"damage": 1,
 			"element": "dark",
 			"mana_cost": 9,
@@ -322,16 +329,11 @@
 				"proj_flags": {
 					"lifesteal_pct": 35.0,
 					"drain_tether_mode": true
-				},
-				"affix_flags": {
-					"spell_drain_buff": {
-						"lifesteal_buff_bot": true
-					}
 				}
 			},
 			"school": "dark",
 			"blurb": "Homing dark bolt. Heals you for a portion of damage dealt (% scales with the Drain Buff affix).",
-			"cooldown": 2.4,
+			"cooldown": 11.2,
 			"damage": 22,
 			"element": "dark",
 			"mana_cost": 8,
@@ -358,7 +360,7 @@
 			},
 			"school": "lightning",
 			"blurb": "Lance pierces the first enemy in line, then ricochets once to a nearby unhit enemy (each gets a separate damage roll).",
-			"cooldown": 1.4,
+			"cooldown": 4.8,
 			"damage": 11,
 			"element": "thunderous",
 			"mana_cost": 8,
@@ -377,13 +379,7 @@
 				"radius_base": 2.0,
 				"tint_flavor": "fire",
 				"flavor_default": "fire",
-				"use_preset_key": false,
-				"color_force": [
-					0.95,
-					0.55,
-					0.2
-				],
-				"drift": "falling",
+				"use_preset_key": true,
 				"lob": {
 					"sprite_fallback": "res://assets/tiles/spells/effects/cloud_blastmotes0.png",
 					"use_resolver": true,
@@ -394,11 +390,12 @@
 					"id": "burning",
 					"dur": 4.0
 				},
-				"burst": "fire"
+				"burst": "fire",
+				"drift": "flat"
 			},
 			"school": "fire",
-			"blurb": "Drops a fire patch on the nearest enemy. Burns enemies standing inside for several seconds (duration scales with Spell Duration).",
-			"cooldown": 5.0,
+			"blurb": "A lobbed ember bursts into a burning cloud that scorches everything standing in it.",
+			"cooldown": 8.8,
 			"damage": 2,
 			"element": "fire",
 			"mana_cost": 9,
@@ -415,12 +412,11 @@
 			"shape_params": {
 				"tint_flavor": "fire",
 				"target_mode": "distribute",
-				"fire_signature": true,
-				"burning_patch_affix": "spell_fireball_ground"
+				"fire_signature": true
 			},
 			"school": "fire",
 			"blurb": "Lobs a fireball at the nearest enemy. Explodes for AoE damage on impact. AoE radius scales with Spell Area.",
-			"cooldown": 1.6,
+			"cooldown": 11.0,
 			"damage": 18,
 			"element": "fire",
 			"mana_cost": 9,
@@ -435,7 +431,7 @@
 			"shape": "nova",
 			"school": "cold",
 			"blurb": "Radial cold burst around you. Briefly freezes hit enemies. Range scales with Spell Area; freeze duration scales with Spell Duration.",
-			"cooldown": 4.0,
+			"cooldown": 13.0,
 			"damage": 16,
 			"element": "cold",
 			"mana_cost": 10,
@@ -452,11 +448,11 @@
 				"hit_test": "cone",
 				"visual": "cone",
 				"aim_mode": "nearest",
-				"radiance_affix": "spell_holy_radiance"
+				"holy_signature": "fan"
 			},
 			"school": "holy",
-			"blurb": "Holy-element cone toward the nearest enemy. Damages every enemy caught in the arc. Range scales with Spell Area.",
-			"cooldown": 3.2,
+			"blurb": "A searing fan of holy rays sprays out in a wide cone. Radiant star-flare in front of you.",
+			"cooldown": 12.3,
 			"damage": 26,
 			"element": "holy",
 			"mana_cost": 9,
@@ -478,17 +474,11 @@
 				"proj_flags": {
 					"piercing": true,
 					"pierce_falloff": 0.75
-				},
-				"affix_flags": {
-					"spell_iron_dust": {
-						"pierce_apply_status": "slowed",
-						"pierce_apply_duration": 1.5
-					}
 				}
 			},
 			"school": "physical",
 			"blurb": "Heavy slow piercing shot — passes through every enemy in its line and hits each once.",
-			"cooldown": 3.5,
+			"cooldown": 11.4,
 			"damage": 32,
 			"element": "",
 			"mana_cost": 10,
@@ -512,7 +502,6 @@
 				"scale_boost": 1.6,
 				"sprite_cycle": "res://assets/tiles/spells/effects/force_lance%d.png",
 				"sprite_cycle_frames": 8,
-				"split_affix": "spell_dart_split",
 				"proj_flags": {
 					"fragment_on_impact": true,
 					"apply_mark_stack": true
@@ -520,7 +509,7 @@
 			},
 			"school": "arcane",
 			"blurb": "Fast arcane bolt — always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
-			"cooldown": 0.7,
+			"cooldown": 10.2,
 			"damage": 14,
 			"element": "",
 			"mana_cost": 3,
@@ -538,16 +527,11 @@
 				"visual": "corridor_dust",
 				"aim_mode": "nearest",
 				"tint_flavor": "dust",
-				"half_width_cells": 0.75,
-				"affix_status": {
-					"affix": "spell_sandblast_blind",
-					"id": "blinded",
-					"dur": 2.0
-				}
+				"half_width_cells": 0.75
 			},
 			"school": "physical",
 			"blurb": "Forward-sweeping dust vortex. Damages every enemy in the swept path. Sweep length scales with Spell Area.",
-			"cooldown": 2.6,
+			"cooldown": 11.8,
 			"damage": 30,
 			"element": "",
 			"mana_cost": 10,
@@ -582,7 +566,7 @@
 			},
 			"school": "physical",
 			"blurb": "Radial physical AoE around you. Briefly stuns hit enemies. Aftershock affix triggers a delayed second AoE 0.6s later.",
-			"cooldown": 5.0,
+			"cooldown": 11.4,
 			"damage": 28,
 			"element": "",
 			"mana_cost": 13,
@@ -617,7 +601,7 @@
 			},
 			"school": "lightning",
 			"blurb": "Plants a longer-lived totem than Stormcaller. Continuously zaps the closest enemy in range.",
-			"cooldown": 4.5,
+			"cooldown": 5.6,
 			"damage": 8,
 			"element": "thunderous",
 			"mana_cost": 8,
@@ -633,7 +617,7 @@
 			"shape": "totem",
 			"school": "lightning",
 			"blurb": "Plants a totem that zaps the nearest enemy each tick. Brief lifetime, hard per-zap hits.",
-			"cooldown": 6.0,
+			"cooldown": 10.0,
 			"damage": 12,
 			"element": "thunderous",
 			"mana_cost": 10,
@@ -650,7 +634,7 @@
 			"aura_id": "thorn_aura",
 			"school": "physical",
 			"blurb": "Offensive aura (premium). Reserves 14 mana while active; pulses periodic damage to nearby enemies. One-per-offensive-lane.",
-			"cooldown": 12.0,
+			"cooldown": 5.6,
 			"damage": 6,
 			"element": "",
 			"lane": "offensive",
@@ -689,7 +673,7 @@
 			},
 			"school": "poison",
 			"blurb": "Drops a poison cloud at the nearest enemy. Damages enemies standing in it every tick (cloud duration scales with Spell Duration).",
-			"cooldown": 4.5,
+			"cooldown": 7.2,
 			"damage": 2,
 			"element": "poison",
 			"mana_cost": 9,
@@ -705,7 +689,7 @@
 			"shape": "minion",
 			"school": "arcane",
 			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Spell Projectile affix.",
-			"cooldown": 7.0,
+			"cooldown": 10.0,
 			"damage": 4,
 			"element": "",
 			"mana_cost": 10,
@@ -721,7 +705,7 @@
 			"school": "fire",
 			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed — Spell Duration does NOT extend it.",
 			"class": "utility",
-			"cooldown": 9.0,
+			"cooldown": 12.0,
 			"damage": 0,
 			"element": "fire",
 			"mana_cost": 10,
@@ -731,6 +715,27 @@
 			"range_cells": 0,
 			"trail_flavor": "brutal",
 			"icon": "berserker_rage.png"
+		},
+		"spell_holy_pillars": {
+			"shape": "sweep",
+			"shape_params": {
+				"hit_test": "cone",
+				"visual": "holy_pillars",
+				"aim_mode": "nearest",
+				"tint_flavor": "holy"
+			},
+			"school": "holy",
+			"blurb": "Pillars of radiance slam down onto everything in front of you.",
+			"cooldown": 14.0,
+			"damage": 30,
+			"element": "holy",
+			"mana_cost": 9,
+			"primary_stat": "str",
+			"projectile": "",
+			"projectile_speed": 0.0,
+			"range_cells": 4,
+			"trail_flavor": "holy",
+			"icon": "searing_ray.png"
 		}
 	},
 	"_notes_shape_params": "`shape_params` carries the per-archetype knobs its shape's _fire_* body reads. Before S3 these were magic numbers hardcoded in 25 near-duplicate fire bodies; a new archetype is now a JSON entry, not a new function."
