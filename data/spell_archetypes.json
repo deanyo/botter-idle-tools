@@ -269,8 +269,8 @@
 					"id": "cursed",
 					"dur": 4.0
 				},
-				"marker": "res://assets/tiles/spells/effects/crystal_spear0.png",
-				"marker_rotation": "jitter",
+				"marker": "res://assets/tiles/effects/doom_flash.png",
+				"marker_rotation": "none",
 				"tether": true
 			},
 			"school": "dark",
