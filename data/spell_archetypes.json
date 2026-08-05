@@ -329,6 +329,12 @@
 				"proj_flags": {
 					"lifesteal_pct": 35.0,
 					"drain_tether_mode": true
+				},
+				"affix_flags": {
+					"spell_ravenous": {
+						"lifesteal_pct": 35.0,
+						"lifesteal_buff_bot": true
+					}
 				}
 			},
 			"school": "dark",
@@ -412,7 +418,9 @@
 			"shape_params": {
 				"tint_flavor": "fire",
 				"target_mode": "distribute",
-				"fire_signature": true
+				"fire_signature": true,
+				"split_affix": "spell_comet_split",
+				"burning_patch_affix": "spell_ember_wake"
 			},
 			"school": "fire",
 			"blurb": "Lobs a fireball at the nearest enemy. Explodes for AoE damage on impact. AoE radius scales with Spell Area.",
@@ -449,7 +457,8 @@
 				"visual": "cone",
 				"aim_mode": "nearest",
 				"holy_signature": "fan",
-				"cone_half_angle_deg": 18.0
+				"cone_half_angle_deg": 18.0,
+				"radiance_affix": "spell_radiance"
 			},
 			"school": "holy",
 			"blurb": "A searing fan of holy rays sprays out in a wide cone. Radiant star-flare in front of you.",
@@ -699,7 +708,14 @@
 			"projectile_speed": 220.0,
 			"range_cells": 4,
 			"trail_flavor": "arcane",
-			"icon": "spellspark_servitor.png"
+			"icon": "spellspark_servitor.png",
+			"shape_params": {
+				"affix_status": {
+					"affix": "spell_wisp_curse",
+					"id": "cursed",
+					"dur": 3.0
+				}
+			}
 		},
 		"spell_wrath_charge": {
 			"shape": "buff",
@@ -724,7 +740,8 @@
 				"visual": "holy_pillars",
 				"aim_mode": "nearest",
 				"tint_flavor": "holy",
-				"cone_half_angle_deg": 95.0
+				"cone_half_angle_deg": 95.0,
+				"radiance_affix": "spell_consecrate"
 			},
 			"school": "holy",
 			"compose_flavour": "faith",
