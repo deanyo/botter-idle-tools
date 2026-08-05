@@ -727,6 +727,7 @@
 				"cone_half_angle_deg": 95.0
 			},
 			"school": "holy",
+			"compose_flavour": "faith",
 			"blurb": "Pillars of radiance slam down onto everything in front of you.",
 			"cooldown": 14.0,
 			"damage": 30,
