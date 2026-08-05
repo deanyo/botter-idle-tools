@@ -448,7 +448,8 @@
 				"hit_test": "cone",
 				"visual": "cone",
 				"aim_mode": "nearest",
-				"holy_signature": "fan"
+				"holy_signature": "fan",
+				"cone_half_angle_deg": 18.0
 			},
 			"school": "holy",
 			"blurb": "A searing fan of holy rays sprays out in a wide cone. Radiant star-flare in front of you.",
@@ -459,7 +460,7 @@
 			"primary_stat": "str",
 			"projectile": "",
 			"projectile_speed": 0.0,
-			"range_cells": 4,
+			"range_cells": 8,
 			"trail_flavor": "holy",
 			"icon": "bolt_of_light.png"
 		},
@@ -722,7 +723,8 @@
 				"hit_test": "cone",
 				"visual": "holy_pillars",
 				"aim_mode": "nearest",
-				"tint_flavor": "holy"
+				"tint_flavor": "holy",
+				"cone_half_angle_deg": 95.0
 			},
 			"school": "holy",
 			"blurb": "Pillars of radiance slam down onto everything in front of you.",
@@ -733,7 +735,7 @@
 			"primary_stat": "str",
 			"projectile": "",
 			"projectile_speed": 0.0,
-			"range_cells": 4,
+			"range_cells": 3,
 			"trail_flavor": "holy",
 			"icon": "searing_ray.png"
 		}
