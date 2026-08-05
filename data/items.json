@@ -23728,7 +23728,7 @@
       "damage_min": 3,
       "damage_max": 4,
       "damage_type": "poison",
-      "spell_cooldown": 7.2,
+      "spell_cooldown": 9.2,
       "item_tier": 1,
       "flavor_tags": [
         "poison"
@@ -25248,7 +25248,7 @@
       "damage_min": 11,
       "damage_max": 15,
       "damage_type": "lightning",
-      "spell_cooldown": 5.6,
+      "spell_cooldown": 9.0,
       "item_tier": 1,
       "flavor_tags": [
         "thunderous"
