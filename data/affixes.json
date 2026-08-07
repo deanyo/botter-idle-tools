@@ -5090,6 +5090,426 @@
 					100
 				]
 			]
+		},
+		{
+			"id": "of_deflection",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Deflection",
+			"stat": "aura_effect_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_aura_grace"
+			],
+			"tiers": [
+				[
+					15,
+					25
+				],
+				[
+					25,
+					40
+				],
+				[
+					40,
+					55
+				],
+				[
+					55,
+					75
+				],
+				[
+					75,
+					100
+				]
+			]
+		},
+		{
+			"id": "of_aegis",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Aegis",
+			"stat": "aura_effect_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_aura_warding"
+			],
+			"tiers": [
+				[
+					15,
+					25
+				],
+				[
+					25,
+					40
+				],
+				[
+					40,
+					55
+				],
+				[
+					55,
+					75
+				],
+				[
+					75,
+					100
+				]
+			]
+		},
+		{
+			"id": "of_the_gyre",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Gyre",
+			"stat": "spell_duration_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_axes"
+			],
+			"tiers": [
+				[
+					8,
+					15
+				],
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				]
+			]
+		},
+		{
+			"id": "of_wide_arc",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Wide Arc",
+			"stat": "spell_area_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_cleave"
+			],
+			"tiers": [
+				[
+					8,
+					15
+				],
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				]
+			]
+		},
+		{
+			"id": "of_withering",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Withering",
+			"stat": "spell_duration_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_curse_brittlebone"
+			],
+			"tiers": [
+				[
+					8,
+					15
+				],
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				]
+			]
+		},
+		{
+			"id": "of_exsanguination",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Exsanguination",
+			"stat": "dmg_vs_status_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_drain"
+			],
+			"tiers": [
+				[
+					5,
+					8
+				],
+				[
+					8,
+					12
+				],
+				[
+					12,
+					17
+				],
+				[
+					17,
+					23
+				],
+				[
+					23,
+					30
+				]
+			]
+		},
+		{
+			"id": "of_smouldering",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Smouldering",
+			"stat": "spell_cloud_life_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_ember_bloom"
+			],
+			"tiers": [
+				[
+					20,
+					30
+				],
+				[
+					30,
+					45
+				],
+				[
+					45,
+					65
+				],
+				[
+					65,
+					90
+				],
+				[
+					90,
+					120
+				]
+			]
+		},
+		{
+			"id": "of_the_pyre",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Pyre",
+			"stat": "dmg_vs_status_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_holy_beam"
+			],
+			"tiers": [
+				[
+					5,
+					8
+				],
+				[
+					8,
+					12
+				],
+				[
+					12,
+					17
+				],
+				[
+					17,
+					23
+				],
+				[
+					23,
+					30
+				]
+			]
+		},
+		{
+			"id": "of_the_reliquary",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Reliquary",
+			"stat": "spell_area_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_holy_pillars"
+			],
+			"tiers": [
+				[
+					8,
+					15
+				],
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				]
+			]
+		},
+		{
+			"id": "of_the_conduit",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Conduit",
+			"stat": "dmg_vs_status_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_static_field"
+			],
+			"tiers": [
+				[
+					5,
+					8
+				],
+				[
+					8,
+					12
+				],
+				[
+					12,
+					17
+				],
+				[
+					17,
+					23
+				],
+				[
+					23,
+					30
+				]
+			]
+		},
+		{
+			"id": "of_miasma",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Miasma",
+			"stat": "spell_cloud_life_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_venom_cloud"
+			],
+			"tiers": [
+				[
+					20,
+					30
+				],
+				[
+					30,
+					45
+				],
+				[
+					45,
+					65
+				],
+				[
+					65,
+					90
+				],
+				[
+					90,
+					120
+				]
+			]
+		},
+		{
+			"id": "of_the_forge_heart",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Forge-Heart",
+			"stat": "spell_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_wrath_charge"
+			],
+			"tiers": [
+				[
+					8,
+					15
+				],
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				]
+			]
 		}
 	]
 }

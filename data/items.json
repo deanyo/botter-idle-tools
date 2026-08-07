@@ -16600,6 +16600,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_gyre": 30,
 				"of_whirling": 30,
 				"of_channeling": 10,
 				"of_crit": 10,
@@ -16636,6 +16637,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_pyre": 30,
 				"of_radiance": 30,
 				"of_channeling": 10,
 				"of_crit": 10,
@@ -16675,6 +16677,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_reliquary": 30,
 				"of_consecration": 30,
 				"of_channeling": 10,
 				"of_crit": 10,
@@ -16754,6 +16757,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_exsanguination": 30,
 				"of_ravening": 30,
 				"of_channeling": 10,
 				"of_crit": 10,
@@ -23791,6 +23795,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_miasma": 30,
 				"of_spore_burst": 30,
 				"of_channeling": 10,
 				"of_quickcast": 10,
@@ -23827,6 +23832,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_withering": 30,
 				"of_spite": 30,
 				"of_quickcast": 10,
 				"of_lingering": 10,
@@ -23862,6 +23868,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_forge_heart": 30,
 				"of_kindling": 30,
 				"of_quickcast": 10,
 				"of_thrift": 10,
@@ -23933,6 +23940,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_smouldering": 30,
 				"of_cinder_drift": 30,
 				"of_channeling": 10,
 				"of_quickcast": 10,
@@ -25315,6 +25323,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_wide_arc": 30,
 				"of_shatterblow": 30,
 				"of_channeling": 10,
 				"of_crit": 10,
@@ -25351,6 +25360,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_conduit": 30,
 				"of_live_grid": 30,
 				"of_channeling": 10,
 				"of_quickcast": 10,
@@ -25387,6 +25397,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_deflection": 30,
 				"of_radiant_grace": 30,
 				"of_quickcast": 10,
 				"of_thrift": 10
@@ -25604,6 +25615,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_aegis": 30,
 				"of_reinforced_ward": 30,
 				"of_quickcast": 10,
 				"of_thrift": 10
