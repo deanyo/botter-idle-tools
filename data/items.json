@@ -16559,6 +16559,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_focused_core": 30,
 				"of_comet_split": 30,
 				"of_ember_wake": 30,
 				"of_channeling": 10,
@@ -16714,6 +16715,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_hoarfrost_bloom": 30,
 				"of_frostbite": 30,
 				"of_deep_cold": 30,
 				"of_channeling": 10,

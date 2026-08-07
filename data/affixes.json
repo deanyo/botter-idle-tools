@@ -5510,6 +5510,132 @@
 					65
 				]
 			]
+		},
+		{
+			"_doc": "P4 PROOF AFFIX 2026-08-07 — the first two-sided affix in the game. Big single-target damage bought with a real area cut, so Fireball becomes a sniper instead of a crowd-clearer. The cost rides in extra_stats and is stored POSITIVE; SpellData.penalty_scale converts it to a multiplier at the seven area consumption sites. It CANNOT be expressed as negative spell_area_pct — stat_calc.gd:771 clamps that sum at 0.0 (58 of 62 clamps floor at zero) and the sums are global across all five equipped spells, so the cost would both vanish on a bare bot and hit the wrong spells.",
+			"id": "of_the_focused_core",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Focused Core",
+			"stat": "spell_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_fireball"
+			],
+			"tiers": [
+				[
+					18,
+					26
+				],
+				[
+					26,
+					34
+				],
+				[
+					34,
+					44
+				],
+				[
+					44,
+					56
+				],
+				[
+					56,
+					70
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_area_penalty_pct",
+					"tiers": [
+						[
+							20,
+							26
+						],
+						[
+							26,
+							32
+						],
+						[
+							32,
+							38
+						],
+						[
+							38,
+							45
+						],
+						[
+							45,
+							52
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 PROOF AFFIX 2026-08-07 — second two-sided shape, deliberately costing a DIFFERENT resource so Beat 1 proves the substrate generalises past one stat. Wider freeze bought with a mana surcharge, which is the one cost channel that needs no new clamp handling: mana_cost_pct is already signed (-50..50, stat_calc.gd:653) and compute_mana_cost applies the per-item surcharge before the global pct. Reads as: the nova covers the room, but you cast it less often.",
+			"id": "of_the_hoarfrost_bloom",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Hoarfrost Bloom",
+			"stat": "spell_area_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_frost_nova"
+			],
+			"tiers": [
+				[
+					15,
+					22
+				],
+				[
+					22,
+					30
+				],
+				[
+					30,
+					40
+				],
+				[
+					40,
+					52
+				],
+				[
+					52,
+					65
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_mana_surcharge_pct",
+					"tiers": [
+						[
+							25,
+							35
+						],
+						[
+							35,
+							45
+						],
+						[
+							45,
+							58
+						],
+						[
+							58,
+							72
+						],
+						[
+							72,
+							90
+						]
+					]
+				}
+			]
 		}
 	]
 }
