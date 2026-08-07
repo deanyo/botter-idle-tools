@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Botter — Spell Drop Matrix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="portal.css">
+<style>
+  /* Spell Drop Matrix — READ-ONLY reference for sanity-checking what spells
+     can actually drop, what they'll be called, and which affixes can roll on
+     them at each rarity. Built 2026-08-06 after #328, where all 20 behaviour
+     affixes turned out to be unreachable in play and nobody noticed because
+     verifying it meant waiting for in-game drops.
+
+     EVERYTHING here is derived at load time from the same JSON the game reads
+     (data/spell_archetypes.json, data/affixes.json, data/items.json). There is
+     no embedded copy of the roster or the affix list — if this page and the
+     game disagree, the page is wrong about a RULE, never about the DATA.
+
+     The composition rules mirrored from GDScript are listed in RULES below,
+     each with its source file:line. When one changes in code, change it here.
+  */
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  header {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    padding: 10px 16px; display: flex; align-items: center; gap: 14px;
+    flex-shrink: 0; flex-wrap: wrap;
+  }
+  header h1 { font-size: 15px; margin: 0; color: var(--accent); font-weight: 600; }
+  main { flex: 1; padding: 20px 24px 60px; max-width: 1500px; margin: 0 auto; width: 100%; }
+
+  .intro {
+    color: var(--muted); font-size: 12.5px; line-height: 1.6;
+    padding: 12px 16px; background: var(--panel); border-left: 3px solid var(--accent-dim);
+    border-radius: 3px; margin-bottom: 20px;
+  }
+  .intro strong { color: var(--accent); }
+  .intro code { background: rgba(255,255,255,.05); padding: 1px 5px; border-radius: 2px; font-size: 11px; }
+
+  .warn-box {
+    background: rgba(240,100,100,.08); border-left: 3px solid var(--bad);
+    padding: 10px 14px; border-radius: 3px; margin-bottom: 16px;
+    font-size: 12.5px; line-height: 1.55; color: var(--text);
+  }
+  .warn-box.ok { background: rgba(95,200,120,.07); border-left-color: var(--good); }
+  .warn-box b { color: var(--accent); }
+
+  .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-left: auto; }
+  .controls label { font-size: 11.5px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+  select, input[type=search] {
+    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 3px; padding: 4px 7px; font-size: 12px; font-family: inherit;
+  }
+
+  .tabs { display: flex; gap: 4px; margin-bottom: 18px; flex-wrap: wrap; }
+  .tab {
+    background: var(--panel); border: 1px solid var(--border); color: var(--muted);
+    padding: 6px 14px; border-radius: 3px; cursor: pointer; font-size: 12.5px;
+    font-family: inherit;
+  }
+  .tab:hover { background: var(--panel-hover); color: var(--text); }
+  .tab.active { background: var(--accent-soft); border-color: var(--accent-dim); color: var(--accent); }
+
+  section.view { display: none; }
+  section.view.active { display: block; }
+
+  /* ---- roster cards ---- */
+  .roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(430px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .card.dormant { opacity: .5; }
+  .card h3 {
+    margin: 0 0 3px; font-size: 13.5px; color: var(--text); display: flex;
+    align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .card .aid { font-size: 10.5px; color: var(--muted); font-family: ui-monospace, monospace; }
+  .chip {
+    font-size: 10px; padding: 1px 6px; border-radius: 8px; border: 1px solid var(--border-strong);
+    color: var(--muted); text-transform: uppercase; letter-spacing: .4px;
+  }
+  .chip.school { border-color: var(--accent-dim); color: var(--accent); }
+  .chip.dormant { border-color: var(--bad); color: var(--bad); }
+  .chip.util { border-color: #4d9fff; color: #4d9fff; }
+  .blurb { font-size: 11.5px; color: var(--muted); line-height: 1.5; margin: 6px 0 8px; }
+
+  table.mini { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.mini th, table.mini td { padding: 3px 6px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.04); }
+  table.mini th { color: var(--muted); font-weight: 600; font-size: 10.5px; text-transform: uppercase; letter-spacing: .4px; }
+  table.mini td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: ui-monospace, monospace; }
+  .name-cell { font-family: ui-monospace, monospace; font-size: 11px; }
+
+  .r-common { color: var(--rarity-common); }
+  .r-uncommon { color: var(--rarity-uncommon); }
+  .r-rare { color: var(--rarity-rare); }
+  .r-epic { color: var(--rarity-epic); }
+  .r-legendary { color: var(--rarity-legendary); }
+
+  .beh { margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--border); }
+  .beh h4 { margin: 0 0 5px; font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+  .beh .none { font-size: 11.5px; color: var(--bad); }
+
+  /* ---- big matrix ---- */
+  .table-wrap { overflow-x: auto; }
+  table.big { border-collapse: collapse; width: 100%; font-size: 12px; }
+  table.big th, table.big td { border: 1px solid var(--border); padding: 5px 8px; text-align: left; vertical-align: top; }
+  table.big thead th { background: var(--panel-2); color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .4px; position: sticky; top: 0; z-index: 2; }
+  table.big tbody tr:nth-child(even) { background: rgba(255,255,255,.015); }
+  table.big td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: ui-monospace, monospace; }
+  table.big code { font-size: 10.5px; color: var(--muted); }
+  .tier-vals { font-family: ui-monospace, monospace; font-size: 10.5px; }
+  .flagk { color: var(--accent); }
+  .strip { color: var(--bad); font-size: 10.5px; }
+  .kept { color: var(--good); font-size: 10.5px; }
+
+  h2.sec { font-size: 13px; color: var(--accent); margin: 26px 0 10px; font-weight: 600; }
+  h2.sec:first-child { margin-top: 0; }
+  .note { font-size: 11.5px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+  .empty { color: var(--muted); font-size: 12px; padding: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<nav class="portal-nav" data-active="spellmatrix" data-title="Spell Drop Matrix"></nav>
+<header>
+  <h1>Spell Drop Matrix</h1>
+  <span class="chip" id="stamp">loading…</span>
+  <div class="controls">
+    <label>Rarity
+      <select id="rarity">
+        <option value="all">all</option>
+        <option value="common">common</option>
+        <option value="uncommon">uncommon</option>
+        <option value="rare">rare</option>
+        <option value="epic">epic</option>
+        <option value="legendary">legendary</option>
+      </select>
+    </label>
+    <label>Show
+      <select id="scope">
+        <option value="roster">roster only (droppable)</option>
+        <option value="all">roster + dormant</option>
+      </select>
+    </label>
+    <label><input type="search" id="q" placeholder="filter name / id / school…" size="22"></label>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    Every spell that can drop, the <strong>exact name</strong> it will roll at each rarity, and
+    every affix eligible on it. All derived live from <code>data/spell_archetypes.json</code>,
+    <code>data/affixes.json</code> and <code>data/items.json</code> — the same files the game
+    loads. Built so drop behaviour can be sanity-checked <strong>without waiting for in-game
+    drops</strong>, after #328 (all 20 behaviour affixes were unreachable in play and it took a
+    5000-roll probe to notice).
+  </div>
+
+  <div id="alerts"></div>
+
+  <div class="tabs">
+    <button class="tab active" data-view="roster">Roster &amp; names</button>
+    <button class="tab" data-view="behaviours">Behaviour affixes</button>
+    <button class="tab" data-view="generic">Generic affixes</button>
+    <button class="tab" data-view="names">Name grammar</button>
+    <button class="tab" data-view="rules">Rules mirrored</button>
+  </div>
+
+  <section class="view active" id="view-roster"></section>
+  <section class="view" id="view-behaviours"></section>
+  <section class="view" id="view-generic"></section>
+  <section class="view" id="view-names"></section>
+  <section class="view" id="view-rules"></section>
+</main>
+
+<script>
+/* ---------------------------------------------------------------------------
+   RULES MIRRORED FROM GDSCRIPT. Each carries its source so drift is findable.
+   This page is only as correct as this block.
+   --------------------------------------------------------------------------- */
+const RULES = [
+  ["Rarity → affix count", "common 1, uncommon 2, rare 3, epic 4, legendary 5",
+   "data/affixes.json → rarity_affix_count"],
+  ["Rarity → tier index", "common 0 … legendary 4; picks the tier band for values",
+   "data/affixes.json → rarity_tier_index"],
+  ["Flag affixes stripped at low rarity",
+   "On slot=spell at common/uncommon, kind=flag affixes are removed from the pool — except the 4 visual-flair ids, which are allowlisted past the gate.",
+   "affix_system.gd:209 (+ _VISUAL_FLAIR_AFFIX_IDS at :26)"],
+  ["Behaviour axis chance", "18% of composed spell drops roll their archetype's behaviour affix",
+   "loot_factory.gd → SPELL_BEHAVIOUR_CHANCE = 0.18"],
+  ["Behaviour must bind", "A behaviour is only bound when its base_types allows the resolved archetype; otherwise the spell composes with behaviour=none and is NOT named for it.",
+   "items_db_loader.gd → _behaviour_applies / _build_composed_def"],
+  ["Name grammar", "\"<Flavour> <Shape> <of Behaviour>\" — flavour via display-word map, behaviour suffix from the affix's own name field, and only when actually bound.",
+   "items_db_loader.gd → _composed_display_name"],
+  ["Damage ramp", "×1.36 common → 1.45 → 1.57 → 1.74 → 1.93 legendary, applied to the archetype's damage; max = min × 1.32",
+   "items_db_loader.gd → _DAMAGE_MULT_BY_RARITY / _DAMAGE_SPREAD"],
+  ["Cooldown ramp", "×1.00 common → 0.81 → 0.65 → 0.53 → 0.42 legendary, applied to the archetype's cooldown",
+   "items_db_loader.gd → _COOLDOWN_MULT_BY_RARITY"],
+  ["Implicit dedupe", "A rolled affix can never duplicate the item's implicit behaviour (used_ids seeded from implicit_affixes).",
+   "affix_system.gd → roll_affixes_for"],
+  ["Only roster-backed archetypes drop", "An archetype with no items.json entry is dormant: resolvable but never picked as a drop template.",
+   "loot_factory.gd → template re-roll path"],
+];
+
+// Mirrors items_db_loader.gd::_FLAVOUR_DISPLAY_WORDS. Element flavours pass
+// through capitalized; these eight name a LOOK because the raw word named a
+// mechanic the spell does not have (#321).
+const FLAVOUR_WORDS = {
+  regen: "Verdant", thunderous: "Storming", earth: "Craggy", brutal: "Savage",
+  vampiric: "Crimson", thorns: "Briar", wisdom: "Runed", footwork: "Fleetfoot",
+};
+// Mirrors loot_factory.gd::SPELL_FLAVOURS.
+const SPELL_FLAVOURS = ["fire","cold","thunderous","holy","poison","dark","arcane",
+  "earth","brutal","vampiric","thorns","wisdom","footwork"];
+const VISUAL_FLAIR = ["of_umbral","of_twisted","of_prismatic","of_inverse"];
+const RARITIES = ["common","uncommon","rare","epic","legendary"];
+const DMG_MULT = {common:1.36,uncommon:1.45,rare:1.57,epic:1.74,legendary:1.93};
+const CD_MULT  = {common:1.00,uncommon:0.81,rare:0.65,epic:0.53,legendary:0.42};
+const DMG_SPREAD = 1.32;
+const BEHAVIOUR_CHANCE = 0.18;
+
+let ARCH = {}, AFFIX = [], ITEMS = [], RCOUNT = {}, RIDX = {}, ROSTER = new Set();
+
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+const flavourWord = f => FLAVOUR_WORDS[f] || cap(f);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* Path duality: locally the repo has tools/ and data/ as siblings (the
+   other editors all use "data/x.json"), but the mirror to
+   botter-idle-tools flattens the tree so data/ sits beside the html. Try the
+   local layout first, fall back to the mirrored one, so the same file works in
+   both places without an edit. */
+let _dataRoot = null;   // resolved once, so only the first probe can 404
+
+async function resolveDataRoot() {
+  if (_dataRoot) return _dataRoot;
+  for (const root of ["data/", "data/"]) {
+    try {
+      const r = await fetch(root + "affixes.json", { method: "HEAD" });
+      if (r.ok) { _dataRoot = root; return root; }
+    } catch (_) { /* try next */ }
+  }
+  throw new Error("could not find affixes.json under data/ or data/");
+}
+
+async function fetchData(name) {
+  const root = await resolveDataRoot();
+  const r = await fetch(root + name);
+  if (!r.ok) throw new Error(`${root}${name} → HTTP ${r.status}`);
+  return await r.json();
+}
+
+async function load() {
+  const [a, af, it] = await Promise.all([
+    fetchData("spell_archetypes.json"),
+    fetchData("affixes.json"),
+    fetchData("items.json"),
+  ]);
+  ARCH = a.archetypes || a;
+  AFFIX = af.affixes || [];
+  RCOUNT = af.rarity_affix_count || {};
+  RIDX = af.rarity_tier_index || {};
+  ITEMS = it.items || [];
+  ROSTER = new Set(ITEMS.filter(i => i.slot === "spell" && ARCH[i.id]).map(i => i.id));
+  document.getElementById("stamp").textContent =
+    `${ROSTER.size} droppable · ${Object.keys(ARCH).length} archetypes · ${AFFIX.length} affixes`;
+  renderAlerts(); renderAll();
+}
+
+// Behaviour affixes for an archetype, derived exactly like
+// LootFactory._ensure_behaviour_map: family=archetype + applies_to has "spell"
+// + base_types names this archetype.
+function behavioursFor(aid) {
+  return AFFIX.filter(x => x.family === "archetype"
+      && (x.applies_to || []).includes("spell")
+      && (x.base_types || []).includes(aid))
+    .map(x => x.id).sort();
+}
+
+// Generic affixes eligible on a spell at a rarity, applying the flag-strip rule.
+function genericFor(rarity) {
+  return AFFIX.filter(x => (x.applies_to || []).includes("spell") && x.family !== "archetype")
+    .filter(x => {
+      if (rarity !== "common" && rarity !== "uncommon") return true;
+      return x.kind !== "flag" || VISUAL_FLAIR.includes(x.id);
+    });
+}
+
+function tierVal(x, rarity) {
+  const t = x.tiers;
+  if (!Array.isArray(t) || !t.length) return "—";
+  const band = t[Math.min(RIDX[rarity] ?? 0, t.length - 1)];
+  if (!Array.isArray(band)) return "—";
+  return band[0] === band[1] ? `${band[0]}` : `${band[0]}–${band[1]}`;
+}
+
+/* Surface the failure modes this page exists to catch, at load time. */
+function renderAlerts() {
+  const out = [];
+  const orphanBeh = AFFIX.filter(x => x.family === "archetype"
+      && (x.applies_to || []).includes("spell")
+      && !(x.base_types || []).some(bt => ROSTER.has(bt)));
+  if (orphanBeh.length) {
+    out.push(`<div class="warn-box"><b>${orphanBeh.length} behaviour affix(es) can never drop</b> —
+      authored but their <code>base_types</code> name no roster-backed archetype:
+      ${orphanBeh.map(x => esc(x.id)).join(", ")}. This is the #328 failure mode.</div>`);
+  }
+  const noBeh = [...ROSTER].filter(aid => behavioursFor(aid).length === 0).sort();
+  if (noBeh.length) {
+    out.push(`<div class="warn-box"><b>${noBeh.length} droppable spell(s) have no behaviour affix at all</b>:
+      ${noBeh.map(esc).join(", ")}. Rarity can only change their numbers, never what they do.</div>`);
+  }
+  if (!out.length) {
+    out.push(`<div class="warn-box ok">No <b>data-level</b> reachability gaps: every authored
+      behaviour binds to a droppable spell, and every droppable spell has at least one
+      behaviour.</div>`);
+  }
+  // HONEST LIMIT. This page reads the DATA; it cannot see the drop CODE. #328 was a bug in
+  // loot_factory.gd (an empty behaviour map), so the JSON looked perfect while 0% of drops
+  // actually carried a behaviour. Saying so explicitly, because a green banner that overstates
+  // its scope is worse than no banner — it is exactly what let #328 sit unnoticed.
+  out.push(`<div class="warn-box"><b>What this page cannot check.</b> Everything here is derived
+    from the JSON. The <i>drop code</i> is a separate failure surface: #328 was an empty map in
+    <code>loot_factory.gd</code>, so the data was flawless while <b>0%</b> of real drops carried a
+    behaviour. To verify the drop path itself, run the guard tests
+    (<code>test_stage5_composed_drops.gd</code>) or sample <code>pick_loot_id</code> directly —
+    a green banner above means the data is sound, <i>not</i> that drops work.</div>`);
+  document.getElementById("alerts").innerHTML = out.join("");
+}
+
+function matchesFilter(aid, a, q) {
+  if (!q) return true;
+  q = q.toLowerCase();
+  return aid.toLowerCase().includes(q)
+    || (a.school || "").toLowerCase().includes(q)
+    || (a.shape || "").toLowerCase().includes(q)
+    || (a.class || "").toLowerCase().includes(q);
+}
+
+function renderRoster() {
+  const rarity = document.getElementById("rarity").value;
+  const scope = document.getElementById("scope").value;
+  const q = document.getElementById("q").value.trim();
+  const bands = rarity === "all" ? RARITIES : [rarity];
+  const ids = Object.keys(ARCH).sort().filter(aid => {
+    if (scope === "roster" && !ROSTER.has(aid)) return false;
+    return matchesFilter(aid, ARCH[aid], q);
+  });
+  if (!ids.length) return `<div class="empty">Nothing matches that filter.</div>`;
+  return `<div class="roster">` + ids.map(aid => {
+    const a = ARCH[aid], drop = ROSTER.has(aid), beh = behavioursFor(aid);
+    const shape = a.shape || "?";
+    // The flavour a drop most likely shows: its own element when that's a
+    // flavour tag (75% of the time), per _roll_spell_flavour.
+    const likely = a.compose_flavour || ((a.element && SPELL_FLAVOURS.includes(a.element)) ? a.element : null);
+    const rows = bands.map(r => {
+      const base = Number(a.damage || 0);
+      const dmin = base > 0 ? Math.max(1, Math.round(base * DMG_MULT[r])) : 0;
+      const dmax = base > 0 ? Math.max(dmin, Math.round(dmin * DMG_SPREAD)) : 0;
+      const cd = (Number(a.cooldown || 0) * CD_MULT[r]).toFixed(1);
+      const fl = likely || "«rolled»";
+      const nm = `${likely ? flavourWord(likely) : "«Flavour»"} ${cap(shape)}`;
+      return `<tr>
+        <td class="r-${r}">${r}</td>
+        <td class="name-cell">${esc(nm)}</td>
+        <td class="num">${dmin ? dmin + "–" + dmax : "—"}</td>
+        <td class="num">${cd}s</td>
+        <td class="num">${RCOUNT[r] ?? "—"}</td>
+      </tr>`;
+    }).join("");
+    return `<div class="card ${drop ? "" : "dormant"}">
+      <h3>${esc(cap(shape))} — ${esc(aid.replace(/^spell_/, ""))}
+        <span class="chip school">${esc(a.school || "—")}</span>
+        ${a.class === "utility" ? '<span class="chip util">utility</span>' : ""}
+        ${drop ? "" : '<span class="chip dormant">dormant · never drops</span>'}
+      </h3>
+      <div class="aid">${esc(aid)}${likely ? ` · flavour locked to <b>${esc(likely)}</b>` : " · flavour rolled"}</div>
+      ${a.blurb ? `<div class="blurb">${esc(a.blurb)}</div>` : ""}
+      <table class="mini">
+        <thead><tr><th>rarity</th><th>name</th><th>dmg</th><th>cd</th><th>affixes</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div class="beh">
+        <h4>Behaviour affixes (${beh.length}) — ${(BEHAVIOUR_CHANCE * 100).toFixed(0)}% chance to roll one</h4>
+        ${beh.length
+          ? beh.map(id => {
+              const x = AFFIX.find(y => y.id === id);
+              const vals = bands.map(r => `<span class="r-${r}">${tierVal(x, r)}</span>`).join(" / ");
+              return `<div style="font-size:11.5px">${esc(x.name)} <code>${esc(id)}</code>
+                      — <span class="tier-vals">${vals}</span>
+                      ${x.kind === "flag" ? '<span class="flagk">flag</span>' : ""}</div>`;
+            }).join("")
+          : `<div class="none">none — rarity changes only this spell's numbers</div>`}
+      </div>
+    </div>`;
+  }).join("") + `</div>`;
+}
+
+function renderBehaviours() {
+  const rarity = document.getElementById("rarity").value;
+  const bands = rarity === "all" ? RARITIES : [rarity];
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const list = AFFIX.filter(x => x.family === "archetype" && (x.applies_to || []).includes("spell"))
+    .filter(x => !q || x.id.toLowerCase().includes(q) || (x.name || "").toLowerCase().includes(q))
+    .sort((p, n) => p.id.localeCompare(n.id));
+  return `<div class="note">Every behaviour affix, the spell it binds to, and its value at each rarity.
+    A behaviour rolls on <b>${(BEHAVIOUR_CHANCE * 100).toFixed(0)}%</b> of composed spell drops.
+    <span class="flagk">flag</span> = on/off (tiers are all 1); the rest scale with rarity.
+    An affix whose spell is <span class="chip dormant">dormant</span> can never reach a player.</div>
+  <div class="table-wrap"><table class="big">
+    <thead><tr><th>affix</th><th>display name</th><th>binds to</th><th>kind</th><th>stat</th>
+      ${bands.map(r => `<th class="r-${r}">${r}</th>`).join("")}<th>reachable</th></tr></thead>
+    <tbody>${list.map(x => {
+      const bts = x.base_types || [];
+      const reach = bts.some(b => ROSTER.has(b));
+      return `<tr>
+        <td><code>${esc(x.id)}</code></td>
+        <td>${esc(x.name)}</td>
+        <td>${bts.map(b => `${esc(b.replace(/^spell_/, ""))}${ROSTER.has(b) ? "" : ' <span class="chip dormant">dormant</span>'}`).join("<br>")}</td>
+        <td>${x.kind === "flag" ? '<span class="flagk">flag</span>' : esc(x.kind)}</td>
+        <td><code>${esc(x.stat || "—")}</code></td>
+        ${bands.map(r => `<td class="num tier-vals r-${r}">${tierVal(x, r)}</td>`).join("")}
+        <td>${reach ? '<span class="kept">yes</span>' : '<span class="strip">NO</span>'}</td>
+      </tr>`;
+    }).join("")}</tbody>
+  </table></div>`;
+}
+
+function renderGeneric() {
+  const rarity = document.getElementById("rarity").value;
+  const bands = rarity === "all" ? RARITIES : [rarity];
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const all = AFFIX.filter(x => (x.applies_to || []).includes("spell") && x.family !== "archetype")
+    .filter(x => !q || x.id.toLowerCase().includes(q) || (x.name || "").toLowerCase().includes(q))
+    .sort((p, n) => p.id.localeCompare(n.id));
+  return `<div class="note">Non-behaviour affixes that can roll on a spell, with the low-rarity
+    flag-strip applied per column. A <span class="flagk">flag</span> affix is removed from the
+    <span class="r-common">common</span> and <span class="r-uncommon">uncommon</span> pools unless
+    it's one of the 4 visual-flair ids (<code>${VISUAL_FLAIR.join(", ")}</code>) — those are
+    allowlisted past the gate. Count of affixes rolled per item:
+    ${RARITIES.map(r => `<span class="r-${r}">${r} ${RCOUNT[r]}</span>`).join(" · ")}.</div>
+  <div class="table-wrap"><table class="big">
+    <thead><tr><th>affix</th><th>display name</th><th>kind</th><th>stat</th>
+      ${bands.map(r => `<th class="r-${r}">${r}</th>`).join("")}</tr></thead>
+    <tbody>${all.map(x => {
+      const cells = bands.map(r => {
+        const pool = genericFor(r);
+        const inPool = pool.some(p => p.id === x.id);
+        return `<td class="num tier-vals r-${r}">${inPool ? tierVal(x, r)
+          : '<span class="strip">stripped</span>'}</td>`;
+      }).join("");
+      return `<tr>
+        <td><code>${esc(x.id)}</code></td>
+        <td>${esc(x.name)}</td>
+        <td>${x.kind === "flag" ? '<span class="flagk">flag</span>' : esc(x.kind)}</td>
+        <td><code>${esc(x.stat || "—")}</code></td>
+        ${cells}</tr>`;
+    }).join("")}</tbody>
+  </table></div>`;
+}
+
+function renderNames() {
+  const rows = SPELL_FLAVOURS.map(f => {
+    const rewritten = !!FLAVOUR_WORDS[f];
+    return `<tr>
+      <td><code>${esc(f)}</code></td>
+      <td class="name-cell">${esc(flavourWord(f))}</td>
+      <td>${rewritten
+        ? '<span class="strip">rewritten</span> — the raw word named a mechanic the spell lacks'
+        : '<span class="kept">kept</span> — honest element name'}</td>
+    </tr>`;
+  }).join("");
+  const shapes = [...new Set(Object.values(ARCH).map(a => a.shape).filter(Boolean))].sort();
+  const sample = shapes.slice(0, 6).map(s =>
+    `<tr><td class="name-cell">Verdant ${esc(cap(s))}</td>
+      <td class="name-cell">Fire ${esc(cap(s))} of Comet Split</td></tr>`).join("");
+  return `<div class="note">Names are built as <b>"&lt;Flavour&gt; &lt;Shape&gt; &lt;of Behaviour&gt;"</b>.
+    The behaviour suffix appears <b>only when the behaviour actually binds</b> — that gate is what
+    #323 fixed, after drops were named for behaviours they didn't have. The suffix text comes from
+    the affix's own <code>name</code> field, not from its id, which is why
+    <code>of the Live Grid</code> reads correctly instead of "Of Live Grid".</div>
+  <h2 class="sec">Flavour → display word</h2>
+  <div class="note">Eight flavours are rewritten because the raw word promised an effect the spell
+    doesn't have (#321). The tint is unaffected — <code>flavor_tags</code> still carries the raw
+    flavour, so colour and FX are unchanged.</div>
+  <div class="table-wrap"><table class="big">
+    <thead><tr><th>flavour axis</th><th>shown as</th><th>why</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+  <h2 class="sec">Shape → sample names</h2>
+  <div class="table-wrap"><table class="big">
+    <thead><tr><th>without behaviour</th><th>with a bound behaviour</th></tr></thead>
+    <tbody>${sample}</tbody></table></div>
+  <h2 class="sec">Composed id grammar</h2>
+  <div class="note">Ids are <code>spell_&lt;shape&gt;__&lt;flavour&gt;__&lt;behaviour&gt;__&lt;rarity&gt;</code>,
+    separated by a <b>double</b> underscore because single <code>_</code> occurs inside every
+    segment. All four axes are validated: an unknown shape, rarity, or behaviour token refuses to
+    resolve (#327), so a typo fails loudly instead of producing a plausible item that does nothing.
+    <code>none</code> is the valid "no behaviour" value.</div>`;
+}
+
+function renderRules() {
+  return `<div class="note">The composition rules this page mirrors from GDScript. If the page and
+    the game ever disagree, one of these changed in code and needs changing here.</div>
+  <div class="table-wrap"><table class="big">
+    <thead><tr><th>rule</th><th>what it does</th><th>source</th></tr></thead>
+    <tbody>${RULES.map(([n, d, s]) =>
+      `<tr><td><b>${esc(n)}</b></td><td>${d}</td><td><code>${esc(s)}</code></td></tr>`).join("")}
+    </tbody></table></div>`;
+}
+
+function renderAll() {
+  document.getElementById("view-roster").innerHTML = renderRoster();
+  document.getElementById("view-behaviours").innerHTML = renderBehaviours();
+  document.getElementById("view-generic").innerHTML = renderGeneric();
+  document.getElementById("view-names").innerHTML = renderNames();
+  document.getElementById("view-rules").innerHTML = renderRules();
+}
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+  document.querySelectorAll("section.view").forEach(x => x.classList.remove("active"));
+  t.classList.add("active");
+  document.getElementById("view-" + t.dataset.view).classList.add("active");
+}));
+["rarity", "scope", "q"].forEach(id =>
+  document.getElementById(id).addEventListener("input", renderAll));
+
+load().catch(e => {
+  document.getElementById("alerts").innerHTML =
+    `<div class="warn-box"><b>Failed to load data.</b> ${esc(e.message)}<br>
+     Serve from the repo root — <code>python3 -m http.server 8080</code> — then open
+     <code>http://localhost:8080/tools/spell_matrix.html</code>. Opening the file
+     directly via <code>file://</code> will not work: browsers block
+     <code>fetch</code> on local files.</div>`;
+});
+</script>
+<script src="portal_nav.js" defer></script>
+</body>
+</html>
