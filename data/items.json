@@ -16678,6 +16678,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_long_fuse": 30,
 				"of_the_reliquary": 30,
 				"of_consecration": 30,
 				"of_channeling": 10,
@@ -16759,6 +16760,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_ravening_coil": 30,
 				"of_exsanguination": 30,
 				"of_ravening": 30,
 				"of_channeling": 10,
@@ -23797,6 +23799,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_withered_bloom": 30,
 				"of_miasma": 30,
 				"of_spore_burst": 30,
 				"of_channeling": 10,
@@ -25325,6 +25328,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_culling_edge": 30,
 				"of_wide_arc": 30,
 				"of_shatterblow": 30,
 				"of_channeling": 10,
@@ -25399,6 +25403,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_squandered_ward": 30,
 				"of_deflection": 30,
 				"of_radiant_grace": 30,
 				"of_quickcast": 10,
@@ -25649,6 +25654,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [],
 			"affix_pool": {
+				"of_the_thin_veil": 30,
 				"of_storm_brand": 30,
 				"of_overcharge": 30,
 				"of_channeling": 10,

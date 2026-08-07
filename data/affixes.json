@@ -5636,6 +5636,384 @@
 					]
 				}
 			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #1 - big damage bought with a real area cut, so a wide sweep becomes an executioner's swing. Cleave is the roster's only physical sweep and its 30 base damage is the highest of any spell, which makes it the right carrier: the upside is felt immediately and the narrowed arc is felt immediately too.",
+			"id": "of_the_culling_edge",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Culling Edge",
+			"stat": "spell_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_cleave"
+			],
+			"tiers": [
+				[
+					45,
+					55
+				],
+				[
+					55,
+					65
+				],
+				[
+					65,
+					72
+				],
+				[
+					72,
+					80
+				],
+				[
+					80,
+					85
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_area_penalty_pct",
+					"tiers": [
+						[
+							35,
+							40
+						],
+						[
+							40,
+							45
+						],
+						[
+							45,
+							48
+						],
+						[
+							48,
+							52
+						],
+						[
+							52,
+							55
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #2 - damage for cooldown: the spell becomes an event rather than a rotation filler. Carried by Holy Pillars, the 95-degree/3-cell stomp half of P2's beam split, whose 14.0s cooldown is already the roster's longest so the surcharge lands on a spell the player is ALREADY choosing to wait for. NOTE the surcharge multiplies this spell's own cooldown in compute_cooldown; it is NOT routed through the bot-wide spell_cdr_pct lane, which would have slowed all five equipped spells.",
+			"id": "of_the_long_fuse",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Long Fuse",
+			"stat": "spell_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_holy_pillars"
+			],
+			"tiers": [
+				[
+					50,
+					60
+				],
+				[
+					60,
+					70
+				],
+				[
+					70,
+					80
+				],
+				[
+					80,
+					86
+				],
+				[
+					86,
+					90
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_cooldown_surcharge_pct",
+					"tiers": [
+						[
+							45,
+							55
+						],
+						[
+							55,
+							62
+						],
+						[
+							62,
+							70
+						],
+						[
+							70,
+							76
+						],
+						[
+							76,
+							80
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #3 - the aurastacker tax. A stronger aura bought with mana, which is the one cost an aura build genuinely feels: P2 measured a pure-aura build at 283% funded with mana 'genuinely irrelevant as specified', so a mana cost is the only lever that can make an aura decision hurt. aura_effect_pct exists because P3 found Grace's +10 evasion was a hardcoded constant with no scalable knob.",
+			"id": "of_the_squandered_ward",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Squandered Ward",
+			"stat": "aura_effect_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_aura_grace"
+			],
+			"tiers": [
+				[
+					40,
+					50
+				],
+				[
+					50,
+					58
+				],
+				[
+					58,
+					66
+				],
+				[
+					66,
+					72
+				],
+				[
+					72,
+					75
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_mana_surcharge_pct",
+					"tiers": [
+						[
+							60,
+							70
+						],
+						[
+							70,
+							80
+						],
+						[
+							80,
+							92
+						],
+						[
+							92,
+							102
+						],
+						[
+							102,
+							110
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #4 - risk for power, the one trade whose cost is paid OUTSIDE the spell. Vampiric greed on Drain: the bolt hits harder and every incoming hit hurts more. Routes through the new spell_vulnerability_surcharge_pct lane (bot.gd) which SUBTRACTS from mit_sum in actor.gd::resolve_swing, mirroring the existing harm tag. Deliberately not a negative damage_taken_pct: that stat is MITIGATION clamped 0..40 upstream, so a negative would have been erased.",
+			"id": "of_the_ravening_coil",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Ravening Coil",
+			"stat": "spell_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_drain"
+			],
+			"tiers": [
+				[
+					40,
+					50
+				],
+				[
+					50,
+					58
+				],
+				[
+					58,
+					66
+				],
+				[
+					66,
+					72
+				],
+				[
+					72,
+					75
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_vulnerability_surcharge_pct",
+					"tiers": [
+						[
+							12,
+							14
+						],
+						[
+							14,
+							16
+						],
+						[
+							16,
+							18
+						],
+						[
+							18,
+							20
+						],
+						[
+							20,
+							22
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #5 - reach for punch. More chain jumps bought with damage, so the arc clears a room but cannot finish an elite. Reuses spell_chain_jumps, the stat of_storm_brand already feeds into _fire_chain_lightning's jump_count, so no new hook was needed on the upside; the cost is the Beat-1 damage channel. Chain Lightning became droppable for everyone in P1 when Dean cut the elf race anchor.",
+			"id": "of_the_thin_veil",
+			"family": "archetype",
+			"kind": "flat",
+			"name": "of the Thin Veil",
+			"stat": "spell_chain_jumps",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_chain_lightning"
+			],
+			"tiers": [
+				[
+					2,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					3
+				],
+				[
+					3,
+					4
+				],
+				[
+					4,
+					4
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_damage_penalty_pct",
+					"tiers": [
+						[
+							30,
+							35
+						],
+						[
+							35,
+							40
+						],
+						[
+							40,
+							45
+						],
+						[
+							45,
+							48
+						],
+						[
+							48,
+							50
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "P4 Beat 2 trade #6 - a chokepoint puddle instead of a room-filler. Long life bought with area. Venom Cloud is the right carrier because P2 already tuned its lifetime against its own cooldown (8s/7.2s = 111% was permanent uptime, retuned to 9.2s), so extending life is a meaningful knob rather than a no-op, and the area cut is what stops it becoming free permanent coverage.",
+			"id": "of_the_withered_bloom",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Withered Bloom",
+			"stat": "spell_cloud_life_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_venom_cloud"
+			],
+			"tiers": [
+				[
+					70,
+					85
+				],
+				[
+					85,
+					100
+				],
+				[
+					100,
+					112
+				],
+				[
+					112,
+					124
+				],
+				[
+					124,
+					130
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_area_penalty_pct",
+					"tiers": [
+						[
+							40,
+							45
+						],
+						[
+							45,
+							50
+						],
+						[
+							50,
+							54
+						],
+						[
+							54,
+							58
+						],
+						[
+							58,
+							60
+						]
+					]
+				}
+			]
 		}
 	]
 }
