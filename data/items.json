@@ -26770,6 +26770,99 @@
 			},
 			"enchant_chance": 0.0,
 			"unique": true
+		},
+		{
+			"id": "emberloop_torc",
+			"name": "Emberloop Torc",
+			"slot": "amulet",
+			"rarity": "rare",
+			"tile": "urand_bloodlust.png",
+			"base_type": "amulet_ember",
+			"item_tier": 1,
+			"flavor_tags": [
+				"elemental"
+			],
+			"lore": "A closed ring of scorched bronze. What it starts, it starts again.",
+			"drop_weights": [
+				35,
+				10,
+				0,
+				0,
+				0
+			],
+			"unique": true,
+			"enchant_chance": 0.0,
+			"implicit_affixes": [
+				"of_the_kindled_chain"
+			],
+			"affix_pool": {
+				"of_embers": 18,
+				"of_channeling": 14,
+				"of_int_mastery": 10,
+				"of_quickcast": 8
+			}
+		},
+		{
+			"id": "shattered_prism_crown",
+			"name": "Shattered Prism Crown",
+			"slot": "helm",
+			"rarity": "rare",
+			"tile": "hat_3.png",
+			"base_type": "helm_prism",
+			"item_tier": 1,
+			"flavor_tags": [
+				"arcane"
+			],
+			"lore": "Cracked through every facet. Light leaves it as every colour at once, and none of them true.",
+			"drop_weights": [
+				30,
+				12,
+				0,
+				0,
+				0
+			],
+			"unique": true,
+			"enchant_chance": 0.0,
+			"implicit_affixes": [
+				"of_the_glass_prism"
+			],
+			"affix_pool": {
+				"of_wisdom": 16,
+				"of_channeling": 14,
+				"of_int_mastery": 10,
+				"of_quickcast": 8
+			}
+		},
+		{
+			"id": "hollow_vessel_shroud",
+			"name": "Hollow Vessel Shroud",
+			"slot": "armor",
+			"rarity": "rare",
+			"tile": "robe_art_1.png",
+			"base_type": "armor_hollow",
+			"item_tier": 2,
+			"flavor_tags": [
+				"arcane"
+			],
+			"lore": "Woven for a body that gave up holding anything. The auras do not mind the emptiness; they prefer it.",
+			"drop_weights": [
+				10,
+				30,
+				5,
+				0,
+				0
+			],
+			"unique": true,
+			"enchant_chance": 0.0,
+			"implicit_affixes": [
+				"of_the_hollow_vessel"
+			],
+			"affix_pool": {
+				"of_vitality": 16,
+				"of_meditation": 12,
+				"of_zeal": 10,
+				"of_the_bear": 8
+			}
 		}
 	]
 }

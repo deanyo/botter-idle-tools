@@ -6014,6 +6014,132 @@
 					]
 				}
 			]
+		},
+		{
+			"_doc": "UNIQUE-ONLY signature (2026-08-07, Dean: unique gear modifiers should be 'almost build defining like a lot of poe's low level uniques'). RULE REWRITE, not a number: a reaction that fires also re-arms its own trigger status on the target, so a single combo can chain into itself. Turns the reaction web from a one-shot payoff into a loop, which is the entire build. Read in spell_reactions.try_hit_reaction. Deliberately NOT in any affix_pool - it reaches the player only as an implicit on Emberloop Torc, so a random amulet can never roll it.",
+			"id": "of_the_kindled_chain",
+			"family": "archetype",
+			"kind": "flag",
+			"name": "of the Kindled Chain",
+			"stat": "reaction_relay",
+			"applies_to": [
+				"amulet"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
+		},
+		{
+			"_doc": "UNIQUE-ONLY signature (2026-08-07). RULE REWRITE: every spell you cast counts as EVERY element for reaction purposes, so any spell can trigger any reaction. Normally a build must equip the right damage type to open a combo (fire->poisoned = ignite); this removes that constraint entirely and makes loadout-building free-form. Costs 25% spell damage as the price, expressed as a real trade via the P4 extra_stats substrate. Read in actor._apply_typed_damage's reaction gate.",
+			"id": "of_the_glass_prism",
+			"family": "archetype",
+			"kind": "flag",
+			"name": "of the Glass Prism",
+			"stat": "glass_prism",
+			"applies_to": [
+				"helm"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_damage_penalty_pct",
+					"tiers": [
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "UNIQUE-ONLY signature (2026-08-07). RULE REWRITE: your aura reservation is refunded entirely, but your maximum mana is halved. An aurastacker build normally trades pool for auras; this inverts the arithmetic so auras are free and spenders become the scarce thing. P2 measured a pure-aura build at 283% funded with mana 'genuinely irrelevant', so this is the item that makes that build shape a DECISION. Read in stat_calc's aura-reservation lane.",
+			"id": "of_the_hollow_vessel",
+			"family": "archetype",
+			"kind": "flag",
+			"name": "of the Hollow Vessel",
+			"stat": "hollow_vessel",
+			"applies_to": [
+				"armor"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
 		}
 	]
 }
