@@ -4987,6 +4987,76 @@
 			]
 		},
 		{
+			"id": "of_the_grove",
+			"family": "archetype",
+			"kind": "flat",
+			"name": "of the Grove",
+			"stat": "spell_totem_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_stormcaller_totem"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					3
+				]
+			]
+		},
+		{
+			"id": "of_overload",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of Overload",
+			"stat": "spell_totem_rate_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_stormcaller_totem"
+			],
+			"tiers": [
+				[
+					15,
+					25
+				],
+				[
+					25,
+					35
+				],
+				[
+					35,
+					50
+				],
+				[
+					50,
+					65
+				],
+				[
+					65,
+					80
+				]
+			]
+		},
+		{
 			"id": "of_kindling",
 			"family": "archetype",
 			"kind": "flag",

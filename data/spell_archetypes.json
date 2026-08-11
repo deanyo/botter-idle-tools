@@ -626,7 +626,7 @@
 		"spell_stormcaller_totem": {
 			"shape": "totem",
 			"school": "lightning",
-			"blurb": "Plants a totem that zaps the nearest enemy each tick. Brief lifetime, hard per-zap hits.",
+			"blurb": "Plants a stone totem at your feet that zaps the nearest enemy every 0.6s for 6s. Fire-and-forget — walk away and it keeps working.",
 			"cooldown": 10.0,
 			"damage": 12,
 			"element": "thunderous",
@@ -637,7 +637,9 @@
 			"range_cells": 4,
 			"tick": true,
 			"trail_flavor": "thunderous",
-			"icon": "forge_lightning_spire.png"
+			"icon": "forge_lightning_spire.png",
+			"lifetime_base": 6.0,
+			"zap_interval": 0.6
 		},
 		"spell_thorn_aura": {
 			"shape": "aura",
