@@ -195,13 +195,14 @@
 			"shape_params": {
 				"tint_flavor": "bone",
 				"target_mode": "cycle",
-				"scale_boost": 2.0,
+				"scale_boost": 1.4,
 				"proj_flags": {
 					"bounce_mode": true,
 					"bounce_max": 4,
 					"bounce_falloff": 0.7,
 					"bone_trail_mode": true
-				}
+				},
+				"physical_impact": true
 			},
 			"school": "physical",
 			"blurb": "Piercing bone shard that ricochets to up to 4 further enemies, each hop weaker than the last. Never hits the same target twice.",
@@ -215,7 +216,11 @@
 			"range_cells": 7,
 			"trail_flavor": "earth",
 			"icon": "grave_claw.png",
-			"compose_flavour": "bone"
+			"compose_flavour": "bone",
+			"flavour_elements": [
+				"poison",
+				"dark"
+			]
 		},
 		"spell_chain_lightning": {
 			"shape": "arc",
