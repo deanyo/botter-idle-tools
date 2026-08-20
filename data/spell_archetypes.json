@@ -482,7 +482,7 @@
 		"spell_iron_shot": {
 			"shape": "bolt",
 			"shape_params": {
-				"tint_flavor": "earth",
+				"tint_flavor": "iron",
 				"target_mode": "cycle",
 				"single_shot": true,
 				"scale_boost": 1.4,
