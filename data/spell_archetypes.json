@@ -490,7 +490,8 @@
 				"proj_flags": {
 					"piercing": true,
 					"pierce_falloff": 0.75
-				}
+				},
+				"physical_impact_style": "metal"
 			},
 			"school": "physical",
 			"blurb": "Heavy slow slug that punches through everything in its line, hitting each body once. Every body after the first takes 25% less than the one before, so it rewards a shot lined up down a corridor rather than a lucky angle.",
@@ -502,7 +503,7 @@
 			"projectile": "res://assets/tiles/projectiles/iron_shot.png",
 			"projectile_speed": 220.0,
 			"range_cells": 9,
-			"trail_flavor": "earth",
+			"trail_flavor": "iron",
 			"icon": "iron_shot.png",
 			"flavour_elements": [
 				"fire",
