@@ -6350,6 +6350,76 @@
 					3
 				]
 			]
+		},
+		{
+			"id": "of_the_full_bore",
+			"family": "archetype",
+			"kind": "pct",
+			"name": "of the Full Bore",
+			"stat": "spell_pierce_retain_pct",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_iron_shot"
+			],
+			"tiers": [
+				[
+					15,
+					25
+				],
+				[
+					25,
+					40
+				],
+				[
+					40,
+					55
+				],
+				[
+					55,
+					70
+				],
+				[
+					70,
+					85
+				]
+			]
+		},
+		{
+			"id": "of_the_hobbling_shot",
+			"family": "archetype",
+			"kind": "flat",
+			"name": "of the Hobbling Shot",
+			"stat": "spell_pierce_slow_secs",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_iron_shot"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					4
+				]
+			]
 		}
 	]
 }

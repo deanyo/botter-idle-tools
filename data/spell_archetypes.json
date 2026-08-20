@@ -483,7 +483,7 @@
 			"shape": "bolt",
 			"shape_params": {
 				"tint_flavor": "earth",
-				"target_mode": "first",
+				"target_mode": "cycle",
 				"single_shot": true,
 				"scale_boost": 1.4,
 				"physical_impact": true,
@@ -493,9 +493,9 @@
 				}
 			},
 			"school": "physical",
-			"blurb": "Heavy slow piercing shot — passes through every enemy in its line and hits each once.",
+			"blurb": "Heavy slow slug that punches through everything in its line, hitting each body once. Every body after the first takes 25% less than the one before, so it rewards a shot lined up down a corridor rather than a lucky angle.",
 			"cooldown": 11.4,
-			"damage": 32,
+			"damage": 24,
 			"element": "",
 			"mana_cost": 10,
 			"primary_stat": "str",
@@ -503,7 +503,12 @@
 			"projectile_speed": 220.0,
 			"range_cells": 9,
 			"trail_flavor": "earth",
-			"icon": "iron_shot.png"
+			"icon": "iron_shot.png",
+			"flavour_elements": [
+				"fire",
+				"poison",
+				"dark"
+			]
 		},
 		"spell_magic_dart": {
 			"shape": "bolt",

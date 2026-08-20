@@ -25770,6 +25770,40 @@
 			}
 		},
 		{
+			"id": "spell_iron_shot",
+			"name": "Iron Shot",
+			"slot": "spell",
+			"rarity": "common",
+			"tile": "spells/books/white.png",
+			"base_type": "spell_iron_shot",
+			"primary_stat": "str",
+			"damage_min": 20,
+			"damage_max": 27,
+			"damage_type": "physical",
+			"spell_cooldown": 11.4,
+			"item_tier": 1,
+			"flavor_tags": [],
+			"lore": "A fist-sized lump of iron, thrown hard enough that the second rank feels it too.",
+			"drop_weights": [
+				30,
+				30,
+				30,
+				30,
+				30
+			],
+			"unique": false,
+			"enchant_chance": 0.1,
+			"implicit_affixes": [],
+			"affix_pool": {
+				"of_the_full_bore": 30,
+				"of_the_hobbling_shot": 30,
+				"of_channeling": 10,
+				"of_crit": 10,
+				"of_quickcast": 10,
+				"of_unwavering_focus": 10
+			}
+		},
+		{
 			"id": "erolcha_wildwood_helm",
 			"name": "Erolcha's Wildwood Helm",
 			"slot": "helm",
