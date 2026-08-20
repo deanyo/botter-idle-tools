@@ -25730,6 +25730,7 @@
 				"of_channeling": 10,
 				"of_crit": 10,
 				"of_quickcast": 10,
+				"of_multicast": 10,
 				"of_unwavering_focus": 10
 			}
 		},
