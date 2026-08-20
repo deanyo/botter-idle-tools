@@ -514,27 +514,28 @@
 					0.55,
 					1.0
 				],
-				"target_mode": "distribute",
+				"target_mode": "cycle",
 				"scale_boost": 1.6,
-				"sprite_cycle": "res://assets/tiles/spells/effects/force_lance%d.png",
-				"sprite_cycle_frames": 8,
 				"proj_flags": {
 					"fragment_on_impact": true,
-					"apply_mark_stack": true
+					"apply_mark_stack": true,
+					"mark_window": 8.0,
+					"mark_stacks_per_hit": 1
 				}
 			},
 			"school": "arcane",
-			"blurb": "Fast arcane bolt — always hits its target. +1 split per Magic Dart Split affix (each shard hits an additional nearby enemy).",
-			"cooldown": 10.2,
-			"damage": 14,
+			"blurb": "Pins the target with lances of force. Each hit adds a pin (max 5) and every pin makes the target take +5% damage from your NON-physical hits for 8s — so it sets up the rest of your loadout instead of carrying the kill itself. Refreshes on every hit; the pins fall out if you stop.",
+			"cooldown": 5.6,
+			"damage": 10,
 			"element": "",
-			"mana_cost": 3,
+			"mana_cost": 8,
 			"primary_stat": "dex",
 			"projectile": "res://assets/tiles/projectiles/magic_dart.png",
 			"projectile_speed": 420.0,
 			"range_cells": 9,
 			"trail_flavor": "arcane",
-			"icon": "magic_dart.png"
+			"icon": "magic_dart.png",
+			"compose_flavour": "force"
 		},
 		"spell_sandblast": {
 			"shape": "sweep",

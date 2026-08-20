@@ -25735,6 +25735,41 @@
 			}
 		},
 		{
+			"id": "spell_magic_dart",
+			"name": "Force Lance",
+			"slot": "spell",
+			"rarity": "common",
+			"tile": "spells/books/white.png",
+			"base_type": "spell_magic_dart",
+			"primary_stat": "dex",
+			"damage_min": 8,
+			"damage_max": 12,
+			"damage_type": "arcane",
+			"spell_cooldown": 5.6,
+			"item_tier": 1,
+			"flavor_tags": [],
+			"lore": "A lance of shaped force, and then another, until the thing is held still enough to kill properly.",
+			"drop_weights": [
+				30,
+				30,
+				30,
+				30,
+				30
+			],
+			"unique": false,
+			"enchant_chance": 0.1,
+			"implicit_affixes": [],
+			"affix_pool": {
+				"of_the_lingering_pin": 30,
+				"of_the_driven_pin": 30,
+				"of_channeling": 10,
+				"of_crit": 10,
+				"of_quickcast": 10,
+				"of_multicast": 10,
+				"of_unwavering_focus": 10
+			}
+		},
+		{
 			"id": "erolcha_wildwood_helm",
 			"name": "Erolcha's Wildwood Helm",
 			"slot": "helm",

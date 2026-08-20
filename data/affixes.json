@@ -6280,6 +6280,76 @@
 					85
 				]
 			]
+		},
+		{
+			"id": "of_the_lingering_pin",
+			"family": "archetype",
+			"kind": "flat",
+			"name": "of the Lingering Pin",
+			"stat": "spell_mark_window_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_magic_dart"
+			],
+			"tiers": [
+				[
+					1,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					4
+				],
+				[
+					4,
+					6
+				],
+				[
+					6,
+					8
+				]
+			]
+		},
+		{
+			"id": "of_the_driven_pin",
+			"family": "archetype",
+			"kind": "flat",
+			"name": "of the Driven Pin",
+			"stat": "spell_mark_stacks_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"base_types": [
+				"spell_magic_dart"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					3
+				]
+			]
 		}
 	]
 }
