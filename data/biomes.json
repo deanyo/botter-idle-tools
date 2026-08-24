@@ -2336,16 +2336,12 @@
       ],
       "ambient_decor": [
         {
-          "id": "lantern_gold",
-          "weight": 70
+          "id": "magic_lamp",
+          "weight": 95
         },
         {
           "id": "orb_glow_1",
           "weight": 30
-        },
-        {
-          "id": "magic_lamp",
-          "weight": 25
         }
       ],
       "ambient_density": 0.018,
@@ -2533,7 +2529,7 @@
           "weight": 100
         },
         {
-          "id": "lantern_gold",
+          "id": "magic_lamp",
           "weight": 60
         }
       ],
@@ -2659,7 +2655,7 @@
           "weight": 40
         },
         {
-          "id": "lantern_gold",
+          "id": "magic_lamp",
           "weight": 30
         }
       ],
