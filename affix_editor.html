@@ -242,9 +242,7 @@ const STATS = [
   { id: "spell_holy_radiance",       label: "Holy Beam blesses caster (flag)" },
   { id: "spell_dart_split",          label: "Magic Dart splits (flag)" },
   { id: "spell_iron_dust",           label: "Iron Shot slows on pierce (flag)" },
-  { id: "spell_sandblast_blind",     label: "Sandblast blinds (flag)" },
   { id: "spell_drain_buff",          label: "Drain lifesteal buff (flag)" },
-  { id: "spell_shatter_aftershock",  label: "Shatter aftershock (flag)" },
 ];
 
 const RARITY_TIERS = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -419,9 +417,7 @@ function rarityHexForStat(stat) {
     case "spell_holy_radiance":
     case "spell_dart_split":
     case "spell_iron_dust":
-    case "spell_sandblast_blind":
-    case "spell_drain_buff":
-    case "spell_shatter_aftershock": return "#ffd478";
+    case "spell_drain_buff": return "#ffd478";
   }
   return "#ffb84d";
 }
