@@ -27,6 +27,7 @@
         "dungeon_alt"
       ],
       "floor_accent": [],
+      "depth_accent": "dungeon_dark_blood",
       "wall_primary": [
         "dungeon"
       ],
@@ -146,6 +147,7 @@
         "dungeon_dark"
       ],
       "floor_accent": [],
+      "depth_accent": "dungeon_dark_blood",
       "wall_primary": [
         "dungeon_dark"
       ],
@@ -263,6 +265,7 @@
         "mines"
       ],
       "floor_accent": [],
+      "depth_accent": "dungeon_dark_blood",
       "wall_primary": [
         "mines"
       ],
