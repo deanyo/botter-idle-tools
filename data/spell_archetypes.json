@@ -60,7 +60,14 @@
 					"dur": 2.0,
 					"scale_duration": true
 				}
-			}
+			},
+			"mint_elements": [
+				"fire",
+				"cold",
+				"thunderous",
+				"poison",
+				"dark"
+			]
 		},
 		"spell_cleave": {
 			"shape": "sweep",
@@ -86,7 +93,14 @@
 			"projectile_speed": 0.0,
 			"range_cells": 3,
 			"trail_flavor": "footwork",
-			"icon": "rending_blade.png"
+			"icon": "rending_blade.png",
+			"mint_elements": [
+				"fire",
+				"cold",
+				"thunderous",
+				"poison",
+				"dark"
+			]
 		},
 		"spell_bone_spear": {
 			"shape": "bolt",
@@ -350,7 +364,14 @@
 			"range_cells": 9,
 			"trail_flavor": "arcane",
 			"icon": "magic_dart.png",
-			"compose_flavour": "force"
+			"compose_flavour": "force",
+			"mint_elements": [
+				"fire",
+				"cold",
+				"thunderous",
+				"poison",
+				"dark"
+			]
 		},
 		"spell_static_field": {
 			"shape": "cloud",
@@ -463,7 +484,14 @@
 					"id": "cursed",
 					"dur": 3.0
 				}
-			}
+			},
+			"mint_elements": [
+				"fire",
+				"cold",
+				"thunderous",
+				"poison",
+				"dark"
+			]
 		},
 		"spell_wrath_charge": {
 			"shape": "buff",
