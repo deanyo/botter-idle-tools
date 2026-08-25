@@ -90,7 +90,9 @@
           "depth_weight": 4.0
         }
       ],
-      "floor_secondary": [],
+      "floor_secondary": [
+        "dungeon_dark"
+      ],
       "wall_alternates": [
         {
           "weight": 1,
@@ -102,6 +104,12 @@
             "@dungeon_alt_4",
             "@dungeon_alt_5"
           ]
+        },
+        {
+          "prefixes": [
+            "torch"
+          ],
+          "weight": 1
         }
       ],
       "edge_overlay": {
@@ -222,12 +230,6 @@
         "@dungeon_dark_alt_4",
         "@dungeon_dark_alt_5"
       ],
-      "wall_alternates": [
-        {
-          "weight": 1,
-          "prefixes": []
-        }
-      ],
       "edge_overlay": {
         "shadow": "dark",
         "patches": []
@@ -270,7 +272,9 @@
       "floor_primary": [
         "mines"
       ],
-      "floor_accent": [],
+      "floor_accent": [
+        "cobble_blood"
+      ],
       "depth_accent": "dungeon_dark_blood",
       "wall_primary": [
         "mines"
@@ -344,7 +348,14 @@
         "@dungeon_11",
         "@dungeon_0"
       ],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "torch"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -384,7 +395,9 @@
       "floor_primary": [
         "lair"
       ],
-      "floor_accent": [],
+      "floor_accent": [
+        "floor_vines"
+      ],
       "wall_primary": [
         "lair"
       ],
@@ -516,6 +529,12 @@
             "@forest_1",
             "@forest_2"
           ]
+        },
+        {
+          "prefixes": [
+            "wall_vines"
+          ],
+          "weight": 1
         }
       ],
       "modulate": [
@@ -569,7 +588,9 @@
         }
       ],
       "liquid_type": "water",
-      "floor_secondary": [],
+      "floor_secondary": [
+        "floor_vines"
+      ],
       "sigil_set": [],
       "tier": 2,
       "cr_recommended": 120,
@@ -701,7 +722,9 @@
         "patches": []
       },
       "liquid_type": "water",
-      "floor_secondary": [],
+      "floor_secondary": [
+        "swamp_alt"
+      ],
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
@@ -738,7 +761,9 @@
       "floor_primary": [
         "snake"
       ],
-      "floor_accent": [],
+      "floor_accent": [
+        "floor_sand_rock"
+      ],
       "wall_primary": [
         "snake"
       ],
@@ -797,7 +822,14 @@
       },
       "liquid_type": "water",
       "floor_secondary": [],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "sandstone_wall"
+          ],
+          "weight": 1
+        }
+      ],
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
@@ -915,7 +947,9 @@
         "patches": []
       },
       "liquid_type": "water",
-      "floor_secondary": [],
+      "floor_secondary": [
+        "floor_sand_stone"
+      ],
       "sigil_set": [],
       "tier": 3,
       "cr_recommended": 280,
@@ -1028,7 +1062,14 @@
         "@tomb_2",
         "@tomb_1"
       ],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "brick_brown-vines"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -1131,9 +1172,9 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "sigil_straight_east_west",
+        "sigil_straight_north_south",
+        "sigil_straight_east_west_northeast_northwest"
       ],
       "sigil_density": [
         1,
@@ -1146,7 +1187,15 @@
         "kind": "dust",
         "density": 0.6,
         "add": true
-      }
+      },
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@grate"
+          ],
+          "weight": 1
+        }
+      ]
     },
     "crypt": {
       "display_name": "the Crypt",
@@ -1191,6 +1240,12 @@
           "prefixes": [
             "@boulder"
           ]
+        },
+        {
+          "prefixes": [
+            "crumbled_column"
+          ],
+          "weight": 1
         }
       ],
       "modulate": [
@@ -1264,10 +1319,7 @@
       ],
       "liquid_type": "water",
       "floor_secondary": [
-        "@tomb_alt_0",
-        "@tomb_alt_1",
-        "@tomb_alt_2",
-        "@tomb_alt_3"
+        "crypt_alt"
       ],
       "edge_overlay": {
         "shadow": "dark",
@@ -1363,9 +1415,10 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "algiz",
+        "sigil_algiz_left",
+        "sigil_algiz_right",
+        "x-shaped"
       ],
       "sigil_density": [
         1,
@@ -1373,7 +1426,15 @@
       ],
       "liquid_type": "",
       "floor_secondary": [],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@sarcophagus_sealed",
+            "@sarcophagus_open"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -1507,7 +1568,9 @@
         }
       ],
       "liquid_type": "lava",
-      "floor_secondary": [],
+      "floor_secondary": [
+        "forge_alt2"
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -1611,7 +1674,15 @@
       "floor_secondary": [
         "glacier_alt"
       ],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@crystal_wall_lightcyan",
+            "@crystal_wall_white"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -1648,7 +1719,10 @@
       "wall_primary": [
         "slime"
       ],
-      "wall_accent": [],
+      "wall_accent": [
+        "@mold_3",
+        "@mold_4"
+      ],
       "wall_alternates": [
         {
           "weight": 25,
@@ -1826,6 +1900,12 @@
             "@forest_alt_1",
             "@forest_alt_2"
           ]
+        },
+        {
+          "prefixes": [
+            "@honeycomb"
+          ],
+          "weight": 1
         }
       ],
       "sigil_set": [],
@@ -1916,10 +1996,12 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus",
-        "x-shaped"
+        "sigil_y_left",
+        "sigil_y_right",
+        "sigil_y_north",
+        "sigil_y_south",
+        "y-shaped_east",
+        "y-shaped_west"
       ],
       "sigil_density": [
         1,
@@ -1936,7 +2018,14 @@
         "@mines_7",
         "@mines_8"
       ],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "lab-rock"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -2044,7 +2133,9 @@
       "wall_alternates": [
         {
           "weight": 1,
-          "prefixes": []
+          "prefixes": [
+            "cobalt_rock"
+          ]
         }
       ],
       "edge_overlay": {
@@ -2156,9 +2247,10 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "sigil_sharp_east_northeast",
+        "sigil_sharp_west_southwest",
+        "v-shaped_north",
+        "v-shaped_south"
       ],
       "sigil_density": [
         2,
@@ -2171,7 +2263,14 @@
         "@vaults_alt3_2",
         "@vaults_alt3_3"
       ],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "permarock_clear_red"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -2277,9 +2376,10 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "sigil_wide_east_northwest",
+        "sigil_wide_north_southeast",
+        "sigil_wide_south_northeast",
+        "sigil_wide_west_southeast"
       ],
       "sigil_density": [
         2,
@@ -2290,7 +2390,18 @@
       "boss_id": "boss_tiamat",
       "atmosphere": {
         "kind": "sparks"
-      }
+      },
+      "floor_secondary": [
+        "crystal_floor"
+      ],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@crystal_wall_magenta"
+          ],
+          "weight": 1
+        }
+      ]
     },
     "elf": {
       "display_name": "the Elven Halls",
@@ -2369,16 +2480,26 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "sigil_curve_north_east",
+        "sigil_curve_north_west",
+        "sigil_curve_south_east",
+        "sigil_curve_south_west"
       ],
       "sigil_density": [
         1,
         2
       ],
-      "floor_secondary": [],
-      "wall_alternates": [],
+      "floor_secondary": [
+        "crystal_floor"
+      ],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@crystal_wall_lightcyan"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -2416,7 +2537,9 @@
       "floor_primary": [
         "spider"
       ],
-      "floor_accent": [],
+      "floor_accent": [
+        "moss"
+      ],
       "wall_primary": [
         "spider"
       ],
@@ -2427,6 +2550,12 @@
           "prefixes": [
             "tree"
           ]
+        },
+        {
+          "prefixes": [
+            "wall_vines"
+          ],
+          "weight": 1
         }
       ],
       "modulate": [
@@ -2564,14 +2693,22 @@
       "sigil_set": [
         "sigil_circle",
         "sigil_cross",
-        "sigil_rhombus"
+        "algiz"
       ],
       "sigil_density": [
         1,
         2
       ],
       "floor_secondary": [],
-      "wall_alternates": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@banner_1",
+            "torch"
+          ],
+          "weight": 1
+        }
+      ],
       "edge_overlay": {
         "patches": []
       },
@@ -2688,9 +2825,9 @@
         }
       ],
       "sigil_set": [
-        "sigil_circle",
-        "sigil_cross",
-        "sigil_rhombus"
+        "sigil_straight_northeast_southwest",
+        "sigil_straight_northwest_southeast",
+        "x-shaped"
       ],
       "sigil_density": [
         1,
@@ -2715,6 +2852,12 @@
             "@vaults_alt_4",
             "@vaults_alt_5"
           ]
+        },
+        {
+          "prefixes": [
+            "cobalt_rock"
+          ],
+          "weight": 1
         }
       ],
       "edge_overlay": {
