@@ -132,6 +132,10 @@
 			"flavour_elements": [
 				"poison",
 				"dark"
+			],
+			"mint_elements": [
+				"poison",
+				"dark"
 			]
 		},
 		"spell_chain_lightning": {
@@ -329,6 +333,11 @@
 			"trail_flavor": "iron",
 			"icon": "iron_shot.png",
 			"flavour_elements": [
+				"fire",
+				"poison",
+				"dark"
+			],
+			"mint_elements": [
 				"fire",
 				"poison",
 				"dark"
