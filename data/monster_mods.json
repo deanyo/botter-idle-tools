@@ -92,7 +92,7 @@
       "id": "lightning_aura",
       "label": "Storm-Wreathed",
       "aura_dmg_per_sec": 4,
-      "aura_element": "thunderous",
+      "aura_element": "lightning",
       "aura_radius": 2,
       "glyph_icon": "spells/icons/chain_lightning.png",
       "glyph_tint": [1.2, 1.1, 0.4, 1.0]
