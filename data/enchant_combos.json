@@ -12,7 +12,7 @@
     },
     {
       "id": "plasma",          "name": "Plasma",
-      "components": ["fire","thunderous"],
+      "components": ["fire","lightning"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "plasma",
       "description": "+25% damage; chance to chain to one adjacent foe on hit."
@@ -47,7 +47,7 @@
     },
     {
       "id": "brittle_storm",   "name": "Brittle Storm",
-      "components": ["cold","thunderous"],
+      "components": ["cold","lightning"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "brittle_storm",
       "description": "Frozen targets take +50% lightning damage."
@@ -82,28 +82,28 @@
     },
     {
       "id": "judgement",       "name": "Judgement",
-      "components": ["holy","thunderous"],
+      "components": ["holy","lightning"],
       "color_a": [1.00, 0.92, 0.55], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "judgement",
       "description": "+10% crit chance; crits chain to one adjacent foe."
     },
     {
       "id": "acid_storm",      "name": "Acid Storm",
-      "components": ["poison","thunderous"],
+      "components": ["poison","lightning"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "acid_storm",
       "description": "Lightning hits apply a small poison stack."
     },
     {
       "id": "stormcurse",      "name": "Stormcurse",
-      "components": ["dark","thunderous"],
+      "components": ["dark","lightning"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.55, 0.30, 0.85],
       "effect_id": "stormcurse",
       "description": "Damage to enemies in fog cells is doubled."
     },
     {
       "id": "blood_arc",       "name": "Blood Arc",
-      "components": ["thunderous","vampiric"],
+      "components": ["lightning","vampiric"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "blood_arc",
       "description": "On hit, restore 1% max HP."

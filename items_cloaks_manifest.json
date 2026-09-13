@@ -121,7 +121,7 @@
       "flavor_tags": [
         "swiftness",
         "flying",
-        "thunderous"
+        "lightning"
       ],
       "lore": "When they move, light moves out of the way.",
       "drop_weights": [
@@ -609,7 +609,7 @@
       "enchant_chance": 0.05,
       "evasion": 6,
       "flavor_tags": [
-        "thunderous"
+        "lightning"
       ],
       "id": "travelers_cloak_stormtouched",
       "implicit_affixes": [],
@@ -719,7 +719,7 @@
       "enchant_chance": 0.05,
       "evasion": 6,
       "flavor_tags": [
-        "thunderous"
+        "lightning"
       ],
       "id": "travelers_cloak_stormtouched_ironclad",
       "implicit_affixes": [],

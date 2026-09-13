@@ -64,7 +64,7 @@
 			"mint_elements": [
 				"fire",
 				"cold",
-				"thunderous",
+				"lightning",
 				"poison",
 				"dark"
 			]
@@ -97,7 +97,7 @@
 			"mint_elements": [
 				"fire",
 				"cold",
-				"thunderous",
+				"lightning",
 				"poison",
 				"dark"
 			]
@@ -144,13 +144,13 @@
 			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
 			"cooldown": 11.6,
 			"damage": 16,
-			"element": "thunderous",
+			"element": "lightning",
 			"mana_cost": 8,
 			"primary_stat": "dex",
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 7,
-			"trail_flavor": "thunderous",
+			"trail_flavor": "lightning",
 			"icon": "chain_lightning.png"
 		},
 		"spell_curse_brittlebone": {
@@ -377,7 +377,7 @@
 			"mint_elements": [
 				"fire",
 				"cold",
-				"thunderous",
+				"lightning",
 				"poison",
 				"dark"
 			]
@@ -408,14 +408,14 @@
 			"blurb": "Plants a longer-lived totem than Stormcaller. Continuously zaps the closest enemy in range.",
 			"cooldown": 9.0,
 			"damage": 8,
-			"element": "thunderous",
+			"element": "lightning",
 			"mana_cost": 8,
 			"primary_stat": "dex",
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 6,
 			"tick": true,
-			"trail_flavor": "thunderous",
+			"trail_flavor": "lightning",
 			"icon": "fulminant_prism.png"
 		},
 		"spell_stormcaller_totem": {
@@ -424,14 +424,14 @@
 			"blurb": "Plants a stone totem at your feet that zaps the nearest enemy every 0.6s for 6s. Fire-and-forget — walk away and it keeps working.",
 			"cooldown": 10.0,
 			"damage": 12,
-			"element": "thunderous",
+			"element": "lightning",
 			"mana_cost": 10,
 			"primary_stat": "dex",
 			"projectile": "",
 			"projectile_speed": 0.0,
 			"range_cells": 4,
 			"tick": true,
-			"trail_flavor": "thunderous",
+			"trail_flavor": "lightning",
 			"icon": "forge_lightning_spire.png",
 			"lifetime_base": 6.0,
 			"zap_interval": 0.6
@@ -497,7 +497,7 @@
 			"mint_elements": [
 				"fire",
 				"cold",
-				"thunderous",
+				"lightning",
 				"poison",
 				"dark"
 			]

@@ -75,7 +75,7 @@
       "color": "#cc88ff",
       "desc": "Future: dodge chance. Currently: Crit affix bonus."
     },
-    "thunderous": {
+    "lightning": {
       "color": "#ffaa44",
       "desc": "Future: stomp emit shockwave on charge. Currently: Strength affix bonus."
     }
@@ -356,7 +356,7 @@
       "item_tier": 3,
       "flavor_tags": [
         "fortified",
-        "thunderous"
+        "lightning"
       ],
       "lore": "Iron plates over felt. Heavy enough to be heard.",
       "drop_weights": [
@@ -562,7 +562,7 @@
       "item_tier": 4,
       "flavor_tags": [
         "earth",
-        "thunderous"
+        "lightning"
       ],
       "lore": "Each step leaves a shallow crater in stone.",
       "drop_weights": [
@@ -725,7 +725,7 @@
       "item_tier": 5,
       "flavor_tags": [
         "earth",
-        "thunderous",
+        "lightning",
         "rampaging"
       ],
       "lore": "What the wearer steps on does not get up.",
@@ -1018,7 +1018,7 @@
       "evasion": 15,
       "flavor_tags": [
         "earth",
-        "thunderous"
+        "lightning"
       ],
       "id": "earthshaker_treads_ironclad",
       "implicit_affixes": [],

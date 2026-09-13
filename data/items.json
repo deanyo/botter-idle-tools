@@ -7838,7 +7838,7 @@
 			"item_tier": 3,
 			"flavor_tags": [
 				"fortified",
-				"thunderous"
+				"lightning"
 			],
 			"lore": "Iron plates over felt. Heavy enough to be heard.",
 			"drop_weights": [
@@ -7973,7 +7973,7 @@
 			"item_tier": 4,
 			"flavor_tags": [
 				"earth",
-				"thunderous"
+				"lightning"
 			],
 			"lore": "Each step leaves a shallow crater in stone.",
 			"drop_weights": [
@@ -8203,7 +8203,7 @@
 			"flavor_tags": [
 				"swiftness",
 				"flying",
-				"thunderous"
+				"lightning"
 			],
 			"lore": "When they move, light moves out of the way.",
 			"drop_weights": [
@@ -8361,7 +8361,7 @@
 			"item_tier": 5,
 			"flavor_tags": [
 				"earth",
-				"thunderous",
+				"lightning",
 				"rampaging"
 			],
 			"lore": "What the wearer steps on does not get up.",
@@ -12936,7 +12936,7 @@
 			"evasion": 18,
 			"item_tier": 5,
 			"flavor_tags": [
-				"thunderous",
+				"lightning",
 				"swiftness"
 			],
 			"lore": "The leather hisses faintly, as though it remembers.",
@@ -16218,7 +16218,7 @@
 			"speed": 0.6,
 			"item_tier": 2,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"lore": "Forged with care, used with intent.",
 			"drop_weights": [
@@ -16272,7 +16272,7 @@
 			"speed": 0.6,
 			"item_tier": 3,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"lore": "Made by a hand that knew what it was for.",
 			"drop_weights": [
@@ -16327,7 +16327,7 @@
 			"speed": 0.85,
 			"item_tier": 4,
 			"flavor_tags": [
-				"thunderous",
+				"lightning",
 				"demon",
 				"fire"
 			],
@@ -18004,7 +18004,7 @@
 			"enchant_chance": 0.05,
 			"evasion": 6,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"id": "travelers_cloak_stormtouched",
 			"implicit_affixes": [
@@ -19113,7 +19113,7 @@
 			],
 			"enchant_chance": 0.05,
 			"flavor_tags": [
-				"thunderous",
+				"lightning",
 				"holy"
 			],
 			"id": "bullwhip_gilded",
@@ -20592,7 +20592,7 @@
 			"enchant_chance": 0.05,
 			"evasion": 6,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"id": "travelers_cloak_stormtouched_ironclad",
 			"implicit_affixes": [
@@ -22385,7 +22385,7 @@
 			"evasion": 15,
 			"flavor_tags": [
 				"earth",
-				"thunderous"
+				"lightning"
 			],
 			"id": "earthshaker_treads_ironclad",
 			"implicit_affixes": [
@@ -25352,7 +25352,7 @@
 			"spell_cooldown": 9.0,
 			"item_tier": 1,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"lore": "Charged air that will not settle. Zaps the closest enemy for as long as the field holds.",
 			"drop_weights": [
@@ -25389,7 +25389,7 @@
 			"spell_cooldown": 10.0,
 			"item_tier": 1,
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"lore": "A hand-cut obelisk that drinks the storm. Plant it, walk on — it keeps working without you.",
 			"drop_weights": [
@@ -26110,7 +26110,7 @@
 				"mode": "colorize"
 			},
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"two_handed": false,
 			"lore": "Brass conducts more than electricity.",
@@ -26538,7 +26538,7 @@
 				"mode": "colorize"
 			},
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"two_handed": false,
 			"lore": "A flawless lattice. Storms wait inside.",
@@ -26789,7 +26789,7 @@
 				"mode": "colorize"
 			},
 			"flavor_tags": [
-				"thunderous"
+				"lightning"
 			],
 			"two_handed": false,
 			"drop_weights": [
