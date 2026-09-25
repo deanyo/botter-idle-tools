@@ -25477,7 +25477,16 @@
 				"of_embers",
 				"of_pyromancer"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_might": 18,
+				"of_sharpness": 12,
+				"of_str_mastery": 12,
+				"of_sundering": 10,
+				"of_crit": 10,
+				"of_berserker": 8,
+				"of_armor_breaker": 8,
+				"of_haste": 8
+			},
 			"vault_drop": "forge_lava_pit_5x5"
 		},
 		{
@@ -25511,7 +25520,16 @@
 				"of_might",
 				"of_kingslayer"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_sharpness": 14,
+				"of_unique_slayer": 12,
+				"of_sundering": 12,
+				"of_str_mastery": 12,
+				"of_armor_breaker": 10,
+				"of_crit": 10,
+				"of_executioner": 8,
+				"of_first_strike": 6
+			},
 			"vault_drop": "forge_lava_bridge_7x3"
 		},
 		{
@@ -25540,7 +25558,20 @@
 				"of_cryomancer",
 				"of_recoup"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_frost": 20,
+				"of_wisdom": 16,
+				"of_warding": 14,
+				"of_vitality": 10,
+				"of_int_mastery": 10,
+				"of_channeling": 8,
+				"of_mystic": 8,
+				"of_meditation": 1,
+				"of_arcane_pool": 1,
+				"of_arcane_siphon": 1,
+				"of_high_tide": 1,
+				"of_arcane_battery": 1
+			},
 			"vault_drop": "glacier_ice_shrine_5x5"
 		},
 		{
@@ -25569,7 +25600,16 @@
 				"of_regen",
 				"of_smoldering_step"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_vitality": 16,
+				"of_the_cat": 14,
+				"of_poison_resist": 12,
+				"of_the_bear": 10,
+				"of_serpent_growth": 8,
+				"of_warden_step": 8,
+				"of_recoup": 6,
+				"of_kiter": 6
+			},
 			"vault_drop": "lair_tree_grove_5x5"
 		},
 		{
@@ -25598,7 +25638,16 @@
 				"of_chainspark",
 				"of_avenger"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_storms": 14,
+				"of_crit": 14,
+				"of_haste": 12,
+				"of_velocity": 8,
+				"of_tempest": 8,
+				"of_lightning_resist": 8,
+				"of_cold_resist": 8,
+				"of_high_tide": 6
+			},
 			"vault_drop": "shoals_tide_pool_5x5"
 		},
 		{
@@ -25627,7 +25676,16 @@
 				"of_int_mastery",
 				"of_tactician"
 			],
-			"affix_pool": {},
+			"affix_pool": {
+				"of_nightcaller": 16,
+				"of_wisdom": 14,
+				"of_vitality": 12,
+				"of_revenant": 10,
+				"of_poison_resist": 8,
+				"of_channeling": 8,
+				"of_meditation": 1,
+				"of_archmage": 1
+			},
 			"vault_drop": "crypt_bone_chamber_5x5"
 		},
 		{
