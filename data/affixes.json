@@ -6095,6 +6095,9 @@
 			"applies_to": [
 				"amulet"
 			],
+			"base_types": [
+				"amulet_ember"
+			],
 			"tiers": [
 				[
 					1,
@@ -6127,6 +6130,9 @@
 			"stat": "glass_prism",
 			"applies_to": [
 				"helm"
+			],
+			"base_types": [
+				"helm_prism"
 			],
 			"tiers": [
 				[
@@ -6187,6 +6193,9 @@
 			"stat": "hollow_vessel",
 			"applies_to": [
 				"armor"
+			],
+			"base_types": [
+				"armor_hollow"
 			],
 			"tiers": [
 				[
