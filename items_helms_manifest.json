@@ -135,7 +135,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -145,8 +148,8 @@
       "rarity": "common",
       "tile": "cap_2.png",
       "base_type": "cap",
-      "armor": 4,
-      "evasion": 3,
+      "armor": 3,
+      "evasion": 4,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Soft leather. Better than nothing.",
@@ -176,7 +179,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -186,8 +192,8 @@
       "rarity": "common",
       "tile": "helmet_1.png",
       "base_type": "skullcap",
-      "armor": 4,
-      "evasion": 3,
+      "armor": 5,
+      "evasion": 2,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Cold iron. Better than soft leather.",
@@ -217,7 +223,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -241,7 +250,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -258,7 +269,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "overlay": "helm_padded_coif"
     },
@@ -285,7 +299,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -302,7 +318,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -328,7 +347,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -345,7 +366,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -369,7 +393,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -386,7 +412,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -412,7 +441,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -429,7 +460,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -456,7 +490,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -473,7 +510,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -499,7 +539,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -516,7 +559,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -542,7 +588,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -559,7 +608,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 220,
@@ -591,7 +643,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -608,7 +663,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 200,
@@ -641,7 +699,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_quickcast"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -658,7 +719,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -685,7 +749,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -702,7 +770,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -729,7 +800,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -746,7 +821,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -773,7 +851,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -790,7 +871,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -817,7 +901,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -834,7 +921,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -861,7 +951,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -878,7 +972,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 50,
@@ -910,7 +1007,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_might",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -927,7 +1028,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -954,7 +1058,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_might",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -971,7 +1079,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -998,7 +1109,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_might",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1015,7 +1130,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -1042,7 +1160,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_quickcast",
+        "of_meditation"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1057,7 +1179,10 @@
         "of_resonance": 12,
         "of_channeling": 12,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 2,
+        "of_thrift": 2,
+        "of_archmage": 2
       }
     },
     {
@@ -1084,7 +1209,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_quickcast",
+        "of_arcane_flow"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1099,7 +1228,10 @@
         "of_resonance": 12,
         "of_channeling": 12,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 2,
+        "of_thrift": 2,
+        "of_archmage": 2
       }
     },
     {
@@ -1126,7 +1258,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_fire_resist",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1141,7 +1277,10 @@
         "of_resonance": 12,
         "of_channeling": 12,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 2,
+        "of_thrift": 2,
+        "of_archmage": 2
       },
       "default_tint": {
         "hue": 30,
@@ -1173,7 +1312,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_wisdom",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1197,7 +1340,9 @@
         "of_iron_aegis": 4,
         "of_arcane_pool": 5,
         "of_arcane_flow": 5,
-        "of_thrift": 6
+        "of_thrift": 6,
+        "of_meditation": 5,
+        "of_archmage": 5
       }
     },
     {
@@ -1224,7 +1369,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_might",
+        "of_obstinance"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1239,7 +1388,10 @@
         "of_resonance": 12,
         "of_channeling": 12,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 2,
+        "of_thrift": 2,
+        "of_archmage": 2
       },
       "default_tint": {
         "hue": 45,
@@ -1270,7 +1422,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1287,7 +1441,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "overlay": "helm_jesters_cap"
     },
@@ -1315,7 +1472,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1332,7 +1492,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -1359,7 +1522,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1376,7 +1543,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 180,
@@ -1408,7 +1578,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1425,7 +1599,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 280,
@@ -1459,7 +1636,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_iron_aegis",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1476,7 +1657,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "default_tint": {
         "hue": 0,
@@ -1509,7 +1693,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_quickcast"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1526,7 +1713,10 @@
         "of_crit": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       }
     },
     {
@@ -1553,7 +1743,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_unbroken",
+        "of_iron_aegis",
+        "of_thorns"
+      ],
       "affix_pool": {
         "of_might": 14,
         "of_finesse": 14,
@@ -1568,7 +1762,10 @@
         "of_resonance": 12,
         "of_channeling": 12,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 2,
+        "of_thrift": 2,
+        "of_archmage": 2
       },
       "overlay": "urand_pondering_new",
       "default_tint": {
@@ -1596,7 +1793,10 @@
         "of_dark_resist": 18,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 4,
+        "of_thrift": 4,
+        "of_archmage": 4
       },
       "armor": 10,
       "base_type": "hood",
@@ -1620,7 +1820,10 @@
         "dark"
       ],
       "id": "green_mask_shadowed",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_the_cat"
+      ],
       "item_tier": 3,
       "lore": "Hard to see in dim light, even when held directly before you.",
       "name": "Shadowed Green Mask",
@@ -1647,7 +1850,10 @@
         "of_crit": 12,
         "of_shadows": 22,
         "of_lifesteal": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "armor": 24,
       "base_type": "crown",
@@ -1702,7 +1908,10 @@
         "of_sharpness": 14,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 4,
+        "of_thrift": 4,
+        "of_archmage": 4
       },
       "armor": 7,
       "base_type": "helmet",
@@ -1729,7 +1938,10 @@
         "warding"
       ],
       "id": "etched_helm_ironclad",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "item_tier": 2,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Etched Helm",
@@ -1756,7 +1968,10 @@
         "of_crit": 12,
         "of_shadows": 22,
         "of_lifesteal": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "armor": 24,
       "base_type": "wizard_hat",
@@ -1812,7 +2027,10 @@
         "of_lifesteal": 12,
         "of_sage": 8,
         "of_scribe": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "armor": 10,
       "base_type": "wizard_hat",
@@ -1840,7 +2058,10 @@
         "regen"
       ],
       "id": "wizard_hat_bone",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_quickcast"
+      ],
       "item_tier": 3,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
       "name": "Bone Wizard's Hat",
@@ -1866,7 +2087,10 @@
         "of_crit": 12,
         "of_shadows": 22,
         "of_dark_resist": 18,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 3,
+        "of_thrift": 3,
+        "of_archmage": 3
       },
       "armor": 24,
       "base_type": "crown",
@@ -1940,7 +2164,10 @@
       "affix_pool": {
         "of_might": 20,
         "of_vitality": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "default_tint": {
         "hue": 25,
@@ -1979,7 +2206,10 @@
       "affix_pool": {
         "of_finesse": 18,
         "of_crit": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "default_tint": {
         "hue": 200,
@@ -2019,7 +2249,12 @@
       "affix_pool": {
         "of_pyromancer": 18,
         "of_int_mastery": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "default_tint": {
         "hue": 0,
@@ -2059,7 +2294,10 @@
         "of_wisdom": 16,
         "of_vitality": 18,
         "of_holy_resist": 18,
-        "of_regen": 16
+        "of_regen": 16,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "boss_drop": "boss_psyche",
       "biome_pool": [
@@ -2101,7 +2339,10 @@
         "of_wisdom": 20,
         "of_vitality": 22,
         "of_channeling": 16,
-        "of_quickcast": 14
+        "of_quickcast": 14,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "boss_drop": "boss_tiamat",
       "biome_pool": [
@@ -2146,7 +2387,10 @@
         "of_lightning_resist": 10,
         "of_holy_resist": 8,
         "of_poison_resist": 8,
-        "of_dark_resist": 8
+        "of_dark_resist": 8,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
       },
       "default_tint": {
         "hue": 0,
@@ -2180,8 +2424,96 @@
         "of_int_mastery",
         "of_tactician"
       ],
-      "affix_pool": {},
+      "affix_pool": {
+        "of_nightcaller": 16,
+        "of_wisdom": 14,
+        "of_vitality": 12,
+        "of_revenant": 10,
+        "of_poison_resist": 8,
+        "of_channeling": 8,
+        "of_meditation": 1,
+        "of_archmage": 1
+      },
       "vault_drop": "crypt_bone_chamber_5x5"
+    },
+    {
+      "id": "erolcha_wildwood_helm",
+      "name": "Erolcha's Wildwood Helm",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "elven_leather_helm.png",
+      "base_type": "helm",
+      "armor": 5,
+      "evasion": 8,
+      "item_tier": 3,
+      "flavor_tags": [
+        "stealth"
+      ],
+      "lore": "She knew every animal trail in the forest. Wear her helm; their secrets are yours.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_glass_cannon",
+        "of_executioner",
+        "of_finesse"
+      ],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_glass_cannon": 18,
+        "of_executioner": 14,
+        "of_crit": 14,
+        "of_the_cat": 12,
+        "of_meditation": 1,
+        "of_thrift": 1,
+        "of_archmage": 1
+      },
+      "default_tint": {
+        "hue": 105.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "boss_drop": "boss_erolcha",
+      "biome_pool": [
+        "forest"
+      ]
+    },
+    {
+      "id": "shattered_prism_crown",
+      "name": "Shattered Prism Crown",
+      "slot": "helm",
+      "rarity": "rare",
+      "tile": "hat_3.png",
+      "base_type": "helm_prism",
+      "item_tier": 1,
+      "flavor_tags": [
+        "arcane"
+      ],
+      "lore": "Cracked through every facet. Light leaves it as every colour at once, and none of them true.",
+      "drop_weights": [
+        30,
+        12,
+        0,
+        0,
+        0
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_the_glass_prism"
+      ],
+      "affix_pool": {
+        "of_wisdom": 16,
+        "of_channeling": 14,
+        "of_int_mastery": 10,
+        "of_quickcast": 8
+      }
     }
   ]
 }

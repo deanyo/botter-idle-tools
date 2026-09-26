@@ -89,8 +89,8 @@
       "rarity": "common",
       "tile": "buckler_1_old.png",
       "base_type": "buckler",
-      "armor": 6,
-      "evasion": 2,
+      "armor": 5,
+      "evasion": 3,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Round, plain, splintery.",
@@ -124,7 +124,7 @@
         "sat": 1.0,
         "mode": "colorize"
       },
-      "block_chance": 8,
+      "block_chance": 7,
       "block_amount": 5
     },
     {
@@ -134,8 +134,8 @@
       "rarity": "common",
       "tile": "buckler_1_new.png",
       "base_type": "buckler",
-      "armor": 6,
-      "evasion": 2,
+      "armor": 7,
+      "evasion": 1,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Hammered iron disc with a strap.",
@@ -170,7 +170,7 @@
         "mode": "colorize",
         "colorize_strength": 0.4
       },
-      "block_chance": 8,
+      "block_chance": 9,
       "block_amount": 5
     },
     {
@@ -194,7 +194,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -241,7 +243,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -290,7 +294,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -335,7 +341,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -382,7 +390,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -430,7 +440,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -478,7 +491,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -521,7 +536,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -568,7 +586,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -615,7 +636,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -665,7 +688,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -713,7 +738,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -762,7 +790,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -810,7 +840,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -861,7 +894,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -909,7 +944,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -1100,7 +1138,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -1148,7 +1188,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -1196,7 +1238,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -1238,7 +1283,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
@@ -1408,7 +1455,11 @@
         "warding"
       ],
       "id": "bullseye_inverse",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding",
+        "of_inverse",
+        "of_unbroken"
+      ],
       "item_tier": 5,
       "lore": "Looking at it too long inverts what you saw before.",
       "name": "Inverse Bullseye",
@@ -1462,7 +1513,9 @@
         "warding"
       ],
       "id": "elven_buckler_2_pale",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "item_tier": 2,
       "lore": "Bleached past white into a color the eye cannot name.",
       "name": "Pale Elven Targe",
@@ -1515,7 +1568,9 @@
         "fortified"
       ],
       "id": "tower_shield_ironclad",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark"
+      ],
       "item_tier": 4,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Tower Shield",
@@ -1631,7 +1686,10 @@
         "lordly"
       ],
       "id": "donald_shield_bone",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_bulwark",
+        "of_the_bear"
+      ],
       "item_tier": 4,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
       "name": "Bone Donald's Shield",
@@ -1683,7 +1741,9 @@
         "cold"
       ],
       "id": "dwarven_buckler_2_frostbound",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "item_tier": 3,
       "lore": "A rime of ice will not melt, no matter how warm the room.",
       "name": "Frostbound Dwarven Roundel",
@@ -1739,7 +1799,10 @@
         "warding"
       ],
       "id": "elven_shield_bone",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding",
+        "of_the_bear"
+      ],
       "item_tier": 3,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
       "name": "Bone Elven Shield",
@@ -1907,7 +1970,9 @@
         "thorns"
       ],
       "id": "dwarven_buckler_2_ironclad",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warding"
+      ],
       "item_tier": 3,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Dwarven Roundel",

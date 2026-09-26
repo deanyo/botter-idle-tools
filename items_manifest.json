@@ -203,9 +203,9 @@
       "base_type": "knife",
       "weapon_class": "1H",
       "damage_min": 4,
-      "damage_max": 8,
+      "damage_max": 7,
       "damage_type": "physical",
-      "speed": 0.5,
+      "speed": 0.45,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Fashioned from something that used to be alive.",
@@ -252,8 +252,8 @@
       "tile": "dagger_6.png",
       "base_type": "dagger",
       "weapon_class": "1H",
-      "damage_min": 4,
-      "damage_max": 8,
+      "damage_min": 3,
+      "damage_max": 9,
       "damage_type": "physical",
       "speed": 0.5,
       "item_tier": 1,
@@ -368,7 +368,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -418,7 +420,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -468,7 +472,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -520,7 +526,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -570,7 +578,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -622,7 +632,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -674,7 +686,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -730,7 +745,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -786,7 +804,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -840,7 +861,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -890,7 +914,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -943,7 +970,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -994,7 +1024,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1048,7 +1081,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1098,7 +1134,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1151,7 +1190,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_crit",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1203,7 +1246,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1253,7 +1300,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1306,7 +1357,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit",
+        "of_executioner",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1358,7 +1413,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1411,7 +1470,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1464,7 +1527,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1517,7 +1584,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit",
+        "of_executioner",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1570,7 +1641,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1887,7 +1962,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_crit",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1945,7 +2024,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_first_strike",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2379,7 +2462,11 @@
         "fire"
       ],
       "id": "runed_falchion_crimson",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste",
+        "of_crit"
+      ],
       "item_tier": 4,
       "lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
       "name": "Crimson Runed Falchion",
@@ -2442,7 +2529,10 @@
         "poison"
       ],
       "id": "silver_rapier_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_crit"
+      ],
       "item_tier": 3,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Silver Rapier",
@@ -2503,7 +2593,9 @@
         "poison"
       ],
       "id": "bone_knife_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 1,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Bone Knife",
@@ -2562,7 +2654,11 @@
         "poison"
       ],
       "id": "iron_longsword_jadeforged",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "item_tier": 3,
       "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
       "name": "Jade-forged Iron Long Sword",
@@ -2621,7 +2717,10 @@
         "fire"
       ],
       "id": "steel_falchion_crimson",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste"
+      ],
       "item_tier": 3,
       "lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
       "name": "Crimson Steel Falchion",
@@ -2740,7 +2839,11 @@
         "swiftness"
       ],
       "id": "iron_katana_coppersworn",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit",
+        "of_executioner",
+        "of_finesse"
+      ],
       "item_tier": 4,
       "lore": "Verdigris-greened copper that crackles when storms approach.",
       "name": "Coppersworn Katana",
@@ -2864,7 +2967,10 @@
         "cold"
       ],
       "id": "elven_dagger_frostbound",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit",
+        "of_haste"
+      ],
       "item_tier": 2,
       "lore": "A rime of ice will not melt, no matter how warm the room.",
       "name": "Frostbound Elven Dagger",
@@ -2923,7 +3029,10 @@
         "fire"
       ],
       "id": "steel_falchion_embered",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste"
+      ],
       "item_tier": 3,
       "lore": "Carries its own slow heat. Embers drift from it when struck.",
       "name": "Embered Steel Falchion",
@@ -3105,7 +3214,10 @@
         "poison"
       ],
       "id": "steel_longsword_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit"
+      ],
       "item_tier": 4,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Steel Long Sword",
@@ -3166,7 +3278,11 @@
         "fire"
       ],
       "id": "ancient_sword_crimson",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_crit",
+        "of_executioner"
+      ],
       "item_tier": 5,
       "lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
       "name": "Crimson Ancient Sword",
@@ -3287,7 +3403,11 @@
         "holy"
       ],
       "id": "scimitar_rosegold",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_crit"
+      ],
       "item_tier": 3,
       "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
       "name": "Rose-gold Scimitar",
@@ -3346,7 +3466,9 @@
         "vampiric"
       ],
       "id": "bone_knife_bloodstained",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 1,
       "lore": "Old blood, deep in the grain. It never dries.",
       "name": "Bloodstained Bone Knife",
@@ -3517,7 +3639,9 @@
       "affix_pool": {
         "of_might": 16,
         "of_pyromancer": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8
       },
       "default_tint": {
         "hue": 0,
@@ -3763,7 +3887,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 18,
         "of_finesse": 18,
@@ -3807,7 +3933,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 18,
         "of_finesse": 22,
@@ -3851,7 +3979,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_crit",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 22,
         "of_finesse": 22,

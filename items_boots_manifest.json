@@ -118,7 +118,8 @@
         "of_smoldering_step": 5,
         "of_warden_step": 5,
         "of_devastation": 4,
-        "of_steadfast": 4
+        "of_steadfast": 4,
+        "of_overflow_evade": 6
       }
     },
     {
@@ -128,8 +129,8 @@
       "rarity": "common",
       "tile": "boots_3_stripe_old.png",
       "base_type": "shoes",
-      "armor": 3,
-      "evasion": 4,
+      "armor": 2,
+      "evasion": 5,
       "item_tier": 1,
       "flavor_tags": [
         "stealth"
@@ -154,7 +155,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       }
     },
     {
@@ -164,8 +166,8 @@
       "rarity": "common",
       "tile": "boots_1_brown_new.png",
       "base_type": "leather_boots",
-      "armor": 3,
-      "evasion": 4,
+      "armor": 4,
+      "evasion": 3,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Cracked, weather-beaten, comfortable.",
@@ -188,7 +190,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       }
     },
     {
@@ -212,7 +215,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -222,7 +227,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       }
     },
     {
@@ -249,7 +255,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -259,7 +267,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "overlay": "boots_scouts"
     },
@@ -286,7 +295,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -296,7 +307,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 200,
@@ -330,7 +342,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -340,7 +355,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "overlay": "boots_ranger"
     },
@@ -368,7 +384,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -378,7 +397,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 220,
@@ -411,7 +431,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -421,7 +444,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       }
     },
     {
@@ -448,7 +472,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -458,7 +485,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 10,
@@ -492,7 +520,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -502,7 +533,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 220,
@@ -536,7 +568,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat",
+        "of_warden_step"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -546,7 +582,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "overlay": "boots_stormrunner"
     },
@@ -574,7 +611,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat",
+        "of_warden_step"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -584,7 +625,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 30,
@@ -617,7 +659,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat",
+        "of_warden_step"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -627,7 +673,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "overlay": "boots_windwalker"
     },
@@ -656,7 +703,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -666,7 +716,8 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 6
       },
       "default_tint": {
         "hue": 50,
@@ -710,7 +761,8 @@
         "of_the_bear": 16,
         "of_the_cat": 26,
         "of_haste": 26,
-        "of_regen": 10
+        "of_regen": 10,
+        "of_overflow_evade": 5
       }
     },
     {
@@ -738,7 +790,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_warden_step",
+        "of_haste",
+        "of_revenant"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -747,7 +803,8 @@
         "of_the_bear": 16,
         "of_the_cat": 26,
         "of_haste": 26,
-        "of_regen": 10
+        "of_regen": 10,
+        "of_overflow_evade": 5
       },
       "default_tint": {
         "hue": 0,
@@ -780,7 +837,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_lightning_resist",
+        "of_haste",
+        "of_devastation"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -789,7 +850,8 @@
         "of_the_bear": 16,
         "of_the_cat": 26,
         "of_haste": 26,
-        "of_regen": 10
+        "of_regen": 10,
+        "of_overflow_evade": 5
       },
       "overlay": "boots_iron_2",
       "default_tint": {
@@ -810,7 +872,8 @@
         "of_regen": 22,
         "of_devotion": 30,
         "of_holy_resist": 22,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 9
       },
       "armor": 3,
       "base_type": "sandals",
@@ -833,7 +896,10 @@
         "holy"
       ],
       "id": "worn_sandals_sunsteel",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_haste"
+      ],
       "item_tier": 1,
       "lore": "The metal is warm even at midnight. Undead dare not touch it.",
       "name": "Sunsteel Worn Sandals",
@@ -856,7 +922,8 @@
         "of_shadows": 32,
         "of_dark_resist": 22,
         "of_lifesteal": 18,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 9
       },
       "armor": 3,
       "base_type": "leather_boots",
@@ -878,7 +945,9 @@
         "dark"
       ],
       "id": "leather_boots_voidwrought",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 1,
       "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
       "name": "Voidwrought Leather Boots",
@@ -899,7 +968,8 @@
         "of_regen": 10,
         "of_holy_resist": 18,
         "of_devotion": 14,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 8
       },
       "armor": 5,
       "base_type": "greaves",
@@ -926,7 +996,9 @@
         "fortified"
       ],
       "id": "soldier_greaves_pale",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_bear"
+      ],
       "item_tier": 2,
       "lore": "Bleached past white into a color the eye cannot name.",
       "name": "Pale Soldier's Greaves",
@@ -949,7 +1021,8 @@
         "of_int_mastery": 18,
         "of_quickcast": 14,
         "of_resonance": 14,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 8
       },
       "armor": 5,
       "base_type": "leather_boots",
@@ -972,7 +1045,10 @@
         "footwork"
       ],
       "id": "ranger_boots_nightblue",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat"
+      ],
       "item_tier": 2,
       "lore": "Indigo so dark it reads as black until light hits the right angle.",
       "name": "Nightblue Ranger Boots",
@@ -993,7 +1069,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_sharpness": 14,
-        "of_berserker": 8
+        "of_berserker": 8,
+        "of_overflow_evade": 9
       },
       "armor": 11,
       "base_type": "treads",
@@ -1021,7 +1098,11 @@
         "lightning"
       ],
       "id": "earthshaker_treads_ironclad",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_the_cat",
+        "of_warden_step"
+      ],
       "item_tier": 4,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Earthshaker Treads",
@@ -1061,7 +1142,8 @@
         "of_haste"
       ],
       "affix_pool": {
-        "of_finesse": 14
+        "of_finesse": 14,
+        "of_overflow_evade": 1
       }
     },
     {
@@ -1099,7 +1181,8 @@
         "of_regen": 8,
         "of_smoldering_step": 6,
         "of_warden_step": 6,
-        "of_abundance": 5
+        "of_abundance": 5,
+        "of_overflow_evade": 3
       },
       "default_tint": {
         "hue": 50,

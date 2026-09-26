@@ -57,7 +57,8 @@
         "of_channeling": 10,
         "of_velocity": 12,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 9
       },
       "overlay": "glove_4_gauntlets",
       "default_tint": {
@@ -112,7 +113,8 @@
         "of_channeling": 10,
         "of_velocity": 12,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 9
       }
     },
     {
@@ -161,7 +163,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -171,8 +174,8 @@
       "rarity": "common",
       "tile": "glove_2_old.png",
       "base_type": "gloves",
-      "armor": 2,
-      "evasion": 3,
+      "armor": 3,
+      "evasion": 2,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Brass studs at the knuckle. Loud where it lands.",
@@ -210,7 +213,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -234,7 +238,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -259,7 +265,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -285,7 +292,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -312,7 +321,8 @@
         "of_executioner": 8,
         "of_bulwark": 8,
         "of_iron_aegis": 5,
-        "of_steadfast": 4
+        "of_steadfast": 4,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -338,7 +348,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -364,7 +377,8 @@
         "of_berserker_rage": 8,
         "of_executioner": 8,
         "of_bulwark": 8,
-        "of_iron_aegis": 5
+        "of_iron_aegis": 5,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -391,7 +405,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -416,7 +433,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -442,7 +460,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -467,7 +489,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -494,7 +517,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -519,7 +546,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -546,7 +574,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_thundercaller",
+        "of_storms",
+        "of_chainspark"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 18,
@@ -571,7 +603,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 11
       }
     },
     {
@@ -601,7 +634,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 14
       },
       "armor": 5,
       "base_type": "gloves",
@@ -624,7 +658,11 @@
         "cold"
       ],
       "id": "dwarven_gloves_frostbound",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_might"
+      ],
       "item_tier": 3,
       "lore": "A rime of ice will not melt, no matter how warm the room.",
       "name": "Frostbound Dwarven Gloves",
@@ -662,7 +700,8 @@
         "of_sundering": 8,
         "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 13
       },
       "armor": 5,
       "base_type": "gloves",
@@ -684,7 +723,10 @@
         "fortified"
       ],
       "id": "dwarven_gloves_nightblue",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "item_tier": 3,
       "lore": "Indigo so dark it reads as black until light hits the right angle.",
       "name": "Nightblue Dwarven Gloves",
@@ -726,7 +768,8 @@
         "of_wisdom": 16,
         "of_channeling": 12,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 2
       },
       "default_tint": {
         "hue": 270,
@@ -766,7 +809,8 @@
         "of_finesse": 14,
         "of_velocity": 10,
         "of_executioner": 8,
-        "of_bulwark": 8
+        "of_bulwark": 8,
+        "of_overflow_strike": 2
       },
       "default_tint": {
         "hue": 25,
@@ -805,7 +849,8 @@
         "of_might": 22,
         "of_finesse": 14,
         "of_sharpness": 16,
-        "of_haste": 10
+        "of_haste": 10,
+        "of_overflow_strike": 2
       },
       "boss_drop": "boss_grum",
       "biome_pool": [
@@ -852,7 +897,8 @@
         "of_lifesteal": 10,
         "of_velocity": 16,
         "of_hunter": 10,
-        "of_executioner": 10
+        "of_executioner": 10,
+        "of_overflow_strike": 9
       }
     },
     {
@@ -878,7 +924,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 8,
         "of_finesse": 12,
@@ -893,8 +941,58 @@
         "of_quickcast": 14,
         "of_velocity": 12,
         "of_lifesteal": 8,
-        "of_hunter": 8
+        "of_hunter": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_overflow_strike": 8
       }
+    },
+    {
+      "id": "jorgrun_stoneweaver_gauntlets",
+      "name": "Jorgrun's Stoneweaver Gauntlets",
+      "slot": "gloves",
+      "rarity": "legendary",
+      "tile": "glove_4_gauntlets.png",
+      "base_type": "gauntlets",
+      "armor": 4,
+      "evasion": 3,
+      "item_tier": 3,
+      "flavor_tags": [
+        "thorns",
+        "fortified"
+      ],
+      "lore": "Stone gauntlets, threaded with old web. The webs hold longer than the stone.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_butcher",
+        "of_thorns",
+        "of_first_strike"
+      ],
+      "affix_pool": {
+        "of_butcher": 22,
+        "of_thorns": 18,
+        "of_first_strike": 16,
+        "of_might": 14,
+        "of_the_bear": 12,
+        "of_overflow_strike": 3
+      },
+      "default_tint": {
+        "hue": 30.0,
+        "sat": 0.6,
+        "mode": "colorize"
+      },
+      "boss_drop": "boss_jorgrun",
+      "biome_pool": [
+        "spider"
+      ]
     }
   ]
 }

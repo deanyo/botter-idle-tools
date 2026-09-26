@@ -81,7 +81,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -131,7 +133,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sharpness"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -233,7 +238,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -283,7 +290,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sharpness"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -335,7 +345,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sharpness",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -387,7 +401,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -439,7 +455,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -492,7 +511,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker",
+        "of_sharpness"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -546,7 +569,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -604,7 +631,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -656,7 +685,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -709,7 +741,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might",
+        "of_sundering"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -820,7 +856,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_doomstrike",
+        "of_executioner",
+        "of_executioner_pact"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -911,8 +951,8 @@
       "tile": "club_new.png",
       "base_type": "club",
       "weapon_class": "1H",
-      "damage_min": 10,
-      "damage_max": 18,
+      "damage_min": 9,
+      "damage_max": 19,
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 1,
@@ -1027,7 +1067,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1079,7 +1121,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1131,7 +1176,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1186,7 +1233,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1239,7 +1289,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker",
+        "of_sharpness"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1291,7 +1345,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1344,7 +1401,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1394,7 +1454,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1446,7 +1508,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1498,7 +1563,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1550,7 +1618,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1602,7 +1672,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1655,7 +1728,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1755,7 +1831,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1805,7 +1883,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_first_strike"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1855,7 +1936,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_first_strike"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1907,7 +1991,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -1959,7 +2045,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_first_strike"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2012,7 +2101,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sundering"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2066,7 +2158,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sundering",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2118,7 +2214,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_serrated_edge"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2225,7 +2323,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2275,7 +2375,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2327,7 +2430,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2380,7 +2486,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner",
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2489,7 +2598,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner",
+        "of_might",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2581,7 +2694,7 @@
       "rarity": "common",
       "tile": "quarterstaff_2.png",
       "base_type": "quarterstaff",
-      "weapon_class": "1H",
+      "weapon_class": "2H",
       "damage_min": 16,
       "damage_max": 28,
       "damage_type": "physical",
@@ -2631,7 +2744,7 @@
       "rarity": "uncommon",
       "tile": "quarterstaff_3.png",
       "base_type": "quarterstaff",
-      "weapon_class": "1H",
+      "weapon_class": "2H",
       "damage_min": 25,
       "damage_max": 43,
       "damage_type": "physical",
@@ -2648,7 +2761,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2700,7 +2815,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2752,7 +2870,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2804,7 +2924,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_serrated_edge"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2858,7 +2981,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_serrated_edge",
+        "of_haste",
+        "of_lifesteal"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2908,7 +3035,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -2958,7 +3088,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -3010,7 +3142,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -3084,7 +3219,10 @@
         "poison"
       ],
       "id": "halberd_jadeforged",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_first_strike"
+      ],
       "item_tier": 2,
       "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
       "name": "Jade-forged Halberd",
@@ -3142,7 +3280,9 @@
       "enchant_chance": 0.05,
       "flavor_tags": [],
       "id": "metal_staff_nightblue",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 2,
       "lore": "Indigo so dark it reads as black until light hits the right angle.",
       "name": "Nightblue Metal Staff",
@@ -3151,7 +3291,7 @@
       "speed": 0.8,
       "tile": "quarterstaff_3.png",
       "unique": false,
-      "weapon_class": "1H"
+      "weapon_class": "2H"
     },
     {
       "affix_pool": {
@@ -3201,7 +3341,10 @@
         "dark"
       ],
       "id": "broad_axe_voidwrought",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might"
+      ],
       "item_tier": 2,
       "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
       "name": "Voidwrought Broad Axe",
@@ -3261,7 +3404,10 @@
         "poison"
       ],
       "id": "steel_spear_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_first_strike"
+      ],
       "item_tier": 3,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Steel Spear",
@@ -3321,7 +3467,10 @@
         "cold"
       ],
       "id": "claymore_azure",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner",
+        "of_might"
+      ],
       "item_tier": 3,
       "lore": "Cold to the touch. The air around it always tastes of winter.",
       "name": "Azure Claymore",
@@ -3380,7 +3529,10 @@
         "holy"
       ],
       "id": "warhammer_rosegold",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "item_tier": 2,
       "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
       "name": "Rose-gold Warhammer",
@@ -3439,7 +3591,10 @@
         "poison"
       ],
       "id": "greatsword_jadeforged",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_executioner"
+      ],
       "item_tier": 2,
       "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
       "name": "Jade-forged Greatsword",
@@ -3499,7 +3654,10 @@
         "holy"
       ],
       "id": "bullwhip_gilded",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_serrated_edge"
+      ],
       "item_tier": 2,
       "lore": "Cathedral-gold leaf, beaten thin and prayed over for a hundred years.",
       "name": "Gilded Bullwhip",
@@ -3559,7 +3717,11 @@
         "cold"
       ],
       "id": "runed_broad_axe_azure",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_armor_breaker",
+        "of_might",
+        "of_sundering"
+      ],
       "item_tier": 4,
       "lore": "Cold to the touch. The air around it always tastes of winter.",
       "name": "Azure Runed Broad Axe",
@@ -3623,7 +3785,11 @@
         "poison"
       ],
       "id": "runed_bardiche_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_sundering",
+        "of_executioner"
+      ],
       "item_tier": 4,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Runed Bardiche",
@@ -3684,7 +3850,10 @@
         "fire"
       ],
       "id": "giant_club_crimson",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "item_tier": 3,
       "lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
       "name": "Crimson Giant Club",
@@ -3846,7 +4015,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_embers",
+        "of_lifesteal"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -3873,7 +4046,7 @@
       "rarity": "legendary",
       "tile": "spwpn_majin.png",
       "base_type": "quarterstaff",
-      "weapon_class": "1H",
+      "weapon_class": "2H",
       "damage_min": 48,
       "damage_max": 83,
       "damage_type": "dark",
@@ -3951,7 +4124,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_venom",
+        "of_pestcaller",
+        "of_lingering_pestilence"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -4000,7 +4177,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_kingslayer",
+        "of_might",
+        "of_unique_slayer"
+      ],
       "affix_pool": {
         "of_might": 25,
         "of_finesse": 15,
@@ -4234,7 +4415,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_armor_breaker"
+      ],
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 12,
@@ -4482,7 +4666,16 @@
         "of_embers",
         "of_pyromancer"
       ],
-      "affix_pool": {},
+      "affix_pool": {
+        "of_might": 18,
+        "of_sharpness": 12,
+        "of_str_mastery": 12,
+        "of_sundering": 10,
+        "of_crit": 10,
+        "of_berserker": 8,
+        "of_armor_breaker": 8,
+        "of_haste": 8
+      },
       "vault_drop": "forge_lava_pit_5x5"
     },
     {
@@ -4516,8 +4709,885 @@
         "of_might",
         "of_kingslayer"
       ],
-      "affix_pool": {},
+      "affix_pool": {
+        "of_sharpness": 14,
+        "of_unique_slayer": 12,
+        "of_sundering": 12,
+        "of_str_mastery": 12,
+        "of_armor_breaker": 10,
+        "of_crit": 10,
+        "of_executioner": 8,
+        "of_first_strike": 6
+      },
       "vault_drop": "forge_lava_bridge_7x3"
+    },
+    {
+      "id": "copper_wand",
+      "name": "Copper Wand",
+      "slot": "weapon",
+      "rarity": "common",
+      "tile": "casters/wand_copper.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 4,
+      "damage_max": 7,
+      "speed": 0.55,
+      "damage_type": "fire",
+      "item_tier": 1,
+      "drop_weights": [
+        40,
+        25,
+        10,
+        0,
+        0
+      ],
+      "default_tint": {
+        "hue": 18.0,
+        "sat": 0.8,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "fire"
+      ],
+      "two_handed": false,
+      "lore": "A simple copper rod, warm to the touch.",
+      "affix_pool": {
+        "of_pyromancer": 24,
+        "of_channeling": 20,
+        "of_wisdom": 16,
+        "of_embers": 12,
+        "of_quickcast": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1
+    },
+    {
+      "id": "brass_wand",
+      "name": "Brass Wand",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "tile": "casters/wand_brass.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 6,
+      "damage_max": 10,
+      "speed": 0.55,
+      "damage_type": "lightning",
+      "item_tier": 2,
+      "drop_weights": [
+        20,
+        35,
+        25,
+        10,
+        0
+      ],
+      "default_tint": {
+        "hue": 50.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "lightning"
+      ],
+      "two_handed": false,
+      "lore": "Brass conducts more than electricity.",
+      "affix_pool": {
+        "of_thundercaller": 24,
+        "of_channeling": 20,
+        "of_wisdom": 16,
+        "of_storms": 12,
+        "of_velocity": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_channeling"
+      ]
+    },
+    {
+      "id": "silver_wand",
+      "name": "Silver Wand",
+      "slot": "weapon",
+      "rarity": "rare",
+      "tile": "casters/wand_silver.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 8,
+      "damage_max": 14,
+      "speed": 0.55,
+      "damage_type": "cold",
+      "item_tier": 3,
+      "drop_weights": [
+        5,
+        20,
+        35,
+        25,
+        10
+      ],
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 0.4,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "cold"
+      ],
+      "two_handed": false,
+      "lore": "Silver does not burn.",
+      "affix_pool": {
+        "of_cryomancer": 24,
+        "of_channeling": 22,
+        "of_wisdom": 18,
+        "of_frost": 14,
+        "of_quickcast": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_channeling",
+        "of_quickcast"
+      ]
+    },
+    {
+      "id": "ash_staff",
+      "name": "Ash Staff",
+      "slot": "weapon",
+      "rarity": "common",
+      "tile": "casters/staff_1.png",
+      "base_type": "staff",
+      "weapon_class": "caster",
+      "damage_min": 8,
+      "damage_max": 14,
+      "speed": 0.85,
+      "damage_type": "physical",
+      "item_tier": 1,
+      "drop_weights": [
+        40,
+        25,
+        10,
+        0,
+        0
+      ],
+      "default_tint": {
+        "hue": 30.0,
+        "sat": 0.6,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": true,
+      "lore": "Apprentice issue. Heavier than it looks.",
+      "affix_pool": {
+        "of_channeling": 22,
+        "of_wisdom": 20,
+        "of_meditation": 16,
+        "of_resonance": 14,
+        "of_might": 12
+      },
+      "enchant_chance": 0.1
+    },
+    {
+      "id": "iron_staff",
+      "name": "Iron Staff",
+      "slot": "weapon",
+      "rarity": "rare",
+      "tile": "casters/staff_3.png",
+      "base_type": "staff",
+      "weapon_class": "caster",
+      "damage_min": 14,
+      "damage_max": 22,
+      "speed": 0.9,
+      "damage_type": "physical",
+      "item_tier": 3,
+      "drop_weights": [
+        5,
+        20,
+        35,
+        25,
+        10
+      ],
+      "default_tint": {
+        "hue": 220.0,
+        "sat": 0.35,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": true,
+      "lore": "Iron banded for striking. Useful when the spells run out.",
+      "affix_pool": {
+        "of_channeling": 24,
+        "of_wisdom": 20,
+        "of_resonance": 18,
+        "of_quickcast": 14,
+        "of_might": 12
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_channeling",
+        "of_resonance"
+      ]
+    },
+    {
+      "id": "elder_staff",
+      "name": "Elder Staff",
+      "slot": "weapon",
+      "rarity": "epic",
+      "tile": "casters/staff_7.png",
+      "base_type": "staff",
+      "weapon_class": "caster",
+      "damage_min": 18,
+      "damage_max": 28,
+      "speed": 0.9,
+      "damage_type": "physical",
+      "item_tier": 4,
+      "drop_weights": [
+        0,
+        5,
+        20,
+        35,
+        25
+      ],
+      "default_tint": {
+        "hue": 280.0,
+        "sat": 0.55,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": true,
+      "lore": "Older than the school that built it.",
+      "affix_pool": {
+        "of_channeling": 26,
+        "of_wisdom": 22,
+        "of_resonance": 20,
+        "of_quickcast": 16,
+        "of_arcane_pool": 14
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_channeling",
+        "of_resonance",
+        "of_meditation"
+      ]
+    },
+    {
+      "id": "iron_sceptre",
+      "name": "Iron Sceptre",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "tile": "casters/sceptre_0.png",
+      "base_type": "sceptre",
+      "weapon_class": "caster",
+      "damage_min": 8,
+      "damage_max": 12,
+      "speed": 0.65,
+      "damage_type": "holy",
+      "item_tier": 2,
+      "drop_weights": [
+        20,
+        35,
+        25,
+        10,
+        0
+      ],
+      "default_tint": {
+        "hue": 50.0,
+        "sat": 0.5,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "holy"
+      ],
+      "two_handed": false,
+      "lore": "Authority embodied \u2014 the strike of a king.",
+      "affix_pool": {
+        "of_zealot": 24,
+        "of_channeling": 20,
+        "of_might": 18,
+        "of_devotion": 14,
+        "of_wisdom": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_zealot"
+      ]
+    },
+    {
+      "id": "gold_sceptre",
+      "name": "Gilded Sceptre",
+      "slot": "weapon",
+      "rarity": "rare",
+      "tile": "casters/sceptre_2.png",
+      "base_type": "sceptre",
+      "weapon_class": "caster",
+      "damage_min": 10,
+      "damage_max": 16,
+      "speed": 0.65,
+      "damage_type": "holy",
+      "item_tier": 3,
+      "drop_weights": [
+        5,
+        20,
+        35,
+        25,
+        10
+      ],
+      "default_tint": {
+        "hue": 45.0,
+        "sat": 1.0,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "holy"
+      ],
+      "two_handed": false,
+      "lore": "Carries the weight of a thousand judgments.",
+      "affix_pool": {
+        "of_zealot": 24,
+        "of_channeling": 22,
+        "of_might": 18,
+        "of_devotion": 16,
+        "of_kingslayer": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_zealot",
+        "of_channeling"
+      ]
+    },
+    {
+      "id": "ornate_sceptre",
+      "name": "Ornate Sceptre",
+      "slot": "weapon",
+      "rarity": "epic",
+      "tile": "casters/sceptre_4.png",
+      "base_type": "sceptre",
+      "weapon_class": "caster",
+      "damage_min": 14,
+      "damage_max": 22,
+      "speed": 0.7,
+      "damage_type": "holy",
+      "item_tier": 4,
+      "drop_weights": [
+        0,
+        5,
+        20,
+        35,
+        25
+      ],
+      "default_tint": {
+        "hue": 40.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "holy"
+      ],
+      "two_handed": false,
+      "lore": "Forged for a king who never lived.",
+      "affix_pool": {
+        "of_zealot": 26,
+        "of_channeling": 22,
+        "of_might": 20,
+        "of_devotion": 18,
+        "of_kingslayer": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_zealot",
+        "of_channeling",
+        "of_might"
+      ]
+    },
+    {
+      "id": "scrying_orb",
+      "name": "Scrying Orb",
+      "slot": "weapon",
+      "rarity": "common",
+      "tile": "casters/orb_1.png",
+      "base_type": "orb",
+      "weapon_class": "caster",
+      "damage_min": 3,
+      "damage_max": 5,
+      "speed": 0.5,
+      "damage_type": "cold",
+      "item_tier": 1,
+      "drop_weights": [
+        40,
+        25,
+        10,
+        0,
+        0
+      ],
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 0.7,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "cold"
+      ],
+      "two_handed": false,
+      "lore": "Useful for seeing what is about to attack you.",
+      "affix_pool": {
+        "of_arcane_pool": 24,
+        "of_wisdom": 22,
+        "of_quickcast": 18,
+        "of_meditation": 14,
+        "of_cryomancer": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1
+    },
+    {
+      "id": "shadow_orb",
+      "name": "Shadow Orb",
+      "slot": "weapon",
+      "rarity": "rare",
+      "tile": "casters/orb_2.png",
+      "base_type": "orb",
+      "weapon_class": "caster",
+      "damage_min": 5,
+      "damage_max": 9,
+      "speed": 0.5,
+      "damage_type": "dark",
+      "item_tier": 3,
+      "drop_weights": [
+        5,
+        20,
+        35,
+        25,
+        10
+      ],
+      "default_tint": {
+        "hue": 290.0,
+        "sat": 0.75,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "lore": "Looking into it does not look back.",
+      "affix_pool": {
+        "of_nightcaller": 24,
+        "of_arcane_pool": 22,
+        "of_wisdom": 18,
+        "of_shadows": 14,
+        "of_meditation": 10,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_arcane_pool",
+        "of_wisdom"
+      ]
+    },
+    {
+      "id": "crystal_orb_caster",
+      "name": "Crystal Orb",
+      "slot": "weapon",
+      "rarity": "epic",
+      "tile": "casters/orb_crystal.png",
+      "base_type": "orb",
+      "weapon_class": "caster",
+      "damage_min": 7,
+      "damage_max": 11,
+      "speed": 0.5,
+      "damage_type": "lightning",
+      "item_tier": 4,
+      "drop_weights": [
+        0,
+        5,
+        20,
+        35,
+        25
+      ],
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 0.5,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "lightning"
+      ],
+      "two_handed": false,
+      "lore": "A flawless lattice. Storms wait inside.",
+      "affix_pool": {
+        "of_thundercaller": 24,
+        "of_arcane_pool": 22,
+        "of_wisdom": 20,
+        "of_storms": 16,
+        "of_quickcast": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_arcane_pool",
+        "of_wisdom",
+        "of_quickcast"
+      ]
+    },
+    {
+      "id": "dogeared_tome",
+      "name": "Dog-Eared Codex",
+      "slot": "weapon",
+      "rarity": "common",
+      "tile": "casters/tome_dogeared.png",
+      "base_type": "tome_focus",
+      "weapon_class": "caster",
+      "damage_min": 2,
+      "damage_max": 4,
+      "speed": 0.6,
+      "damage_type": "physical",
+      "item_tier": 1,
+      "drop_weights": [
+        40,
+        25,
+        10,
+        0,
+        0
+      ],
+      "default_tint": {
+        "hue": 30.0,
+        "sat": 0.6,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "lore": "Notes in three different hands. None match the cover.",
+      "affix_pool": {
+        "of_scribe": 24,
+        "of_wisdom": 22,
+        "of_int_mastery": 18,
+        "of_meditation": 14,
+        "of_arcane_pool": 12
+      },
+      "enchant_chance": 0.1
+    },
+    {
+      "id": "indigo_tome",
+      "name": "Indigo Codex",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "tile": "casters/tome_indigo.png",
+      "base_type": "tome_focus",
+      "weapon_class": "caster",
+      "damage_min": 4,
+      "damage_max": 6,
+      "speed": 0.6,
+      "damage_type": "dark",
+      "item_tier": 2,
+      "drop_weights": [
+        20,
+        35,
+        25,
+        10,
+        0
+      ],
+      "default_tint": {
+        "hue": 270.0,
+        "sat": 0.7,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "lore": "The pages turn themselves when no one is watching.",
+      "affix_pool": {
+        "of_scribe": 24,
+        "of_int_mastery": 22,
+        "of_wisdom": 18,
+        "of_nightcaller": 14,
+        "of_quickcast": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_scribe"
+      ]
+    },
+    {
+      "id": "necronomicon",
+      "name": "The Black Codex",
+      "slot": "weapon",
+      "rarity": "rare",
+      "tile": "casters/tome_dead.png",
+      "base_type": "tome_focus",
+      "weapon_class": "caster",
+      "damage_min": 5,
+      "damage_max": 8,
+      "speed": 0.6,
+      "damage_type": "dark",
+      "item_tier": 3,
+      "drop_weights": [
+        5,
+        20,
+        35,
+        25,
+        10
+      ],
+      "default_tint": {
+        "hue": 0.0,
+        "sat": 0.0,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "lore": "Bound in something that was once alive.",
+      "affix_pool": {
+        "of_scribe": 24,
+        "of_int_mastery": 22,
+        "of_nightcaller": 22,
+        "of_arcane_pool": 16,
+        "of_wisdom": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_scribe",
+        "of_int_mastery"
+      ]
+    },
+    {
+      "id": "sif_muna_index",
+      "name": "Sif Muna's Index",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/tome_dogeared.png",
+      "base_type": "tome_focus",
+      "weapon_class": "caster",
+      "damage_min": 8,
+      "damage_max": 14,
+      "speed": 0.55,
+      "damage_type": "arcane",
+      "item_tier": 4,
+      "default_tint": {
+        "hue": 220.0,
+        "sat": 0.7,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "lore": "Memorized by gods. Indexed for everyone else.",
+      "implicit_affixes": [
+        "of_channeling",
+        "of_quickcast",
+        "of_thrift"
+      ],
+      "affix_pool": {
+        "of_channeling": 26,
+        "of_quickcast": 22,
+        "of_thrift": 20,
+        "of_arcane_pool": 18,
+        "of_wisdom": 14
+      },
+      "enchant_chance": 0.0,
+      "unique": true
+    },
+    {
+      "id": "olgreb_death_wand",
+      "name": "Olgreb's Death Wand",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/wand_copper.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 6,
+      "damage_max": 12,
+      "speed": 0.5,
+      "damage_type": "poison",
+      "item_tier": 4,
+      "default_tint": {
+        "hue": 110.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "poison"
+      ],
+      "two_handed": false,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "lore": "Olgreb died last. He insisted on it.",
+      "implicit_affixes": [
+        "of_pestcaller",
+        "of_venom",
+        "of_lingering_pestilence"
+      ],
+      "affix_pool": {
+        "of_pestcaller": 26,
+        "of_venom": 22,
+        "of_lingering_pestilence": 18,
+        "of_channeling": 16,
+        "of_quickcast": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.0,
+      "unique": true
+    },
+    {
+      "id": "brand_of_the_storm",
+      "name": "Brand of the Storm",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/sceptre_4.png",
+      "base_type": "sceptre",
+      "weapon_class": "caster",
+      "damage_min": 12,
+      "damage_max": 20,
+      "speed": 0.65,
+      "damage_type": "lightning",
+      "item_tier": 4,
+      "default_tint": {
+        "hue": 230.0,
+        "sat": 0.95,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "lightning"
+      ],
+      "two_handed": false,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "lore": "Branded by lightning. Brands lightning back.",
+      "implicit_affixes": [
+        "of_thundercaller",
+        "of_storms",
+        "of_chainspark"
+      ],
+      "affix_pool": {
+        "of_thundercaller": 26,
+        "of_storms": 22,
+        "of_chainspark": 18,
+        "of_channeling": 16,
+        "of_might": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.0,
+      "unique": true
+    },
+    {
+      "id": "frostbinder_staff",
+      "name": "Frostbinder's Staff",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/staff_7.png",
+      "base_type": "staff",
+      "weapon_class": "caster",
+      "damage_min": 18,
+      "damage_max": 28,
+      "speed": 0.85,
+      "damage_type": "cold",
+      "item_tier": 5,
+      "default_tint": {
+        "hue": 195.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "cold"
+      ],
+      "two_handed": true,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "lore": "The cold listened to her. It still does.",
+      "implicit_affixes": [
+        "of_cryomancer",
+        "of_frost",
+        "of_resonance"
+      ],
+      "affix_pool": {
+        "of_cryomancer": 26,
+        "of_frost": 22,
+        "of_resonance": 20,
+        "of_channeling": 18,
+        "of_quickcast": 14,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.0,
+      "unique": true
+    },
+    {
+      "id": "gehenna_reach",
+      "name": "Gehenna's Reach",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/orb_crystal.png",
+      "base_type": "orb",
+      "weapon_class": "caster",
+      "damage_min": 8,
+      "damage_max": 16,
+      "speed": 0.5,
+      "damage_type": "fire",
+      "item_tier": 4,
+      "default_tint": {
+        "hue": 10.0,
+        "sat": 1.0,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "fire"
+      ],
+      "two_handed": false,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "lore": "It is hotter inside than out. Always.",
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_embers",
+        "of_lifesteal"
+      ],
+      "affix_pool": {
+        "of_pyromancer": 26,
+        "of_embers": 22,
+        "of_lifesteal": 18,
+        "of_channeling": 16,
+        "of_arcane_pool": 12,
+        "of_brawler": 8,
+        "of_mystic": 8
+      },
+      "enchant_chance": 0.0,
+      "unique": true
     }
   ]
 }

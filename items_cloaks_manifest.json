@@ -35,7 +35,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_plunder",
+        "of_avarice",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -52,7 +56,8 @@
         "of_resonance": 12,
         "of_lingering": 14,
         "of_haste": 10,
-        "of_regen": 8
+        "of_regen": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_1_leather"
     },
@@ -99,7 +104,8 @@
         "of_resonance": 12,
         "of_lingering": 14,
         "of_haste": 10,
-        "of_regen": 8
+        "of_regen": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_3",
       "default_tint": {
@@ -133,7 +139,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_smoldering_step",
+        "of_recoup"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -150,7 +160,8 @@
         "of_resonance": 12,
         "of_lingering": 14,
         "of_haste": 10,
-        "of_regen": 8
+        "of_regen": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_1_leather",
       "default_tint": {
@@ -183,7 +194,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_plunder",
+        "of_haste",
+        "of_warden_step"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -200,7 +215,8 @@
         "of_resonance": 12,
         "of_lingering": 14,
         "of_haste": 10,
-        "of_regen": 8
+        "of_regen": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_2",
       "default_tint": {
@@ -248,7 +264,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_leather"
     },
@@ -259,8 +276,8 @@
       "rarity": "common",
       "tile": "cloak_2.png",
       "base_type": "cloak",
-      "armor": 1,
-      "evasion": 6,
+      "armor": 2,
+      "evasion": 5,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Worn in the rain. Still warm enough.",
@@ -291,7 +308,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_travelers"
     },
@@ -318,7 +336,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -336,7 +356,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_wool"
     },
@@ -363,7 +384,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -381,7 +404,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_hooded"
     },
@@ -409,7 +433,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -427,7 +454,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_woven"
     },
@@ -455,7 +483,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -473,7 +504,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_rangers"
     },
@@ -502,7 +534,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -520,7 +555,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_silken"
     },
@@ -548,7 +584,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 10,
         "of_finesse": 12,
@@ -566,7 +605,8 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 8
       },
       "overlay": "cloak_warlord"
     },
@@ -590,7 +630,8 @@
         "of_regen": 8,
         "of_storms": 32,
         "of_velocity": 14,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 12
       },
       "armor": 1,
       "base_type": "cloak",
@@ -612,7 +653,10 @@
         "lightning"
       ],
       "id": "travelers_cloak_stormtouched",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_finesse"
+      ],
       "item_tier": 1,
       "lore": "Static raises the hairs on your arm. A faint hum, always present.",
       "name": "Stormtouched Traveler's Cloak",
@@ -641,7 +685,8 @@
         "of_haste": 10,
         "of_regen": 22,
         "of_venom": 28,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 11
       },
       "armor": 1,
       "base_type": "cloak",
@@ -663,7 +708,9 @@
         "poison"
       ],
       "id": "travelers_cloak_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat"
+      ],
       "item_tier": 1,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Traveler's Cloak",
@@ -695,7 +742,8 @@
         "of_storms": 32,
         "of_velocity": 14,
         "of_sharpness": 14,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 15
       },
       "armor": 1,
       "base_type": "cloak",
@@ -722,7 +770,9 @@
         "lightning"
       ],
       "id": "travelers_cloak_stormtouched_ironclad",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat"
+      ],
       "item_tier": 1,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Stormtouched Traveler's Cloak",
@@ -753,7 +803,8 @@
         "of_regen": 8,
         "of_shadows": 26,
         "of_quickcast": 12,
-        "of_plunder": 8
+        "of_plunder": 8,
+        "of_mind_over_matter": 11
       },
       "armor": 1,
       "base_type": "cloak",
@@ -775,7 +826,9 @@
         "dark"
       ],
       "id": "leather_cloak_shadowed",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_the_cat"
+      ],
       "item_tier": 1,
       "lore": "Hard to see in dim light, even when held directly before you.",
       "name": "Shadowed Leather Cloak",
@@ -817,7 +870,8 @@
       ],
       "affix_pool": {
         "of_finesse": 16,
-        "of_wisdom": 12
+        "of_wisdom": 12,
+        "of_mind_over_matter": 1
       },
       "default_tint": {
         "hue": 100,
@@ -854,7 +908,8 @@
         "of_haste"
       ],
       "affix_pool": {
-        "of_finesse": 14
+        "of_finesse": 14,
+        "of_mind_over_matter": 1
       },
       "default_tint": {
         "hue": 200,
@@ -899,7 +954,8 @@
         "of_warden_step": 5,
         "of_abundance": 4,
         "of_devastation": 4,
-        "of_arcane_flow": 4
+        "of_arcane_flow": 4,
+        "of_mind_over_matter": 2
       },
       "default_tint": {
         "hue": 270,
@@ -938,7 +994,8 @@
       ],
       "affix_pool": {
         "of_might": 18,
-        "of_berserker": 14
+        "of_berserker": 14,
+        "of_mind_over_matter": 1
       },
       "default_tint": {
         "hue": 0,
@@ -977,7 +1034,8 @@
         "of_vitality": 24,
         "of_the_bear": 18,
         "of_regen": 16,
-        "of_poison_resist": 14
+        "of_poison_resist": 14,
+        "of_mind_over_matter": 3
       },
       "boss_drop": "boss_lernaean",
       "biome_pool": [
@@ -991,8 +1049,8 @@
       "rarity": "common",
       "tile": "cloak_3.png",
       "base_type": "cloak",
-      "armor": 1,
-      "evasion": 6,
+      "armor": 0,
+      "evasion": 7,
       "item_tier": 1,
       "flavor_tags": [],
       "lore": "Ink-stained at the cuffs. Stitched by someone in a hurry.",
@@ -1022,7 +1080,8 @@
         "of_lingering": 16,
         "of_quickcast": 18,
         "of_channeling": 14,
-        "of_regen": 8
+        "of_regen": 8,
+        "of_mind_over_matter": 8
       }
     },
     {
@@ -1060,7 +1119,10 @@
         "of_resonance": 10,
         "of_lingering": 10,
         "of_channeling": 12,
-        "of_haste": 8
+        "of_haste": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_mind_over_matter": 3
       },
       "default_tint": {
         "hue": 5,
@@ -1099,8 +1161,111 @@
         "of_regen",
         "of_smoldering_step"
       ],
-      "affix_pool": {},
+      "affix_pool": {
+        "of_vitality": 16,
+        "of_the_cat": 14,
+        "of_poison_resist": 12,
+        "of_the_bear": 10,
+        "of_serpent_growth": 8,
+        "of_warden_step": 8,
+        "of_recoup": 6,
+        "of_kiter": 6
+      },
       "vault_drop": "lair_tree_grove_5x5"
+    },
+    {
+      "id": "antaeus_glacial_mantle",
+      "name": "Antaeus's Glacial Mantle",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_4.png",
+      "base_type": "cloak",
+      "armor": 8,
+      "evasion": 6,
+      "item_tier": 5,
+      "flavor_tags": [
+        "cold",
+        "fortified"
+      ],
+      "lore": "He stood frozen for ten thousand years. The cold remembers him still.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_obstinance",
+        "of_cold_resist",
+        "of_recoup"
+      ],
+      "affix_pool": {
+        "of_obstinance": 22,
+        "of_cold_resist": 20,
+        "of_recoup": 16,
+        "of_the_bear": 14,
+        "of_revenant": 12,
+        "of_mind_over_matter": 3
+      },
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 0.85,
+        "mode": "colorize"
+      },
+      "boss_drop": "boss_antaeus",
+      "biome_pool": [
+        "glacier"
+      ]
+    },
+    {
+      "id": "gastronok_honeycomb_mantle",
+      "name": "Gastronok's Honeycomb Mantle",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 9,
+      "item_tier": 3,
+      "flavor_tags": [
+        "regen",
+        "vampiric"
+      ],
+      "lore": "Honey clings to the inside. So does whatever the hive intended you to be.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        0,
+        30
+      ],
+      "unique": true,
+      "enchant_chance": 0.0,
+      "implicit_affixes": [
+        "of_serpent_growth",
+        "of_recoup",
+        "of_regen"
+      ],
+      "affix_pool": {
+        "of_serpent_growth": 22,
+        "of_recoup": 18,
+        "of_regen": 16,
+        "of_vitality": 14,
+        "of_haste": 12,
+        "of_mind_over_matter": 3
+      },
+      "default_tint": {
+        "hue": 50.0,
+        "sat": 0.95,
+        "mode": "colorize"
+      },
+      "boss_drop": "boss_gastronok",
+      "biome_pool": [
+        "hive"
+      ]
     }
   ]
 }

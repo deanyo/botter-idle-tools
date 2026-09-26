@@ -194,7 +194,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -250,7 +257,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -308,7 +322,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -332,7 +353,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -373,7 +396,11 @@
         "of_devastation": 5,
         "of_arcane_pool": 6,
         "of_arcane_flow": 6,
-        "of_arcane_battery": 5
+        "of_arcane_battery": 5,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_siphon": 8,
+        "of_high_tide": 8
       }
     },
     {
@@ -395,7 +422,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -431,7 +460,14 @@
         "of_synergy": 8,
         "of_executioner": 8,
         "of_avenger": 5,
-        "of_recoup": 5
+        "of_recoup": 5,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -455,7 +491,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -489,7 +527,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -513,7 +558,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -547,7 +594,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -571,7 +625,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_holy_resist"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -605,7 +662,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -629,7 +693,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -663,7 +730,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -687,7 +761,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_regen",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -721,7 +798,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -745,7 +829,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -779,7 +866,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -804,7 +898,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -838,7 +935,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -862,7 +966,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_pestcaller",
+        "of_poison_resist"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -896,7 +1003,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -920,7 +1034,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_pyromancer",
+        "of_fire_resist"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -954,7 +1071,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -978,7 +1102,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_cryomancer",
+        "of_cold_resist"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1012,7 +1139,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1037,7 +1171,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1071,7 +1208,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1095,7 +1239,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1129,7 +1275,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1154,7 +1307,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_might",
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1188,7 +1344,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1213,7 +1376,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1263,7 +1430,11 @@
         "of_devastation": 5,
         "of_arcane_pool": 8,
         "of_arcane_flow": 8,
-        "of_arcane_battery": 6
+        "of_arcane_battery": 6,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_siphon": 9,
+        "of_high_tide": 9
       }
     },
     {
@@ -1288,7 +1459,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_finesse"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1322,7 +1496,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1347,7 +1528,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_regen",
+        "of_vitality",
+        "of_recoup"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1381,7 +1566,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1406,7 +1598,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_executioner",
+        "of_devastation"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1440,7 +1635,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1465,7 +1667,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1499,7 +1703,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1524,7 +1735,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_arcane_flow",
+        "of_quickcast",
+        "of_wisdom"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1555,7 +1770,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1581,7 +1803,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality",
+        "of_regen",
+        "of_recoup"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1612,7 +1838,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1671,7 +1904,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1697,7 +1937,11 @@
       ],
       "unique": true,
       "enchant_chance": 0.0,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste",
+        "of_finesse",
+        "of_crit"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1728,7 +1972,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1786,7 +2037,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1810,7 +2068,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1844,7 +2104,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1869,7 +2136,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_pestcaller",
+        "of_poison_resist"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1903,7 +2173,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1927,7 +2204,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_vitality"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -1961,7 +2240,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -1986,7 +2272,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_arcane_pool",
+        "of_quickcast"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -2020,7 +2310,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -2046,7 +2343,10 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -2080,7 +2380,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -2105,7 +2412,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -2139,7 +2448,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       }
     },
     {
@@ -2176,7 +2492,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_flight",
       "default_tint": {
@@ -2197,7 +2520,9 @@
         "swiftness"
       ],
       "id": "ring_of_flight_coppersworn",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 4,
       "lore": "Verdigris-greened copper that crackles when storms approach.",
       "name": "Coppersworn Ring of Flight",
@@ -2241,7 +2566,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_evasion",
       "default_tint": {
@@ -2262,7 +2594,9 @@
         "poison"
       ],
       "id": "copper_ring_mossy",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_haste"
+      ],
       "item_tier": 1,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
       "name": "Mossy Copper Ring",
@@ -2304,7 +2638,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -2368,7 +2709,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 4,
+        "of_arcane_pool": 4,
+        "of_arcane_siphon": 4,
+        "of_high_tide": 4,
+        "of_arcane_battery": 4
       },
       "base_type": "ring_strength",
       "default_tint": {
@@ -2438,7 +2786,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_regen",
       "default_tint": {
@@ -2459,7 +2814,10 @@
         "dark"
       ],
       "id": "moonstone_ring_shadowed",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_regen",
+        "of_vitality"
+      ],
       "item_tier": 3,
       "lore": "Hard to see in dim light, even when held directly before you.",
       "name": "Shadowed Moonstone Ring",
@@ -2502,7 +2860,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -2574,7 +2939,14 @@
         "of_zealot": 8,
         "of_pestcaller": 8,
         "of_nightcaller": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_magic",
       "default_tint": {
@@ -2644,7 +3016,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 4,
+        "of_arcane_pool": 4,
+        "of_arcane_siphon": 4,
+        "of_high_tide": 4,
+        "of_arcane_battery": 4
       },
       "base_type": "ring_stealth",
       "default_tint": {
@@ -2666,7 +3045,10 @@
         "fire"
       ],
       "id": "ivory_ring_crimson",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste"
+      ],
       "item_tier": 4,
       "lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
       "name": "Crimson Ivory Ring",
@@ -2712,7 +3094,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 4,
+        "of_arcane_pool": 4,
+        "of_arcane_siphon": 4,
+        "of_high_tide": 4,
+        "of_arcane_battery": 4
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -2738,7 +3127,11 @@
         "dark"
       ],
       "id": "agate_ring_obsidian",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_finesse",
+        "of_haste",
+        "of_crit"
+      ],
       "item_tier": 2,
       "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
       "name": "Obsidian Agate Ring",
@@ -2783,7 +3176,14 @@
         "of_tempest": 8,
         "of_bloodletting": 8,
         "of_synergy": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_arcane_siphon": 3,
+        "of_high_tide": 3,
+        "of_arcane_battery": 3
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -2847,7 +3247,12 @@
       "affix_pool": {
         "of_might": 12,
         "of_finesse": 10,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_arcane_flow": 1,
+        "of_arcane_pool": 1,
+        "of_arcane_siphon": 1,
+        "of_high_tide": 1,
+        "of_arcane_battery": 1
       },
       "default_tint": {
         "hue": 90,
@@ -2885,7 +3290,14 @@
       "affix_pool": {
         "of_cryomancer": 16,
         "of_finesse": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 8,
+        "of_mystic": 8,
+        "of_arcane_flow": 1,
+        "of_arcane_pool": 1,
+        "of_arcane_siphon": 1,
+        "of_high_tide": 1,
+        "of_arcane_battery": 1
       }
     },
     {
@@ -2917,7 +3329,12 @@
       "affix_pool": {
         "of_wisdom": 14,
         "of_resonance": 10,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_arcane_flow": 1,
+        "of_arcane_pool": 1,
+        "of_arcane_siphon": 1,
+        "of_high_tide": 1,
+        "of_arcane_battery": 1
       }
     },
     {
@@ -2950,7 +3367,12 @@
         "of_finesse": 14,
         "of_wisdom": 14,
         "of_plunder": 18,
-        "of_scribe": 12
+        "of_scribe": 12,
+        "of_arcane_flow": 1,
+        "of_arcane_pool": 1,
+        "of_arcane_siphon": 1,
+        "of_high_tide": 1,
+        "of_arcane_battery": 1
       },
       "boss_drop": "boss_frederick",
       "biome_pool": [
@@ -2983,7 +3405,16 @@
         "of_chainspark",
         "of_avenger"
       ],
-      "affix_pool": {},
+      "affix_pool": {
+        "of_storms": 14,
+        "of_crit": 14,
+        "of_haste": 12,
+        "of_velocity": 8,
+        "of_tempest": 8,
+        "of_lightning_resist": 8,
+        "of_cold_resist": 8,
+        "of_high_tide": 6
+      },
       "vault_drop": "shoals_tide_pool_5x5"
     }
   ]
