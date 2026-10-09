@@ -25,6 +25,10 @@
 			"-2": 8
 		}
 	},
+	"aliases": {
+		"_doc": "Renamed affix ids: old_id -> new_id. Saved forge shards (and anything else keyed by affix id) resolve through this, so a rename never strands data. Removing an affix outright is handled by the forge converting its shards to Essence (data/forge.json).",
+		"map": {}
+	},
 	"affixes": [
 		{
 			"id": "of_might",
