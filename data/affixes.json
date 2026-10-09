@@ -15,6 +15,16 @@
 		"epic": 3,
 		"legendary": 4
 	},
+	"tier_variance": {
+		"_doc": "Forge S0 (#558): a rolled affix's tier = the rarity's tier (or the soft-clamp override) + an offset drawn from these weights. Offsets are allowed only when their mirror also fits the affix's tier range, so commons and legendaries never move. The weights lean slightly DOWN because tier bands grow geometrically: a symmetric spread drifted mean VALUES up 2-3% at uncommon-epic; these keep mean value within 0.2% of the old fixed-tier value at every rarity (fitted 2026-10-09 against every non-flag affix; re-fit if the band shapes change; test_affix_tier_variance asserts it). Rarity sets affix COUNT; this sets per-affix spread. Implicit affixes are not rolled and stay at the rarity tier.",
+		"weights": {
+			"0": 60,
+			"1": 13,
+			"-1": 17,
+			"2": 5,
+			"-2": 8
+		}
+	},
 	"affixes": [
 		{
 			"id": "of_might",
