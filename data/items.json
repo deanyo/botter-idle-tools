@@ -3778,7 +3778,8 @@
 				"of_executioner": 8,
 				"of_meditation": 2,
 				"of_thrift": 2,
-				"of_archmage": 2
+				"of_archmage": 2,
+				"of_arcane_clarity": 7
 			},
 			"overlay": "urand_pondering_new",
 			"default_tint": {
@@ -4631,7 +4632,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -4675,7 +4677,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -4723,7 +4726,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"overlay": "helm_jesters_cap"
 		},
@@ -4768,7 +4772,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -4814,7 +4819,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"overlay": "helm_padded_coif"
 		},
@@ -4863,7 +4869,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -4911,7 +4918,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -4959,7 +4967,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5009,7 +5018,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5058,7 +5068,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5104,7 +5115,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5155,7 +5167,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5205,7 +5218,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5254,7 +5268,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 220,
@@ -5309,7 +5324,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 200,
@@ -5365,7 +5381,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5415,7 +5432,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5466,7 +5484,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 50,
@@ -5522,7 +5541,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 280,
@@ -5579,7 +5599,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 180,
@@ -5634,7 +5655,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5685,7 +5707,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5736,7 +5759,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5785,7 +5809,8 @@
 				"of_executioner": 8,
 				"of_meditation": 2,
 				"of_thrift": 2,
-				"of_archmage": 2
+				"of_archmage": 2,
+				"of_arcane_clarity": 7
 			}
 		},
 		{
@@ -5842,7 +5867,8 @@
 				"of_arcane_flow": 5,
 				"of_thrift": 6,
 				"of_meditation": 5,
-				"of_archmage": 5
+				"of_archmage": 5,
+				"of_arcane_clarity": 10
 			}
 		},
 		{
@@ -5893,7 +5919,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -5945,7 +5972,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			},
 			"default_tint": {
 				"hue": 0,
@@ -6001,7 +6029,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -6050,7 +6079,8 @@
 				"of_executioner": 8,
 				"of_meditation": 2,
 				"of_thrift": 2,
-				"of_archmage": 2
+				"of_archmage": 2,
+				"of_arcane_clarity": 7
 			}
 		},
 		{
@@ -6099,7 +6129,8 @@
 				"of_executioner": 8,
 				"of_meditation": 2,
 				"of_thrift": 2,
-				"of_archmage": 2
+				"of_archmage": 2,
+				"of_arcane_clarity": 7
 			},
 			"default_tint": {
 				"hue": 45,
@@ -6153,7 +6184,8 @@
 				"of_executioner": 8,
 				"of_meditation": 2,
 				"of_thrift": 2,
-				"of_archmage": 2
+				"of_archmage": 2,
+				"of_arcane_clarity": 7
 			},
 			"default_tint": {
 				"hue": 30,
@@ -6209,7 +6241,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 8
 			}
 		},
 		{
@@ -10823,7 +10856,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			}
 		},
 		{
@@ -10890,7 +10924,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			}
 		},
 		{
@@ -10959,7 +10994,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			}
 		},
 		{
@@ -11024,7 +11060,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11093,7 +11130,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11161,7 +11199,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11228,7 +11267,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11296,7 +11336,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11365,7 +11406,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11434,7 +11476,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11502,7 +11545,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11570,7 +11614,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11639,7 +11684,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11710,7 +11756,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11779,7 +11826,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11847,7 +11895,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -11909,7 +11958,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -11971,7 +12021,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12032,7 +12083,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12095,7 +12147,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12156,7 +12209,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12219,7 +12273,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12288,7 +12343,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -12358,7 +12414,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -12421,7 +12478,8 @@
 				"of_arcane_pool": 2,
 				"of_arcane_siphon": 2,
 				"of_high_tide": 2,
-				"of_arcane_battery": 2
+				"of_arcane_battery": 2,
+				"of_arcane_clarity": 13
 			}
 		},
 		{
@@ -12489,7 +12547,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			}
 		},
 		{
@@ -16856,7 +16915,8 @@
 				"of_executioner": 8,
 				"of_meditation": 4,
 				"of_thrift": 4,
-				"of_archmage": 4
+				"of_archmage": 4,
+				"of_arcane_clarity": 11
 			},
 			"armor": 10,
 			"base_type": "hood",
@@ -17105,7 +17165,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 18
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -17175,7 +17236,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			},
 			"base_type": "amulet_guardian",
 			"default_tint": {
@@ -18238,7 +18300,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 15
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -18490,7 +18553,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_vitality",
 			"default_tint": {
@@ -19174,7 +19238,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_reflection",
 			"default_tint": {
@@ -19228,7 +19293,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 10
 			},
 			"armor": 24,
 			"base_type": "crown",
@@ -19685,7 +19751,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			},
 			"base_type": "amulet_air",
 			"default_tint": {
@@ -20091,7 +20158,8 @@
 				"of_executioner": 8,
 				"of_meditation": 4,
 				"of_thrift": 4,
-				"of_archmage": 4
+				"of_archmage": 4,
+				"of_arcane_clarity": 12
 			},
 			"armor": 7,
 			"base_type": "helmet",
@@ -20434,7 +20502,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 16
 			},
 			"base_type": "amulet_guardian",
 			"default_tint": {
@@ -20513,7 +20582,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -20628,7 +20698,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 10
 			},
 			"armor": 24,
 			"base_type": "wizard_hat",
@@ -20775,7 +20846,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 22
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -20853,7 +20925,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -20932,7 +21005,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 22
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -21239,7 +21313,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 11
 			},
 			"armor": 10,
 			"base_type": "wizard_hat",
@@ -21356,7 +21431,8 @@
 				"of_executioner": 8,
 				"of_meditation": 3,
 				"of_thrift": 3,
-				"of_archmage": 3
+				"of_archmage": 3,
+				"of_arcane_clarity": 11
 			},
 			"armor": 24,
 			"base_type": "crown",
@@ -21840,7 +21916,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_acrobat",
 			"default_tint": {
@@ -22057,7 +22134,8 @@
 				"of_arcane_pool": 4,
 				"of_arcane_siphon": 4,
 				"of_high_tide": 4,
-				"of_arcane_battery": 4
+				"of_arcane_battery": 4,
+				"of_arcane_clarity": 19
 			},
 			"base_type": "amulet_rage",
 			"default_tint": {
@@ -22244,7 +22322,8 @@
 				"of_arcane_pool": 3,
 				"of_arcane_siphon": 3,
 				"of_high_tide": 3,
-				"of_arcane_battery": 3
+				"of_arcane_battery": 3,
+				"of_arcane_clarity": 18
 			},
 			"base_type": "amulet_faith",
 			"default_tint": {
@@ -23061,7 +23140,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 2
 			}
 		},
 		{
@@ -23319,7 +23399,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 2
 			},
 			"default_tint": {
 				"hue": 40,
@@ -24117,7 +24198,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 3
 			},
 			"boss_drop": "boss_kirke",
 			"biome_pool": [
@@ -24198,7 +24280,8 @@
 				"of_regen": 16,
 				"of_meditation": 1,
 				"of_thrift": 1,
-				"of_archmage": 1
+				"of_archmage": 1,
+				"of_arcane_clarity": 3
 			},
 			"boss_drop": "boss_psyche",
 			"biome_pool": [
@@ -24363,7 +24446,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 3
 			},
 			"boss_drop": "boss_boris",
 			"biome_pool": [
@@ -24450,7 +24534,8 @@
 				"of_quickcast": 14,
 				"of_meditation": 1,
 				"of_thrift": 1,
-				"of_archmage": 1
+				"of_archmage": 1,
+				"of_arcane_clarity": 3
 			},
 			"boss_drop": "boss_tiamat",
 			"biome_pool": [
@@ -24496,7 +24581,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 7
 			}
 		},
 		{
@@ -24815,7 +24901,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 4
 			},
 			"default_tint": {
 				"hue": 200,
@@ -25570,7 +25657,8 @@
 				"of_arcane_pool": 1,
 				"of_arcane_siphon": 1,
 				"of_high_tide": 1,
-				"of_arcane_battery": 1
+				"of_arcane_battery": 1,
+				"of_arcane_clarity": 4
 			},
 			"vault_drop": "glacier_ice_shrine_5x5"
 		},
@@ -25684,7 +25772,8 @@
 				"of_poison_resist": 8,
 				"of_channeling": 8,
 				"of_meditation": 1,
-				"of_archmage": 1
+				"of_archmage": 1,
+				"of_arcane_clarity": 3
 			},
 			"vault_drop": "crypt_bone_chamber_5x5"
 		},
@@ -27028,7 +27117,8 @@
 				"of_wisdom": 16,
 				"of_channeling": 14,
 				"of_int_mastery": 10,
-				"of_quickcast": 8
+				"of_quickcast": 8,
+				"of_arcane_clarity": 2
 			}
 		},
 		{
