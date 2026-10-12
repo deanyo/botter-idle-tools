@@ -368,7 +368,7 @@
 			"element": "",
 			"mana_cost": 8,
 			"primary_stat": "dex",
-			"projectile": "res://assets/tiles/projectiles/magic_dart.png",
+			"projectile": "res://assets/tiles/spells/effects/magic_dart0.png",
 			"projectile_speed": 420.0,
 			"range_cells": 9,
 			"trail_flavor": "arcane",
