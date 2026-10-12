@@ -3230,8 +3230,8 @@
 			"id": "of_warden_step",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Warden Step",
-			"stat": "step_pulse_pct",
+			"name": "of Retribution",
+			"stat": "retribution_pct",
 			"applies_to": [
 				"boots",
 				"cloak"
