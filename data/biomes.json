@@ -129,7 +129,8 @@
           0.75
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#6f86c9"
     },
     "dungeon_dark": {
       "display_name": "the Dark Dungeon",
@@ -248,7 +249,8 @@
           0.7
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#5a5fb0"
     },
     "mines": {
       "display_name": "the Orcish Mines",
@@ -372,7 +374,8 @@
           0.6
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#a0703c"
     },
     "lair": {
       "display_name": "the Lair",
@@ -487,7 +490,8 @@
           0.5
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#5f9a52"
     },
     "forest": {
       "display_name": "the Forest",
@@ -605,7 +609,8 @@
           0.72,
           0.38
         ]
-      }
+      },
+      "ambient_tint": "#4f9a5e"
     },
     "swamp": {
       "display_name": "the Swamp",
@@ -738,7 +743,8 @@
           1.0,
           0.4
         ]
-      }
+      },
+      "ambient_tint": "#7f8a3e"
     },
     "snake": {
       "display_name": "the Snake Pit",
@@ -843,7 +849,8 @@
           0.45
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#b0963f"
     },
     "shoals": {
       "display_name": "the Shoals",
@@ -963,7 +970,8 @@
           0.92,
           1.0
         ]
-      }
+      },
+      "ambient_tint": "#3f9aa8"
     },
     "orc": {
       "display_name": "the Orc Hold",
@@ -1082,7 +1090,8 @@
         "kind": "embers",
         "density": 1.0,
         "speed": 0.7
-      }
+      },
+      "ambient_tint": "#a8553a"
     },
     "vaults": {
       "display_name": "the Vaults",
@@ -1195,7 +1204,8 @@
           ],
           "weight": 1
         }
-      ]
+      ],
+      "ambient_tint": "#8494b0"
     },
     "crypt": {
       "display_name": "the Crypt",
@@ -1312,7 +1322,8 @@
       "atmosphere": {
         "kind": "dust",
         "density": 0.8
-      }
+      },
+      "ambient_tint": "#6a5fb8"
     },
     "tomb": {
       "display_name": "the Tomb",
@@ -1431,7 +1442,8 @@
           0.5
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#b09060"
     },
     "forge": {
       "display_name": "the Forge",
@@ -1561,7 +1573,8 @@
       "boss_id": "boss_azrael",
       "atmosphere": {
         "kind": "embers"
-      }
+      },
+      "ambient_tint": "#b8402a"
     },
     "glacier": {
       "display_name": "the Glacier",
@@ -1673,7 +1686,8 @@
       "boss_id": "boss_antaeus",
       "atmosphere": {
         "kind": "snow"
-      }
+      },
+      "ambient_tint": "#6fb2e0"
     },
     "slime": {
       "display_name": "the Slime Pits",
@@ -1794,7 +1808,8 @@
           1.0,
           0.3
         ]
-      }
+      },
+      "ambient_tint": "#8ab83a"
     },
     "hive": {
       "display_name": "the Hive",
@@ -1902,7 +1917,8 @@
           0.85,
           0.3
         ]
-      }
+      },
+      "ambient_tint": "#c0902a"
     },
     "labyrinth": {
       "display_name": "the Labyrinth",
@@ -2017,7 +2033,8 @@
         "kind": "dust",
         "density": 0.5,
         "add": true
-      }
+      },
+      "ambient_tint": "#8a8478"
     },
     "abyss": {
       "display_name": "the Abyss",
@@ -2135,7 +2152,8 @@
           0.4,
           1.0
         ]
-      }
+      },
+      "ambient_tint": "#9a3fa8"
     },
     "pandemonium": {
       "display_name": "Pandemonium",
@@ -2266,7 +2284,8 @@
           0.3,
           0.5
         ]
-      }
+      },
+      "ambient_tint": "#b82a3a"
     },
     "zot": {
       "display_name": "the Realm of Zot",
@@ -2382,7 +2401,8 @@
           ],
           "weight": 1
         }
-      ]
+      ],
+      "ambient_tint": "#8a4fd0"
     },
     "elf": {
       "display_name": "the Elven Halls",
@@ -2495,7 +2515,8 @@
           0.7,
           1.0
         ]
-      }
+      },
+      "ambient_tint": "#9a8ad0"
     },
     "spider": {
       "display_name": "the Spider Nest",
@@ -2604,7 +2625,8 @@
           0.8
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#7a8a50"
     },
     "temple": {
       "display_name": "the Ecumenical Temple",
@@ -2706,7 +2728,8 @@
           0.6
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#c0a050"
     },
     "depths": {
       "display_name": "the Depths",
@@ -2857,7 +2880,8 @@
           0.8
         ],
         "add": true
-      }
+      },
+      "ambient_tint": "#3f5ab8"
     }
   }
 }
