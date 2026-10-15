@@ -812,10 +812,6 @@
         {
           "id": "orb",
           "weight": 50
-        },
-        {
-          "id": "orb_glow_0",
-          "weight": 40
         }
       ],
       "ambient_density": 0.012,
@@ -937,10 +933,6 @@
         {
           "id": "crystal_orb",
           "weight": 50
-        },
-        {
-          "id": "orb_glow_1",
-          "weight": 30
         }
       ],
       "ambient_density": 0.01,
@@ -1288,10 +1280,6 @@
         {
           "id": "flame_2",
           "weight": 40
-        },
-        {
-          "id": "orb_glow_0",
-          "weight": 30
         }
       ],
       "ambient_density": 0.022,
@@ -1654,10 +1642,6 @@
           "weight": 80
         },
         {
-          "id": "orb_glow_1",
-          "weight": 60
-        },
-        {
           "id": "orb",
           "weight": 40
         }
@@ -1780,10 +1764,6 @@
         {
           "id": "mold_2",
           "weight": 80
-        },
-        {
-          "id": "orb_glow_0",
-          "weight": 30
         }
       ],
       "ambient_density": 0.025,
@@ -2109,11 +2089,11 @@
       ],
       "ambient_decor": [
         {
-          "id": "orb_glow_0",
+          "id": "orb_2",
           "weight": 80
         },
         {
-          "id": "orb_glow_1",
+          "id": "crystal_orb",
           "weight": 80
         },
         {
@@ -2483,10 +2463,6 @@
         {
           "id": "magic_lamp",
           "weight": 95
-        },
-        {
-          "id": "orb_glow_1",
-          "weight": 30
         }
       ],
       "ambient_density": 0.018,
@@ -2826,10 +2802,6 @@
         {
           "id": "crystal_orb",
           "weight": 60
-        },
-        {
-          "id": "orb_glow_0",
-          "weight": 40
         },
         {
           "id": "magic_lamp",
