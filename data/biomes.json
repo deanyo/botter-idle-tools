@@ -21,7 +21,8 @@
           0.05,
           0.04,
           0.03
-        ]
+        ],
+        "memory_tint": "#c89060"
       },
       "floor_primary": [
         "dungeon_alt"
@@ -153,7 +154,8 @@
           0.8,
           0.82,
           1.0
-        ]
+        ],
+        "memory_tint": "#8088b0"
       },
       "floor_primary": [
         "dungeon_dark"
@@ -269,7 +271,8 @@
           0.06,
           0.04,
           0.01
-        ]
+        ],
+        "memory_tint": "#c88a50"
       },
       "floor_primary": [
         "mines"
@@ -393,7 +396,8 @@
           0.03,
           0.05,
           0.02
-        ]
+        ],
+        "memory_tint": "#8fb070"
       },
       "floor_primary": [
         "lair"
@@ -509,7 +513,8 @@
           0.02,
           0.06,
           0.02
-        ]
+        ],
+        "memory_tint": "#78b070"
       },
       "floor_primary": [
         "forest"
@@ -628,7 +633,8 @@
           0.05,
           0.06,
           0.02
-        ]
+        ],
+        "memory_tint": "#a0a860"
       },
       "floor_primary": [
         "swamp"
@@ -762,7 +768,8 @@
           0.06,
           0.06,
           0.02
-        ]
+        ],
+        "memory_tint": "#c8b060"
       },
       "floor_primary": [
         "snake"
@@ -868,7 +875,8 @@
           0.02,
           0.05,
           0.06
-        ]
+        ],
+        "memory_tint": "#c8a878"
       },
       "floor_primary": [
         "shoals"
@@ -989,7 +997,8 @@
           0.06,
           0.03,
           0.01
-        ]
+        ],
+        "memory_tint": "#c07a50"
       },
       "floor_primary": [
         "orc"
@@ -1109,7 +1118,8 @@
           0.04,
           0.04,
           0.06
-        ]
+        ],
+        "memory_tint": "#a0a0b8"
       },
       "floor_primary": [
         "vaults"
@@ -1228,7 +1238,8 @@
           0.72,
           0.78,
           1.0
-        ]
+        ],
+        "memory_tint": "#8880b8"
       },
       "floor_primary": [
         "crypt"
@@ -1341,7 +1352,8 @@
           0.06,
           0.05,
           0.02
-        ]
+        ],
+        "memory_tint": "#c8a868"
       },
       "floor_primary": [
         "tomb"
@@ -1466,7 +1478,8 @@
           0.85,
           0.62,
           0.55
-        ]
+        ],
+        "memory_tint": "#d07040"
       },
       "floor_primary": [
         "forge"
@@ -1598,7 +1611,8 @@
           0.8,
           0.88,
           1.1
-        ]
+        ],
+        "memory_tint": "#90b8d8"
       },
       "floor_primary": [
         "glacier"
@@ -1705,7 +1719,8 @@
           0.02,
           0.05,
           0.02
-        ]
+        ],
+        "memory_tint": "#90c060"
       },
       "floor_primary": [
         "dungeon"
@@ -1827,7 +1842,8 @@
           0.06,
           0.04,
           0.01
-        ]
+        ],
+        "memory_tint": "#d0a040"
       },
       "floor_primary": [
         "mines"
@@ -1936,7 +1952,8 @@
           0.04,
           0.04,
           0.05
-        ]
+        ],
+        "memory_tint": "#a8a0a0"
       },
       "floor_primary": [
         "labyrinth"
@@ -2053,7 +2070,8 @@
           0.06,
           0.02,
           0.08
-        ]
+        ],
+        "memory_tint": "#b080c0"
       },
       "floor_primary": [
         "abyss"
@@ -2171,7 +2189,8 @@
           0.08,
           0.05,
           0.0
-        ]
+        ],
+        "memory_tint": "#c86050"
       },
       "floor_primary": [
         "pandemonium"
@@ -2308,7 +2327,8 @@
           0.82,
           0.72,
           1.08
-        ]
+        ],
+        "memory_tint": "#a080d0"
       },
       "floor_primary": [
         "zot"
@@ -2420,7 +2440,8 @@
           0.03,
           0.03,
           0.06
-        ]
+        ],
+        "memory_tint": "#a8a0d0"
       },
       "floor_primary": [
         "elf"
@@ -2534,7 +2555,8 @@
           0.04,
           0.03,
           0.05
-        ]
+        ],
+        "memory_tint": "#909878"
       },
       "floor_primary": [
         "spider"
@@ -2645,7 +2667,8 @@
           0.06,
           0.05,
           0.02
-        ]
+        ],
+        "memory_tint": "#d0b878"
       },
       "floor_primary": [
         "temple"
@@ -2753,7 +2776,8 @@
           0.7,
           0.76,
           1.05
-        ]
+        ],
+        "memory_tint": "#7088c0"
       },
       "floor_primary": [
         "depths"
