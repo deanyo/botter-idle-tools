@@ -2878,6 +2878,888 @@
         "add": true
       },
       "ambient_tint": "#3f5ab8"
+    },
+    "portal_sewer": {
+      "display_name": "the Sewers",
+      "flavor": "Brick tunnels sweating green. Something big swims in the runoff, and the rats are not afraid of you.",
+      "color_grade": {
+        "tint": [
+          0.92,
+          1.05,
+          0.85
+        ],
+        "saturation": 0.85,
+        "contrast": 1.08,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.75,
+          0.9,
+          0.7
+        ],
+        "memory_tint": "#7f9a6a"
+      },
+      "floor_primary": [
+        "dungeon_dark"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "slime"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "mold"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        0.8,
+        0.95,
+        0.75,
+        1
+      ],
+      "darkness": 0.5,
+      "enemy_pool": [
+        "giant_rat",
+        "grey_rat",
+        "crocodile",
+        "jelly",
+        "ooze",
+        "slime_creature",
+        "azure_jelly",
+        "death_ooze"
+      ],
+      "vault_themes": [
+        "portal_sewer"
+      ],
+      "ambient_decor": [
+        {
+          "id": "mold_1",
+          "weight": 60
+        },
+        {
+          "id": "mold_2",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "dungeon_dark"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 3,
+      "cr_recommended": 350,
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.7,
+        "color": [
+          0.6,
+          0.75,
+          0.45
+        ],
+        "add": true
+      },
+      "ambient_tint": "#5f8a4a",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_ossuary": {
+      "display_name": "an Ossuary",
+      "flavor": "Sandstone vaults stacked with the honoured dead. The honoured dead have opinions about visitors.",
+      "color_grade": {
+        "tint": [
+          1.06,
+          1.0,
+          0.86
+        ],
+        "saturation": 0.8,
+        "contrast": 1.1,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.9,
+          0.82,
+          0.7
+        ],
+        "memory_tint": "#b8a070"
+      },
+      "floor_primary": [
+        "floor_sand_stone"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "sandstone_wall"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "tomb"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.0,
+        0.92,
+        0.78,
+        1
+      ],
+      "darkness": 0.45,
+      "enemy_pool": [
+        "mummy",
+        "mummy_priest",
+        "greater_mummy",
+        "skeleton",
+        "anubis_guard",
+        "sphinx",
+        "wight",
+        "flying_skull"
+      ],
+      "vault_themes": [
+        "portal_ossuary"
+      ],
+      "ambient_decor": [
+        {
+          "id": "flame_0",
+          "weight": 60
+        },
+        {
+          "id": "flame_1",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "floor_sand_rock"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "atmosphere": {
+        "kind": "dust",
+        "density": 1.2,
+        "color": [
+          0.85,
+          0.78,
+          0.6
+        ],
+        "add": true
+      },
+      "ambient_tint": "#a88c58",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_bailey": {
+      "display_name": "the Bailey",
+      "flavor": "A walled orc keep with a muddy yard. Banners, palisades, and a garrison that drills all day.",
+      "color_grade": {
+        "tint": [
+          1.05,
+          1.0,
+          0.9
+        ],
+        "saturation": 0.95,
+        "contrast": 1.05,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.85,
+          0.8,
+          0.7
+        ],
+        "memory_tint": "#9a8460"
+      },
+      "floor_primary": [
+        "forest"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "brick_brown-vines"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "@banner_1"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.0,
+        0.95,
+        0.85,
+        1
+      ],
+      "darkness": 0.25,
+      "enemy_pool": [
+        "orc",
+        "orc_warrior",
+        "orc_priest",
+        "orc_knight",
+        "orc_wizard",
+        "orc_sorcerer",
+        "ogre",
+        "hobgoblin",
+        "gnoll"
+      ],
+      "vault_themes": [
+        "portal_bailey"
+      ],
+      "ambient_decor": [
+        {
+          "id": "campfire",
+          "weight": 50
+        },
+        {
+          "id": "lantern",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.016,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "forest_alt"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 2,
+      "cr_recommended": 180,
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.5,
+        "color": [
+          0.85,
+          0.8,
+          0.6
+        ],
+        "add": true
+      },
+      "ambient_tint": "#8a7448",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_wizlab": {
+      "display_name": "a Wizard's Laboratory",
+      "flavor": "Crystal corridors humming with half-finished spells. The experiments got out; the wizard did not.",
+      "color_grade": {
+        "tint": [
+          1.05,
+          0.92,
+          1.12
+        ],
+        "saturation": 1.05,
+        "contrast": 1.08,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.85,
+          0.7,
+          1.05
+        ],
+        "memory_tint": "#a070c0"
+      },
+      "floor_primary": [
+        "crystal_floor"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "@crystal_wall_magenta",
+        "@crystal_wall_lightmagenta"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "crystal_wall"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.0,
+        0.85,
+        1.1,
+        1
+      ],
+      "darkness": 0.3,
+      "enemy_pool": [
+        "deep_elf_mage",
+        "deep_elf_sorcerer",
+        "deep_elf_death_mage",
+        "deep_elf_pyromancer",
+        "naga_mage",
+        "orc_sorcerer",
+        "sphinx",
+        "azure_jelly"
+      ],
+      "vault_themes": [
+        "portal_wizlab"
+      ],
+      "ambient_decor": [
+        {
+          "id": "magic_lamp",
+          "weight": 60
+        },
+        {
+          "id": "sparkles_1",
+          "weight": 40
+        },
+        {
+          "id": "orb_2",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "crystal_floor"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.8,
+        "color": [
+          0.75,
+          0.4,
+          1.0
+        ]
+      },
+      "ambient_tint": "#9a5ad0",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_bazaar": {
+      "display_name": "the Bazaar",
+      "flavor": "Marble halls of stalls and awnings. Every merchant has a bodyguard, and the bodyguards are bored.",
+      "color_grade": {
+        "tint": [
+          1.05,
+          1.02,
+          0.95
+        ],
+        "saturation": 1.0,
+        "contrast": 1.05,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.9,
+          0.88,
+          0.85
+        ],
+        "memory_tint": "#c0b090"
+      },
+      "floor_primary": [
+        "marble_floor"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "vaults_alt2"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "vaults"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.0,
+        1.0,
+        0.95,
+        1
+      ],
+      "darkness": 0.2,
+      "enemy_pool": [
+        "deep_elf_knight",
+        "centaur_warrior",
+        "ogre",
+        "two_headed_ogre",
+        "naga_warrior",
+        "orc_knight",
+        "stone_giant",
+        "manticore"
+      ],
+      "vault_themes": [
+        "portal_bazaar"
+      ],
+      "ambient_decor": [
+        {
+          "id": "lantern",
+          "weight": 60
+        },
+        {
+          "id": "magic_lamp",
+          "weight": 40
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "vaults_pattern"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "atmosphere": {
+        "kind": "dust",
+        "density": 0.5,
+        "color": [
+          1.0,
+          0.9,
+          0.65
+        ],
+        "add": true
+      },
+      "ambient_tint": "#c8a868",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_trove": {
+      "display_name": "a Treasure Trove",
+      "flavor": "A sealed vault of gold and guardians. The treasure is real; so are the things paid to keep it.",
+      "color_grade": {
+        "tint": [
+          1.08,
+          1.02,
+          0.85
+        ],
+        "saturation": 1.05,
+        "contrast": 1.1,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.95,
+          0.85,
+          0.6
+        ],
+        "memory_tint": "#d0b060"
+      },
+      "floor_primary": [
+        "vaults_alt3"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "vaults"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "vaults_alt"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.05,
+        0.98,
+        0.85,
+        1
+      ],
+      "darkness": 0.35,
+      "enemy_pool": [
+        "iron_dragon",
+        "golden_dragon",
+        "stone_giant",
+        "anubis_guard",
+        "death_knight",
+        "deep_elf_knight",
+        "quicksilver_dragon",
+        "manticore"
+      ],
+      "vault_themes": [
+        "portal_trove"
+      ],
+      "ambient_decor": [
+        {
+          "id": "orb",
+          "weight": 50
+        },
+        {
+          "id": "sparkles_1",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "dungeon_dark"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "atmosphere": {
+        "kind": "sparks",
+        "density": 0.6,
+        "color": [
+          1.0,
+          0.85,
+          0.35
+        ]
+      },
+      "ambient_tint": "#d8a838",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_ice_cave": {
+      "display_name": "an Ice Cave",
+      "flavor": "A frozen grotto where every breath hangs in the air. The ice is clear enough to see what is frozen inside.",
+      "color_grade": {
+        "tint": [
+          0.85,
+          0.97,
+          1.15
+        ],
+        "saturation": 0.85,
+        "contrast": 1.05,
+        "vignette": 0.22,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          0.8,
+          0.9,
+          1.12
+        ],
+        "memory_tint": "#9cc4e0"
+      },
+      "floor_primary": [
+        "frozen"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "@crystal_wall_lightcyan",
+        "@crystal_wall_white"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "glacier"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        0.88,
+        0.97,
+        1.12,
+        1
+      ],
+      "darkness": 0.2,
+      "enemy_pool": [
+        "ice_beast",
+        "freezing_wraith",
+        "frost_giant",
+        "ice_dragon",
+        "wraith",
+        "skeleton",
+        "hound"
+      ],
+      "vault_themes": [
+        "portal_ice_cave"
+      ],
+      "ambient_decor": [
+        {
+          "id": "crystal_orb",
+          "weight": 70
+        },
+        {
+          "id": "orb",
+          "weight": 30
+        }
+      ],
+      "ambient_density": 0.016,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "water",
+      "floor_secondary": [
+        "glacier_alt"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 3,
+      "cr_recommended": 350,
+      "atmosphere": {
+        "kind": "snow",
+        "density": 0.8,
+        "speed": 0.5
+      },
+      "ambient_tint": "#7ab8e8",
+      "encompass_chance": 0.9,
+      "portal_only": true
+    },
+    "portal_volcano": {
+      "display_name": "a Volcano",
+      "flavor": "Black rock split by rivers of lava. The heat shimmers, and the things that live here like it that way.",
+      "color_grade": {
+        "tint": [
+          1.12,
+          0.95,
+          0.85
+        ],
+        "saturation": 1.05,
+        "contrast": 1.12,
+        "vignette": 0.28,
+        "vignette_tint": [
+          0.02,
+          0.02,
+          0.03
+        ],
+        "shadow_tint": [
+          1.0,
+          0.75,
+          0.6
+        ],
+        "memory_tint": "#c06040"
+      },
+      "floor_primary": [
+        "volcanic_floor"
+      ],
+      "floor_accent": [],
+      "wall_primary": [
+        "volcanic_wall"
+      ],
+      "wall_accent": [],
+      "wall_alternates": [
+        {
+          "prefixes": [
+            "permarock_red"
+          ],
+          "weight": 1
+        }
+      ],
+      "modulate": [
+        1.08,
+        0.9,
+        0.82,
+        1
+      ],
+      "darkness": 0.35,
+      "enemy_pool": [
+        "fire_bat",
+        "salamander",
+        "hell_hound",
+        "fire_giant",
+        "fire_dragon",
+        "manticore",
+        "red_devil",
+        "smoke_demon"
+      ],
+      "vault_themes": [
+        "portal_volcano"
+      ],
+      "ambient_decor": [
+        {
+          "id": "flame_0",
+          "weight": 50
+        },
+        {
+          "id": "flame_2",
+          "weight": 50
+        }
+      ],
+      "ambient_density": 0.02,
+      "layout": "basic",
+      "layouts": [
+        {
+          "id": "basic",
+          "weight": 2
+        },
+        {
+          "id": "caves",
+          "weight": 1
+        }
+      ],
+      "sigil_set": [],
+      "sigil_density": [
+        0,
+        0
+      ],
+      "liquid_type": "lava",
+      "floor_secondary": [
+        "volcanic_floor"
+      ],
+      "edge_overlay": {
+        "shadow": "dark",
+        "patches": []
+      },
+      "tier": 4,
+      "cr_recommended": 600,
+      "atmosphere": {
+        "kind": "embers",
+        "density": 1.0,
+        "speed": 0.7
+      },
+      "ambient_tint": "#d05028",
+      "encompass_chance": 0.9,
+      "portal_only": true
     }
   }
 }

@@ -8,6 +8,18 @@
       "abyss_4",
       "abyss_5",
       "abyss_6",
+      "cobble_blood_1",
+      "cobble_blood_10",
+      "cobble_blood_11",
+      "cobble_blood_12",
+      "cobble_blood_2",
+      "cobble_blood_3",
+      "cobble_blood_4",
+      "cobble_blood_5",
+      "cobble_blood_6",
+      "cobble_blood_7",
+      "cobble_blood_8",
+      "cobble_blood_9",
       "crypt_0",
       "crypt_1",
       "crypt_2",
@@ -26,6 +38,12 @@
       "crypt_alt_1",
       "crypt_alt_2",
       "crypt_alt_3",
+      "crystal_floor_0",
+      "crystal_floor_1",
+      "crystal_floor_2",
+      "crystal_floor_3",
+      "crystal_floor_4",
+      "crystal_floor_5",
       "depths_0",
       "depths_1",
       "depths_2",
@@ -75,6 +93,25 @@
       "elf_frame_3",
       "elf_frame_4",
       "elf_frame_5",
+      "floor_sand_rock_0",
+      "floor_sand_rock_1",
+      "floor_sand_rock_2",
+      "floor_sand_rock_3",
+      "floor_sand_stone_0",
+      "floor_sand_stone_1",
+      "floor_sand_stone_2",
+      "floor_sand_stone_3",
+      "floor_sand_stone_4",
+      "floor_sand_stone_5",
+      "floor_sand_stone_6",
+      "floor_sand_stone_7",
+      "floor_vines_0",
+      "floor_vines_1",
+      "floor_vines_2",
+      "floor_vines_3",
+      "floor_vines_4",
+      "floor_vines_5",
+      "floor_vines_6",
       "forest_0",
       "forest_1",
       "forest_2",
@@ -105,6 +142,19 @@
       "forge_alt_3",
       "forge_alt_4",
       "forge_alt_5",
+      "frozen_0",
+      "frozen_1",
+      "frozen_10",
+      "frozen_11",
+      "frozen_12",
+      "frozen_2",
+      "frozen_3",
+      "frozen_4",
+      "frozen_5",
+      "frozen_6",
+      "frozen_7",
+      "frozen_8",
+      "frozen_9",
       "glacier_0",
       "glacier_1",
       "glacier_2",
@@ -135,6 +185,12 @@
       "lair_alt_1",
       "lair_alt_2",
       "lair_alt_3",
+      "marble_floor_1",
+      "marble_floor_2",
+      "marble_floor_3",
+      "marble_floor_4",
+      "marble_floor_5",
+      "marble_floor_6",
       "mines_0",
       "mines_1",
       "mines_2",
@@ -242,6 +298,13 @@
       "vaults_pattern_7",
       "vaults_pattern_8",
       "vaults_pattern_9",
+      "volcanic_floor_0",
+      "volcanic_floor_1",
+      "volcanic_floor_2",
+      "volcanic_floor_3",
+      "volcanic_floor_4",
+      "volcanic_floor_5",
+      "volcanic_floor_6",
       "zot_0",
       "zot_1",
       "zot_10",
@@ -263,8 +326,23 @@
       "abyss_4",
       "abyss_5",
       "abyss_6",
+      "banner_1",
       "boulder",
+      "brick_brown-vines_1",
+      "brick_brown-vines_2",
+      "brick_brown-vines_3",
+      "brick_brown-vines_4",
+      "cobalt_rock_1",
+      "cobalt_rock_2",
+      "cobalt_rock_3",
+      "cobalt_rock_4",
       "crumbled_column",
+      "crumbled_column_1",
+      "crumbled_column_2",
+      "crumbled_column_3",
+      "crumbled_column_4",
+      "crumbled_column_5",
+      "crumbled_column_6",
       "crypt_0",
       "crypt_1",
       "crypt_2",
@@ -279,9 +357,32 @@
       "crypt_alt_3",
       "crypt_alt_4",
       "crypt_alt_5",
+      "crystal_wall_0",
+      "crystal_wall_1",
+      "crystal_wall_11",
+      "crystal_wall_12",
+      "crystal_wall_13",
+      "crystal_wall_2",
+      "crystal_wall_3",
+      "crystal_wall_4",
+      "crystal_wall_5",
+      "crystal_wall_6",
+      "crystal_wall_7",
+      "crystal_wall_8",
+      "crystal_wall_9",
+      "crystal_wall_blue",
+      "crystal_wall_cyan",
+      "crystal_wall_darkgray",
+      "crystal_wall_lightblue",
+      "crystal_wall_lightcyan",
+      "crystal_wall_lightgray",
+      "crystal_wall_lightmagenta",
+      "crystal_wall_magenta",
+      "crystal_wall_white",
       "deep_water_0",
       "deep_water_1",
       "deep_water_murky_0",
+      "deep_water_murky_2",
       "depths_0",
       "depths_1",
       "depths_2",
@@ -350,12 +451,18 @@
       "glacier_4",
       "glacier_5",
       "glacier_alt_0",
+      "grate",
       "hive_0",
       "hive_1",
       "hive_2",
       "hive_3",
       "hive_4",
       "hive_5",
+      "honeycomb",
+      "lab-rock_0",
+      "lab-rock_1",
+      "lab-rock_2",
+      "lab-rock_3",
       "labyrinth_0",
       "labyrinth_1",
       "labyrinth_2",
@@ -409,6 +516,20 @@
       "pandemonium_5",
       "pandemonium_6",
       "pandemonium_7",
+      "permarock_clear_red_0",
+      "permarock_red_0",
+      "sandstone_wall_0",
+      "sandstone_wall_1",
+      "sandstone_wall_2",
+      "sandstone_wall_3",
+      "sandstone_wall_4",
+      "sandstone_wall_5",
+      "sandstone_wall_6",
+      "sandstone_wall_7",
+      "sandstone_wall_8",
+      "sandstone_wall_9",
+      "sarcophagus_open",
+      "sarcophagus_sealed",
       "shallow_water_2",
       "shoals_0",
       "shoals_1",
@@ -453,6 +574,11 @@
       "tomb_alt_1",
       "tomb_alt_2",
       "tomb_alt_3",
+      "torch_0",
+      "torch_1",
+      "torch_2",
+      "torch_3",
+      "torch_4",
       "tree_1_lightred",
       "tree_1_red",
       "tree_1_yellow",
@@ -475,12 +601,35 @@
       "vaults_alt_3",
       "vaults_alt_4",
       "vaults_alt_5",
+      "volcanic_wall_0",
+      "volcanic_wall_1",
+      "volcanic_wall_2",
+      "volcanic_wall_3",
+      "volcanic_wall_4",
+      "volcanic_wall_5",
+      "volcanic_wall_6",
+      "wall_vines_0",
+      "wall_vines_1",
+      "wall_vines_2",
+      "wall_vines_3",
+      "wall_vines_4",
+      "wall_vines_5",
+      "wall_vines_6",
       "zot_0",
       "zot_1",
       "zot_2",
       "zot_3"
     ],
     "overlays": [
+      "cobweb_east",
+      "cobweb_full",
+      "cobweb_north",
+      "cobweb_northeast",
+      "cobweb_northwest",
+      "cobweb_south",
+      "cobweb_southeast",
+      "cobweb_southwest",
+      "cobweb_west",
       "deep_water_wave_corner_northeast",
       "deep_water_wave_corner_northwest",
       "deep_water_wave_corner_southeast",
@@ -522,6 +671,11 @@
       "grass_southeast",
       "grass_southwest",
       "grass_west",
+      "lava_lip_east",
+      "lava_lip_north",
+      "lava_lip_northeast",
+      "lava_lip_northwest",
+      "lava_lip_west",
       "shallow_water_wave_corner_northeast",
       "shallow_water_wave_corner_northwest",
       "shallow_water_wave_corner_southeast",
@@ -537,7 +691,19 @@
       "slime_overlay_south",
       "slime_overlay_southeast",
       "slime_overlay_southwest",
-      "slime_overlay_west"
+      "slime_overlay_west",
+      "wall_shadow_dark_east",
+      "wall_shadow_dark_full",
+      "wall_shadow_dark_north",
+      "wall_shadow_dark_northeast",
+      "wall_shadow_dark_northwest",
+      "wall_shadow_dark_west",
+      "wall_shadow_east",
+      "wall_shadow_full",
+      "wall_shadow_north",
+      "wall_shadow_northeast",
+      "wall_shadow_northwest",
+      "wall_shadow_west"
     ],
     "sigils": [
       "algiz",
@@ -651,10 +817,14 @@
       "flame_0",
       "flame_1",
       "flame_2",
+      "fleshy_door_closed",
+      "fleshy_door_open",
       "fountain_blood",
       "fountain_blue",
       "fountain_dry",
       "fountain_sparkling",
+      "gate_closed",
+      "gate_open",
       "lamp",
       "lantern",
       "magic_lamp",
@@ -670,18 +840,22 @@
       "sealed_door",
       "sparkles_1",
       "statue_granite",
+      "vgate_closed",
+      "vgate_open",
       "zot_pillar"
     ],
     "gateways": [
       "bailey_portal",
       "bazaar_portal",
       "hive_portal",
+      "ice_cave_portal",
       "lab_portal",
       "ossuary_portal",
       "sewer_portal_rusted",
       "stairs_down",
       "stairs_up",
       "trove_portal",
+      "volcano_portal",
       "zig_portal"
     ],
     "terrain": [
@@ -700,6 +874,20 @@
         "abyss_4",
         "abyss_5",
         "abyss_6"
+      ],
+      "cobble_blood": [
+        "cobble_blood_1",
+        "cobble_blood_10",
+        "cobble_blood_11",
+        "cobble_blood_12",
+        "cobble_blood_2",
+        "cobble_blood_3",
+        "cobble_blood_4",
+        "cobble_blood_5",
+        "cobble_blood_6",
+        "cobble_blood_7",
+        "cobble_blood_8",
+        "cobble_blood_9"
       ],
       "crypt": [
         "crypt_0",
@@ -724,6 +912,14 @@
         "crypt_alt2_1",
         "crypt_alt2_2",
         "crypt_alt2_3"
+      ],
+      "crystal_floor": [
+        "crystal_floor_0",
+        "crystal_floor_1",
+        "crystal_floor_2",
+        "crystal_floor_3",
+        "crystal_floor_4",
+        "crystal_floor_5"
       ],
       "depths": [
         "depths_0",
@@ -792,6 +988,31 @@
         "elf_frame_4",
         "elf_frame_5"
       ],
+      "floor_sand_rock": [
+        "floor_sand_rock_0",
+        "floor_sand_rock_1",
+        "floor_sand_rock_2",
+        "floor_sand_rock_3"
+      ],
+      "floor_sand_stone": [
+        "floor_sand_stone_0",
+        "floor_sand_stone_1",
+        "floor_sand_stone_2",
+        "floor_sand_stone_3",
+        "floor_sand_stone_4",
+        "floor_sand_stone_5",
+        "floor_sand_stone_6",
+        "floor_sand_stone_7"
+      ],
+      "floor_vines": [
+        "floor_vines_0",
+        "floor_vines_1",
+        "floor_vines_2",
+        "floor_vines_3",
+        "floor_vines_4",
+        "floor_vines_5",
+        "floor_vines_6"
+      ],
       "forest": [
         "forest_0",
         "forest_1",
@@ -831,6 +1052,21 @@
         "forge_alt2_1",
         "forge_alt2_2",
         "forge_alt2_3"
+      ],
+      "frozen": [
+        "frozen_0",
+        "frozen_1",
+        "frozen_10",
+        "frozen_11",
+        "frozen_12",
+        "frozen_2",
+        "frozen_3",
+        "frozen_4",
+        "frozen_5",
+        "frozen_6",
+        "frozen_7",
+        "frozen_8",
+        "frozen_9"
       ],
       "glacier": [
         "glacier_0",
@@ -873,6 +1109,14 @@
         "lair_alt_1",
         "lair_alt_2",
         "lair_alt_3"
+      ],
+      "marble_floor": [
+        "marble_floor_1",
+        "marble_floor_2",
+        "marble_floor_3",
+        "marble_floor_4",
+        "marble_floor_5",
+        "marble_floor_6"
       ],
       "mines": [
         "mines_0",
@@ -1023,6 +1267,15 @@
         "vaults_pattern_8",
         "vaults_pattern_9"
       ],
+      "volcanic_floor": [
+        "volcanic_floor_0",
+        "volcanic_floor_1",
+        "volcanic_floor_2",
+        "volcanic_floor_3",
+        "volcanic_floor_4",
+        "volcanic_floor_5",
+        "volcanic_floor_6"
+      ],
       "zot": [
         "zot_0",
         "zot_1",
@@ -1048,6 +1301,29 @@
         "abyss_5",
         "abyss_6"
       ],
+      "banner": [
+        "banner_1"
+      ],
+      "brick_brown-vines": [
+        "brick_brown-vines_1",
+        "brick_brown-vines_2",
+        "brick_brown-vines_3",
+        "brick_brown-vines_4"
+      ],
+      "cobalt_rock": [
+        "cobalt_rock_1",
+        "cobalt_rock_2",
+        "cobalt_rock_3",
+        "cobalt_rock_4"
+      ],
+      "crumbled_column": [
+        "crumbled_column_1",
+        "crumbled_column_2",
+        "crumbled_column_3",
+        "crumbled_column_4",
+        "crumbled_column_5",
+        "crumbled_column_6"
+      ],
       "crypt": [
         "crypt_0",
         "crypt_1",
@@ -1066,12 +1342,28 @@
         "crypt_alt_4",
         "crypt_alt_5"
       ],
+      "crystal_wall": [
+        "crystal_wall_0",
+        "crystal_wall_1",
+        "crystal_wall_11",
+        "crystal_wall_12",
+        "crystal_wall_13",
+        "crystal_wall_2",
+        "crystal_wall_3",
+        "crystal_wall_4",
+        "crystal_wall_5",
+        "crystal_wall_6",
+        "crystal_wall_7",
+        "crystal_wall_8",
+        "crystal_wall_9"
+      ],
       "deep_water": [
         "deep_water_0",
         "deep_water_1"
       ],
       "deep_water_murky": [
-        "deep_water_murky_0"
+        "deep_water_murky_0",
+        "deep_water_murky_2"
       ],
       "depths": [
         "depths_0",
@@ -1173,6 +1465,12 @@
         "hive_4",
         "hive_5"
       ],
+      "lab-rock": [
+        "lab-rock_0",
+        "lab-rock_1",
+        "lab-rock_2",
+        "lab-rock_3"
+      ],
       "labyrinth": [
         "labyrinth_0",
         "labyrinth_1",
@@ -1246,6 +1544,24 @@
         "pandemonium_6",
         "pandemonium_7"
       ],
+      "permarock_clear_red": [
+        "permarock_clear_red_0"
+      ],
+      "permarock_red": [
+        "permarock_red_0"
+      ],
+      "sandstone_wall": [
+        "sandstone_wall_0",
+        "sandstone_wall_1",
+        "sandstone_wall_2",
+        "sandstone_wall_3",
+        "sandstone_wall_4",
+        "sandstone_wall_5",
+        "sandstone_wall_6",
+        "sandstone_wall_7",
+        "sandstone_wall_8",
+        "sandstone_wall_9"
+      ],
       "shallow_water": [
         "shallow_water_2"
       ],
@@ -1308,6 +1624,13 @@
         "tomb_alt_2",
         "tomb_alt_3"
       ],
+      "torch": [
+        "torch_0",
+        "torch_1",
+        "torch_2",
+        "torch_3",
+        "torch_4"
+      ],
       "vaults": [
         "vaults_0",
         "vaults_1",
@@ -1329,6 +1652,24 @@
         "vaults_alt2_1",
         "vaults_alt2_2",
         "vaults_alt2_3"
+      ],
+      "volcanic_wall": [
+        "volcanic_wall_0",
+        "volcanic_wall_1",
+        "volcanic_wall_2",
+        "volcanic_wall_3",
+        "volcanic_wall_4",
+        "volcanic_wall_5",
+        "volcanic_wall_6"
+      ],
+      "wall_vines": [
+        "wall_vines_0",
+        "wall_vines_1",
+        "wall_vines_2",
+        "wall_vines_3",
+        "wall_vines_4",
+        "wall_vines_5",
+        "wall_vines_6"
       ],
       "zot": [
         "zot_0",
@@ -1392,6 +1733,17 @@
   },
   "directional": {
     "overlays": {
+      "cobweb": {
+        "east": "cobweb_east",
+        "full": "cobweb_full",
+        "north": "cobweb_north",
+        "northeast": "cobweb_northeast",
+        "northwest": "cobweb_northwest",
+        "south": "cobweb_south",
+        "southeast": "cobweb_southeast",
+        "southwest": "cobweb_southwest",
+        "west": "cobweb_west"
+      },
       "deep_water_wave": {
         "east": "deep_water_wave_east",
         "north": "deep_water_wave_north",
@@ -1426,6 +1778,13 @@
         "southwest": "grass_southwest",
         "west": "grass_west"
       },
+      "lava_lip": {
+        "east": "lava_lip_east",
+        "north": "lava_lip_north",
+        "northeast": "lava_lip_northeast",
+        "northwest": "lava_lip_northwest",
+        "west": "lava_lip_west"
+      },
       "shallow_water_wave": {
         "east": "shallow_water_wave_east",
         "north": "shallow_water_wave_north",
@@ -1447,6 +1806,22 @@
         "southeast": "slime_overlay_southeast",
         "southwest": "slime_overlay_southwest",
         "west": "slime_overlay_west"
+      },
+      "wall_shadow": {
+        "east": "wall_shadow_east",
+        "full": "wall_shadow_full",
+        "north": "wall_shadow_north",
+        "northeast": "wall_shadow_northeast",
+        "northwest": "wall_shadow_northwest",
+        "west": "wall_shadow_west"
+      },
+      "wall_shadow_dark": {
+        "east": "wall_shadow_dark_east",
+        "full": "wall_shadow_dark_full",
+        "north": "wall_shadow_dark_north",
+        "northeast": "wall_shadow_dark_northeast",
+        "northwest": "wall_shadow_dark_northwest",
+        "west": "wall_shadow_dark_west"
       }
     }
   }
