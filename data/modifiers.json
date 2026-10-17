@@ -142,6 +142,19 @@
         "gold_mult": 1.4,
         "xp_no_diminish": 1
       }
+    },
+    {
+      "id": "anchor_hunt",
+      "name": "Anchor Hunt",
+      "desc": "Bought in the Endgame tab. The branch plays at Tier 5 and its boss drops an empowered anchor.",
+      "min_tier": 1,
+      "max_tier": 5,
+      "requires_cleared": true,
+      "roll_chance_pct": 0,
+      "effects": {
+        "tier_floor": 5,
+        "xp_no_diminish": 1
+      }
     }
   ]
 }
