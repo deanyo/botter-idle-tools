@@ -107,7 +107,7 @@
       ]
     },
     "boss_step": 1,
-    "elite_step": 1,
+    "elite_step": 0,
     "trash_ceiling": "uncommon"
   }
 }
