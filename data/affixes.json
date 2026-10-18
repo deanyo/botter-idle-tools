@@ -6443,6 +6443,294 @@
 					4
 				]
 			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_endless_deep",
+			"family": "eternal",
+			"kind": "flat",
+			"name": "of the Endless Deep",
+			"stat": "hp",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					35,
+					45
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "hp_regen",
+					"tiers": [
+						[
+							2,
+							2
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_undying_ember",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Undying Ember",
+			"stat": "fire_dmg_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					12,
+					15
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "fire_res",
+					"tiers": [
+						[
+							12,
+							15
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_drowned_star",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Drowned Star",
+			"stat": "cold_dmg_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					12,
+					15
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "mana_regen_flat",
+					"tiers": [
+						[
+							1,
+							2
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_long_vigil",
+			"family": "eternal",
+			"kind": "flat",
+			"name": "of the Long Vigil",
+			"stat": "armor",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					8,
+					12
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "low_hp_dr_pct",
+					"tiers": [
+						[
+							8,
+							10
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_hollow_crown",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Hollow Crown",
+			"stat": "boss_dmg_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					12,
+					15
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "damage_vs_unique_pct",
+					"tiers": [
+						[
+							12,
+							15
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_turning_wheel",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Turning Wheel",
+			"stat": "spell_cdr_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					6,
+					8
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "haste_pct",
+					"tiers": [
+						[
+							8,
+							10
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_bottomless_hunger",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Bottomless Hunger",
+			"stat": "lifesteal_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					3,
+					4
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "hp_per_kill_flat",
+					"tiers": [
+						[
+							6,
+							8
+						]
+					]
+				}
+			]
+		},
+		{
+			"_doc": "Eternal (Descent-only, #746): rides the extra slot an Eternal item carries. Two upside stats at about 35-40% of a legendary affix each, so the slot is flavour and a modest edge, not a power spike. Never rolls on ordinary drops (AffixSystem.eligible_affixes_for skips the family).",
+			"id": "of_the_last_lantern",
+			"family": "eternal",
+			"kind": "pct",
+			"name": "of the Last Lantern",
+			"stat": "crit_chance",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak",
+				"weapon",
+				"armor",
+				"boots",
+				"shield"
+			],
+			"tiers": [
+				[
+					6,
+					8
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "loot_quantity_pct",
+					"tiers": [
+						[
+							8,
+							10
+						]
+					]
+				}
+			]
 		}
 	]
 }

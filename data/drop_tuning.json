@@ -2,9 +2,9 @@
   "_doc": "Centralized drop-rate tuning. The Drop Tuning portal page edits this file via export/clipboard. Runtime reads it on dungeon start and at quality.gd / dungeon._create_item_instance call sites. Anything not present falls back to the hardcoded default in the consuming module so removing a key doesn't break the game.",
   "_format_version": 1,
   "meta_rarity": {
-    "primal_chance": 0.001,
-    "ancient_chance": 0.011,
-    "_doc": "Independent of rarity tier. Stacks with quality + base rarity. Primal = +50% baseline, Ancient = +20% baseline. Affixes unaffected (have their own tier band)."
+    "primal_chance": 0.0,
+    "ancient_chance": 0.010,
+    "_doc": "Independent of rarity tier. Stacks with quality + base rarity. Primal = +50% baseline, Ancient = +20% baseline. Affixes unaffected (have their own tier band). Thresholds are cumulative (ancient fires when primal_chance <= roll < ancient_chance). Primal retired 2026-10-17 (#746): a flat +50% on any drop, even a common, was the wrong shape; the Descent's Eternal tier replaced it. Saved Primal items keep their bonus."
   },
   "quality": {
     "tail_weight_mult": 1.0,
