@@ -648,18 +648,6 @@
       "wall_accent": [],
       "wall_alternates": [
         {
-          "weight": 25,
-          "prefixes": [
-            "@deep_water_murky_0"
-          ]
-        },
-        {
-          "weight": 15,
-          "prefixes": [
-            "@deep_water_0"
-          ]
-        },
-        {
           "weight": 15,
           "prefixes": [
             "@mangrove_1"
@@ -885,26 +873,6 @@
         "shoals"
       ],
       "wall_accent": [],
-      "wall_alternates": [
-        {
-          "weight": 35,
-          "prefixes": [
-            "@deep_water_0"
-          ]
-        },
-        {
-          "weight": 25,
-          "prefixes": [
-            "@deep_water_1"
-          ]
-        },
-        {
-          "weight": 15,
-          "prefixes": [
-            "@shallow_water_2"
-          ]
-        }
-      ],
       "modulate": [
         1,
         1.05,
@@ -1493,14 +1461,6 @@
         "@forge_1",
         "@forge_0"
       ],
-      "wall_alternates": [
-        {
-          "weight": 20,
-          "prefixes": [
-            "@lava_0"
-          ]
-        }
-      ],
       "modulate": [
         1.15,
         0.9,
@@ -1718,12 +1678,6 @@
         "@mold_4"
       ],
       "wall_alternates": [
-        {
-          "weight": 25,
-          "prefixes": [
-            "@deep_water_murky_0"
-          ]
-        },
         {
           "weight": 15,
           "prefixes": [
