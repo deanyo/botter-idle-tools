@@ -915,9 +915,6 @@
         }
       ],
       "edge_overlay": {
-        "prefix": "shallow_water_wave",
-        "density": 0.6,
-        "patch_density": 0,
         "patches": []
       },
       "liquid_type": "water",
