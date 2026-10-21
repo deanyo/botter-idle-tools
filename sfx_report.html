@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botter SFX capture report</title>
+<style>
+:root{color-scheme:dark;font:14px ui-monospace,monospace;background:#101216;color:#e7e8ec}body{margin:24px;max-width:1600px}h1{font-size:23px;color:#9de3ff}h2{font-size:17px;margin-top:28px}p{line-height:1.55;color:#c2c7d1}button,select,input{font:inherit;background:#1c2430;color:#e7e8ec;border:1px solid #657182;padding:6px}label{display:inline-block;margin:8px 16px 8px 0}audio{display:block;width:min(100%,800px);margin:12px 0}canvas{display:block;background:#080b10;width:100%;border:1px solid #394353}#warnings{color:#ffc06c;white-space:pre-wrap}table{border-collapse:collapse;width:100%;font-size:12px}td,th{text-align:left;padding:8px;border-bottom:1px solid #394353}th{color:#a9dfff}tbody tr:hover{background:#263344;cursor:pointer}.table{overflow:auto}a{color:#9de3ff}#cursor{min-height:22px;color:#bfe9ff}.legend{color:#8ce0cf}input[type=range]{width:280px;vertical-align:middle}small{color:#b7bfce}button{cursor:pointer}
+</style>
+<h1>BOTTER // SFX CAPTURE</h1>
+<p>Mix peaks and RMS are measured from captured audio <strong>before the Master fader</strong>, not from your speakers. Cue timing is wall time with approximately 100 ms alignment uncertainty. Blank mix windows mean no captured samples, not proven silence. Use this report to flag bursts and crowding; listening still decides timbre and fatigue.</p>
+<label>Capture <select id="capture"></select></label><label>Window <select id="span"><option value="10000">10 seconds</option><option value="30000" selected>30 seconds</option><option value="60000">60 seconds</option><option value="0">Full capture</option></select></label>
+<label>Position <input id="position" type="range" min="0" value="0" step="100"></label>
+<div id="summary"></div><div id="warnings"></div><audio id="audio" controls preload="metadata"></audio>
+<h2>Measured mix // dBFS</h2><p class="legend">Cyan: sample peak. Green: RMS. Dashed amber: −6 dBFS headroom reference. Click a window to seek the recorded audio.</p>
+<canvas id="mix" height="200"></canvas><div id="cursor"></div>
+<h2>Cue activity // concurrent voices</h2>
+<label>Isolate <select id="cue"></select></label><button id="all">Show all cues</button>
+<p>Rows show admitted voices. Brighter bars mark important/higher-priority cues. Bars end at the earlier of source completion, observed stop/replacement, or capture end. Unobserved ends use pitch-adjusted duration.</p>
+<canvas id="voices"></canvas>
+<h2>Loudest separated windows</h2><div class="table"><table><thead><tr><th>Time</th><th>Peak dBFS</th><th>RMS dBFS</th><th>Cues nearby (association, not proof of cause)</th></tr></thead><tbody id="spikes"></tbody></table></div>
+<h2>All captures // cue totals</h2><p>Click a cue to isolate its timeline. Initial voices are marked resumed and excluded from fresh requests. Voice seconds sum overlapping voices, so can exceed elapsed time. Estimated energy uses hash-matching source WAV RMS² × gain² × voice duration; it ignores the exact envelope, phase and interactions. Missing/changed source assets are excluded from the estimate, never counted as zero energy.</p>
+<div class="table"><table><thead><tr><th>Cue (priority)</th><th>Requests</th><th>Voices (resumed)</th><th>Peak voices</th><th>Rejected</th><th>Replaced</th><th>Voice seconds</th><th>Estimated energy share</th><th>Takes</th></tr></thead><tbody id="totals"></tbody></table></div>
+<script>
+'use strict';
+const DATA=/*TRACE_DATA*/null;
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let current=DATA.traces[0];
+DATA.traces.forEach((t,i)=>$('capture').add(new Option(t.name,i)));
+function setCapture(){current=DATA.traces[+$('capture').value];$('position').value=0;$('span').value=current.end_ms<=10000?'0':'30000';$('position').max=Math.max(0,current.end_ms);$('audio').src=current.wav_url;$('warnings').textContent=current.warnings.join('\n');$('summary').textContent=`${(current.end_ms/1000).toFixed(1)}s wall time // ${current.plays.length} voices // peak ${current.peak_db===null?'unmeasured':current.peak_db.toFixed(1)+' dBFS'} // ${current.contexts.filter(c=>c.kind==='run_started').length} runs started`;populateCues();draw();spikes();}
+function populateCues(){const previous=$('cue').value;$('cue').replaceChildren(new Option('All cues',''));[...new Set(current.plays.map(p=>p.cue))].sort().forEach(c=>$('cue').add(new Option(c,c)));if([...$('cue').options].some(o=>o.value===previous))$('cue').value=previous;}
+function bounds(){const span=+$('span').value||Math.max(1000,current.end_ms);const start=Math.min(+$('position').value,Math.max(0,current.end_ms-span));return [start,start+span];}
+function context(canvas,height){const dpr=window.devicePixelRatio||1,w=canvas.clientWidth;canvas.style.height=height+'px';canvas.width=w*dpr;canvas.height=height*dpr;const c=canvas.getContext('2d');c.scale(dpr,dpr);c.font='12px monospace';return [c,w];}
+function draw(){const [lo,hi]=bounds(),[c,w]=context($('mix'),200),left=78,plot=w-left-15,x=t=>left+(t-lo)/(hi-lo)*plot;
+const yy=d=>180-(Math.max(-80,Math.min(6,d))+80)/86*160;
+[-80,-60,-40,-20,-6,0].forEach(d=>{c.strokeStyle=d===-6?'#c28c49':'#29303a';c.setLineDash(d===-6?[5,5]:[]);c.beginPath();c.moveTo(left,yy(d));c.lineTo(w-15,yy(d));c.stroke();c.fillStyle='#b7bfce';c.fillText(d+' dBFS',5,yy(d)+4);});c.setLineDash([]);
+for(const [key,color] of [['peak_db','#8edaff'],['rms_db','#67d7ae']]){c.strokeStyle=color;c.beginPath();let prev=null;current.mix.filter(p=>p.ms>=lo-100&&p.ms<=hi+100).forEach(p=>{if(prev===null||p.ms-prev>160)c.moveTo(x(p.ms),yy(p[key]));else c.lineTo(x(p.ms),yy(p[key]));prev=p.ms;});c.stroke();}
+c.fillStyle='#b7bfce';for(let i=0;i<=5;i++)c.fillText(((lo+(hi-lo)*i/5)/1000).toFixed(1)+'s',left+plot*i/5-12,196);
+const maxLanes={};current.plays.forEach(p=>maxLanes[p.cue]=Math.max(maxLanes[p.cue]||0,p.lane+1));
+const selected=$('cue').value, names=[...new Set(current.plays.filter(p=>!selected||p.cue===selected).map(p=>p.cue))].sort();const [v,vw]=context($('voices'),Math.max(90,names.length*24+30)),vl=Math.min(260,vw*.35),vp=vw-vl-15;
+names.forEach((name,i)=>{v.fillStyle='#bac5d6';v.fillText(name.slice(0,36),5,24+i*24);v.fillStyle='#202932';v.fillRect(vl,10+i*24,vp,19);});
+current.plays.filter(p=>(!selected||p.cue===selected)&&p.end>=lo&&p.start<=hi).forEach(p=>{const row=names.indexOf(p.cue),a=vl+(Math.max(lo,p.start)-lo)/(hi-lo)*vp,b=vl+(Math.min(hi,p.end)-lo)/(hi-lo)*vp;v.fillStyle=p.important?'#ffc476':p.priority>=30?'#b998ff':'#75bdd3';const height=15/(maxLanes[p.cue]||1);v.fillRect(a,12+row*24+p.lane*height,Math.max(1,b-a),Math.max(.7,height-1));});
+}
+function seek(ms){// WAV has no wall-clock gaps; map through the recorded chunk index.
+const map=current.audio_map||[];let match=map.find(c=>ms>=c.start&&ms<=c.end);if(!match&&map.length)match=map.reduce((a,b)=>Math.abs(ms-a.end)<Math.abs(ms-b.end)?a:b);if(match){const frac=Math.max(0,Math.min(1,(ms-match.start)/(match.end-match.start||1)));$('audio').currentTime=match.wave_start+frac*match.wave_duration;}}
+function spikes(){$('spikes').innerHTML=current.spikes.map((p,i)=>`<tr data-spike="${i}"><td>${(p.ms/1000).toFixed(2)}s</td><td>${p.peak_db.toFixed(1)}</td><td>${p.rms_db.toFixed(1)}</td><td>${esc(p.cues.join(', ')||'No event attribution (possible UI/resumed voice or alignment gap)')}</td></tr>`).join('');$('spikes').querySelectorAll('tr').forEach(r=>r.onclick=()=>{const p=current.spikes[+r.dataset.spike];$('position').value=Math.max(0,p.ms-2000);draw();seek(Math.max(0,p.ms-500));});}
+const totalEnergy=DATA.totals.reduce((s,r)=>s+r.energy_estimate,0);$('totals').innerHTML=DATA.totals.map((r,i)=>`<tr data-row="${i}"><td>${esc(r.cue)} (${r.priority}${r.important?", important":""})</td><td>${r.attempts}</td><td>${r.plays} (${r.resumed})</td><td>${r.max_voices}</td><td>${esc(Object.entries(r.rejects).map(([k,v])=>k+': '+v).join(', ')||'—')}</td><td>${r.stolen}</td><td>${r.voice_sec.toFixed(2)}</td><td>${totalEnergy?(100*r.energy_estimate/totalEnergy).toFixed(1)+'%':'unavailable'}${r.unestimated_plays?' ('+r.unestimated_plays+' unestimated)':''}</td><td>${esc(Object.entries(r.takes).map(([k,v])=>k+': '+v).join(', '))}</td></tr>`).join('');$('totals').querySelectorAll('tr').forEach(r=>r.onclick=()=>{const cue=DATA.totals[+r.dataset.row].cue;if([...$('cue').options].some(o=>o.value===cue)){$('cue').value=cue;draw();$('voices').scrollIntoView({behavior:'smooth',block:'center'});}});
+$('mix').addEventListener('mousemove',e=>{const [lo,hi]=bounds(),r=$('mix').getBoundingClientRect(),ms=lo+(e.clientX-r.left-78)/(r.width-93)*(hi-lo);const near=current.mix.reduce((a,b)=>!a||Math.abs(b.ms-ms)<Math.abs(a.ms-ms)?b:a,null);$('cursor').textContent=near&&Math.abs(near.ms-ms)<150?`${(near.ms/1000).toFixed(2)}s // peak ${near.peak_db.toFixed(1)} // RMS ${near.rms_db.toFixed(1)} dBFS`:'No measured audio at this time';});
+$('mix').addEventListener('click',e=>{const [lo,hi]=bounds(),r=$('mix').getBoundingClientRect();seek(lo+(e.clientX-r.left-78)/(r.width-93)*(hi-lo));});
+$('capture').onchange=setCapture;for(const name of ['span','position','cue'])$(name).oninput=draw;$('all').onclick=()=>{$('cue').value='';draw();};window.addEventListener('resize',draw);setCapture();
+</script>
+</html>
