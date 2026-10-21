@@ -74,6 +74,7 @@
       ],
       "ambient_density": 0.012,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -208,6 +209,7 @@
       ],
       "ambient_density": 0.018,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -324,6 +326,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "caves",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves",
@@ -463,6 +466,7 @@
       ],
       "ambient_density": 0.018,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -586,6 +590,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -704,6 +709,7 @@
       ],
       "ambient_density": 0.02,
       "layout": "caves",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves",
@@ -804,6 +810,7 @@
       ],
       "ambient_density": 0.012,
       "layout": "caves_tight",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_tight",
@@ -904,6 +911,7 @@
       ],
       "ambient_density": 0.01,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -1014,6 +1022,7 @@
       ],
       "ambient_density": 0.02,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -1132,6 +1141,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -1248,6 +1258,7 @@
       ],
       "ambient_density": 0.022,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -1360,6 +1371,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -1503,6 +1515,7 @@
       ],
       "ambient_density": 0.03,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -1604,6 +1617,7 @@
       ],
       "ambient_density": 0.018,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -1718,6 +1732,7 @@
       ],
       "ambient_density": 0.025,
       "layout": "caves",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves",
@@ -1814,6 +1829,7 @@
       ],
       "ambient_density": 0.018,
       "layout": "caves_tight",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_tight",
@@ -1929,6 +1945,7 @@
       ],
       "ambient_density": 0.012,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -2053,6 +2070,7 @@
       ],
       "ambient_density": 0.02,
       "layout": "caves",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves",
@@ -2180,6 +2198,7 @@
       ],
       "ambient_density": 0.025,
       "layout": "caves_open",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves_open",
@@ -2311,6 +2330,7 @@
       ],
       "ambient_density": 0.025,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -2417,6 +2437,7 @@
       ],
       "ambient_density": 0.018,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -2542,6 +2563,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "caves",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "caves",
@@ -2628,6 +2650,7 @@
       ],
       "ambient_density": 0.022,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
@@ -2760,6 +2783,7 @@
       ],
       "ambient_density": 0.014,
       "layout": "basic",
+      "encompass_chance": 0.2,
       "layouts": [
         {
           "id": "basic",
