@@ -56,7 +56,8 @@
         "kobold_demonologist"
       ],
       "vault_themes": [
-        "dungeon"
+        "dungeon",
+        "keep"
       ],
       "ambient_decor": [
         {
