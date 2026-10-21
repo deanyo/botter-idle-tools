@@ -196,6 +196,7 @@
       ],
       "vault_themes": [
         "dungeon",
+        "dungeon_dark",
         "crypt"
       ],
       "ambient_decor": [
@@ -1932,6 +1933,7 @@
       ],
       "vault_themes": [
         "dungeon",
+        "labyrinth",
         "vaults"
       ],
       "ambient_decor": [
@@ -2637,6 +2639,7 @@
       "enemy_pool": [],
       "vault_themes": [
         "dungeon",
+        "temple",
         "vaults"
       ],
       "ambient_decor": [
