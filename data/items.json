@@ -16716,7 +16716,7 @@
 			"name": "Holy Pillars",
 			"slot": "spell",
 			"rarity": "common",
-			"tile": "spells/icons/searing_ray.png",
+			"tile": "spells/icons/holy_pillars.png",
 			"base_type": "spell_holy_pillars",
 			"primary_stat": "str",
 			"damage_min": 41,

@@ -540,7 +540,7 @@
 			"projectile_speed": 0.0,
 			"range_cells": 3,
 			"trail_flavor": "holy",
-			"icon": "searing_ray.png"
+			"icon": "holy_pillars.png"
 		}
 	},
 	"_notes_shape_params": "`shape_params` carries the per-archetype knobs its shape's _fire_* body reads. Before S3 these were magic numbers hardcoded in 25 near-duplicate fire bodies; a new archetype is now a JSON entry, not a new function."
