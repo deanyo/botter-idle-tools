@@ -11,9 +11,9 @@
     "id": "items",
     "href": "item_editor.html",
     "title": "Item editor",
-    "description": "Full developer editor for existing gear, affix pools, tints and exports. Imports player proposals.",
-    "status": "active",
-    "note": "Use Create an item for the guided player flow. Spells are authored separately in game data."
+    "description": "Out of date — update needed. Retained developer editor and proposal import surface.",
+    "status": "outdated",
+    "note": "OUT OF DATE — UPDATE NEEDED. This full editor needs a fresh compatibility review. Use Create an item for player proposals."
   },
   {
     "id": "atlas",
@@ -28,8 +28,8 @@
     "href": "biome_editor.html",
     "title": "Biome appearance",
     "description": "Edit tile pools, lighting, enemies and biome metadata.",
-    "status": "active",
-    "note": "Appearance and metadata only. Layout arcs, room modules, landmarks and boss arenas are separate game data; this page does not preview generation."
+    "status": "archived",
+    "note": "Archived 2026-10-27 at the developer’s request. Preserved as a historical reference; this tool is no longer maintained."
   },
   {
     "id": "affixes",
@@ -44,8 +44,8 @@
     "href": "drop_tuning.html",
     "title": "Drop rates",
     "description": "Developer tuning for ordinary loot chance, quality, enchant and tint settings.",
-    "status": "active",
-    "note": "Descent Eternal rewards are configured separately in descent.json. Primal chance is currently disabled in game data; saved Primal items still exist."
+    "status": "archived",
+    "note": "Archived 2026-10-27 at the developer’s request. Preserved as a historical reference; this tool is no longer maintained."
   },
   {
     "id": "enemies",
@@ -60,8 +60,8 @@
     "href": "spell_matrix.html",
     "title": "Spell data reference",
     "description": "Explore current spell archetypes, names and eligible affixes.",
-    "status": "active",
-    "note": "A data reference, not proof of runtime drop behaviour. Verify composed drops with the game tests."
+    "status": "archived",
+    "note": "Archived 2026-10-27 at the developer’s request. Preserved as a historical reference; this tool is no longer maintained."
   },
   {
     "id": "cards",
@@ -82,7 +82,7 @@
   {
     "id": "perf",
     "href": "perf_report.html",
-    "title": "Performance audit \u00b7 July 2026",
+    "title": "Performance audit · July 2026",
     "description": "Dated measurements and findings from the 2026-07-01 audit.",
     "status": "archived",
     "note": "Archived 2026-10-27. Historical measurements; run the benchmark harness for current performance."

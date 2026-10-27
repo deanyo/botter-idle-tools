@@ -1,3 +1,4 @@
+@import url("portal_shell.css");
 /* Botter Authoring Portal — shared theme.
  *
  * One source of truth for palette, buttons, form controls, modals, and
@@ -432,3 +433,5 @@ button:disabled { opacity: .45; cursor: default; }
 .tool-notice { padding: 10px 18px; background: var(--panel); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 12px; line-height: 1.5; flex-shrink: 0; }
 .tool-notice.archived { border-left: 4px solid var(--warn); color: var(--text); }
 @media(max-width:700px) { .catalog-row { grid-template-columns: 1fr auto; gap: 8px; padding: 16px; } .catalog-row span { grid-column: 1 / -1; grid-row: 2; } .repo-header { padding: 18px; } }
+
+.tool-notice.outdated { border-left:4px solid var(--warn); color:var(--warn); }

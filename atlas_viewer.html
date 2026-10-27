@@ -351,6 +351,8 @@
   }
   .portal-tooltip .badge-d { background: rgba(255,170,85,0.15); color: #ffaa55; }
   .portal-tooltip .badge-v { background: rgba(136,170,255,0.15); color: #88aaff; }
+.atlas-pagination { display:flex; gap:16px; align-items:center; justify-content:center; padding:10px 14px; border-bottom:1px solid var(--border); flex-shrink:0; }
+#atlas-page { color:var(--muted); font-size:12px; text-align:center; }
 </style>
 </head>
 <body>
@@ -432,6 +434,7 @@
   </div>
 </header>
 
+<div id="atlas-pagination" class="atlas-pagination"><button id="atlas-prev" type="button">Previous page</button><span id="atlas-page" role="status"></span><button id="atlas-next" type="button">Next page</button></div>
 <main id="main">
   <div class="empty">Loading atlas…</div>
 </main>
@@ -480,11 +483,37 @@ const TILE_ROOTS = [
 
 let atlas = {};
 let entries = [];
+let atlasPage = 0;
+const ATLAS_PAGE_SIZE = 72;
+let atlasImageRoots = {};
+const atlasImageQueue = [];
+let activeAtlasImages = 0;
+function queueAtlasImage(image, entry, onMissing) {
+  const root = atlasImageRoots[entry._key];
+  if (root === undefined) { onMissing(); return; }
+  const token = String(Number(image.dataset.loadToken || 0) + 1); image.dataset.loadToken = token;
+  atlasImageQueue.push({image, url:TILE_ROOTS[root] + (root === 2 ? entry._key.replace(/^project\//,'') : entry._key), onMissing, token});
+  Promise.resolve().then(pumpAtlasImages);
+}
+function pumpAtlasImages() {
+  while (activeAtlasImages < 4 && atlasImageQueue.length) {
+    const job = atlasImageQueue.shift();
+    if (!job.image.isConnected) continue;
+    activeAtlasImages++;
+    const done = () => { activeAtlasImages--; pumpAtlasImages(); };
+    job.image.onload = done;
+    job.image.onerror = () => { job.onMissing(); done(); };
+    job.image.src = job.url;
+  }
+}
 
 async function load() {
   try {
     const res = await fetch(ATLAS_PATH);
     atlas = await res.json();
+    const reference = await fetch('portal_reference.json');
+    if (!reference.ok) throw new Error('Atlas image locations: HTTP ' + reference.status);
+    atlasImageRoots = (await reference.json()).atlas_roots;
   } catch (e) {
     document.getElementById("main").innerHTML = `<div class="empty error">Failed to load atlas: ${e.message}<br><br>Run a local web server first:<br><code style="background:#000;padding:4px 8px;border-radius:3px">python3 -m http.server 8080</code><br>then open <code>http://localhost:8080/tools/atlas_viewer.html</code></div>`;
     return;
@@ -686,8 +715,16 @@ function updateStats(filtered) {
     top.map(([k,v]) => `${k} ${v.toLocaleString()}`).join(" · ");
 }
 
-function render() {
+function render(resetPage = true) {
+  if (resetPage) atlasPage = 0;
   const filtered = filteredEntries();
+  const pages = Math.max(1, Math.ceil(filtered.length / ATLAS_PAGE_SIZE));
+  atlasPage = Math.min(atlasPage,pages-1);
+  const visible = filtered.slice(atlasPage * ATLAS_PAGE_SIZE,(atlasPage+1)*ATLAS_PAGE_SIZE);
+  document.getElementById("atlas-prev").disabled = atlasPage === 0;
+  document.getElementById("atlas-next").disabled = atlasPage === pages-1;
+  document.getElementById("atlas-page").textContent = filtered.length ? `${atlasPage*ATLAS_PAGE_SIZE+1}–${atlasPage*ATLAS_PAGE_SIZE+visible.length} of ${filtered.length.toLocaleString()} · Page ${atlasPage+1} of ${pages}` : "No matching tiles";
+  atlasImageQueue.length = 0;
   const mode = document.getElementById("group-by").value;
   updateStats(filtered);
 
@@ -706,13 +743,13 @@ function render() {
     head.className = "group-header";
     head.innerHTML = `<span>all</span><span class="count">${filtered.length}</span>`;
     div.appendChild(head);
-    div.appendChild(renderTiles(filtered));
+    div.appendChild(renderTiles(visible));
     main.appendChild(div);
     return;
   }
 
   const groups = new Map();
-  for (const e of filtered) {
+  for (const e of visible) {
     const k = groupKey(e, mode);
     if (!groups.has(k)) groups.set(k, []);
     groups.get(k).push(e);
@@ -749,19 +786,9 @@ function renderTiles(list) {
       cell.dataset.vidx = e.variant_index ?? "v";
     }
     const img = document.createElement("img");
-    img.src = TILE_ROOTS[0] + e._key;
-    let rootIdx = 0;
-    img.onerror = () => {
-      rootIdx++;
-      if (rootIdx < TILE_ROOTS.length) {
-        img.src = TILE_ROOTS[rootIdx] + e._key;
-      } else {
-        cell.classList.add("dim");
-        img.onerror = null;
-      }
-    };
+    queueAtlasImage(img,e,() => { cell.classList.add('dim'); img.alt = 'Image unavailable'; });
     img.alt = e.filename || "";
-    img.loading = "lazy";
+    img.decoding = "async";
     cell.appendChild(img);
     const name = document.createElement("div");
     name.className = "name";
@@ -812,25 +839,16 @@ function hideTip() {
 function resPathFor(e) {
   // Project-local tiles get a `res://` path; everything else falls back
   // to the relative atlas path.
-  return "res://assets/tiles/" + e._key;
+  return e._key.startsWith("project/") ? "res://assets/tiles/" + e._key.slice(8) : e._key;
 }
 
 function showDetail(e) {
   hideTip();
   const detail = document.getElementById("detail");
   detail.setAttribute("aria-hidden", "false");
-  const img = document.getElementById("detail-img");
-  img.src = TILE_ROOTS[0] + e._key;
-  let r = 0;
-  img.onerror = () => {
-    r++;
-    if (r < TILE_ROOTS.length) {
-      img.src = TILE_ROOTS[r] + e._key;
-    } else {
-      img.style.opacity = "0.3";
-      img.onerror = null;
-    }
-  };
+  const oldImage = document.getElementById("detail-img");
+  const img = document.createElement("img"); img.id = "detail-img"; img.className = oldImage.className; img.alt = e.filename || "Tile preview"; oldImage.replaceWith(img);
+  queueAtlasImage(img,e,() => { img.style.opacity = '0.3'; img.alt = 'Image unavailable'; });
   img.style.opacity = "1";
   document.getElementById("detail-title").textContent = e.filename || e._key;
   document.getElementById("detail-filename").textContent = e._key;
@@ -936,6 +954,8 @@ function clearFilters() {
   refreshChips();
   render();
 }
+document.getElementById('atlas-prev').addEventListener('click', () => {atlasPage--; render(false);});
+document.getElementById('atlas-next').addEventListener('click', () => {atlasPage++; render(false);});
 document.getElementById("clear-filters").addEventListener("click", clearFilters);
 
 // Cell-size slider — drives the CSS variable so the grid retiles.

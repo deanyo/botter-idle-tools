@@ -27,6 +27,8 @@
   "portal.css",
   "portal_catalog.json",
   "portal_nav.js",
+  "portal_reference.json",
+  "portal_shell.css",
   "reaction_chart.html",
   "roll_flowchart.html",
   "slot_proposal.html",

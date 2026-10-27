@@ -10,13 +10,17 @@
   const STAT_LABELS = {damage_min:'Minimum damage',damage_max:'Maximum damage',speed:'Attack interval (seconds)',armor:'Armour',evasion:'Evasion',block_chance:'Block chance (%)',block_amount:'Block amount'};
   const $ = id => document.getElementById(id);
   const copy = value => JSON.parse(JSON.stringify(value));
-  let items = [], affixes = [], files = {}, icons = [], state, step = 0, furthest = 0;
+  let items = [], affixes = [], files = {}, icons = [], descriptions = {}, rarityIndices = {}, rarityCounts = {}, state, step = 0, furthest = 0;
   let pickerMode = 'icon', pickerPage = 0, selectionToken = 0;
   const loaded = new Set();
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const option = (value, text) => { const node = document.createElement('option'); node.value = value; node.textContent = text; return node; };
   const template = () => items.find(i => i.id === state.templateId);
-  const current = () => ({...copy(template()), ...copy(state.edits)});
+  const current = () => {
+    const item = {...copy(template()), ...copy(state.edits)};
+    for (const key of ['default_tint','default_tint_overlay']) if (item[key] === null) delete item[key];
+    return item;
+  };
   const spriteUrl = (mode, value) => ASSETS + (mode === 'icon' ? 'items/' + value : 'player/' + OVERLAYS[current().slot] + '/' + value + '.png');
   const overlayOptions = slot => (files['res://assets/tiles/player/' + OVERLAYS[slot] + '/'] || []).map(f => f.replace(/\.png$/, ''));
   const availableAffixes = slot => affixes.filter(a => a.family !== 'eternal' && ((a.applies_to || []).includes(slot) || (a.applies_to || []).includes('any')));
@@ -46,7 +50,7 @@
     const saved = JSON.parse(raw);
     if (saved.version !== 1 || !items.some(i => i.id === saved.templateId)) throw new Error('The saved starting item is no longer available.');
     const clean = initial(saved.templateId);
-    for (const key of ['name','lore','id','tile','overlay','rarity','unique',...Object.keys(STAT_LABELS),'implicit_affixes']) {
+    for (const key of ['name','lore','id','tile','overlay','rarity','unique',...Object.keys(STAT_LABELS),'implicit_affixes','default_tint','default_tint_overlay']) {
       if (Object.hasOwn(saved.edits || {}, key)) clean.edits[key] = saved.edits[key];
     }
     clean.author = typeof saved.author === 'string' ? saved.author.slice(0,80) : '';
@@ -60,6 +64,9 @@
     if (!Array.isArray(clean.edits.implicit_affixes) || !clean.edits.implicit_affixes.every(id => allowed.has(id))) throw new Error('A saved bonus is no longer available.');
     if (clean.edits.rarity && !RARITIES.includes(clean.edits.rarity)) throw new Error('Invalid saved rarity.');
     if (Object.hasOwn(clean.edits,'unique') && typeof clean.edits.unique !== 'boolean') throw new Error('Invalid saved unique setting.');
+    for (const key of ['default_tint','default_tint_overlay']) {
+      if (clean.edits[key] != null && !validTint(clean.edits[key])) throw new Error('Invalid saved sprite colour.');
+    }
     state = clean;
     furthest = Number.isInteger(saved.furthest) ? Math.max(0,Math.min(4,saved.furthest)) : 0;
     step = Number.isInteger(saved.step) ? Math.max(0,Math.min(furthest,saved.step)) : 0;
@@ -87,7 +94,7 @@
       input.value = item[key]; input.addEventListener('input', () => { state.edits[key] = input.value === '' ? null : Number(input.value); changed(); });
       wrapper.append(lab,input); $('stats').append(wrapper);
     }
-    renderBonuses(); renderSprites(); renderPreview(); showStep();
+    renderColourControls(); renderStatGuide(); renderStatWarnings(); renderBonuses(); renderBonusGuide(); renderSprites(); renderPreview(); showStep();
   }
   function renderBonuses() {
     const item = current(), query = $('bonus-search').value.toLowerCase();
@@ -103,21 +110,114 @@
       });
       const text = document.createElement('span'); text.textContent = a.name;
       const detail = document.createElement('small'); detail.textContent = `${a.stat.replaceAll('_',' ')} · ${a.kind || 'bonus'}`;
+      detail.textContent = bonusDescription(a);
       text.append(detail); label.append(input,text); return label;
     }));
     if (!$('bonuses').children.length) $('bonuses').textContent = 'No matching bonuses.';
   }
+  const TINT_MODES = ['normal','colorize','shimmer','inverted','prismatic'];
+  function validTint(tint) {
+    return tint && typeof tint === 'object' && TINT_MODES.includes(tint.mode) &&
+      Number.isFinite(tint.hue) && tint.hue >= 0 && tint.hue <= 360 &&
+      Number.isFinite(tint.sat) && tint.sat >= 0 && tint.sat <= 2 &&
+      (tint.colorize_strength === undefined || (Number.isFinite(tint.colorize_strength) && tint.colorize_strength >= 0 && tint.colorize_strength <= 1));
+  }
   function tintStyle(tint) {
     if (!tint?.mode || tint.mode === 'none') return '';
     const hue = Number(tint.hue || 0), sat = Number(tint.sat ?? 1);
-    return tint.mode === 'colorize' ? `sepia(1) saturate(${sat * 3}) hue-rotate(${hue - 40}deg)` : `hue-rotate(${hue}deg) saturate(${sat})`;
+    if (tint.mode === 'colorize') return `sepia(${tint.colorize_strength ?? .7}) saturate(${sat * 3}) hue-rotate(${hue - 40}deg)`;
+    return `hue-rotate(${hue}deg) saturate(${sat})${tint.mode === 'inverted' ? ' invert(1)' : ''}`;
+  }
+  function applyTint(image, tint) {
+    image.style.filter = tintStyle(tint);
+    image.style.setProperty('--sprite-hue', (tint?.hue || 0) + 'deg');
+    image.style.setProperty('--sprite-sat', tint?.sat ?? 1);
+    image.classList.toggle('tint-prismatic',tint?.mode === 'prismatic');
+    image.classList.toggle('tint-shimmer',tint?.mode === 'shimmer');
+  }
+  function renderColourControls() {
+    for (const surface of ['icon','overlay']) {
+      const host = $(surface + '-colour'), key = surface === 'icon' ? 'default_tint' : 'default_tint_overlay';
+      host.hidden = surface === 'overlay' && !OVERLAYS[current().slot];
+      if (host.hidden) continue;
+      const tint = current()[key], mode = tint?.mode || (surface === 'overlay' ? 'inherit' : 'none');
+      host.innerHTML = `<label for="${surface}-mode">${surface === 'icon' ? 'Inventory' : 'Character'} colour effect</label><select id="${surface}-mode"></select><div id="${surface}-colour-fields"></div>`;
+      const choices = [['none','Original colours'],['normal','Rotate existing colours'],['colorize','Colourize — choose a target hue'],['inverted','Invert colours'],['shimmer','Shimmer highlight'],['prismatic','Cycle through colours']];
+      if (surface === 'overlay') choices.unshift(['inherit','Match the inventory colour']);
+      $(surface+'-mode').replaceChildren(...choices.map(([value,label]) => option(value,label)));
+      $(surface+'-mode').value = mode;
+      $(surface+'-mode').addEventListener('change', () => {
+        const chosen = $(surface+'-mode').value;
+        state.edits[key] = ['inherit','none'].includes(chosen) ? (surface === 'overlay' && chosen === 'none' ? {mode:'normal',hue:0,sat:1} : null) : {...(current()[key] || {hue:0,sat:1}),mode:chosen};
+        renderColourControls(); renderSprites(); changed();
+      });
+      if (mode === 'none' || mode === 'inherit') continue;
+      const fields = $(surface+'-colour-fields');
+      for (const [field,label,min,max,increment,fallback] of [['hue','Hue',0,360,1,0],['sat','Saturation',0,2,.05,1],...(mode === 'colorize' ? [['colorize_strength','Colour strength',0,1,.05,.7]] : [])]) {
+        const row = document.createElement('div'); row.className = 'colour-slider';
+        const lab = document.createElement('label'); lab.htmlFor = surface+'-'+field; lab.textContent = label;
+        const input = document.createElement('input'); input.type = 'range'; input.id = lab.htmlFor; input.min = min; input.max = max; input.step = increment; input.value = tint?.[field] ?? fallback;
+        const value = document.createElement('output'); value.htmlFor = input.id; value.textContent = input.value + (field === 'hue' ? '°' : '');
+        input.addEventListener('input', () => { state.edits[key] = {...current()[key],[field]:Number(input.value)}; value.textContent = input.value + (field === 'hue' ? '°' : ''); renderSprites(); changed(); });
+        row.append(lab,input,value); fields.append(row);
+      }
+      if (mode === 'colorize') {
+        const label = document.createElement('label'); label.htmlFor = surface+'-target'; label.textContent = 'Pick a target hue (sprite shading stays intact)';
+        const picker = document.createElement('input'); picker.type = 'color'; picker.id = label.htmlFor;
+        const h = (tint?.hue || 0) / 60, x = 1 - Math.abs(h % 2 - 1), rgb = h < 1 ? [1,x,0] : h < 2 ? [x,1,0] : h < 3 ? [0,1,x] : h < 4 ? [0,x,1] : h < 5 ? [x,0,1] : [1,0,x];
+        picker.value = '#' + rgb.map(c => Math.round(c*255).toString(16).padStart(2,'0')).join('');
+        picker.addEventListener('input', () => {
+          const [r,g,b] = picker.value.match(/[a-f0-9]{2}/gi).map(v => parseInt(v,16)/255), top = Math.max(r,g,b), delta = top - Math.min(r,g,b);
+          const hue = delta === 0 ? 0 : ((top === r ? (g-b)/delta : top === g ? (b-r)/delta + 2 : (r-g)/delta + 4)*60 + 360) % 360;
+          state.edits[key] = {...current()[key],hue:Math.round(hue),colorize_strength:1}; $(surface+'-hue').value = Math.round(hue); $(surface+'-colorize_strength').value = 1; for (const field of ['hue','colorize_strength']) $(surface+'-'+field).dispatchEvent(new Event('input')); renderSprites(); changed();
+        });
+        fields.append(label,picker);
+      }
+    }
+  }
+  function peers() { const item = current(); return items.filter(i => i.slot === item.slot && i.item_tier === item.item_tier); }
+  function statsRange(list,key) {
+    const values = list.filter(i => Number.isFinite(i[key])).map(i => i[key]).sort((a,b) => a-b);
+    if (!values.length) return '—';
+    return `${values[0]}–${values[values.length-1]} (middle: ${values[Math.floor(values.length/2)]})`;
+  }
+  function renderStatGuide() {
+    const item = current(), comparable = peers(), keys = Object.keys(STAT_LABELS).filter(k => Object.hasOwn(template(),k));
+    $('stat-guide').replaceChildren();
+    const intro = document.createElement('p'); intro.textContent = `Base values for Tier ${item.item_tier} ${SLOTS[item.slot].toLowerCase()} items currently in the game. These exclude bonuses and rolled quality. Use the starting item's values as your first draft.`; $('stat-guide').append(intro);
+    if (!keys.length) { const note = document.createElement('p'); note.textContent = 'Jewellery gets its identity from bonuses rather than base armour or damage.'; $('stat-guide').append(note); return; }
+    const table = document.createElement('table'); table.innerHTML = '<thead><tr><th>Stat</th><th>Starting item</th><th>Regular items</th><th>Named uniques</th></tr></thead><tbody></tbody>';
+    for (const key of keys) { const row = document.createElement('tr'); for (const value of [STAT_LABELS[key],template()[key],statsRange(comparable.filter(i => !i.unique),key),statsRange(comparable.filter(i => i.unique),key)]) { const cell = document.createElement('td'); cell.textContent = value; row.append(cell); } table.tBodies[0].append(row); }
+    const scroll = document.createElement('div'); scroll.className = 'guide-table'; scroll.append(table); $('stat-guide').append(scroll);
+    const examples = document.createElement('p'); examples.className = 'hint'; examples.textContent = 'Examples: ' + comparable.slice(0,3).map(i => i.name + ' (' + keys.map(k => `${STAT_LABELS[k]} ${i[k] ?? '—'}`).join(', ') + ')').join('; ') + '.'; $('stat-guide').append(examples);
+    const meaning = document.createElement('p'); meaning.className = 'hint'; meaning.textContent = 'Armour reduces physical damage per hit. Evasion adds to the character’s chance to dodge; the final chance is capped by the game. A lower attack interval means faster attacks.'; $('stat-guide').append(meaning);
+  }
+  function renderStatWarnings() {
+    const item = current(), comparable = peers(), outliers = [];
+    for (const key of Object.keys(STAT_LABELS)) {
+      if (!Number.isFinite(item[key])) continue;
+      const values = comparable.filter(i => Number.isFinite(i[key])).map(i => i[key]);
+      if (values.length && (item[key] > Math.max(...values) || item[key] < Math.min(...values))) outliers.push(STAT_LABELS[key]);
+    }
+    $('stat-warning').textContent = outliers.length ? `${outliers.join(', ')} is outside the existing Tier ${item.item_tier} range for this slot. Check the comparison above or explain the exceptional value in your design notes.` : '';
+  }
+  function bonusDescription(affix) {
+    const tiers = affix.tiers || [], band = tiers[Math.min(rarityIndices[current().rarity] || 0,tiers.length-1)] || 0;
+    const lo = Math.trunc(Array.isArray(band) ? band[0] : band), hi = Math.trunc(Array.isArray(band) ? band[1] : band), middle = (lo+hi)/2;
+    const value = Math.sign(middle) * Math.floor(Math.abs(middle)+.5);
+    return (descriptions[affix.stat] || affix.desc || 'A special item effect; describe the intended use in your design notes.').replaceAll('{N}',value).replaceAll('{LO}',lo).replaceAll('{HI}',hi).replace(/\bHP\b/g,'health').replace(/\bXP\b/g,'experience').replace(/\bSTR\b/g,'Strength').replace(/\bDEX\b/g,'Dexterity').replace(/\bINT\b/g,'Intelligence');
+  }
+  function renderBonusGuide() {
+    const item = current(), counts = peers().map(i => (i.implicit_affixes || []).length).sort((a,b) => a-b), max = Math.max(...counts), typical = counts[Math.floor(counts.length/2)], selected = item.implicit_affixes.length;
+    $('bonus-guide').textContent = `${selected} guaranteed bonus${selected === 1 ? '' : 'es'} selected. Comparable Tier ${item.item_tier} items in this slot carry ${counts[0]}–${max}, with ${typical} as the middle value. Your starting item has ${(template().implicit_affixes || []).length}; keeping that count is a good starting point. ${selected > max ? 'You have selected more than any comparable item; consider trimming the list or explain the idea in your notes. ' : ''}At ${item.rarity} rarity the normal drop system can also add up to ${rarityCounts[item.rarity] ?? 0} random bonuses from the inherited pool. Those specific bonuses are not guaranteed. Effects shown below are the base built-in values before quality and character-wide modifiers.`;
+    $('species-guide').textContent = item.requires_innate_tag ? `This starting item restricts its built-in bonuses to characters with the “${item.requires_innate_tag}” species trait.` : '';
   }
   function renderSprites() {
     const item = current();
-    for (const id of ['chosen-icon','preview-icon']) { $(id).src = spriteUrl('icon',item.tile); $(id).style.filter = tintStyle(item.default_tint); }
+    for (const id of ['chosen-icon','preview-icon']) { $(id).src = spriteUrl('icon',item.tile); applyTint($(id),item.default_tint); }
     $('icon-path').textContent = item.tile;
     $('overlay-choice').hidden = !OVERLAYS[item.slot]; $('no-overlay').hidden = !!OVERLAYS[item.slot];
-    if (OVERLAYS[item.slot]) { $('chosen-overlay').src = spriteUrl('overlay',item.overlay); $('chosen-overlay').style.filter = tintStyle(item.default_tint_overlay || item.default_tint); $('overlay-path').textContent = item.overlay + '.png'; }
+    if (OVERLAYS[item.slot]) { $('chosen-overlay').src = spriteUrl('overlay',item.overlay); applyTint($('chosen-overlay'),item.default_tint_overlay || item.default_tint); $('overlay-path').textContent = item.overlay + '.png'; }
   }
   function renderPreview() {
     const item = current(); $('preview-name').textContent = item.name || 'Your item name';
@@ -125,7 +225,7 @@
     $('item-card').style.borderTopColor = `var(--rarity-${item.rarity})`;
     $('preview-stats').textContent = Object.entries(STAT_LABELS).filter(([k]) => Object.hasOwn(item,k)).map(([k,label]) => `${label}: ${item[k] ?? '—'}`).join(' · ');
     $('preview-lore').textContent = item.lore;
-    $('preview-bonuses').replaceChildren(...item.implicit_affixes.map(id => { const li = document.createElement('li'); const a = affixes.find(a => a.id === id); li.textContent = a ? `${a.name} (${a.stat.replaceAll('_',' ')})` : id; return li; }));
+    $('preview-bonuses').replaceChildren(...item.implicit_affixes.map(id => { const li = document.createElement('li'); const a = affixes.find(a => a.id === id); li.textContent = a ? `${a.name}: ${bonusDescription(a)}` : id; return li; }));
   }
   function payload() {
     return {_proposal:{format:1,tool:'Botter item wizard',based_on:state.templateId,author:state.author,design_notes:state.idea},items:[current()]};
@@ -135,7 +235,7 @@
     $('review').innerHTML = `<strong>${escape(item.name)}</strong><br>Item ID: <code>${escape(item.id)}</code><br>Based on ${escape(template().name)} · ${escape(SLOTS[item.slot])} · Tier ${item.item_tier}<br>Inventory: <code>${escape(item.tile)}</code>${OVERLAYS[item.slot] ? '<br>Character: <code>' + escape(item.overlay) + '.png</code>' : ''}<br>Built-in bonuses: ${item.implicit_affixes.length}<br>Credit: ${escape(state.author || 'Not supplied')}<br>Baseline random affix pool, drop weights, tints and other mechanics are included in the JSON for review.`;
     $('json-preview').textContent = JSON.stringify(payload(),null,2);
   }
-  function changed() { $('error').textContent = ''; save(); renderPreview(); if (step === 4) renderReview(); }
+  function changed() { $('error').textContent = ''; save(); renderPreview(); renderStatWarnings(); renderBonusGuide(); if (step === 4) renderReview(); }
   function errorFor(target) {
     const item = current();
     if (target >= 1) {
@@ -149,6 +249,7 @@
     }
     if (target >= 3) {
       if (!RARITIES.includes(item.rarity)) return 'Choose a valid rarity.';
+      for (const key of ['default_tint','default_tint_overlay']) if (item[key] && !validTint(item[key])) return 'Check the sprite colour settings.';
       for (const key of Object.keys(STAT_LABELS)) if (Object.hasOwn(item,key)) {
         const value = item[key];
         if (!Number.isFinite(value) || value < 0 || (key === 'speed' && value < .01) || (key !== 'speed' && !Number.isInteger(value)) || (key === 'block_chance' && value > 100)) return 'Check the value for ' + STAT_LABELS[key].toLowerCase() + '.';
@@ -241,7 +342,7 @@
       else state[id] = $(id).value;
       changed();
     });
-    $('rarity').addEventListener('change', () => { state.edits.rarity = $('rarity').value; changed(); });
+    $('rarity').addEventListener('change', () => { state.edits.rarity = $('rarity').value; renderBonuses(); changed(); });
     $('unique').addEventListener('change', () => { state.edits.unique = $('unique').checked; changed(); });
     $('bonus-search').addEventListener('input',renderBonuses);
     $('pick-icon').addEventListener('click', () => openPicker('icon'));
@@ -262,7 +363,8 @@
       const docs = await Promise.all(['items.json','affixes.json','tile_dir_manifest.json'].map(async name => {
         const response = await fetch(DATA+name); if (!response.ok) throw new Error(name + ': HTTP ' + response.status); return response.json();
       }));
-      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; files = docs[2];
+      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; files = docs[2]; rarityIndices = docs[1].rarity_tier_index; rarityCounts = docs[1].rarity_affix_count;
+      const reference = await fetch('portal_reference.json'); if (!reference.ok) throw new Error('Bonus explanations: HTTP ' + reference.status); descriptions = (await reference.json()).stat_descriptions;
       if (!items.length || !affixes.length) throw new Error('Item or bonus data is empty.');
       icons = Object.entries(files).filter(([dir]) => dir.startsWith('res://assets/tiles/items/') && !dir.includes('/spells/')).flatMap(([dir,names]) => names.map(n => dir.slice('res://assets/tiles/items/'.length) + n));
       if (!icons.length) throw new Error('Inventory sprite catalogue is empty.');

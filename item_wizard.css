@@ -51,3 +51,28 @@ dialog::backdrop { background:#010409c9; }
 .picker-pagination { display:flex; justify-content:space-between; gap:10px; margin:16px 0; }
 @media(max-width:780px) { .wizard-columns { grid-template-columns:1fr; } .preview-panel { position:static; } .wizard-shell { padding:22px 16px; } .wizard-panel { padding:18px; } #steps button { padding:8px; font-size:12px; } .wizard-intro h1 { font-size:25px; } }
 @media(prefers-reduced-motion:reduce) { * { transition:none !important; } }
+
+.colour-controls { padding:0 0 18px; border-bottom:1px solid var(--border); }
+.colour-slider { display:grid; grid-template-columns:95px minmax(0,1fr) 45px; gap:12px; align-items:center; margin:12px 0; }
+.colour-slider label { margin:0; font-weight:400; }
+.colour-slider input[type=range] { padding:0; }
+.colour-slider output { text-align:right; color:var(--muted); font-size:12px; }
+.colour-controls input[type=color] { width:100%; height:38px; padding:2px; }
+.guidance { padding:14px; margin:16px 0; background:var(--bg); border:1px solid var(--border); border-radius:6px; font-size:12px; line-height:1.65; }
+.guidance p { margin:0 0 12px; }
+.guidance p:last-child { margin-bottom:0; }
+.guide-table { overflow-x:auto; }
+.guide-table table { width:100%; border-collapse:collapse; font-size:11px; }
+.guide-table td,.guide-table th { padding:8px; text-align:left; border-bottom:1px solid var(--border); min-width:85px; }
+.guidance-warning { color:var(--warn); font-size:12px; line-height:1.6; }
+@keyframes sprite-prismatic { from { filter:hue-rotate(var(--sprite-hue)) saturate(var(--sprite-sat)); } to { filter:hue-rotate(calc(var(--sprite-hue) + 360deg)) saturate(var(--sprite-sat)); } }
+@keyframes sprite-shimmer { 0%,100% { filter:hue-rotate(var(--sprite-hue)) saturate(var(--sprite-sat)) brightness(1); } 50% { filter:hue-rotate(var(--sprite-hue)) saturate(var(--sprite-sat)) brightness(1.4); } }
+.tint-prismatic { animation:sprite-prismatic 6s linear infinite; }
+.tint-shimmer { animation:sprite-shimmer 2s ease-in-out infinite; }
+@media(prefers-reduced-motion:reduce) { .tint-prismatic,.tint-shimmer { animation:none; } }
+
+.wizard-shell label { text-transform:none; letter-spacing:normal; }
+#wizard-form { min-width:0; }
+.stat-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.stat-fields > div { min-width:0; }
+@media(max-width:780px) { .wizard-columns { grid-template-columns:minmax(0,1fr); } }

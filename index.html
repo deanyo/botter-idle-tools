@@ -1,11 +1,18 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Botter — Authoring tools</title><link rel="stylesheet" href="portal.css"><script src="portal_nav.js" defer></script></head>
-<body><header class="repo-header"><a href="index.html">Botter</a><span>/</span><strong>tools</strong><span class="repo-label">Public</span></header>
-<nav class="portal-nav" aria-label="Tools"></nav><main class="portal-home"><p class="eyebrow">BOTTER / TOOLBOX</p><h1>Authoring tools</h1><p class="lead">Create something for Botter, or work with the current game data. Player proposals start with the item wizard.</p>
-<div class="catalog" data-catalog="active">Loading tools…</div><section class="share"><h2>Share your item</h2><p>Download your proposal from the wizard and send the JSON file to the developer through the community channel where you received this link. Nothing is uploaded automatically. Proposals need design and balance review before they enter the game.</p></section>
+<title>Botter tools · Authoring workspace</title><meta name="description" content="Create items for Botter, browse game art, and explore the authoring tools.">
+<link rel="stylesheet" href="portal.css"><script src="portal_nav.js" defer></script></head>
+<body><main class="portal-home"><h1>Botter tools</h1><p class="lead">A workspace for making things for the dungeon.</p>
+<section class="tools-hero"><div><p class="eyebrow">BOTTER / COMMUNITY CREATIONS</p><h2>An idea. A sprite.<br>An item of your own.</h2><p>Start with a piece of gear from the game. Give it a name, a story and a look, shape what it does, then send it back for review.</p><a class="portal-action" href="item_wizard.html">Create an item <span aria-hidden="true">→</span></a></div><div class="tools-hero-number"><strong>9</strong><span>gear slots to<br>make your own</span></div></section>
+<div class="tools-feature-grid">
+<section class="tools-feature green"><p class="eyebrow">YOUR STARTING POINT</p><h2>Create an item</h2><p>A guided path from an existing item to your own design, with sprite colours, explained bonuses and stat comparisons.</p><a href="item_wizard.html">Open the wizard →</a></section>
+<section class="tools-feature purple"><p class="eyebrow">THE ART LIBRARY</p><h2 data-atlas-count>Tile atlas</h2><p>Source tiles to explore. Browse a page at a time, find a silhouette you like, and inspect the original art.</p><a href="atlas_viewer.html">Explore the tiles →</a></section>
+<section class="tools-feature blue"><p class="eyebrow">THE DECISION RECORD</p><h2><span data-archive-count>9</span> archived tools</h2><p>Earlier experiments, completed audits and retired editors. Kept here for the ideas and decisions behind them.</p><a href="archive.html">Browse the archive →</a></section>
+</div>
+<div class="portal-section-heading"><h2>Workspace tools</h2><span><span data-listed-count>5</span> listed · developer tools carry their status</span></div>
+<div class="catalog" data-catalog="active">Loading tools…</div>
+<section class="share"><h2>Share what you make</h2><p>The item wizard downloads a JSON proposal with your design, optional credit and notes. Send the file to the developer through the community channel where you received this link. Every proposal gets a design and balance review before it enters the game.</p></section>
 <details class="share"><summary>Run the public tools locally</summary><pre>git clone https://github.com/deanyo/botter-idle-tools.git
 cd botter-idle-tools
 python3 -m http.server 8080</pre><p>Open http://localhost:8080/. Developers in the game repo serve its root and open /tools/ instead.</p></details>
-<p><a href="archive.html">Browse archived studies →</a></p></main>
-<footer class="portal-footer">Original tile art: RLTiles / DCSS contributors (CC0). <a href="https://github.com/deanyo/botter-idle-tools">Public tools repository</a></footer></body></html>
+</main><footer class="portal-footer">Original tile art: RLTiles / DCSS contributors (CC0). <a href="https://github.com/deanyo/botter-idle-tools">Public tools repository</a></footer></body></html>
