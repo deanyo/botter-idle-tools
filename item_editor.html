@@ -421,7 +421,7 @@
 
 <nav class="portal-nav" data-active="items" data-title="Item Editor"></nav>
 
-<div id="topbar">
+<div id="topbar"><a href="item_wizard.html">Create an item (wizard)</a>
   <div id="slot-tabs"></div>
   <div id="status"></div>
   <div class="spacer"></div>
@@ -477,6 +477,10 @@
 </div>
 
 <script>
+function htmlText(value) {
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
 const ATLAS_PATH    = "data/tile_atlas.json";
 const AFFIXES_PATH  = "data/affixes.json";
 // Item sprites are flattened into assets/tiles/items/ at
@@ -699,14 +703,10 @@ async function init() {
     // sprites that actually exist on disk + ship in the build.
     try {
       const tdm = await fetchJson('data/tile_dir_manifest.json');
-      const top = (tdm['res://assets/tiles/items/'] || []);
-      const arte = (tdm['res://assets/tiles/items/artefacts/'] || []);
-      const spells = (tdm['res://assets/tiles/items/spells/'] || []);
-      shippedTiles = new Set([
-        ...top,
-        ...arte.map(n => 'artefacts/' + n),
-        ...spells.map(n => 'spells/' + n),
-      ]);
+      const prefix = 'res://assets/tiles/items/';
+      shippedTiles = new Set(Object.entries(tdm)
+        .filter(([dir]) => dir.startsWith(prefix))
+        .flatMap(([dir, names]) => names.map(n => dir.slice(prefix.length) + n)));
       for (const sub of ['weapons','body','helm','shield','boots','gloves','cloak']) {
         const arr = tdm['res://assets/tiles/player/' + sub + '/'] || [];
         shippedOverlays[sub] = new Set(arr);
@@ -958,7 +958,7 @@ function makeCard(it) {
   const cardTintStyle = recolorPreviewStyle(it.default_tint || {});
   card.innerHTML = `
     <div class="sprite-wrap"><img style="${cardTintStyle}" src="${tileUrl(it.tile)}" onerror="if(!this.dataset.f){this.dataset.f='1';this.src='${tileUrlDcssFull(it.tile)}'}else if(!this.dataset.s){this.dataset.s='1';this.src='${tileUrlDcssSupp(it.tile)}'}else{this.src='';this.style.display='none'}"></div>
-    <div class="card-name">${it.name}</div>
+    <div class="card-name">${htmlText(it.name)}</div>
     <div class="card-meta">
       <span class="rarity-pill rarity-${it.rarity}" style="background:${rarityColor};color:${textColor}">${it.rarity}</span>
       ${it.unique ? '<span class="unique-badge">unique</span>' : ''}
@@ -1207,7 +1207,7 @@ function renderEditBody(it) {
 
     <div class="field-group">
       <label>Display name</label>
-      <input type="text" value="${it.name}" onchange="setField('${it.id}','name',this.value);document.getElementById('edit-title').textContent=this.value;renderGrid()">
+      <input type="text" value="${htmlText(it.name)}" onchange="setField('${it.id}','name',this.value);document.getElementById('edit-title').textContent=this.value;renderGrid()">
     </div>
 
     <div class="field-group">
@@ -1357,12 +1357,12 @@ function renderEditBody(it) {
 
     <div class="field-group">
       <label>Lore (flavor text shown in the tooltip)</label>
-      <textarea onchange="setField('${it.id}','lore',this.value)">${it.lore||''}</textarea>
+      <textarea onchange="setField('${it.id}','lore',this.value)">${htmlText(it.lore||'')}</textarea>
     </div>
 
     ${it.unique ? `<div class="field-group">
       <label>Design notes (not shown in-game)</label>
-      <textarea onchange="setField('${it.id}','future_mechanic',this.value)" placeholder="Mechanic ideas, balance notes, art references…">${it.future_mechanic||''}</textarea>
+      <textarea onchange="setField('${it.id}','future_mechanic',this.value)" placeholder="Mechanic ideas, balance notes, art references…">${htmlText(it.future_mechanic||'')}</textarea>
     </div>` : ''}
 
     <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">
@@ -2178,7 +2178,10 @@ async function importJSON(event) {
   const byId = new Map(items.map(x => [x.id, x]));
   const planned = {new: [], changed: [], unchanged: [], wrongSlot: []};
   for (const inc of importedItems) {
-    if (!inc || !inc.id) continue;
+    if (!inc || typeof inc.id !== 'string' || !/^[a-z0-9_]+$/.test(inc.id)) {
+      setStatus('Import failed: item IDs must use lowercase letters, numbers and underscores.', true);
+      return;
+    }
     if (inc.slot && inc.slot !== activeSlot.id) {
       planned.wrongSlot.push(inc.id);
       continue;

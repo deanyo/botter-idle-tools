@@ -2,8 +2,7 @@
  *
  * One source of truth for palette, buttons, form controls, modals, and
  * tooltips across the index page and every editor (atlas, biome, item,
- * affix, drop tuning). Mirrors the in-game UI palette: amber accent on
- * OLED-pure-black, no cool-blue bleed.
+ * affix, drop tuning). Uses the GitHub-style palette of the private development journal.
  *
  * Editors that previously had their own :root palette should remove it
  * and import this stylesheet via:
@@ -14,19 +13,19 @@
  */
 
 :root {
-  --bg: #0a0a0d;
-  --panel: #15151c;
-  --panel-2: #1c1c25;
-  --panel-hover: #1c1c25;
-  --border: #2a2a35;
-  --border-strong: #3a3a45;
-  --text: #e4e4e8;
-  --muted: #8a8a95;
-  --accent: #ffb84d;
-  --accent-dim: #b88836;
-  --accent-soft: rgba(255, 184, 77, 0.10);
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #21262d;
+  --panel-hover: #21262d;
+  --border: #30363d;
+  --border-strong: #484f58;
+  --text: #e6edf3;
+  --muted: #9198a1;
+  --accent: #4493f8;
+  --accent-dim: #388bfd;
+  --accent-soft: rgba(68, 147, 248, 0.12);
   --tile-bg: #000;
-  --picker-bg: #15151c;
+  --picker-bg: #161b22;
 
   /* Status colors. */
   --good: #5fc878;
@@ -54,7 +53,7 @@ body {
 }
 
 a { color: var(--accent); text-decoration: none; }
-a:hover { color: #ffd089; }
+a:hover { color: #79c0ff; }
 
 /* Type scale matches the in-game UI: 14/13/12/11. */
 h1 { font-size: 15px; margin: 0; color: var(--accent); font-weight: 600; letter-spacing: 0.5px; }
@@ -408,3 +407,28 @@ header.portal-header .stats {
   font-family: ui-monospace, monospace;
   color: var(--accent);
 }
+
+:root { color-scheme: dark; }
+[hidden] { display: none !important; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+button:disabled { opacity: .45; cursor: default; }
+.repo-header { background: #010409; display: flex; gap: 14px; align-items: center; padding: 22px 28px; border-bottom: 1px solid var(--border); font-size: 17px; }
+.repo-header a { color: var(--text); }
+.repo-label { color: var(--muted); font-size: 12px; border: 1px solid var(--border); padding: 2px 8px; border-radius: 20px; }
+.portal-home { max-width: 1120px; margin: auto; padding: 40px 24px; }
+.portal-home h1 { font-size: 28px; color: var(--text); letter-spacing: -.6px; }
+.eyebrow { color: var(--muted); font: 11px ui-monospace, monospace; letter-spacing: 1px; }
+.lead { color: var(--muted); line-height: 1.6; font-size: 15px; max-width: 780px; margin-bottom: 28px; }
+.catalog { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.catalog-row { display: grid; grid-template-columns: 190px 1fr 80px; gap: 20px; align-items: center; padding: 19px 22px; border-bottom: 1px solid var(--border); }
+.catalog-row:last-child { border: 0; }
+.catalog-row:hover { background: var(--panel); }
+.catalog-row span { color: var(--muted); line-height: 1.5; }
+.catalog-row small { border: 1px solid var(--border); border-radius: 20px; color: var(--muted); padding: 2px 8px; text-align: center; font-size: 10px; }
+.share { margin: 25px 0; padding: 18px 22px; border: 1px solid var(--border); border-radius: 6px; line-height: 1.6; }
+.share h2 { margin-top: 0; color: var(--text); }
+.share pre { overflow: auto; }
+.portal-footer { padding: 24px; border-top: 1px solid var(--border); color: var(--muted); text-align: center; font-size: 12px; }
+.tool-notice { padding: 10px 18px; background: var(--panel); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 12px; line-height: 1.5; flex-shrink: 0; }
+.tool-notice.archived { border-left: 4px solid var(--warn); color: var(--text); }
+@media(max-width:700px) { .catalog-row { grid-template-columns: 1fr auto; gap: 8px; padding: 16px; } .catalog-row span { grid-column: 1 / -1; grid-row: 2; } .repo-header { padding: 18px; } }

@@ -104,9 +104,10 @@ const SLIDERS = [
   // Quality
   { section: "quality",
     title: "Quality tail",
-    doc: "Multiplier applied to the tail weights (Rusted/Worn/Battered + Mastercrafted/Masterwork). 1.0 = ship default, 2.0 = double tail probability, 0.5 = halve.",
+    doc: "Separate multipliers for low-quality and high-quality tails. These override the legacy combined tail multiplier. 1.0 keeps the authored weights.",
     rows: [
-      { key: "tail_weight_mult", label: "Tail weight mult", min: 0, max: 5.0, step: 0.05, fmt: "x" },
+      { key: "low_quality_tail_mult", label: "Low-quality tail ×", min: 0, max: 5.0, step: 0.05, fmt: "x" },
+      { key: "high_quality_tail_mult", label: "High-quality tail ×", min: 0, max: 5.0, step: 0.05, fmt: "x" },
     ],
   },
   // Enchants
@@ -134,19 +135,25 @@ const SLIDERS = [
 // Defaults — must match the GDScript fallbacks in DropTuning.gd.
 const DEFAULTS = {
   meta_rarity: { primal_chance: 0.001, ancient_chance: 0.011 },
-  quality:     { tail_weight_mult: 1.0 },
+  quality:     { tail_weight_mult: 1.0, low_quality_tail_mult: 1.0, high_quality_tail_mult: 1.0 },
   enchant:     { global_chance_mult: 1.0, combo_chance: 0.03 },
   tint_recolor:{ any_tint_chance: 0.30, shimmer_chance: 0.005, inverted_chance: 0.001, prismatic_chance: 0.0005 },
 };
 
 let doc = JSON.parse(JSON.stringify(DEFAULTS));
+let dataLoaded = false;
+let loadedDefaults = null;
 let dirty = false;
 
 async function load() {
   try {
     const res = await fetch(TUNING_PATH);
+    if (!res.ok) throw new Error("HTTP " + res.status);
     if (res.ok) {
       const parsed = await res.json();
+      doc = parsed;
+      dataLoaded = true;
+      loadedDefaults = JSON.parse(JSON.stringify(parsed));
       // Merge fetched keys onto defaults so missing fields fall back.
       for (const sec of Object.keys(DEFAULTS)) {
         if (parsed[sec]) {
@@ -155,7 +162,7 @@ async function load() {
       }
     }
   } catch (e) {
-    setStatus("Couldn't load drop_tuning.json — using defaults.", true);
+    setStatus("Couldn't load drop_tuning.json — export disabled. Reload to retry.", true);
   }
   render();
 }
@@ -182,6 +189,7 @@ function render() {
     el.innerHTML = html;
     root.appendChild(el);
   }
+  renderRarityBands(root);
 }
 
 function setKey(section, key, val) {
@@ -216,7 +224,52 @@ function formatVal(v, fmt) {
   }
 }
 
+
+function renderRarityBands(root) {
+  const bands = doc.tier_drop_band;
+  if (!bands) return;
+  const section = document.createElement('section');
+  const rarities = ['common','uncommon','rare','epic','legendary'];
+  section.innerHTML = '<h2>Tier rarity weights</h2><p class="doc">Relative weights for ordinary drops by source tier and floor band. Each row must have a positive total. Boss/elite steps and the trash ceiling are applied by the game afterwards.</p>';
+  for (const tier of ['T1','T2','T3','T4','T5']) for (const floor of ['1-3','4-6']) {
+    const weights = bands[tier]?.[floor]; if (!Array.isArray(weights)) continue;
+    const row = document.createElement('fieldset'); row.style = 'border:1px solid var(--border);margin:12px 0;padding:12px;display:flex;flex-wrap:wrap;gap:12px';
+    const legend = document.createElement('legend'); legend.textContent = tier + ' · Floors ' + floor; row.append(legend);
+    rarities.forEach((rarity,index) => {
+      const label = document.createElement('label'); label.textContent = rarity + ' ';
+      const input = document.createElement('input'); input.type = 'number'; input.min = '0'; input.step = '1'; input.value = weights[index];
+      input.dataset.band = tier + '/' + floor + '/' + rarity; input.style.width = '70px';
+      input.addEventListener('input', () => { bands[tier][floor][index] = input.value === '' ? null : Number(input.value); dirty = true; });
+      label.append(input); row.append(label);
+    });
+    section.append(row);
+  }
+  for (const key of ['boss_step','elite_step']) {
+    const label = document.createElement('label'); label.textContent = key.replaceAll('_',' ') + ' ';
+    const input = document.createElement('input'); input.type = 'number'; input.min = '0'; input.step = '1'; input.value = bands[key];
+    input.addEventListener('input', () => { bands[key] = input.value === '' ? null : Number(input.value); dirty = true; }); label.append(input); section.append(label);
+  }
+  const label = document.createElement('label'); label.textContent = ' Trash rarity ceiling ';
+  const select = document.createElement('select');
+  for (const rarity of rarities) { const option = document.createElement('option'); option.value = rarity; option.textContent = rarity; select.append(option); }
+  select.value = bands.trash_ceiling; select.addEventListener('change', () => {bands.trash_ceiling = select.value; dirty = true;}); label.append(select); section.append(label);
+  root.append(section);
+}
+function validBands() {
+  const bands = doc.tier_drop_band; if (!bands) return true;
+  for (const tier of ['T1','T2','T3','T4','T5']) for (const floor of ['1-3','4-6']) {
+    const weights = bands[tier]?.[floor]; if (!weights) continue;
+    if (!weights.every(v => Number.isInteger(v) && v >= 0) || weights.reduce((a,b) => a+b,0) <= 0) {
+      setStatus('Check rarity weights for ' + tier + ' / ' + floor + ': nonnegative integers with a positive total required.', true); return false;
+    }
+  }
+  if (!['boss_step','elite_step'].every(k => Number.isInteger(bands[k]) && bands[k] >= 0)) { setStatus('Boss and elite steps must be nonnegative integers.', true); return false; }
+  return true;
+}
+
 function exportJSON() {
+  if (!validBands()) return;
+  if (!dataLoaded) return setStatus("Load current data before exporting.", true);
   const out = Object.assign(
     { _doc: "Drop tuning — edit via tools/drop_tuning.html. Runtime reads in DropTuning.gd; missing keys fall back to hardcoded defaults.", _format_version: 1 },
     doc,
@@ -233,6 +286,8 @@ function exportJSON() {
 }
 
 async function copyToClipboard() {
+  if (!validBands()) return;
+  if (!dataLoaded) return setStatus("Load current data before copying.", true);
   const out = Object.assign(
     { _doc: "Drop tuning — edited via tools/drop_tuning.html.", _format_version: 1 },
     doc,
@@ -247,10 +302,11 @@ async function copyToClipboard() {
 }
 
 function resetToDefaults() {
-  if (!confirm("Reset all values to ship defaults?")) return;
-  doc = JSON.parse(JSON.stringify(DEFAULTS));
+  if (!dataLoaded) return setStatus("Load current data before resetting.", true);
+  if (!confirm("Reset all values to the data loaded when this page opened?")) return;
+  doc = JSON.parse(JSON.stringify(loadedDefaults));
   dirty = true;
-  setStatus("Reset to defaults.");
+  setStatus("Reset to loaded values.");
   render();
 }
 

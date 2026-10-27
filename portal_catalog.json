@@ -1,0 +1,114 @@
+[
+  {
+    "id": "wizard",
+    "href": "item_wizard.html",
+    "title": "Create an item",
+    "description": "A guided item proposal: choose a baseline, write its story, select sprites and bonuses, then download it for review.",
+    "status": "player",
+    "note": "Nine gear slots; proposals are reviewed before inclusion."
+  },
+  {
+    "id": "items",
+    "href": "item_editor.html",
+    "title": "Item editor",
+    "description": "Full developer editor for existing gear, affix pools, tints and exports. Imports player proposals.",
+    "status": "active",
+    "note": "Use Create an item for the guided player flow. Spells are authored separately in game data."
+  },
+  {
+    "id": "atlas",
+    "href": "atlas_viewer.html",
+    "title": "Tile atlas",
+    "description": "Browse the DCSS source art by category, biome and filename.",
+    "status": "active",
+    "note": "The atlas includes source art that is not shipped. The item wizard only offers shipped sprites."
+  },
+  {
+    "id": "biomes",
+    "href": "biome_editor.html",
+    "title": "Biome appearance",
+    "description": "Edit tile pools, lighting, enemies and biome metadata.",
+    "status": "active",
+    "note": "Appearance and metadata only. Layout arcs, room modules, landmarks and boss arenas are separate game data; this page does not preview generation."
+  },
+  {
+    "id": "affixes",
+    "href": "affix_editor.html",
+    "title": "Bonuses and enchants",
+    "description": "Edit affix curves and browse enchant combinations.",
+    "status": "active",
+    "note": "Exports require review against the runtime; this editor cannot implement new mechanics."
+  },
+  {
+    "id": "drops",
+    "href": "drop_tuning.html",
+    "title": "Drop rates",
+    "description": "Developer tuning for ordinary loot chance, quality, enchant and tint settings.",
+    "status": "active",
+    "note": "Descent Eternal rewards are configured separately in descent.json. Primal chance is currently disabled in game data; saved Primal items still exist."
+  },
+  {
+    "id": "enemies",
+    "href": "enemy_resistance_editor.html",
+    "title": "Enemy resistances",
+    "description": "Edit current enemy resistance values and export the complete document.",
+    "status": "active",
+    "note": "Reads the current enemies.json. Changes still need combat testing."
+  },
+  {
+    "id": "spellmatrix",
+    "href": "spell_matrix.html",
+    "title": "Spell data reference",
+    "description": "Explore current spell archetypes, names and eligible affixes.",
+    "status": "active",
+    "note": "A data reference, not proof of runtime drop behaviour. Verify composed drops with the game tests."
+  },
+  {
+    "id": "cards",
+    "href": "item_card_mockups.html",
+    "title": "Tooltip layout study",
+    "description": "Completed design study, superseded by the in-game Tooltip Lab and current item cards.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Historical mockups; not the current tooltip renderer."
+  },
+  {
+    "id": "proposal",
+    "href": "slot_proposal.html",
+    "title": "Equipment slot proposal",
+    "description": "Historical equipment expansion research. The current game has nine gear slots and five spell slots.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Proposal scores and recommendations describe an earlier game."
+  },
+  {
+    "id": "perf",
+    "href": "perf_report.html",
+    "title": "Performance audit \u00b7 July 2026",
+    "description": "Dated measurements and findings from the 2026-07-01 audit.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Historical measurements; run the benchmark harness for current performance."
+  },
+  {
+    "id": "flowchart",
+    "href": "roll_flowchart.html",
+    "title": "Item roll flowchart",
+    "description": "Historical roll and tooltip visualisation, including active Primal drop claims that no longer apply.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Predates Descent Eternal rewards and current tooltip rendering. Do not use its odds as current tuning."
+  },
+  {
+    "id": "matrix",
+    "href": "build_matrix.html",
+    "title": "Build viability study",
+    "description": "Earlier species and spell build heuristics with hand-maintained assumptions.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Viability labels are historical estimates; use deterministic duel or playthrough harnesses for current balance."
+  },
+  {
+    "id": "reactions",
+    "href": "reaction_chart.html",
+    "title": "Reaction design chart",
+    "description": "Embedded spell-combo design table from the earlier combat plan.",
+    "status": "archived",
+    "note": "Archived 2026-10-27. Historical design reference, not generated from the current reaction engine. Verify reactions in game or with the combo harness."
+  }
+]

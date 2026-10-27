@@ -166,8 +166,8 @@
   </header>
   <div id="biome-list"></div>
   <div id="sidebar-actions">
-    <button onclick="duplicateBiome()">Duplicate selected</button>
-    <button onclick="newBiome()">New blank biome</button>
+    <button hidden onclick="duplicateBiome()">Duplicate selected</button>
+    <button hidden onclick="newBiome()">New blank biome</button>
     <button onclick="deleteBiome()" class="danger">Delete selected</button>
   </div>
 </aside>
@@ -196,7 +196,49 @@ const MANIFEST_PATH = "biome_manifest.json";
 const TILE_BASE = "assets/tiles/";
 
 let biomes = {};       // {id: biome}
-let runPlans = [];
+let biomeDocument = {};
+// Retain numeric spelling (including 1.0) at each JSON path. JS normally
+// erases Python's float/integer distinction and churns untouched fields.
+let originalNumberTokens = new Map();
+function rememberNumberTokens(source) {
+  const tokens = source.match(/"(?:[^"\\]|\\.)*"|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?|true|false|null|[{}\[\]:,]/g);
+  let at = 0;
+  function walk(path) {
+    const token = tokens[at++];
+    if (token === '{') {
+      while (tokens[at] !== '}') {
+        const key = JSON.parse(tokens[at++]); at++;
+        walk([...path, key]); if (tokens[at] === ',') at++;
+      }
+      at++;
+    } else if (token === '[') {
+      let index = 0;
+      while (tokens[at] !== ']') {
+        walk([...path, index++]); if (tokens[at] === ',') at++;
+      }
+      at++;
+    } else if (/^-?\d/.test(token)) originalNumberTokens.set(JSON.stringify(path), token);
+  }
+  walk([]);
+}
+function serializeBiomeDocument(value, path = [], depth = 0) {
+  const quote = text => JSON.stringify(text).replace(/[\u007f-\uffff]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+  if (typeof value === 'string') return quote(value);
+  if (typeof value === 'number') {
+    const token = originalNumberTokens.get(JSON.stringify(path));
+    if (token && Number(token) === value) return token;
+    if (!Number.isFinite(value)) throw new Error('Biome numbers must be finite.');
+    if (token?.includes('.') && Number.isInteger(value)) return value.toFixed(1);
+    return JSON.stringify(value);
+  }
+  if (value === null || typeof value === 'boolean') return JSON.stringify(value);
+  const array = Array.isArray(value), entries = array ? value.map((v, i) => [i, v]) : Object.entries(value);
+  if (!entries.length) return array ? '[]' : '{}';
+  const indent = '  '.repeat(depth + 1), closeIndent = '  '.repeat(depth);
+  const rows = entries.map(([key, v]) => indent + (array ? '' : quote(key) + ': ') + serializeBiomeDocument(v, [...path, key], depth + 1));
+  return (array ? '[' : '{') + '\n' + rows.join(',\n') + '\n' + closeIndent + (array ? ']' : '}');
+}
+
 let manifest = {};
 let dirty = new Set(); // biome ids that have been edited
 let activeId = null;
@@ -264,11 +306,15 @@ const META_FIELDS = [
 async function load() {
   try {
     const [bj, mj] = await Promise.all([
-      fetch(BIOMES_PATH).then(r => r.json()),
+      fetch(BIOMES_PATH).then(async r => {
+        if (!r.ok) throw new Error('biomes.json: HTTP ' + r.status);
+        const source = await r.text();
+        const doc = JSON.parse(source); rememberNumberTokens(source); return doc;
+      }),
       fetch(MANIFEST_PATH).then(r => r.json()),
     ]);
+    biomeDocument = bj;
     biomes = bj.biomes || {};
-    runPlans = bj.run_plans || [];
     manifest = mj;
   } catch (e) {
     document.getElementById("main").innerHTML =
@@ -687,8 +733,9 @@ function deleteBiome() {
 }
 
 function exportJSON() {
-  const out = { biomes, run_plans: runPlans };
-  const blob = new Blob([JSON.stringify(out, null, 2) + "\n"], {type: "application/json"});
+  const out = { ...biomeDocument, biomes };
+  const json = serializeBiomeDocument(out);
+  const blob = new Blob([json], {type: "application/json"});
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "biomes.json";

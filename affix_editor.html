@@ -248,6 +248,7 @@ const STATS = [
 const RARITY_TIERS = ["common", "uncommon", "rare", "epic", "legendary"];
 
 let doc = { _comment: "", affixes: [], rarity_affix_count: {}, rarity_tier_index: {} };
+let dataLoaded = false;
 let activeId = null;
 let dirty = false;
 let combosDoc = { combos: [] };  // loaded from enchant_combos.json
@@ -274,14 +275,22 @@ async function load() {
     const res = await fetch(AFFIXES_PATH);
     if (!res.ok) throw new Error("not found");
     doc = await res.json();
+    dataLoaded = true;
   } catch (e) {
-    setStatus("⚠ Couldn't load affixes.json — starting blank.");
+    setStatus("Couldn't load affixes.json — export disabled. Reload to retry.");
     doc = {
       _comment: "Authored via affix_editor.html",
       affixes: [],
       rarity_affix_count: { common:0, uncommon:1, rare:2, epic:3, legendary:4 },
       rarity_tier_index: { common:0, uncommon:1, rare:2, epic:3, legendary:4 },
     };
+  }
+  const knownStats = new Set(STATS.map(s => s.id));
+  for (const a of doc.affixes) {
+    if (a.stat && !knownStats.has(a.stat)) {
+      STATS.push({id:a.stat, label:a.stat.replaceAll('_', ' ')});
+      knownStats.add(a.stat);
+    }
   }
   // Forward-compat: ensure `color` field on affixes loaded from older
   // saves so the color picker has something to bind to.
@@ -650,7 +659,8 @@ function deleteAffix() {
 }
 
 function exportJSON() {
-  const json = JSON.stringify(doc, null, 2);
+  if (!dataLoaded) return setStatus("Load current data before exporting.");
+  const json = JSON.stringify(doc, null, "\t") + "\n";
   const blob = new Blob([json], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -664,6 +674,7 @@ function exportJSON() {
 // One-affix export — single entry from the affixes[] array, ready to
 // paste into a GitHub issue or merge into data/affixes.json.
 function exportSingleAffix() {
+  if (!dataLoaded) return setStatus("Load current data before exporting.");
   const a = getActive();
   if (!a) return;
   const json = JSON.stringify(a, null, 2) + "\n";
