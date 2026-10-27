@@ -54,11 +54,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 9
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "overlay": "glove_4_gauntlets",
       "default_tint": {
@@ -110,11 +110,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 9
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -155,16 +155,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -205,16 +200,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -257,16 +247,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -311,18 +296,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_iron_aegis": 5,
-        "of_steadfast": 4,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -368,17 +346,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_iron_aegis": 5,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -425,16 +397,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -481,16 +448,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -538,16 +500,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -595,16 +552,11 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -624,18 +576,13 @@
         "of_crit": 33,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 10,
         "of_velocity": 12,
         "of_cold_resist": 22,
         "of_quickcast": 18,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 14
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "armor": 5,
       "base_type": "gloves",
@@ -689,19 +636,12 @@
         "of_crit": 18,
         "of_haste": 18,
         "of_lifesteal": 10,
-        "of_channeling": 10,
+        "of_damage": 18,
         "of_velocity": 12,
-        "of_int_mastery": 18,
         "of_quickcast": 14,
-        "of_resonance": 14,
-        "of_berserker": 8,
-        "of_hunter": 8,
-        "of_echoes": 8,
-        "of_sundering": 8,
-        "of_berserker_rage": 8,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 13
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "armor": 5,
       "base_type": "gloves",
@@ -766,10 +706,10 @@
       ],
       "affix_pool": {
         "of_wisdom": 16,
-        "of_channeling": 12,
+        "of_damage": 12,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 2
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "default_tint": {
         "hue": 270,
@@ -809,8 +749,8 @@
         "of_finesse": 14,
         "of_velocity": 10,
         "of_executioner": 8,
-        "of_bulwark": 8,
-        "of_overflow_strike": 2
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "default_tint": {
         "hue": 25,
@@ -850,7 +790,8 @@
         "of_finesse": 14,
         "of_sharpness": 16,
         "of_haste": 10,
-        "of_overflow_strike": 2
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "boss_drop": "boss_grum",
       "biome_pool": [
@@ -896,9 +837,9 @@
         "of_haste": 22,
         "of_lifesteal": 10,
         "of_velocity": 16,
-        "of_hunter": 10,
         "of_executioner": 10,
-        "of_overflow_strike": 9
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -936,15 +877,12 @@
         "of_sharpness": 8,
         "of_devotion": 18,
         "of_holy_resist": 14,
-        "of_zealot": 14,
-        "of_channeling": 18,
+        "of_damage": 18,
         "of_quickcast": 14,
         "of_velocity": 12,
         "of_lifesteal": 8,
-        "of_hunter": 8,
-        "of_brawler": 8,
-        "of_mystic": 8,
-        "of_overflow_strike": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5
       }
     },
     {
@@ -977,12 +915,10 @@
         "of_first_strike"
       ],
       "affix_pool": {
-        "of_butcher": 22,
-        "of_thorns": 18,
-        "of_first_strike": 16,
         "of_might": 14,
         "of_the_bear": 12,
-        "of_overflow_strike": 3
+        "of_item_rarity": 5,
+        "of_avarice": 5
       },
       "default_tint": {
         "hue": 30.0,

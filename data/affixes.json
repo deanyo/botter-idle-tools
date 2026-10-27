@@ -8,6 +8,51 @@
 		"epic": 4,
 		"legendary": 5
 	},
+	"random_pool": {
+		"_doc": "Affix baseline (2026-10-27, Dean: 'emulate vampire survivors with a hint of path of exile'). Only these affixes roll on random drops, are forgeable, or drop as forge shards. Every other affix stays defined so uniques' implicits and existing items keep working, but is parked: reintroduce one deliberately by adding it here.",
+		"ids": [
+			"of_might",
+			"of_finesse",
+			"of_wisdom",
+			"of_damage",
+			"of_haste",
+			"of_crit",
+			"of_executioner",
+			"of_lifesteal",
+			"of_resonance",
+			"of_velocity",
+			"of_multicast",
+			"of_lingering",
+			"of_quickcast",
+			"of_vitality",
+			"of_the_bear",
+			"of_the_cat",
+			"of_warding",
+			"of_regen",
+			"of_fire_resist",
+			"of_cold_resist",
+			"of_lightning_resist",
+			"of_holy_resist",
+			"of_poison_resist",
+			"of_dark_resist",
+			"of_sharpness",
+			"of_embers",
+			"of_frost",
+			"of_storms",
+			"of_devotion",
+			"of_venom",
+			"of_shadows",
+			"of_arcane_pool",
+			"of_arcane_flow",
+			"of_thrift",
+			"of_abundance",
+			"of_item_rarity",
+			"of_plunder",
+			"of_avarice",
+			"of_swiftness",
+			"of_growth"
+		]
+	},
 	"rarity_tier_index": {
 		"common": 0,
 		"uncommon": 1,
@@ -34,7 +79,7 @@
 			"id": "of_might",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Might",
+			"name": "Strength",
 			"stat": "str",
 			"applies_to": [
 				"amulet",
@@ -74,7 +119,7 @@
 			"id": "of_finesse",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Finesse",
+			"name": "Dexterity",
 			"stat": "dex",
 			"applies_to": [
 				"amulet",
@@ -114,7 +159,7 @@
 			"id": "of_wisdom",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Wisdom",
+			"name": "Intelligence",
 			"stat": "int",
 			"applies_to": [
 				"amulet",
@@ -154,7 +199,7 @@
 			"id": "of_vitality",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Vitality",
+			"name": "Health",
 			"stat": "hp",
 			"applies_to": [
 				"amulet",
@@ -191,7 +236,7 @@
 			"id": "of_the_bear",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of the Bear",
+			"name": "Armor",
 			"stat": "armor",
 			"applies_to": [
 				"helm",
@@ -228,7 +273,7 @@
 			"id": "of_the_cat",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Cat",
+			"name": "Evasion",
 			"stat": "evasion",
 			"applies_to": [
 				"cloak",
@@ -263,7 +308,7 @@
 			"id": "of_quickcast",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Quickcast",
+			"name": "Cooldown Reduction",
 			"stat": "spell_cdr_pct",
 			"applies_to": [
 				"amulet",
@@ -301,7 +346,7 @@
 			"id": "of_resonance",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Resonance",
+			"name": "Area",
 			"stat": "spell_area_pct",
 			"applies_to": [
 				"amulet",
@@ -338,7 +383,7 @@
 			"id": "of_lingering",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Lingering",
+			"name": "Duration",
 			"stat": "spell_duration_pct",
 			"applies_to": [
 				"amulet",
@@ -374,7 +419,7 @@
 			"id": "of_velocity",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Velocity",
+			"name": "Projectile Speed",
 			"stat": "spell_proj_speed_pct",
 			"applies_to": [
 				"gloves",
@@ -410,7 +455,7 @@
 			"id": "of_multicast",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Multicast",
+			"name": "Extra Projectiles",
 			"stat": "spell_proj_bonus",
 			"applies_to": [
 				"amulet",
@@ -483,7 +528,7 @@
 			"id": "of_sharpness",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Sharpness",
+			"name": "Added Physical Damage",
 			"stat": "physical_extra",
 			"applies_to": [
 				"weapon",
@@ -517,7 +562,7 @@
 			"id": "of_embers",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Embers",
+			"name": "Added Fire Damage",
 			"stat": "fire_extra",
 			"applies_to": [
 				"weapon",
@@ -553,7 +598,7 @@
 			"id": "of_frost",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Frost",
+			"name": "Added Cold Damage",
 			"stat": "cold_extra",
 			"applies_to": [
 				"weapon",
@@ -589,7 +634,7 @@
 			"id": "of_storms",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Storms",
+			"name": "Added Lightning Damage",
 			"stat": "lightning_extra",
 			"applies_to": [
 				"weapon",
@@ -625,7 +670,7 @@
 			"id": "of_devotion",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Devotion",
+			"name": "Added Holy Damage",
 			"stat": "holy_extra",
 			"applies_to": [
 				"weapon",
@@ -661,7 +706,7 @@
 			"id": "of_venom",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Venom",
+			"name": "Added Poison Damage",
 			"stat": "poison_extra",
 			"applies_to": [
 				"weapon",
@@ -697,7 +742,7 @@
 			"id": "of_shadows",
 			"family": "generic",
 			"kind": "range",
-			"name": "of Shadows",
+			"name": "Added Dark Damage",
 			"stat": "dark_extra",
 			"applies_to": [
 				"weapon",
@@ -733,7 +778,7 @@
 			"id": "of_fire_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Fire Resistance",
+			"name": "Fire Resistance",
 			"stat": "fire_res",
 			"applies_to": [
 				"armor",
@@ -772,7 +817,7 @@
 			"id": "of_cold_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Cold Resistance",
+			"name": "Cold Resistance",
 			"stat": "cold_res",
 			"applies_to": [
 				"armor",
@@ -811,7 +856,7 @@
 			"id": "of_lightning_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Lightning Resistance",
+			"name": "Lightning Resistance",
 			"stat": "lightning_res",
 			"applies_to": [
 				"armor",
@@ -850,7 +895,7 @@
 			"id": "of_holy_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Holy Resistance",
+			"name": "Holy Resistance",
 			"stat": "holy_res",
 			"applies_to": [
 				"armor",
@@ -889,7 +934,7 @@
 			"id": "of_poison_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Poison Resistance",
+			"name": "Poison Resistance",
 			"stat": "poison_res",
 			"applies_to": [
 				"armor",
@@ -928,7 +973,7 @@
 			"id": "of_dark_resist",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Dark Resistance",
+			"name": "Dark Resistance",
 			"stat": "dark_res",
 			"applies_to": [
 				"armor",
@@ -967,7 +1012,7 @@
 			"id": "of_crit",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Crit",
+			"name": "Crit Chance",
 			"stat": "crit_chance",
 			"applies_to": [
 				"amulet",
@@ -1004,7 +1049,7 @@
 			"id": "of_haste",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Haste",
+			"name": "Haste",
 			"stat": "haste_pct",
 			"applies_to": [
 				"amulet",
@@ -1041,7 +1086,7 @@
 			"id": "of_lifesteal",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Lifesteal",
+			"name": "Lifesteal",
 			"stat": "lifesteal_pct",
 			"applies_to": [
 				"amulet",
@@ -1076,7 +1121,7 @@
 			"id": "of_regen",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Regen",
+			"name": "Health Regen",
 			"stat": "hp_regen",
 			"applies_to": [
 				"amulet",
@@ -1754,7 +1799,7 @@
 			"id": "of_plunder",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Plunder",
+			"name": "Gold Find",
 			"stat": "gold_drop_pct",
 			"applies_to": [
 				"amulet",
@@ -1787,7 +1832,7 @@
 			"id": "of_avarice",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of Avarice",
+			"name": "Magnet",
 			"stat": "gold_pickup_radius_cells",
 			"applies_to": [
 				"amulet",
@@ -1924,7 +1969,7 @@
 			"id": "of_executioner",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Executioner",
+			"name": "Crit Damage",
 			"stat": "crit_multiplier_pct",
 			"applies_to": [
 				"amulet",
@@ -1960,7 +2005,7 @@
 			"id": "of_warding",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Warding",
+			"name": "Block Chance",
 			"stat": "block_chance",
 			"applies_to": [
 				"shield",
@@ -1986,39 +2031,6 @@
 				[
 					14,
 					18
-				]
-			]
-		},
-		{
-			"id": "of_bulwark",
-			"family": "generic",
-			"kind": "flat",
-			"name": "of Bulwark",
-			"stat": "block_amount",
-			"applies_to": [
-				"shield",
-				"gloves"
-			],
-			"tiers": [
-				[
-					1,
-					2
-				],
-				[
-					2,
-					4
-				],
-				[
-					4,
-					7
-				],
-				[
-					7,
-					11
-				],
-				[
-					11,
-					16
 				]
 			]
 		},
@@ -3263,7 +3275,7 @@
 			"id": "of_abundance",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Abundance",
+			"name": "Item Quantity",
 			"stat": "loot_quantity_pct",
 			"applies_to": [
 				"amulet",
@@ -3510,44 +3522,10 @@
 			]
 		},
 		{
-			"id": "of_steadfast",
-			"family": "generic",
-			"kind": "flat",
-			"name": "of the Steadfast",
-			"stat": "block_amount",
-			"applies_to": [
-				"armor",
-				"boots",
-				"helm"
-			],
-			"tiers": [
-				[
-					1,
-					1
-				],
-				[
-					1,
-					2
-				],
-				[
-					2,
-					4
-				],
-				[
-					4,
-					7
-				],
-				[
-					7,
-					12
-				]
-			]
-		},
-		{
 			"id": "of_arcane_pool",
 			"family": "generic",
 			"kind": "flat",
-			"name": "of the Arcane Pool",
+			"name": "Max Mana",
 			"stat": "mana_max_flat",
 			"applies_to": [
 				"amulet",
@@ -3581,7 +3559,7 @@
 			"id": "of_arcane_flow",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Arcane Flow",
+			"name": "Mana Regen",
 			"stat": "mana_regen_pct",
 			"applies_to": [
 				"amulet",
@@ -3650,7 +3628,7 @@
 			"id": "of_thrift",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Thrift",
+			"name": "Mana Cost",
 			"stat": "mana_cost_pct",
 			"applies_to": [
 				"amulet",
@@ -6730,6 +6708,147 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"id": "of_damage",
+			"family": "generic",
+			"kind": "pct",
+			"name": "Damage",
+			"stat": "damage_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"gloves",
+				"weapon",
+				"helm",
+				"spell"
+			],
+			"tiers": [
+				[
+					3,
+					5
+				],
+				[
+					5,
+					8
+				],
+				[
+					8,
+					12
+				],
+				[
+					12,
+					16
+				],
+				[
+					16,
+					22
+				]
+			]
+		},
+		{
+			"id": "of_item_rarity",
+			"family": "generic",
+			"kind": "pct",
+			"name": "Item Rarity",
+			"stat": "item_rarity_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm",
+				"gloves",
+				"cloak"
+			],
+			"tiers": [
+				[
+					3,
+					5
+				],
+				[
+					5,
+					8
+				],
+				[
+					8,
+					12
+				],
+				[
+					12,
+					16
+				],
+				[
+					16,
+					22
+				]
+			]
+		},
+		{
+			"id": "of_swiftness",
+			"family": "generic",
+			"kind": "pct",
+			"name": "Move Speed",
+			"stat": "move_speed_pct",
+			"applies_to": [
+				"boots",
+				"cloak",
+				"amulet"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					4
+				]
+			]
+		},
+		{
+			"id": "of_growth",
+			"family": "generic",
+			"kind": "pct",
+			"name": "Experience",
+			"stat": "xp_gain_gear_pct",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"helm"
+			],
+			"tiers": [
+				[
+					1,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					4
+				],
+				[
+					4,
+					5
+				]
 			]
 		}
 	]

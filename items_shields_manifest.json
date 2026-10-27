@@ -108,7 +108,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -116,16 +115,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 30,
         "sat": 1.0,
         "mode": "colorize"
       },
-      "block_chance": 7,
-      "block_amount": 5
+      "block_chance": 7
     },
     {
       "id": "iron_buckler",
@@ -153,7 +150,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -161,8 +157,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 220,
@@ -170,8 +165,7 @@
         "mode": "colorize",
         "colorize_strength": 0.4
       },
-      "block_chance": 9,
-      "block_amount": 5
+      "block_chance": 9
     },
     {
       "id": "round_shield",
@@ -201,7 +195,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -209,16 +202,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 180,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "id": "kite_shield",
@@ -243,14 +234,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -258,17 +246,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8,
-        "of_aegis_thorns": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 90,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "elven_buckler",
@@ -301,7 +286,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -309,16 +293,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 290,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "reinforced_buckler",
@@ -348,7 +330,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -356,16 +337,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 30,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "guardsman_kite",
@@ -390,14 +369,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -405,16 +381,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 0,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "elven_shield",
@@ -448,7 +422,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -456,16 +429,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 130,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "id": "dwarven_buckler",
@@ -498,7 +469,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -506,11 +476,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "spellward_kite",
@@ -537,14 +505,12 @@
       "unique": false,
       "enchant_chance": 0.1,
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -552,16 +518,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 260,
         "sat": 1.2,
         "mode": "normal"
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "large_kite",
@@ -587,14 +551,12 @@
       "unique": false,
       "enchant_chance": 0.1,
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -602,16 +564,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 200,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "tower_shield",
@@ -636,14 +596,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.1,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -651,18 +608,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8,
-        "of_unbroken": 8,
-        "of_aegis_thorns": 10
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 200.0,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "spriggan_shield",
@@ -695,7 +648,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -703,16 +655,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 60,
         "sat": 1.2,
         "mode": "normal"
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "dragoncrest_shield",
@@ -739,14 +689,12 @@
       "unique": false,
       "enchant_chance": 0.15,
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -754,8 +702,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 0,
@@ -763,8 +710,7 @@
         "mode": "normal"
       },
       "overlay": "shield_dragoncrest",
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "fortress_wall",
@@ -790,14 +736,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -805,16 +748,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 30.0,
         "sat": 1.15,
         "mode": "normal"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "phantom_aegis",
@@ -848,7 +789,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -856,10 +796,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8,
-        "of_aegis_thorns": 8,
-        "of_obstinance": 5
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 270,
@@ -867,8 +804,7 @@
         "mode": "normal"
       },
       "overlay": "shield_phantom_aegis",
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "id": "warlords_bulwark",
@@ -894,14 +830,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -909,16 +842,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 0.0,
         "sat": 1.2,
         "mode": "normal"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "shield_of_reflection",
@@ -945,14 +876,12 @@
       "unique": false,
       "enchant_chance": 0.15,
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -960,8 +889,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 200,
@@ -969,8 +897,7 @@
         "mode": "colorize",
         "colorize_strength": 0.45
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "lshield_louise",
@@ -997,14 +924,12 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_warding",
-        "of_steadfast"
+        "of_warding"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1012,16 +937,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 130.0,
         "sat": 1.15,
         "mode": "inverted"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "bullseye",
@@ -1054,7 +977,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1062,11 +984,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "id": "gong_shield",
@@ -1099,7 +1019,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1107,12 +1026,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8,
-        "of_aegis_thorns": 8
+        "of_warding": 8
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "elven_buckler_2",
@@ -1145,7 +1061,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1153,16 +1068,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 110,
         "sat": 1.2,
         "mode": "normal"
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "dwarven_buckler_2",
@@ -1195,7 +1108,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1203,16 +1115,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 30,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "donald_shield",
@@ -1239,14 +1149,12 @@
       "unique": false,
       "enchant_chance": 0.15,
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1254,11 +1162,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "id": "dd_scion_shield",
@@ -1283,14 +1189,11 @@
       ],
       "unique": false,
       "enchant_chance": 0.15,
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1298,16 +1201,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 280.0,
         "sat": 1.1,
         "mode": "normal"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "lshield_doomknight",
@@ -1335,14 +1236,12 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_warding",
-        "of_bulwark"
+        "of_warding"
       ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1350,16 +1249,14 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "default_tint": {
         "hue": 320.0,
         "sat": 1.2,
         "mode": "shimmer"
       },
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "id": "shield_of_resistance",
@@ -1395,7 +1292,6 @@
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1403,11 +1299,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "block_chance": 20,
-      "block_amount": 15,
       "overlay": "urand_gong",
       "default_tint": {
         "hue": 110,
@@ -1420,7 +1314,6 @@
         "of_might": 16,
         "of_finesse": 26,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1428,11 +1321,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_int_mastery": 18,
-        "of_quickcast": 14,
-        "of_resonance": 14,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 36,
       "base_type": "round_shield",
@@ -1467,15 +1356,13 @@
       "slot": "shield",
       "tile": "urand_bullseye.png",
       "unique": true,
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 22,
         "of_wisdom": 22,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1483,9 +1370,7 @@
         "of_holy_resist": 26,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_devotion": 14,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 10,
       "base_type": "buckler",
@@ -1523,15 +1408,13 @@
       "slot": "shield",
       "tile": "elven_buckler_2.png",
       "unique": false,
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 44,
         "of_the_bear": 60,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1539,9 +1422,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_sharpness": 14,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 20,
       "base_type": "tower_shield",
@@ -1568,9 +1449,7 @@
         "fortified"
       ],
       "id": "tower_shield_ironclad",
-      "implicit_affixes": [
-        "of_bulwark"
-      ],
+      "implicit_affixes": [],
       "item_tier": 4,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
       "name": "Ironclad Tower Shield",
@@ -1579,15 +1458,13 @@
       "tile": "large_shield_2_new.png",
       "unique": false,
       "recolor_of": "tower_shield",
-      "block_chance": 25,
-      "block_amount": 20
+      "block_chance": 25
     },
     {
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 40,
         "of_the_bear": 52,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1595,9 +1472,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 26,
-        "of_shadows": 22,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 31,
       "base_type": "round_shield",
@@ -1639,15 +1514,13 @@
       "tile": "shield_3.png",
       "unique": false,
       "recolor_of": "phantom_aegis",
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 22,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1655,10 +1528,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_shadows": 22,
-        "of_lifesteal": 12,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 22,
       "base_type": "kite_shield",
@@ -1687,7 +1557,6 @@
       ],
       "id": "donald_shield_bone",
       "implicit_affixes": [
-        "of_bulwark",
         "of_the_bear"
       ],
       "item_tier": 4,
@@ -1697,15 +1566,13 @@
       "slot": "shield",
       "tile": "shield_donald.png",
       "unique": false,
-      "block_chance": 20,
-      "block_amount": 15
+      "block_chance": 20
     },
     {
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 36,
@@ -1713,11 +1580,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_frost": 35,
-        "of_quickcast": 18,
-        "of_crit": 15,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 14,
       "base_type": "buckler",
@@ -1752,15 +1615,13 @@
       "tile": "dwarven_buckler_2.png",
       "unique": false,
       "recolor_of": "dwarven_buckler_2",
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 22,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1768,10 +1629,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_shadows": 22,
-        "of_lifesteal": 12,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 14,
       "base_type": "round_shield",
@@ -1810,15 +1668,13 @@
       "slot": "shield",
       "tile": "shield_1_elven.png",
       "unique": false,
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1826,15 +1682,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_embers": 18,
-        "of_frost": 18,
-        "of_storms": 18,
-        "of_devotion": 18,
-        "of_venom": 18,
-        "of_shadows": 18,
-        "of_sharpness": 18,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 36,
       "base_type": "buckler",
@@ -1869,15 +1717,13 @@
       "tile": "urand_gong.png",
       "unique": true,
       "recolor_of": "gong_shield",
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "affix_pool": {
         "of_might": 34,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 22,
         "of_the_bear": 30,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1885,10 +1731,7 @@
         "of_holy_resist": 30,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_devotion": 30,
-        "of_regen": 12,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 36,
       "base_type": "round_shield",
@@ -1924,15 +1767,13 @@
       "tile": "urand_bullseye.png",
       "unique": true,
       "recolor_of": "bullseye",
-      "block_chance": 15,
-      "block_amount": 10
+      "block_chance": 15
     },
     {
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 8,
         "of_wisdom": 10,
-        "of_vitality": 44,
         "of_the_bear": 60,
         "of_fire_resist": 14,
         "of_cold_resist": 14,
@@ -1940,9 +1781,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_sharpness": 14,
-        "of_warding": 8,
-        "of_bulwark": 8
+        "of_warding": 8
       },
       "armor": 14,
       "base_type": "buckler",
@@ -1981,8 +1820,7 @@
       "tile": "dwarven_buckler_2.png",
       "unique": false,
       "recolor_of": "dwarven_buckler_2",
-      "block_chance": 8,
-      "block_amount": 5
+      "block_chance": 8
     },
     {
       "id": "padded_targe",
@@ -2017,8 +1855,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 14,
-        "of_bulwark": 14
+        "of_warding": 14
       },
       "default_tint": {
         "hue": 28,
@@ -2026,8 +1863,7 @@
         "mode": "colorize",
         "colorize_strength": 0.4
       },
-      "block_chance": 8,
-      "block_amount": 6
+      "block_chance": 8
     }
   ]
 }

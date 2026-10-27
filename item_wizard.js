@@ -7,10 +7,10 @@
   const OVERLAYS = {weapon:'weapons',armor:'body',helm:'helm',shield:'shield',boots:'boots',gloves:'gloves',cloak:'cloak'};
   const RARITIES = ['common','uncommon','rare','epic','legendary'];
   const LABELS = ['Starting point','Story','Sprites','Details','Share'];
-  const STAT_LABELS = {damage_min:'Minimum damage',damage_max:'Maximum damage',speed:'Attack interval (seconds)',armor:'Armour',evasion:'Evasion',block_chance:'Block chance (%)',block_amount:'Block amount'};
+  const STAT_LABELS = {damage_min:'Minimum damage',damage_max:'Maximum damage',speed:'Attack interval (seconds)',armor:'Armour',evasion:'Evasion',block_chance:'Block chance (%)'};
   const $ = id => document.getElementById(id);
   const copy = value => JSON.parse(JSON.stringify(value));
-  let items = [], affixes = [], files = {}, icons = [], descriptions = {}, rarityIndices = {}, rarityCounts = {}, state, step = 0, furthest = 0;
+  let items = [], affixes = [], pool = new Set(), files = {}, icons = [], descriptions = {}, rarityIndices = {}, rarityCounts = {}, state, step = 0, furthest = 0;
   let pickerMode = 'icon', pickerPage = 0, selectionToken = 0;
   const loaded = new Set();
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -23,7 +23,8 @@
   };
   const spriteUrl = (mode, value) => ASSETS + (mode === 'icon' ? 'items/' + value : 'player/' + OVERLAYS[current().slot] + '/' + value + '.png');
   const overlayOptions = slot => (files['res://assets/tiles/player/' + OVERLAYS[slot] + '/'] || []).map(f => f.replace(/\.png$/, ''));
-  const availableAffixes = slot => affixes.filter(a => a.family !== 'eternal' && ((a.applies_to || []).includes(slot) || (a.applies_to || []).includes('any')));
+  // Only the baseline (affixes.json random_pool) is offered; parked affixes stay on the items that already carry them.
+  const availableAffixes = slot => affixes.filter(a => a.family !== 'eternal' && (!pool.size || pool.has(a.id)) && ((a.applies_to || []).includes(slot) || (a.applies_to || []).includes('any')));
   function imageReady(url) {
     if (loaded.has(url)) return Promise.resolve();
     return new Promise((resolve, reject) => {
@@ -363,7 +364,7 @@
       const docs = await Promise.all(['items.json','affixes.json','tile_dir_manifest.json'].map(async name => {
         const response = await fetch(DATA+name); if (!response.ok) throw new Error(name + ': HTTP ' + response.status); return response.json();
       }));
-      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; files = docs[2]; rarityIndices = docs[1].rarity_tier_index; rarityCounts = docs[1].rarity_affix_count;
+      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; pool = new Set((docs[1].random_pool || {}).ids || []); files = docs[2]; rarityIndices = docs[1].rarity_tier_index; rarityCounts = docs[1].rarity_affix_count;
       const reference = await fetch('portal_reference.json'); if (!reference.ok) throw new Error('Bonus explanations: HTTP ' + reference.status); descriptions = (await reference.json()).stat_descriptions;
       if (!items.length || !affixes.length) throw new Error('Item or bonus data is empty.');
       icons = Object.entries(files).filter(([dir]) => dir.startsWith('res://assets/tiles/items/') && !dir.includes('/spells/')).flatMap(([dir,names]) => names.map(n => dir.slice('res://assets/tiles/items/'.length) + n));

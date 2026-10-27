@@ -57,7 +57,11 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "overlay": "cloak_1_leather"
     },
@@ -105,7 +109,11 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "overlay": "cloak_3",
       "default_tint": {
@@ -161,7 +169,11 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "overlay": "cloak_1_leather",
       "default_tint": {
@@ -216,7 +228,11 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "overlay": "cloak_2",
       "default_tint": {
@@ -265,7 +281,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_leather"
     },
@@ -309,7 +328,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_travelers"
     },
@@ -357,7 +379,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_wool"
     },
@@ -405,7 +430,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_hooded"
     },
@@ -455,7 +483,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_woven"
     },
@@ -505,7 +536,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_rangers"
     },
@@ -556,7 +590,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_silken"
     },
@@ -606,7 +643,10 @@
         "of_haste": 10,
         "of_regen": 8,
         "of_plunder": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "overlay": "cloak_warlord"
     },
@@ -628,10 +668,11 @@
         "of_lingering": 14,
         "of_haste": 28,
         "of_regen": 8,
-        "of_storms": 32,
-        "of_velocity": 14,
         "of_plunder": 8,
-        "of_mind_over_matter": 12
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "armor": 1,
       "base_type": "cloak",
@@ -684,9 +725,11 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 22,
-        "of_venom": 28,
         "of_plunder": 8,
-        "of_mind_over_matter": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "armor": 1,
       "base_type": "cloak",
@@ -739,11 +782,11 @@
         "of_lingering": 14,
         "of_haste": 28,
         "of_regen": 8,
-        "of_storms": 32,
-        "of_velocity": 14,
-        "of_sharpness": 14,
         "of_plunder": 8,
-        "of_mind_over_matter": 15
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "armor": 1,
       "base_type": "cloak",
@@ -801,10 +844,12 @@
         "of_lingering": 14,
         "of_haste": 10,
         "of_regen": 8,
-        "of_shadows": 26,
         "of_quickcast": 12,
         "of_plunder": 8,
-        "of_mind_over_matter": 11
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
       },
       "armor": 1,
       "base_type": "cloak",
@@ -871,7 +916,11 @@
       "affix_pool": {
         "of_finesse": 16,
         "of_wisdom": 12,
-        "of_mind_over_matter": 1
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 100,
@@ -909,7 +958,11 @@
       ],
       "affix_pool": {
         "of_finesse": 14,
-        "of_mind_over_matter": 1
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 200,
@@ -947,15 +1000,12 @@
         "of_haste"
       ],
       "affix_pool": {
-        "of_lifesteal": 14,
         "of_finesse": 10,
-        "of_recoup": 5,
-        "of_smoldering_step": 5,
-        "of_warden_step": 5,
         "of_abundance": 4,
-        "of_devastation": 4,
-        "of_arcane_flow": 4,
-        "of_mind_over_matter": 2
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 270,
@@ -994,8 +1044,11 @@
       ],
       "affix_pool": {
         "of_might": 18,
-        "of_berserker": 14,
-        "of_mind_over_matter": 1
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 0,
@@ -1035,7 +1088,11 @@
         "of_the_bear": 18,
         "of_regen": 16,
         "of_poison_resist": 14,
-        "of_mind_over_matter": 3
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "boss_drop": "boss_lernaean",
       "biome_pool": [
@@ -1079,9 +1136,12 @@
         "of_resonance": 16,
         "of_lingering": 16,
         "of_quickcast": 18,
-        "of_channeling": 14,
         "of_regen": 8,
-        "of_mind_over_matter": 8
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       }
     },
     {
@@ -1114,15 +1174,15 @@
         "of_embers"
       ],
       "affix_pool": {
-        "of_pyromancer": 16,
         "of_fire_resist": 12,
         "of_resonance": 10,
         "of_lingering": 10,
-        "of_channeling": 12,
         "of_haste": 8,
-        "of_brawler": 8,
-        "of_mystic": 8,
-        "of_mind_over_matter": 3
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 5,
@@ -1166,10 +1226,11 @@
         "of_the_cat": 14,
         "of_poison_resist": 12,
         "of_the_bear": 10,
-        "of_serpent_growth": 8,
-        "of_warden_step": 8,
-        "of_recoup": 6,
-        "of_kiter": 6
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "vault_drop": "lair_tree_grove_5x5"
     },
@@ -1203,12 +1264,13 @@
         "of_recoup"
       ],
       "affix_pool": {
-        "of_obstinance": 22,
         "of_cold_resist": 20,
-        "of_recoup": 16,
         "of_the_bear": 14,
-        "of_revenant": 12,
-        "of_mind_over_matter": 3
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 200.0,
@@ -1250,12 +1312,14 @@
         "of_regen"
       ],
       "affix_pool": {
-        "of_serpent_growth": 22,
-        "of_recoup": 18,
         "of_regen": 16,
         "of_vitality": 14,
         "of_haste": 12,
-        "of_mind_over_matter": 3
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4,
+        "of_plunder": 4
       },
       "default_tint": {
         "hue": 50.0,

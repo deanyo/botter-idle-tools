@@ -1180,12 +1180,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_revenant": 8,
-        "of_unbroken": 8,
-        "of_thorns": 8,
-        "of_obstinance": 6,
-        "of_steadfast": 5
+        "of_regen": 15
       }
     },
     {
@@ -1314,8 +1309,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_revenant": 8
+        "of_regen": 15
       }
     },
     {
@@ -1847,11 +1841,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_revenant": 8,
-        "of_unbroken": 6,
-        "of_thorns": 5,
-        "of_obstinance": 5
+        "of_regen": 15
       }
     },
     {
@@ -1998,11 +1988,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_devotion": 22,
-        "of_haste": 18,
-        "of_lifesteal": 12,
-        "of_quickcast": 15
+        "of_regen": 15
       },
       "armor": 48,
       "base_type": "robe",
@@ -2052,14 +2038,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_embers": 18,
-        "of_frost": 18,
-        "of_storms": 18,
-        "of_devotion": 18,
-        "of_venom": 18,
-        "of_shadows": 18,
-        "of_sharpness": 18
+        "of_regen": 15
       },
       "armor": 48,
       "base_type": "robe",
@@ -2108,9 +2087,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 30,
-        "of_regen": 15,
-        "of_shadows": 32,
-        "of_lifesteal": 18
+        "of_regen": 15
       },
       "armor": 8,
       "base_type": "leather",
@@ -2156,11 +2133,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_devotion": 22,
-        "of_haste": 18,
-        "of_lifesteal": 12,
-        "of_quickcast": 15
+        "of_regen": 15
       },
       "armor": 19,
       "base_type": "banded_mail",
@@ -2209,10 +2182,7 @@
         "of_holy_resist": 26,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_devotion": 28,
-        "of_channeling": 15,
-        "of_quickcast": 12
+        "of_regen": 15
       },
       "armor": 19,
       "base_type": "plate",
@@ -2308,8 +2278,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_sharpness": 14
+        "of_regen": 15
       },
       "armor": 12,
       "base_type": "robe",
@@ -2362,8 +2331,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_sharpness": 14
+        "of_regen": 15
       },
       "armor": 48,
       "base_type": "robe",
@@ -2418,10 +2386,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_venom": 22,
-        "of_dex_mastery": 14,
-        "of_crit": 15
+        "of_regen": 15
       },
       "armor": 8,
       "base_type": "leather",
@@ -2468,10 +2433,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15,
-        "of_embers": 30,
-        "of_quickcast": 14,
-        "of_channeling": 10
+        "of_regen": 15
       },
       "armor": 8,
       "base_type": "leather",
@@ -2569,8 +2531,7 @@
         "of_int_mastery"
       ],
       "affix_pool": {
-        "of_wisdom": 16,
-        "of_channeling": 12
+        "of_wisdom": 16
       },
       "default_tint": {
         "hue": 40,
@@ -2647,7 +2608,6 @@
         "of_regen"
       ],
       "affix_pool": {
-        "of_plunder": 12,
         "of_finesse": 10
       }
     },
@@ -2677,8 +2637,6 @@
       ],
       "affix_pool": {
         "of_vitality": 16,
-        "of_meditation": 12,
-        "of_zeal": 10,
         "of_the_bear": 8
       }
     }
