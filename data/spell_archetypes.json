@@ -4,6 +4,9 @@
 	"archetypes": {
 		"spell_aura_grace": {
 			"shape": "aura",
+			"tags": [
+				"aura"
+			],
 			"aura_id": "grace",
 			"school": "physical",
 			"blurb": "Defensive aura. Reserves 10 mana while active; grants +10% evasion. One-per-defensive-lane. Indefinite duration.",
@@ -23,6 +26,9 @@
 		},
 		"spell_aura_warding": {
 			"shape": "aura",
+			"tags": [
+				"aura"
+			],
 			"aura_id": "warding",
 			"school": "arcane",
 			"blurb": "Defensive aura. Reserves 10 mana while active; -15% incoming spell/elemental damage. One-per-defensive-lane.",
@@ -42,6 +48,12 @@
 		},
 		"spell_axes": {
 			"shape": "orbit",
+			"tags": [
+				"cast",
+				"orbit",
+				"area",
+				"duration"
+			],
 			"school": "physical",
 			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown) and leaves them bleeding. +1 axe per Spell Projectile affix.",
 			"cooldown": 13.8,
@@ -71,6 +83,10 @@
 		},
 		"spell_cleave": {
 			"shape": "sweep",
+			"tags": [
+				"cast",
+				"area"
+			],
 			"shape_params": {
 				"hit_test": "cone",
 				"visual": "cleave_arc",
@@ -104,6 +120,11 @@
 		},
 		"spell_bone_spear": {
 			"shape": "bolt",
+			"tags": [
+				"cast",
+				"projectile",
+				"chain"
+			],
 			"shape_params": {
 				"tint_flavor": "bone",
 				"target_mode": "cycle",
@@ -140,6 +161,10 @@
 		},
 		"spell_chain_lightning": {
 			"shape": "arc",
+			"tags": [
+				"cast",
+				"chain"
+			],
 			"school": "lightning",
 			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
 			"cooldown": 11.6,
@@ -155,6 +180,11 @@
 		},
 		"spell_curse_brittlebone": {
 			"shape": "curse",
+			"tags": [
+				"cast",
+				"area",
+				"duration"
+			],
 			"shape_params": {
 				"target_mode": "n_nearest",
 				"tint_flavor": "bone",
@@ -182,6 +212,11 @@
 		},
 		"spell_drain": {
 			"shape": "bolt",
+			"tags": [
+				"cast",
+				"projectile",
+				"chain"
+			],
 			"shape_params": {
 				"tint_flavor": "vampiric",
 				"target_mode": "distribute",
@@ -212,6 +247,11 @@
 		},
 		"spell_ember_bloom": {
 			"shape": "cloud",
+			"tags": [
+				"cast",
+				"area",
+				"duration"
+			],
 			"shape_params": {
 				"delivery": "lob",
 				"lifetime_base": 5.0,
@@ -248,12 +288,22 @@
 		},
 		"spell_fireball": {
 			"shape": "bolt",
+			"tags": [
+				"cast",
+				"projectile",
+				"area",
+				"chain"
+			],
 			"shape_params": {
 				"tint_flavor": "fire",
 				"target_mode": "distribute",
 				"fire_signature": true,
 				"split_affix": "spell_comet_split",
-				"burning_patch_affix": "spell_ember_wake"
+				"burning_patch_affix": "spell_ember_wake",
+				"proj_flags": {
+					"splash_radius_px": 40.0,
+					"splash_frac": 0.5
+				}
 			},
 			"school": "fire",
 			"blurb": "Lobs a fireball at the nearest enemy. Explodes for AoE damage on impact. AoE radius scales with Spell Area.",
@@ -270,6 +320,11 @@
 		},
 		"spell_frost_nova": {
 			"shape": "nova",
+			"tags": [
+				"cast",
+				"area",
+				"duration"
+			],
 			"school": "cold",
 			"blurb": "Radial cold burst around you. Briefly freezes hit enemies. Range scales with Spell Area; freeze duration scales with Spell Duration.",
 			"cooldown": 13.0,
@@ -285,6 +340,10 @@
 		},
 		"spell_holy_beam": {
 			"shape": "sweep",
+			"tags": [
+				"cast",
+				"area"
+			],
 			"shape_params": {
 				"hit_test": "cone",
 				"visual": "cone",
@@ -308,6 +367,10 @@
 		},
 		"spell_iron_shot": {
 			"shape": "bolt",
+			"tags": [
+				"cast",
+				"projectile"
+			],
 			"shape_params": {
 				"tint_flavor": "iron",
 				"target_mode": "cycle",
@@ -345,6 +408,11 @@
 		},
 		"spell_magic_dart": {
 			"shape": "bolt",
+			"tags": [
+				"cast",
+				"projectile",
+				"chain"
+			],
 			"shape_params": {
 				"tint_flavor": "arcane",
 				"tint_fallback": [
@@ -385,6 +453,11 @@
 		},
 		"spell_static_field": {
 			"shape": "cloud",
+			"tags": [
+				"cast",
+				"area",
+				"duration"
+			],
 			"shape_params": {
 				"delivery": "lob",
 				"lifetime_base": 6.0,
@@ -426,6 +499,11 @@
 		},
 		"spell_venom_cloud": {
 			"shape": "cloud",
+			"tags": [
+				"cast",
+				"area",
+				"duration"
+			],
 			"shape_params": {
 				"delivery": "lob",
 				"lifetime_base": 8.0,
@@ -463,6 +541,12 @@
 		},
 		"spell_wisp_servant": {
 			"shape": "minion",
+			"tags": [
+				"cast",
+				"minion",
+				"area",
+				"duration"
+			],
 			"school": "arcane",
 			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Spell Projectile affix.",
 			"cooldown": 10.0,
@@ -492,6 +576,10 @@
 		},
 		"spell_wrath_charge": {
 			"shape": "buff",
+			"tags": [
+				"cast",
+				"duration"
+			],
 			"school": "fire",
 			"blurb": "Self-buff: +20% melee AND spell damage for 4 seconds. The buff window is fixed — Spell Duration does NOT extend it.",
 			"class": "utility",
@@ -508,6 +596,10 @@
 		},
 		"spell_holy_pillars": {
 			"shape": "sweep",
+			"tags": [
+				"cast",
+				"area"
+			],
 			"shape_params": {
 				"hit_test": "cone",
 				"visual": "holy_pillars",

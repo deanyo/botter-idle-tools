@@ -7152,6 +7152,536 @@
 					-1
 				]
 			]
+		},
+		{
+			"_doc": "Spell supports (Dean, 2026-10-28): PoE-style support modifiers, one per uncommon+ spell, bound as the spell's implicit and shown as its name suffix (\"Fireball of Chaining\"). Gated by the archetype's `tags` in spell_archetypes.json via `spell_tags` (any match). Their stats are LOCAL to the spell: stat_calc never sums a support_* stat, and the cast code reads them per item on top of global gear. Tiers are indexed by rarity; commons drop plain so the first tier never rolls.",
+			"id": "sup_haste",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Haste",
+			"stat": "support_cdr_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"cast"
+			],
+			"tiers": [
+				[
+					10,
+					10
+				],
+				[
+					14,
+					14
+				],
+				[
+					18,
+					18
+				],
+				[
+					22,
+					22
+				],
+				[
+					26,
+					26
+				]
+			]
+		},
+		{
+			"id": "sup_efficiency",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Efficiency",
+			"stat": "support_mana_discount_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"cast"
+			],
+			"tiers": [
+				[
+					15,
+					15
+				],
+				[
+					20,
+					20
+				],
+				[
+					25,
+					25
+				],
+				[
+					30,
+					30
+				],
+				[
+					35,
+					35
+				]
+			]
+		},
+		{
+			"id": "sup_power",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Power",
+			"stat": "support_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"cast"
+			],
+			"tiers": [
+				[
+					20,
+					20
+				],
+				[
+					26,
+					26
+				],
+				[
+					32,
+					32
+				],
+				[
+					38,
+					38
+				],
+				[
+					45,
+					45
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_mana_surcharge_pct",
+					"tiers": [
+						[
+							25,
+							25
+						],
+						[
+							30,
+							30
+						],
+						[
+							35,
+							35
+						],
+						[
+							40,
+							40
+						],
+						[
+							45,
+							45
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "sup_multishot",
+			"family": "support",
+			"kind": "flat",
+			"name": "of Multishot",
+			"stat": "support_proj_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"projectile",
+				"orbit"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				]
+			]
+		},
+		{
+			"id": "sup_velocity",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Velocity",
+			"stat": "support_proj_speed_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"projectile"
+			],
+			"tiers": [
+				[
+					25,
+					25
+				],
+				[
+					35,
+					35
+				],
+				[
+					45,
+					45
+				],
+				[
+					55,
+					55
+				],
+				[
+					70,
+					70
+				]
+			]
+		},
+		{
+			"id": "sup_chaining",
+			"family": "support",
+			"kind": "flat",
+			"name": "of Chaining",
+			"stat": "support_chain_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"chain"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					3,
+					3
+				]
+			]
+		},
+		{
+			"id": "sup_magnitude",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Magnitude",
+			"stat": "support_area_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"area"
+			],
+			"tiers": [
+				[
+					15,
+					15
+				],
+				[
+					20,
+					20
+				],
+				[
+					25,
+					25
+				],
+				[
+					32,
+					32
+				],
+				[
+					40,
+					40
+				]
+			]
+		},
+		{
+			"id": "sup_focus",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Focus",
+			"stat": "support_damage_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"area"
+			],
+			"tiers": [
+				[
+					25,
+					25
+				],
+				[
+					30,
+					30
+				],
+				[
+					36,
+					36
+				],
+				[
+					42,
+					42
+				],
+				[
+					50,
+					50
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_area_penalty_pct",
+					"tiers": [
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						],
+						[
+							25,
+							25
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "sup_persistence",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Persistence",
+			"stat": "support_duration_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"duration"
+			],
+			"tiers": [
+				[
+					20,
+					20
+				],
+				[
+					28,
+					28
+				],
+				[
+					36,
+					36
+				],
+				[
+					45,
+					45
+				],
+				[
+					55,
+					55
+				]
+			]
+		},
+		{
+			"id": "sup_swarm",
+			"family": "support",
+			"kind": "flat",
+			"name": "of the Swarm",
+			"stat": "support_minion_bonus",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"minion"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				]
+			]
+		},
+		{
+			"id": "sup_potency",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Potency",
+			"stat": "support_aura_effect_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"aura"
+			],
+			"tiers": [
+				[
+					20,
+					20
+				],
+				[
+					28,
+					28
+				],
+				[
+					36,
+					36
+				],
+				[
+					45,
+					45
+				],
+				[
+					55,
+					55
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "spell_reservation_surcharge_pct",
+					"tiers": [
+						[
+							20,
+							20
+						],
+						[
+							20,
+							20
+						],
+						[
+							20,
+							20
+						],
+						[
+							20,
+							20
+						],
+						[
+							20,
+							20
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "sup_restraint",
+			"family": "support",
+			"kind": "pct",
+			"name": "of Restraint",
+			"stat": "support_reservation_discount_pct",
+			"applies_to": [
+				"spell"
+			],
+			"spell_tags": [
+				"aura"
+			],
+			"tiers": [
+				[
+					20,
+					20
+				],
+				[
+					25,
+					25
+				],
+				[
+					30,
+					30
+				],
+				[
+					35,
+					35
+				],
+				[
+					40,
+					40
+				]
+			],
+			"extra_stats": [
+				{
+					"stat": "aura_effect_penalty_pct",
+					"tiers": [
+						[
+							15,
+							15
+						],
+						[
+							15,
+							15
+						],
+						[
+							15,
+							15
+						],
+						[
+							15,
+							15
+						],
+						[
+							15,
+							15
+						]
+					]
+				}
+			]
 		}
 	]
 }
