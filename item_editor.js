@@ -15,7 +15,6 @@
   const WEAPON_CLASSES = ['1H','2H','caster'];
   // Fields whose new whole-number values are still written as floats, matching the data.
   const FLOAT_KEYS = new Set(['speed','enchant_chance']);
-  const DECORATIVE_TAGS = new Set(['bloody','bloodlust','tide']);
   const TINT_MODES = ['normal','colorize','shimmer','inverted','prismatic'];
   const $ = id => document.getElementById(id);
   const copy = value => JSON.parse(JSON.stringify(value));
@@ -303,10 +302,12 @@
     }));
     $('f-enchant_chance').value = it.enchant_chance ?? '';
     const blurbs = reference.flavor_tags || {};
-    const tags = Object.keys(blurbs).sort();
-    renderChips('flavor-chips', tags, it.flavor_tags || [], v => setField('flavor_tags', v), v => v.replaceAll('_', ' '), v => blurbs[v]);
-    const rollable = tags.filter(t => !DECORATIVE_TAGS.has(t));
-    renderChips('enchant-chips', rollable, it.enchant_pool || [], v => setField('enchant_pool', v), v => v.replaceAll('_', ' '), v => blurbs[v]);
+    // Gear flavours are the seven enchants: a proc on weapons, a resistance on worn gear.
+    const tags = reference.enchants || Object.keys(blurbs);
+    const worn = reference.worn_enchants || {};
+    const effect = v => it.slot === 'weapon' ? blurbs[v] : (worn[v] || blurbs[v]);
+    renderChips('flavor-chips', tags, it.flavor_tags || [], v => setField('flavor_tags', v), v => v, effect);
+    renderChips('enchant-chips', tags, it.enchant_pool || [], v => setField('enchant_pool', v), v => v, effect);
     $('enchant-pool-box').open = !!(it.enchant_pool || []).length;
   }
   function bonusValue(affix, rarity) {

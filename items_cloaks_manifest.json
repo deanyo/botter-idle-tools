@@ -21,10 +21,7 @@
       "armor": 6,
       "evasion": 36,
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Stitched from a thousand rats. They were a problem first.",
       "drop_weights": [
         0,
@@ -38,7 +35,8 @@
       "implicit_affixes": [
         "of_plunder",
         "of_avarice",
-        "of_haste"
+        "of_haste",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -75,10 +73,7 @@
       "armor": 6,
       "evasion": 36,
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Twilight clings to it. So does whatever's hunting you.",
       "drop_weights": [
         0,
@@ -133,8 +128,6 @@
       "evasion": 36,
       "item_tier": 5,
       "flavor_tags": [
-        "swiftness",
-        "flying",
         "lightning"
       ],
       "lore": "When they move, light moves out of the way.",
@@ -150,7 +143,8 @@
       "implicit_affixes": [
         "of_haste",
         "of_smoldering_step",
-        "of_recoup"
+        "of_recoup",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -192,10 +186,7 @@
       "armor": 6,
       "evasion": 36,
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "They've left more places than they've entered.",
       "drop_weights": [
         0,
@@ -209,7 +200,8 @@
       "implicit_affixes": [
         "of_plunder",
         "of_haste",
-        "of_warden_step"
+        "of_warden_step",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -345,9 +337,7 @@
       "armor": 2,
       "evasion": 9,
       "item_tier": 2,
-      "flavor_tags": [
-        "stealth"
-      ],
+      "flavor_tags": [],
       "lore": "Hood deep enough to hide a face.",
       "drop_weights": [
         10,
@@ -396,9 +386,7 @@
       "armor": 2,
       "evasion": 9,
       "item_tier": 2,
-      "flavor_tags": [
-        "stealth"
-      ],
+      "flavor_tags": [],
       "lore": "Hood deep enough to hide a face.",
       "drop_weights": [
         5,
@@ -447,10 +435,7 @@
       "armor": 2,
       "evasion": 14,
       "item_tier": 3,
-      "flavor_tags": [
-        "stealth",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Tailored for those who do not wish to be seen.",
       "drop_weights": [
         0,
@@ -500,10 +485,7 @@
       "armor": 2,
       "evasion": 14,
       "item_tier": 3,
-      "flavor_tags": [
-        "stealth",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Tailored for those who do not wish to be seen.",
       "drop_weights": [
         0,
@@ -516,7 +498,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_cat",
-        "of_finesse"
+        "of_finesse",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -553,11 +536,7 @@
       "armor": 4,
       "evasion": 22,
       "item_tier": 4,
-      "flavor_tags": [
-        "stealth",
-        "willpower",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Bears the high marshal's clasp.",
       "drop_weights": [
         0,
@@ -570,7 +549,8 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_cat",
-        "of_finesse"
+        "of_finesse",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -607,10 +587,7 @@
       "armor": 4,
       "evasion": 22,
       "item_tier": 4,
-      "flavor_tags": [
-        "lordly",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Silk so fine the wind passes through it twice.",
       "drop_weights": [
         0,
@@ -623,7 +600,8 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_cat",
-        "of_finesse"
+        "of_finesse",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 10,
@@ -894,10 +872,7 @@
       "armor": 4,
       "evasion": 24,
       "item_tier": 4,
-      "flavor_tags": [
-        "stealth",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "It dries the wood of every forest it walks through.",
       "drop_weights": [
         0,
@@ -938,10 +913,7 @@
       "armor": 1,
       "evasion": 16,
       "item_tier": 3,
-      "flavor_tags": [
-        "swiftness",
-        "flying"
-      ],
+      "flavor_tags": [],
       "lore": "Catches the air the wearer's wings would have, were they still there.",
       "drop_weights": [
         0,
@@ -954,7 +926,8 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "windborn",
       "implicit_affixes": [
-        "of_haste"
+        "of_haste",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 14,
@@ -981,7 +954,6 @@
       "evasion": 14,
       "item_tier": 3,
       "flavor_tags": [
-        "stealth",
         "vampiric"
       ],
       "lore": "Folded shadow with a salt taste. Closes around the neck like a kiss.",
@@ -1023,10 +995,7 @@
       "armor": 4,
       "evasion": 18,
       "item_tier": 3,
-      "flavor_tags": [
-        "rage",
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "Pinned to the back of every orc warlord. Most are too proud to drop it.",
       "drop_weights": [
         0,
@@ -1066,9 +1035,7 @@
       "armor": 6,
       "evasion": 12,
       "item_tier": 3,
-      "flavor_tags": [
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Each scale grew back twice. The wearer feels the same.",
       "drop_weights": [
         0,
@@ -1081,7 +1048,8 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_serpent_growth",
-        "of_vitality"
+        "of_vitality",
+        "of_regen"
       ],
       "affix_pool": {
         "of_vitality": 24,
@@ -1155,8 +1123,7 @@
       "evasion": 14,
       "item_tier": 5,
       "flavor_tags": [
-        "fire",
-        "demon"
+        "fire"
       ],
       "lore": "Cinders sewn into the lining. Smoulders in the dark.",
       "drop_weights": [
@@ -1203,10 +1170,7 @@
       "tile": "cloak_3.png",
       "base_type": "cloak",
       "item_tier": 5,
-      "flavor_tags": [
-        "regen",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Stitched from leaves the grove kept after the season. Each one still drinks light.",
       "drop_weights": [
         0,
@@ -1219,7 +1183,8 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_regen",
-        "of_smoldering_step"
+        "of_smoldering_step",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_vitality": 16,
@@ -1245,8 +1210,7 @@
       "evasion": 6,
       "item_tier": 5,
       "flavor_tags": [
-        "cold",
-        "fortified"
+        "cold"
       ],
       "lore": "He stood frozen for ten thousand years. The cold remembers him still.",
       "drop_weights": [
@@ -1261,7 +1225,8 @@
       "implicit_affixes": [
         "of_obstinance",
         "of_cold_resist",
-        "of_recoup"
+        "of_recoup",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_cold_resist": 20,
@@ -1293,7 +1258,6 @@
       "evasion": 9,
       "item_tier": 3,
       "flavor_tags": [
-        "regen",
         "vampiric"
       ],
       "lore": "Honey clings to the inside. So does whatever the hive intended you to be.",
@@ -1341,11 +1305,7 @@
       "armor": 4,
       "evasion": 22,
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "willpower",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Light as a held breath, and about as sturdy.",
       "drop_weights": [
         0,
@@ -1360,7 +1320,8 @@
         "of_the_cat",
         "of_haste",
         "of_swiftness",
-        "of_brittleness"
+        "of_brittleness",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 10,

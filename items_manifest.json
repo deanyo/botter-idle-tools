@@ -471,9 +471,7 @@
       "damage_type": "physical",
       "speed": 0.5,
       "item_tier": 2,
-      "flavor_tags": [
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Light enough to forget you're carrying it, until you aren't.",
       "drop_weights": [
         10,
@@ -565,9 +563,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 2,
-      "flavor_tags": [
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "Hacked from black iron. Bites first, asks nothing.",
       "drop_weights": [
         8,
@@ -613,9 +609,7 @@
       "damage_type": "physical",
       "speed": 0.55,
       "item_tier": 2,
-      "flavor_tags": [
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "A slender thrusting weapon. Rewards patience.",
       "drop_weights": [
         5,
@@ -662,10 +656,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 2,
-      "flavor_tags": [
-        "swiftness",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "The fastest blade in the Dungeon. Blink and it's already over.",
       "drop_weights": [
         3,
@@ -854,7 +845,6 @@
       "speed": 0.55,
       "item_tier": 3,
       "flavor_tags": [
-        "precision",
         "holy"
       ],
       "lore": "Dipped in holy water before forging. Undead hate it.",
@@ -1046,10 +1036,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 4,
-      "flavor_tags": [
-        "swiftness",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "Almost too light to feel. Compensates by being very sharp.",
       "drop_weights": [
         0,
@@ -1097,9 +1084,7 @@
       "damage_type": "physical",
       "speed": 0.65,
       "item_tier": 4,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Sigils run down the blade, each one a name.",
       "drop_weights": [
         0,
@@ -1195,10 +1180,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 4,
-      "flavor_tags": [
-        "precision",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Simple. Exact. Deadly.",
       "drop_weights": [
         0,
@@ -1246,9 +1228,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 4,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "The runes pulse when it cuts. Nobody knows why.",
       "drop_weights": [
         0,
@@ -1296,10 +1276,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 4,
-      "flavor_tags": [
-        "swiftness",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Longer than it looks. Lighter than possible.",
       "drop_weights": [
         0,
@@ -1347,10 +1324,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane",
-        "crystal"
-      ],
+      "flavor_tags": [],
       "lore": "Carved from a single growth of arcane crystal. Hums when hungry.",
       "drop_weights": [
         0,
@@ -1398,10 +1372,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 5,
-      "flavor_tags": [
-        "precision",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Forged over seven years. Used for the rest.",
       "drop_weights": [
         0,
@@ -1450,8 +1421,7 @@
       "speed": 0.7,
       "item_tier": 5,
       "flavor_tags": [
-        "dark",
-        "death"
+        "dark"
       ],
       "lore": "Nobody remembers who made it. Nobody dares ask.",
       "drop_weights": [
@@ -1501,8 +1471,7 @@
       "speed": 0.9,
       "item_tier": 5,
       "flavor_tags": [
-        "fire",
-        "demon"
+        "fire"
       ],
       "lore": "Forged in a plane that shouldn't exist. Wants to go back.",
       "drop_weights": [
@@ -1549,10 +1518,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane",
-        "sound"
-      ],
+      "flavor_tags": [],
       "lore": "A blade said to sing in battle. The tune changes with each kill.",
       "drop_weights": [
         0,
@@ -1699,8 +1665,7 @@
       "speed": 0.9,
       "item_tier": 5,
       "flavor_tags": [
-        "dark",
-        "death"
+        "dark"
       ],
       "lore": "A weapon that has ended civilizations. It prefers it that way.",
       "drop_weights": [
@@ -1748,10 +1713,7 @@
       "damage_type": "physical",
       "speed": 0.45,
       "item_tier": 4,
-      "flavor_tags": [
-        "precision",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Always finds the right place to be. Unfortunately for whatever it lands in.",
       "drop_weights": [
         0,
@@ -1799,10 +1761,7 @@
       "damage_type": "physical",
       "speed": 0.45,
       "item_tier": 5,
-      "flavor_tags": [
-        "swiftness",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "Light as a leaf-stem. Faster than thought.",
       "drop_weights": [
         0,
@@ -1852,8 +1811,7 @@
       "item_tier": 5,
       "flavor_tags": [
         "vampiric",
-        "dark",
-        "precision"
+        "dark"
       ],
       "lore": "It thirsts. Always. The wearer learns to provide.",
       "drop_weights": [
@@ -1900,10 +1858,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Lightning runs the length of the blade. It hisses when wet.",
       "drop_weights": [
         0,
@@ -2000,8 +1955,7 @@
       "speed": 0.7,
       "item_tier": 5,
       "flavor_tags": [
-        "holy",
-        "brutal"
+        "holy"
       ],
       "lore": "Each kill draws the bearer further into something they can't quite name.",
       "drop_weights": [
@@ -2050,9 +2004,7 @@
       "speed": 0.9,
       "item_tier": 5,
       "flavor_tags": [
-        "fire",
-        "demon",
-        "brutal"
+        "fire"
       ],
       "lore": "Cerebov never let it go. Even in defeat. Even now.",
       "drop_weights": [
@@ -2100,10 +2052,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "ATK scales with the bearer's current HP. The healthy hit hardest.",
       "drop_weights": [
         0,
@@ -2152,7 +2101,6 @@
       "item_tier": 5,
       "flavor_tags": [
         "dark",
-        "death",
         "vampiric"
       ],
       "lore": "Each kill rises briefly to fight beside the bearer. Briefly.",
@@ -2225,7 +2173,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "arcane",
         "fire"
       ],
       "id": "runed_falchion_crimson",
@@ -2282,7 +2229,6 @@
       ],
       "enchant_chance": 0.1,
       "flavor_tags": [
-        "precision",
         "holy",
         "poison"
       ],
@@ -2505,8 +2451,7 @@
       "enchant_chance": 0.3,
       "flavor_tags": [
         "vampiric",
-        "dark",
-        "precision"
+        "dark"
       ],
       "id": "vampires_tooth_spectral",
       "implicit_affixes": [
@@ -2560,10 +2505,7 @@
         12
       ],
       "enchant_chance": 0.18,
-      "flavor_tags": [
-        "precision",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "id": "iron_katana_coppersworn",
       "implicit_affixes": [
         "of_crit",
@@ -2623,8 +2565,7 @@
       "enchant_chance": 0.3,
       "flavor_tags": [
         "vampiric",
-        "dark",
-        "precision"
+        "dark"
       ],
       "id": "vampires_tooth_obsidian",
       "implicit_affixes": [
@@ -2679,7 +2620,6 @@
       ],
       "enchant_chance": 0.05,
       "flavor_tags": [
-        "swiftness",
         "cold"
       ],
       "id": "elven_dagger_frostbound",
@@ -2790,8 +2730,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "arcane",
-        "brutal",
         "fire"
       ],
       "id": "sword_of_power_crimson",
@@ -2847,8 +2785,7 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "fire",
-        "demon"
+        "fire"
       ],
       "id": "demon_blade_embered",
       "implicit_affixes": [
@@ -2959,7 +2896,6 @@
       "enchant_chance": 0.18,
       "flavor_tags": [
         "dark",
-        "death",
         "fire"
       ],
       "id": "ancient_sword_crimson",
@@ -3016,7 +2952,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "arcane",
         "cold"
       ],
       "id": "runed_scimitar_frostbound",
@@ -3182,8 +3117,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "swiftness",
-        "arcane",
         "cold"
       ],
       "id": "elven_broadsword_frostbound",
@@ -3243,10 +3176,7 @@
         60
       ],
       "enchant_chance": 0.3,
-      "flavor_tags": [
-        "arcane",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "id": "sword_of_power_bone",
       "implicit_affixes": [
         "of_might",
@@ -3276,8 +3206,7 @@
       "speed": 0.6,
       "item_tier": 3,
       "flavor_tags": [
-        "fire",
-        "demon"
+        "fire"
       ],
       "lore": "Brands the air it cuts. Old promise re-renewed.",
       "drop_weights": [
@@ -3318,10 +3247,7 @@
       "damage_type": "physical",
       "speed": 0.45,
       "item_tier": 3,
-      "flavor_tags": [
-        "stealth",
-        "first_blood"
-      ],
+      "flavor_tags": [],
       "lore": "Soft on the road. Loud on the kidney.",
       "drop_weights": [
         0,
@@ -3381,7 +3307,6 @@
         "of_venom": 7
       },
       "enchant_pool": [
-        "death",
         "dark"
       ],
       "default_tint_overlay": {
@@ -3408,9 +3333,7 @@
       "damage_type": "lightning",
       "speed": 0.4,
       "item_tier": 1,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Light as a thought. Cuts faster than one.",
       "drop_weights": [
         12,
@@ -3444,10 +3367,7 @@
       "damage_type": "physical",
       "speed": 0.5,
       "item_tier": 1,
-      "flavor_tags": [
-        "arcane",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "The blade leads. Eustachio was, quite literally, just along for the ride.",
       "drop_weights": [
         35,
@@ -3490,8 +3410,7 @@
       "speed": 0.4,
       "item_tier": 3,
       "flavor_tags": [
-        "poison",
-        "precision"
+        "poison"
       ],
       "lore": "Carved from a single tooth. Still drips, faintly, in dry air.",
       "drop_weights": [
@@ -3672,9 +3591,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "It spends your luck on every swing and keeps none for the spoils.",
       "drop_weights": [
         0,

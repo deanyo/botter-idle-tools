@@ -131,9 +131,7 @@
       "tile": "bone_gray.png",
       "base_type": "amulet_regen",
       "item_tier": 1,
-      "flavor_tags": [
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Bone wrapped in twine. Bleached by something.",
       "drop_weights": [
         80,
@@ -144,7 +142,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_regen"
+      ],
       "affix_pool": {
         "of_might": 16,
         "of_finesse": 16,
@@ -180,9 +180,7 @@
       "tile": "cylinder_gray.png",
       "base_type": "amulet_reflection",
       "item_tier": 1,
-      "flavor_tags": [
-        "reflective"
-      ],
+      "flavor_tags": [],
       "lore": "Hollow lead. Rattles.",
       "drop_weights": [
         75,
@@ -229,9 +227,7 @@
       "tile": "cameo_blue.png",
       "base_type": "amulet_faith",
       "item_tier": 1,
-      "flavor_tags": [
-        "faith"
-      ],
+      "flavor_tags": [],
       "lore": "A face carved into shell. Looks vaguely benevolent.",
       "drop_weights": [
         55,
@@ -280,9 +276,7 @@
       "tile": "celtic_yellow.png",
       "base_type": "amulet_regen",
       "item_tier": 1,
-      "flavor_tags": [
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Endless knot. Heals slow.",
       "drop_weights": [
         50,
@@ -331,10 +325,7 @@
       "tile": "stone_1_cyan.png",
       "base_type": "amulet_reflection",
       "item_tier": 2,
-      "flavor_tags": [
-        "reflective",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Smooth stone with a hole bored through. Older than language.",
       "drop_weights": [
         15,
@@ -383,9 +374,7 @@
       "tile": "ring_red.png",
       "base_type": "amulet_rage",
       "item_tier": 2,
-      "flavor_tags": [
-        "rage"
-      ],
+      "flavor_tags": [],
       "lore": "Glows when its wearer is angry. Often.",
       "drop_weights": [
         12,
@@ -434,10 +423,7 @@
       "tile": "celtic_red.png",
       "base_type": "amulet_faith",
       "item_tier": 2,
-      "flavor_tags": [
-        "faith",
-        "wisdom"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by pilgrims. Their gods listen back.",
       "drop_weights": [
         8,
@@ -450,7 +436,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_zealot",
-        "of_devotion"
+        "of_devotion",
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -487,9 +474,7 @@
       "tile": "eye_green.png",
       "base_type": "amulet_acrobat",
       "item_tier": 2,
-      "flavor_tags": [
-        "acrobat"
-      ],
+      "flavor_tags": [],
       "lore": "It tracks across the room. So does its wearer.",
       "drop_weights": [
         8,
@@ -539,9 +524,7 @@
       "tile": "stone_2_red.png",
       "base_type": "amulet_harm",
       "item_tier": 3,
-      "flavor_tags": [
-        "harm"
-      ],
+      "flavor_tags": [],
       "lore": "Always slightly damp. Always. The wearer cuts deeper.",
       "drop_weights": [
         0,
@@ -591,10 +574,7 @@
       "tile": "crystal_green.png",
       "base_type": "amulet_regen",
       "item_tier": 3,
-      "flavor_tags": [
-        "regen",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Living crystal. Drinks light to heal its wearer.",
       "drop_weights": [
         0,
@@ -644,10 +624,7 @@
       "tile": "stone_3_blue.png",
       "base_type": "amulet_guardian",
       "item_tier": 3,
-      "flavor_tags": [
-        "guardian",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Smooth as a tide pool. Watches.",
       "drop_weights": [
         0,
@@ -696,10 +673,7 @@
       "tile": "penta_orange.png",
       "base_type": "amulet_rage",
       "item_tier": 3,
-      "flavor_tags": [
-        "rage",
-        "harm"
-      ],
+      "flavor_tags": [],
       "lore": "Five points. Each one a name burned in.",
       "drop_weights": [
         0,
@@ -749,11 +723,7 @@
       "tile": "face_1_gold.png",
       "base_type": "amulet_faith",
       "item_tier": 4,
-      "flavor_tags": [
-        "faith",
-        "regen",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Cast in gold. Probably copies a real face.",
       "drop_weights": [
         0,
@@ -767,7 +737,9 @@
       "implicit_affixes": [
         "of_zealot",
         "of_devotion",
-        "of_holy_resist"
+        "of_holy_resist",
+        "of_regen",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -804,10 +776,7 @@
       "tile": "stone_2_green.png",
       "base_type": "amulet_acrobat",
       "item_tier": 4,
-      "flavor_tags": [
-        "acrobat",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "The wearer's center of gravity shifts.",
       "drop_weights": [
         0,
@@ -857,10 +826,7 @@
       "tile": "crystal_red.png",
       "base_type": "amulet_harm",
       "item_tier": 4,
-      "flavor_tags": [
-        "harm",
-        "rage"
-      ],
+      "flavor_tags": [],
       "lore": "It hungers. The wearer's edges sharpen, their guard slips.",
       "drop_weights": [
         0,
@@ -910,10 +876,7 @@
       "tile": "stone_3_magenta.png",
       "base_type": "amulet_guardian",
       "item_tier": 4,
-      "flavor_tags": [
-        "guardian",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "A purple sigil floats above the stone, slightly above. Always.",
       "drop_weights": [
         0,
@@ -962,10 +925,7 @@
       "tile": "crystal_white.png",
       "base_type": "amulet_vitality",
       "item_tier": 5,
-      "flavor_tags": [
-        "vitality",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Bright. Still. Growing slowly.",
       "drop_weights": [
         0,
@@ -1015,10 +975,7 @@
       "tile": "penta_green.png",
       "base_type": "amulet_reflection",
       "item_tier": 5,
-      "flavor_tags": [
-        "reflective",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Five points held tight. Whatever crosses, returns.",
       "drop_weights": [
         0,
@@ -1067,10 +1024,7 @@
       "tile": "face_2.png",
       "base_type": "amulet_faith",
       "item_tier": 5,
-      "flavor_tags": [
-        "faith",
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by a king who outlived his enemies. Most of them.",
       "drop_weights": [
         0,
@@ -1084,7 +1038,8 @@
       "implicit_affixes": [
         "of_zealot",
         "of_devotion",
-        "of_holy_resist"
+        "of_holy_resist",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1121,11 +1076,7 @@
       "tile": "urand_vitality.png",
       "base_type": "amulet_vitality",
       "item_tier": 5,
-      "flavor_tags": [
-        "vitality",
-        "regen",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by those who refused to fall.",
       "drop_weights": [
         0,
@@ -1176,11 +1127,7 @@
       "tile": "urand_air_new.png",
       "base_type": "amulet_air",
       "item_tier": 5,
-      "flavor_tags": [
-        "acrobat",
-        "willpower",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Cool wind around the wearer's neck. Always.",
       "drop_weights": [
         0,
@@ -1229,10 +1176,7 @@
       "tile": "urand_bloodlust_new.png",
       "base_type": "amulet_rage",
       "item_tier": 5,
-      "flavor_tags": [
-        "rage",
-        "harm"
-      ],
+      "flavor_tags": [],
       "lore": "Beats slightly faster than the wearer's heart. Always slightly faster.",
       "drop_weights": [
         0,
@@ -1283,11 +1227,7 @@
       "tile": "urand_brooch_of_shielding_new.png",
       "base_type": "amulet_reflection",
       "item_tier": 5,
-      "flavor_tags": [
-        "reflective",
-        "fortified",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "A faint shimmer surrounds the wearer in any light.",
       "drop_weights": [
         0,
@@ -1336,11 +1276,7 @@
       "tile": "urand_cekugob_new.png",
       "base_type": "amulet_guardian",
       "item_tier": 5,
-      "flavor_tags": [
-        "guardian",
-        "willpower",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Cekugob never died. The amulet is the proof.",
       "drop_weights": [
         0,
@@ -1354,7 +1290,8 @@
       "implicit_affixes": [
         "of_obstinance",
         "of_warding",
-        "of_recoup"
+        "of_recoup",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1391,11 +1328,7 @@
       "tile": "urand_four_winds_new.png",
       "base_type": "amulet_air",
       "item_tier": 5,
-      "flavor_tags": [
-        "acrobat",
-        "elemental",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Four directions held in one circle. Each promises something.",
       "drop_weights": [
         0,
@@ -1446,10 +1379,7 @@
       "tile": "urand_finger.png",
       "base_type": "amulet_harm",
       "item_tier": 5,
-      "flavor_tags": [
-        "harm",
-        "rage"
-      ],
+      "flavor_tags": [],
       "lore": "A real finger. Old. Don't ask whose.",
       "drop_weights": [
         0,
@@ -1535,7 +1465,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "harm",
         "poison"
       ],
       "id": "stone_2_red_jadeforged",
@@ -1601,15 +1530,13 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "guardian",
-        "willpower",
-        "fortune",
         "dark"
       ],
       "id": "cekugob_amulet_obsidian",
       "implicit_affixes": [
         "of_dark_resist",
-        "of_phylactery"
+        "of_phylactery",
+        "of_abundance"
       ],
       "item_tier": 5,
       "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
@@ -1663,8 +1590,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "harm",
-        "rage",
         "holy"
       ],
       "id": "amulet_finger_rosegold",
@@ -1725,12 +1650,12 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "vitality",
-        "regen",
         "dark"
       ],
       "id": "crystal_white_voidwrought",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_regen"
+      ],
       "item_tier": 5,
       "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
       "name": "Voidwrought Pearl of Vitality",
@@ -1783,8 +1708,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "reflective",
-        "fortified",
         "poison"
       ],
       "id": "penta_green_mossy",
@@ -1842,11 +1765,7 @@
         60
       ],
       "enchant_chance": 0.3,
-      "flavor_tags": [
-        "acrobat",
-        "willpower",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "id": "amulet_of_air_verdant",
       "implicit_affixes": [],
       "item_tier": 5,
@@ -1901,15 +1820,13 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "guardian",
-        "willpower",
-        "fortune",
         "dark"
       ],
       "id": "cekugob_amulet_shadowed",
       "implicit_affixes": [
         "of_nightcaller",
-        "of_dark_resist"
+        "of_dark_resist",
+        "of_abundance"
       ],
       "item_tier": 5,
       "lore": "Hard to see in dim light, even when held directly before you.",
@@ -1964,7 +1881,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "harm",
         "dark"
       ],
       "id": "stone_2_red_voidwrought",
@@ -2026,7 +1942,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "harm",
         "dark",
         "cold"
       ],
@@ -2088,8 +2003,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "harm",
-        "rage",
         "holy"
       ],
       "id": "crystal_red_sunsteel",
@@ -2151,7 +2064,6 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "harm",
         "dark"
       ],
       "id": "stone_2_red_voidwrought_spectral",
@@ -2212,8 +2124,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "acrobat",
-        "footwork",
         "fire"
       ],
       "id": "stone_2_green_embered",
@@ -2276,10 +2186,7 @@
         0
       ],
       "enchant_chance": 0.1,
-      "flavor_tags": [
-        "rage",
-        "harm"
-      ],
+      "flavor_tags": [],
       "id": "penta_orange_ironclad",
       "implicit_affixes": [
         "of_might",
@@ -2337,15 +2244,14 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "faith",
-        "regen",
-        "fortune",
         "poison"
       ],
       "id": "face_amulet_gold_jadeforged",
       "implicit_affixes": [
         "of_pestcaller",
-        "of_poison_resist"
+        "of_poison_resist",
+        "of_regen",
+        "of_abundance"
       ],
       "item_tier": 4,
       "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
@@ -2364,10 +2270,7 @@
       "tile": "urand_octoring.png",
       "base_type": "amulet_acrobat",
       "item_tier": 4,
-      "flavor_tags": [
-        "vision",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "lore": "Each tentacle reads a different sky.",
       "drop_weights": [
         0,
@@ -2407,8 +2310,7 @@
       "base_type": "amulet_rage",
       "item_tier": 3,
       "flavor_tags": [
-        "vampiric",
-        "harm"
+        "vampiric"
       ],
       "lore": "A fingerbone in red glass. The bone is yours.",
       "drop_weights": [
@@ -2453,10 +2355,7 @@
       "tile": "urand_finger.png",
       "base_type": "amulet_faith",
       "item_tier": 3,
-      "flavor_tags": [
-        "faith",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "lore": "Older than the curse. Older than the mummy who carried it.",
       "drop_weights": [
         0,
@@ -2500,9 +2399,7 @@
       "tile": "granite.png",
       "base_type": "amulet_guardian",
       "item_tier": 3,
-      "flavor_tags": [
-        "guardian"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy enough that the wearer never quite straightens.",
       "drop_weights": [
         0,
@@ -2540,10 +2437,7 @@
       "tile": "urand_finger.png",
       "base_type": "amulet_acrobat",
       "item_tier": 2,
-      "flavor_tags": [
-        "fortune",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Always one coin heavier than you remember leaving it.",
       "drop_weights": [
         0,
@@ -2557,7 +2451,8 @@
       "requires_innate_tag": "lucky",
       "implicit_affixes": [
         "of_plunder",
-        "of_scribe"
+        "of_scribe",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_plunder": 14,
@@ -2585,9 +2480,7 @@
       "tile": "stone_1_cyan.png",
       "base_type": "amulet_polymorph",
       "item_tier": 2,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Its setting is shaped like a pig. The wearer notices things that weren't always pigs.",
       "drop_weights": [
         0,
@@ -2629,8 +2522,7 @@
       "base_type": "amulet_phylactery",
       "item_tier": 4,
       "flavor_tags": [
-        "dark",
-        "willpower"
+        "dark"
       ],
       "lore": "Boris's piece of himself, neatly preserved. Now yours, if you find a way.",
       "drop_weights": [
@@ -2673,9 +2565,7 @@
       "tile": "agate.png",
       "base_type": "amulet_strength",
       "item_tier": 1,
-      "flavor_tags": [
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "A pierced slug of pig iron. Heavier than it looks.",
       "drop_weights": [
         80,
@@ -2686,7 +2576,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_growth"
+      ],
       "affix_pool": {
         "of_might": 30,
         "of_finesse": 12,
@@ -2716,10 +2608,7 @@
       "tile": "crystal_white.png",
       "base_type": "amulet_magic_regeneration",
       "item_tier": 5,
-      "flavor_tags": [
-        "arcane",
-        "wisdom"
-      ],
+      "flavor_tags": [],
       "lore": "A facet cut so finely it sings when a spell is spoken near it.",
       "drop_weights": [
         0,
@@ -2733,7 +2622,8 @@
       "requires_innate_tag": "scholar",
       "implicit_affixes": [
         "of_int_mastery",
-        "of_channeling"
+        "of_channeling",
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_damage": 18,
@@ -2768,10 +2658,7 @@
       "tile": "urand_air_new.png",
       "base_type": "amulet_acrobat",
       "item_tier": 4,
-      "flavor_tags": [
-        "swiftness",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "A feather pinned in glass. Always pointing into the wind.",
       "drop_weights": [
         0,
@@ -2785,7 +2672,8 @@
       "requires_innate_tag": "windborn",
       "implicit_affixes": [
         "of_haste",
-        "of_velocity"
+        "of_velocity",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_haste": 16,
@@ -2911,9 +2799,7 @@
       "tile": "urand_bloodlust.png",
       "base_type": "amulet_ember",
       "item_tier": 1,
-      "flavor_tags": [
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "A closed ring of scorched bronze. What it starts, it starts again.",
       "drop_weights": [
         35,
@@ -2947,10 +2833,7 @@
       "tile": "crystal_white.png",
       "base_type": "amulet_vitality",
       "item_tier": 5,
-      "flavor_tags": [
-        "vitality",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Those who swore it never struck in anger. Few kept it long.",
       "drop_weights": [
         0,

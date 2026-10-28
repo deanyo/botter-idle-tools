@@ -255,9 +255,7 @@
       "tile": "copper.png",
       "base_type": "ring_evasion",
       "item_tier": 1,
-      "flavor_tags": [
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Bright when new. Green now.",
       "drop_weights": [
         75,
@@ -310,9 +308,7 @@
       "tile": "brass.png",
       "base_type": "ring_protection",
       "item_tier": 1,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Stamped with a rune. The rune doesn't mean anything.",
       "drop_weights": [
         55,
@@ -422,9 +418,7 @@
       "tile": "iron.png",
       "base_type": "ring_protection",
       "item_tier": 2,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Hammered cold. Will not give.",
       "drop_weights": [
         15,
@@ -479,9 +473,7 @@
       "tile": "steel.png",
       "base_type": "ring_slaying",
       "item_tier": 2,
-      "flavor_tags": [
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Edge-tempered. Sharper than it looks.",
       "drop_weights": [
         12,
@@ -536,9 +528,7 @@
       "tile": "silver.png",
       "base_type": "ring_willpower",
       "item_tier": 2,
-      "flavor_tags": [
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Tingles when spells fly nearby.",
       "drop_weights": [
         8,
@@ -594,9 +584,7 @@
       "tile": "agate.png",
       "base_type": "ring_dexterity",
       "item_tier": 2,
-      "flavor_tags": [
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Banded stone, polished smooth.",
       "drop_weights": [
         8,
@@ -652,9 +640,7 @@
       "tile": "moonstone.png",
       "base_type": "ring_regen",
       "item_tier": 3,
-      "flavor_tags": [
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Glows faintly at night. Heals the same.",
       "drop_weights": [
         0,
@@ -710,9 +696,7 @@
       "tile": "tiger_eye.png",
       "base_type": "ring_strength",
       "item_tier": 3,
-      "flavor_tags": [
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "It watches. It doesn't blink.",
       "drop_weights": [
         0,
@@ -768,10 +752,7 @@
       "tile": "tourmaline.png",
       "base_type": "ring_evasion",
       "item_tier": 3,
-      "flavor_tags": [
-        "footwork",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "The wearer ducks slightly more than necessary.",
       "drop_weights": [
         0,
@@ -827,9 +808,7 @@
       "tile": "coral.png",
       "base_type": "ring_poison",
       "item_tier": 3,
-      "flavor_tags": [
-        "poison_res"
-      ],
+      "flavor_tags": [],
       "lore": "Smells faintly of the sea. Always.",
       "drop_weights": [
         0,
@@ -885,9 +864,7 @@
       "tile": "ring_topaz.png",
       "base_type": "ring_fire",
       "item_tier": 3,
-      "flavor_tags": [
-        "fire_res"
-      ],
+      "flavor_tags": [],
       "lore": "Warm to the touch.",
       "drop_weights": [
         0,
@@ -943,9 +920,7 @@
       "tile": "ring_sapphire.png",
       "base_type": "ring_cold",
       "item_tier": 3,
-      "flavor_tags": [
-        "cold_res"
-      ],
+      "flavor_tags": [],
       "lore": "Cold despite the air.",
       "drop_weights": [
         0,
@@ -1001,10 +976,7 @@
       "tile": "ring_ivory.png",
       "base_type": "ring_stealth",
       "item_tier": 4,
-      "flavor_tags": [
-        "stealth",
-        "vision"
-      ],
+      "flavor_tags": [],
       "lore": "Old. Yellowed. Forgotten by what made it.",
       "drop_weights": [
         0,
@@ -1060,9 +1032,7 @@
       "tile": "ring_shiny.png",
       "base_type": "ring_protection",
       "item_tier": 4,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Polished beyond reason. Nobody likes the wearer in dim corridors.",
       "drop_weights": [
         0,
@@ -1117,10 +1087,7 @@
       "tile": "ruby.png",
       "base_type": "ring_strength",
       "item_tier": 4,
-      "flavor_tags": [
-        "slaying",
-        "fire_res"
-      ],
+      "flavor_tags": [],
       "lore": "Hot to the touch. Hotter when struck.",
       "drop_weights": [
         0,
@@ -1133,7 +1100,8 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_might",
-        "of_vitality"
+        "of_vitality",
+        "of_fire_resist"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1176,10 +1144,7 @@
       "tile": "emerald.png",
       "base_type": "ring_dexterity",
       "item_tier": 4,
-      "flavor_tags": [
-        "footwork",
-        "wisdom"
-      ],
+      "flavor_tags": [],
       "lore": "Green flecks. Always cool.",
       "drop_weights": [
         0,
@@ -1193,7 +1158,8 @@
       "implicit_affixes": [
         "of_finesse",
         "of_haste",
-        "of_crit"
+        "of_crit",
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1236,10 +1202,7 @@
       "tile": "diamond.png",
       "base_type": "ring_evasion",
       "item_tier": 5,
-      "flavor_tags": [
-        "footwork",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Catches every light source on the floor.",
       "drop_weights": [
         0,
@@ -1295,10 +1258,7 @@
       "tile": "pearl.png",
       "base_type": "ring_regen",
       "item_tier": 5,
-      "flavor_tags": [
-        "regen",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Iridescent. Cool against the skin.",
       "drop_weights": [
         0,
@@ -1355,10 +1315,7 @@
       "tile": "gold.png",
       "base_type": "ring_slaying",
       "item_tier": 5,
-      "flavor_tags": [
-        "slaying",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy. Worn by people who could afford a target.",
       "drop_weights": [
         0,
@@ -1371,7 +1328,8 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_executioner",
-        "of_devastation"
+        "of_devastation",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1414,10 +1372,7 @@
       "tile": "ring_engagement.png",
       "base_type": "ring_protection",
       "item_tier": 5,
-      "flavor_tags": [
-        "fortified",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Inscribed with a name nobody remembers. Lights up around the right person.",
       "drop_weights": [
         0,
@@ -1429,7 +1384,8 @@
       "unique": false,
       "enchant_chance": 0.15,
       "implicit_affixes": [
-        "of_vitality"
+        "of_vitality",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1472,10 +1428,7 @@
       "tile": "urand_octoring.png",
       "base_type": "ring_magic",
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Eight in one. Or one in eight. Depends who's counting.",
       "drop_weights": [
         0,
@@ -1489,7 +1442,8 @@
       "implicit_affixes": [
         "of_arcane_flow",
         "of_quickcast",
-        "of_wisdom"
+        "of_wisdom",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1532,11 +1486,7 @@
       "tile": "urand_robustness.png",
       "base_type": "ring_protection",
       "item_tier": 5,
-      "flavor_tags": [
-        "fortified",
-        "regen",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Thick. Indelicate. Effective.",
       "drop_weights": [
         0,
@@ -1593,11 +1543,7 @@
       "tile": "urand_shadows_new.png",
       "base_type": "ring_stealth",
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "footwork",
-        "vision"
-      ],
+      "flavor_tags": [],
       "lore": "The wearer's shadow does not always follow.",
       "drop_weights": [
         0,
@@ -1652,11 +1598,7 @@
       "tile": "urand_shaolin.png",
       "base_type": "ring_dexterity",
       "item_tier": 5,
-      "flavor_tags": [
-        "footwork",
-        "swiftness",
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by a fist that ended a war.",
       "drop_weights": [
         0,
@@ -1713,10 +1655,7 @@
       "tile": "urand_mage.png",
       "base_type": "ring_magic",
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Drained of one mage's worth of magic. Now full of yours.",
       "drop_weights": [
         0,
@@ -1771,9 +1710,7 @@
       "tile": "glass.png",
       "base_type": "ring_evasion",
       "item_tier": 1,
-      "flavor_tags": [
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Cool. Fragile-feeling. Doesn't shatter.",
       "drop_weights": [
         55,
@@ -1828,10 +1765,7 @@
       "tile": "jade.png",
       "base_type": "ring_poison",
       "item_tier": 2,
-      "flavor_tags": [
-        "poison_res",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Cold. Always cold. Even when hot.",
       "drop_weights": [
         10,
@@ -1844,7 +1778,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_pestcaller",
-        "of_poison_resist"
+        "of_poison_resist",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1887,9 +1822,7 @@
       "tile": "granite.png",
       "base_type": "ring_protection",
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy on the finger. Heavier on the mind.",
       "drop_weights": [
         0,
@@ -1944,10 +1877,7 @@
       "tile": "opal.png",
       "base_type": "ring_magic",
       "item_tier": 4,
-      "flavor_tags": [
-        "wisdom",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Catches every color. Spits some back.",
       "drop_weights": [
         0,
@@ -2004,11 +1934,7 @@
       "tile": "ring_black_onyx.png",
       "base_type": "ring_stealth",
       "item_tier": 4,
-      "flavor_tags": [
-        "stealth",
-        "footwork",
-        "vision"
-      ],
+      "flavor_tags": [],
       "lore": "Light declines to land on it. So do gazes.",
       "drop_weights": [
         0,
@@ -2064,10 +1990,7 @@
       "tile": "ring_gold_white.png",
       "base_type": "ring_flight",
       "item_tier": 4,
-      "flavor_tags": [
-        "flying",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Heels barely brush the floor while it's worn.",
       "drop_weights": [
         0,
@@ -2161,10 +2084,7 @@
         12
       ],
       "enchant_chance": 0.18,
-      "flavor_tags": [
-        "flying",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "id": "ring_of_flight_coppersworn",
       "implicit_affixes": [
         "of_haste"
@@ -2226,7 +2146,6 @@
       ],
       "enchant_chance": 0.05,
       "flavor_tags": [
-        "footwork",
         "poison"
       ],
       "id": "copper_ring_mossy",
@@ -2289,12 +2208,12 @@
         60
       ],
       "enchant_chance": 0.3,
-      "flavor_tags": [
-        "wisdom",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "id": "octoring_inverse",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_abundance"
+      ],
       "item_tier": 5,
       "lore": "Looking at it too long inverts what you saw before.",
       "name": "Inverse The Octoring",
@@ -2351,14 +2270,13 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "slaying",
-        "fire_res",
         "cold"
       ],
       "id": "ruby_ring_frostbound",
       "implicit_affixes": [
         "of_frost",
-        "of_finesse"
+        "of_finesse",
+        "of_fire_resist"
       ],
       "item_tier": 4,
       "lore": "A rime of ice will not melt, no matter how warm the room.",
@@ -2418,7 +2336,6 @@
       ],
       "enchant_chance": 0.1,
       "flavor_tags": [
-        "regen",
         "dark"
       ],
       "id": "moonstone_ring_shadowed",
@@ -2488,10 +2405,7 @@
         60
       ],
       "enchant_chance": 0.3,
-      "flavor_tags": [
-        "wisdom",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "id": "mage_ring_ironclad",
       "implicit_affixes": [
         "of_wisdom",
@@ -2559,13 +2473,11 @@
         60
       ],
       "enchant_chance": 0.3,
-      "flavor_tags": [
-        "wisdom",
-        "willpower",
-        "shadow"
-      ],
+      "flavor_tags": [],
       "id": "mage_ring_umbral",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom"
+      ],
       "item_tier": 5,
       "lore": "The dark that settles on it cannot be polished off.",
       "name": "Umbral Ring of the Mage",
@@ -2622,8 +2534,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "stealth",
-        "vision",
         "fire"
       ],
       "id": "ivory_ring_crimson",
@@ -2694,7 +2604,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "footwork",
         "dark"
       ],
       "id": "agate_ring_obsidian",
@@ -2760,14 +2669,13 @@
       ],
       "enchant_chance": 0.3,
       "flavor_tags": [
-        "footwork",
-        "wisdom",
         "poison"
       ],
       "id": "emerald_ring_jadeforged",
       "implicit_affixes": [
         "of_pestcaller",
-        "of_poison_resist"
+        "of_poison_resist",
+        "of_wisdom"
       ],
       "item_tier": 4,
       "lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
@@ -2786,9 +2694,7 @@
       "tile": "ring_twisted.png",
       "base_type": "ring_regen",
       "item_tier": 3,
-      "flavor_tags": [
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Tightens with each strike upon a single quarry.",
       "drop_weights": [
         0,
@@ -2830,7 +2736,6 @@
       "base_type": "ring_cold",
       "item_tier": 4,
       "flavor_tags": [
-        "cold_res",
         "cold"
       ],
       "lore": "Coldblood fangs forged into a coil. Bites the hand it wraps.",
@@ -2868,10 +2773,7 @@
       "tile": "coral.png",
       "base_type": "ring_magic",
       "item_tier": 3,
-      "flavor_tags": [
-        "regen",
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Polished smooth in eight grips at once.",
       "drop_weights": [
         0,
@@ -2884,7 +2786,9 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "aquatic",
       "implicit_affixes": [
-        "of_wisdom"
+        "of_wisdom",
+        "of_regen",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_wisdom": 14,
@@ -2906,9 +2810,7 @@
       "tile": "ring_gold_white.png",
       "base_type": "ring_keys",
       "item_tier": 4,
-      "flavor_tags": [
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy with keys. Frederick collected them. Frederick was, eventually, collected.",
       "drop_weights": [
         0,
@@ -2921,7 +2823,8 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_vault_key",
-        "of_plunder"
+        "of_plunder",
+        "of_abundance"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -2988,10 +2891,7 @@
       "tile": "ring_twisted.png",
       "base_type": "ring_flight",
       "item_tier": 4,
-      "flavor_tags": [
-        "flying",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "The more it claimed, the richer the spoils. Yet no feast could sate its hunger.",
       "drop_weights": [
         0,
@@ -3054,11 +2954,7 @@
       "tile": "ring_black_onyx.png",
       "base_type": "ring_stealth",
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "footwork",
-        "vision"
-      ],
+      "flavor_tags": [],
       "lore": "It feeds on what you take, and forbids you to mend on your own.",
       "drop_weights": [
         0,

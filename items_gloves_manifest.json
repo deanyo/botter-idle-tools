@@ -21,10 +21,7 @@
       "armor": 12,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Carried to a thousand battles. Always returned home.",
       "drop_weights": [
         0,
@@ -36,7 +33,8 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_might"
+        "of_might",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -77,10 +75,7 @@
       "armor": 12,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "footwork",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "They lead. The rest of the body follows.",
       "drop_weights": [
         0,
@@ -92,7 +87,8 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_finesse"
+        "of_finesse",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -264,9 +260,7 @@
       "armor": 3,
       "evasion": 5,
       "item_tier": 2,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Articulated steel \u2014 every knuckle covers itself.",
       "drop_weights": [
         5,
@@ -278,7 +272,8 @@
       "unique": false,
       "enchant_chance": 0.05,
       "implicit_affixes": [
-        "of_finesse"
+        "of_finesse",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -313,9 +308,7 @@
       "armor": 5,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Lighter than they should be. Stronger too.",
       "drop_weights": [
         0,
@@ -328,7 +321,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_finesse",
-        "of_haste"
+        "of_haste",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -363,10 +357,7 @@
       "armor": 5,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "agility",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Plates fitted to every knuckle.",
       "drop_weights": [
         0,
@@ -379,7 +370,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_finesse",
-        "of_haste"
+        "of_haste",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -414,9 +406,7 @@
       "armor": 7,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Each ring inlaid by hand, said to deflect spite.",
       "drop_weights": [
         0,
@@ -465,10 +455,7 @@
       "armor": 7,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "lordly",
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Fingerprints of an old champion still on the grip.",
       "drop_weights": [
         0,
@@ -518,8 +505,7 @@
       "evasion": 18,
       "item_tier": 5,
       "flavor_tags": [
-        "lightning",
-        "swiftness"
+        "lightning"
       ],
       "lore": "The leather hisses faintly, as though it remembers.",
       "drop_weights": [
@@ -601,14 +587,14 @@
       "enchant_chance": 0.18,
       "evasion": 7,
       "flavor_tags": [
-        "fortified",
         "cold"
       ],
       "id": "dwarven_gloves_frostbound",
       "implicit_affixes": [
         "of_finesse",
         "of_haste",
-        "of_might"
+        "of_might",
+        "of_the_bear"
       ],
       "item_tier": 3,
       "lore": "A rime of ice will not melt, no matter how warm the room.",
@@ -659,13 +645,12 @@
       ],
       "enchant_chance": 0.1,
       "evasion": 7,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "id": "dwarven_gloves_nightblue",
       "implicit_affixes": [
         "of_finesse",
-        "of_haste"
+        "of_haste",
+        "of_the_bear"
       ],
       "item_tier": 3,
       "lore": "Indigo so dark it reads as black until light hits the right angle.",
@@ -685,10 +670,7 @@
       "armor": 3,
       "evasion": 8,
       "item_tier": 3,
-      "flavor_tags": [
-        "wisdom",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Each finger underwritten with a verse the wearer half-remembers.",
       "drop_weights": [
         0,
@@ -727,9 +709,7 @@
       "armor": 2,
       "evasion": 8,
       "item_tier": 3,
-      "flavor_tags": [
-        "agility"
-      ],
+      "flavor_tags": [],
       "lore": "Wraps two fingers and a thumb. The other digits do their own work.",
       "drop_weights": [
         0,
@@ -743,7 +723,8 @@
       "requires_innate_tag": "scavenger",
       "implicit_affixes": [
         "of_velocity",
-        "of_multicast"
+        "of_multicast",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_finesse": 14,
@@ -768,9 +749,7 @@
       "armor": 4,
       "evasion": 2,
       "item_tier": 2,
-      "flavor_tags": [
-        "bloodlust"
-      ],
+      "flavor_tags": [],
       "lore": "The wolves recognized them. Grum did not survive that recognition.",
       "drop_weights": [
         0,
@@ -852,9 +831,7 @@
       "armor": 2,
       "evasion": 7,
       "item_tier": 2,
-      "flavor_tags": [
-        "faith"
-      ],
+      "flavor_tags": [],
       "lore": "Wrapped each morning, with a prayer pressed into the knot.",
       "drop_weights": [
         20,
@@ -895,10 +872,7 @@
       "armor": 4,
       "evasion": 3,
       "item_tier": 3,
-      "flavor_tags": [
-        "thorns",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Stone gauntlets, threaded with old web. The webs hold longer than the stone.",
       "drop_weights": [
         0,
@@ -912,7 +886,8 @@
       "implicit_affixes": [
         "of_butcher",
         "of_thorns",
-        "of_first_strike"
+        "of_first_strike",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -943,10 +918,7 @@
       "armor": 7,
       "evasion": 11,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Every blow lands like a hammer. Every blow takes as long.",
       "drop_weights": [
         0,

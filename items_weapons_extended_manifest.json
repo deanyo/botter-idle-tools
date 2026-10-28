@@ -201,9 +201,7 @@
       "damage_type": "physical",
       "speed": 0.75,
       "item_tier": 2,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Dwarven iron, balanced for both hands or one.",
       "drop_weights": [
         10,
@@ -296,9 +294,7 @@
       "damage_type": "physical",
       "speed": 0.75,
       "item_tier": 4,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Runes dyed dark in the blade \u2014 no one remembers their meaning.",
       "drop_weights": [
         0,
@@ -346,9 +342,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 2,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Two-handed iron. Pretends to nothing.",
       "drop_weights": [
         10,
@@ -394,9 +388,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Steel head and ash haft, balanced cruelly.",
       "drop_weights": [
         0,
@@ -443,10 +435,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 4,
-      "flavor_tags": [
-        "ponderous",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Runes burn cold along the blade in winter air.",
       "drop_weights": [
         0,
@@ -494,11 +483,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 5,
-      "flavor_tags": [
-        "ponderous",
-        "brutal",
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "Carried into three hundred fights. Still hungry.",
       "drop_weights": [
         0,
@@ -546,9 +531,7 @@
       "damage_type": "physical",
       "speed": 1.15,
       "item_tier": 2,
-      "flavor_tags": [
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Wide bite. Wider crater.",
       "drop_weights": [
         10,
@@ -594,9 +577,7 @@
       "damage_type": "physical",
       "speed": 1.15,
       "item_tier": 3,
-      "flavor_tags": [
-        "slaying"
-      ],
+      "flavor_tags": [],
       "lore": "Steel forged thick \u2014 splits shields like kindling.",
       "drop_weights": [
         0,
@@ -643,10 +624,7 @@
       "damage_type": "physical",
       "speed": 1.15,
       "item_tier": 4,
-      "flavor_tags": [
-        "slaying",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Runed at the throat. The wind groans before it lands.",
       "drop_weights": [
         0,
@@ -694,10 +672,7 @@
       "damage_type": "physical",
       "speed": 1.2,
       "item_tier": 5,
-      "flavor_tags": [
-        "ponderous",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "A cold weight. Nothing struck by it twice.",
       "drop_weights": [
         0,
@@ -744,11 +719,7 @@
       "damage_type": "physical",
       "speed": 1.2,
       "item_tier": 5,
-      "flavor_tags": [
-        "ponderous",
-        "brutal",
-        "death"
-      ],
+      "flavor_tags": [],
       "lore": "Said to fall by its own will once a name is spoken.",
       "drop_weights": [
         0,
@@ -974,9 +945,7 @@
       "damage_type": "physical",
       "speed": 0.8,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Dwarven steel, fluted to crack plate.",
       "drop_weights": [
         0,
@@ -1023,9 +992,7 @@
       "damage_type": "physical",
       "speed": 0.85,
       "item_tier": 2,
-      "flavor_tags": [
-        "sound"
-      ],
+      "flavor_tags": [],
       "lore": "Spikes for the spaces armor forgets.",
       "drop_weights": [
         10,
@@ -1071,9 +1038,7 @@
       "damage_type": "physical",
       "speed": 0.85,
       "item_tier": 3,
-      "flavor_tags": [
-        "sound"
-      ],
+      "flavor_tags": [],
       "lore": "Steel and starlight; a heavier kind of light.",
       "drop_weights": [
         0,
@@ -1120,10 +1085,7 @@
       "damage_type": "physical",
       "speed": 0.85,
       "item_tier": 4,
-      "flavor_tags": [
-        "sound",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Each spike etched with a saint's name.",
       "drop_weights": [
         0,
@@ -1221,8 +1183,7 @@
       "speed": 1.0,
       "item_tier": 4,
       "flavor_tags": [
-        "dark",
-        "arcane"
+        "dark"
       ],
       "lore": "Cools the air around it. Steady. Silent. Inevitable.",
       "drop_weights": [
@@ -1316,9 +1277,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Two heads, one purpose. Both of them final.",
       "drop_weights": [
         0,
@@ -1365,9 +1324,7 @@
       "damage_type": "physical",
       "speed": 0.8,
       "item_tier": 3,
-      "flavor_tags": [
-        "sound"
-      ],
+      "flavor_tags": [],
       "lore": "A hinged answer to a shielded question.",
       "drop_weights": [
         0,
@@ -1414,9 +1371,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 2,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Squared head, square purpose.",
       "drop_weights": [
         10,
@@ -1462,9 +1417,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Squared head, square purpose.",
       "drop_weights": [
         0,
@@ -1511,10 +1464,7 @@
       "damage_type": "physical",
       "speed": 1.2,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "A whole thigh of oak. Listens for ribs.",
       "drop_weights": [
         0,
@@ -1745,9 +1695,7 @@
       "damage_type": "physical",
       "speed": 0.95,
       "item_tier": 2,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Half axe, half spear, all decision.",
       "drop_weights": [
         10,
@@ -1793,9 +1741,7 @@
       "damage_type": "physical",
       "speed": 0.95,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Half axe, half spear, all decision.",
       "drop_weights": [
         0,
@@ -1842,10 +1788,7 @@
       "damage_type": "physical",
       "speed": 1.05,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "A long blade on a longer haft. Reach kills.",
       "drop_weights": [
         0,
@@ -1892,11 +1835,7 @@
       "damage_type": "physical",
       "speed": 1.05,
       "item_tier": 4,
-      "flavor_tags": [
-        "ponderous",
-        "brutal",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "A long blade on a longer haft. Reach kills.",
       "drop_weights": [
         0,
@@ -1993,8 +1932,7 @@
       "speed": 1.0,
       "item_tier": 5,
       "flavor_tags": [
-        "dark",
-        "death"
+        "dark"
       ],
       "lore": "Tall, thin, patient. Gathers what was promised.",
       "drop_weights": [
@@ -2135,9 +2073,7 @@
       "damage_type": "physical",
       "speed": 1.05,
       "item_tier": 3,
-      "flavor_tags": [
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy steel, balanced against itself.",
       "drop_weights": [
         0,
@@ -2184,10 +2120,7 @@
       "damage_type": "physical",
       "speed": 1.05,
       "item_tier": 4,
-      "flavor_tags": [
-        "ponderous",
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "A wall of edge, swung like weather.",
       "drop_weights": [
         0,
@@ -2283,9 +2216,7 @@
       "damage_type": "physical",
       "speed": 1.05,
       "item_tier": 4,
-      "flavor_tags": [
-        "dual"
-      ],
+      "flavor_tags": [],
       "lore": "Two blades fused at the spine. Twice the verdict.",
       "drop_weights": [
         0,
@@ -2333,10 +2264,7 @@
       "damage_type": "physical",
       "speed": 1.1,
       "item_tier": 5,
-      "flavor_tags": [
-        "dual",
-        "brutal"
-      ],
+      "flavor_tags": [],
       "lore": "Three edges nest like petals. Each finds its own.",
       "drop_weights": [
         0,
@@ -2473,9 +2401,7 @@
       "damage_type": "physical",
       "speed": 0.95,
       "item_tier": 3,
-      "flavor_tags": [
-        "dual"
-      ],
+      "flavor_tags": [],
       "lore": "Twin blades on a single shaft. Nothing slips between.",
       "drop_weights": [
         0,
@@ -2621,7 +2547,6 @@
       "item_tier": 4,
       "flavor_tags": [
         "lightning",
-        "demon",
         "fire"
       ],
       "lore": "The leather is not leather. The cracking is not air.",
@@ -2764,9 +2689,7 @@
       "damage_type": "physical",
       "speed": 0.6,
       "item_tier": 3,
-      "flavor_tags": [
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "Made by a hand that knew what it was for.",
       "drop_weights": [
         0,
@@ -2837,7 +2760,6 @@
       ],
       "enchant_chance": 0.05,
       "flavor_tags": [
-        "ponderous",
         "poison"
       ],
       "id": "halberd_jadeforged",
@@ -2945,7 +2867,6 @@
       ],
       "enchant_chance": 0.05,
       "flavor_tags": [
-        "slaying",
         "dark"
       ],
       "id": "broad_axe_voidwrought",
@@ -3055,7 +2976,6 @@
       ],
       "enchant_chance": 0.1,
       "flavor_tags": [
-        "ponderous",
         "cold"
       ],
       "id": "claymore_azure",
@@ -3111,7 +3031,6 @@
       ],
       "enchant_chance": 0.05,
       "flavor_tags": [
-        "ponderous",
         "holy"
       ],
       "id": "warhammer_rosegold",
@@ -3277,8 +3196,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "slaying",
-        "arcane",
         "cold"
       ],
       "id": "runed_broad_axe_azure",
@@ -3335,9 +3252,6 @@
       ],
       "enchant_chance": 0.18,
       "flavor_tags": [
-        "ponderous",
-        "brutal",
-        "arcane",
         "poison"
       ],
       "id": "runed_bardiche_mossy",
@@ -3394,8 +3308,6 @@
       ],
       "enchant_chance": 0.1,
       "flavor_tags": [
-        "ponderous",
-        "brutal",
         "fire"
       ],
       "id": "giant_club_crimson",
@@ -3427,10 +3339,7 @@
       "damage_type": "physical",
       "speed": 0.85,
       "item_tier": 4,
-      "flavor_tags": [
-        "brutal",
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "Wielded only by the champion. Loaned only to the next.",
       "drop_weights": [
         0,
@@ -3469,10 +3378,7 @@
       "damage_type": "physical",
       "speed": 1.0,
       "item_tier": 4,
-      "flavor_tags": [
-        "brutal",
-        "ponderous"
-      ],
+      "flavor_tags": [],
       "lore": "It will outlast you, and the troll, and the troll's grandchildren.",
       "drop_weights": [
         0,
@@ -3516,9 +3422,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 2,
-      "flavor_tags": [
-        "rampaging"
-      ],
+      "flavor_tags": [],
       "lore": "Notched once for every farmstead. The notches go around twice.",
       "drop_weights": [
         0,
@@ -3613,7 +3517,6 @@
       "item_tier": 5,
       "flavor_tags": [
         "dark",
-        "arcane",
         "vampiric"
       ],
       "lore": "Whispers names of the people the bearer has lost. Or will lose.",
@@ -3666,8 +3569,7 @@
       "speed": 0.6,
       "item_tier": 5,
       "flavor_tags": [
-        "poison",
-        "swiftness"
+        "poison"
       ],
       "lore": "Drips. Doesn't matter what you wipe it with.",
       "drop_weights": [
@@ -3718,8 +3620,7 @@
       "speed": 0.6,
       "item_tier": 5,
       "flavor_tags": [
-        "holy",
-        "dragon_bane"
+        "holy"
       ],
       "lore": "Forged to end dragons. Still hungry.",
       "drop_weights": [
@@ -3828,10 +3729,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 1,
-      "flavor_tags": [
-        "bloody",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "Sigmund swung this in his prime. The prime was brief.",
       "drop_weights": [
         40,
@@ -3874,9 +3772,7 @@
       "damage_type": "physical",
       "speed": 0.7,
       "item_tier": 1,
-      "flavor_tags": [
-        "fortune"
-      ],
+      "flavor_tags": [],
       "lore": "Smells of mineshaft. Strikes earth like it was promised something.",
       "drop_weights": [
         40,
@@ -3918,8 +3814,7 @@
       "speed": 0.7,
       "item_tier": 3,
       "flavor_tags": [
-        "cold",
-        "tide"
+        "cold"
       ],
       "lore": "Bites cold. Salt. Hums when the wielder steps on wet stone.",
       "drop_weights": [
@@ -4195,8 +4090,7 @@
       "speed": 1.05,
       "item_tier": 5,
       "flavor_tags": [
-        "fire",
-        "brutal"
+        "fire"
       ],
       "lore": "Hammered glowing in the lava pit. Each strike remembers the heat.",
       "drop_weights": [
@@ -4235,8 +4129,7 @@
       "speed": 1.1,
       "item_tier": 5,
       "flavor_tags": [
-        "fire",
-        "brutal"
+        "fire"
       ],
       "lore": "Last of the bridge-toll keepers. The hammer outlasted the bridge.",
       "drop_weights": [

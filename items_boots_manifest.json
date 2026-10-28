@@ -91,9 +91,7 @@
       "armor": 3,
       "evasion": 4,
       "item_tier": 1,
-      "flavor_tags": [
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Soles thinner than mood.",
       "drop_weights": [
         80,
@@ -104,7 +102,9 @@
       ],
       "unique": false,
       "enchant_chance": 0.05,
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_swiftness"
+      ],
       "affix_pool": {
         "of_finesse": 22,
         "of_might": 12,
@@ -128,9 +128,7 @@
       "armor": 2,
       "evasion": 5,
       "item_tier": 1,
-      "flavor_tags": [
-        "stealth"
-      ],
+      "flavor_tags": [],
       "lore": "Quieter than the bot wearing them.",
       "drop_weights": [
         75,
@@ -237,10 +235,7 @@
       "armor": 5,
       "evasion": 6,
       "item_tier": 2,
-      "flavor_tags": [
-        "stealth",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Patterned to match the forest floor \u2014 and the boots that crossed it.",
       "drop_weights": [
         15,
@@ -252,7 +247,8 @@
       "unique": false,
       "enchant_chance": 0.05,
       "implicit_affixes": [
-        "of_haste"
+        "of_haste",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -278,9 +274,7 @@
       "armor": 5,
       "evasion": 6,
       "item_tier": 2,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Government issue. Blood-stained at the seams.",
       "drop_weights": [
         12,
@@ -324,10 +318,7 @@
       "armor": 5,
       "evasion": 7,
       "item_tier": 2,
-      "flavor_tags": [
-        "stealth",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Soft soles, double-stitched. Worn by those who don't want to be heard.",
       "drop_weights": [
         8,
@@ -367,7 +358,6 @@
       "evasion": 10,
       "item_tier": 3,
       "flavor_tags": [
-        "fortified",
         "lightning"
       ],
       "lore": "Iron plates over felt. Heavy enough to be heard.",
@@ -413,10 +403,7 @@
       "armor": 7,
       "evasion": 10,
       "item_tier": 3,
-      "flavor_tags": [
-        "swiftness",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Lightly enchanted. Each step shorter than the last.",
       "drop_weights": [
         0,
@@ -429,7 +416,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_haste",
-        "of_the_cat"
+        "of_the_cat",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -454,10 +442,7 @@
       "armor": 7,
       "evasion": 10,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified",
-        "rampaging"
-      ],
+      "flavor_tags": [],
       "lore": "Built for the watch. Built for the charge.",
       "drop_weights": [
         0,
@@ -501,11 +486,7 @@
       "armor": 11,
       "evasion": 15,
       "item_tier": 4,
-      "flavor_tags": [
-        "fortified",
-        "rampaging",
-        "earth"
-      ],
+      "flavor_tags": [],
       "lore": "First through the breach. Last to leave the field.",
       "drop_weights": [
         0,
@@ -549,11 +530,7 @@
       "armor": 11,
       "evasion": 15,
       "item_tier": 4,
-      "flavor_tags": [
-        "swiftness",
-        "flying",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Lightning never quite catches them.",
       "drop_weights": [
         0,
@@ -567,7 +544,8 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step"
+        "of_warden_step",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -594,7 +572,6 @@
       "evasion": 15,
       "item_tier": 4,
       "flavor_tags": [
-        "earth",
         "lightning"
       ],
       "lore": "Each step leaves a shallow crater in stone.",
@@ -641,10 +618,7 @@
       "armor": 16,
       "evasion": 21,
       "item_tier": 5,
-      "flavor_tags": [
-        "swiftness",
-        "flying"
-      ],
+      "flavor_tags": [],
       "lore": "Heels barely brush the ground.",
       "drop_weights": [
         0,
@@ -658,7 +632,8 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step"
+        "of_warden_step",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -684,11 +659,7 @@
       "armor": 16,
       "evasion": 21,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "rampaging",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Worn at the head of the column. Always.",
       "drop_weights": [
         0,
@@ -732,10 +703,7 @@
       "armor": 18,
       "evasion": 24,
       "item_tier": 5,
-      "flavor_tags": [
-        "stealth",
-        "swiftness"
-      ],
+      "flavor_tags": [],
       "lore": "Silent on stone, silent on grass, silent on graves.",
       "drop_weights": [
         0,
@@ -747,7 +715,8 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_crit"
+        "of_crit",
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -773,9 +742,7 @@
       "evasion": 24,
       "item_tier": 5,
       "flavor_tags": [
-        "earth",
-        "lightning",
-        "rampaging"
+        "lightning"
       ],
       "lore": "What the wearer steps on does not get up.",
       "drop_weights": [
@@ -821,10 +788,7 @@
       "armor": 18,
       "evasion": 24,
       "item_tier": 5,
-      "flavor_tags": [
-        "thorns",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Crackles when struck. Doesn't always wait to be struck.",
       "drop_weights": [
         0,
@@ -890,13 +854,13 @@
       "enchant_chance": 0.05,
       "evasion": 4,
       "flavor_tags": [
-        "swiftness",
         "holy"
       ],
       "id": "worn_sandals_sunsteel",
       "implicit_affixes": [
         "of_the_cat",
-        "of_haste"
+        "of_haste",
+        "of_swiftness"
       ],
       "item_tier": 1,
       "lore": "The metal is warm even at midnight. Undead dare not touch it.",
@@ -987,9 +951,7 @@
       ],
       "enchant_chance": 0.05,
       "evasion": 6,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "id": "soldier_greaves_pale",
       "implicit_affixes": [
         "of_the_bear"
@@ -1032,10 +994,7 @@
       ],
       "enchant_chance": 0.1,
       "evasion": 7,
-      "flavor_tags": [
-        "stealth",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "id": "ranger_boots_nightblue",
       "implicit_affixes": [
         "of_haste",
@@ -1085,7 +1044,6 @@
       "enchant_chance": 0.18,
       "evasion": 15,
       "flavor_tags": [
-        "earth",
         "lightning"
       ],
       "id": "earthshaker_treads_ironclad",
@@ -1114,10 +1072,7 @@
       "armor": 2,
       "evasion": 12,
       "item_tier": 3,
-      "flavor_tags": [
-        "swiftness",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Stitched from dryad-blessed leaves. The wearer steps on tomorrow's grass.",
       "drop_weights": [
         0,
@@ -1130,12 +1085,17 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "fae",
       "implicit_affixes": [
-        "of_haste"
+        "of_haste",
+        "of_swiftness",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_finesse": 14,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_vitality": 10,
+        "of_the_bear": 10,
+        "of_regen": 10
       }
     },
     {
@@ -1148,10 +1108,7 @@
       "armor": 5,
       "evasion": 12,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortune",
-        "footwork"
-      ],
+      "flavor_tags": [],
       "lore": "Worn-in soles. Always step on the right side of the doorway.",
       "drop_weights": [
         0,
@@ -1164,7 +1121,8 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "lucky",
       "implicit_affixes": [
-        "of_plunder"
+        "of_plunder",
+        "of_the_cat"
       ],
       "affix_pool": {
         "of_finesse": 14,
@@ -1191,7 +1149,6 @@
       "evasion": 15,
       "item_tier": 5,
       "flavor_tags": [
-        "earth",
         "lightning"
       ],
       "lore": "The mountain does not hurry. Neither, now, do you.",

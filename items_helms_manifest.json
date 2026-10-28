@@ -270,9 +270,7 @@
       "armor": 4,
       "evasion": 3,
       "item_tier": 1,
-      "flavor_tags": [
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "A flourish that announces a fight.",
       "drop_weights": [
         50,
@@ -284,7 +282,8 @@
       "unique": false,
       "enchant_chance": 0.05,
       "implicit_affixes": [
-        "of_the_bear"
+        "of_the_bear",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -314,9 +313,7 @@
       "armor": 4,
       "evasion": 3,
       "item_tier": 1,
-      "flavor_tags": [
-        "stealth"
-      ],
+      "flavor_tags": [],
       "lore": "Drawn close, the wearer's face becomes weather.",
       "drop_weights": [
         45,
@@ -400,9 +397,7 @@
       "armor": 6,
       "evasion": 5,
       "item_tier": 2,
-      "flavor_tags": [
-        "lordly"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by sergeants who outlived their lieutenants.",
       "drop_weights": [
         12,
@@ -414,7 +409,8 @@
       "unique": false,
       "enchant_chance": 0.05,
       "implicit_affixes": [
-        "of_the_bear"
+        "of_the_bear",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -444,10 +440,7 @@
       "armor": 7,
       "evasion": 5,
       "item_tier": 2,
-      "flavor_tags": [
-        "stealth",
-        "vision"
-      ],
+      "flavor_tags": [],
       "lore": "So light you forget it isn't your own scalp.",
       "drop_weights": [
         8,
@@ -490,9 +483,7 @@
       "armor": 7,
       "evasion": 5,
       "item_tier": 2,
-      "flavor_tags": [
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "The runes don't quite stay still in lamplight.",
       "drop_weights": [
         5,
@@ -535,9 +526,7 @@
       "armor": 10,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Heavy and hot. Worth it when the blow comes.",
       "drop_weights": [
         0,
@@ -586,9 +575,7 @@
       "armor": 10,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "All eyes, no expression. Effective.",
       "drop_weights": [
         0,
@@ -637,10 +624,7 @@
       "armor": 10,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "wisdom",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Only the truly wise wear something this silly.",
       "drop_weights": [
         0,
@@ -653,7 +637,8 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_wisdom",
-        "of_quickcast"
+        "of_quickcast",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -683,10 +668,7 @@
       "armor": 11,
       "evasion": 8,
       "item_tier": 3,
-      "flavor_tags": [
-        "lordly",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by those who finished the tournament.",
       "drop_weights": [
         0,
@@ -700,7 +682,8 @@
       "implicit_affixes": [
         "of_the_bear",
         "of_iron_aegis",
-        "of_vitality"
+        "of_vitality",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -730,10 +713,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "lordly",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "It looks at the battlefield differently.",
       "drop_weights": [
         0,
@@ -747,7 +727,8 @@
       "implicit_affixes": [
         "of_the_bear",
         "of_iron_aegis",
-        "of_vitality"
+        "of_vitality",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -777,10 +758,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "stealth",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "lore": "Cold cloth. Things see less of you while you wear it.",
       "drop_weights": [
         0,
@@ -823,10 +801,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "fortified",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Carved from a wyrm too old to remember its hatchling name.",
       "drop_weights": [
         0,
@@ -869,10 +844,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "wisdom",
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "The bindings hum when spells fly nearby.",
       "drop_weights": [
         0,
@@ -886,7 +858,8 @@
       "implicit_affixes": [
         "of_the_bear",
         "of_iron_aegis",
-        "of_vitality"
+        "of_vitality",
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -921,10 +894,7 @@
       "armor": 21,
       "evasion": 16,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Worn while signing the order to attack.",
       "drop_weights": [
         0,
@@ -938,7 +908,8 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_might",
-        "of_finesse"
+        "of_finesse",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -968,10 +939,7 @@
       "armor": 21,
       "evasion": 16,
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "It refracts more than light.",
       "drop_weights": [
         0,
@@ -1015,10 +983,7 @@
       "armor": 21,
       "evasion": 16,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "wisdom"
-      ],
+      "flavor_tags": [],
       "lore": "Rests just above the head. Doesn't ask permission.",
       "drop_weights": [
         0,
@@ -1032,7 +997,8 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_might",
-        "of_finesse"
+        "of_finesse",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1062,10 +1028,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "It thinks for you. You don't always agree.",
       "drop_weights": [
         0,
@@ -1079,7 +1042,8 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_quickcast",
-        "of_meditation"
+        "of_meditation",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1109,10 +1073,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "The Wizard's Hat. The W is implied.",
       "drop_weights": [
         0,
@@ -1156,10 +1117,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "fortified",
-        "elemental"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by the last knight to challenge the wyrm. Briefly worn by the wyrm afterward.",
       "drop_weights": [
         0,
@@ -1208,10 +1166,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "lore": "It remembers every order it ever wore.",
       "drop_weights": [
         0,
@@ -1225,7 +1180,8 @@
       "implicit_affixes": [
         "of_might",
         "of_wisdom",
-        "of_executioner"
+        "of_executioner",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1255,10 +1211,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "lordly",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Six hands forged it. Five of them disagreed.",
       "drop_weights": [
         0,
@@ -1272,7 +1225,8 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_might",
-        "of_obstinance"
+        "of_obstinance",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1307,9 +1261,7 @@
       "armor": 4,
       "evasion": 3,
       "item_tier": 1,
-      "flavor_tags": [
-        "wisdom"
-      ],
+      "flavor_tags": [],
       "lore": "Bells included. They jingle even on the dead.",
       "drop_weights": [
         40,
@@ -1321,7 +1273,8 @@
       "unique": false,
       "enchant_chance": 0.05,
       "implicit_affixes": [
-        "of_finesse"
+        "of_finesse",
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1352,10 +1305,7 @@
       "armor": 10,
       "evasion": 7,
       "item_tier": 3,
-      "flavor_tags": [
-        "stealth",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "lore": "The mask sees what the wearer hasn't. Yet.",
       "drop_weights": [
         0,
@@ -1398,10 +1348,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "vision",
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "It sees in the dark. It sees the dark.",
       "drop_weights": [
         0,
@@ -1450,10 +1397,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "lordly",
-        "fortified"
-      ],
+      "flavor_tags": [],
       "lore": "Worn by mountain-thanes who never quite died.",
       "drop_weights": [
         0,
@@ -1467,7 +1411,8 @@
       "implicit_affixes": [
         "of_the_bear",
         "of_iron_aegis",
-        "of_vitality"
+        "of_vitality",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1503,11 +1448,7 @@
       "armor": 21,
       "evasion": 16,
       "item_tier": 5,
-      "flavor_tags": [
-        "fortified",
-        "warding",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Issued to the lieutenants of the gate. Returned, mostly.",
       "drop_weights": [
         0,
@@ -1556,11 +1497,7 @@
       "armor": 15,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "wisdom",
-        "warding",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Pointier than the regulation hat. Worn by the difficult professors.",
       "drop_weights": [
         0,
@@ -1573,7 +1510,8 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_wisdom",
-        "of_quickcast"
+        "of_quickcast",
+        "of_regen"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1603,10 +1541,7 @@
       "armor": 24,
       "evasion": 18,
       "item_tier": 5,
-      "flavor_tags": [
-        "fortified",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "An armor that holds its wearer in place. Spells slide off the bars.",
       "drop_weights": [
         0,
@@ -1620,7 +1555,8 @@
       "implicit_affixes": [
         "of_unbroken",
         "of_iron_aegis",
-        "of_thorns"
+        "of_thorns",
+        "of_the_bear"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -1683,8 +1619,6 @@
       "enchant_chance": 0.1,
       "evasion": 7,
       "flavor_tags": [
-        "stealth",
-        "psychic",
         "dark"
       ],
       "id": "green_mask_shadowed",
@@ -1741,12 +1675,11 @@
       ],
       "enchant_chance": 0.3,
       "evasion": 18,
-      "flavor_tags": [
-        "lordly",
-        "psychic"
-      ],
+      "flavor_tags": [],
       "id": "crown_of_dyrovepreva_bone",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_growth"
+      ],
       "item_tier": 5,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
       "name": "Bone Crown of Dyrovepreva",
@@ -1794,9 +1727,7 @@
       ],
       "enchant_chance": 0.1,
       "evasion": 5,
-      "flavor_tags": [
-        "warding"
-      ],
+      "flavor_tags": [],
       "id": "etched_helm_ironclad",
       "implicit_affixes": [
         "of_the_bear",
@@ -1851,12 +1782,12 @@
       ],
       "enchant_chance": 0.3,
       "evasion": 18,
-      "flavor_tags": [
-        "wisdom",
-        "regen"
-      ],
+      "flavor_tags": [],
       "id": "hat_of_pondering_bone",
-      "implicit_affixes": [],
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_regen"
+      ],
       "item_tier": 5,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
       "name": "Bone Hat of Pondering",
@@ -1905,14 +1836,12 @@
       ],
       "enchant_chance": 0.1,
       "evasion": 7,
-      "flavor_tags": [
-        "wisdom",
-        "regen"
-      ],
+      "flavor_tags": [],
       "id": "wizard_hat_bone",
       "implicit_affixes": [
         "of_wisdom",
-        "of_quickcast"
+        "of_quickcast",
+        "of_regen"
       ],
       "item_tier": 3,
       "lore": "Shaped from the long bones of something old. It still aches in the cold.",
@@ -1964,14 +1893,13 @@
       "enchant_chance": 0.3,
       "evasion": 18,
       "flavor_tags": [
-        "lordly",
-        "psychic",
         "dark"
       ],
       "id": "crown_of_dyrovepreva_obsidian",
       "implicit_affixes": [
         "of_nightcaller",
-        "of_dark_resist"
+        "of_dark_resist",
+        "of_growth"
       ],
       "item_tier": 5,
       "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
@@ -1992,10 +1920,7 @@
       "armor": 14,
       "evasion": 4,
       "item_tier": 3,
-      "flavor_tags": [
-        "lordly",
-        "rampaging"
-      ],
+      "flavor_tags": [],
       "lore": "The skull beneath remembers older wars. Charging is a virtue.",
       "drop_weights": [
         0,
@@ -2009,7 +1934,8 @@
       "requires_innate_tag": "bovine",
       "implicit_affixes": [
         "of_might",
-        "of_hunter"
+        "of_hunter",
+        "of_growth"
       ],
       "affix_pool": {
         "of_might": 20,
@@ -2036,10 +1962,7 @@
       "armor": 9,
       "evasion": 11,
       "item_tier": 4,
-      "flavor_tags": [
-        "first_blood",
-        "precision"
-      ],
+      "flavor_tags": [],
       "lore": "The first stroke is the one that breaks the sky.",
       "drop_weights": [
         0,
@@ -2080,8 +2003,7 @@
       "evasion": 8,
       "item_tier": 4,
       "flavor_tags": [
-        "fire",
-        "harm"
+        "fire"
       ],
       "lore": "Worn by every demonspawn who outlived their patron.",
       "drop_weights": [
@@ -2122,10 +2044,7 @@
       "armor": 4,
       "evasion": 1,
       "item_tier": 2,
-      "flavor_tags": [
-        "faith",
-        "regen"
-      ],
+      "flavor_tags": [],
       "lore": "Smolders eternally. Psyche believed the smoke kept her sane. It did not.",
       "drop_weights": [
         0,
@@ -2138,7 +2057,8 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_holy_anchor",
-        "of_holy_resist"
+        "of_holy_resist",
+        "of_regen"
       ],
       "affix_pool": {
         "of_wisdom": 16,
@@ -2165,11 +2085,7 @@
       "armor": 12,
       "evasion": 4,
       "item_tier": 5,
-      "flavor_tags": [
-        "fire_res",
-        "cold_res",
-        "willpower"
-      ],
+      "flavor_tags": [],
       "lore": "Five heads. Five jaws. Five voices, none quieting.",
       "drop_weights": [
         0,
@@ -2211,10 +2127,7 @@
       "armor": 18,
       "evasion": 6,
       "item_tier": 4,
-      "flavor_tags": [
-        "fortified",
-        "petrify"
-      ],
+      "flavor_tags": [],
       "lore": "Cooled lava cut and bound. Heavier than the wearer's head.",
       "drop_weights": [
         0,
@@ -2298,9 +2211,7 @@
       "armor": 5,
       "evasion": 8,
       "item_tier": 3,
-      "flavor_tags": [
-        "stealth"
-      ],
+      "flavor_tags": [],
       "lore": "She knew every animal trail in the forest. Wear her helm; their secrets are yours.",
       "drop_weights": [
         0,
@@ -2344,9 +2255,7 @@
       "tile": "hat_3.png",
       "base_type": "helm_prism",
       "item_tier": 1,
-      "flavor_tags": [
-        "arcane"
-      ],
+      "flavor_tags": [],
       "lore": "Cracked through every facet. Light leaves it as every colour at once, and none of them true.",
       "drop_weights": [
         30,
@@ -2378,10 +2287,7 @@
       "armor": 21,
       "evasion": 16,
       "item_tier": 5,
-      "flavor_tags": [
-        "wisdom",
-        "warding"
-      ],
+      "flavor_tags": [],
       "lore": "It drinks from the same well it fills.",
       "drop_weights": [
         0,
