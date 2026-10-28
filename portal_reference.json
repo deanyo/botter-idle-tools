@@ -8694,16 +8694,36 @@
   "quality_tiers": {
     "gear": [
       {
-        "name": "Crude",
+        "name": "Cursed",
+        "mult": 0.8
+      },
+      {
+        "name": "Shoddy",
         "mult": 0.85
       },
       {
-        "name": "Plain",
+        "name": "Tarnished",
+        "mult": 0.9
+      },
+      {
+        "name": "Worn",
         "mult": 0.95
+      },
+      {
+        "name": "Scuffed",
+        "mult": 0.98
       },
       {
         "name": "Standard",
         "mult": 1.0
+      },
+      {
+        "name": "Sturdy",
+        "mult": 1.02
+      },
+      {
+        "name": "Fine",
+        "mult": 1.05
       },
       {
         "name": "Honed",
@@ -8711,25 +8731,53 @@
       },
       {
         "name": "Masterwork",
+        "mult": 1.15
+      },
+      {
+        "name": "Flawless",
         "mult": 1.2
       }
     ],
     "spell": [
       {
-        "name": "Faded",
+        "name": "Defiled",
+        "mult": 0.8
+      },
+      {
+        "name": "Tattered",
         "mult": 0.85
       },
       {
-        "name": "Bound",
+        "name": "Faded",
+        "mult": 0.9
+      },
+      {
+        "name": "Dog-eared",
         "mult": 0.95
+      },
+      {
+        "name": "Smudged",
+        "mult": 0.98
       },
       {
         "name": "Standard",
         "mult": 1.0
       },
       {
+        "name": "Clean",
+        "mult": 1.02
+      },
+      {
         "name": "Annotated",
+        "mult": 1.05
+      },
+      {
+        "name": "Gilded",
         "mult": 1.1
+      },
+      {
+        "name": "Illuminated",
+        "mult": 1.15
       },
       {
         "name": "Sublime",

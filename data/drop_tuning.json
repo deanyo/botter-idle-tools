@@ -8,7 +8,7 @@
   },
   "quality": {
     "tail_weight_mult": 1.0,
-    "_doc": "Multiplier applied to the tail weights (Rusted/Worn/Battered + Mastercrafted/Masterwork) so a tuner can make extreme rolls more or less common without rewriting the table. 1.0 = ship default. 2.0 = double tail probability. 0.5 = halve. \u00a72.B (2026-06-13): split tail_weight_mult into low_quality_tail_mult + high_quality_tail_mult so the authoring portal can dial each tail independently. Legacy tail_weight_mult honored as fallback if a split key is absent.",
+    "_doc": "Multiplier applied to the tail weights (the bottom three and top three rungs of the quality ladder) so a tuner can make extreme rolls more or less common without rewriting the table. 1.0 = ship default. 2.0 = double tail probability. 0.5 = halve. \u00a72.B (2026-06-13): split tail_weight_mult into low_quality_tail_mult + high_quality_tail_mult so the authoring portal can dial each tail independently. Legacy tail_weight_mult honored as fallback if a split key is absent.",
     "low_quality_tail_mult": 1.0,
     "high_quality_tail_mult": 1.0
   },
