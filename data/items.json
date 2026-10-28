@@ -24798,6 +24798,56 @@
 				"mode": "colorize",
 				"colorize_strength": 0.4
 			}
+		},
+		{
+			"id": "community_tentacled_topper",
+			"name": "Tentacled Topper",
+			"slot": "helm",
+			"rarity": "epic",
+			"tile": "cap_jester.png",
+			"item_tier": 4,
+			"base_type": "helmet",
+			"flavor_tags": [],
+			"lore": "Nobody knows who first put a jellyfish on their head, but whoever it was became the life of the party. Its glowing tentacles sway to music, even when there is none.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				12,
+				30
+			],
+			"unique": true,
+			"armor": 18,
+			"evasion": 6,
+			"implicit_affixes": [
+				"of_wisdom",
+				"of_resonance",
+				"of_arcane_flow",
+				"of_thrift"
+			],
+			"enchant_chance": 0.0,
+			"affix_pool": {
+				"of_the_bear": 18,
+				"of_vitality": 12,
+				"of_regen": 10,
+				"of_fire_resist": 10,
+				"of_cold_resist": 10,
+				"of_lightning_resist": 10,
+				"of_holy_resist": 8,
+				"of_poison_resist": 8,
+				"of_dark_resist": 8,
+				"of_arcane_flow": 1,
+				"of_thrift": 1,
+				"of_item_rarity": 5,
+				"of_growth": 4
+			},
+			"requires_innate_tag": "aquatic",
+			"default_tint": {
+				"hue": 266,
+				"sat": 1,
+				"mode": "normal"
+			},
+			"overlay": "helmet_4_visor"
 		}
 	]
 }
