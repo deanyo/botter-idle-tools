@@ -22,6 +22,7 @@
 			"of_resonance",
 			"of_velocity",
 			"of_multicast",
+			"of_chains",
 			"of_lingering",
 			"of_quickcast",
 			"of_vitality",
@@ -495,6 +496,39 @@
 				[
 					2,
 					4
+				]
+			]
+		},
+		{
+			"id": "of_chains",
+			"family": "generic",
+			"kind": "flat",
+			"name": "Chains",
+			"stat": "spell_chain_bonus",
+			"applies_to": [
+				"amulet",
+				"ring"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					2
 				]
 			]
 		},

@@ -117,6 +117,7 @@
     "spell_bounce_retain_pct": "Ricochets keep {N}% of the damage they would have lost.",
     "spell_wrath_kindle": "Wrath sets nearby enemies burning when it ignites.",
     "aura_effect_pct": "Your auras are {N}% stronger.",
+    "spell_chain_bonus": "Your projectiles, spell and wand alike, chain to {N} more enemy(s); each hop hits a little softer.",
     "support_cdr_pct": "This spell's cooldown is {N}% shorter.",
     "support_mana_discount_pct": "This spell costs {N}% less mana.",
     "support_damage_pct": "This spell deals {N}% more damage.",
