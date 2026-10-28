@@ -2376,6 +2376,48 @@
         "mode": "normal"
       },
       "overlay": "helmet_4_visor"
+    },
+    {
+      "id": "community_punk_pop_cap_of_redemption",
+      "name": "Punk Pop Cap of Redemption",
+      "slot": "helm",
+      "rarity": "epic",
+      "tile": "cap_baseball.png",
+      "item_tier": 5,
+      "base_type": "great_helm",
+      "flavor_tags": [],
+      "lore": "For the intrepid adventurer whose hairline has seen many a journey.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        3,
+        18
+      ],
+      "unique": false,
+      "armor": 5,
+      "evasion": 18,
+      "implicit_affixes": [
+        "of_fire_resist",
+        "of_cold_resist",
+        "of_lightning_resist",
+        "of_growth"
+      ],
+      "enchant_chance": 0.0,
+      "affix_pool": {
+        "of_finesse": 20,
+        "of_wisdom": 20,
+        "of_the_cat": 10,
+        "of_regen": 40,
+        "of_growth": 20
+      },
+      "overlay": "community_punk_pop_cap_of_redemption",
+      "default_tint": {
+        "hue": 215,
+        "sat": 2,
+        "mode": "colorize",
+        "colorize_strength": 0.4
+      }
     }
   ]
 }
