@@ -2498,7 +2498,10 @@
       ],
       "affix_pool": {
         "of_might": 12,
-        "of_the_bear": 10
+        "of_the_bear": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10,
+        "of_lightning_resist": 10
       }
     },
     {
@@ -2531,7 +2534,12 @@
         "of_int_mastery"
       ],
       "affix_pool": {
-        "of_wisdom": 16
+        "of_wisdom": 16,
+        "of_vitality": 10,
+        "of_the_bear": 10,
+        "of_regen": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10
       },
       "default_tint": {
         "hue": 40,
@@ -2570,7 +2578,12 @@
       ],
       "affix_pool": {
         "of_the_bear": 18,
-        "of_might": 12
+        "of_might": 12,
+        "of_regen": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10,
+        "of_lightning_resist": 10,
+        "of_finesse": 10
       },
       "default_tint": {
         "hue": 0,
@@ -2608,7 +2621,11 @@
         "of_regen"
       ],
       "affix_pool": {
-        "of_finesse": 10
+        "of_finesse": 10,
+        "of_vitality": 10,
+        "of_the_bear": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10
       }
     },
     {
@@ -2637,7 +2654,10 @@
       ],
       "affix_pool": {
         "of_vitality": 16,
-        "of_the_bear": 8
+        "of_the_bear": 8,
+        "of_regen": 10,
+        "of_fire_resist": 10,
+        "of_cold_resist": 10
       }
     },
     {

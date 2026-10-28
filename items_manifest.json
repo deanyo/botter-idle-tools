@@ -3340,7 +3340,10 @@
       "affix_pool": {
         "of_crit": 16,
         "of_haste": 12,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_might": 10,
+        "of_sharpness": 10,
+        "of_damage": 10
       }
     },
     {
@@ -3463,7 +3466,10 @@
         "of_finesse": 22,
         "of_haste": 18,
         "of_crit": 16,
-        "of_sharpness": 14
+        "of_sharpness": 14,
+        "of_might": 10,
+        "of_executioner": 10,
+        "of_damage": 10
       },
       "boss_drop": "boss_eustachio",
       "biome_pool": [
@@ -3504,7 +3510,10 @@
       "affix_pool": {
         "of_finesse": 22,
         "of_crit": 16,
-        "of_venom": 18
+        "of_venom": 18,
+        "of_might": 10,
+        "of_haste": 10,
+        "of_executioner": 10
       },
       "boss_drop": "boss_aizul",
       "biome_pool": [

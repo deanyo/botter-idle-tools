@@ -918,7 +918,10 @@
         "of_might": 14,
         "of_the_bear": 12,
         "of_item_rarity": 5,
-        "of_avarice": 5
+        "of_avarice": 5,
+        "of_finesse": 10,
+        "of_crit": 10,
+        "of_haste": 10
       },
       "default_tint": {
         "hue": 30.0,

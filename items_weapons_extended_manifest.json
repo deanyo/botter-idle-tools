@@ -3450,7 +3450,10 @@
         "of_might": 24,
         "of_crit": 16,
         "of_sharpness": 18,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_haste": 10,
+        "of_finesse": 10,
+        "of_damage": 10
       }
     },
     {
@@ -3488,7 +3491,11 @@
       "affix_pool": {
         "of_might": 25,
         "of_sharpness": 18,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_crit": 10,
+        "of_haste": 10,
+        "of_finesse": 10,
+        "of_damage": 10
       },
       "default_tint": {
         "hue": 25,
@@ -3529,7 +3536,11 @@
       ],
       "affix_pool": {
         "of_might": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_crit": 10,
+        "of_haste": 10,
+        "of_sharpness": 10,
+        "of_finesse": 10
       },
       "default_tint": {
         "hue": 100,
@@ -3838,7 +3849,12 @@
       "affix_pool": {
         "of_might": 25,
         "of_sharpness": 20,
-        "of_crit": 15
+        "of_crit": 15,
+        "of_haste": 10,
+        "of_executioner": 10,
+        "of_finesse": 10,
+        "of_damage": 10,
+        "of_lifesteal": 10
       },
       "boss_drop": "boss_sigmund",
       "biome_pool": [
@@ -3878,7 +3894,10 @@
       "affix_pool": {
         "of_might": 20,
         "of_sharpness": 16,
-        "of_crit": 12
+        "of_crit": 12,
+        "of_haste": 10,
+        "of_executioner": 10,
+        "of_finesse": 10
       },
       "boss_drop": "boss_blork",
       "biome_pool": [
@@ -3920,7 +3939,11 @@
         "of_might": 20,
         "of_finesse": 16,
         "of_frost": 18,
-        "of_sharpness": 14
+        "of_sharpness": 14,
+        "of_crit": 10,
+        "of_haste": 10,
+        "of_executioner": 10,
+        "of_damage": 10
       },
       "boss_drop": "boss_ilsuiw",
       "biome_pool": [
@@ -4233,7 +4256,10 @@
         "of_sharpness": 14,
         "of_damage": 12,
         "of_crit": 10,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_haste": 10,
+        "of_finesse": 10,
+        "of_lifesteal": 10
       },
       "vault_drop": "forge_lava_bridge_7x3"
     },
@@ -4593,7 +4619,11 @@
       "affix_pool": {
         "of_damage": 26,
         "of_might": 20,
-        "of_devotion": 18
+        "of_devotion": 18,
+        "of_wisdom": 10,
+        "of_quickcast": 10,
+        "of_resonance": 10,
+        "of_lingering": 10
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4717,7 +4747,11 @@
         "of_arcane_pool": 22,
         "of_wisdom": 20,
         "of_storms": 16,
-        "of_quickcast": 14
+        "of_quickcast": 14,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_arcane_flow": 10,
+        "of_crit": 10
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4877,7 +4911,11 @@
         "of_quickcast": 22,
         "of_thrift": 20,
         "of_arcane_pool": 18,
-        "of_wisdom": 14
+        "of_wisdom": 14,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_arcane_flow": 10,
+        "of_crit": 10
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -4920,7 +4958,12 @@
       "affix_pool": {
         "of_damage": 26,
         "of_venom": 22,
-        "of_quickcast": 12
+        "of_quickcast": 12,
+        "of_wisdom": 10,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_arcane_pool": 10,
+        "of_arcane_flow": 10
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -4963,7 +5006,12 @@
       "affix_pool": {
         "of_damage": 26,
         "of_storms": 22,
-        "of_might": 14
+        "of_might": 14,
+        "of_wisdom": 10,
+        "of_quickcast": 10,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_arcane_pool": 10
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -5007,7 +5055,12 @@
         "of_damage": 26,
         "of_frost": 22,
         "of_resonance": 20,
-        "of_quickcast": 14
+        "of_quickcast": 14,
+        "of_wisdom": 10,
+        "of_lingering": 10,
+        "of_arcane_pool": 10,
+        "of_arcane_flow": 10,
+        "of_crit": 10
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -5051,7 +5104,12 @@
         "of_damage": 26,
         "of_embers": 22,
         "of_lifesteal": 18,
-        "of_arcane_pool": 12
+        "of_arcane_pool": 12,
+        "of_wisdom": 10,
+        "of_quickcast": 10,
+        "of_resonance": 10,
+        "of_lingering": 10,
+        "of_arcane_flow": 10
       },
       "enchant_chance": 0.0,
       "unique": true
