@@ -24750,6 +24750,54 @@
 				"colorize_strength": 1,
 				"hue_sweep": 30
 			}
+		},
+		{
+			"id": "community_anime_hoodie_of_questionable_imagery",
+			"name": "Anime Hoodie of Questionable Imagery",
+			"slot": "armor",
+			"rarity": "legendary",
+			"tile": "urand_misfortune.png",
+			"item_tier": 5,
+			"base_type": "robe",
+			"flavor_tags": [],
+			"lore": "Has a chance to emit suggestive noises in keeping with its montage of images.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				5,
+				25
+			],
+			"unique": true,
+			"armor": 48,
+			"evasion": 12,
+			"implicit_affixes": [
+				"of_finesse",
+				"of_cold_resist",
+				"of_wisdom"
+			],
+			"enchant_chance": 0.0,
+			"affix_pool": {
+				"of_might": 15,
+				"of_finesse": 12,
+				"of_wisdom": 12,
+				"of_vitality": 30,
+				"of_the_bear": 30,
+				"of_fire_resist": 12,
+				"of_cold_resist": 12,
+				"of_lightning_resist": 12,
+				"of_holy_resist": 8,
+				"of_poison_resist": 10,
+				"of_dark_resist": 8,
+				"of_regen": 15
+			},
+			"overlay": "urand_clouds",
+			"default_tint": {
+				"hue": 316,
+				"sat": 0,
+				"mode": "colorize",
+				"colorize_strength": 0.4
+			}
 		}
 	]
 }
