@@ -36,5 +36,8 @@
   "roll_flowchart.html",
   "slot_proposal.html",
   "slot_proposal_data.json",
-  "spell_matrix.html"
+  "spell_matrix.html",
+  "sprite_editor.css",
+  "sprite_editor.html",
+  "sprite_editor.js"
 ]

@@ -8,6 +8,14 @@
     "note": "Nine gear slots; proposals are reviewed before inclusion."
   },
   {
+    "id": "sprites",
+    "href": "sprite_editor.html",
+    "title": "Sprite editor",
+    "description": "Draw or edit a 32 × 32 inventory icon and character sprite, starting from game art or a blank canvas, then send both to the item wizard.",
+    "status": "player",
+    "note": "Custom sprites travel inside the item proposal and are reviewed before inclusion."
+  },
+  {
     "id": "items",
     "href": "item_editor.html",
     "title": "Item editor",

@@ -3,6 +3,10 @@
   const DATA = 'data/';
   const ASSETS = 'assets/tiles/';
   const DRAFT_KEY = 'botter-item-wizard-v1';
+  // Shared with sprite_editor.js: the wizard seeds the editor, the editor hands sprites back.
+  const SEED_KEY = 'botter-sprite-seed-v1';
+  const HANDOFF_KEY = 'botter-sprite-handoff-v1';
+  const PNG_PREFIX = 'data:image/png;base64,';
   const SLOTS = {weapon:'Weapon',armor:'Body armour',helm:'Helm',shield:'Shield',boots:'Boots',gloves:'Gloves',cloak:'Cloak',ring:'Ring',amulet:'Amulet'};
   const OVERLAYS = {weapon:'weapons',armor:'body',helm:'helm',shield:'shield',boots:'boots',gloves:'gloves',cloak:'cloak'};
   const RARITIES = ['common','uncommon','rare','epic','legendary'];
@@ -19,8 +23,14 @@
   const current = () => {
     const item = {...copy(template()), ...copy(state.edits)};
     for (const key of ['default_tint','default_tint_overlay']) if (item[key] === null) delete item[key];
+    // Custom art is installed under the item's own ID when the proposal is imported.
+    const own = item.id || 'community_item';
+    if (state.custom.icon) item.tile = own + '.png';
+    if (state.custom.overlay && OVERLAYS[item.slot]) item.overlay = own;
     return item;
   };
+  const validPng = value => typeof value === 'string' && value.startsWith(PNG_PREFIX) && value.length < 65536;
+  const chosenUrl = mode => state.custom[mode] || spriteUrl(mode, mode === 'icon' ? current().tile : current().overlay);
   const spriteUrl = (mode, value) => ASSETS + (mode === 'icon' ? 'items/' + value : 'player/' + OVERLAYS[current().slot] + '/' + value + '.png');
   const overlayOptions = slot => (files['res://assets/tiles/player/' + OVERLAYS[slot] + '/'] || []).map(f => f.replace(/\.png$/, ''));
   // Only the baseline (affixes.json random_pool) is offered; parked affixes stay on the items that already carry them.
@@ -43,7 +53,7 @@
       const intended = (base.overlay || base.tile.replace(/\.png$/, '')).split('/').pop();
       edits.overlay = overlayOptions(base.slot).includes(intended) ? intended : overlayOptions(base.slot)[0];
     }
-    return {version:1,templateId:id,edits,author:'',idea:''};
+    return {version:1,templateId:id,edits,author:'',idea:'',custom:{icon:null,overlay:null}};
   }
   function save() {
     try { localStorage.setItem(DRAFT_KEY, JSON.stringify({...state,step,furthest})); $('draft-status').textContent = 'Draft saved in this browser.'; }
@@ -59,8 +69,12 @@
     clean.author = typeof saved.author === 'string' ? saved.author.slice(0,80) : '';
     clean.idea = typeof saved.idea === 'string' ? saved.idea.slice(0,2000) : '';
     const base = items.find(i => i.id === clean.templateId);
-    if (!icons.includes(clean.edits.tile)) throw new Error('The saved inventory sprite is no longer available.');
-    if (OVERLAYS[base.slot] && !overlayOptions(base.slot).includes(clean.edits.overlay)) throw new Error('The saved character sprite is no longer available.');
+    for (const mode of ['icon','overlay']) if (saved.custom?.[mode] != null) {
+      if (!validPng(saved.custom[mode])) throw new Error('A saved custom sprite is not valid.');
+      clean.custom[mode] = saved.custom[mode];
+    }
+    if (!clean.custom.icon && !icons.includes(clean.edits.tile)) throw new Error('The saved inventory sprite is no longer available.');
+    if (OVERLAYS[base.slot] && !clean.custom.overlay && !overlayOptions(base.slot).includes(clean.edits.overlay)) throw new Error('The saved character sprite is no longer available.');
     for (const key of ['name','lore','id']) if (typeof clean.edits[key] !== 'string') throw new Error('Invalid saved text.');
     for (const key of Object.keys(STAT_LABELS)) if (Object.hasOwn(clean.edits,key) && (!Number.isFinite(clean.edits[key]) || !Object.hasOwn(base,key))) throw new Error('Invalid saved stats.');
     const allowed = new Set([...availableAffixes(base.slot).map(a => a.id),...drawbacksFor(base.slot).map(a => a.id),...(base.implicit_affixes || [])]);
@@ -256,10 +270,11 @@
   }
   function renderSprites() {
     const item = current();
-    for (const id of ['chosen-icon','preview-icon']) { $(id).src = spriteUrl('icon',item.tile); applyTint($(id),item.default_tint); }
-    $('icon-path').textContent = item.tile;
+    for (const id of ['chosen-icon','preview-icon']) { $(id).src = chosenUrl('icon'); applyTint($(id),item.default_tint); }
+    $('icon-path').textContent = state.custom.icon ? 'Your own sprite' : item.tile;
+    $('icon-shipped').hidden = !state.custom.icon;
     $('overlay-choice').hidden = !OVERLAYS[item.slot]; $('no-overlay').hidden = !!OVERLAYS[item.slot];
-    if (OVERLAYS[item.slot]) { $('chosen-overlay').src = spriteUrl('overlay',item.overlay); applyTint($('chosen-overlay'),item.default_tint_overlay || item.default_tint); $('overlay-path').textContent = item.overlay + '.png'; }
+    if (OVERLAYS[item.slot]) { $('chosen-overlay').src = chosenUrl('overlay'); applyTint($('chosen-overlay'),item.default_tint_overlay || item.default_tint); $('overlay-path').textContent = state.custom.overlay ? 'Your own sprite' : item.overlay + '.png'; $('overlay-shipped').hidden = !state.custom.overlay; }
   }
   function renderPreview() {
     const item = current();
@@ -273,11 +288,16 @@
     }));
   }
   function payload() {
-    return {_proposal:{format:1,tool:'Botter item wizard',based_on:state.templateId,author:state.author,design_notes:state.idea},items:[current()]};
+    const item = current(), meta = {format:1,tool:'Botter item wizard',based_on:state.templateId,author:state.author,design_notes:state.idea};
+    const custom = {};
+    if (state.custom.icon) custom.icon = {file:item.tile, png:state.custom.icon};
+    if (state.custom.overlay && OVERLAYS[item.slot]) custom.overlay = {file:item.overlay + '.png', png:state.custom.overlay};
+    if (Object.keys(custom).length) meta.custom_sprites = custom;
+    return {_proposal:meta,items:[item]};
   }
   function renderReview() {
     const item = current();
-    $('review').innerHTML = `<strong>${escape(item.name)}</strong><br>Item ID: <code>${escape(item.id)}</code><br>Based on ${escape(template().name)} · ${escape(SLOTS[item.slot])} · Tier ${item.item_tier}<br>Inventory: <code>${escape(item.tile)}</code>${OVERLAYS[item.slot] ? '<br>Character: <code>' + escape(item.overlay) + '.png</code>' : ''}<br>Built-in bonuses: ${item.implicit_affixes.length}<br>Credit: ${escape(state.author || 'Not supplied')}<br>Baseline random affix pool, drop weights, tints and other mechanics are included in the JSON for review.`;
+    $('review').innerHTML = `<strong>${escape(item.name)}</strong><br>Item ID: <code>${escape(item.id)}</code><br>Based on ${escape(template().name)} · ${escape(SLOTS[item.slot])} · Tier ${item.item_tier}<br>Inventory: ${state.custom.icon ? 'your own sprite' : '<code>' + escape(item.tile) + '</code>'}${OVERLAYS[item.slot] ? '<br>Character: ' + (state.custom.overlay ? 'your own sprite' : '<code>' + escape(item.overlay) + '.png</code>') : ''}<br>Built-in bonuses: ${item.implicit_affixes.length}<br>Credit: ${escape(state.author || 'Not supplied')}<br>Baseline random affix pool, drop weights, tints and other mechanics are included in the JSON for review.`;
     $('json-preview').textContent = JSON.stringify(payload(),null,2);
   }
   function changed() { $('error').textContent = ''; save(); renderPreview(); renderStatWarnings(); renderBonusGuide(); if (step === 4) renderReview(); }
@@ -289,8 +309,8 @@
       if (items.some(i => i.id === item.id)) return 'This name already has an item ID in the game. Choose a different name.';
     }
     if (target >= 2) {
-      if (!icons.includes(item.tile) || !loaded.has(spriteUrl('icon',item.tile))) return 'The inventory sprite is unavailable. Choose a working sprite or retry loading.';
-      if (OVERLAYS[item.slot] && (!overlayOptions(item.slot).includes(item.overlay) || !loaded.has(spriteUrl('overlay',item.overlay)))) return 'The character sprite is unavailable. Choose a working sprite or retry loading.';
+      if ((!state.custom.icon && !icons.includes(item.tile)) || !loaded.has(chosenUrl('icon'))) return 'The inventory sprite is unavailable. Choose a working sprite or retry loading.';
+      if (OVERLAYS[item.slot] && ((!state.custom.overlay && !overlayOptions(item.slot).includes(item.overlay)) || !loaded.has(chosenUrl('overlay')))) return 'The character sprite is unavailable. Choose a working sprite or retry loading.';
     }
     if (target >= 3) {
       if (!RARITIES.includes(item.rarity)) return 'Choose a valid rarity.';
@@ -305,7 +325,7 @@
   }
   async function validateSprites() {
     const item = current();
-    await Promise.all([imageReady(spriteUrl('icon',item.tile)),...(OVERLAYS[item.slot] ? [imageReady(spriteUrl('overlay',item.overlay))] : [])]);
+    await Promise.all([imageReady(chosenUrl('icon')),...(OVERLAYS[item.slot] ? [imageReady(chosenUrl('overlay'))] : [])]);
   }
   function showStep() {
     document.querySelectorAll('[data-step]').forEach(n => n.hidden = Number(n.dataset.step) !== step);
@@ -356,7 +376,7 @@
         const token = ++selectionToken, mode = pickerMode; button.disabled = true;
         try {
           await imageReady(spriteUrl(mode,file)); if (token !== selectionToken) return;
-          state.edits[mode === 'icon' ? 'tile' : 'overlay'] = file;
+          state.edits[mode === 'icon' ? 'tile' : 'overlay'] = file; state.custom[mode] = null;
           $('sprite-picker').close(); renderSprites(); changed();
         } catch (e) { $('picker-error').textContent = e.message; button.disabled = false; }
       });
@@ -377,6 +397,45 @@
       setTimeout(() => URL.revokeObjectURL(url),1000); $('status').textContent = 'Proposal downloaded. Send the JSON file to the developer for review.';
     }
   }
+  function pngFrom(url) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        if (img.naturalWidth !== 32 || img.naturalHeight !== 32) { reject(new Error(`Sprites must be exactly 32 × 32 pixels; this one is ${img.naturalWidth} × ${img.naturalHeight}.`)); return; }
+        const c = document.createElement('canvas'); c.width = c.height = 32; c.getContext('2d').drawImage(img,0,0);
+        resolve(c.toDataURL('image/png'));
+      };
+      img.onerror = () => reject(new Error('That file is not a readable PNG.'));
+      img.src = url;
+    });
+  }
+  function setCustom(mode, png) {
+    state.custom[mode] = png; loaded.delete(png); renderSprites(); changed();
+    return imageReady(png);
+  }
+  // Sprites drawn in the editor arrive through browser storage (same site, same browser).
+  async function receiveHandoff() {
+    let raw = null; try { raw = localStorage.getItem(HANDOFF_KEY); } catch { return; }
+    if (!raw) return;
+    try { localStorage.removeItem(HANDOFF_KEY); } catch {}
+    try {
+      const sent = JSON.parse(raw), item = current(), applied = [];
+      for (const mode of ['icon','overlay']) {
+        const entry = sent[mode];
+        if (!entry || (mode === 'overlay' && (!OVERLAYS[item.slot] || sent.slot !== item.slot))) continue;
+        if (entry.file && (mode === 'icon' ? icons.includes(entry.file) : overlayOptions(item.slot).includes(entry.file))) { state.edits[mode === 'icon' ? 'tile' : 'overlay'] = entry.file; state.custom[mode] = null; applied.push(mode); }
+        else if (validPng(entry.png)) { state.custom[mode] = await pngFrom(entry.png); applied.push(mode); }
+      }
+      if (!applied.length) { $('status').textContent = sent.slot !== item.slot ? `The sprite editor sent a ${SLOTS[sent.slot] || sent.slot} sprite, but this item is ${SLOTS[item.slot]}. Change the slot in either tool and send again.` : 'The sprite editor sent nothing usable.'; return; }
+      renderSprites(); changed(); await validateSprites();
+      $('status').textContent = `Received your ${applied.map(m => m === 'icon' ? 'inventory icon' : 'character sprite').join(' and ')} from the sprite editor.`;
+    } catch (e) { $('status').textContent = 'Could not use the sprites from the editor. ' + e.message; }
+  }
+  function openEditor() {
+    const item = current(), entry = mode => state.custom[mode] ? {png:state.custom[mode]} : {file: mode === 'icon' ? item.tile : item.overlay};
+    try { localStorage.setItem(SEED_KEY, JSON.stringify({slot:item.slot, icon:entry('icon'), overlay:OVERLAYS[item.slot] ? entry('overlay') : null})); } catch {}
+    window.open('sprite_editor.html','botter-sprite-editor');
+  }
   function bind() {
     $('slot').replaceChildren(...Object.entries(SLOTS).map(([value,text]) => option(value,text)));
     $('slot').addEventListener('change', () => { const candidate = items.find(i => i.slot === $('slot').value); changeBase(candidate.id); });
@@ -392,6 +451,20 @@
     $('bonus-search').addEventListener('input',renderBonuses);
     $('pick-icon').addEventListener('click', () => openPicker('icon'));
     $('pick-overlay').addEventListener('click', () => openPicker('overlay'));
+    for (const mode of ['icon','overlay']) {
+      $(mode + '-draw').addEventListener('click', openEditor);
+      $(mode + '-upload').addEventListener('click', () => $(mode + '-file').click());
+      $(mode + '-file').addEventListener('change', async () => {
+        const file = $(mode + '-file').files[0]; $(mode + '-file').value = ''; if (!file) return;
+        const url = URL.createObjectURL(file);
+        try { await setCustom(mode, await pngFrom(url)); $('error').textContent = ''; }
+        catch (e) { $('error').textContent = e.message; }
+        finally { URL.revokeObjectURL(url); }
+      });
+      $(mode + '-shipped').addEventListener('click', () => { state.custom[mode] = null; renderSprites(); changed(); });
+    }
+    window.addEventListener('storage', e => { if (e.key === HANDOFF_KEY && e.newValue) receiveHandoff(); });
+    window.addEventListener('focus', receiveHandoff);
     $('picker-close').addEventListener('click', () => { selectionToken++; $('sprite-picker').close(); });
     $('sprite-picker').addEventListener('cancel', () => selectionToken++);
     for (const id of ['sprite-search','sprite-all']) $(id).addEventListener('input', () => { pickerPage = 0; renderPicker(); });
@@ -419,6 +492,7 @@
       try { const raw = localStorage.getItem(DRAFT_KEY); if (raw) { restore(raw); note = 'Your saved draft has been restored.'; } }
       catch(e) { note = 'Could not restore the draft. Starting fresh. ' + e.message; }
       bind(); updateFields(); $('workspace').hidden = false; $('status').textContent = note;
+      await receiveHandoff();
       try { await validateSprites(); } catch (e) { $('status').textContent = e.message; $('retry').hidden = false; }
     } catch (e) { $('status').textContent = 'Could not load the item wizard. ' + e.message; $('retry').hidden = false; }
   }

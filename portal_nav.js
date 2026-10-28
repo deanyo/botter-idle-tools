@@ -4,6 +4,7 @@
     menu:'<path d="M2 4h12M2 8h12M2 12h12"/>',
     home:'<path d="m1.5 7 6.5-5.5L14.5 7M3 6v8h4v-4h3v4h3V6"/>',
     wizard:'<path d="m3 13 8-8m-1-2 3 3M4 2v4M2 4h4m6 5v5m-2-2h4"/>',
+    sprites:'<rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 2v12M10 2v12M2 6h12M2 10h12"/>',
     atlas:'<rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/>',
     affixes:'<path d="M3 2v12M8 2v12m5-12v12M1 5h4m1 5h4m1-5h4"/>',
     enemies:'<path d="m8 1 6 3v4c0 3-6 7-6 7s-6-4-6-7V4zM5 8h6"/>',
@@ -50,8 +51,7 @@
       return a;
     }
     views.append(link('index.html','Overview','home',file === 'index.html'));
-    const player = pages.find(p => p.id === 'wizard');
-    views.append(link(player.href,player.title,'wizard',file === player.href,'Players'));
+    for (const player of pages.filter(p => p.status === 'player')) views.append(link(player.href,player.title,player.id,file === player.href,'Players'));
     const label = document.createElement('p'); label.className = 'portal-sidebar-heading'; label.textContent = 'Developer tools'; views.append(label);
     for (const p of tools.filter(p => p.status !== 'player')) views.append(link(p.href,p.title,p.id,file === p.href,p.status === 'outdated' ? 'Update' : null));
     const divider = document.createElement('div'); divider.className = 'portal-nav-divider'; views.append(divider);

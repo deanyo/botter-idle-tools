@@ -106,3 +106,4 @@ dialog::backdrop { background:#010409c9; }
 .share-bar { display:inline-block; width:60px; height:6px; border-radius:3px; background:var(--panel-hover); vertical-align:middle; margin-right:6px; overflow:hidden; }
 .share-bar i { display:block; height:100%; background:var(--accent); }
 .drawback-name { color:#ff6b61; }
+.sprite-actions { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
