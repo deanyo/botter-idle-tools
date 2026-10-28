@@ -929,6 +929,64 @@
       "biome_pool": [
         "spider"
       ]
+    },
+    {
+      "id": "anvil_fists",
+      "name": "Anvil Fists",
+      "slot": "gloves",
+      "rarity": "legendary",
+      "tile": "glove_4_new.png",
+      "base_type": "gloves",
+      "armor": 7,
+      "evasion": 11,
+      "item_tier": 5,
+      "flavor_tags": [
+        "lordly",
+        "slaying"
+      ],
+      "lore": "Every blow lands like a hammer. Every blow takes as long.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_might",
+        "of_executioner",
+        "of_sharpness",
+        "of_sluggishness"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 18,
+        "of_wisdom": 10,
+        "of_the_bear": 14,
+        "of_the_cat": 16,
+        "of_sharpness": 14,
+        "of_embers": 10,
+        "of_frost": 10,
+        "of_storms": 10,
+        "of_devotion": 8,
+        "of_venom": 8,
+        "of_shadows": 8,
+        "of_crit": 18,
+        "of_haste": 18,
+        "of_lifesteal": 10,
+        "of_damage": 10,
+        "of_velocity": 12,
+        "of_executioner": 8,
+        "of_item_rarity": 5,
+        "of_avarice": 5
+      },
+      "default_tint": {
+        "hue": 20,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

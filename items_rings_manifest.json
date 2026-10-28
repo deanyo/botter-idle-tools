@@ -2979,6 +2979,139 @@
         "of_abundance": 4
       },
       "vault_drop": "shoals_tide_pool_5x5"
+    },
+    {
+      "id": "band_of_gluttony",
+      "name": "Band of Gluttony",
+      "slot": "ring",
+      "rarity": "legendary",
+      "tile": "ring_twisted.png",
+      "base_type": "ring_flight",
+      "item_tier": 4,
+      "flavor_tags": [
+        "flying",
+        "swiftness"
+      ],
+      "lore": "The more it claimed, the richer the spoils. Yet no feast could sate its hunger.",
+      "drop_weights": [
+        0,
+        0,
+        2,
+        10,
+        6
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_item_rarity",
+        "of_growth",
+        "of_abundance",
+        "of_frailty"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 16,
+        "of_wisdom": 16,
+        "of_vitality": 14,
+        "of_quickcast": 14,
+        "of_resonance": 12,
+        "of_lingering": 12,
+        "of_velocity": 10,
+        "of_multicast": 8,
+        "of_damage": 14,
+        "of_embers": 10,
+        "of_frost": 10,
+        "of_storms": 10,
+        "of_devotion": 8,
+        "of_venom": 8,
+        "of_shadows": 8,
+        "of_fire_resist": 8,
+        "of_cold_resist": 8,
+        "of_lightning_resist": 8,
+        "of_crit": 16,
+        "of_haste": 16,
+        "of_lifesteal": 10,
+        "of_regen": 10,
+        "of_executioner": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_growth": 4,
+        "of_abundance": 4
+      },
+      "default_tint": {
+        "hue": 342,
+        "sat": 1.4,
+        "mode": "shimmer"
+      }
+    },
+    {
+      "id": "leechroot_band",
+      "name": "Leechroot Band",
+      "slot": "ring",
+      "rarity": "legendary",
+      "tile": "ring_black_onyx.png",
+      "base_type": "ring_stealth",
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "footwork",
+        "vision"
+      ],
+      "lore": "It feeds on what you take, and forbids you to mend on your own.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_lifesteal",
+        "of_damage",
+        "of_crit",
+        "of_wasting"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 16,
+        "of_wisdom": 16,
+        "of_vitality": 14,
+        "of_quickcast": 14,
+        "of_resonance": 12,
+        "of_lingering": 12,
+        "of_velocity": 10,
+        "of_multicast": 8,
+        "of_damage": 14,
+        "of_embers": 10,
+        "of_frost": 10,
+        "of_storms": 10,
+        "of_devotion": 8,
+        "of_venom": 8,
+        "of_shadows": 8,
+        "of_fire_resist": 8,
+        "of_cold_resist": 8,
+        "of_lightning_resist": 8,
+        "of_crit": 16,
+        "of_haste": 16,
+        "of_lifesteal": 10,
+        "of_regen": 10,
+        "of_executioner": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_growth": 4,
+        "of_abundance": 4
+      },
+      "default_tint": {
+        "hue": 130,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

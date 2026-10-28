@@ -2367,6 +2367,59 @@
         "of_item_rarity": 5,
         "of_growth": 4
       }
+    },
+    {
+      "id": "siphoning_diadem",
+      "name": "Siphoning Diadem",
+      "slot": "helm",
+      "rarity": "legendary",
+      "tile": "helmet_art_2.png",
+      "base_type": "crown",
+      "armor": 21,
+      "evasion": 16,
+      "item_tier": 5,
+      "flavor_tags": [
+        "wisdom",
+        "warding"
+      ],
+      "lore": "It drinks from the same well it fills.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_wisdom",
+        "of_damage",
+        "of_resonance",
+        "of_mana_leak"
+      ],
+      "affix_pool": {
+        "of_might": 14,
+        "of_finesse": 14,
+        "of_wisdom": 18,
+        "of_vitality": 18,
+        "of_the_bear": 22,
+        "of_the_cat": 14,
+        "of_damage": 12,
+        "of_quickcast": 12,
+        "of_resonance": 12,
+        "of_crit": 12,
+        "of_executioner": 8,
+        "of_arcane_flow": 3,
+        "of_thrift": 3,
+        "of_item_rarity": 5,
+        "of_growth": 4
+      },
+      "default_tint": {
+        "hue": 200,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

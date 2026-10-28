@@ -318,13 +318,14 @@
   function bonusDescription(affix, rarity) {
     const {lo, hi, mid} = bonusValue(affix, rarity);
     const text = (reference.stat_descriptions || {})[affix.stat] || 'A special effect.';
-    return text.replaceAll('{N}', mid).replaceAll('{LO}', lo).replaceAll('{HI}', hi);
+    return text.replaceAll('{N}', mid).replaceAll('{LO}', lo).replaceAll('{HI}', hi).replaceAll('+-', '-');
   }
   function affixLine(affix, rarity, button) {
     const row = document.createElement('div'); row.className = 'affix-line';
     const text = document.createElement('div');
     const name = document.createElement('strong'); name.textContent = affix.name; text.append(name);
-    if (!pool.has(affix.id) && affix.family !== 'eternal') { const tag = document.createElement('span'); tag.className = 'parked-tag'; tag.textContent = 'parked'; text.append(tag); }
+    if (affix.family === 'drawback') name.className = 'drawback-name';
+    else if (!pool.has(affix.id) && affix.family !== 'eternal') { const tag = document.createElement('span'); tag.className = 'parked-tag'; tag.textContent = 'parked'; text.append(tag); }
     const small = document.createElement('small'); small.textContent = bonusDescription(affix, rarity); text.append(small);
     row.append(text, button); return row;
   }
@@ -337,7 +338,7 @@
       return affixLine(affix, it.rarity, b);
     }));
     const q = $('implicit-search').value.trim().toLowerCase();
-    const options = affixes.filter(a => a.family !== 'eternal' && appliesTo(a, it) && !chosen.includes(a.id) &&
+    const options = affixes.filter(a => a.family !== 'eternal' && a.family !== 'drawback' && appliesTo(a, it) && !chosen.includes(a.id) &&
       ($('show-parked').checked || pool.has(a.id)) && (!q || `${a.name} ${a.stat} ${a.id}`.toLowerCase().includes(q)))
       .sort((a, b) => Number(pool.has(b.id)) - Number(pool.has(a.id)) || a.name.localeCompare(b.name));
     $('implicit-options').replaceChildren(...options.map(a => {
@@ -346,6 +347,12 @@
       return affixLine(a, it.rarity, b);
     }));
     if (!options.length) $('implicit-options').textContent = 'No matching bonuses.';
+    $('drawback-options').replaceChildren(...affixes.filter(a => a.family === 'drawback' && appliesTo(a, it) && !chosen.includes(a.id)).map(a => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Add';
+      b.addEventListener('click', () => { setField('implicit_affixes', [...(current().implicit_affixes || []), a.id]); renderImplicits(); });
+      return affixLine(a, it.rarity, b);
+    }));
+    if (!$('drawback-options').children.length) $('drawback-options').textContent = 'Every drawback is already on this item.';
   }
   function renderPool() {
     const it = current(), weights = it.affix_pool || {};

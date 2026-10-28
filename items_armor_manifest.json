@@ -2639,6 +2639,56 @@
         "of_vitality": 16,
         "of_the_bear": 8
       }
+    },
+    {
+      "id": "berserkers_hide",
+      "name": "Berserker's Hide",
+      "slot": "armor",
+      "rarity": "legendary",
+      "tile": "mottled_dragon_armor_new.png",
+      "base_type": "dragon_scales",
+      "armor": 30,
+      "evasion": 7,
+      "item_tier": 5,
+      "flavor_tags": [
+        "fire_res",
+        "elemental"
+      ],
+      "lore": "Worn open at the chest. Its owners preferred it that way.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_might",
+        "of_vitality",
+        "of_regen",
+        "of_vulnerability"
+      ],
+      "affix_pool": {
+        "of_might": 15,
+        "of_finesse": 12,
+        "of_wisdom": 12,
+        "of_vitality": 30,
+        "of_the_bear": 30,
+        "of_fire_resist": 12,
+        "of_cold_resist": 12,
+        "of_lightning_resist": 12,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_regen": 15
+      },
+      "default_tint": {
+        "hue": 0,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

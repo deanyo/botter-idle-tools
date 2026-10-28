@@ -24,6 +24,8 @@
   const spriteUrl = (mode, value) => ASSETS + (mode === 'icon' ? 'items/' + value : 'player/' + OVERLAYS[current().slot] + '/' + value + '.png');
   const overlayOptions = slot => (files['res://assets/tiles/player/' + OVERLAYS[slot] + '/'] || []).map(f => f.replace(/\.png$/, ''));
   // Only the baseline (affixes.json random_pool) is offered; parked affixes stay on the items that already carry them.
+  // Drawbacks are unique-only costs (family "drawback"); they never roll at random.
+  const drawbacksFor = slot => affixes.filter(a => a.family === 'drawback' && ((a.applies_to || []).includes(slot) || (a.applies_to || []).includes('any')));
   const availableAffixes = slot => affixes.filter(a => a.family !== 'eternal' && (!pool.size || pool.has(a.id)) && ((a.applies_to || []).includes(slot) || (a.applies_to || []).includes('any')));
   function imageReady(url) {
     if (loaded.has(url)) return Promise.resolve();
@@ -36,7 +38,7 @@
   }
   function initial(id) {
     const base = items.find(i => i.id === id);
-    const edits = {name:'',lore:base.lore || '',id:'',tile:base.tile,implicit_affixes:[...(base.implicit_affixes || [])]};
+    const edits = {name:'',lore:base.lore || '',id:'',tile:base.tile,implicit_affixes:[...(base.implicit_affixes || [])],affix_pool:{...(base.affix_pool || {})}};
     if (OVERLAYS[base.slot]) {
       const intended = (base.overlay || base.tile.replace(/\.png$/, '')).split('/').pop();
       edits.overlay = overlayOptions(base.slot).includes(intended) ? intended : overlayOptions(base.slot)[0];
@@ -51,7 +53,7 @@
     const saved = JSON.parse(raw);
     if (saved.version !== 1 || !items.some(i => i.id === saved.templateId)) throw new Error('The saved starting item is no longer available.');
     const clean = initial(saved.templateId);
-    for (const key of ['name','lore','id','tile','overlay','rarity','unique',...Object.keys(STAT_LABELS),'implicit_affixes','default_tint','default_tint_overlay']) {
+    for (const key of ['name','lore','id','tile','overlay','rarity','unique',...Object.keys(STAT_LABELS),'implicit_affixes','affix_pool','default_tint','default_tint_overlay']) {
       if (Object.hasOwn(saved.edits || {}, key)) clean.edits[key] = saved.edits[key];
     }
     clean.author = typeof saved.author === 'string' ? saved.author.slice(0,80) : '';
@@ -61,7 +63,9 @@
     if (OVERLAYS[base.slot] && !overlayOptions(base.slot).includes(clean.edits.overlay)) throw new Error('The saved character sprite is no longer available.');
     for (const key of ['name','lore','id']) if (typeof clean.edits[key] !== 'string') throw new Error('Invalid saved text.');
     for (const key of Object.keys(STAT_LABELS)) if (Object.hasOwn(clean.edits,key) && (!Number.isFinite(clean.edits[key]) || !Object.hasOwn(base,key))) throw new Error('Invalid saved stats.');
-    const allowed = new Set([...availableAffixes(base.slot).map(a => a.id),...(base.implicit_affixes || [])]);
+    const allowed = new Set([...availableAffixes(base.slot).map(a => a.id),...drawbacksFor(base.slot).map(a => a.id),...(base.implicit_affixes || [])]);
+    const weights = clean.edits.affix_pool;
+    if (!weights || typeof weights !== 'object' || Array.isArray(weights) || !Object.entries(weights).every(([id,w]) => affixMap.has(id) && Number.isFinite(w) && w > 0)) throw new Error('The saved affix pool is not valid.');
     if (!Array.isArray(clean.edits.implicit_affixes) || !clean.edits.implicit_affixes.every(id => allowed.has(id))) throw new Error('A saved bonus is no longer available.');
     if (clean.edits.rarity && !RARITIES.includes(clean.edits.rarity)) throw new Error('Invalid saved rarity.');
     if (Object.hasOwn(clean.edits,'unique') && typeof clean.edits.unique !== 'boolean') throw new Error('Invalid saved unique setting.');
@@ -95,7 +99,7 @@
       input.value = item[key]; input.addEventListener('input', () => { state.edits[key] = input.value === '' ? null : Number(input.value); changed(); });
       wrapper.append(lab,input); $('stats').append(wrapper);
     }
-    renderColourControls(); renderStatGuide(); renderStatWarnings(); renderBonuses(); renderBonusGuide(); renderSprites(); renderPreview(); showStep();
+    renderColourControls(); renderStatGuide(); renderStatWarnings(); renderBonuses(); renderDrawbacks(); renderPool(); renderBonusGuide(); renderSprites(); renderPreview(); showStep();
   }
   function renderBonuses() {
     const item = current(), query = $('bonus-search').value.toLowerCase();
@@ -115,6 +119,43 @@
       text.append(detail); label.append(input,text); return label;
     }));
     if (!$('bonuses').children.length) $('bonuses').textContent = 'No matching bonuses.';
+  }
+  function renderDrawbacks() {
+    const item = current();
+    $('drawbacks').replaceChildren(...drawbacksFor(item.slot).map(a => {
+      const label = document.createElement('label'); label.className = 'bonus';
+      const input = document.createElement('input'); input.type = 'checkbox'; input.value = a.id; input.checked = item.implicit_affixes.includes(a.id);
+      input.addEventListener('change', () => {
+        const chosen = new Set(current().implicit_affixes);
+        if (input.checked) chosen.add(a.id); else chosen.delete(a.id);
+        state.edits.implicit_affixes = [...chosen]; changed();
+      });
+      const text = document.createElement('span'); text.className = 'drawback-name'; text.textContent = a.name;
+      const detail = document.createElement('small'); detail.textContent = bonusDescription(a);
+      text.append(detail); label.append(input,text); return label;
+    }));
+  }
+  function renderPool() {
+    const item = current(), weights = item.affix_pool || {};
+    const total = Object.entries(weights).filter(([id]) => pool.has(id)).reduce((t,[,w]) => t + w, 0);
+    const rows = availableAffixes(item.slot).filter(a => !(a.base_types || []).length || a.base_types.includes(item.base_type));
+    $('pool-table').tBodies[0].replaceChildren(...rows.map(a => {
+      const row = document.createElement('tr');
+      const name = document.createElement('td'); name.textContent = a.name;
+      const cell = document.createElement('td'), input = document.createElement('input');
+      input.type = 'number'; input.min = '0'; input.step = '1'; input.value = weights[a.id] ?? ''; input.setAttribute('aria-label','Weight for ' + a.name);
+      input.addEventListener('change', () => {
+        const next = {...(current().affix_pool || {})};
+        const v = Number(input.value);
+        if (input.value === '' || !(v > 0)) delete next[a.id]; else next[a.id] = Math.round(v);
+        state.edits.affix_pool = next; changed(); renderPool();
+      });
+      cell.append(input);
+      const share = document.createElement('td'), w = weights[a.id] || 0, pct = total ? w / total * 100 : 0;
+      share.innerHTML = `<span class="share-bar"><i style="width:${Math.min(100, pct * 3).toFixed(1)}%"></i></span>`;
+      share.append(document.createTextNode(w ? pct.toFixed(1) + '%' : '—'));
+      row.append(name,cell,share); return row;
+    }));
   }
   const TINT_MODES = ['normal','colorize','shimmer','inverted','prismatic'];
   function validTint(tint) {
@@ -206,7 +247,7 @@
     const tiers = affix.tiers || [], band = tiers[Math.min(rarityIndices[current().rarity] || 0,tiers.length-1)] || 0;
     const lo = Math.trunc(Array.isArray(band) ? band[0] : band), hi = Math.trunc(Array.isArray(band) ? band[1] : band), middle = (lo+hi)/2;
     const value = Math.sign(middle) * Math.floor(Math.abs(middle)+.5);
-    return (descriptions[affix.stat] || affix.desc || 'A special item effect; describe the intended use in your design notes.').replaceAll('{N}',value).replaceAll('{LO}',lo).replaceAll('{HI}',hi).replace(/\bHP\b/g,'health').replace(/\bXP\b/g,'experience').replace(/\bSTR\b/g,'Strength').replace(/\bDEX\b/g,'Dexterity').replace(/\bINT\b/g,'Intelligence');
+    return (descriptions[affix.stat] || affix.desc || 'A special item effect; describe the intended use in your design notes.').replaceAll('{N}',value).replaceAll('{LO}',lo).replaceAll('{HI}',hi).replaceAll('+-','-').replace(/\bHP\b/g,'health').replace(/\bXP\b/g,'experience').replace(/\bSTR\b/g,'Strength').replace(/\bDEX\b/g,'Dexterity').replace(/\bINT\b/g,'Intelligence');
   }
   function renderBonusGuide() {
     const item = current(), counts = peers().map(i => (i.implicit_affixes || []).length).sort((a,b) => a-b), max = Math.max(...counts), typical = counts[Math.floor(counts.length/2)], selected = item.implicit_affixes.length;
@@ -346,7 +387,7 @@
       else state[id] = $(id).value;
       changed();
     });
-    $('rarity').addEventListener('change', () => { state.edits.rarity = $('rarity').value; renderBonuses(); changed(); });
+    $('rarity').addEventListener('change', () => { state.edits.rarity = $('rarity').value; renderBonuses(); renderDrawbacks(); changed(); });
     $('unique').addEventListener('change', () => { state.edits.unique = $('unique').checked; changed(); });
     $('bonus-search').addEventListener('input',renderBonuses);
     $('pick-icon').addEventListener('click', () => openPicker('icon'));

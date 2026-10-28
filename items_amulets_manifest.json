@@ -2938,6 +2938,66 @@
         "of_abundance": 4,
         "of_plunder": 4
       }
+    },
+    {
+      "id": "vow_of_stillness",
+      "name": "Vow of Stillness",
+      "slot": "amulet",
+      "rarity": "legendary",
+      "tile": "crystal_white.png",
+      "base_type": "amulet_vitality",
+      "item_tier": 5,
+      "flavor_tags": [
+        "vitality",
+        "regen"
+      ],
+      "lore": "Those who swore it never struck in anger. Few kept it long.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_regen",
+        "of_vitality",
+        "of_arcane_flow",
+        "of_feebleness"
+      ],
+      "affix_pool": {
+        "of_might": 16,
+        "of_finesse": 16,
+        "of_wisdom": 18,
+        "of_vitality": 14,
+        "of_damage": 16,
+        "of_resonance": 14,
+        "of_lingering": 12,
+        "of_velocity": 10,
+        "of_multicast": 8,
+        "of_quickcast": 14,
+        "of_crit": 14,
+        "of_haste": 14,
+        "of_lifesteal": 10,
+        "of_regen": 10,
+        "of_plunder": 8,
+        "of_executioner": 8,
+        "of_warding": 8,
+        "of_arcane_flow": 3,
+        "of_arcane_pool": 3,
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_growth": 4,
+        "of_abundance": 4
+      },
+      "default_tint": {
+        "hue": 95,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

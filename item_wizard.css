@@ -92,9 +92,17 @@ dialog::backdrop { background:#010409c9; }
 .tt-style { color:#c7d9eb; font-size:11px; }
 .tt-heritage { color:#f2c74d; font-size:11px; margin-top:8px !important; }
 .tt-implicit { font-weight:700; font-size:13px; color:#ffb84d; }
+.tt-implicit.drawback { color:#ff6b61; }
 .tt-desc { color:#a9a69a; font-size:11px; }
 .tt-random { color:#73d9ff; font-style:italic; }
 .tt-lore { color:#a69e80; font-style:italic; }
 .tooltip-quality { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
 .tooltip-quality button { padding:3px 8px; font-size:11px; }
 .tooltip-quality button[aria-pressed=true] { border-color:var(--accent); background:var(--accent-soft); }
+
+/* Random affix pool weights (wizard step 4 and the item editor). */
+#pool-table input { width:80px; padding:6px 8px; }
+#pool-table td:last-child { color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.share-bar { display:inline-block; width:60px; height:6px; border-radius:3px; background:var(--panel-hover); vertical-align:middle; margin-right:6px; overflow:hidden; }
+.share-bar i { display:block; height:100%; background:var(--accent); }
+.drawback-name { color:#ff6b61; }

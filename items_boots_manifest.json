@@ -1179,6 +1179,55 @@
         "sat": 1.1,
         "mode": "normal"
       }
+    },
+    {
+      "id": "rootbound_greaves",
+      "name": "Rootbound Greaves",
+      "slot": "boots",
+      "rarity": "legendary",
+      "tile": "boots_iron_2.png",
+      "base_type": "treads",
+      "armor": 11,
+      "evasion": 15,
+      "item_tier": 5,
+      "flavor_tags": [
+        "earth",
+        "lightning"
+      ],
+      "lore": "The mountain does not hurry. Neither, now, do you.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_the_bear",
+        "of_vitality",
+        "of_regen",
+        "of_heavy_feet"
+      ],
+      "affix_pool": {
+        "of_finesse": 22,
+        "of_might": 12,
+        "of_wisdom": 10,
+        "of_vitality": 14,
+        "of_the_bear": 16,
+        "of_the_cat": 26,
+        "of_haste": 26,
+        "of_regen": 10,
+        "of_avarice": 5,
+        "of_swiftness": 4
+      },
+      "default_tint": {
+        "hue": 110,
+        "sat": 1.2,
+        "mode": "normal"
+      },
+      "overlay": "boots_earthshaker"
     }
   ]
 }

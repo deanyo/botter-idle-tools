@@ -50,10 +50,6 @@
 .affix-line small { display:block; color:var(--muted); }
 .affix-line button { flex-shrink:0; padding:4px 10px; font-size:12px; }
 .parked-tag { color:var(--warn); font-size:11px; margin-left:6px; }
-#pool-table input { width:80px; padding:6px 8px; }
-#pool-table td:last-child { color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
-.share-bar { display:inline-block; width:60px; height:6px; border-radius:3px; background:var(--panel-hover); vertical-align:middle; margin-right:6px; overflow:hidden; }
-.share-bar i { display:block; height:100%; background:var(--accent); }
 .danger-button { color:var(--bad); }
 .danger-button:hover { border-color:var(--bad); }
 .preview-panel .card-sprites { display:flex; gap:10px; }

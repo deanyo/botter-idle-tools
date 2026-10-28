@@ -6862,6 +6862,366 @@
 					5
 				]
 			]
+		},
+		{
+			"id": "of_frailty",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Frailty",
+			"stat": "max_hp_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-3,
+					-2
+				],
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-6
+				],
+				[
+					-12,
+					-8
+				]
+			]
+		},
+		{
+			"id": "of_mana_leak",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Mana Leak",
+			"stat": "mana_max_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-6
+				],
+				[
+					-11,
+					-8
+				],
+				[
+					-15,
+					-10
+				]
+			]
+		},
+		{
+			"id": "of_brittleness",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Brittleness",
+			"stat": "armor_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-6
+				],
+				[
+					-11,
+					-8
+				],
+				[
+					-15,
+					-10
+				]
+			]
+		},
+		{
+			"id": "of_feebleness",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Feebleness",
+			"stat": "damage_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-2,
+					-1
+				],
+				[
+					-3,
+					-2
+				],
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-5
+				]
+			]
+		},
+		{
+			"id": "of_sluggishness",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Sluggishness",
+			"stat": "haste_drawback_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-2,
+					-1
+				],
+				[
+					-3,
+					-2
+				],
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-5
+				]
+			]
+		},
+		{
+			"id": "of_heavy_feet",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Heavy Feet",
+			"stat": "move_speed_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-1,
+					-1
+				],
+				[
+					-2,
+					-1
+				],
+				[
+					-3,
+					-2
+				],
+				[
+					-4,
+					-3
+				],
+				[
+					-5,
+					-3
+				]
+			]
+		},
+		{
+			"id": "of_misfortune",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Misfortune",
+			"stat": "item_rarity_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-4,
+					-3
+				],
+				[
+					-6,
+					-4
+				],
+				[
+					-8,
+					-6
+				],
+				[
+					-11,
+					-8
+				],
+				[
+					-15,
+					-10
+				]
+			]
+		},
+		{
+			"id": "of_vulnerability",
+			"family": "drawback",
+			"kind": "pct",
+			"name": "Vulnerability",
+			"stat": "spell_vulnerability_surcharge_pct",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					1,
+					2
+				],
+				[
+					2,
+					3
+				],
+				[
+					3,
+					4
+				],
+				[
+					4,
+					6
+				],
+				[
+					5,
+					8
+				]
+			]
+		},
+		{
+			"id": "of_wasting",
+			"family": "drawback",
+			"kind": "flat",
+			"name": "Wasting",
+			"stat": "hp_regen",
+			"applies_to": [
+				"weapon",
+				"armor",
+				"helm",
+				"shield",
+				"boots",
+				"gloves",
+				"cloak",
+				"ring",
+				"amulet"
+			],
+			"tiers": [
+				[
+					-1,
+					-1
+				],
+				[
+					-1,
+					-1
+				],
+				[
+					-1,
+					-1
+				],
+				[
+					-2,
+					-1
+				],
+				[
+					-2,
+					-1
+				]
+			]
 		}
 	]
 }

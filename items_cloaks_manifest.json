@@ -1330,6 +1330,67 @@
       "biome_pool": [
         "hive"
       ]
+    },
+    {
+      "id": "glasswing_mantle",
+      "name": "Glasswing Mantle",
+      "slot": "cloak",
+      "rarity": "legendary",
+      "tile": "cloak_3.png",
+      "base_type": "cloak",
+      "armor": 4,
+      "evasion": 22,
+      "item_tier": 5,
+      "flavor_tags": [
+        "stealth",
+        "willpower",
+        "regen"
+      ],
+      "lore": "Light as a held breath, and about as sturdy.",
+      "drop_weights": [
+        0,
+        0,
+        0,
+        4,
+        22
+      ],
+      "unique": true,
+      "enchant_chance": 0.15,
+      "implicit_affixes": [
+        "of_the_cat",
+        "of_haste",
+        "of_swiftness",
+        "of_brittleness"
+      ],
+      "affix_pool": {
+        "of_might": 10,
+        "of_finesse": 12,
+        "of_wisdom": 14,
+        "of_vitality": 18,
+        "of_the_bear": 12,
+        "of_the_cat": 22,
+        "of_fire_resist": 14,
+        "of_cold_resist": 14,
+        "of_lightning_resist": 14,
+        "of_holy_resist": 8,
+        "of_poison_resist": 10,
+        "of_dark_resist": 8,
+        "of_resonance": 12,
+        "of_lingering": 14,
+        "of_haste": 10,
+        "of_regen": 8,
+        "of_plunder": 8,
+        "of_item_rarity": 5,
+        "of_avarice": 5,
+        "of_swiftness": 4,
+        "of_abundance": 4
+      },
+      "overlay": "cloak_silken",
+      "default_tint": {
+        "hue": 170,
+        "sat": 1.2,
+        "mode": "normal"
+      }
     }
   ]
 }

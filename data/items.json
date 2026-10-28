@@ -24782,6 +24782,526 @@
 				"of_vitality": 16,
 				"of_the_bear": 8
 			}
+		},
+		{
+			"id": "band_of_gluttony",
+			"name": "Band of Gluttony",
+			"slot": "ring",
+			"rarity": "legendary",
+			"tile": "ring_twisted.png",
+			"base_type": "ring_flight",
+			"item_tier": 4,
+			"flavor_tags": [
+				"flying",
+				"swiftness"
+			],
+			"lore": "The more it claimed, the richer the spoils. Yet no feast could sate its hunger.",
+			"drop_weights": [
+				0,
+				0,
+				2,
+				10,
+				6
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_item_rarity",
+				"of_growth",
+				"of_abundance",
+				"of_frailty"
+			],
+			"affix_pool": {
+				"of_might": 16,
+				"of_finesse": 16,
+				"of_wisdom": 16,
+				"of_vitality": 14,
+				"of_quickcast": 14,
+				"of_resonance": 12,
+				"of_lingering": 12,
+				"of_velocity": 10,
+				"of_multicast": 8,
+				"of_damage": 14,
+				"of_embers": 10,
+				"of_frost": 10,
+				"of_storms": 10,
+				"of_devotion": 8,
+				"of_venom": 8,
+				"of_shadows": 8,
+				"of_fire_resist": 8,
+				"of_cold_resist": 8,
+				"of_lightning_resist": 8,
+				"of_crit": 16,
+				"of_haste": 16,
+				"of_lifesteal": 10,
+				"of_regen": 10,
+				"of_executioner": 8,
+				"of_arcane_flow": 3,
+				"of_arcane_pool": 3,
+				"of_item_rarity": 5,
+				"of_avarice": 5,
+				"of_growth": 4,
+				"of_abundance": 4
+			},
+			"default_tint": {
+				"hue": 342,
+				"sat": 1.4,
+				"mode": "shimmer"
+			}
+		},
+		{
+			"id": "siphoning_diadem",
+			"name": "Siphoning Diadem",
+			"slot": "helm",
+			"rarity": "legendary",
+			"tile": "helmet_art_2.png",
+			"base_type": "crown",
+			"armor": 21,
+			"evasion": 16,
+			"item_tier": 5,
+			"flavor_tags": [
+				"wisdom",
+				"warding"
+			],
+			"lore": "It drinks from the same well it fills.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_wisdom",
+				"of_damage",
+				"of_resonance",
+				"of_mana_leak"
+			],
+			"affix_pool": {
+				"of_might": 14,
+				"of_finesse": 14,
+				"of_wisdom": 18,
+				"of_vitality": 18,
+				"of_the_bear": 22,
+				"of_the_cat": 14,
+				"of_damage": 12,
+				"of_quickcast": 12,
+				"of_resonance": 12,
+				"of_crit": 12,
+				"of_executioner": 8,
+				"of_arcane_flow": 3,
+				"of_thrift": 3,
+				"of_item_rarity": 5,
+				"of_growth": 4
+			},
+			"default_tint": {
+				"hue": 200,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "glasswing_mantle",
+			"name": "Glasswing Mantle",
+			"slot": "cloak",
+			"rarity": "legendary",
+			"tile": "cloak_3.png",
+			"base_type": "cloak",
+			"armor": 4,
+			"evasion": 22,
+			"item_tier": 5,
+			"flavor_tags": [
+				"stealth",
+				"willpower",
+				"regen"
+			],
+			"lore": "Light as a held breath, and about as sturdy.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_the_cat",
+				"of_haste",
+				"of_swiftness",
+				"of_brittleness"
+			],
+			"affix_pool": {
+				"of_might": 10,
+				"of_finesse": 12,
+				"of_wisdom": 14,
+				"of_vitality": 18,
+				"of_the_bear": 12,
+				"of_the_cat": 22,
+				"of_fire_resist": 14,
+				"of_cold_resist": 14,
+				"of_lightning_resist": 14,
+				"of_holy_resist": 8,
+				"of_poison_resist": 10,
+				"of_dark_resist": 8,
+				"of_resonance": 12,
+				"of_lingering": 14,
+				"of_haste": 10,
+				"of_regen": 8,
+				"of_plunder": 8,
+				"of_item_rarity": 5,
+				"of_avarice": 5,
+				"of_swiftness": 4,
+				"of_abundance": 4
+			},
+			"overlay": "cloak_silken",
+			"default_tint": {
+				"hue": 170,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "vow_of_stillness",
+			"name": "Vow of Stillness",
+			"slot": "amulet",
+			"rarity": "legendary",
+			"tile": "crystal_white.png",
+			"base_type": "amulet_vitality",
+			"item_tier": 5,
+			"flavor_tags": [
+				"vitality",
+				"regen"
+			],
+			"lore": "Those who swore it never struck in anger. Few kept it long.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_regen",
+				"of_vitality",
+				"of_arcane_flow",
+				"of_feebleness"
+			],
+			"affix_pool": {
+				"of_might": 16,
+				"of_finesse": 16,
+				"of_wisdom": 18,
+				"of_vitality": 14,
+				"of_damage": 16,
+				"of_resonance": 14,
+				"of_lingering": 12,
+				"of_velocity": 10,
+				"of_multicast": 8,
+				"of_quickcast": 14,
+				"of_crit": 14,
+				"of_haste": 14,
+				"of_lifesteal": 10,
+				"of_regen": 10,
+				"of_plunder": 8,
+				"of_executioner": 8,
+				"of_warding": 8,
+				"of_arcane_flow": 3,
+				"of_arcane_pool": 3,
+				"of_item_rarity": 5,
+				"of_avarice": 5,
+				"of_swiftness": 4,
+				"of_growth": 4,
+				"of_abundance": 4
+			},
+			"default_tint": {
+				"hue": 95,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "anvil_fists",
+			"name": "Anvil Fists",
+			"slot": "gloves",
+			"rarity": "legendary",
+			"tile": "glove_4_new.png",
+			"base_type": "gloves",
+			"armor": 7,
+			"evasion": 11,
+			"item_tier": 5,
+			"flavor_tags": [
+				"lordly",
+				"slaying"
+			],
+			"lore": "Every blow lands like a hammer. Every blow takes as long.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_might",
+				"of_executioner",
+				"of_sharpness",
+				"of_sluggishness"
+			],
+			"affix_pool": {
+				"of_might": 16,
+				"of_finesse": 18,
+				"of_wisdom": 10,
+				"of_the_bear": 14,
+				"of_the_cat": 16,
+				"of_sharpness": 14,
+				"of_embers": 10,
+				"of_frost": 10,
+				"of_storms": 10,
+				"of_devotion": 8,
+				"of_venom": 8,
+				"of_shadows": 8,
+				"of_crit": 18,
+				"of_haste": 18,
+				"of_lifesteal": 10,
+				"of_damage": 10,
+				"of_velocity": 12,
+				"of_executioner": 8,
+				"of_item_rarity": 5,
+				"of_avarice": 5
+			},
+			"default_tint": {
+				"hue": 20,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "rootbound_greaves",
+			"name": "Rootbound Greaves",
+			"slot": "boots",
+			"rarity": "legendary",
+			"tile": "boots_iron_2.png",
+			"base_type": "treads",
+			"armor": 11,
+			"evasion": 15,
+			"item_tier": 5,
+			"flavor_tags": [
+				"earth",
+				"lightning"
+			],
+			"lore": "The mountain does not hurry. Neither, now, do you.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_the_bear",
+				"of_vitality",
+				"of_regen",
+				"of_heavy_feet"
+			],
+			"affix_pool": {
+				"of_finesse": 22,
+				"of_might": 12,
+				"of_wisdom": 10,
+				"of_vitality": 14,
+				"of_the_bear": 16,
+				"of_the_cat": 26,
+				"of_haste": 26,
+				"of_regen": 10,
+				"of_avarice": 5,
+				"of_swiftness": 4
+			},
+			"default_tint": {
+				"hue": 110,
+				"sat": 1.2,
+				"mode": "normal"
+			},
+			"overlay": "boots_earthshaker"
+		},
+		{
+			"id": "gamblers_edge",
+			"name": "Gambler's Edge",
+			"slot": "weapon",
+			"rarity": "legendary",
+			"tile": "scimitar_2.png",
+			"base_type": "scimitar",
+			"weapon_class": "1H",
+			"damage_min": 37,
+			"damage_max": 75,
+			"damage_type": "physical",
+			"speed": 0.6,
+			"item_tier": 5,
+			"flavor_tags": [
+				"arcane"
+			],
+			"lore": "It spends your luck on every swing and keeps none for the spoils.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_crit",
+				"of_executioner",
+				"of_damage",
+				"of_misfortune"
+			],
+			"affix_pool": {
+				"of_might": 25,
+				"of_finesse": 15,
+				"of_wisdom": 10,
+				"of_sharpness": 30,
+				"of_embers": 8,
+				"of_frost": 8,
+				"of_storms": 8,
+				"of_devotion": 6,
+				"of_venom": 6,
+				"of_shadows": 6,
+				"of_crit": 25,
+				"of_haste": 20,
+				"of_lifesteal": 15,
+				"of_damage": 8,
+				"of_quickcast": 8,
+				"of_executioner": 8
+			},
+			"default_tint": {
+				"hue": 300,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "berserkers_hide",
+			"name": "Berserker's Hide",
+			"slot": "armor",
+			"rarity": "legendary",
+			"tile": "mottled_dragon_armor_new.png",
+			"base_type": "dragon_scales",
+			"armor": 30,
+			"evasion": 7,
+			"item_tier": 5,
+			"flavor_tags": [
+				"fire_res",
+				"elemental"
+			],
+			"lore": "Worn open at the chest. Its owners preferred it that way.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_might",
+				"of_vitality",
+				"of_regen",
+				"of_vulnerability"
+			],
+			"affix_pool": {
+				"of_might": 15,
+				"of_finesse": 12,
+				"of_wisdom": 12,
+				"of_vitality": 30,
+				"of_the_bear": 30,
+				"of_fire_resist": 12,
+				"of_cold_resist": 12,
+				"of_lightning_resist": 12,
+				"of_holy_resist": 8,
+				"of_poison_resist": 10,
+				"of_dark_resist": 8,
+				"of_regen": 15
+			},
+			"default_tint": {
+				"hue": 0,
+				"sat": 1.2,
+				"mode": "normal"
+			}
+		},
+		{
+			"id": "leechroot_band",
+			"name": "Leechroot Band",
+			"slot": "ring",
+			"rarity": "legendary",
+			"tile": "ring_black_onyx.png",
+			"base_type": "ring_stealth",
+			"item_tier": 5,
+			"flavor_tags": [
+				"stealth",
+				"footwork",
+				"vision"
+			],
+			"lore": "It feeds on what you take, and forbids you to mend on your own.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				4,
+				22
+			],
+			"unique": true,
+			"enchant_chance": 0.15,
+			"implicit_affixes": [
+				"of_lifesteal",
+				"of_damage",
+				"of_crit",
+				"of_wasting"
+			],
+			"affix_pool": {
+				"of_might": 16,
+				"of_finesse": 16,
+				"of_wisdom": 16,
+				"of_vitality": 14,
+				"of_quickcast": 14,
+				"of_resonance": 12,
+				"of_lingering": 12,
+				"of_velocity": 10,
+				"of_multicast": 8,
+				"of_damage": 14,
+				"of_embers": 10,
+				"of_frost": 10,
+				"of_storms": 10,
+				"of_devotion": 8,
+				"of_venom": 8,
+				"of_shadows": 8,
+				"of_fire_resist": 8,
+				"of_cold_resist": 8,
+				"of_lightning_resist": 8,
+				"of_crit": 16,
+				"of_haste": 16,
+				"of_lifesteal": 10,
+				"of_regen": 10,
+				"of_executioner": 8,
+				"of_arcane_flow": 3,
+				"of_arcane_pool": 3,
+				"of_item_rarity": 5,
+				"of_avarice": 5,
+				"of_growth": 4,
+				"of_abundance": 4
+			},
+			"default_tint": {
+				"hue": 130,
+				"sat": 1.2,
+				"mode": "normal"
+			}
 		}
 	]
 }

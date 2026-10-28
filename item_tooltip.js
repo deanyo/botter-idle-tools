@@ -35,7 +35,7 @@ window.BotterTooltip = (() => {
       return `${rolled.value < 0 ? '' : '+'}${rolled.value}% ${tip.pct_labels[stat] || affix.name}`;
     }
     if (kind === 'flag') return affix.name;
-    return `+${rolled.value} ${tip.flat_labels[stat] || affix.name}`;
+    return `${rolled.value < 0 ? '' : '+'}${rolled.value} ${tip.flat_labels[stat] || affix.name}`;
   }
   function render(host, item, ctx) {
     const ref = ctx.reference || {}, tip = ref.tooltip || {pct_labels: {}, flat_labels: {}, stat_colors: {}, damage_colors: {}, weapon_styles: {}};
@@ -72,7 +72,9 @@ window.BotterTooltip = (() => {
     if (implicits.length) {
       section('Unique', true);
       for (const affix of implicits) {
-        const line = el('p', 'tt-implicit', affixLine(affix, midValue(affix, rarity, ctx.rarityIndices), tip), tip.stat_colors[affix.stat]);
+        // A drawback renders red, as in item_tooltip.gd, so its cost is never read as a bonus.
+        const drawback = affix.family === 'drawback';
+        const line = el('p', 'tt-implicit' + (drawback ? ' drawback' : ''), affixLine(affix, midValue(affix, rarity, ctx.rarityIndices), tip), drawback ? undefined : tip.stat_colors[affix.stat]);
         host.append(line);
         if (affix.kind === 'flag' && ref.stat_descriptions?.[affix.stat]) host.append(el('p', 'tt-desc', ref.stat_descriptions[affix.stat]));
       }
