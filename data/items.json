@@ -22845,7 +22845,7 @@
 		},
 		{
 			"id": "spell_magic_dart",
-			"name": "Bolt",
+			"name": "Force Bolt",
 			"slot": "spell",
 			"rarity": "common",
 			"tile": "spells/icons/magic_dart.png",

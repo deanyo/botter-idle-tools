@@ -362,7 +362,7 @@
 				}
 			},
 			"school": "arcane",
-			"blurb": "Pins the target with lances of force. Each hit adds a pin (max 5) and every pin makes the target take +5% damage from your NON-physical hits for 8s — so it sets up the rest of your loadout instead of carrying the kill itself. Refreshes on every hit; the pins fall out if you stop.",
+			"blurb": "Pins the target with magic lances. Each hit adds a pin (max 5) and every pin makes the target take +5% damage from your NON-physical hits for 8s — so it sets up the rest of your loadout instead of carrying the kill itself. Refreshes on every hit; the pins fall out if you stop.",
 			"cooldown": 5.6,
 			"damage": 10,
 			"element": "",
@@ -380,7 +380,8 @@
 				"lightning",
 				"poison",
 				"dark"
-			]
+			],
+			"variant_noun": "Bolt"
 		},
 		"spell_static_field": {
 			"shape": "cloud",
