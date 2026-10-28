@@ -22445,40 +22445,6 @@
 			}
 		},
 		{
-			"id": "spell_stormcaller_totem",
-			"name": "Stormcaller Totem",
-			"slot": "spell",
-			"rarity": "common",
-			"tile": "spells/icons/forge_lightning_spire.png",
-			"base_type": "spell_stormcaller_totem",
-			"primary_stat": "dex",
-			"damage_min": 10,
-			"damage_max": 14,
-			"damage_type": "lightning",
-			"spell_cooldown": 10.0,
-			"item_tier": 1,
-			"flavor_tags": [
-				"lightning"
-			],
-			"lore": "A hand-cut obelisk that drinks the storm. Plant it, walk on — it keeps working without you.",
-			"drop_weights": [
-				30,
-				30,
-				30,
-				30,
-				30
-			],
-			"unique": false,
-			"enchant_chance": 0.1,
-			"implicit_affixes": [],
-			"affix_pool": {
-				"of_damage": 10,
-				"of_quickcast": 10,
-				"of_resonance": 10,
-				"of_lingering": 10
-			}
-		},
-		{
 			"id": "spell_aura_grace",
 			"name": "Grace Aura",
 			"slot": "spell",

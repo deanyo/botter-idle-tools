@@ -113,8 +113,6 @@
     "spell_ravenous": "Drain heals more and hastes you on hit.",
     "spell_wisp_bonus": "Summons {N} additional wisp(s).",
     "spell_wisp_curse": "Wisp hits curse the target.",
-    "spell_totem_bonus": "Plants {N} additional totem(s).",
-    "spell_totem_rate_pct": "The totem zaps {N}% more often.",
     "spell_bounce_bonus": "Ricochets to {N} further enemy(s).",
     "spell_bounce_retain_pct": "Ricochets keep {N}% of the damage they would have lost.",
     "spell_wrath_kindle": "Wrath sets nearby enemies burning when it ignites.",
