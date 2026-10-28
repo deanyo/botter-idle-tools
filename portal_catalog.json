@@ -11,9 +11,9 @@
     "id": "items",
     "href": "item_editor.html",
     "title": "Item editor",
-    "description": "Out of date — update needed. Retained developer editor and proposal import surface.",
-    "status": "outdated",
-    "note": "OUT OF DATE — UPDATE NEEDED. This full editor needs a fresh compatibility review. Use Create an item for player proposals."
+    "description": "Edit every gear item: identity, sprites, base stats, drops, built-in bonuses and random affix pools. Imports player proposals.",
+    "status": "active",
+    "note": "Reads items.json directly and downloads it byte-exact. Replace project/data/items.json with the download, then run python3 tools/sync_manifests_from_items_json.py."
   },
   {
     "id": "atlas",

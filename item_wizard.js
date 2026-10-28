@@ -10,7 +10,7 @@
   const STAT_LABELS = {damage_min:'Minimum damage',damage_max:'Maximum damage',speed:'Attack interval (seconds)',armor:'Armour',evasion:'Evasion',block_chance:'Block chance (%)'};
   const $ = id => document.getElementById(id);
   const copy = value => JSON.parse(JSON.stringify(value));
-  let items = [], affixes = [], pool = new Set(), files = {}, icons = [], descriptions = {}, rarityIndices = {}, rarityCounts = {}, state, step = 0, furthest = 0;
+  let items = [], affixes = [], affixMap = new Map(), reference = {}, previewQuality = 'Standard', pool = new Set(), files = {}, icons = [], descriptions = {}, rarityIndices = {}, rarityCounts = {}, state, step = 0, furthest = 0;
   let pickerMode = 'icon', pickerPage = 0, selectionToken = 0;
   const loaded = new Set();
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -221,12 +221,15 @@
     if (OVERLAYS[item.slot]) { $('chosen-overlay').src = spriteUrl('overlay',item.overlay); applyTint($('chosen-overlay'),item.default_tint_overlay || item.default_tint); $('overlay-path').textContent = item.overlay + '.png'; }
   }
   function renderPreview() {
-    const item = current(); $('preview-name').textContent = item.name || 'Your item name';
-    $('preview-meta').textContent = `${SLOTS[item.slot]} · Tier ${item.item_tier} · ${item.rarity}${item.unique ? ' · Unique' : ''}`;
-    $('item-card').style.borderTopColor = `var(--rarity-${item.rarity})`;
-    $('preview-stats').textContent = Object.entries(STAT_LABELS).filter(([k]) => Object.hasOwn(item,k)).map(([k,label]) => `${label}: ${item[k] ?? '—'}`).join(' · ');
-    $('preview-lore').textContent = item.lore;
-    $('preview-bonuses').replaceChildren(...item.implicit_affixes.map(id => { const li = document.createElement('li'); const a = affixes.find(a => a.id === id); li.textContent = a ? `${a.name}: ${bonusDescription(a)}` : id; return li; }));
+    const item = current();
+    const tiers = (reference.quality_tiers || {}).gear || [];
+    const likely = Object.entries(item.affix_pool || {}).filter(([id]) => pool.has(id)).sort((a,b) => b[1]-a[1]).map(([id]) => affixMap.get(id)?.name).filter(Boolean);
+    BotterTooltip.render($('game-tooltip'), {...item, name: item.name || 'Your item name'}, {reference, affixById: affixMap, rarityIndices, rarityCounts, likely, quality: tiers.find(t => t.name === previewQuality)});
+    $('tooltip-quality').replaceChildren(...tiers.map(t => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = t.name === 'Standard' ? 'No prefix' : t.name;
+      b.setAttribute('aria-pressed', String(t.name === previewQuality));
+      b.addEventListener('click', () => { previewQuality = t.name; renderPreview(); }); return b;
+    }));
   }
   function payload() {
     return {_proposal:{format:1,tool:'Botter item wizard',based_on:state.templateId,author:state.author,design_notes:state.idea},items:[current()]};
@@ -364,8 +367,8 @@
       const docs = await Promise.all(['items.json','affixes.json','tile_dir_manifest.json'].map(async name => {
         const response = await fetch(DATA+name); if (!response.ok) throw new Error(name + ': HTTP ' + response.status); return response.json();
       }));
-      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; pool = new Set((docs[1].random_pool || {}).ids || []); files = docs[2]; rarityIndices = docs[1].rarity_tier_index; rarityCounts = docs[1].rarity_affix_count;
-      const reference = await fetch('portal_reference.json'); if (!reference.ok) throw new Error('Bonus explanations: HTTP ' + reference.status); descriptions = (await reference.json()).stat_descriptions;
+      items = docs[0].items.filter(i => Object.hasOwn(SLOTS,i.slot)); affixes = docs[1].affixes; affixMap = new Map(affixes.map(a => [a.id,a])); pool = new Set((docs[1].random_pool || {}).ids || []); files = docs[2]; rarityIndices = docs[1].rarity_tier_index; rarityCounts = docs[1].rarity_affix_count;
+      const refResponse = await fetch('portal_reference.json'); if (!refResponse.ok) throw new Error('Bonus explanations: HTTP ' + refResponse.status); reference = await refResponse.json(); descriptions = reference.stat_descriptions;
       if (!items.length || !affixes.length) throw new Error('Item or bonus data is empty.');
       icons = Object.entries(files).filter(([dir]) => dir.startsWith('res://assets/tiles/items/') && !dir.includes('/spells/')).flatMap(([dir,names]) => names.map(n => dir.slice('res://assets/tiles/items/'.length) + n));
       if (!icons.length) throw new Error('Inventory sprite catalogue is empty.');

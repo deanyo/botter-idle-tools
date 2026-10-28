@@ -76,3 +76,25 @@ dialog::backdrop { background:#010409c9; }
 .stat-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .stat-fields > div { min-width:0; }
 @media(max-width:780px) { .wizard-columns { grid-template-columns:minmax(0,1fr); } }
+
+/* Approximate in-game tooltip (tools/item_tooltip.js), shared with the item editor. */
+.game-tooltip { background:#0b0d10; border:2px solid var(--rarity-common); border-radius:4px; padding:14px 14px 12px; margin:14px 0; font-size:12px; line-height:1.45; overflow-wrap:anywhere; box-shadow:0 6px 18px #0008; }
+.game-tooltip p { margin:0; }
+.tt-title { font-size:16px; font-weight:700; }
+.tt-sub { color:#8b8b84; font-size:11px; margin-bottom:2px !important; }
+.tt-quality { font-size:11px; }
+.tt-quality.up { color:#f5d873; }
+.tt-quality.down { color:#a89c88; }
+.tt-section { margin-top:10px !important; padding-top:6px; border-top:1px solid #ffffff1a; color:#7d8590; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.tt-section.gold { color:#e8c25a; }
+.tt-damage { font-size:14px; font-weight:700; }
+.tt-body { color:#d6d3c8; }
+.tt-style { color:#c7d9eb; font-size:11px; }
+.tt-heritage { color:#f2c74d; font-size:11px; margin-top:8px !important; }
+.tt-implicit { font-weight:700; font-size:13px; color:#ffb84d; }
+.tt-desc { color:#a9a69a; font-size:11px; }
+.tt-random { color:#73d9ff; font-style:italic; }
+.tt-lore { color:#a69e80; font-style:italic; }
+.tooltip-quality { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+.tooltip-quality button { padding:3px 8px; font-size:11px; }
+.tooltip-quality button[aria-pressed=true] { border-color:var(--accent); background:var(--accent-soft); }
