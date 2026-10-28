@@ -24890,6 +24890,42 @@
 				"mode": "colorize",
 				"colorize_strength": 0.4
 			}
+		},
+		{
+			"id": "community_booty_shorts_of_temptation",
+			"name": "Booty Shorts of Temptation",
+			"slot": "armor",
+			"rarity": "rare",
+			"tile": "community_booty_shorts_of_temptation.png",
+			"item_tier": 1,
+			"base_type": "ring_mail",
+			"flavor_tags": [],
+			"lore": "Show 'em what you got.",
+			"drop_weights": [
+				50,
+				35,
+				8,
+				0,
+				0
+			],
+			"unique": false,
+			"armor": 3,
+			"evasion": 5,
+			"implicit_affixes": [
+				"of_finesse",
+				"of_vulnerability"
+			],
+			"enchant_chance": 0.05,
+			"affix_pool": {
+				"of_might": 20,
+				"of_finesse": 40,
+				"of_wisdom": 10,
+				"of_vitality": 10,
+				"of_fire_resist": 20,
+				"of_cold_resist": 5,
+				"of_holy_resist": 20
+			},
+			"overlay": "community_booty_shorts_of_temptation"
 		}
 	]
 }
