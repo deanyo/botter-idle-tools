@@ -122,8 +122,7 @@
 			"shape": "bolt",
 			"tags": [
 				"cast",
-				"projectile",
-				"chain"
+				"projectile"
 			],
 			"shape_params": {
 				"tint_flavor": "bone",
@@ -215,7 +214,8 @@
 			"tags": [
 				"cast",
 				"projectile",
-				"chain"
+				"chain",
+				"fork"
 			],
 			"shape_params": {
 				"tint_flavor": "vampiric",
@@ -292,7 +292,8 @@
 				"cast",
 				"projectile",
 				"area",
-				"chain"
+				"chain",
+				"fork"
 			],
 			"shape_params": {
 				"tint_flavor": "fire",
@@ -411,7 +412,8 @@
 			"tags": [
 				"cast",
 				"projectile",
-				"chain"
+				"chain",
+				"fork"
 			],
 			"shape_params": {
 				"tint_flavor": "arcane",
