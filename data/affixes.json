@@ -4434,6 +4434,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Comet Split",
+			"enchant_prefix": "Splitting",
 			"stat": "spell_comet_split",
 			"applies_to": [
 				"spell"
@@ -4469,6 +4470,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Ember Wake",
+			"enchant_prefix": "Searing",
 			"stat": "spell_ember_wake",
 			"applies_to": [
 				"spell"
@@ -4504,6 +4506,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of Storm Brand",
+			"enchant_prefix": "Branching",
 			"stat": "spell_chain_jumps",
 			"applies_to": [
 				"spell"
@@ -4574,6 +4577,7 @@
 			"family": "archetype",
 			"kind": "pct",
 			"name": "of Frostbite",
+			"enchant_prefix": "Biting",
 			"stat": "spell_freeze_dur_pct",
 			"applies_to": [
 				"spell"
@@ -4679,6 +4683,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of Whirling",
+			"enchant_prefix": "Whirling",
 			"stat": "spell_orbit_bonus",
 			"applies_to": [
 				"spell"
@@ -4714,6 +4719,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Spore Burst",
+			"enchant_prefix": "Sporous",
 			"stat": "spell_spore_burst",
 			"applies_to": [
 				"spell"
@@ -4749,6 +4755,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Cinder Drift",
+			"enchant_prefix": "Drifting",
 			"stat": "spell_cinder_drift",
 			"applies_to": [
 				"spell"
@@ -4784,6 +4791,7 @@
 			"family": "archetype",
 			"kind": "pct",
 			"name": "of the Live Grid",
+			"enchant_prefix": "Lingering",
 			"stat": "spell_cloud_life_pct",
 			"applies_to": [
 				"spell"
@@ -4819,6 +4827,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of Spite",
+			"enchant_prefix": "Spiteful",
 			"stat": "spell_curse_spread",
 			"applies_to": [
 				"spell"
@@ -4854,6 +4863,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Radiance",
+			"enchant_prefix": "Radiant",
 			"stat": "spell_radiance",
 			"applies_to": [
 				"spell"
@@ -4889,6 +4899,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Consecration",
+			"enchant_prefix": "Consecrating",
 			"stat": "spell_consecrate",
 			"applies_to": [
 				"spell"
@@ -4924,6 +4935,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Ravening",
+			"enchant_prefix": "Ravenous",
 			"stat": "spell_ravenous",
 			"applies_to": [
 				"spell"
@@ -4959,6 +4971,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of Twin Wisps",
+			"enchant_prefix": "Twin",
 			"stat": "spell_wisp_bonus",
 			"applies_to": [
 				"spell"
@@ -4994,6 +5007,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Witherlight",
+			"enchant_prefix": "Withering",
 			"stat": "spell_wisp_curse",
 			"applies_to": [
 				"spell"
@@ -5029,6 +5043,7 @@
 			"family": "archetype",
 			"kind": "flag",
 			"name": "of Kindling",
+			"enchant_prefix": "Kindling",
 			"stat": "spell_wrath_kindle",
 			"applies_to": [
 				"spell"
@@ -6193,6 +6208,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of the Ricochet",
+			"enchant_prefix": "Ricocheting",
 			"stat": "spell_bounce_bonus",
 			"applies_to": [
 				"spell"
@@ -6228,6 +6244,7 @@
 			"family": "archetype",
 			"kind": "pct",
 			"name": "of the Unspent Arc",
+			"enchant_prefix": "Relentless",
 			"stat": "spell_bounce_retain_pct",
 			"applies_to": [
 				"spell"
@@ -6263,6 +6280,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of the Lingering Pin",
+			"enchant_prefix": "Enduring",
 			"stat": "spell_mark_window_bonus",
 			"applies_to": [
 				"spell"
@@ -6298,6 +6316,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of the Driven Pin",
+			"enchant_prefix": "Driving",
 			"stat": "spell_mark_stacks_bonus",
 			"applies_to": [
 				"spell"
@@ -6333,6 +6352,7 @@
 			"family": "archetype",
 			"kind": "pct",
 			"name": "of the Full Bore",
+			"enchant_prefix": "Penetrating",
 			"stat": "spell_pierce_retain_pct",
 			"applies_to": [
 				"spell"
@@ -6368,6 +6388,7 @@
 			"family": "archetype",
 			"kind": "flat",
 			"name": "of the Hobbling Shot",
+			"enchant_prefix": "Hobbling",
 			"stat": "spell_pierce_slow_secs",
 			"applies_to": [
 				"spell"
