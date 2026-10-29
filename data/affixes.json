@@ -51,7 +51,19 @@
 			"of_plunder",
 			"of_avarice",
 			"of_swiftness",
-			"of_growth"
+			"of_growth",
+			"of_brawler",
+			"of_pyromancer",
+			"of_cryomancer",
+			"of_thundercaller",
+			"of_zealot",
+			"of_pestcaller",
+			"of_nightcaller",
+			"of_str_pct",
+			"of_dex_pct",
+			"of_int_pct",
+			"of_max_health",
+			"of_max_res"
 		]
 	},
 	"rarity_tier_index": {
@@ -1306,14 +1318,9 @@
 			"id": "of_pyromancer",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Pyromancer",
+			"name": "Increased Fire Damage",
 			"stat": "fire_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1343,14 +1350,9 @@
 			"id": "of_cryomancer",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Cryomancer",
+			"name": "Increased Cold Damage",
 			"stat": "cold_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1380,14 +1382,9 @@
 			"id": "of_thundercaller",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Thundercaller",
+			"name": "Increased Lightning Damage",
 			"stat": "lightning_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1417,14 +1414,9 @@
 			"id": "of_zealot",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of Zealot",
+			"name": "Increased Holy Damage",
 			"stat": "holy_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1454,14 +1446,9 @@
 			"id": "of_pestcaller",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Pestcaller",
+			"name": "Increased Poison Damage",
 			"stat": "poison_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1491,14 +1478,9 @@
 			"id": "of_nightcaller",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Nightcaller",
+			"name": "Increased Dark Damage",
 			"stat": "dark_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1528,14 +1510,9 @@
 			"id": "of_brawler",
 			"family": "generic",
 			"kind": "pct",
-			"name": "of the Brawler",
+			"name": "Increased Physical Damage",
 			"stat": "physical_dmg_pct",
 			"applies_to": [
-				"amulet",
-				"ring",
-				"helm",
-				"gloves",
-				"cloak",
 				"weapon"
 			],
 			"tiers": [
@@ -1890,10 +1867,6 @@
 			"tiers": [
 				[
 					1,
-					1
-				],
-				[
-					1,
 					2
 				],
 				[
@@ -1907,6 +1880,10 @@
 				[
 					4,
 					6
+				],
+				[
+					6,
+					8
 				]
 			]
 		},
@@ -3330,24 +3307,24 @@
 			],
 			"tiers": [
 				[
-					5,
-					8
+					2,
+					4
 				],
 				[
-					8,
+					4,
+					6
+				],
+				[
+					6,
+					9
+				],
+				[
+					9,
 					12
 				],
 				[
 					12,
-					18
-				],
-				[
-					18,
-					25
-				],
-				[
-					25,
-					32
+					16
 				]
 			]
 		},
@@ -6759,24 +6736,24 @@
 			],
 			"tiers": [
 				[
-					3,
-					5
+					2,
+					3
 				],
 				[
-					5,
+					3,
+					4
+				],
+				[
+					4,
+					6
+				],
+				[
+					6,
 					8
 				],
 				[
 					8,
-					12
-				],
-				[
-					12,
-					16
-				],
-				[
-					16,
-					22
+					11
 				]
 			]
 		},
@@ -8006,6 +7983,173 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"id": "of_str_pct",
+			"family": "generic",
+			"kind": "pct",
+			"name": "% Strength",
+			"stat": "str_pct",
+			"applies_to": [
+				"amulet",
+				"ring"
+			],
+			"tiers": [
+				[
+					2,
+					3
+				],
+				[
+					3,
+					5
+				],
+				[
+					5,
+					7
+				],
+				[
+					7,
+					10
+				],
+				[
+					10,
+					14
+				]
+			]
+		},
+		{
+			"id": "of_dex_pct",
+			"family": "generic",
+			"kind": "pct",
+			"name": "% Dexterity",
+			"stat": "dex_pct",
+			"applies_to": [
+				"amulet",
+				"ring"
+			],
+			"tiers": [
+				[
+					2,
+					3
+				],
+				[
+					3,
+					5
+				],
+				[
+					5,
+					7
+				],
+				[
+					7,
+					10
+				],
+				[
+					10,
+					14
+				]
+			]
+		},
+		{
+			"id": "of_int_pct",
+			"family": "generic",
+			"kind": "pct",
+			"name": "% Intelligence",
+			"stat": "int_pct",
+			"applies_to": [
+				"amulet",
+				"ring"
+			],
+			"tiers": [
+				[
+					2,
+					3
+				],
+				[
+					3,
+					5
+				],
+				[
+					5,
+					7
+				],
+				[
+					7,
+					10
+				],
+				[
+					10,
+					14
+				]
+			]
+		},
+		{
+			"id": "of_max_health",
+			"family": "generic",
+			"kind": "pct",
+			"name": "% Health",
+			"stat": "max_hp_pct",
+			"applies_to": [
+				"armor",
+				"amulet",
+				"shield"
+			],
+			"tiers": [
+				[
+					2,
+					3
+				],
+				[
+					3,
+					5
+				],
+				[
+					5,
+					7
+				],
+				[
+					7,
+					10
+				],
+				[
+					10,
+					14
+				]
+			]
+		},
+		{
+			"id": "of_max_res",
+			"family": "generic",
+			"kind": "flat",
+			"name": "Max Resistance",
+			"stat": "max_res",
+			"applies_to": [
+				"amulet",
+				"ring",
+				"shield"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					2
+				],
+				[
+					1,
+					2
+				],
+				[
+					2,
+					3
+				]
 			]
 		}
 	]
