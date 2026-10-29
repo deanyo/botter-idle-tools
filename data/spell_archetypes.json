@@ -99,7 +99,7 @@
 				}
 			},
 			"school": "physical",
-			"blurb": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and briefly staggers them. The slow counterpart to Blade Dance's fast flurry.",
+			"blurb": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and slows them for a moment.",
 			"cooldown": 9.6,
 			"damage": 30,
 			"element": "",

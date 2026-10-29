@@ -22476,7 +22476,7 @@
 			"spell_cooldown": 9.6,
 			"item_tier": 1,
 			"flavor_tags": [],
-			"lore": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and briefly staggers them. The slow counterpart to Blade Dance's fast flurry.",
+			"lore": "Heavy STR chop in a wide arc in front of you. One big blow hits every enemy in the cone hard and slows them for a moment.",
 			"drop_weights": [
 				30,
 				30,
