@@ -6401,7 +6401,7 @@
 			"id": "of_the_endless_deep",
 			"family": "eternal",
 			"kind": "flat",
-			"name": "of the Endless Deep",
+			"name": "Health",
 			"stat": "hp",
 			"applies_to": [
 				"amulet",
@@ -6437,7 +6437,7 @@
 			"id": "of_the_undying_ember",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Undying Ember",
+			"name": "Fire Damage",
 			"stat": "fire_dmg_pct",
 			"applies_to": [
 				"amulet",
@@ -6473,7 +6473,7 @@
 			"id": "of_the_drowned_star",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Drowned Star",
+			"name": "Cold Damage",
 			"stat": "cold_dmg_pct",
 			"applies_to": [
 				"amulet",
@@ -6509,7 +6509,7 @@
 			"id": "of_the_long_vigil",
 			"family": "eternal",
 			"kind": "flat",
-			"name": "of the Long Vigil",
+			"name": "Armor",
 			"stat": "armor",
 			"applies_to": [
 				"amulet",
@@ -6545,7 +6545,7 @@
 			"id": "of_the_hollow_crown",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Hollow Crown",
+			"name": "Boss Damage",
 			"stat": "boss_dmg_pct",
 			"applies_to": [
 				"amulet",
@@ -6581,7 +6581,7 @@
 			"id": "of_the_turning_wheel",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Turning Wheel",
+			"name": "Cooldown Reduction",
 			"stat": "spell_cdr_pct",
 			"applies_to": [
 				"amulet",
@@ -6617,7 +6617,7 @@
 			"id": "of_the_bottomless_hunger",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Bottomless Hunger",
+			"name": "Lifesteal",
 			"stat": "lifesteal_pct",
 			"applies_to": [
 				"amulet",
@@ -6653,7 +6653,7 @@
 			"id": "of_the_last_lantern",
 			"family": "eternal",
 			"kind": "pct",
-			"name": "of the Last Lantern",
+			"name": "Crit Chance",
 			"stat": "crit_chance",
 			"applies_to": [
 				"amulet",

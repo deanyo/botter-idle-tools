@@ -174,6 +174,13 @@
 </div>
 <script>
 const AFFIXES_PATH = "data/affixes.json";
+// The colour each stat's line is drawn in on an in-game tooltip
+// (UITheme.AFFIX_STAT_COLORS), read via portal_reference.json so the editor
+// shows exactly what the player sees. Uncoloured stats fall back to the
+// game's amber default.
+let STAT_COLORS = {};
+const STAT_COLOR_DEFAULT = "#ffb84d";
+function statColour(stat) { return STAT_COLORS[stat] || STAT_COLOR_DEFAULT; }
 
 // Stats Bot/Actor combat actually reads. Item-overhaul v2 (2026-06-04)
 // schema. Adding a new entry here is safe; the runtime ignores unknown
@@ -243,6 +250,10 @@ let dirty = false;
 
 async function load() {
   try {
+    const ref = await fetch("portal_reference.json");
+    if (ref.ok) STAT_COLORS = ((await ref.json()).tooltip || {}).stat_colors || {};
+  } catch (e) { console.warn("portal_reference.json:", e); }
+  try {
     const res = await fetch(AFFIXES_PATH);
     if (!res.ok) throw new Error("not found");
     doc = await res.json();
@@ -267,64 +278,6 @@ async function load() {
   if (doc.affixes.length) selectAffix(doc.affixes[0].id);
 }
 
-function rarityHexForStat(stat) {
-  // Item-overhaul v2: matches in-game UITheme palette so the affix
-  // editor's preview chips reflect the actual tooltip colors. Primary
-  // stats use the spell-class trio (Str=red, Dex=green, Int=blue);
-  // elemental damage / resist affixes match the game's element colors.
-  switch (stat) {
-    // Primary stats — red/green/blue, mirrors UITheme.spell_class_color.
-    case "str":                  return "#f24d4d";
-    case "dex":                  return "#80f266";
-    case "int":                  return "#73d9ff";
-    // Defensive baseline.
-    case "hp":                   return "#5fc878";
-    case "hp_regen":             return "#a85eff";
-    case "armor":                return "#bababa";
-    case "evasion":              return "#dadada";
-    // Universal combat stats.
-    case "crit_chance":          return "#ffd84d";
-    case "haste_pct":            return "#ffaa3a";
-    case "lifesteal_pct":        return "#d83a3a";
-    // Spell modifiers — soft purple/cyan family so they read as "magic".
-    case "spell_cdr_pct":        return "#b18ddf";
-    case "spell_proj_bonus":     return "#cdb0ff";
-    case "spell_proj_speed_pct": return "#cdb0ff";
-    case "spell_area_pct":       return "#a890ff";
-    case "spell_duration_pct":   return "#9bb6ff";
-    case "spell_damage_pct":     return "#a3aaff";
-    // Class spell-mastery (red/green/blue tinted toward the affix purple).
-    case "str_spell_dmg_pct":    return "#e07b9a";
-    case "dex_spell_dmg_pct":    return "#9be08a";
-    case "int_spell_dmg_pct":    return "#88c0e0";
-    // Range-affix elemental damage adders ("of Embers", "of Frost", etc).
-    case "physical_extra":       return "#ebebd8";
-    case "fire_extra":           return "#ff8c2e";
-    case "cold_extra":           return "#73d9ff";
-    case "lightning_extra":      return "#a6ccff";
-    case "holy_extra":           return "#ffea8c";
-    case "poison_extra":         return "#80f266";
-    case "dark_extra":           return "#8c4ddc";
-    // Element resistance affixes — same hue as their element, dimmer.
-    case "fire_res":             return "#cc6e26";
-    case "cold_res":             return "#5cadcc";
-    case "lightning_res":        return "#85a6cc";
-    case "holy_res":             return "#ccba6e";
-    case "poison_res":           return "#66c252";
-    case "dark_res":             return "#704bb0";
-    // Archetype behaviour flags — gold (item-defining). All ten, matching
-    // ui_theme.gd's map (which already had all ten while this copy had five).
-    case "spell_axes_bleed":
-    case "spell_fireball_ground":
-    case "spell_frost_root":
-    case "spell_chain_extra_jumps":
-    case "spell_holy_radiance":
-    case "spell_dart_split":
-    case "spell_iron_dust":
-    case "spell_drain_buff": return "#ffd478";
-  }
-  return "#ffb84d";
-}
 
 function setStatus(msg) {
   document.getElementById("status").textContent = msg;
@@ -376,7 +329,7 @@ function renderList() {
     const g = affixGroup(a);
     const famPill = g === "rolls" ? "" : `<span style="display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;background:#666;color:white;margin-right:4px;">${g}</span>`;
     row.innerHTML = `
-      <div class="name" style="color: ${rarityHexForStat(a.stat)}">${famPill}${escapeHtml(a.name || a.id)}</div>
+      <div class="name" style="color: ${statColour(a.stat)}">${famPill}${escapeHtml(a.name || a.id)}</div>
       <div class="meta">${escapeHtml(a.stat)} · ${a.kind || 'flat'} — ${tierStr}</div>
     `;
     root.appendChild(row);
@@ -413,6 +366,11 @@ function renderEditor() {
       <select id="f-stat">
         ${STATS.map(s => `<option value="${s.id}" ${s.id === a.stat ? "selected" : ""}>${escapeHtml(s.label)}</option>`).join("")}
       </select>
+      <label>Tooltip colour</label>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span id="f-colour" style="display:inline-block; width:18px; height:18px; border-radius:3px; background:${statColour(a.stat)}; border:1px solid var(--border);"></span>
+        <span class="help">${STAT_COLORS[a.stat] ? "The colour this stat's line has on an in-game tooltip (UITheme.AFFIX_STAT_COLORS)." : "No colour of its own yet: the tooltip draws it in the default amber."}</span>
+      </div>
       <label>Applies to</label>
       <input id="f-applies" type="text" value="${escapeAttr((a.applies_to || ['any']).join(', '))}">
       <label>Base types <span class="help" style="margin-left:6px">blank = any; restricts a behaviour affix to the archetype(s) whose _fire_* body reads its flag</span></label>
@@ -448,7 +406,7 @@ function renderEditor() {
 
     <div class="preview-card">
       <h3>Preview</h3>
-      <div class="preview-name" id="p-name" style="color: ${rarityHexForStat(a.stat)}">${escapeHtml(a.name || a.id)}</div>
+      <div class="preview-name" id="p-name" style="color: ${statColour(a.stat)}">${escapeHtml(a.name || a.id)}</div>
       <div class="preview-tier-line" id="p-tiers"></div>
       <div class="footer-meta">Stat: <span id="p-stat">${escapeHtml(a.stat)}</span> · applies to <span id="p-applies">${escapeHtml((a.applies_to || ['any']).join(', '))}</span></div>
     </div>
@@ -464,6 +422,7 @@ function renderEditor() {
   document.getElementById("f-name").oninput = () => mutate(a, "name", document.getElementById("f-name").value);
   document.getElementById("f-stat").onchange = () => {
     mutate(a, "stat", document.getElementById("f-stat").value);
+    document.getElementById("f-colour").style.background = statColour(a.stat);
   };
   document.getElementById("f-applies").oninput = () => {
     const list = document.getElementById("f-applies").value.split(",").map(s => s.trim()).filter(Boolean);
@@ -509,7 +468,7 @@ function refreshPreview() {
   const applies = document.getElementById("p-applies");
   if (name) {
     name.textContent = a.name || a.id;
-    name.style.color = rarityHexForStat(a.stat);
+    name.style.color = statColour(a.stat);
   }
   if (tiers) {
     const t = a.tiers || [[0,0],[0,0],[0,0],[0,0],[0,0]];
@@ -541,7 +500,6 @@ function addNew() {
     kind: "flat",
     stat: "str",
     tiers: [[1,2], [2,3], [3,5], [5,8], [8,12]],
-    color: rarityHexForStat("str"),
   };
   doc.affixes.push(a);
   dirty = true;
