@@ -1183,6 +1183,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
+        "uq_unbreakable",
         "of_might",
         "of_the_bear"
       ],
@@ -2425,6 +2426,7 @@
       "unique": true,
       "enchant_chance": 0.15,
       "implicit_affixes": [
+        "uq_berserkers_fury",
         "of_might",
         "of_vitality",
         "of_regen",

@@ -1553,6 +1553,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
+        "uq_caged",
         "of_unbroken",
         "of_iron_aegis",
         "of_thorns",

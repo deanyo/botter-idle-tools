@@ -1541,6 +1541,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
+        "uq_first_cut",
         "of_executioner",
         "of_first_strike",
         "of_kingslayer"

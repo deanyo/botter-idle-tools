@@ -2344,8 +2344,8 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_might",
-        "of_berserker_rage"
+        "uq_titans_vigour",
+        "of_might"
       ],
       "affix_pool": {
         "of_might": 25,
@@ -3600,6 +3600,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
+        "uq_serpent_precision",
         "of_serpent_venom",
         "of_finesse"
       ],

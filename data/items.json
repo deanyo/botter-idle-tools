@@ -2321,8 +2321,8 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_might",
-				"of_berserker_rage"
+				"uq_titans_vigour",
+				"of_might"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -3758,6 +3758,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
+				"uq_caged",
 				"of_unbroken",
 				"of_iron_aegis",
 				"of_thorns",
@@ -3902,6 +3903,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
+				"uq_unbreakable",
 				"of_might",
 				"of_the_bear"
 			],
@@ -11078,6 +11080,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
+				"uq_first_cut",
 				"of_executioner",
 				"of_first_strike",
 				"of_kingslayer"
@@ -21666,6 +21669,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
+				"uq_serpent_precision",
 				"of_serpent_venom",
 				"of_finesse"
 			],
@@ -24817,6 +24821,7 @@
 			"unique": true,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
+				"uq_berserkers_fury",
 				"of_might",
 				"of_vitality",
 				"of_regen",

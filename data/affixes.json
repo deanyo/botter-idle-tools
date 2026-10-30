@@ -8151,6 +8151,198 @@
 					3
 				]
 			]
+		},
+		{
+			"id": "uq_serpent_precision",
+			"family": "unique",
+			"kind": "flat",
+			"name": "Serpent's Precision",
+			"stat": "ue_poison_per_dex",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				]
+			]
+		},
+		{
+			"id": "uq_unbreakable",
+			"family": "unique",
+			"kind": "flag",
+			"name": "Unbreakable",
+			"stat": "ue_no_crit_taken",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
+		},
+		{
+			"id": "uq_first_cut",
+			"family": "unique",
+			"kind": "flag",
+			"name": "First Cut",
+			"stat": "ue_first_hit_crit",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
+		},
+		{
+			"id": "uq_titans_vigour",
+			"family": "unique",
+			"kind": "flag",
+			"name": "Titan's Vigour",
+			"stat": "ue_high_hp_dmg",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
+		},
+		{
+			"id": "uq_berserkers_fury",
+			"family": "unique",
+			"kind": "flag",
+			"name": "Berserker's Fury",
+			"stat": "ue_low_hp_dmg",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
+		},
+		{
+			"id": "uq_caged",
+			"family": "unique",
+			"kind": "flag",
+			"name": "Caged",
+			"stat": "ue_cc_immune",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				],
+				[
+					1,
+					1
+				]
+			]
 		}
 	]
 }
