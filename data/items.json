@@ -832,7 +832,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -845,7 +845,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -888,7 +888,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -901,7 +901,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -1127,7 +1127,7 @@
 		},
 		{
 			"id": "knife_of_accuracy",
-			"name": "Knife of Accuracy",
+			"name": "Marksman's Knife",
 			"slot": "weapon",
 			"rarity": "epic",
 			"tile": "urand_knife_of_accuracy.png",
@@ -1440,7 +1440,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -1453,7 +1453,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -1550,10 +1550,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 8,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -1563,7 +1563,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -1602,7 +1602,7 @@
 				"of_wisdom": 10,
 				"of_sharpness": 30,
 				"of_embers": 8,
-				"of_frost": 8,
+				"of_frost": 30,
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
@@ -1615,7 +1615,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 6,
+				"of_cryomancer": 30,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -1711,7 +1711,7 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 30,
-				"of_embers": 8,
+				"of_embers": 30,
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
@@ -1724,7 +1724,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 6,
+				"of_pyromancer": 30,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -1772,7 +1772,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -1785,7 +1785,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -1824,10 +1824,10 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 30,
-				"of_embers": 8,
+				"of_embers": 30,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -1837,10 +1837,10 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 6,
+				"of_pyromancer": 30,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -1881,7 +1881,7 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 30,
-				"of_embers": 8,
+				"of_embers": 30,
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
@@ -1894,7 +1894,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 6,
+				"of_pyromancer": 30,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -1904,7 +1904,7 @@
 		},
 		{
 			"id": "jihad",
-			"name": "The Sword of Jihad",
+			"name": "Crusader's Longsword",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "urand_jihad_new.png",
@@ -1940,7 +1940,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -1953,7 +1953,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -1999,10 +1999,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 8,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -2015,7 +2015,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -2113,7 +2113,7 @@
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
-				"of_venom": 6,
+				"of_venom": 30,
 				"of_shadows": 6,
 				"of_crit": 25,
 				"of_haste": 20,
@@ -2126,7 +2126,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 4,
+				"of_pestcaller": 30,
 				"of_nightcaller": 4
 			},
 			"overlay": "bullwhip_new"
@@ -2242,7 +2242,7 @@
 		},
 		{
 			"id": "sword_of_cerebov",
-			"name": "Sword of Cerebov",
+			"name": "Cerebov's Blade",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "spwpn_sword_of_cerebov_new.png",
@@ -2275,7 +2275,7 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 30,
-				"of_embers": 8,
+				"of_embers": 30,
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
@@ -2288,7 +2288,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 6,
+				"of_pyromancer": 30,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -2298,7 +2298,7 @@
 		},
 		{
 			"id": "sword_of_power",
-			"name": "Sword of Power",
+			"name": "Titan's Sword",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "spwpn_sword_of_power_new.png",
@@ -2352,7 +2352,7 @@
 		},
 		{
 			"id": "sword_of_zonguldrok",
-			"name": "Sword of Zonguldrok",
+			"name": "Zonguldrok's Blade",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "spwpn_sword_of_zonguldrok_new.png",
@@ -2391,10 +2391,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 8,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -2404,7 +2404,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -2447,10 +2447,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 8,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -2460,7 +2460,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -2502,7 +2502,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -2515,7 +2515,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -3615,7 +3615,7 @@
 		},
 		{
 			"id": "armor_of_zhor",
-			"name": "Armor of Zhor",
+			"name": "Zhor's Hide",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_zhor.png",
@@ -3697,7 +3697,7 @@
 		},
 		{
 			"id": "dragon_kings_robe",
-			"name": "Robe of the Dragon King",
+			"name": "Dragon King's Robe",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_dragon_king.png",
@@ -4111,7 +4111,7 @@
 		},
 		{
 			"id": "robe_of_clouds",
-			"name": "Robe of Clouds",
+			"name": "Cloudweave Robe",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_clouds.png",
@@ -4153,7 +4153,7 @@
 		},
 		{
 			"id": "robe_of_folly",
-			"name": "Robe of Folly",
+			"name": "Fool's Robe",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_folly.png",
@@ -4194,7 +4194,7 @@
 		},
 		{
 			"id": "robe_of_misfortune",
-			"name": "Robe of Misfortune",
+			"name": "Ill-Starred Robe",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_misfortune.png",
@@ -4235,7 +4235,7 @@
 		},
 		{
 			"id": "robe_of_night",
-			"name": "Robe of Night",
+			"name": "Nightweave Robe",
 			"slot": "armor",
 			"rarity": "legendary",
 			"tile": "urand_night_new.png",
@@ -4271,14 +4271,14 @@
 				"of_lightning_resist": 12,
 				"of_holy_resist": 8,
 				"of_poison_resist": 10,
-				"of_dark_resist": 8,
+				"of_dark_resist": 30,
 				"of_regen": 15,
 				"of_max_health": 5
 			}
 		},
 		{
 			"id": "shield_of_resistance",
-			"name": "Shield of Resistance",
+			"name": "Elemental Shield",
 			"slot": "shield",
 			"rarity": "legendary",
 			"tile": "urand_resistance.png",
@@ -4506,7 +4506,7 @@
 		},
 		{
 			"id": "starlight_cloak",
-			"name": "Cloak of Starlight",
+			"name": "Starlight Cloak",
 			"slot": "cloak",
 			"rarity": "legendary",
 			"tile": "urand_starlight.png",
@@ -5346,7 +5346,7 @@
 		},
 		{
 			"id": "ego_thane",
-			"name": "Helm of the Thane",
+			"name": "Thane's Helm",
 			"slot": "helm",
 			"rarity": "epic",
 			"tile": "helmet_ego_3.png",
@@ -5397,7 +5397,7 @@
 		},
 		{
 			"id": "ego_visor",
-			"name": "Visor of the Watchman",
+			"name": "Watchman's Visor",
 			"slot": "helm",
 			"rarity": "epic",
 			"tile": "helmet_ego_2.png",
@@ -5534,7 +5534,7 @@
 		},
 		{
 			"id": "wizard_hat_2",
-			"name": "Hat of the Archmage",
+			"name": "Archmage's Hat",
 			"slot": "helm",
 			"rarity": "epic",
 			"tile": "wizard_hat_2.png",
@@ -5622,7 +5622,7 @@
 		},
 		{
 			"id": "crown_of_dyrovepreva",
-			"name": "Crown of Dyrovepreva",
+			"name": "Dyrovepreva's Crown",
 			"slot": "helm",
 			"rarity": "legendary",
 			"tile": "urand_dyrovepreva_new.png",
@@ -5711,7 +5711,7 @@
 		},
 		{
 			"id": "ego_warden",
-			"name": "Helm of the Warden",
+			"name": "Warden's Helm",
 			"slot": "helm",
 			"rarity": "epic",
 			"tile": "helmet_ego_4.png",
@@ -5760,7 +5760,7 @@
 		},
 		{
 			"id": "halo_of_ascension",
-			"name": "Halo of Ascension",
+			"name": "Ascendant Halo",
 			"slot": "helm",
 			"rarity": "epic",
 			"tile": "helmet_art_3.png",
@@ -5805,7 +5805,7 @@
 		},
 		{
 			"id": "hat_of_pondering",
-			"name": "Hat of Pondering",
+			"name": "Thinking Cap",
 			"slot": "helm",
 			"rarity": "legendary",
 			"tile": "urand_pondering_new.png",
@@ -5850,7 +5850,7 @@
 		},
 		{
 			"id": "helm_of_high_council",
-			"name": "Helm of the High Council",
+			"name": "High Councillor's Helm",
 			"slot": "helm",
 			"rarity": "legendary",
 			"tile": "urand_high_council.png",
@@ -5900,7 +5900,7 @@
 		},
 		{
 			"id": "helm_of_the_dragon",
-			"name": "Helm of the Dragon",
+			"name": "Dragonhelm",
 			"slot": "helm",
 			"rarity": "legendary",
 			"tile": "urand_dragonmask.png",
@@ -7083,7 +7083,7 @@
 		},
 		{
 			"id": "shield_of_reflection",
-			"name": "Shield of Reflection",
+			"name": "Mirror Shield",
 			"slot": "shield",
 			"rarity": "epic",
 			"tile": "shield_of_reflection.png",
@@ -7130,7 +7130,7 @@
 		},
 		{
 			"id": "gauntlets_of_war",
-			"name": "Gauntlets of War",
+			"name": "War Gauntlets",
 			"slot": "gloves",
 			"rarity": "legendary",
 			"tile": "urand_war.png",
@@ -7531,7 +7531,8 @@
 				"of_haste": 26,
 				"of_regen": 10,
 				"of_avarice": 5,
-				"of_swiftness": 4
+				"of_swiftness": 4,
+				"of_lightning_resist": 26
 			},
 			"default_tint": {
 				"hue": 220,
@@ -7661,7 +7662,8 @@
 				"of_haste": 26,
 				"of_regen": 10,
 				"of_avarice": 5,
-				"of_swiftness": 4
+				"of_swiftness": 4,
+				"of_lightning_resist": 26
 			},
 			"default_tint": {
 				"hue": 30,
@@ -7843,7 +7845,7 @@
 		},
 		{
 			"id": "cloak_of_flash",
-			"name": "Cloak of Flash",
+			"name": "Flashcloak",
 			"slot": "cloak",
 			"rarity": "legendary",
 			"tile": "urand_flash.png",
@@ -7879,7 +7881,7 @@
 				"of_the_cat": 22,
 				"of_fire_resist": 14,
 				"of_cold_resist": 14,
-				"of_lightning_resist": 14,
+				"of_lightning_resist": 22,
 				"of_holy_resist": 8,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
@@ -7902,7 +7904,7 @@
 		},
 		{
 			"id": "march_of_kings",
-			"name": "March of Kings",
+			"name": "Kingsmarch Greaves",
 			"slot": "boots",
 			"rarity": "epic",
 			"tile": "boots_iron_2.png",
@@ -7946,7 +7948,7 @@
 		},
 		{
 			"id": "cloak_of_the_thief",
-			"name": "Cloak of the Thief",
+			"name": "Thief's Cloak",
 			"slot": "cloak",
 			"rarity": "legendary",
 			"tile": "urand_thief.png",
@@ -8003,7 +8005,7 @@
 		},
 		{
 			"id": "treads_apocalypse",
-			"name": "Treads of Apocalypse",
+			"name": "Apocalypse Treads",
 			"slot": "boots",
 			"rarity": "legendary",
 			"tile": "boots_iron_2.png",
@@ -8039,7 +8041,8 @@
 				"of_haste": 26,
 				"of_regen": 10,
 				"of_avarice": 5,
-				"of_swiftness": 4
+				"of_swiftness": 4,
+				"of_lightning_resist": 26
 			},
 			"default_tint": {
 				"hue": 0,
@@ -9422,7 +9425,7 @@
 		},
 		{
 			"id": "ring_of_flight",
-			"name": "Ring of Flight",
+			"name": "Wingband",
 			"slot": "ring",
 			"rarity": "epic",
 			"tile": "ring_gold_white.png",
@@ -9788,7 +9791,7 @@
 		},
 		{
 			"id": "mage_ring",
-			"name": "Ring of the Mage",
+			"name": "Seer's Ring",
 			"slot": "ring",
 			"rarity": "legendary",
 			"tile": "urand_mage.png",
@@ -9973,7 +9976,7 @@
 		},
 		{
 			"id": "robustness_ring",
-			"name": "Ring of Robustness",
+			"name": "Stalwart Ring",
 			"slot": "ring",
 			"rarity": "legendary",
 			"tile": "urand_robustness.png",
@@ -10035,7 +10038,7 @@
 		},
 		{
 			"id": "shadows_ring",
-			"name": "Ring of Shadows",
+			"name": "Shadowband",
 			"slot": "ring",
 			"rarity": "legendary",
 			"tile": "urand_shadows_new.png",
@@ -10375,7 +10378,7 @@
 		},
 		{
 			"id": "celtic_red",
-			"name": "Knot of the Faithful",
+			"name": "Faithful Knot",
 			"slot": "amulet",
 			"rarity": "rare",
 			"tile": "celtic_red.png",
@@ -10654,7 +10657,7 @@
 		},
 		{
 			"id": "penta_orange",
-			"name": "Pentacle of Wrath",
+			"name": "Wrath Pentacle",
 			"slot": "amulet",
 			"rarity": "rare",
 			"tile": "penta_orange.png",
@@ -11047,7 +11050,7 @@
 		},
 		{
 			"id": "amulet_bloodlust",
-			"name": "Amulet of Bloodlust",
+			"name": "Bloodlust Amulet",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "urand_bloodlust_new.png",
@@ -11161,7 +11164,7 @@
 		},
 		{
 			"id": "amulet_of_air",
-			"name": "Amulet of Air",
+			"name": "Windcharm",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "urand_air_new.png",
@@ -11216,7 +11219,7 @@
 		},
 		{
 			"id": "amulet_of_vitality",
-			"name": "Amulet of Vitality",
+			"name": "Heartcharm",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "urand_vitality.png",
@@ -11273,7 +11276,7 @@
 		},
 		{
 			"id": "brooch_of_shielding",
-			"name": "Brooch of Shielding",
+			"name": "Shieldbrooch",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "urand_brooch_of_shielding_new.png",
@@ -11386,7 +11389,7 @@
 		},
 		{
 			"id": "crystal_white",
-			"name": "Pearl of Vitality",
+			"name": "Heartpearl",
 			"slot": "amulet",
 			"rarity": "epic",
 			"tile": "crystal_white.png",
@@ -11557,7 +11560,7 @@
 		},
 		{
 			"id": "penta_green",
-			"name": "Sigil of the Last Line",
+			"name": "Last Line Sigil",
 			"slot": "amulet",
 			"rarity": "epic",
 			"tile": "penta_green.png",
@@ -12039,7 +12042,8 @@
 				"of_velocity": 12,
 				"of_executioner": 8,
 				"of_item_rarity": 5,
-				"of_avarice": 5
+				"of_avarice": 5,
+				"of_lightning_resist": 18
 			}
 		},
 		{
@@ -13758,7 +13762,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -13771,7 +13775,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -13814,7 +13818,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -13827,7 +13831,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -14619,7 +14623,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -14632,7 +14636,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -14675,7 +14679,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
 				"of_lifesteal": 15,
@@ -14688,7 +14692,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			}
 		},
 		{
@@ -14944,7 +14948,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 30,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -14957,7 +14961,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
+				"of_zealot": 30,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			}
@@ -15265,7 +15269,7 @@
 				"of_sharpness": 30,
 				"of_embers": 8,
 				"of_frost": 8,
-				"of_storms": 8,
+				"of_storms": 30,
 				"of_devotion": 6,
 				"of_venom": 6,
 				"of_shadows": 6,
@@ -15278,7 +15282,7 @@
 				"of_brawler": 15,
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
-				"of_thundercaller": 6,
+				"of_thundercaller": 30,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
@@ -15321,7 +15325,7 @@
 				"of_sharpness": 30,
 				"of_embers": 8,
 				"of_frost": 8,
-				"of_storms": 8,
+				"of_storms": 30,
 				"of_devotion": 6,
 				"of_venom": 6,
 				"of_shadows": 6,
@@ -15334,7 +15338,7 @@
 				"of_brawler": 15,
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
-				"of_thundercaller": 6,
+				"of_thundercaller": 30,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
@@ -15377,9 +15381,9 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 30,
-				"of_embers": 8,
+				"of_embers": 30,
 				"of_frost": 8,
-				"of_storms": 8,
+				"of_storms": 30,
 				"of_devotion": 6,
 				"of_venom": 6,
 				"of_shadows": 6,
@@ -15390,9 +15394,9 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 6,
+				"of_pyromancer": 30,
 				"of_cryomancer": 6,
-				"of_thundercaller": 6,
+				"of_thundercaller": 30,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
@@ -15787,7 +15791,7 @@
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
-				"of_venom": 28,
+				"of_venom": 40,
 				"of_shadows": 6,
 				"of_crit": 40,
 				"of_haste": 20,
@@ -15800,7 +15804,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 21,
+				"of_pestcaller": 40,
 				"of_nightcaller": 4
 			},
 			"base_type": "halberd",
@@ -15852,7 +15856,7 @@
 				"of_resonance": 12,
 				"of_crit": 12,
 				"of_shadows": 26,
-				"of_dark_resist": 18,
+				"of_dark_resist": 28,
 				"of_executioner": 8,
 				"of_arcane_flow": 4,
 				"of_thrift": 4,
@@ -15975,7 +15979,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 28
+				"of_nightcaller": 38
 			},
 			"base_type": "broad_axe",
 			"damage_max": 80,
@@ -16022,7 +16026,7 @@
 				"of_the_cat": 26,
 				"of_haste": 26,
 				"of_regen": 22,
-				"of_holy_resist": 22,
+				"of_holy_resist": 30,
 				"of_avarice": 5,
 				"of_swiftness": 4
 			},
@@ -16092,7 +16096,8 @@
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
 				"of_max_health": 5,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_poison_resist": 34
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -16143,7 +16148,7 @@
 				"of_lifesteal": 10,
 				"of_regen": 10,
 				"of_shadows": 22,
-				"of_dark_resist": 18,
+				"of_dark_resist": 32,
 				"of_executioner": 8,
 				"of_warding": 8,
 				"of_arcane_flow": 3,
@@ -16216,7 +16221,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 32,
+				"of_pyromancer": 43,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -16269,7 +16274,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 6,
+				"of_devotion": 34,
 				"of_venom": 34,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -16282,8 +16287,8 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 4,
-				"of_pestcaller": 26,
+				"of_zealot": 34,
+				"of_pestcaller": 34,
 				"of_nightcaller": 4
 			},
 			"base_type": "rapier",
@@ -16346,7 +16351,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 26,
+				"of_pestcaller": 34,
 				"of_nightcaller": 4
 			},
 			"base_type": "spear",
@@ -16444,7 +16449,7 @@
 			],
 			"item_tier": 4,
 			"lore": "Verdigris-greened copper that crackles when storms approach.",
-			"name": "Coppersworn Ring of Flight",
+			"name": "Coppersworn Wingband",
 			"rarity": "epic",
 			"slot": "ring",
 			"tile": "ring_gold_white.png",
@@ -16473,7 +16478,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 26,
+				"of_pestcaller": 34,
 				"of_nightcaller": 4
 			},
 			"base_type": "knife",
@@ -16537,7 +16542,7 @@
 				"of_haste": 16,
 				"of_lifesteal": 10,
 				"of_regen": 24,
-				"of_poison_resist": 22,
+				"of_poison_resist": 36,
 				"of_executioner": 8,
 				"of_arcane_flow": 3,
 				"of_arcane_pool": 3,
@@ -16586,7 +16591,7 @@
 				"of_finesse": 15,
 				"of_wisdom": 10,
 				"of_sharpness": 44,
-				"of_embers": 8,
+				"of_embers": 44,
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
@@ -16599,7 +16604,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 22,
-				"of_pyromancer": 6,
+				"of_pyromancer": 44,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -16705,7 +16710,7 @@
 				"of_fire_resist": 12,
 				"of_cold_resist": 12,
 				"of_lightning_resist": 12,
-				"of_holy_resist": 8,
+				"of_holy_resist": 30,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
 				"of_regen": 15,
@@ -16738,7 +16743,7 @@
 			],
 			"item_tier": 5,
 			"lore": "An alloy out of fashion in this century. The shine is unmistakable.",
-			"name": "Rose-gold Robe of Folly",
+			"name": "Rose-gold Fool's Robe",
 			"rarity": "legendary",
 			"slot": "armor",
 			"tile": "urand_folly.png",
@@ -16755,7 +16760,7 @@
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
-				"of_venom": 28,
+				"of_venom": 40,
 				"of_shadows": 6,
 				"of_crit": 40,
 				"of_haste": 20,
@@ -16768,7 +16773,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 21,
+				"of_pestcaller": 40,
 				"of_nightcaller": 4
 			},
 			"base_type": "long_sword",
@@ -16827,7 +16832,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 32,
+				"of_pyromancer": 43,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -16880,7 +16885,7 @@
 				"of_the_cat": 26,
 				"of_haste": 26,
 				"of_regen": 10,
-				"of_dark_resist": 22,
+				"of_dark_resist": 26,
 				"of_avarice": 5,
 				"of_swiftness": 4
 			},
@@ -16992,7 +16997,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 28,
+				"of_cryomancer": 38,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -17045,10 +17050,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 12,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -17058,7 +17063,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 30
 			},
 			"base_type": "dagger",
 			"damage_max": 107,
@@ -17106,7 +17111,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 28,
+				"of_devotion": 38,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -17119,7 +17124,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 21,
+				"of_zealot": 38,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			},
@@ -17191,7 +17196,8 @@
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
 				"of_max_health": 5,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_holy_resist": 32
 			},
 			"base_type": "amulet_harm",
 			"default_tint": {
@@ -17316,7 +17322,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Every glance reveals a new color, each one a real one — somewhere.",
-			"name": "Prismatic Robe of Folly",
+			"name": "Prismatic Fool's Robe",
 			"rarity": "legendary",
 			"slot": "armor",
 			"tile": "urand_folly.png",
@@ -17333,7 +17339,7 @@
 				"of_frost": 8,
 				"of_storms": 8,
 				"of_devotion": 6,
-				"of_venom": 28,
+				"of_venom": 40,
 				"of_shadows": 6,
 				"of_crit": 40,
 				"of_haste": 20,
@@ -17346,7 +17352,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 21,
+				"of_pestcaller": 40,
 				"of_nightcaller": 4
 			},
 			"base_type": "greatsword",
@@ -17403,7 +17409,7 @@
 				"of_lifesteal": 28,
 				"of_regen": 10,
 				"of_shadows": 32,
-				"of_dark_resist": 22,
+				"of_dark_resist": 32,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -17443,7 +17449,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
-			"name": "Voidwrought Pearl of Vitality",
+			"name": "Voidwrought Heartpearl",
 			"rarity": "legendary",
 			"slot": "amulet",
 			"tile": "crystal_white.png",
@@ -17687,7 +17693,7 @@
 				"of_lightning_resist": 14,
 				"of_holy_resist": 8,
 				"of_poison_resist": 10,
-				"of_dark_resist": 26,
+				"of_dark_resist": 52,
 				"of_warding": 8,
 				"of_max_health": 5,
 				"of_max_res": 2
@@ -17743,10 +17749,10 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 28,
+				"of_shadows": 30,
 				"of_crit": 25,
 				"of_haste": 20,
-				"of_lifesteal": 15,
+				"of_lifesteal": 30,
 				"of_damage": 8,
 				"of_quickcast": 8,
 				"of_executioner": 8,
@@ -17756,7 +17762,7 @@
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 21
+				"of_nightcaller": 30
 			},
 			"base_type": "dagger",
 			"damage_max": 107,
@@ -17820,7 +17826,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 32,
+				"of_cryomancer": 43,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -17932,7 +17938,7 @@
 				"of_quickcast": 22,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 28,
+				"of_pyromancer": 38,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -17983,7 +17989,7 @@
 				"of_sharpness": 30,
 				"of_embers": 8,
 				"of_frost": 8,
-				"of_storms": 8,
+				"of_storms": 34,
 				"of_devotion": 34,
 				"of_venom": 6,
 				"of_shadows": 6,
@@ -17996,8 +18002,8 @@
 				"of_brawler": 15,
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
-				"of_thundercaller": 6,
-				"of_zealot": 26,
+				"of_thundercaller": 34,
+				"of_zealot": 34,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			},
@@ -18055,7 +18061,7 @@
 				"of_lifesteal": 10,
 				"of_regen": 24,
 				"of_venom": 28,
-				"of_poison_resist": 22,
+				"of_poison_resist": 29,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -18095,7 +18101,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
-			"name": "Mossy Sigil of the Last Line",
+			"name": "Mossy Last Line Sigil",
 			"rarity": "epic",
 			"slot": "amulet",
 			"tile": "penta_green.png",
@@ -18149,7 +18155,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Shaped from the long bones of something old. It still aches in the cold.",
-			"name": "Bone Crown of Dyrovepreva",
+			"name": "Dyrovepreva's Bone Crown",
 			"rarity": "legendary",
 			"slot": "helm",
 			"tile": "urand_dyrovepreva_new.png",
@@ -18264,7 +18270,7 @@
 				"of_cold_resist": 14,
 				"of_lightning_resist": 14,
 				"of_holy_resist": 8,
-				"of_poison_resist": 32,
+				"of_poison_resist": 33,
 				"of_dark_resist": 8,
 				"of_resonance": 12,
 				"of_lingering": 14,
@@ -18380,7 +18386,7 @@
 				"of_lifesteal": 10,
 				"of_damage": 10,
 				"of_velocity": 12,
-				"of_cold_resist": 22,
+				"of_cold_resist": 45,
 				"of_quickcast": 18,
 				"of_executioner": 8,
 				"of_item_rarity": 5,
@@ -18431,7 +18437,7 @@
 				"of_fire_resist": 12,
 				"of_cold_resist": 12,
 				"of_lightning_resist": 12,
-				"of_holy_resist": 8,
+				"of_holy_resist": 30,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
 				"of_regen": 15,
@@ -18480,7 +18486,7 @@
 				"of_fire_resist": 12,
 				"of_cold_resist": 12,
 				"of_lightning_resist": 12,
-				"of_holy_resist": 26,
+				"of_holy_resist": 30,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
 				"of_regen": 15,
@@ -18571,7 +18577,7 @@
 			"implicit_affixes": [],
 			"item_tier": 5,
 			"lore": "Vines crawl over the haft, seeking soil that is not there.",
-			"name": "Verdant Amulet of Air",
+			"name": "Verdant Windcharm",
 			"rarity": "legendary",
 			"slot": "amulet",
 			"tile": "urand_air_new.png",
@@ -18716,7 +18722,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Vines crawl over the haft, seeking soil that is not there.",
-			"name": "Verdant Robe of Misfortune",
+			"name": "Verdant Ill-Starred Robe",
 			"rarity": "legendary",
 			"slot": "armor",
 			"tile": "urand_misfortune.png",
@@ -18741,7 +18747,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 32,
+				"of_pyromancer": 43,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -18775,7 +18781,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
-			"name": "Crimson Sword of Power",
+			"name": "Crimson Titan's Sword",
 			"rarity": "legendary",
 			"slot": "weapon",
 			"speed": 0.7,
@@ -18804,7 +18810,7 @@
 				"of_venom": 8,
 				"of_shadows": 8,
 				"of_fire_resist": 8,
-				"of_cold_resist": 30,
+				"of_cold_resist": 45,
 				"of_lightning_resist": 8,
 				"of_crit": 31,
 				"of_haste": 16,
@@ -18982,7 +18988,7 @@
 				"of_haste": 16,
 				"of_lifesteal": 10,
 				"of_regen": 10,
-				"of_dark_resist": 18,
+				"of_dark_resist": 34,
 				"of_executioner": 8,
 				"of_arcane_flow": 3,
 				"of_arcane_pool": 3,
@@ -19045,7 +19051,7 @@
 				"of_quickcast": 22,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 28,
+				"of_pyromancer": 38,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -19111,7 +19117,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 26,
+				"of_pestcaller": 34,
 				"of_nightcaller": 4
 			},
 			"base_type": "long_sword",
@@ -19161,7 +19167,7 @@
 				"of_storms": 8,
 				"of_devotion": 6,
 				"of_venom": 6,
-				"of_shadows": 6,
+				"of_shadows": 43,
 				"of_crit": 25,
 				"of_haste": 32,
 				"of_lifesteal": 27,
@@ -19169,12 +19175,12 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 32,
+				"of_pyromancer": 43,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
-				"of_nightcaller": 4
+				"of_nightcaller": 43
 			},
 			"base_type": "long_sword",
 			"damage_max": 115,
@@ -19232,7 +19238,7 @@
 				"of_lifesteal": 10,
 				"of_regen": 10,
 				"of_shadows": 26,
-				"of_dark_resist": 18,
+				"of_dark_resist": 30,
 				"of_executioner": 8,
 				"of_warding": 8,
 				"of_arcane_flow": 3,
@@ -19299,7 +19305,7 @@
 				"of_lifesteal": 28,
 				"of_regen": 10,
 				"of_shadows": 32,
-				"of_dark_resist": 22,
+				"of_dark_resist": 32,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -19356,7 +19362,7 @@
 				"of_the_cat": 22,
 				"of_fire_resist": 14,
 				"of_cold_resist": 14,
-				"of_lightning_resist": 34,
+				"of_lightning_resist": 42,
 				"of_holy_resist": 8,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
@@ -19456,7 +19462,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Shaped from the long bones of something old. It still aches in the cold.",
-			"name": "Bone Hat of Pondering",
+			"name": "Ponderer's Hat",
 			"rarity": "legendary",
 			"slot": "helm",
 			"tile": "urand_pondering_new.png",
@@ -19482,7 +19488,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 28,
+				"of_cryomancer": 38,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -19543,9 +19549,9 @@
 				"of_lifesteal": 28,
 				"of_regen": 10,
 				"of_shadows": 32,
-				"of_dark_resist": 22,
+				"of_dark_resist": 35,
 				"of_frost": 35,
-				"of_cold_resist": 22,
+				"of_cold_resist": 35,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -19612,7 +19618,7 @@
 				"of_lifesteal": 10,
 				"of_regen": 22,
 				"of_devotion": 30,
-				"of_holy_resist": 22,
+				"of_holy_resist": 34,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -19798,7 +19804,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 32,
+				"of_cryomancer": 43,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -19906,7 +19912,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Plain forged iron, but heavier than the metal alone explains.",
-			"name": "Ironclad Ring of the Mage",
+			"name": "Ironclad Seer's Ring",
 			"rarity": "legendary",
 			"slot": "ring",
 			"tile": "urand_mage.png",
@@ -19922,7 +19928,7 @@
 				"of_fire_resist": 14,
 				"of_cold_resist": 14,
 				"of_lightning_resist": 14,
-				"of_holy_resist": 30,
+				"of_holy_resist": 34,
 				"of_poison_resist": 10,
 				"of_dark_resist": 8,
 				"of_warding": 8,
@@ -20084,7 +20090,7 @@
 				"of_resonance": 12,
 				"of_crit": 12,
 				"of_shadows": 22,
-				"of_dark_resist": 18,
+				"of_dark_resist": 44,
 				"of_executioner": 8,
 				"of_arcane_flow": 3,
 				"of_thrift": 3,
@@ -20123,7 +20129,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
-			"name": "Obsidian Crown of Dyrovepreva",
+			"name": "Dyrovepreva's Obsidian Crown",
 			"rarity": "legendary",
 			"slot": "helm",
 			"tile": "urand_dyrovepreva_new.png",
@@ -20195,7 +20201,7 @@
 			],
 			"item_tier": 5,
 			"lore": "The dark that settles on it cannot be polished off.",
-			"name": "Umbral Ring of the Mage",
+			"name": "Umbral Seer's Ring",
 			"rarity": "legendary",
 			"slot": "ring",
 			"tile": "urand_mage.png",
@@ -20210,7 +20216,7 @@
 				"of_embers": 8,
 				"of_frost": 8,
 				"of_storms": 8,
-				"of_devotion": 28,
+				"of_devotion": 38,
 				"of_venom": 6,
 				"of_shadows": 6,
 				"of_crit": 25,
@@ -20223,7 +20229,7 @@
 				"of_pyromancer": 6,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
-				"of_zealot": 21,
+				"of_zealot": 38,
 				"of_pestcaller": 4,
 				"of_nightcaller": 4
 			},
@@ -20345,7 +20351,7 @@
 				"of_executioner": 8,
 				"of_brawler": 15,
 				"of_pyromancer": 6,
-				"of_cryomancer": 32,
+				"of_cryomancer": 43,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
 				"of_pestcaller": 4,
@@ -20406,7 +20412,7 @@
 				"of_devotion": 8,
 				"of_venom": 8,
 				"of_shadows": 8,
-				"of_fire_resist": 26,
+				"of_fire_resist": 45,
 				"of_cold_resist": 8,
 				"of_lightning_resist": 8,
 				"of_crit": 16,
@@ -20512,7 +20518,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Shaped from the long bones of something old. It still aches in the cold.",
-			"name": "Bone Sword of Power",
+			"name": "Titan's Toothpick",
 			"rarity": "legendary",
 			"slot": "weapon",
 			"speed": 0.7,
@@ -20538,7 +20544,7 @@
 				"of_lifesteal": 10,
 				"of_regen": 10,
 				"of_embers": 30,
-				"of_fire_resist": 22,
+				"of_fire_resist": 30,
 				"of_plunder": 8,
 				"of_executioner": 8,
 				"of_warding": 8,
@@ -20632,7 +20638,7 @@
 			],
 			"item_tier": 5,
 			"lore": "Plain forged iron, but heavier than the metal alone explains.",
-			"name": "Ironclad Robe of Clouds",
+			"name": "Ironclad Cloudweave Robe",
 			"rarity": "legendary",
 			"slot": "armor",
 			"tile": "urand_clouds.png",
@@ -20665,7 +20671,7 @@
 				"of_haste": 16,
 				"of_lifesteal": 10,
 				"of_regen": 10,
-				"of_dark_resist": 18,
+				"of_dark_resist": 32,
 				"of_executioner": 8,
 				"of_arcane_flow": 4,
 				"of_arcane_pool": 4,
@@ -20775,7 +20781,7 @@
 			],
 			"item_tier": 3,
 			"lore": "Plain forged iron, but heavier than the metal alone explains.",
-			"name": "Ironclad Pentacle of Wrath",
+			"name": "Ironclad Wrath Pentacle",
 			"rarity": "rare",
 			"slot": "amulet",
 			"tile": "penta_orange.png",
@@ -20793,7 +20799,7 @@
 				"of_cold_resist": 12,
 				"of_lightning_resist": 12,
 				"of_holy_resist": 8,
-				"of_poison_resist": 10,
+				"of_poison_resist": 30,
 				"of_dark_resist": 8,
 				"of_regen": 15,
 				"of_max_health": 5
@@ -20920,7 +20926,8 @@
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
 				"of_max_health": 5,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_poison_resist": 34
 			},
 			"base_type": "amulet_faith",
 			"default_tint": {
@@ -20978,7 +20985,7 @@
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
-				"of_pestcaller": 26,
+				"of_pestcaller": 34,
 				"of_nightcaller": 4
 			},
 			"base_type": "bardiche",
@@ -21029,7 +21036,8 @@
 				"of_haste": 26,
 				"of_regen": 10,
 				"of_avarice": 5,
-				"of_swiftness": 4
+				"of_swiftness": 4,
+				"of_lightning_resist": 46
 			},
 			"armor": 11,
 			"base_type": "treads",
@@ -21138,7 +21146,7 @@
 				"of_quickcast": 8,
 				"of_executioner": 8,
 				"of_brawler": 15,
-				"of_pyromancer": 32,
+				"of_pyromancer": 43,
 				"of_cryomancer": 6,
 				"of_thundercaller": 6,
 				"of_zealot": 4,
@@ -21217,7 +21225,8 @@
 				"of_str_pct": 4,
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_poison_resist": 34
 			},
 			"base_type": "ring_dexterity",
 			"default_tint": {
@@ -21372,7 +21381,7 @@
 		},
 		{
 			"id": "minotaur_champion_blade",
-			"name": "Blade of the Champion",
+			"name": "Champion's Blade",
 			"slot": "weapon",
 			"rarity": "epic",
 			"tile": "executioner_axe_5.png",
@@ -21494,7 +21503,8 @@
 				"of_str_pct": 4,
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_cold_resist": 16
 			}
 		},
 		{
@@ -21700,7 +21710,7 @@
 		},
 		{
 			"id": "octopode_eight_amulet",
-			"name": "Mantle of the Eight",
+			"name": "Eightfold Mantle",
 			"slot": "amulet",
 			"rarity": "epic",
 			"tile": "urand_octoring.png",
@@ -21776,7 +21786,9 @@
 			"affix_pool": {
 				"of_might": 16,
 				"of_damage": 14,
-				"of_executioner": 8
+				"of_executioner": 8,
+				"of_embers": 16,
+				"of_pyromancer": 16
 			},
 			"default_tint": {
 				"hue": 0,
@@ -21818,7 +21830,8 @@
 				"of_arcane_flow": 1,
 				"of_thrift": 1,
 				"of_item_rarity": 5,
-				"of_growth": 4
+				"of_growth": 4,
+				"of_fire_resist": 18
 			},
 			"default_tint": {
 				"hue": 0,
@@ -21921,7 +21934,7 @@
 		},
 		{
 			"id": "mummy_tomb_wrappings",
-			"name": "Sigil-Wrappings of the Tomb",
+			"name": "Tomb Wrappings",
 			"slot": "armor",
 			"rarity": "epic",
 			"tile": "urand_misfortune.png",
@@ -21954,7 +21967,8 @@
 				"of_regen": 10,
 				"of_fire_resist": 10,
 				"of_cold_resist": 10,
-				"of_max_health": 5
+				"of_max_health": 5,
+				"of_dark_resist": 16
 			},
 			"default_tint": {
 				"hue": 40,
@@ -22269,7 +22283,7 @@
 		},
 		{
 			"id": "halfling_quiet_knife",
-			"name": "Knife of the Quiet Road",
+			"name": "Quiet Road Knife",
 			"slot": "weapon",
 			"rarity": "rare",
 			"tile": "urand_knife_of_accuracy.png",
@@ -22413,8 +22427,8 @@
 			],
 			"affix_pool": {
 				"of_shadows": 10,
-				"of_venom": 7,
-				"of_pestcaller": 5,
+				"of_venom": 10,
+				"of_pestcaller": 10,
 				"of_nightcaller": 8
 			},
 			"enchant_pool": [
@@ -22965,14 +22979,14 @@
 			"affix_pool": {
 				"of_might": 20,
 				"of_finesse": 16,
-				"of_frost": 18,
+				"of_frost": 20,
 				"of_sharpness": 14,
 				"of_crit": 10,
 				"of_haste": 10,
 				"of_executioner": 10,
 				"of_damage": 10,
 				"of_brawler": 7,
-				"of_cryomancer": 14
+				"of_cryomancer": 20
 			},
 			"boss_drop": "boss_ilsuiw",
 			"biome_pool": [
@@ -23012,11 +23026,11 @@
 			"affix_pool": {
 				"of_finesse": 22,
 				"of_crit": 16,
-				"of_venom": 18,
+				"of_venom": 22,
 				"of_might": 10,
 				"of_haste": 10,
 				"of_executioner": 10,
-				"of_pestcaller": 14
+				"of_pestcaller": 22
 			},
 			"boss_drop": "boss_aizul",
 			"biome_pool": [
@@ -23051,7 +23065,7 @@
 			"affix_pool": {
 				"of_vitality": 22,
 				"of_wisdom": 16,
-				"of_dark_resist": 18,
+				"of_dark_resist": 22,
 				"of_regen": 12,
 				"of_arcane_flow": 1,
 				"of_arcane_pool": 1,
@@ -23664,7 +23678,7 @@
 				"of_quickcast": 8,
 				"of_damage": 8,
 				"of_brawler": 11,
-				"of_cryomancer": 22
+				"of_cryomancer": 30
 			},
 			"default_tint": {
 				"hue": 195,
@@ -23712,7 +23726,7 @@
 				"of_lifesteal": 12,
 				"of_executioner": 10,
 				"of_brawler": 12,
-				"of_cryomancer": 26
+				"of_cryomancer": 35
 			},
 			"default_tint": {
 				"hue": 200,
@@ -23760,7 +23774,7 @@
 				"of_lifesteal": 10,
 				"of_executioner": 12,
 				"of_brawler": 14,
-				"of_cryomancer": 28
+				"of_cryomancer": 38
 			},
 			"default_tint": {
 				"hue": 205,
@@ -23809,7 +23823,7 @@
 				"of_damage": 10,
 				"of_executioner": 10,
 				"of_brawler": 14,
-				"of_cryomancer": 30
+				"of_cryomancer": 40
 			},
 			"default_tint": {
 				"hue": 195,
@@ -23857,7 +23871,7 @@
 				"of_quickcast": 8,
 				"of_damage": 8,
 				"of_brawler": 11,
-				"of_pestcaller": 24
+				"of_pestcaller": 32
 			},
 			"default_tint": {
 				"hue": 110,
@@ -23906,7 +23920,7 @@
 				"of_executioner": 8,
 				"of_quickcast": 8,
 				"of_brawler": 14,
-				"of_pestcaller": 26
+				"of_pestcaller": 35
 			},
 			"default_tint": {
 				"hue": 100,
@@ -23953,7 +23967,7 @@
 				"of_lifesteal": 12,
 				"of_executioner": 10,
 				"of_brawler": 14,
-				"of_pestcaller": 28
+				"of_pestcaller": 38
 			},
 			"default_tint": {
 				"hue": 95,
@@ -24002,7 +24016,7 @@
 				"of_damage": 10,
 				"of_executioner": 10,
 				"of_brawler": 13,
-				"of_pestcaller": 30
+				"of_pestcaller": 40
 			},
 			"default_tint": {
 				"hue": 105,
@@ -24110,7 +24124,7 @@
 		},
 		{
 			"id": "forge_pit_anvil",
-			"name": "Anvil of the Lava Pit",
+			"name": "Lava Pit Anvil",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "mace_3_new.png",
@@ -24144,7 +24158,9 @@
 				"of_damage": 12,
 				"of_crit": 10,
 				"of_haste": 8,
-				"of_brawler": 6
+				"of_brawler": 6,
+				"of_embers": 18,
+				"of_pyromancer": 18
 			},
 			"vault_drop": "forge_lava_pit_5x5"
 		},
@@ -24186,13 +24202,15 @@
 				"of_haste": 10,
 				"of_finesse": 10,
 				"of_lifesteal": 10,
-				"of_brawler": 7
+				"of_brawler": 7,
+				"of_embers": 14,
+				"of_pyromancer": 14
 			},
 			"vault_drop": "forge_lava_bridge_7x3"
 		},
 		{
 			"id": "glacier_shrine_amulet",
-			"name": "Amulet of the Ice Shrine",
+			"name": "Ice Shrine Amulet",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "cameo_blue.png",
@@ -24234,13 +24252,14 @@
 				"of_dex_pct": 4,
 				"of_int_pct": 4,
 				"of_max_health": 5,
-				"of_max_res": 2
+				"of_max_res": 2,
+				"of_cold_resist": 20
 			},
 			"vault_drop": "glacier_ice_shrine_5x5"
 		},
 		{
 			"id": "lair_grove_cloak",
-			"name": "Cloak of the Tree Grove",
+			"name": "Tree Grove Cloak",
 			"slot": "cloak",
 			"rarity": "legendary",
 			"tile": "cloak_3.png",
@@ -24277,7 +24296,7 @@
 		},
 		{
 			"id": "shoals_tide_ring",
-			"name": "Ring of the Tide Pool",
+			"name": "Tide Pool Ring",
 			"slot": "ring",
 			"rarity": "legendary",
 			"tile": "ring_black_onyx.png",
@@ -24308,7 +24327,7 @@
 				"of_velocity": 8,
 				"of_damage": 8,
 				"of_lightning_resist": 8,
-				"of_cold_resist": 8,
+				"of_cold_resist": 14,
 				"of_item_rarity": 5,
 				"of_avarice": 5,
 				"of_growth": 4,
@@ -24322,7 +24341,7 @@
 		},
 		{
 			"id": "crypt_bone_helm",
-			"name": "Helm of the Bone Chamber",
+			"name": "Bone Chamber Helm",
 			"slot": "helm",
 			"rarity": "legendary",
 			"tile": "helm_crested.png",
@@ -24353,7 +24372,8 @@
 				"of_poison_resist": 8,
 				"of_arcane_flow": 1,
 				"of_item_rarity": 5,
-				"of_growth": 4
+				"of_growth": 4,
+				"of_dark_resist": 16
 			},
 			"vault_drop": "crypt_bone_chamber_5x5"
 		},
@@ -24591,8 +24611,8 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_embers": 20,
-				"of_lifesteal": 16,
-				"of_fire_resist": 14,
+				"of_lifesteal": 24,
+				"of_fire_resist": 24,
 				"of_might": 10,
 				"of_arcane_flow": 1,
 				"of_arcane_pool": 1,
@@ -24793,9 +24813,9 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_wisdom": 16,
-				"of_embers": 12,
+				"of_embers": 24,
 				"of_quickcast": 10,
-				"of_pyromancer": 9
+				"of_pyromancer": 24
 			},
 			"enchant_chance": 0.1
 		},
@@ -24832,9 +24852,9 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_wisdom": 16,
-				"of_storms": 12,
+				"of_storms": 24,
 				"of_velocity": 10,
-				"of_thundercaller": 9
+				"of_thundercaller": 24
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -24874,9 +24894,9 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_wisdom": 18,
-				"of_frost": 14,
+				"of_frost": 24,
 				"of_quickcast": 10,
-				"of_cryomancer": 10
+				"of_cryomancer": 24
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -25037,9 +25057,9 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_might": 18,
-				"of_devotion": 14,
+				"of_devotion": 24,
 				"of_wisdom": 10,
-				"of_zealot": 10
+				"of_zealot": 24
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -25079,8 +25099,8 @@
 			"affix_pool": {
 				"of_damage": 24,
 				"of_might": 18,
-				"of_devotion": 16,
-				"of_zealot": 12
+				"of_devotion": 24,
+				"of_zealot": 24
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -25121,12 +25141,12 @@
 			"affix_pool": {
 				"of_damage": 26,
 				"of_might": 20,
-				"of_devotion": 18,
+				"of_devotion": 26,
 				"of_wisdom": 10,
 				"of_quickcast": 10,
 				"of_resonance": 10,
 				"of_lingering": 10,
-				"of_zealot": 14
+				"of_zealot": 26
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -25170,7 +25190,9 @@
 				"of_wisdom": 22,
 				"of_quickcast": 18,
 				"of_arcane_flow": 14,
-				"of_damage": 10
+				"of_damage": 10,
+				"of_frost": 24,
+				"of_cryomancer": 24
 			},
 			"enchant_chance": 0.1
 		},
@@ -25250,13 +25272,13 @@
 				"of_damage": 24,
 				"of_arcane_pool": 22,
 				"of_wisdom": 20,
-				"of_storms": 16,
+				"of_storms": 24,
 				"of_quickcast": 14,
 				"of_resonance": 10,
 				"of_lingering": 10,
 				"of_arcane_flow": 10,
 				"of_crit": 10,
-				"of_thundercaller": 12
+				"of_thundercaller": 24
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
@@ -25462,21 +25484,21 @@
 			],
 			"affix_pool": {
 				"of_damage": 26,
-				"of_venom": 22,
+				"of_venom": 26,
 				"of_quickcast": 12,
 				"of_wisdom": 10,
 				"of_resonance": 10,
 				"of_lingering": 10,
 				"of_arcane_pool": 10,
 				"of_arcane_flow": 10,
-				"of_pestcaller": 16
+				"of_pestcaller": 26
 			},
 			"enchant_chance": 0.0,
 			"unique": true
 		},
 		{
 			"id": "brand_of_the_storm",
-			"name": "Brand of the Storm",
+			"name": "Stormbrand",
 			"slot": "weapon",
 			"rarity": "legendary",
 			"tile": "casters/sceptre_4.png",
@@ -25511,14 +25533,14 @@
 			],
 			"affix_pool": {
 				"of_damage": 26,
-				"of_storms": 22,
+				"of_storms": 26,
 				"of_might": 14,
 				"of_wisdom": 10,
 				"of_quickcast": 10,
 				"of_resonance": 10,
 				"of_lingering": 10,
 				"of_arcane_pool": 10,
-				"of_thundercaller": 16
+				"of_thundercaller": 26
 			},
 			"enchant_chance": 0.0,
 			"unique": true
@@ -25560,7 +25582,7 @@
 			],
 			"affix_pool": {
 				"of_damage": 26,
-				"of_frost": 22,
+				"of_frost": 26,
 				"of_resonance": 20,
 				"of_quickcast": 14,
 				"of_wisdom": 10,
@@ -25568,7 +25590,7 @@
 				"of_arcane_pool": 10,
 				"of_arcane_flow": 10,
 				"of_crit": 10,
-				"of_cryomancer": 16
+				"of_cryomancer": 26
 			},
 			"enchant_chance": 0.0,
 			"unique": true
@@ -25610,7 +25632,7 @@
 			],
 			"affix_pool": {
 				"of_damage": 26,
-				"of_embers": 22,
+				"of_embers": 26,
 				"of_lifesteal": 18,
 				"of_arcane_pool": 12,
 				"of_wisdom": 10,
@@ -25618,7 +25640,7 @@
 				"of_resonance": 10,
 				"of_lingering": 10,
 				"of_arcane_flow": 10,
-				"of_pyromancer": 16
+				"of_pyromancer": 26
 			},
 			"enchant_chance": 0.0,
 			"unique": true
@@ -25901,7 +25923,7 @@
 		},
 		{
 			"id": "vow_of_stillness",
-			"name": "Vow of Stillness",
+			"name": "Silent Vow",
 			"slot": "amulet",
 			"rarity": "legendary",
 			"tile": "crystal_white.png",
@@ -26056,7 +26078,8 @@
 				"of_haste": 26,
 				"of_regen": 10,
 				"of_avarice": 5,
-				"of_swiftness": 4
+				"of_swiftness": 4,
+				"of_lightning_resist": 26
 			},
 			"default_tint": {
 				"hue": 110,

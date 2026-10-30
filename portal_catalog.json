@@ -42,10 +42,18 @@
   {
     "id": "affixes",
     "href": "affix_editor.html",
-    "title": "Bonuses and enchants",
-    "description": "Edit affix curves and browse enchant combinations.",
+    "title": "Item bonuses",
+    "description": "Edit affix curves. Opens on the affixes that can roll; parked ones sit behind a filter.",
     "status": "active",
     "note": "Exports require review against the runtime; this editor cannot implement new mechanics."
+  },
+  {
+    "id": "enchants",
+    "href": "enchant_combos.html",
+    "title": "Enchant combos",
+    "description": "Browse the seven enchant flavours and their 21 combos.",
+    "status": "active",
+    "note": "Read-only; effects live in the game code."
   },
   {
     "id": "drops",

@@ -7,6 +7,7 @@
     sprites:'<rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 2v12M10 2v12M2 6h12M2 10h12"/>',
     atlas:'<rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/>',
     affixes:'<path d="M3 2v12M8 2v12m5-12v12M1 5h4m1 5h4m1-5h4"/>',
+    enchants:'<path d="m8 1 1.8 4.2L14 7l-4.2 1.8L8 13l-1.8-4.2L2 7l4.2-1.8z"/>',
     enemies:'<path d="m8 1 6 3v4c0 3-6 7-6 7s-6-4-6-7V4zM5 8h6"/>',
     items:'<path d="m2 12 2 2L14 4V2h-2L2 12zm0-2 4 4"/>',
     archive:'<path d="M3 5v9h10V5M2 2h12v3H2zM6 8h4"/>',
