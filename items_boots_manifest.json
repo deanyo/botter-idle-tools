@@ -885,6 +885,7 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_dark_resist": 26,
+        "of_arcane_resist": 26,
         "of_avarice": 5,
         "of_swiftness": 4
       },

@@ -115,6 +115,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -159,6 +160,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -206,6 +208,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -252,6 +255,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -298,6 +302,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -344,6 +349,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -390,6 +396,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -437,6 +444,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -484,6 +492,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -525,6 +534,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -571,6 +581,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -617,6 +628,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -663,6 +675,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -709,6 +722,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -756,6 +770,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -803,6 +818,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -850,6 +866,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -896,6 +913,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -943,6 +961,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -984,6 +1003,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1025,6 +1045,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1072,6 +1093,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1118,6 +1140,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1159,6 +1182,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1206,6 +1230,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1255,6 +1280,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1279,6 +1305,7 @@
         "of_holy_resist": 26,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1330,6 +1357,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1382,6 +1410,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 52,
+        "of_arcane_resist": 52,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1438,6 +1467,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1489,6 +1519,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1539,6 +1570,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1591,6 +1623,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 8,
         "of_max_health": 5,
         "of_max_res": 2
@@ -1665,6 +1698,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_warding": 14,
         "of_max_health": 5,
         "of_max_res": 2

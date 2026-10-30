@@ -1597,6 +1597,7 @@
         "of_crit": 12,
         "of_shadows": 26,
         "of_dark_resist": 28,
+        "of_arcane_resist": 28,
         "of_executioner": 8,
         "of_arcane_flow": 4,
         "of_thrift": 4,
@@ -1989,6 +1990,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 8,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_arcane_flow": 1,
         "of_thrift": 1,
         "of_item_rarity": 5,
@@ -2034,7 +2036,8 @@
         "of_arcane_flow": 1,
         "of_item_rarity": 5,
         "of_growth": 4,
-        "of_dark_resist": 16
+        "of_dark_resist": 16,
+        "of_arcane_resist": 16
       },
       "vault_drop": "crypt_bone_chamber_5x5"
     },
@@ -2201,6 +2204,7 @@
         "of_holy_resist": 8,
         "of_poison_resist": 8,
         "of_dark_resist": 8,
+        "of_arcane_resist": 8,
         "of_arcane_flow": 1,
         "of_thrift": 1,
         "of_item_rarity": 5,

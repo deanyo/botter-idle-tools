@@ -2193,14 +2193,19 @@
     "visual_anchor": "ground",
     "resistances": {
       "holy": 75,
-      "dark": -50
+      "dark": -50,
+      "arcane": 50
     },
     "attack_kind": "slam",
     "locomotion": "hover",
     "damage_split": [
       {
         "type": "holy",
-        "fraction": 1.0
+        "fraction": 0.6
+      },
+      {
+        "type": "arcane",
+        "fraction": 0.4
       }
     ]
   },
@@ -2405,14 +2410,21 @@
     "locomotion": "walk",
     "damage_split": [
       {
+        "type": "arcane",
+        "fraction": 0.5
+      },
+      {
         "type": "lightning",
-        "fraction": 0.7
+        "fraction": 0.3
       },
       {
         "type": "physical",
-        "fraction": 0.3
+        "fraction": 0.2
       }
-    ]
+    ],
+    "resistances": {
+      "arcane": 25
+    }
   },
   "deep_elf_pyromancer": {
     "name": "Deep Elf Pyromancer",
@@ -3095,17 +3107,22 @@
     "damage_split": [
       {
         "type": "dark",
-        "fraction": 0.65
+        "fraction": 0.45
+      },
+      {
+        "type": "arcane",
+        "fraction": 0.3
       },
       {
         "type": "physical",
-        "fraction": 0.35
+        "fraction": 0.25
       }
     ],
     "resistances": {
       "dark": 50,
       "holy": -25,
-      "physical": 10
+      "physical": 10,
+      "arcane": 25
     },
     "attack_kind": "slash",
     "locomotion": "scuttle"
@@ -3505,12 +3522,16 @@
     "locomotion": "walk",
     "damage_split": [
       {
+        "type": "arcane",
+        "fraction": 0.6
+      },
+      {
         "type": "lightning",
-        "fraction": 0.7
+        "fraction": 0.2
       },
       {
         "type": "physical",
-        "fraction": 0.3
+        "fraction": 0.2
       }
     ]
   },
@@ -3529,12 +3550,16 @@
     "locomotion": "walk",
     "damage_split": [
       {
-        "type": "lightning",
-        "fraction": 0.6
+        "type": "arcane",
+        "fraction": 0.5
       },
       {
         "type": "physical",
-        "fraction": 0.4
+        "fraction": 0.3
+      },
+      {
+        "type": "lightning",
+        "fraction": 0.2
       }
     ]
   },

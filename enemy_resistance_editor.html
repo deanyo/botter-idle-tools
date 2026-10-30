@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Botter — Enemy Damage and Resistances</title>
+<title>Botter — Enemy Damage, Armour and Resistances</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="portal.css">
 <style>
@@ -125,6 +125,8 @@
   th.grp { text-align: center; border-bottom: 1px solid var(--border, #333); }
   th.dmg, td.d-cell { background: rgba(255, 170, 60, 0.05); }
   td.d-cell input { width: 46px; }
+  td.a-cell input { width: 46px; }
+  td.a-pct { color: var(--muted); font-size: 11px; text-align: right; }
   td.d-sum { font-variant-numeric: tabular-nums; color: var(--muted); }
   td.d-sum.bad { color: #ff7a6a; font-weight: 600; }
   tr.changed td.id-col { box-shadow: inset 3px 0 0 #e0b04a; }
@@ -193,19 +195,28 @@
     only the enemies you edited on the clipboard, to paste back; <b>Export</b>
     downloads a full <code>enemies.json</code> with your changes merged in
     (everything else preserved verbatim).
-    Damage-type keys: <code>fire / cold / lightning / holy / poison / dark / physical</code>.
-    Range: <code>-100 .. +75</code> (clamped to match the player-side
-    cap at <code>stat_calc.gd:311</code>).
+    Damage-type keys: <code>fire / cold / lightning / holy / poison / dark / arcane / physical</code>,
+    the types the player can resist.
+    Resistance range: <code>-100 .. +75</code> (the player-side cap,
+    <code>StatCalc.RES_CAP</code>).
+    <br><b>Armour</b> (<code>def</code>) cuts that share of every physical hit
+    the enemy takes: def / (def + 15), at any depth (<code>StatCalc.ENEMY_ARMOR_K</code>).
+    Elites carry 1.3&times;, champions 1.2&times; and bosses 1.8&times; this value.
+    <br><b>In the Descent</b>, each 10-floor theme converts part of every enemy hit
+    to its own damage mix (<code>descent.json segment_themes</code>), so the split
+    here is the whole story in branches and the base the theme blends into below.
   </p>
 </main>
 
 <script>
 const ENEMIES_URL = "data/enemies.json";
 const BIOMES_URL = "data/biomes.json";
-const ELEMENTS = ["fire", "cold", "lightning", "holy", "poison", "dark", "physical"];
+const ELEMENTS = ["fire", "cold", "lightning", "holy", "poison", "dark", "arcane", "physical"];
+// Mirrors StatCalc.ENEMY_ARMOR_K (test_armor_curve keeps them equal).
+const ENEMY_ARMOR_K = 15;
 
 let RAW_DOC = null;          // raw parsed JSON, source of truth on disk
-let ROWS = [];               // [{id, def, res, dmg, orig}] — res/dmg are the editable copies
+let ROWS = [];               // [{id, def, res, dmg, armor, orig}] — res/dmg/armor are the editable copies
 let BIOME_POOLS = {};        // biome id -> enemy ids
 let SORT_KEY = "id";
 let SORT_DIR = 1;            // 1 asc, -1 desc
@@ -223,7 +234,9 @@ function pctToSplit(pct) {
     .sort((a, b) => (pct[b] - pct[a]) || ELEMENTS.indexOf(a) - ELEMENTS.indexOf(b))
     .map(e => ({ type: e, fraction: Math.round(pct[e]) / 100 }));
 }
-function snapshot(row) { return JSON.stringify([row.dmg, row.res]); }
+function snapshot(row) { return JSON.stringify([row.dmg, row.res, row.armor]); }
+function clampArmor(n) { return Number.isNaN(n) ? 0 : Math.max(0, Math.min(200, Math.round(n))); }
+function armorPct(a) { return a > 0 ? Math.round(100 * a / (a + ENEMY_ARMOR_K)) : 0; }
 
 function classForVal(v) {
   if (v === 0 || v === null || v === undefined) return "r-zero";
@@ -240,9 +253,10 @@ function classForVal(v) {
 function buildHead() {
   const thead = document.querySelector("#grid thead");
   const top = document.createElement("tr");
-  top.innerHTML = `<th colspan="4"></th><th class="grp dmg" colspan="${ELEMENTS.length + 1}">Damage %</th><th class="grp" colspan="${ELEMENTS.length}">Resistance</th>`;
+  top.innerHTML = `<th colspan="4"></th><th class="grp" colspan="2">Armour</th><th class="grp dmg" colspan="${ELEMENTS.length + 1}">Damage %</th><th class="grp" colspan="${ELEMENTS.length}">Resistance</th>`;
   const cols = [
     {key: "id", label: "Enemy ID"}, {key: "name", label: "Name"}, {key: "tier", label: "Tier"}, {key: "boss", label: "Type"},
+    {key: "armor", label: "def"}, {key: "armor", label: "cut"},
     ...ELEMENTS.map(e => ({key: "d:" + e, label: e, cls: "dmg"})), {key: "d:sum", label: "sum", cls: "dmg"},
     ...ELEMENTS.map(e => ({key: e, label: e})),
   ];
@@ -255,7 +269,7 @@ function buildHead() {
     if (c.key === SORT_KEY) th.classList.add(SORT_DIR > 0 ? "sort-asc" : "sort-desc");
     th.addEventListener("click", () => {
       if (SORT_KEY === c.key) SORT_DIR = -SORT_DIR;
-      else { SORT_KEY = c.key; SORT_DIR = c.key.startsWith("d:") || ELEMENTS.includes(c.key) ? -1 : 1; }
+      else { SORT_KEY = c.key; SORT_DIR = c.key.startsWith("d:") || ELEMENTS.includes(c.key) || c.key === "armor" ? -1 : 1; }
       buildHead();
       render();
     });
@@ -288,6 +302,7 @@ function sortVal(row, k) {
   if (k === "tier") return row.def.tier || 0;
   if (k === "boss") return row.def.boss ? 1 : 0;
   if (k === "d:sum") return dmgSum(row);
+  if (k === "armor") return row.armor;
   if (k.startsWith("d:")) return row.dmg[k.slice(2)] || 0;
   return row.res[k] || 0;
 }
@@ -330,6 +345,28 @@ function numberCell(tr, row, el, kind) {
   tr.appendChild(td);
 }
 
+function armorCells(tr, row) {
+  const td = document.createElement("td");
+  td.className = "a-cell";
+  const inp = document.createElement("input");
+  inp.type = "number";
+  inp.min = 0;
+  inp.max = 200;
+  inp.step = 1;
+  inp.value = row.armor === 0 ? "" : row.armor;
+  inp.placeholder = "0";
+  inp.addEventListener("change", () => {
+    row.armor = clampArmor(parseInt(inp.value, 10));
+    tr.replaceWith(rowElement(row));
+    updateStats();
+  });
+  td.appendChild(inp);
+  tr.appendChild(td);
+  const boss = row.def.boss ? ` (boss ${armorPct(row.armor * 1.8)}%)` : "";
+  cell(tr, armorPct(row.armor) + "%", "a-pct").title =
+    `A physical hit on this enemy loses ${armorPct(row.armor)}%` + boss + ` at any depth.`;
+}
+
 function rowElement(row) {
   const tr = document.createElement("tr");
   tr.dataset.id = row.id;
@@ -338,6 +375,7 @@ function rowElement(row) {
   cell(tr, row.def.name || "", "name-col");
   cell(tr, "T" + (row.def.tier || "?"), "tier-col");
   cell(tr, bossLabel(row.def), "boss-col");
+  armorCells(tr, row);
   for (const el of ELEMENTS) numberCell(tr, row, el, "dmg");
   const sum = dmgSum(row);
   cell(tr, String(sum), "d-sum" + (sum === 100 ? "" : " bad")).title = sum === 100 ? "" : "Damage must total 100";
@@ -375,7 +413,7 @@ function changesDoc() {
     if (snapshot(row) === row.orig) continue;
     const res = {};
     for (const k of Object.keys(row.res).sort()) if (row.res[k]) res[k] = row.res[k];
-    out[row.id] = { damage: pctToSplit(row.dmg).reduce((o, c) => (o[c.type] = Math.round(c.fraction * 100), o), {}), resistances: res };
+    out[row.id] = { damage: pctToSplit(row.dmg).reduce((o, c) => (o[c.type] = Math.round(c.fraction * 100), o), {}), resistances: res, def: row.armor };
   }
   return out;
 }
@@ -403,6 +441,7 @@ function exportJSON() {
     if (Object.keys(clean).length > 0) out[row.id].resistances = clean;
     else delete out[row.id].resistances;
     out[row.id].damage_split = pctToSplit(row.dmg);
+    out[row.id].def = row.armor;
   }
   // Match the existing file: 2-space indent, no trailing newline, and the keys
   // Python writes as floats keep their ".0" (JS would print 1.0 as 1).
@@ -435,7 +474,7 @@ async function init() {
   const sel = document.getElementById("filter-biome");
   for (const id of Object.keys(BIOME_POOLS).sort()) sel.add(new Option(id, id));
   ROWS = Object.keys(RAW_DOC).map(id => {
-    const row = { id, def: RAW_DOC[id], res: { ...(RAW_DOC[id].resistances || {}) }, dmg: splitToPct(RAW_DOC[id].damage_split) };
+    const row = { id, def: RAW_DOC[id], res: { ...(RAW_DOC[id].resistances || {}) }, dmg: splitToPct(RAW_DOC[id].damage_split), armor: Number(RAW_DOC[id].def || 0) };
     row.orig = snapshot(row);
     return row;
   });
