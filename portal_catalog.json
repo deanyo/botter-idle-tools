@@ -66,8 +66,8 @@
   {
     "id": "enemies",
     "href": "enemy_resistance_editor.html",
-    "title": "Enemy resistances",
-    "description": "Edit current enemy resistance values and export the complete document.",
+    "title": "Enemy damage and resistances",
+    "description": "Edit each enemy’s damage mix and resistances side by side, see a biome’s overall mix, and copy changes to paste back.",
     "status": "active",
     "note": "Reads the current enemies.json. Changes still need combat testing."
   },

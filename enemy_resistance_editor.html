@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Botter — Enemy Resistance Editor</title>
+<title>Botter — Enemy Damage and Resistances</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="portal.css">
 <style>
@@ -122,6 +122,14 @@
   .r-neg-3 { background: rgba(220, 70, 70, 0.45); color: #f6c8c8; }
   .r-zero  { color: #555; }
 
+  th.grp { text-align: center; border-bottom: 1px solid var(--border, #333); }
+  th.dmg, td.d-cell { background: rgba(255, 170, 60, 0.05); }
+  td.d-cell input { width: 46px; }
+  td.d-sum { font-variant-numeric: tabular-nums; color: var(--muted); }
+  td.d-sum.bad { color: #ff7a6a; font-weight: 600; }
+  tr.changed td.id-col { box-shadow: inset 3px 0 0 #e0b04a; }
+  .mix { margin: 6px 0 10px; font-size: 12px; color: var(--muted); min-height: 16px; }
+  .mix b { color: var(--text, #ddd); font-weight: 600; }
   .footer-note {
     margin-top: 12px;
     font-size: 11px;
@@ -131,7 +139,7 @@
 </style>
 </head>
 <body>
-<nav class="portal-nav" data-active="enemies" data-title="Enemy Resistances"></nav>
+<nav class="portal-nav" data-active="enemies" data-title="Enemy damage and resistances"></nav>
 <script src="portal_nav.js" defer></script>
 
 <main>
@@ -141,12 +149,15 @@
     </label>
     <label>Show:
       <select id="filter-show">
-        <option value="all">All enemies</option>
-        <option value="any-res" selected>Any resistance set</option>
+        <option value="all" selected>All enemies</option>
+        <option value="any-res">Any resistance set</option>
         <option value="no-res">No resistance set</option>
         <option value="boss">Bosses only</option>
         <option value="non-boss">Non-bosses only</option>
       </select>
+    </label>
+    <label>Biome:
+      <select id="filter-biome"><option value="any">Any</option></select>
     </label>
     <label>Tier:
       <select id="filter-tier">
@@ -165,8 +176,10 @@
     </span>
     <span class="spacer"></span>
     <span class="stats" id="stats"></span>
+    <button id="btn-copy" title="Copy only the enemies you changed, as JSON to paste back">Copy changes</button>
     <button id="btn-export">⬇ Export enemies.json</button>
   </div>
+  <div class="mix" id="mix"></div>
 
   <table class="res" id="grid">
     <thead></thead>
@@ -174,11 +187,12 @@
   </table>
 
   <p class="footer-note">
-    Edits stay in the browser until you hit Export. The download is a
-    full <code>enemies.json</code> with your changes merged into the
-    existing file (everything outside the resistance dict is preserved
-    verbatim). Drop the downloaded file into <code>data/</code>
-    to apply.
+    <b>Damage %</b> is the share of an enemy's hits that land as each type
+    (<code>damage_split</code>); a row must total 100. <b>Resistance</b> is
+    what it shrugs off. Edits stay in the browser. <b>Copy changes</b> puts
+    only the enemies you edited on the clipboard, to paste back; <b>Export</b>
+    downloads a full <code>enemies.json</code> with your changes merged in
+    (everything else preserved verbatim).
     Damage-type keys: <code>fire / cold / lightning / holy / poison / dark / physical</code>.
     Range: <code>-100 .. +75</code> (clamped to match the player-side
     cap at <code>stat_calc.gd:311</code>).
@@ -187,17 +201,29 @@
 
 <script>
 const ENEMIES_URL = "data/enemies.json";
+const BIOMES_URL = "data/biomes.json";
 const ELEMENTS = ["fire", "cold", "lightning", "holy", "poison", "dark", "physical"];
 
 let RAW_DOC = null;          // raw parsed JSON, source of truth on disk
-let ROWS = [];               // [{id, def, res}] — `res` is the editable copy
+let ROWS = [];               // [{id, def, res, dmg, orig}] — res/dmg are the editable copies
+let BIOME_POOLS = {};        // biome id -> enemy ids
 let SORT_KEY = "id";
 let SORT_DIR = 1;            // 1 asc, -1 desc
 
-function clamp(n) {
-  if (Number.isNaN(n)) return 0;
-  return Math.max(-100, Math.min(75, Math.round(n)));
+function clampRes(n) { return Number.isNaN(n) ? 0 : Math.max(-100, Math.min(75, Math.round(n))); }
+function clampDmg(n) { return Number.isNaN(n) ? 0 : Math.max(0, Math.min(100, Math.round(n))); }
+function dmgSum(row) { return ELEMENTS.reduce((t, e) => t + (row.dmg[e] || 0), 0); }
+function splitToPct(split) {
+  const out = {};
+  for (const c of (split || [])) out[c.type] = Math.round((c.fraction || 0) * 100);
+  return out;
 }
+function pctToSplit(pct) {
+  return ELEMENTS.filter(e => (pct[e] || 0) > 0)
+    .sort((a, b) => (pct[b] - pct[a]) || ELEMENTS.indexOf(a) - ELEMENTS.indexOf(b))
+    .map(e => ({ type: e, fraction: Math.round(pct[e]) / 100 }));
+}
+function snapshot(row) { return JSON.stringify([row.dmg, row.res]); }
 
 function classForVal(v) {
   if (v === 0 || v === null || v === undefined) return "r-zero";
@@ -213,11 +239,11 @@ function classForVal(v) {
 
 function buildHead() {
   const thead = document.querySelector("#grid thead");
+  const top = document.createElement("tr");
+  top.innerHTML = `<th colspan="4"></th><th class="grp dmg" colspan="${ELEMENTS.length + 1}">Damage %</th><th class="grp" colspan="${ELEMENTS.length}">Resistance</th>`;
   const cols = [
-    {key: "id", label: "Enemy ID"},
-    {key: "name", label: "Name"},
-    {key: "tier", label: "Tier"},
-    {key: "boss", label: "Type"},
+    {key: "id", label: "Enemy ID"}, {key: "name", label: "Name"}, {key: "tier", label: "Tier"}, {key: "boss", label: "Type"},
+    ...ELEMENTS.map(e => ({key: "d:" + e, label: e, cls: "dmg"})), {key: "d:sum", label: "sum", cls: "dmg"},
     ...ELEMENTS.map(e => ({key: e, label: e})),
   ];
   const tr = document.createElement("tr");
@@ -225,29 +251,24 @@ function buildHead() {
     const th = document.createElement("th");
     th.textContent = c.label;
     th.dataset.key = c.key;
+    if (c.cls) th.classList.add(c.cls);
     if (c.key === SORT_KEY) th.classList.add(SORT_DIR > 0 ? "sort-asc" : "sort-desc");
     th.addEventListener("click", () => {
       if (SORT_KEY === c.key) SORT_DIR = -SORT_DIR;
-      else { SORT_KEY = c.key; SORT_DIR = 1; }
+      else { SORT_KEY = c.key; SORT_DIR = c.key.startsWith("d:") || ELEMENTS.includes(c.key) ? -1 : 1; }
       buildHead();
       render();
     });
     tr.appendChild(th);
   });
-  thead.replaceChildren(tr);
+  thead.replaceChildren(top, tr);
 }
 
-function bossLabel(def) {
-  if (def.boss) return "boss";
-  return "";
-}
+function bossLabel(def) { return def.boss ? "boss" : ""; }
 
 function passesFilter(row) {
   const ftext = document.getElementById("filter-text").value.trim().toLowerCase();
-  if (ftext) {
-    const hay = (row.id + " " + (row.def.name || "")).toLowerCase();
-    if (!hay.includes(ftext)) return false;
-  }
+  if (ftext && !(row.id + " " + (row.def.name || "")).toLowerCase().includes(ftext)) return false;
   const show = document.getElementById("filter-show").value;
   const hasAny = ELEMENTS.some(e => (row.res[e] || 0) !== 0);
   if (show === "any-res" && !hasAny) return false;
@@ -256,159 +277,137 @@ function passesFilter(row) {
   if (show === "non-boss" && row.def.boss) return false;
   const tier = document.getElementById("filter-tier").value;
   if (tier !== "any" && String(row.def.tier || "") !== tier) return false;
+  const biome = document.getElementById("filter-biome").value;
+  if (biome !== "any" && !(BIOME_POOLS[biome] || []).includes(row.id)) return false;
   return true;
 }
 
+function sortVal(row, k) {
+  if (k === "id") return row.id;
+  if (k === "name") return row.def.name || row.id;
+  if (k === "tier") return row.def.tier || 0;
+  if (k === "boss") return row.def.boss ? 1 : 0;
+  if (k === "d:sum") return dmgSum(row);
+  if (k.startsWith("d:")) return row.dmg[k.slice(2)] || 0;
+  return row.res[k] || 0;
+}
 function compareRows(a, b) {
-  const k = SORT_KEY;
-  let av, bv;
-  if (k === "id") { av = a.id; bv = b.id; }
-  else if (k === "name") { av = a.def.name || a.id; bv = b.def.name || b.id; }
-  else if (k === "tier") { av = a.def.tier || 0; bv = b.def.tier || 0; }
-  else if (k === "boss") { av = a.def.boss ? 1 : 0; bv = b.def.boss ? 1 : 0; }
-  else { av = a.res[k] || 0; bv = b.res[k] || 0; }
+  const av = sortVal(a, SORT_KEY), bv = sortVal(b, SORT_KEY);
   if (av < bv) return -1 * SORT_DIR;
-  if (av > bv) return  1 * SORT_DIR;
-  // Stable secondary by id.
+  if (av > bv) return 1 * SORT_DIR;
   return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+}
+
+function cell(tr, text, cls) {
+  const td = document.createElement("td");
+  td.className = cls;
+  td.textContent = text;
+  tr.appendChild(td);
+  return td;
+}
+
+function numberCell(tr, row, el, kind) {
+  const td = document.createElement("td");
+  const val = kind === "dmg" ? (row.dmg[el] || 0) : (row.res[el] || 0);
+  td.className = kind === "dmg" ? "d-cell" : "r-cell " + classForVal(val);
+  const inp = document.createElement("input");
+  inp.type = "number";
+  inp.min = kind === "dmg" ? 0 : -100;
+  inp.max = kind === "dmg" ? 100 : 75;
+  inp.step = 5;
+  inp.value = val === 0 ? "" : val;
+  inp.placeholder = "0";
+  inp.dataset.elem = el;
+  inp.dataset.kind = kind;
+  inp.addEventListener("change", () => {
+    const store = kind === "dmg" ? row.dmg : row.res;
+    const v = kind === "dmg" ? clampDmg(parseInt(inp.value, 10)) : clampRes(parseInt(inp.value, 10));
+    if (v === 0) delete store[el]; else store[el] = v;
+    tr.replaceWith(rowElement(row));
+    updateStats();
+  });
+  td.appendChild(inp);
+  tr.appendChild(td);
+}
+
+function rowElement(row) {
+  const tr = document.createElement("tr");
+  tr.dataset.id = row.id;
+  if (snapshot(row) !== row.orig) tr.classList.add("changed");
+  cell(tr, row.id, "id-col");
+  cell(tr, row.def.name || "", "name-col");
+  cell(tr, "T" + (row.def.tier || "?"), "tier-col");
+  cell(tr, bossLabel(row.def), "boss-col");
+  for (const el of ELEMENTS) numberCell(tr, row, el, "dmg");
+  const sum = dmgSum(row);
+  cell(tr, String(sum), "d-sum" + (sum === 100 ? "" : " bad")).title = sum === 100 ? "" : "Damage must total 100";
+  for (const el of ELEMENTS) numberCell(tr, row, el, "res");
+  return tr;
 }
 
 function render() {
   const tbody = document.querySelector("#grid tbody");
-  const rows = ROWS.filter(passesFilter).sort(compareRows);
   const frag = document.createDocumentFragment();
-  for (const row of rows) {
-    const tr = document.createElement("tr");
-    tr.dataset.id = row.id;
-
-    const tdId = document.createElement("td");
-    tdId.className = "id-col";
-    tdId.textContent = row.id;
-    tr.appendChild(tdId);
-
-    const tdName = document.createElement("td");
-    tdName.className = "name-col";
-    tdName.textContent = row.def.name || "";
-    tr.appendChild(tdName);
-
-    const tdTier = document.createElement("td");
-    tdTier.className = "tier-col";
-    tdTier.textContent = "T" + (row.def.tier || "?");
-    tr.appendChild(tdTier);
-
-    const tdBoss = document.createElement("td");
-    tdBoss.className = "boss-col";
-    tdBoss.textContent = bossLabel(row.def);
-    tr.appendChild(tdBoss);
-
-    for (const el of ELEMENTS) {
-      const td = document.createElement("td");
-      td.className = "r-cell";
-      const val = row.res[el] || 0;
-      td.classList.add(classForVal(val));
-      const inp = document.createElement("input");
-      inp.type = "number";
-      inp.min = -100;
-      inp.max = 75;
-      inp.step = 5;
-      inp.value = val === 0 ? "" : val;
-      inp.placeholder = "0";
-      inp.dataset.elem = el;
-      inp.addEventListener("change", () => {
-        const v = clamp(parseInt(inp.value, 10));
-        if (v === 0) delete row.res[el]; else row.res[el] = v;
-        // Re-render this row only (cheaper than full rebuild on every keystroke).
-        for (const td2 of tr.querySelectorAll("td.r-cell")) {
-          td2.classList.remove("r-pos-1", "r-pos-2", "r-pos-3", "r-neg-1", "r-neg-2", "r-neg-3", "r-zero");
-        }
-        const newRow = renderRowCells(row);
-        tr.replaceWith(newRow);
-        updateStats();
-      });
-      td.appendChild(inp);
-      tr.appendChild(td);
-    }
-
-    frag.appendChild(tr);
-  }
+  for (const row of ROWS.filter(passesFilter).sort(compareRows)) frag.appendChild(rowElement(row));
   tbody.replaceChildren(frag);
   updateStats();
 }
 
-function renderRowCells(row) {
-  const tr = document.createElement("tr");
-  tr.dataset.id = row.id;
-  const tdId = document.createElement("td");
-  tdId.className = "id-col";
-  tdId.textContent = row.id;
-  tr.appendChild(tdId);
-  const tdName = document.createElement("td");
-  tdName.className = "name-col";
-  tdName.textContent = row.def.name || "";
-  tr.appendChild(tdName);
-  const tdTier = document.createElement("td");
-  tdTier.className = "tier-col";
-  tdTier.textContent = "T" + (row.def.tier || "?");
-  tr.appendChild(tdTier);
-  const tdBoss = document.createElement("td");
-  tdBoss.className = "boss-col";
-  tdBoss.textContent = bossLabel(row.def);
-  tr.appendChild(tdBoss);
-  for (const el of ELEMENTS) {
-    const td = document.createElement("td");
-    td.className = "r-cell";
-    const val = row.res[el] || 0;
-    td.classList.add(classForVal(val));
-    const inp = document.createElement("input");
-    inp.type = "number";
-    inp.min = -100;
-    inp.max = 75;
-    inp.step = 5;
-    inp.value = val === 0 ? "" : val;
-    inp.placeholder = "0";
-    inp.dataset.elem = el;
-    inp.addEventListener("change", () => {
-      const v = clamp(parseInt(inp.value, 10));
-      if (v === 0) delete row.res[el]; else row.res[el] = v;
-      const newRow = renderRowCells(row);
-      tr.replaceWith(newRow);
-      updateStats();
-    });
-    td.appendChild(inp);
-    tr.appendChild(td);
-  }
-  return tr;
+function updateStats() {
+  const changed = ROWS.filter(r => snapshot(r) !== r.orig).length;
+  const bad = ROWS.filter(r => dmgSum(r) !== 100).length;
+  document.getElementById("stats").textContent =
+    `${ROWS.length} enemies · ${changed} changed` + (bad ? ` · ${bad} damage rows don't total 100` : "");
+  const biome = document.getElementById("filter-biome").value;
+  const mix = document.getElementById("mix");
+  if (biome === "any") { mix.textContent = "Pick a biome to see its overall damage mix."; return; }
+  const pool = (BIOME_POOLS[biome] || []).map(id => ROWS.find(r => r.id === id)).filter(Boolean);
+  const tot = {};
+  for (const r of pool) for (const e of ELEMENTS) tot[e] = (tot[e] || 0) + (r.dmg[e] || 0);
+  const parts = ELEMENTS.filter(e => tot[e] > 0).sort((a, b) => tot[b] - tot[a])
+    .map(e => `<b>${e}</b> ${Math.round(tot[e] / Math.max(1, pool.length))}%`);
+  mix.innerHTML = `${biome} (${pool.length} enemies) deals: ${parts.join(" · ")}`;
 }
 
-function updateStats() {
-  const total = ROWS.length;
-  const withRes = ROWS.filter(r => ELEMENTS.some(e => (r.res[e] || 0) !== 0)).length;
-  document.getElementById("stats").textContent =
-    `${withRes}/${total} enemies have resistances set.`;
+function changesDoc() {
+  const out = {};
+  for (const row of ROWS) {
+    if (snapshot(row) === row.orig) continue;
+    const res = {};
+    for (const k of Object.keys(row.res).sort()) if (row.res[k]) res[k] = row.res[k];
+    out[row.id] = { damage: pctToSplit(row.dmg).reduce((o, c) => (o[c.type] = Math.round(c.fraction * 100), o), {}), resistances: res };
+  }
+  return out;
+}
+
+async function copyChanges() {
+  const doc = changesDoc();
+  const n = Object.keys(doc).length;
+  if (!n) { document.getElementById("stats").textContent = "No changes to copy yet."; return; }
+  const text = JSON.stringify(doc, null, 2);
+  try { await navigator.clipboard.writeText(text); document.getElementById("stats").textContent = `Copied ${n} changed enemies. Paste them back to Claude.`; }
+  catch (e) { window.prompt("Copy these changes:", text); }
 }
 
 function exportJSON() {
-  // Deep-copy the on-disk doc, then stamp the edited resistance dicts
-  // back in. Empty dicts get dropped so the JSON stays compact.
+  if (ROWS.some(r => dmgSum(r) !== 100)) {
+    document.getElementById("stats").textContent = "Fix the damage rows that don't total 100 before exporting.";
+    return;
+  }
+  // Deep-copy the on-disk doc, then stamp the edited dicts back in.
   const out = JSON.parse(JSON.stringify(RAW_DOC));
   for (const row of ROWS) {
+    if (snapshot(row) === row.orig) continue;
     const clean = {};
-    for (const el of ELEMENTS) {
-      const v = row.res[el] || 0;
-      if (v !== 0) clean[el] = v;
-    }
-    if (Object.keys(clean).length > 0) {
-      out[row.id] = out[row.id] || {};
-      // Sort keys to keep the diff stable across runs.
-      const sorted = {};
-      for (const k of Object.keys(clean).sort()) sorted[k] = clean[k];
-      out[row.id].resistances = sorted;
-    } else if (out[row.id]) {
-      delete out[row.id].resistances;
-    }
+    for (const k of Object.keys(row.res).sort()) if (row.res[k]) clean[k] = row.res[k];
+    if (Object.keys(clean).length > 0) out[row.id].resistances = clean;
+    else delete out[row.id].resistances;
+    out[row.id].damage_split = pctToSplit(row.dmg);
   }
-  // Match the existing file: 2-space indent, no trailing newline.
-  const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+  // Match the existing file: 2-space indent, no trailing newline, and the keys
+  // Python writes as floats keep their ".0" (JS would print 1.0 as 1).
+  const text = JSON.stringify(out, null, 2).replace(/("(?:fraction|speed|visual_scale)": -?\d+)(,?)$/gm, "$1.0$2");
+  const blob = new Blob([text], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
@@ -426,17 +425,26 @@ async function init() {
     return;
   }
   RAW_DOC = await r.json();
-  ROWS = Object.keys(RAW_DOC).map(id => ({
-    id,
-    def: RAW_DOC[id],
-    res: { ...(RAW_DOC[id].resistances || {}) },
-  }));
+  try {
+    const b = await (await fetch(BIOMES_URL)).json();
+    const biomes = b.biomes || b;
+    for (const [id, def] of Object.entries(Array.isArray(biomes) ? Object.fromEntries(biomes.map(x => [x.id, x])) : biomes)) {
+      if (def && Array.isArray(def.enemy_pool) && def.enemy_pool.length) BIOME_POOLS[id] = def.enemy_pool;
+    }
+  } catch (e) { console.warn("biomes.json:", e); }
+  const sel = document.getElementById("filter-biome");
+  for (const id of Object.keys(BIOME_POOLS).sort()) sel.add(new Option(id, id));
+  ROWS = Object.keys(RAW_DOC).map(id => {
+    const row = { id, def: RAW_DOC[id], res: { ...(RAW_DOC[id].resistances || {}) }, dmg: splitToPct(RAW_DOC[id].damage_split) };
+    row.orig = snapshot(row);
+    return row;
+  });
   buildHead();
   render();
-  document.getElementById("filter-text").addEventListener("input", render);
-  document.getElementById("filter-show").addEventListener("change", render);
-  document.getElementById("filter-tier").addEventListener("change", render);
+  for (const id of ["filter-text"]) document.getElementById(id).addEventListener("input", render);
+  for (const id of ["filter-show", "filter-tier", "filter-biome"]) document.getElementById(id).addEventListener("change", render);
   document.getElementById("btn-export").addEventListener("click", exportJSON);
+  document.getElementById("btn-copy").addEventListener("click", copyChanges);
 }
 
 init();
