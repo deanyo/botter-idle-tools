@@ -2309,7 +2309,9 @@
         "stone_giant",
         "ettin",
         "minotaur",
-        "ancient_lich"
+        "ancient_lich",
+        "blue_devil",
+        "cacodemon"
       ],
       "vault_themes": [
         "dungeon",

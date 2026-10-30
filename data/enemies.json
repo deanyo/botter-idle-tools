@@ -1274,11 +1274,11 @@
     "damage_split": [
       {
         "type": "physical",
-        "fraction": 0.8
+        "fraction": 0.6
       },
       {
         "type": "lightning",
-        "fraction": 0.2
+        "fraction": 0.4
       }
     ]
   },
@@ -2491,7 +2491,11 @@
     "damage_split": [
       {
         "type": "physical",
-        "fraction": 1.0
+        "fraction": 0.6
+      },
+      {
+        "type": "lightning",
+        "fraction": 0.4
       }
     ]
   },
@@ -2648,11 +2652,11 @@
     "damage_split": [
       {
         "type": "lightning",
-        "fraction": 0.6
+        "fraction": 0.7
       },
       {
         "type": "physical",
-        "fraction": 0.4
+        "fraction": 0.3
       }
     ]
   },

@@ -8658,7 +8658,7 @@
   "flavor_tags": {
     "fire": "On hit, burns target for 12% of its max HP over 3 seconds.",
     "cold": "15% chance to freeze; +20% damage vs frozen.",
-    "lightning": "On hit, splash 50% to one adjacent enemy.",
+    "lightning": "On hit, arc 30% of the damage to a nearby enemy as lightning.",
     "holy": "+30% damage vs undead and demons.",
     "poison": "On hit, poisons target for 12% of its max HP over 4 seconds.",
     "dark": "+25% damage vs paladins, angels and clerics.",

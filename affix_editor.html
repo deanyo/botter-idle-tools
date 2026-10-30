@@ -263,11 +263,6 @@ async function load() {
       knownStats.add(a.stat);
     }
   }
-  // Forward-compat: ensure `color` field on affixes loaded from older
-  // saves so the color picker has something to bind to.
-  for (const a of doc.affixes) {
-    if (!a.color) a.color = rarityHexForStat(a.stat);
-  }
   renderList();
   if (doc.affixes.length) selectAffix(doc.affixes[0].id);
 }
@@ -381,7 +376,7 @@ function renderList() {
     const g = affixGroup(a);
     const famPill = g === "rolls" ? "" : `<span style="display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;background:#666;color:white;margin-right:4px;">${g}</span>`;
     row.innerHTML = `
-      <div class="name" style="color: ${a.color || rarityHexForStat(a.stat)}">${famPill}${escapeHtml(a.name || a.id)}</div>
+      <div class="name" style="color: ${rarityHexForStat(a.stat)}">${famPill}${escapeHtml(a.name || a.id)}</div>
       <div class="meta">${escapeHtml(a.stat)} · ${a.kind || 'flat'} — ${tierStr}</div>
     `;
     root.appendChild(row);
@@ -418,11 +413,6 @@ function renderEditor() {
       <select id="f-stat">
         ${STATS.map(s => `<option value="${s.id}" ${s.id === a.stat ? "selected" : ""}>${escapeHtml(s.label)}</option>`).join("")}
       </select>
-      <label>Color</label>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <input id="f-color" type="color" value="${escapeAttr(a.color || rarityHexForStat(a.stat))}">
-        <span class="help">Drives item-card tint when this affix appears on a piece of gear.</span>
-      </div>
       <label>Applies to</label>
       <input id="f-applies" type="text" value="${escapeAttr((a.applies_to || ['any']).join(', '))}">
       <label>Base types <span class="help" style="margin-left:6px">blank = any; restricts a behaviour affix to the archetype(s) whose _fire_* body reads its flag</span></label>
@@ -458,7 +448,7 @@ function renderEditor() {
 
     <div class="preview-card">
       <h3>Preview</h3>
-      <div class="preview-name" id="p-name" style="color: ${a.color || rarityHexForStat(a.stat)}">${escapeHtml(a.name || a.id)}</div>
+      <div class="preview-name" id="p-name" style="color: ${rarityHexForStat(a.stat)}">${escapeHtml(a.name || a.id)}</div>
       <div class="preview-tier-line" id="p-tiers"></div>
       <div class="footer-meta">Stat: <span id="p-stat">${escapeHtml(a.stat)}</span> · applies to <span id="p-applies">${escapeHtml((a.applies_to || ['any']).join(', '))}</span></div>
     </div>
@@ -474,11 +464,7 @@ function renderEditor() {
   document.getElementById("f-name").oninput = () => mutate(a, "name", document.getElementById("f-name").value);
   document.getElementById("f-stat").onchange = () => {
     mutate(a, "stat", document.getElementById("f-stat").value);
-    // If color was the default for the old stat, slide to the new stat's default.
-    document.getElementById("f-color").value = rarityHexForStat(a.stat);
-    mutate(a, "color", document.getElementById("f-color").value);
   };
-  document.getElementById("f-color").oninput = () => mutate(a, "color", document.getElementById("f-color").value);
   document.getElementById("f-applies").oninput = () => {
     const list = document.getElementById("f-applies").value.split(",").map(s => s.trim()).filter(Boolean);
     mutate(a, "applies_to", list.length ? list : ["any"]);
@@ -523,7 +509,7 @@ function refreshPreview() {
   const applies = document.getElementById("p-applies");
   if (name) {
     name.textContent = a.name || a.id;
-    name.style.color = a.color || rarityHexForStat(a.stat);
+    name.style.color = rarityHexForStat(a.stat);
   }
   if (tiers) {
     const t = a.tiers || [[0,0],[0,0],[0,0],[0,0],[0,0]];
