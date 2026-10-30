@@ -975,7 +975,7 @@
     },
     {
       "id": "halo_of_ascension",
-      "name": "Halo of Ascension",
+      "name": "Ascendant Halo",
       "slot": "helm",
       "rarity": "epic",
       "tile": "helmet_art_3.png",
@@ -1020,7 +1020,7 @@
     },
     {
       "id": "hat_of_pondering",
-      "name": "Hat of Pondering",
+      "name": "Thinking Cap",
       "slot": "helm",
       "rarity": "legendary",
       "tile": "urand_pondering_new.png",
@@ -1067,22 +1067,22 @@
       "id": "cornuthaum",
       "name": "Cornuthaum",
       "slot": "helm",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "cornuthaum.png",
       "base_type": "wizard_hat",
       "armor": 24,
       "evasion": 18,
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "The Wizard's Hat. The W is implied.",
       "drop_weights": [
         0,
         0,
-        0,
-        4,
-        22
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_wisdom",
@@ -1109,24 +1109,24 @@
     },
     {
       "id": "helm_of_the_dragon",
-      "name": "Helm of the Dragon",
+      "name": "Dragonhelm",
       "slot": "helm",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_dragonmask.png",
       "base_type": "great_helm",
       "armor": 24,
       "evasion": 18,
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Worn by the last knight to challenge the wyrm. Briefly worn by the wyrm afterward.",
       "drop_weights": [
         0,
         0,
-        0,
-        5,
-        25
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_pyromancer",
@@ -1158,7 +1158,7 @@
     },
     {
       "id": "crown_of_dyrovepreva",
-      "name": "Crown of Dyrovepreva",
+      "name": "Dyrovepreva's Crown",
       "slot": "helm",
       "rarity": "legendary",
       "tile": "urand_dyrovepreva_new.png",
@@ -1203,7 +1203,7 @@
     },
     {
       "id": "helm_of_high_council",
-      "name": "Helm of the High Council",
+      "name": "High Councillor's Helm",
       "slot": "helm",
       "rarity": "legendary",
       "tile": "urand_high_council.png",
@@ -1340,7 +1340,7 @@
     },
     {
       "id": "ego_visor",
-      "name": "Visor of the Watchman",
+      "name": "Watchman's Visor",
       "slot": "helm",
       "rarity": "epic",
       "tile": "helmet_ego_2.png",
@@ -1389,7 +1389,7 @@
     },
     {
       "id": "ego_thane",
-      "name": "Helm of the Thane",
+      "name": "Thane's Helm",
       "slot": "helm",
       "rarity": "epic",
       "tile": "helmet_ego_3.png",
@@ -1440,7 +1440,7 @@
     },
     {
       "id": "ego_warden",
-      "name": "Helm of the Warden",
+      "name": "Warden's Helm",
       "slot": "helm",
       "rarity": "epic",
       "tile": "helmet_ego_4.png",
@@ -1489,7 +1489,7 @@
     },
     {
       "id": "wizard_hat_2",
-      "name": "Hat of the Archmage",
+      "name": "Archmage's Hat",
       "slot": "helm",
       "rarity": "epic",
       "tile": "wizard_hat_2.png",
@@ -1595,7 +1595,7 @@
         "of_resonance": 12,
         "of_crit": 12,
         "of_shadows": 26,
-        "of_dark_resist": 18,
+        "of_dark_resist": 28,
         "of_executioner": 8,
         "of_arcane_flow": 4,
         "of_thrift": 4,
@@ -1634,59 +1634,6 @@
       "tile": "green_mask.png",
       "unique": false,
       "recolor_of": "green_mask"
-    },
-    {
-      "affix_pool": {
-        "of_might": 28,
-        "of_finesse": 28,
-        "of_wisdom": 18,
-        "of_vitality": 18,
-        "of_the_bear": 22,
-        "of_the_cat": 14,
-        "of_damage": 12,
-        "of_quickcast": 12,
-        "of_resonance": 12,
-        "of_crit": 12,
-        "of_shadows": 22,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_thrift": 3,
-        "of_item_rarity": 5,
-        "of_growth": 4
-      },
-      "armor": 24,
-      "base_type": "crown",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.95,
-          0.92,
-          0.78
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 18,
-      "flavor_tags": [],
-      "id": "crown_of_dyrovepreva_bone",
-      "implicit_affixes": [
-        "of_growth"
-      ],
-      "item_tier": 5,
-      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
-      "name": "Bone Crown of Dyrovepreva",
-      "rarity": "legendary",
-      "slot": "helm",
-      "tile": "urand_dyrovepreva_new.png",
-      "unique": true
     },
     {
       "affix_pool": {
@@ -1761,60 +1708,6 @@
         "of_item_rarity": 5,
         "of_growth": 4
       },
-      "armor": 24,
-      "base_type": "wizard_hat",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.95,
-          0.92,
-          0.78
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 18,
-      "flavor_tags": [],
-      "id": "hat_of_pondering_bone",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_regen"
-      ],
-      "item_tier": 5,
-      "lore": "Shaped from the long bones of something old. It still aches in the cold.",
-      "name": "Bone Hat of Pondering",
-      "rarity": "legendary",
-      "slot": "helm",
-      "tile": "urand_pondering_new.png",
-      "unique": true
-    },
-    {
-      "affix_pool": {
-        "of_might": 28,
-        "of_finesse": 28,
-        "of_wisdom": 18,
-        "of_vitality": 18,
-        "of_the_bear": 22,
-        "of_the_cat": 14,
-        "of_damage": 12,
-        "of_quickcast": 12,
-        "of_resonance": 12,
-        "of_crit": 12,
-        "of_shadows": 22,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_thrift": 3,
-        "of_item_rarity": 5,
-        "of_growth": 4
-      },
       "armor": 10,
       "base_type": "wizard_hat",
       "default_tint": {
@@ -1850,65 +1743,6 @@
       "slot": "helm",
       "tile": "wizard_hat_1.png",
       "unique": false
-    },
-    {
-      "affix_pool": {
-        "of_might": 14,
-        "of_finesse": 14,
-        "of_wisdom": 18,
-        "of_vitality": 36,
-        "of_the_bear": 44,
-        "of_the_cat": 14,
-        "of_damage": 12,
-        "of_quickcast": 12,
-        "of_resonance": 12,
-        "of_crit": 12,
-        "of_shadows": 22,
-        "of_dark_resist": 18,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_thrift": 3,
-        "of_item_rarity": 5,
-        "of_growth": 4
-      },
-      "armor": 24,
-      "base_type": "crown",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.15,
-          0.13,
-          0.18
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 18,
-      "flavor_tags": [
-        "dark"
-      ],
-      "id": "crown_of_dyrovepreva_obsidian",
-      "implicit_affixes": [
-        "of_nightcaller",
-        "of_dark_resist",
-        "of_growth"
-      ],
-      "item_tier": 5,
-      "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
-      "name": "Obsidian Crown of Dyrovepreva",
-      "rarity": "legendary",
-      "slot": "helm",
-      "tile": "urand_dyrovepreva_new.png",
-      "unique": true,
-      "recolor_of": "crown_of_dyrovepreva"
     },
     {
       "id": "minotaur_horn_helm",
@@ -2026,7 +1860,8 @@
         "of_arcane_flow": 1,
         "of_thrift": 1,
         "of_item_rarity": 5,
-        "of_growth": 4
+        "of_growth": 4,
+        "of_fire_resist": 18
       },
       "default_tint": {
         "hue": 0,
@@ -2166,7 +2001,7 @@
     },
     {
       "id": "crypt_bone_helm",
-      "name": "Helm of the Bone Chamber",
+      "name": "Bone Chamber Helm",
       "slot": "helm",
       "rarity": "legendary",
       "tile": "helm_crested.png",
@@ -2197,7 +2032,8 @@
         "of_poison_resist": 8,
         "of_arcane_flow": 1,
         "of_item_rarity": 5,
-        "of_growth": 4
+        "of_growth": 4,
+        "of_dark_resist": 16
       },
       "vault_drop": "crypt_bone_chamber_5x5"
     },
@@ -2394,7 +2230,7 @@
         3,
         18
       ],
-      "unique": false,
+      "unique": true,
       "armor": 5,
       "evasion": 18,
       "implicit_affixes": [

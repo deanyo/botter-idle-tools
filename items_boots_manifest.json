@@ -384,7 +384,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_lightning_resist": 26
       },
       "default_tint": {
         "hue": 220,
@@ -599,7 +600,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_lightning_resist": 26
       },
       "default_tint": {
         "hue": 30,
@@ -651,7 +653,7 @@
     },
     {
       "id": "march_of_kings",
-      "name": "March of Kings",
+      "name": "Kingsmarch Greaves",
       "slot": "boots",
       "rarity": "epic",
       "tile": "boots_iron_2.png",
@@ -733,7 +735,7 @@
     },
     {
       "id": "treads_apocalypse",
-      "name": "Treads of Apocalypse",
+      "name": "Apocalypse Treads",
       "slot": "boots",
       "rarity": "legendary",
       "tile": "boots_iron_2.png",
@@ -769,7 +771,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_lightning_resist": 26
       },
       "default_tint": {
         "hue": 0,
@@ -833,7 +836,7 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 22,
-        "of_holy_resist": 22,
+        "of_holy_resist": 30,
         "of_avarice": 5,
         "of_swiftness": 4
       },
@@ -881,7 +884,7 @@
         "of_the_cat": 26,
         "of_haste": 26,
         "of_regen": 10,
-        "of_dark_resist": 22,
+        "of_dark_resist": 26,
         "of_avarice": 5,
         "of_swiftness": 4
       },
@@ -1020,7 +1023,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_lightning_resist": 46
       },
       "armor": 11,
       "base_type": "treads",
@@ -1177,7 +1181,8 @@
         "of_haste": 26,
         "of_regen": 10,
         "of_avarice": 5,
-        "of_swiftness": 4
+        "of_swiftness": 4,
+        "of_lightning_resist": 26
       },
       "default_tint": {
         "hue": 110,

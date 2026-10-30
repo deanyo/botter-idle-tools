@@ -171,6 +171,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -191,7 +192,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -224,6 +229,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -244,7 +250,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -277,6 +287,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -297,7 +308,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -332,6 +347,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -352,7 +368,11 @@
         "of_arcane_flow": 6,
         "of_item_rarity": 5,
         "of_avarice": 5,
-        "of_growth": 4
+        "of_growth": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -387,6 +407,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -407,7 +428,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -442,6 +467,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -462,7 +488,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -497,6 +527,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -517,7 +548,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -553,6 +588,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -573,7 +609,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -609,6 +649,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -629,7 +670,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -665,6 +710,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -685,7 +731,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -721,6 +771,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -741,7 +792,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -777,6 +832,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -797,7 +853,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -833,6 +893,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -853,7 +914,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -889,6 +954,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -909,7 +975,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -945,6 +1015,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -965,7 +1036,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1001,6 +1076,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1021,7 +1097,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1056,6 +1136,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1076,7 +1157,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1113,6 +1198,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1133,7 +1219,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1171,6 +1261,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1191,7 +1282,11 @@
         "of_arcane_flow": 8,
         "of_item_rarity": 5,
         "of_avarice": 5,
-        "of_growth": 4
+        "of_growth": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1227,6 +1322,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1247,7 +1343,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1284,6 +1384,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1304,7 +1405,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1341,6 +1446,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1361,7 +1467,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1397,6 +1507,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1417,27 +1528,31 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
       "id": "octoring",
       "name": "The Octoring",
       "slot": "ring",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_octoring.png",
       "base_type": "ring_magic",
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Eight in one. Or one in eight. Depends who's counting.",
       "drop_weights": [
         0,
         0,
-        0,
-        5,
-        25
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_arcane_flow",
@@ -1455,6 +1570,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1475,27 +1591,31 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
       "id": "robustness_ring",
-      "name": "Ring of Robustness",
+      "name": "Stalwart Ring",
       "slot": "ring",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_robustness.png",
       "base_type": "ring_protection",
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Thick. Indelicate. Effective.",
       "drop_weights": [
         0,
         0,
-        0,
-        5,
-        25
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_vitality",
@@ -1512,6 +1632,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1532,27 +1653,31 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
       "id": "shadows_ring",
-      "name": "Ring of Shadows",
+      "name": "Shadowband",
       "slot": "ring",
-      "rarity": "legendary",
+      "rarity": "rare",
       "tile": "urand_shadows_new.png",
       "base_type": "ring_stealth",
-      "item_tier": 5,
+      "item_tier": 3,
       "flavor_tags": [],
       "lore": "The wearer's shadow does not always follow.",
       "drop_weights": [
         0,
-        0,
-        0,
-        4,
-        22
+        15,
+        40,
+        30,
+        5
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_shadows"
@@ -1567,6 +1692,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1587,7 +1713,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1624,6 +1754,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1644,27 +1775,31 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
       "id": "mage_ring",
-      "name": "Ring of the Mage",
+      "name": "Seer's Ring",
       "slot": "ring",
-      "rarity": "legendary",
+      "rarity": "uncommon",
       "tile": "urand_mage.png",
       "base_type": "ring_magic",
-      "item_tier": 5,
+      "item_tier": 2,
       "flavor_tags": [],
       "lore": "Drained of one mage's worth of magic. Now full of yours.",
       "drop_weights": [
-        0,
-        0,
-        0,
-        4,
-        20
+        10,
+        40,
+        30,
+        5,
+        0
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_wisdom"
@@ -1679,6 +1814,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1699,7 +1835,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1734,6 +1874,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1754,7 +1895,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1791,6 +1936,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1811,7 +1957,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1846,6 +1996,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1866,7 +2017,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1903,6 +2058,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1923,7 +2079,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -1959,6 +2119,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -1979,12 +2140,16 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
       "id": "ring_of_flight",
-      "name": "Ring of Flight",
+      "name": "Wingband",
       "slot": "ring",
       "rarity": "epic",
       "tile": "ring_gold_white.png",
@@ -2014,6 +2179,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2034,7 +2200,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -2048,6 +2218,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2068,7 +2239,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_flight",
       "default_tint": {
@@ -2091,7 +2266,7 @@
       ],
       "item_tier": 4,
       "lore": "Verdigris-greened copper that crackles when storms approach.",
-      "name": "Coppersworn Ring of Flight",
+      "name": "Coppersworn Wingband",
       "rarity": "epic",
       "slot": "ring",
       "tile": "ring_gold_white.png",
@@ -2108,6 +2283,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2122,14 +2298,18 @@
         "of_haste": 16,
         "of_lifesteal": 10,
         "of_regen": 24,
-        "of_poison_resist": 22,
+        "of_poison_resist": 36,
         "of_executioner": 8,
         "of_arcane_flow": 3,
         "of_arcane_pool": 3,
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_evasion",
       "default_tint": {
@@ -2164,67 +2344,6 @@
     {
       "affix_pool": {
         "of_might": 16,
-        "of_finesse": 34,
-        "of_wisdom": 16,
-        "of_vitality": 14,
-        "of_quickcast": 28,
-        "of_resonance": 26,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_damage": 18,
-        "of_embers": 10,
-        "of_frost": 10,
-        "of_storms": 10,
-        "of_devotion": 8,
-        "of_venom": 8,
-        "of_shadows": 8,
-        "of_fire_resist": 8,
-        "of_cold_resist": 8,
-        "of_lightning_resist": 8,
-        "of_crit": 16,
-        "of_haste": 16,
-        "of_lifesteal": 10,
-        "of_regen": 10,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_growth": 4,
-        "of_abundance": 4
-      },
-      "base_type": "ring_magic",
-      "default_tint": {
-        "hue": 261.7,
-        "mode": "inverted",
-        "sat": 0.901
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [],
-      "id": "octoring_inverse",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_abundance"
-      ],
-      "item_tier": 5,
-      "lore": "Looking at it too long inverts what you saw before.",
-      "name": "Inverse The Octoring",
-      "rarity": "legendary",
-      "slot": "ring",
-      "tile": "urand_octoring.png",
-      "unique": true
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
         "of_finesse": 16,
         "of_wisdom": 16,
         "of_vitality": 14,
@@ -2233,6 +2352,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 45,
@@ -2241,7 +2361,7 @@
         "of_venom": 8,
         "of_shadows": 8,
         "of_fire_resist": 8,
-        "of_cold_resist": 30,
+        "of_cold_resist": 45,
         "of_lightning_resist": 8,
         "of_crit": 31,
         "of_haste": 16,
@@ -2253,7 +2373,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_strength",
       "default_tint": {
@@ -2298,6 +2422,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2312,14 +2437,18 @@
         "of_haste": 16,
         "of_lifesteal": 10,
         "of_regen": 10,
-        "of_dark_resist": 18,
+        "of_dark_resist": 34,
         "of_executioner": 8,
         "of_arcane_flow": 3,
         "of_arcane_pool": 3,
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_regen",
       "default_tint": {
@@ -2354,140 +2483,6 @@
     },
     {
       "affix_pool": {
-        "of_might": 30,
-        "of_finesse": 16,
-        "of_wisdom": 16,
-        "of_vitality": 36,
-        "of_quickcast": 14,
-        "of_resonance": 12,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_damage": 14,
-        "of_embers": 10,
-        "of_frost": 10,
-        "of_storms": 10,
-        "of_devotion": 8,
-        "of_venom": 8,
-        "of_shadows": 8,
-        "of_fire_resist": 8,
-        "of_cold_resist": 8,
-        "of_lightning_resist": 8,
-        "of_crit": 16,
-        "of_haste": 16,
-        "of_lifesteal": 10,
-        "of_regen": 10,
-        "of_sharpness": 14,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_growth": 4,
-        "of_abundance": 4
-      },
-      "base_type": "ring_magic",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.55,
-          0.58,
-          0.62
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [],
-      "id": "mage_ring_ironclad",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_lightning_resist"
-      ],
-      "item_tier": 5,
-      "lore": "Plain forged iron, but heavier than the metal alone explains.",
-      "name": "Ironclad Ring of the Mage",
-      "rarity": "legendary",
-      "slot": "ring",
-      "tile": "urand_mage.png",
-      "unique": true,
-      "recolor_of": "mage_ring"
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 16,
-        "of_wisdom": 16,
-        "of_vitality": 14,
-        "of_quickcast": 14,
-        "of_resonance": 12,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_damage": 28,
-        "of_embers": 10,
-        "of_frost": 10,
-        "of_storms": 10,
-        "of_devotion": 8,
-        "of_venom": 8,
-        "of_shadows": 38,
-        "of_fire_resist": 8,
-        "of_cold_resist": 8,
-        "of_lightning_resist": 8,
-        "of_crit": 16,
-        "of_haste": 16,
-        "of_lifesteal": 10,
-        "of_regen": 10,
-        "of_dark_resist": 22,
-        "of_executioner": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_growth": 4,
-        "of_abundance": 4
-      },
-      "base_type": "ring_magic",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.25,
-          0.2,
-          0.3
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [],
-      "id": "mage_ring_umbral",
-      "implicit_affixes": [
-        "of_wisdom"
-      ],
-      "item_tier": 5,
-      "lore": "The dark that settles on it cannot be polished off.",
-      "name": "Umbral Ring of the Mage",
-      "rarity": "legendary",
-      "slot": "ring",
-      "tile": "urand_mage.png",
-      "unique": true
-    },
-    {
-      "affix_pool": {
         "of_might": 34,
         "of_finesse": 16,
         "of_wisdom": 16,
@@ -2497,6 +2492,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 45,
         "of_frost": 10,
@@ -2504,7 +2500,7 @@
         "of_devotion": 8,
         "of_venom": 8,
         "of_shadows": 8,
-        "of_fire_resist": 26,
+        "of_fire_resist": 45,
         "of_cold_resist": 8,
         "of_lightning_resist": 8,
         "of_crit": 16,
@@ -2517,7 +2513,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_stealth",
       "default_tint": {
@@ -2561,6 +2561,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2575,14 +2576,18 @@
         "of_haste": 16,
         "of_lifesteal": 10,
         "of_regen": 10,
-        "of_dark_resist": 18,
+        "of_dark_resist": 32,
         "of_executioner": 8,
         "of_arcane_flow": 4,
         "of_arcane_pool": 4,
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -2632,6 +2637,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2652,7 +2658,12 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2,
+        "of_poison_resist": 34
       },
       "base_type": "ring_dexterity",
       "default_tint": {
@@ -2719,7 +2730,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 90,
@@ -2762,7 +2777,12 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2,
+        "of_cold_resist": 16
       }
     },
     {
@@ -2799,7 +2819,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       }
     },
     {
@@ -2835,7 +2859,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "boss_drop": "boss_frederick",
       "biome_pool": [
@@ -2844,24 +2872,24 @@
     },
     {
       "id": "shoals_tide_ring",
-      "name": "Ring of the Tide Pool",
+      "name": "Tide Pool Ring",
       "slot": "ring",
-      "rarity": "legendary",
+      "rarity": "rare",
       "tile": "ring_black_onyx.png",
       "base_type": "ring",
-      "item_tier": 5,
+      "item_tier": 3,
       "flavor_tags": [
         "cold"
       ],
       "lore": "Dropped in the pool by an aquatic visitor; salt does not weather it.",
       "drop_weights": [
         0,
-        0,
-        0,
-        0,
-        0
+        15,
+        40,
+        30,
+        5
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_finesse",
@@ -2875,11 +2903,15 @@
         "of_velocity": 8,
         "of_damage": 8,
         "of_lightning_resist": 8,
-        "of_cold_resist": 8,
+        "of_cold_resist": 14,
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "vault_drop": "shoals_tide_pool_5x5"
     },
@@ -2918,6 +2950,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -2938,7 +2971,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 342,
@@ -2981,6 +3018,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_damage": 14,
         "of_embers": 10,
         "of_frost": 10,
@@ -3001,7 +3039,11 @@
         "of_item_rarity": 5,
         "of_avarice": 5,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 130,

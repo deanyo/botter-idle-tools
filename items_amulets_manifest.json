@@ -155,6 +155,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -169,7 +170,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -202,6 +208,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -216,7 +223,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -251,6 +263,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -265,7 +278,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -300,6 +318,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -314,7 +333,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -349,6 +373,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -363,7 +388,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -398,6 +428,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -412,12 +443,17 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "celtic_red",
-      "name": "Knot of the Faithful",
+      "name": "Faithful Knot",
       "slot": "amulet",
       "rarity": "rare",
       "tile": "celtic_red.png",
@@ -449,6 +485,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -463,7 +500,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -499,6 +541,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -513,7 +556,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -549,6 +597,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -563,7 +612,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -599,6 +653,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -613,7 +668,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -648,6 +708,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -662,12 +723,17 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "penta_orange",
-      "name": "Pentacle of Wrath",
+      "name": "Wrath Pentacle",
       "slot": "amulet",
       "rarity": "rare",
       "tile": "penta_orange.png",
@@ -698,6 +764,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -712,7 +779,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -751,6 +823,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -765,7 +838,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -801,6 +879,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -815,7 +894,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -851,6 +935,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -865,7 +950,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -900,6 +990,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -914,12 +1005,17 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "crystal_white",
-      "name": "Pearl of Vitality",
+      "name": "Heartpearl",
       "slot": "amulet",
       "rarity": "epic",
       "tile": "crystal_white.png",
@@ -950,6 +1046,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -964,12 +1061,17 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "penta_green",
-      "name": "Sigil of the Last Line",
+      "name": "Last Line Sigil",
       "slot": "amulet",
       "rarity": "epic",
       "tile": "penta_green.png",
@@ -999,6 +1101,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1013,7 +1116,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -1051,6 +1159,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1065,27 +1174,32 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "amulet_of_vitality",
-      "name": "Amulet of Vitality",
+      "name": "Heartcharm",
       "slot": "amulet",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_vitality.png",
       "base_type": "amulet_vitality",
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Worn by those who refused to fall.",
       "drop_weights": [
         0,
         0,
-        0,
-        5,
-        25
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_vitality",
@@ -1102,6 +1216,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1116,27 +1231,32 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "amulet_of_air",
-      "name": "Amulet of Air",
+      "name": "Windcharm",
       "slot": "amulet",
-      "rarity": "legendary",
+      "rarity": "rare",
       "tile": "urand_air_new.png",
       "base_type": "amulet_air",
-      "item_tier": 5,
+      "item_tier": 3,
       "flavor_tags": [],
       "lore": "Cool wind around the wearer's neck. Always.",
       "drop_weights": [
         0,
-        0,
-        0,
-        5,
-        25
+        15,
+        40,
+        30,
+        5
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_haste"
@@ -1151,6 +1271,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1165,12 +1286,17 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "amulet_bloodlust",
-      "name": "Amulet of Bloodlust",
+      "name": "Bloodlust Amulet",
       "slot": "amulet",
       "rarity": "legendary",
       "tile": "urand_bloodlust_new.png",
@@ -1202,6 +1328,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1216,27 +1343,32 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "brooch_of_shielding",
-      "name": "Brooch of Shielding",
+      "name": "Shieldbrooch",
       "slot": "amulet",
-      "rarity": "legendary",
+      "rarity": "rare",
       "tile": "urand_brooch_of_shielding_new.png",
       "base_type": "amulet_reflection",
-      "item_tier": 5,
+      "item_tier": 3,
       "flavor_tags": [],
       "lore": "A faint shimmer surrounds the wearer in any light.",
       "drop_weights": [
         0,
-        0,
-        0,
-        5,
-        25
+        15,
+        40,
+        30,
+        5
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_holy_resist"
@@ -1251,6 +1383,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1265,7 +1398,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -1303,6 +1441,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1317,7 +1456,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -1354,6 +1498,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1368,7 +1513,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -1405,6 +1555,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -1419,7 +1570,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -1433,6 +1589,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 29,
         "of_haste": 14,
@@ -1448,7 +1605,13 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2,
+        "of_poison_resist": 34
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -1483,131 +1646,6 @@
     },
     {
       "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 16,
-        "of_wisdom": 18,
-        "of_vitality": 32,
-        "of_damage": 16,
-        "of_resonance": 14,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_quickcast": 14,
-        "of_crit": 14,
-        "of_haste": 14,
-        "of_lifesteal": 10,
-        "of_regen": 10,
-        "of_shadows": 22,
-        "of_dark_resist": 18,
-        "of_executioner": 8,
-        "of_warding": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_swiftness": 4,
-        "of_growth": 4,
-        "of_abundance": 4,
-        "of_plunder": 4
-      },
-      "base_type": "amulet_guardian",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.15,
-          0.13,
-          0.18
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [
-        "dark"
-      ],
-      "id": "cekugob_amulet_obsidian",
-      "implicit_affixes": [
-        "of_dark_resist",
-        "of_phylactery",
-        "of_abundance"
-      ],
-      "item_tier": 5,
-      "lore": "Volcanic glass, edge-flaked razor-sharp by patient hands.",
-      "name": "Obsidian Cekugob's Amulet",
-      "rarity": "legendary",
-      "slot": "amulet",
-      "tile": "urand_cekugob_new.png",
-      "unique": true,
-      "recolor_of": "cekugob_amulet"
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 16,
-        "of_wisdom": 18,
-        "of_vitality": 14,
-        "of_damage": 16,
-        "of_resonance": 14,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_quickcast": 29,
-        "of_crit": 14,
-        "of_haste": 32,
-        "of_lifesteal": 22,
-        "of_regen": 10,
-        "of_devotion": 22,
-        "of_executioner": 8,
-        "of_warding": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_swiftness": 4,
-        "of_growth": 4,
-        "of_abundance": 4,
-        "of_plunder": 4
-      },
-      "base_type": "amulet_harm",
-      "default_tint": {
-        "hue": 331.0,
-        "mode": "shimmer",
-        "sat": 0.794
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [
-        "holy"
-      ],
-      "id": "amulet_finger_rosegold",
-      "implicit_affixes": [
-        "of_zealot",
-        "of_holy_resist"
-      ],
-      "item_tier": 5,
-      "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
-      "name": "Rose-gold The Finger",
-      "rarity": "legendary",
-      "slot": "amulet",
-      "tile": "urand_finger.png",
-      "unique": true,
-      "recolor_of": "amulet_finger"
-    },
-    {
-      "affix_pool": {
         "of_might": 28,
         "of_finesse": 16,
         "of_wisdom": 18,
@@ -1617,13 +1655,14 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
         "of_lifesteal": 28,
         "of_regen": 10,
         "of_shadows": 32,
-        "of_dark_resist": 22,
+        "of_dark_resist": 32,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -1633,7 +1672,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_vitality",
       "default_tint": {
@@ -1658,7 +1702,7 @@
       ],
       "item_tier": 5,
       "lore": "Smithed somewhere between worlds. The shadow it casts is wrong.",
-      "name": "Voidwrought Pearl of Vitality",
+      "name": "Voidwrought Heartpearl",
       "rarity": "legendary",
       "slot": "amulet",
       "tile": "crystal_white.png",
@@ -1675,13 +1719,14 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
         "of_lifesteal": 10,
         "of_regen": 24,
         "of_venom": 28,
-        "of_poison_resist": 22,
+        "of_poison_resist": 29,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -1691,7 +1736,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_reflection",
       "default_tint": {
@@ -1716,126 +1766,12 @@
       ],
       "item_tier": 5,
       "lore": "Damp green spores drift from every notch \u2014 they twitch toward warm flesh.",
-      "name": "Mossy Sigil of the Last Line",
+      "name": "Mossy Last Line Sigil",
       "rarity": "epic",
       "slot": "amulet",
       "tile": "penta_green.png",
       "unique": false,
       "recolor_of": "penta_green"
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 16,
-        "of_wisdom": 18,
-        "of_vitality": 36,
-        "of_damage": 16,
-        "of_resonance": 14,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_quickcast": 14,
-        "of_crit": 14,
-        "of_haste": 14,
-        "of_lifesteal": 10,
-        "of_regen": 28,
-        "of_poison_resist": 18,
-        "of_executioner": 8,
-        "of_warding": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_swiftness": 4,
-        "of_growth": 4,
-        "of_abundance": 4,
-        "of_plunder": 4
-      },
-      "base_type": "amulet_air",
-      "default_tint": {
-        "hue": 130.8,
-        "mode": "normal",
-        "sat": 1.143
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [],
-      "id": "amulet_of_air_verdant",
-      "implicit_affixes": [],
-      "item_tier": 5,
-      "lore": "Vines crawl over the haft, seeking soil that is not there.",
-      "name": "Verdant Amulet of Air",
-      "rarity": "legendary",
-      "slot": "amulet",
-      "tile": "urand_air_new.png",
-      "unique": true
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 30,
-        "of_wisdom": 18,
-        "of_vitality": 14,
-        "of_damage": 16,
-        "of_resonance": 14,
-        "of_lingering": 12,
-        "of_velocity": 10,
-        "of_multicast": 8,
-        "of_quickcast": 26,
-        "of_crit": 14,
-        "of_haste": 14,
-        "of_lifesteal": 10,
-        "of_regen": 10,
-        "of_shadows": 26,
-        "of_dark_resist": 18,
-        "of_executioner": 8,
-        "of_warding": 8,
-        "of_arcane_flow": 3,
-        "of_arcane_pool": 3,
-        "of_item_rarity": 5,
-        "of_avarice": 5,
-        "of_swiftness": 4,
-        "of_growth": 4,
-        "of_abundance": 4,
-        "of_plunder": 4
-      },
-      "base_type": "amulet_guardian",
-      "default_tint": {
-        "hue": 288.4,
-        "mode": "normal",
-        "sat": 0.612
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [
-        "dark"
-      ],
-      "id": "cekugob_amulet_shadowed",
-      "implicit_affixes": [
-        "of_nightcaller",
-        "of_dark_resist",
-        "of_abundance"
-      ],
-      "item_tier": 5,
-      "lore": "Hard to see in dim light, even when held directly before you.",
-      "name": "Shadowed Cekugob's Amulet",
-      "rarity": "legendary",
-      "slot": "amulet",
-      "tile": "urand_cekugob_new.png",
-      "unique": true,
-      "recolor_of": "cekugob_amulet"
     },
     {
       "affix_pool": {
@@ -1848,13 +1784,14 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
         "of_lifesteal": 28,
         "of_regen": 10,
         "of_shadows": 32,
-        "of_dark_resist": 22,
+        "of_dark_resist": 32,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -1864,7 +1801,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -1907,15 +1849,16 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 32,
         "of_crit": 29,
         "of_haste": 14,
         "of_lifesteal": 28,
         "of_regen": 10,
         "of_shadows": 32,
-        "of_dark_resist": 22,
+        "of_dark_resist": 35,
         "of_frost": 35,
-        "of_cold_resist": 22,
+        "of_cold_resist": 35,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -1925,7 +1868,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -1970,13 +1918,14 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
         "of_lifesteal": 10,
         "of_regen": 22,
         "of_devotion": 30,
-        "of_holy_resist": 22,
+        "of_holy_resist": 34,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -1986,7 +1935,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -2030,6 +1984,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -2047,7 +2002,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_harm",
       "default_tint": {
@@ -2091,13 +2051,14 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 28,
         "of_crit": 14,
         "of_haste": 14,
         "of_lifesteal": 10,
         "of_regen": 10,
         "of_embers": 30,
-        "of_fire_resist": 22,
+        "of_fire_resist": 30,
         "of_plunder": 8,
         "of_executioner": 8,
         "of_warding": 8,
@@ -2107,7 +2068,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_acrobat",
       "default_tint": {
@@ -2151,6 +2117,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -2165,7 +2132,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "base_type": "amulet_rage",
       "default_tint": {
@@ -2194,7 +2166,7 @@
       ],
       "item_tier": 3,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",
-      "name": "Ironclad Pentacle of Wrath",
+      "name": "Ironclad Wrath Pentacle",
       "rarity": "rare",
       "slot": "amulet",
       "tile": "penta_orange.png",
@@ -2212,6 +2184,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 29,
         "of_haste": 14,
@@ -2227,7 +2200,13 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2,
+        "of_poison_resist": 34
       },
       "base_type": "amulet_faith",
       "default_tint": {
@@ -2264,7 +2243,7 @@
     },
     {
       "id": "octopode_eight_amulet",
-      "name": "Mantle of the Eight",
+      "name": "Eightfold Mantle",
       "slot": "amulet",
       "rarity": "epic",
       "tile": "urand_octoring.png",
@@ -2298,7 +2277,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -2339,7 +2323,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 0,
@@ -2383,7 +2372,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 40,
@@ -2426,7 +2420,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -2464,7 +2463,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 55,
@@ -2506,7 +2510,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "boss_drop": "boss_kirke",
       "biome_pool": [
@@ -2541,7 +2550,7 @@
       "affix_pool": {
         "of_vitality": 22,
         "of_wisdom": 16,
-        "of_dark_resist": 18,
+        "of_dark_resist": 22,
         "of_regen": 12,
         "of_arcane_flow": 1,
         "of_arcane_pool": 1,
@@ -2550,7 +2559,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "boss_drop": "boss_boris",
       "biome_pool": [
@@ -2597,7 +2611,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
@@ -2639,7 +2658,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 200,
@@ -2688,7 +2712,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 195,
@@ -2698,12 +2727,12 @@
     },
     {
       "id": "glacier_shrine_amulet",
-      "name": "Amulet of the Ice Shrine",
+      "name": "Ice Shrine Amulet",
       "slot": "amulet",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "cameo_blue.png",
       "base_type": "amulet",
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [
         "cold"
       ],
@@ -2711,11 +2740,11 @@
       "drop_weights": [
         0,
         0,
-        0,
-        0,
-        0
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_cold_resist",
@@ -2735,7 +2764,13 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2,
+        "of_cold_resist": 20
       },
       "vault_drop": "glacier_ice_shrine_5x5"
     },
@@ -2769,8 +2804,8 @@
       "affix_pool": {
         "of_damage": 24,
         "of_embers": 20,
-        "of_lifesteal": 16,
-        "of_fire_resist": 14,
+        "of_lifesteal": 24,
+        "of_fire_resist": 24,
         "of_might": 10,
         "of_arcane_flow": 1,
         "of_arcane_pool": 1,
@@ -2779,7 +2814,12 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 12.0,
@@ -2822,12 +2862,17 @@
         "of_swiftness": 4,
         "of_growth": 4,
         "of_abundance": 4,
-        "of_plunder": 4
+        "of_plunder": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       }
     },
     {
       "id": "vow_of_stillness",
-      "name": "Vow of Stillness",
+      "name": "Silent Vow",
       "slot": "amulet",
       "rarity": "legendary",
       "tile": "crystal_white.png",
@@ -2860,6 +2905,7 @@
         "of_lingering": 12,
         "of_velocity": 10,
         "of_multicast": 8,
+        "of_chains": 5,
         "of_quickcast": 14,
         "of_crit": 14,
         "of_haste": 14,
@@ -2874,7 +2920,12 @@
         "of_avarice": 5,
         "of_swiftness": 4,
         "of_growth": 4,
-        "of_abundance": 4
+        "of_abundance": 4,
+        "of_str_pct": 4,
+        "of_dex_pct": 4,
+        "of_int_pct": 4,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 95,

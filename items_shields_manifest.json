@@ -115,7 +115,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 30,
@@ -157,7 +159,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 220,
@@ -202,7 +206,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 180,
@@ -246,7 +252,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 90,
@@ -290,7 +298,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 290,
@@ -334,7 +344,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 30,
@@ -378,7 +390,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 0,
@@ -423,7 +437,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 130,
@@ -468,7 +484,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "block_chance": 8
     },
@@ -507,7 +525,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 260,
@@ -551,7 +571,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 200,
@@ -595,7 +617,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 200.0,
@@ -639,7 +663,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 60,
@@ -683,7 +709,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 0,
@@ -728,7 +756,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 30.0,
@@ -773,7 +803,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 270,
@@ -818,7 +850,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 0.0,
@@ -829,7 +863,7 @@
     },
     {
       "id": "shield_of_reflection",
-      "name": "Shield of Reflection",
+      "name": "Mirror Shield",
       "slot": "shield",
       "rarity": "epic",
       "tile": "shield_of_reflection.png",
@@ -862,7 +896,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 200,
@@ -871,51 +907,6 @@
         "colorize_strength": 0.45
       },
       "block_chance": 20
-    },
-    {
-      "id": "lshield_louise",
-      "name": "Louise's Shield",
-      "slot": "shield",
-      "rarity": "legendary",
-      "tile": "lshield_louise.png",
-      "base_type": "tower_shield",
-      "armor": 36,
-      "evasion": 12,
-      "item_tier": 5,
-      "flavor_tags": [],
-      "lore": "Forged for a knight who didn't believe in retreat.",
-      "drop_weights": [
-        0,
-        0,
-        0,
-        5,
-        25
-      ],
-      "unique": true,
-      "enchant_chance": 0.0,
-      "implicit_affixes": [
-        "of_warding",
-        "of_the_bear"
-      ],
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 8,
-        "of_wisdom": 10,
-        "of_the_bear": 30,
-        "of_fire_resist": 14,
-        "of_cold_resist": 14,
-        "of_lightning_resist": 14,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_warding": 8
-      },
-      "default_tint": {
-        "hue": 130.0,
-        "sat": 1.15,
-        "mode": "inverted"
-      },
-      "block_chance": 25
     },
     {
       "id": "bullseye",
@@ -952,7 +943,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "block_chance": 15
     },
@@ -991,7 +984,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "block_chance": 8
     },
@@ -1030,7 +1025,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 110,
@@ -1075,7 +1072,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 30,
@@ -1119,7 +1118,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "block_chance": 20
     },
@@ -1158,7 +1159,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 280.0,
@@ -1203,7 +1206,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 320.0,
@@ -1214,7 +1219,7 @@
     },
     {
       "id": "shield_of_resistance",
-      "name": "Shield of Resistance",
+      "name": "Elemental Shield",
       "slot": "shield",
       "rarity": "legendary",
       "tile": "urand_resistance.png",
@@ -1250,7 +1255,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "block_chance": 20,
       "overlay": "urand_gong",
@@ -1259,52 +1266,6 @@
         "sat": 1.2,
         "mode": "normal"
       }
-    },
-    {
-      "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 26,
-        "of_wisdom": 10,
-        "of_the_bear": 30,
-        "of_fire_resist": 14,
-        "of_cold_resist": 14,
-        "of_lightning_resist": 14,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_warding": 8
-      },
-      "armor": 36,
-      "base_type": "round_shield",
-      "default_tint": {
-        "hue": 126.3,
-        "mode": "inverted",
-        "sat": 0.796
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [],
-      "id": "bullseye_inverse",
-      "implicit_affixes": [
-        "of_warding",
-        "of_inverse",
-        "of_unbroken"
-      ],
-      "item_tier": 5,
-      "lore": "Looking at it too long inverts what you saw before.",
-      "name": "Inverse Bullseye",
-      "rarity": "legendary",
-      "slot": "shield",
-      "tile": "urand_bullseye.png",
-      "unique": true,
-      "block_chance": 15
     },
     {
       "affix_pool": {
@@ -1318,7 +1279,9 @@
         "of_holy_resist": 26,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 10,
       "base_type": "buckler",
@@ -1367,7 +1330,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 20,
       "base_type": "tower_shield",
@@ -1416,8 +1381,10 @@
         "of_lightning_resist": 14,
         "of_holy_resist": 8,
         "of_poison_resist": 10,
-        "of_dark_resist": 26,
-        "of_warding": 8
+        "of_dark_resist": 52,
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 31,
       "base_type": "round_shield",
@@ -1471,7 +1438,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 22,
       "base_type": "kite_shield",
@@ -1520,7 +1489,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 14,
       "base_type": "buckler",
@@ -1568,7 +1539,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 14,
       "base_type": "round_shield",
@@ -1608,100 +1581,6 @@
     },
     {
       "affix_pool": {
-        "of_might": 16,
-        "of_finesse": 8,
-        "of_wisdom": 10,
-        "of_the_bear": 30,
-        "of_fire_resist": 14,
-        "of_cold_resist": 14,
-        "of_lightning_resist": 14,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_warding": 8
-      },
-      "armor": 36,
-      "base_type": "buckler",
-      "default_tint": {
-        "hue": 161.7,
-        "mode": "prismatic",
-        "sat": 1.0
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [],
-      "id": "gong_shield_prismatic",
-      "implicit_affixes": [
-        "of_might",
-        "of_warding"
-      ],
-      "item_tier": 5,
-      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
-      "name": "Prismatic The Gong",
-      "rarity": "legendary",
-      "slot": "shield",
-      "tile": "urand_gong.png",
-      "unique": true,
-      "recolor_of": "gong_shield",
-      "block_chance": 8
-    },
-    {
-      "affix_pool": {
-        "of_might": 34,
-        "of_finesse": 8,
-        "of_wisdom": 10,
-        "of_the_bear": 30,
-        "of_fire_resist": 14,
-        "of_cold_resist": 14,
-        "of_lightning_resist": 14,
-        "of_holy_resist": 30,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_warding": 8
-      },
-      "armor": 36,
-      "base_type": "round_shield",
-      "default_tint": {
-        "hue": 39.2,
-        "mode": "shimmer",
-        "sat": 0.973
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [
-        "holy"
-      ],
-      "id": "bullseye_sunsteel",
-      "implicit_affixes": [
-        "of_holy_resist",
-        "of_warding"
-      ],
-      "item_tier": 5,
-      "lore": "The metal is warm even at midnight. Undead dare not touch it.",
-      "name": "Sunsteel Bullseye",
-      "rarity": "legendary",
-      "slot": "shield",
-      "tile": "urand_bullseye.png",
-      "unique": true,
-      "recolor_of": "bullseye",
-      "block_chance": 15
-    },
-    {
-      "affix_pool": {
         "of_might": 30,
         "of_finesse": 8,
         "of_wisdom": 10,
@@ -1712,7 +1591,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 8
+        "of_warding": 8,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "armor": 14,
       "base_type": "buckler",
@@ -1784,7 +1665,9 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_warding": 14
+        "of_warding": 14,
+        "of_max_health": 5,
+        "of_max_res": 2
       },
       "default_tint": {
         "hue": 28,

@@ -48,7 +48,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -94,7 +101,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -141,7 +155,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -185,7 +206,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -231,7 +259,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -278,7 +313,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -326,7 +368,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -372,7 +421,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -419,7 +475,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -467,7 +530,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -515,7 +585,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -561,7 +638,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -608,7 +692,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -656,7 +747,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -703,7 +801,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -751,7 +856,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -795,7 +907,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -839,7 +958,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -883,7 +1009,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -929,7 +1062,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -976,7 +1116,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1022,7 +1169,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1069,7 +1223,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1117,7 +1278,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1160,13 +1328,20 @@
         "of_storms": 8,
         "of_devotion": 6,
         "of_venom": 6,
-        "of_shadows": 6,
+        "of_shadows": 30,
         "of_crit": 25,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 30
       }
     },
     {
@@ -1209,13 +1384,20 @@
         "of_storms": 8,
         "of_devotion": 6,
         "of_venom": 6,
-        "of_shadows": 6,
+        "of_shadows": 30,
         "of_crit": 25,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 30
       }
     },
     {
@@ -1261,7 +1443,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1308,7 +1497,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1355,7 +1551,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1401,7 +1604,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1448,7 +1658,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1495,7 +1712,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1539,7 +1763,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1585,7 +1816,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1632,7 +1870,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1679,7 +1924,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1725,7 +1977,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1772,7 +2031,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1819,7 +2085,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1867,7 +2140,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -1909,13 +2189,20 @@
         "of_storms": 8,
         "of_devotion": 6,
         "of_venom": 6,
-        "of_shadows": 6,
+        "of_shadows": 30,
         "of_crit": 25,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 30
       }
     },
     {
@@ -1958,13 +2245,20 @@
         "of_storms": 8,
         "of_devotion": 6,
         "of_venom": 6,
-        "of_shadows": 6,
+        "of_shadows": 30,
         "of_crit": 25,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 30
       }
     },
     {
@@ -2010,7 +2304,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2057,7 +2358,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2104,7 +2412,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2151,7 +2466,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2192,7 +2514,7 @@
         "of_embers": 8,
         "of_frost": 8,
         "of_storms": 8,
-        "of_devotion": 6,
+        "of_devotion": 30,
         "of_venom": 6,
         "of_shadows": 6,
         "of_crit": 25,
@@ -2200,7 +2522,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 30,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2248,7 +2577,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2295,7 +2631,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2339,7 +2682,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2385,7 +2735,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2432,7 +2789,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2471,7 +2835,7 @@
         "of_sharpness": 30,
         "of_embers": 8,
         "of_frost": 8,
-        "of_storms": 8,
+        "of_storms": 30,
         "of_devotion": 6,
         "of_venom": 6,
         "of_shadows": 6,
@@ -2480,7 +2844,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 30,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2520,7 +2891,7 @@
         "of_sharpness": 30,
         "of_embers": 8,
         "of_frost": 8,
-        "of_storms": 8,
+        "of_storms": 30,
         "of_devotion": 6,
         "of_venom": 6,
         "of_shadows": 6,
@@ -2529,7 +2900,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 30,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2569,9 +2947,9 @@
         "of_finesse": 15,
         "of_wisdom": 10,
         "of_sharpness": 30,
-        "of_embers": 8,
+        "of_embers": 30,
         "of_frost": 8,
-        "of_storms": 8,
+        "of_storms": 30,
         "of_devotion": 6,
         "of_venom": 6,
         "of_shadows": 6,
@@ -2580,7 +2958,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 30,
+        "of_cryomancer": 6,
+        "of_thundercaller": 30,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2627,7 +3012,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2673,7 +3065,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2720,7 +3119,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -2733,14 +3139,21 @@
         "of_frost": 8,
         "of_storms": 8,
         "of_devotion": 6,
-        "of_venom": 28,
+        "of_venom": 40,
         "of_shadows": 6,
         "of_crit": 40,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 14,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 40,
+        "of_nightcaller": 4
       },
       "base_type": "halberd",
       "damage_max": 68,
@@ -2796,7 +3209,14 @@
         "of_damage": 18,
         "of_quickcast": 22,
         "of_resonance": 14,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "quarterstaff",
       "damage_max": 43,
@@ -2847,7 +3267,14 @@
         "of_lifesteal": 33,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 38
       },
       "base_type": "broad_axe",
       "damage_max": 80,
@@ -2901,7 +3328,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 34,
+        "of_nightcaller": 4
       },
       "base_type": "spear",
       "damage_max": 53,
@@ -2956,7 +3390,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 22,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 38,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "claymore",
       "damage_max": 100,
@@ -3003,7 +3444,7 @@
         "of_embers": 8,
         "of_frost": 8,
         "of_storms": 8,
-        "of_devotion": 28,
+        "of_devotion": 38,
         "of_venom": 6,
         "of_shadows": 6,
         "of_crit": 25,
@@ -3011,7 +3452,14 @@
         "of_lifesteal": 27,
         "of_damage": 8,
         "of_quickcast": 23,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 38,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "hammer",
       "damage_max": 22,
@@ -3059,14 +3507,21 @@
         "of_frost": 8,
         "of_storms": 8,
         "of_devotion": 6,
-        "of_venom": 28,
+        "of_venom": 40,
         "of_shadows": 6,
         "of_crit": 40,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 14,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 40,
+        "of_nightcaller": 4
       },
       "base_type": "greatsword",
       "damage_max": 62,
@@ -3112,7 +3567,7 @@
         "of_sharpness": 30,
         "of_embers": 8,
         "of_frost": 8,
-        "of_storms": 8,
+        "of_storms": 34,
         "of_devotion": 34,
         "of_venom": 6,
         "of_shadows": 6,
@@ -3121,7 +3576,14 @@
         "of_lifesteal": 15,
         "of_damage": 23,
         "of_quickcast": 20,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 34,
+        "of_zealot": 34,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "bullwhip",
       "damage_max": 22,
@@ -3176,7 +3638,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 22,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 38,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "broad_axe",
       "damage_max": 194,
@@ -3232,7 +3701,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 34,
+        "of_nightcaller": 4
       },
       "base_type": "bardiche",
       "damage_max": 187,
@@ -3288,7 +3764,14 @@
         "of_lifesteal": 27,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 43,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       },
       "base_type": "giant_club",
       "damage_max": 112,
@@ -3328,7 +3811,7 @@
     },
     {
       "id": "minotaur_champion_blade",
-      "name": "Blade of the Champion",
+      "name": "Champion's Blade",
       "slot": "weapon",
       "rarity": "epic",
       "tile": "executioner_axe_5.png",
@@ -3362,7 +3845,8 @@
         "of_executioner": 8,
         "of_haste": 10,
         "of_finesse": 10,
-        "of_damage": 10
+        "of_damage": 10,
+        "of_brawler": 9
       }
     },
     {
@@ -3401,7 +3885,8 @@
         "of_crit": 10,
         "of_haste": 10,
         "of_finesse": 10,
-        "of_damage": 10
+        "of_damage": 10,
+        "of_brawler": 9
       },
       "default_tint": {
         "hue": 25,
@@ -3444,7 +3929,8 @@
         "of_crit": 10,
         "of_haste": 10,
         "of_sharpness": 10,
-        "of_finesse": 10
+        "of_finesse": 10,
+        "of_brawler": 5
       },
       "default_tint": {
         "hue": 100,
@@ -3488,7 +3974,7 @@
         "of_finesse": 15,
         "of_wisdom": 10,
         "of_sharpness": 30,
-        "of_embers": 8,
+        "of_embers": 30,
         "of_frost": 8,
         "of_storms": 8,
         "of_devotion": 6,
@@ -3499,7 +3985,14 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 30,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
     },
     {
@@ -3543,16 +4036,23 @@
         "of_storms": 8,
         "of_devotion": 6,
         "of_venom": 6,
-        "of_shadows": 6,
+        "of_shadows": 30,
         "of_crit": 25,
         "of_haste": 20,
-        "of_lifesteal": 15,
+        "of_lifesteal": 30,
         "of_damage": 8,
         "of_quickcast": 8,
         "of_executioner": 8,
         "of_arcane_pool": 5,
         "of_arcane_flow": 5,
-        "of_thrift": 5
+        "of_thrift": 5,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 4,
+        "of_nightcaller": 30
       }
     },
     {
@@ -3595,14 +4095,21 @@
         "of_frost": 8,
         "of_storms": 8,
         "of_devotion": 6,
-        "of_venom": 6,
+        "of_venom": 30,
         "of_shadows": 6,
         "of_crit": 25,
         "of_haste": 20,
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 4,
+        "of_pestcaller": 30,
+        "of_nightcaller": 4
       },
       "overlay": "bullwhip_new"
     },
@@ -3645,7 +4152,7 @@
         "of_embers": 8,
         "of_frost": 8,
         "of_storms": 8,
-        "of_devotion": 6,
+        "of_devotion": 30,
         "of_venom": 6,
         "of_shadows": 6,
         "of_crit": 25,
@@ -3653,68 +4160,15 @@
         "of_lifesteal": 15,
         "of_damage": 8,
         "of_quickcast": 8,
-        "of_executioner": 8
+        "of_executioner": 8,
+        "of_brawler": 15,
+        "of_pyromancer": 6,
+        "of_cryomancer": 6,
+        "of_thundercaller": 6,
+        "of_zealot": 30,
+        "of_pestcaller": 4,
+        "of_nightcaller": 4
       }
-    },
-    {
-      "affix_pool": {
-        "of_might": 39,
-        "of_finesse": 15,
-        "of_wisdom": 10,
-        "of_sharpness": 44,
-        "of_embers": 8,
-        "of_frost": 8,
-        "of_storms": 8,
-        "of_devotion": 6,
-        "of_venom": 6,
-        "of_shadows": 6,
-        "of_crit": 25,
-        "of_haste": 20,
-        "of_lifesteal": 15,
-        "of_damage": 8,
-        "of_quickcast": 8,
-        "of_executioner": 8
-      },
-      "base_type": "mace",
-      "damage_max": 131,
-      "damage_min": 71,
-      "damage_type": "fire",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.55,
-          0.58,
-          0.62
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "flavor_tags": [
-        "fire"
-      ],
-      "id": "firestarter_ironclad",
-      "implicit_affixes": [
-        "of_might",
-        "of_executioner"
-      ],
-      "item_tier": 5,
-      "lore": "Plain forged iron, but heavier than the metal alone explains.",
-      "name": "Ironclad Firestarter",
-      "rarity": "legendary",
-      "slot": "weapon",
-      "speed": 0.65,
-      "tile": "urand_firestarter.png",
-      "unique": true,
-      "weapon_class": "1H",
-      "recolor_of": "firestarter"
     },
     {
       "id": "sigmunds_sickle",
@@ -3752,7 +4206,8 @@
         "of_executioner": 10,
         "of_finesse": 10,
         "of_damage": 10,
-        "of_lifesteal": 10
+        "of_lifesteal": 10,
+        "of_brawler": 10
       },
       "boss_drop": "boss_sigmund",
       "biome_pool": [
@@ -3793,7 +4248,8 @@
         "of_crit": 12,
         "of_haste": 10,
         "of_executioner": 10,
-        "of_finesse": 10
+        "of_finesse": 10,
+        "of_brawler": 8
       },
       "boss_drop": "boss_blork",
       "biome_pool": [
@@ -3833,12 +4289,14 @@
       "affix_pool": {
         "of_might": 20,
         "of_finesse": 16,
-        "of_frost": 18,
+        "of_frost": 20,
         "of_sharpness": 14,
         "of_crit": 10,
         "of_haste": 10,
         "of_executioner": 10,
-        "of_damage": 10
+        "of_damage": 10,
+        "of_brawler": 7,
+        "of_cryomancer": 20
       },
       "boss_drop": "boss_ilsuiw",
       "biome_pool": [
@@ -3883,7 +4341,9 @@
         "of_crit": 18,
         "of_haste": 10,
         "of_lifesteal": 12,
-        "of_executioner": 10
+        "of_executioner": 10,
+        "of_brawler": 12,
+        "of_cryomancer": 35
       },
       "default_tint": {
         "hue": 200,
@@ -3929,7 +4389,9 @@
         "of_crit": 18,
         "of_haste": 8,
         "of_lifesteal": 10,
-        "of_executioner": 12
+        "of_executioner": 12,
+        "of_brawler": 14,
+        "of_cryomancer": 38
       },
       "default_tint": {
         "hue": 205,
@@ -3976,7 +4438,9 @@
         "of_lifesteal": 12,
         "of_quickcast": 10,
         "of_damage": 10,
-        "of_executioner": 10
+        "of_executioner": 10,
+        "of_brawler": 14,
+        "of_cryomancer": 40
       },
       "default_tint": {
         "hue": 195,
@@ -4021,7 +4485,9 @@
         "of_crit": 20,
         "of_haste": 12,
         "of_lifesteal": 12,
-        "of_executioner": 10
+        "of_executioner": 10,
+        "of_brawler": 14,
+        "of_pestcaller": 38
       },
       "default_tint": {
         "hue": 95,
@@ -4068,7 +4534,9 @@
         "of_lifesteal": 12,
         "of_quickcast": 10,
         "of_damage": 10,
-        "of_executioner": 10
+        "of_executioner": 10,
+        "of_brawler": 13,
+        "of_pestcaller": 40
       },
       "default_tint": {
         "hue": 105,
@@ -4078,9 +4546,9 @@
     },
     {
       "id": "forge_pit_anvil",
-      "name": "Anvil of the Lava Pit",
+      "name": "Lava Pit Anvil",
       "slot": "weapon",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "mace_3_new.png",
       "base_type": "great_mace",
       "weapon_class": "2H",
@@ -4088,7 +4556,7 @@
       "damage_max": 165,
       "damage_type": "fire",
       "speed": 1.05,
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [
         "fire"
       ],
@@ -4096,11 +4564,11 @@
       "drop_weights": [
         0,
         0,
-        0,
-        0,
-        0
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_embers",
@@ -4111,7 +4579,10 @@
         "of_sharpness": 12,
         "of_damage": 12,
         "of_crit": 10,
-        "of_haste": 8
+        "of_haste": 8,
+        "of_brawler": 6,
+        "of_embers": 18,
+        "of_pyromancer": 18
       },
       "vault_drop": "forge_lava_pit_5x5"
     },
@@ -4152,7 +4623,10 @@
         "of_executioner": 8,
         "of_haste": 10,
         "of_finesse": 10,
-        "of_lifesteal": 10
+        "of_lifesteal": 10,
+        "of_brawler": 7,
+        "of_embers": 14,
+        "of_pyromancer": 14
       },
       "vault_drop": "forge_lava_bridge_7x3"
     },
@@ -4189,8 +4663,9 @@
       "affix_pool": {
         "of_damage": 24,
         "of_wisdom": 16,
-        "of_embers": 12,
-        "of_quickcast": 10
+        "of_embers": 24,
+        "of_quickcast": 10,
+        "of_pyromancer": 24
       },
       "enchant_chance": 0.1
     },
@@ -4227,8 +4702,9 @@
       "affix_pool": {
         "of_damage": 24,
         "of_wisdom": 16,
-        "of_storms": 12,
-        "of_velocity": 10
+        "of_storms": 24,
+        "of_velocity": 10,
+        "of_thundercaller": 24
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4268,8 +4744,9 @@
       "affix_pool": {
         "of_damage": 24,
         "of_wisdom": 18,
-        "of_frost": 14,
-        "of_quickcast": 10
+        "of_frost": 24,
+        "of_quickcast": 10,
+        "of_cryomancer": 24
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4430,8 +4907,9 @@
       "affix_pool": {
         "of_damage": 24,
         "of_might": 18,
-        "of_devotion": 14,
-        "of_wisdom": 10
+        "of_devotion": 24,
+        "of_wisdom": 10,
+        "of_zealot": 24
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4471,7 +4949,8 @@
       "affix_pool": {
         "of_damage": 24,
         "of_might": 18,
-        "of_devotion": 16
+        "of_devotion": 24,
+        "of_zealot": 24
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4512,11 +4991,12 @@
       "affix_pool": {
         "of_damage": 26,
         "of_might": 20,
-        "of_devotion": 18,
+        "of_devotion": 26,
         "of_wisdom": 10,
         "of_quickcast": 10,
         "of_resonance": 10,
-        "of_lingering": 10
+        "of_lingering": 10,
+        "of_zealot": 26
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4560,7 +5040,9 @@
         "of_wisdom": 22,
         "of_quickcast": 18,
         "of_arcane_flow": 14,
-        "of_damage": 10
+        "of_damage": 10,
+        "of_frost": 24,
+        "of_cryomancer": 24
       },
       "enchant_chance": 0.1
     },
@@ -4597,7 +5079,8 @@
         "of_arcane_pool": 22,
         "of_wisdom": 18,
         "of_shadows": 14,
-        "of_arcane_flow": 10
+        "of_arcane_flow": 10,
+        "of_nightcaller": 10
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4639,12 +5122,13 @@
         "of_damage": 24,
         "of_arcane_pool": 22,
         "of_wisdom": 20,
-        "of_storms": 16,
+        "of_storms": 24,
         "of_quickcast": 14,
         "of_resonance": 10,
         "of_lingering": 10,
         "of_arcane_flow": 10,
-        "of_crit": 10
+        "of_crit": 10,
+        "of_thundercaller": 24
       },
       "enchant_chance": 0.1,
       "implicit_affixes": [
@@ -4850,20 +5334,21 @@
       ],
       "affix_pool": {
         "of_damage": 26,
-        "of_venom": 22,
+        "of_venom": 26,
         "of_quickcast": 12,
         "of_wisdom": 10,
         "of_resonance": 10,
         "of_lingering": 10,
         "of_arcane_pool": 10,
-        "of_arcane_flow": 10
+        "of_arcane_flow": 10,
+        "of_pestcaller": 26
       },
       "enchant_chance": 0.0,
       "unique": true
     },
     {
       "id": "brand_of_the_storm",
-      "name": "Brand of the Storm",
+      "name": "Stormbrand",
       "slot": "weapon",
       "rarity": "legendary",
       "tile": "casters/sceptre_4.png",
@@ -4898,13 +5383,14 @@
       ],
       "affix_pool": {
         "of_damage": 26,
-        "of_storms": 22,
+        "of_storms": 26,
         "of_might": 14,
         "of_wisdom": 10,
         "of_quickcast": 10,
         "of_resonance": 10,
         "of_lingering": 10,
-        "of_arcane_pool": 10
+        "of_arcane_pool": 10,
+        "of_thundercaller": 26
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -4946,14 +5432,15 @@
       ],
       "affix_pool": {
         "of_damage": 26,
-        "of_frost": 22,
+        "of_frost": 26,
         "of_resonance": 20,
         "of_quickcast": 14,
         "of_wisdom": 10,
         "of_lingering": 10,
         "of_arcane_pool": 10,
         "of_arcane_flow": 10,
-        "of_crit": 10
+        "of_crit": 10,
+        "of_cryomancer": 26
       },
       "enchant_chance": 0.0,
       "unique": true
@@ -4995,14 +5482,15 @@
       ],
       "affix_pool": {
         "of_damage": 26,
-        "of_embers": 22,
+        "of_embers": 26,
         "of_lifesteal": 18,
         "of_arcane_pool": 12,
         "of_wisdom": 10,
         "of_quickcast": 10,
         "of_resonance": 10,
         "of_lingering": 10,
-        "of_arcane_flow": 10
+        "of_arcane_flow": 10,
+        "of_pyromancer": 26
       },
       "enchant_chance": 0.0,
       "unique": true

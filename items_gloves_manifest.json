@@ -13,24 +13,24 @@
   "items": [
     {
       "id": "gauntlets_of_war",
-      "name": "Gauntlets of War",
+      "name": "War Gauntlets",
       "slot": "gloves",
-      "rarity": "legendary",
+      "rarity": "rare",
       "tile": "urand_war.png",
       "base_type": "gloves",
       "armor": 12,
       "evasion": 18,
-      "item_tier": 5,
+      "item_tier": 3,
       "flavor_tags": [],
       "lore": "Carried to a thousand battles. Always returned home.",
       "drop_weights": [
         0,
-        0,
-        0,
-        5,
-        25
+        15,
+        40,
+        30,
+        5
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_might",
@@ -542,7 +542,8 @@
         "of_velocity": 12,
         "of_executioner": 8,
         "of_item_rarity": 5,
-        "of_avarice": 5
+        "of_avarice": 5,
+        "of_lightning_resist": 18
       }
     },
     {
@@ -564,7 +565,7 @@
         "of_lifesteal": 10,
         "of_damage": 10,
         "of_velocity": 12,
-        "of_cold_resist": 22,
+        "of_cold_resist": 45,
         "of_quickcast": 18,
         "of_executioner": 8,
         "of_item_rarity": 5,
@@ -980,7 +981,7 @@
         0,
         0
       ],
-      "unique": false,
+      "unique": true,
       "armor": 1,
       "evasion": 6,
       "implicit_affixes": [

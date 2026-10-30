@@ -173,7 +173,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -212,7 +213,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 280,
@@ -254,7 +256,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -293,7 +296,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -332,7 +336,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -371,7 +376,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 110,
@@ -415,7 +421,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -454,7 +461,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -493,7 +501,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -533,7 +542,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -573,7 +583,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -613,7 +624,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -653,7 +665,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -693,7 +706,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -733,7 +747,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -775,7 +790,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 85,
@@ -822,7 +838,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 200,
@@ -868,7 +885,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 0,
@@ -914,7 +932,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 0,
@@ -959,7 +978,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1000,7 +1020,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1041,7 +1062,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 45,
@@ -1088,7 +1110,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 200,
@@ -1134,7 +1157,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1174,12 +1198,13 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "robe_of_folly",
-      "name": "Robe of Folly",
+      "name": "Fool's Robe",
       "slot": "armor",
       "rarity": "legendary",
       "tile": "urand_folly.png",
@@ -1214,12 +1239,13 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "robe_of_misfortune",
-      "name": "Robe of Misfortune",
+      "name": "Ill-Starred Robe",
       "slot": "armor",
       "rarity": "legendary",
       "tile": "urand_misfortune.png",
@@ -1254,7 +1280,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1291,7 +1318,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1330,7 +1358,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1370,7 +1399,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1410,7 +1440,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1452,7 +1483,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 120,
@@ -1498,7 +1530,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1539,7 +1572,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 200,
@@ -1586,7 +1620,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
@@ -1627,7 +1662,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 270,
@@ -1637,7 +1673,7 @@
     },
     {
       "id": "robe_of_clouds",
-      "name": "Robe of Clouds",
+      "name": "Cloudweave Robe",
       "slot": "armor",
       "rarity": "legendary",
       "tile": "urand_clouds.png",
@@ -1673,29 +1709,30 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "faerie_dragon",
       "name": "Faerie Dragon Hide",
       "slot": "armor",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_faerie.png",
       "base_type": "dragon_scales",
       "armor": 48,
       "evasion": 12,
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Light enough to be silly. Strong enough to be feared.",
       "drop_weights": [
         0,
         0,
-        0,
-        5,
-        25
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_finesse",
@@ -1713,7 +1750,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 320,
@@ -1758,12 +1796,13 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "dragon_kings_robe",
-      "name": "Robe of the Dragon King",
+      "name": "Dragon King's Robe",
       "slot": "armor",
       "rarity": "legendary",
       "tile": "urand_dragon_king.png",
@@ -1798,29 +1837,30 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "armor_of_zhor",
-      "name": "Armor of Zhor",
+      "name": "Zhor's Hide",
       "slot": "armor",
-      "rarity": "legendary",
+      "rarity": "epic",
       "tile": "urand_zhor.png",
       "base_type": "leather",
       "armor": 48,
       "evasion": 12,
-      "item_tier": 5,
+      "item_tier": 4,
       "flavor_tags": [],
       "lore": "Worn by Zhor, who could not be found. Or hurt.",
       "drop_weights": [
         0,
         0,
-        0,
-        4,
-        22
+        8,
+        55,
+        38
       ],
-      "unique": true,
+      "unique": false,
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_regen",
@@ -1838,12 +1878,13 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       }
     },
     {
       "id": "robe_of_night",
-      "name": "Robe of Night",
+      "name": "Nightweave Robe",
       "slot": "armor",
       "rarity": "legendary",
       "tile": "urand_night_new.png",
@@ -1879,105 +1920,10 @@
         "of_lightning_resist": 12,
         "of_holy_resist": 8,
         "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_regen": 15
+        "of_dark_resist": 30,
+        "of_regen": 15,
+        "of_max_health": 5
       }
-    },
-    {
-      "affix_pool": {
-        "of_might": 15,
-        "of_finesse": 12,
-        "of_wisdom": 12,
-        "of_vitality": 30,
-        "of_the_bear": 30,
-        "of_fire_resist": 12,
-        "of_cold_resist": 12,
-        "of_lightning_resist": 12,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_regen": 15
-      },
-      "armor": 48,
-      "base_type": "robe",
-      "default_tint": {
-        "hue": 339.7,
-        "mode": "shimmer",
-        "sat": 0.903
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [
-        "holy"
-      ],
-      "id": "robe_of_folly_rosegold",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_holy_resist",
-        "of_regen"
-      ],
-      "item_tier": 5,
-      "lore": "An alloy out of fashion in this century. The shine is unmistakable.",
-      "name": "Rose-gold Robe of Folly",
-      "rarity": "legendary",
-      "slot": "armor",
-      "tile": "urand_folly.png",
-      "unique": true,
-      "recolor_of": "robe_of_folly"
-    },
-    {
-      "affix_pool": {
-        "of_might": 15,
-        "of_finesse": 12,
-        "of_wisdom": 12,
-        "of_vitality": 30,
-        "of_the_bear": 30,
-        "of_fire_resist": 12,
-        "of_cold_resist": 12,
-        "of_lightning_resist": 12,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_regen": 15
-      },
-      "armor": 48,
-      "base_type": "robe",
-      "default_tint": {
-        "hue": 152.9,
-        "mode": "prismatic",
-        "sat": 1.0
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [],
-      "id": "robe_of_folly_prismatic",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_finesse",
-        "of_regen"
-      ],
-      "item_tier": 5,
-      "lore": "Every glance reveals a new color, each one a real one \u2014 somewhere.",
-      "name": "Prismatic Robe of Folly",
-      "rarity": "legendary",
-      "slot": "armor",
-      "tile": "urand_folly.png",
-      "unique": true,
-      "recolor_of": "robe_of_folly"
     },
     {
       "affix_pool": {
@@ -1992,7 +1938,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 30,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 8,
       "base_type": "leather",
@@ -2035,10 +1982,11 @@
         "of_fire_resist": 12,
         "of_cold_resist": 12,
         "of_lightning_resist": 12,
-        "of_holy_resist": 8,
+        "of_holy_resist": 30,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 19,
       "base_type": "banded_mail",
@@ -2083,10 +2031,11 @@
         "of_fire_resist": 12,
         "of_cold_resist": 12,
         "of_lightning_resist": 12,
-        "of_holy_resist": 26,
+        "of_holy_resist": 30,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 19,
       "base_type": "plate",
@@ -2122,51 +2071,6 @@
     },
     {
       "affix_pool": {
-        "of_might": 15,
-        "of_finesse": 12,
-        "of_wisdom": 12,
-        "of_vitality": 52,
-        "of_the_bear": 45,
-        "of_fire_resist": 12,
-        "of_cold_resist": 12,
-        "of_lightning_resist": 12,
-        "of_holy_resist": 8,
-        "of_poison_resist": 28,
-        "of_dark_resist": 8,
-        "of_regen": 33
-      },
-      "armor": 48,
-      "base_type": "robe",
-      "default_tint": {
-        "hue": 127.4,
-        "mode": "normal",
-        "sat": 1.08
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [],
-      "id": "robe_of_misfortune_verdant",
-      "implicit_affixes": [
-        "of_wisdom",
-        "of_poison_resist"
-      ],
-      "item_tier": 5,
-      "lore": "Vines crawl over the haft, seeking soil that is not there.",
-      "name": "Verdant Robe of Misfortune",
-      "rarity": "legendary",
-      "slot": "armor",
-      "tile": "urand_misfortune.png",
-      "unique": true
-    },
-    {
-      "affix_pool": {
         "of_might": 29,
         "of_finesse": 12,
         "of_wisdom": 12,
@@ -2178,7 +2082,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 12,
       "base_type": "robe",
@@ -2217,58 +2122,6 @@
     },
     {
       "affix_pool": {
-        "of_might": 29,
-        "of_finesse": 12,
-        "of_wisdom": 12,
-        "of_vitality": 52,
-        "of_the_bear": 60,
-        "of_fire_resist": 12,
-        "of_cold_resist": 12,
-        "of_lightning_resist": 12,
-        "of_holy_resist": 8,
-        "of_poison_resist": 10,
-        "of_dark_resist": 8,
-        "of_regen": 15
-      },
-      "armor": 48,
-      "base_type": "robe",
-      "default_tint": {
-        "hue": 0.0,
-        "mode": "colorize",
-        "sat": 1.0,
-        "target_rgb": [
-          0.55,
-          0.58,
-          0.62
-        ]
-      },
-      "drop_weights": [
-        0,
-        0,
-        3,
-        25,
-        60
-      ],
-      "enchant_chance": 0.3,
-      "evasion": 12,
-      "flavor_tags": [],
-      "id": "robe_of_clouds_ironclad",
-      "implicit_affixes": [
-        "of_the_bear",
-        "of_lightning_resist",
-        "of_regen"
-      ],
-      "item_tier": 5,
-      "lore": "Plain forged iron, but heavier than the metal alone explains.",
-      "name": "Ironclad Robe of Clouds",
-      "rarity": "legendary",
-      "slot": "armor",
-      "tile": "urand_clouds.png",
-      "unique": true,
-      "recolor_of": "robe_of_clouds"
-    },
-    {
-      "affix_pool": {
         "of_might": 15,
         "of_finesse": 30,
         "of_wisdom": 12,
@@ -2278,9 +2131,10 @@
         "of_cold_resist": 12,
         "of_lightning_resist": 12,
         "of_holy_resist": 8,
-        "of_poison_resist": 10,
+        "of_poison_resist": 30,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 8,
       "base_type": "leather",
@@ -2327,7 +2181,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "armor": 8,
       "base_type": "leather",
@@ -2392,12 +2247,13 @@
         "of_the_bear": 10,
         "of_fire_resist": 10,
         "of_cold_resist": 10,
-        "of_lightning_resist": 10
+        "of_lightning_resist": 10,
+        "of_max_health": 5
       }
     },
     {
       "id": "mummy_tomb_wrappings",
-      "name": "Sigil-Wrappings of the Tomb",
+      "name": "Tomb Wrappings",
       "slot": "armor",
       "rarity": "epic",
       "tile": "urand_misfortune.png",
@@ -2429,7 +2285,9 @@
         "of_the_bear": 10,
         "of_regen": 10,
         "of_fire_resist": 10,
-        "of_cold_resist": 10
+        "of_cold_resist": 10,
+        "of_max_health": 5,
+        "of_dark_resist": 16
       },
       "default_tint": {
         "hue": 40,
@@ -2470,7 +2328,8 @@
         "of_fire_resist": 10,
         "of_cold_resist": 10,
         "of_lightning_resist": 10,
-        "of_finesse": 10
+        "of_finesse": 10,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 0,
@@ -2509,7 +2368,8 @@
         "of_vitality": 10,
         "of_the_bear": 10,
         "of_fire_resist": 10,
-        "of_cold_resist": 10
+        "of_cold_resist": 10,
+        "of_max_health": 5
       }
     },
     {
@@ -2539,7 +2399,8 @@
         "of_the_bear": 8,
         "of_regen": 10,
         "of_fire_resist": 10,
-        "of_cold_resist": 10
+        "of_cold_resist": 10,
+        "of_max_health": 5
       }
     },
     {
@@ -2582,7 +2443,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "default_tint": {
         "hue": 0,
@@ -2628,7 +2490,8 @@
         "of_holy_resist": 8,
         "of_poison_resist": 10,
         "of_dark_resist": 8,
-        "of_regen": 15
+        "of_regen": 15,
+        "of_max_health": 5
       },
       "overlay": "urand_clouds",
       "default_tint": {
@@ -2655,7 +2518,7 @@
         0,
         0
       ],
-      "unique": false,
+      "unique": true,
       "armor": 3,
       "evasion": 5,
       "implicit_affixes": [
@@ -2670,7 +2533,8 @@
         "of_vitality": 10,
         "of_fire_resist": 20,
         "of_cold_resist": 5,
-        "of_holy_resist": 20
+        "of_holy_resist": 20,
+        "of_max_health": 5
       },
       "overlay": "community_booty_shorts_of_temptation"
     }
