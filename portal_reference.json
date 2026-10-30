@@ -70,7 +70,7 @@
     "hunter_pct": "+{N}% damage to enemies above 80% HP.",
     "str_dmg_per5_peak_pct": "+{N}% damage scaling with your STR (peaks around +50 STR).",
     "echo_every_n": "Every {N}-th swing fires a free echo strike.",
-    "sundering_per_stack": "Each hit weakens the target's armor by {N} (stacks up to 2×).",
+    "sundering_per_stack": "Each hit weakens the target's armor by {N}% (stacks up to 2×).",
     "bloodletting_per_stack": "Each hit bleeds the target for {N} damage/sec over 4s.",
     "spell_fireball_ground": "Fireball: leaves a burning patch on impact.",
     "spell_iron_dust": "Iron Shot: pierced enemies are slowed for 1.5s.",
