@@ -8,147 +8,147 @@
       "components": ["cold","fire"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.45, 0.85, 1.00],
       "effect_id": "quench",
-      "description": "Each hit alternates fire and cold; on a frozen target, fire damage doubles."
+      "description": "Your hits burn and slow. A foe that is burning and slowed takes +30% damage from you."
     },
     {
       "id": "plasma",          "name": "Plasma",
       "components": ["fire","lightning"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "plasma",
-      "description": "+25% damage; chance to chain to one adjacent foe on hit."
+      "description": "Hitting a burning foe arcs to a nearby foe for 40% of the hit, as fire."
     },
     {
       "id": "pyre",            "name": "Pyre",
       "components": ["fire","holy"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [1.00, 0.92, 0.55],
       "effect_id": "pyre",
-      "description": "Burn DoT damages undead and demons +50%."
+      "description": "When a burning foe dies, its burn jumps to a nearby foe."
     },
     {
       "id": "combustion",      "name": "Combustion",
       "components": ["fire","poison"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "combustion",
-      "description": "Poison ticks detonate for 25% of remaining poison damage on expiry."
+      "description": "Setting a poisoned foe alight bursts its poison: nearby foes take 30% of the remaining poison as fire."
     },
     {
       "id": "hellfire",        "name": "Hellfire",
       "components": ["dark","fire"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.55, 0.30, 0.85],
       "effect_id": "hellfire",
-      "description": "Burn DoT cannot be removed; 5% lifesteal on burning targets."
+      "description": "Your burns last 50% longer, and you heal 3% of the burn damage they deal."
     },
     {
       "id": "bloodfire",       "name": "Bloodfire",
       "components": ["fire","vampiric"],
       "color_a": [1.00, 0.55, 0.18], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "bloodfire",
-      "description": "On lifesteal hit, target also takes burn DoT."
+      "description": "Lifesteal is doubled against burning foes."
     },
     {
       "id": "brittle_storm",   "name": "Brittle Storm",
       "components": ["cold","lightning"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "brittle_storm",
-      "description": "Frozen targets take +50% lightning damage."
+      "description": "Frozen or slowed foes take +30% lightning damage from you."
     },
     {
       "id": "cleansing_frost", "name": "Cleansing Frost",
       "components": ["cold","holy"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [1.00, 0.92, 0.55],
       "effect_id": "cleansing_frost",
-      "description": "Freeze duration +50%; freezes ignore Holy resistance."
+      "description": "Frozen foes take +25% damage from your hits."
     },
     {
       "id": "cryo_toxin",      "name": "Cryo-toxin",
       "components": ["cold","poison"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "cryo_toxin",
-      "description": "Each poison tick slows target by 5% (cap 30%)."
+      "description": "Poisoned foes you hit are slowed."
     },
     {
       "id": "hollow_frost",    "name": "Hollow Frost",
       "components": ["cold","dark"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [0.55, 0.30, 0.85],
       "effect_id": "hollow_frost",
-      "description": "Freeze duration +100% on enemies below 50% HP."
+      "description": "Your first hit on a foe below 30% HP freezes it for 1s."
     },
     {
       "id": "heartrime",       "name": "Heartrime",
       "components": ["cold","vampiric"],
       "color_a": [0.45, 0.85, 1.00], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "heartrime",
-      "description": "Freezing a target restores 5% max HP."
+      "description": "Freezing a foe heals you for 3% of your max HP."
     },
     {
       "id": "judgement",       "name": "Judgement",
       "components": ["holy","lightning"],
       "color_a": [1.00, 0.92, 0.55], "color_b": [0.65, 0.80, 1.00],
       "effect_id": "judgement",
-      "description": "+10% crit chance; crits chain to one adjacent foe."
+      "description": "Your crits call down a holy strike on the target for 50% of the crit."
     },
     {
       "id": "acid_storm",      "name": "Acid Storm",
       "components": ["poison","lightning"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "acid_storm",
-      "description": "Lightning hits apply a small poison stack."
+      "description": "Hitting a poisoned foe adds a poison stack and spreads it to a nearby foe."
     },
     {
       "id": "stormcurse",      "name": "Stormcurse",
       "components": ["dark","lightning"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.55, 0.30, 0.85],
       "effect_id": "stormcurse",
-      "description": "Damage to enemies in fog cells is doubled."
+      "description": "Your hits shock. Hitting a foe that is already shocked curses it for 3s (+15% damage taken)."
     },
     {
       "id": "blood_arc",       "name": "Blood Arc",
       "components": ["lightning","vampiric"],
       "color_a": [0.65, 0.80, 1.00], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "blood_arc",
-      "description": "On hit, restore 1% max HP."
+      "description": "Your hits arc to a nearby foe for 30%, and each arc heals you for 1% of your max HP."
     },
     {
       "id": "sanctified_venom","name": "Sanctified Venom",
       "components": ["holy","poison"],
       "color_a": [1.00, 0.92, 0.55], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "sanctified_venom",
-      "description": "Poison ticks strip enemy buffs (status overlays cleared on tick)."
+      "description": "Your poison deals double damage to undead and demons."
     },
     {
       "id": "twilight",        "name": "Twilight",
       "components": ["dark","holy"],
       "color_a": [1.00, 0.92, 0.55], "color_b": [0.55, 0.30, 0.85],
       "effect_id": "twilight",
-      "description": "Taking damage buffs your next hit by the lost HP%."
+      "description": "Your hits add 15% of their damage as holy and 15% as dark."
     },
     {
       "id": "sanctified_drain","name": "Sanctified Drain",
       "components": ["holy","vampiric"],
       "color_a": [1.00, 0.92, 0.55], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "sanctified_drain",
-      "description": "Lifesteal heals 2× when target is undead/demon."
+      "description": "Lifesteal is doubled against undead and demons."
     },
     {
       "id": "necrosis",        "name": "Necrosis",
       "components": ["dark","poison"],
       "color_a": [0.55, 0.30, 0.85], "color_b": [0.50, 0.95, 0.40],
       "effect_id": "necrosis",
-      "description": "Poison DoT bypasses armor."
+      "description": "Poisoned foes take +20% dark damage from you."
     },
     {
       "id": "bloodbloom",      "name": "Bloodbloom",
       "components": ["poison","vampiric"],
       "color_a": [0.50, 0.95, 0.40], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "bloodbloom",
-      "description": "Lifesteal hits also apply poison."
+      "description": "You heal for 10% of the poison damage you deal."
     },
     {
       "id": "soulfeed",        "name": "Soulfeed",
       "components": ["dark","vampiric"],
       "color_a": [0.55, 0.30, 0.85], "color_b": [0.85, 0.15, 0.15],
       "effect_id": "soulfeed",
-      "description": "Killing under this enchant restores 10% max HP."
+      "description": "Each kill heals 2% of your max HP and adds +2% damage (up to +20%). Stacks last 10s after your last kill, then fade one per second."
     }
   ]
 }
