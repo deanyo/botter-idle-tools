@@ -1,5 +1,5 @@
 {
-  "_doc": "Botter species roster \u2014 DCSS-faithful subset. Primary axes are str/dex/int (added 2026-06-04 with the autocast-spells pivot). str scales melee damage + max HP, dex scales crit + haste, int scales spell damage + spell area + DoT effectiveness. Each species adds str_flat/dex_flat/int_flat to the base 5/5/5 starting allocation. Existing pct multipliers (hp_pct, atk_pct, def_pct, haste_pct) stay as innate-species multipliers on top of the derived stats \u2014 back-compat with all existing balance work. Picked at character creation; locked per character.",
+  "_doc": "Botter species roster \u2014 DCSS-faithful subset. Primary axes are str/dex/int (added 2026-06-04 with the autocast-spells pivot). str scales melee damage + max HP, dex scales crit + haste + evasion rating, int scales spell damage + spell area + DoT effectiveness. Each species adds str_flat/dex_flat/int_flat to the base 5/5/5 starting allocation. Existing pct multipliers (hp_pct, atk_pct, def_pct, haste_pct) stay as innate-species multipliers on top of the derived stats \u2014 back-compat with all existing balance work. Picked at character creation; locked per character.",
   "_format_version": 2,
   "species": [
     {
@@ -54,7 +54,7 @@
         "id": "spriggan_quickfoot",
         "kind": "evasion_flat",
         "value": 8,
-        "desc": "+8% innate evasion (small-creature dodge)."
+        "desc": "+8 innate evasion rating (increased by Dexterity)."
       }
     },
     {
