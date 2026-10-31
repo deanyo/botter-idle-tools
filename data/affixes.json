@@ -44,6 +44,7 @@
 			"of_devotion",
 			"of_venom",
 			"of_shadows",
+			"of_runes",
 			"of_arcane_pool",
 			"of_arcane_flow",
 			"of_thrift",
@@ -804,6 +805,42 @@
 			"kind": "range",
 			"name": "Added Dark Damage",
 			"stat": "dark_extra",
+			"applies_to": [
+				"weapon",
+				"gloves",
+				"ring",
+				"amulet",
+				"helm"
+			],
+			"tiers": [
+				[
+					1,
+					3
+				],
+				[
+					3,
+					6
+				],
+				[
+					6,
+					10
+				],
+				[
+					10,
+					16
+				],
+				[
+					16,
+					25
+				]
+			]
+		},
+		{
+			"id": "of_runes",
+			"family": "generic",
+			"kind": "range",
+			"name": "Added Arcane Damage",
+			"stat": "arcane_extra",
 			"applies_to": [
 				"weapon",
 				"gloves",
@@ -8377,6 +8414,102 @@
 				[
 					1,
 					1
+				]
+			]
+		},
+		{
+			"id": "uq_unwritten",
+			"family": "unique",
+			"kind": "flat",
+			"name": "Unwritten",
+			"stat": "ue_arcane_shred",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				],
+				[
+					5,
+					5
+				]
+			]
+		},
+		{
+			"id": "uq_mind_over_steel",
+			"family": "unique",
+			"kind": "flat",
+			"name": "Mind over Steel",
+			"stat": "ue_int_weapon_dmg",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				],
+				[
+					2,
+					2
+				]
+			]
+		},
+		{
+			"id": "uq_mirrorward",
+			"family": "unique",
+			"kind": "flat",
+			"name": "Mirrorward",
+			"stat": "ue_arcane_reflect",
+			"applies_to": [
+				"any"
+			],
+			"tiers": [
+				[
+					30,
+					30
+				],
+				[
+					30,
+					30
+				],
+				[
+					30,
+					30
+				],
+				[
+					30,
+					30
+				],
+				[
+					30,
+					30
 				]
 			]
 		}
