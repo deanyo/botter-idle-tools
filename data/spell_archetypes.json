@@ -165,7 +165,7 @@
 				"chain"
 			],
 			"school": "lightning",
-			"blurb": "Lightning bolt to the nearest enemy, then arcs to up to 2 more (additional bounces from Chain Extra Jumps affix). Each bounce deals less damage than the prior.",
+			"blurb": "Lightning strikes within 3 cells, then arcs to another enemy (extra hits from projectile and chain bonuses). Jumps travel up to 3 cells, stay within 4 cells of you and cannot cross walls. Each bounce deals less damage.",
 			"cooldown": 11.6,
 			"damage": 24,
 			"element": "lightning",
@@ -173,9 +173,13 @@
 			"primary_stat": "dex",
 			"projectile": "",
 			"projectile_speed": 0.0,
-			"range_cells": 7,
+			"range_cells": 3,
 			"trail_flavor": "lightning",
-			"icon": "chain_lightning.png"
+			"icon": "chain_lightning.png",
+			"shape_params": {
+				"jump_radius": 3.0,
+				"reach_cells": 4
+			}
 		},
 		"spell_curse_brittlebone": {
 			"shape": "curse",
@@ -429,10 +433,16 @@
 					"apply_mark_stack": true,
 					"mark_window": 8.0,
 					"mark_stacks_per_hit": 1
+				},
+				"range_by_element": {
+					"lightning": 4
+				},
+				"chain_reach_by_element": {
+					"lightning": 4
 				}
 			},
 			"school": "arcane",
-			"blurb": "Pins the target with magic lances. Each hit adds a pin (max 5) and every pin makes the target take +5% damage from your NON-physical hits for 8s — so it sets up the rest of your loadout instead of carrying the kill itself. Refreshes on every hit; the pins fall out if you stop.",
+			"blurb": "Pins the target with magic lances. Each hit adds a pin (max 5) and every pin makes the target take +5% damage from your hits for 8s — so it sets up the rest of your loadout instead of carrying the kill itself. Refreshes on every hit; the pins fall out if you stop. Lightning variants target within 4 cells; their chains stay within 4 cells of you and cannot cross walls.",
 			"cooldown": 5.6,
 			"damage": 10,
 			"element": "",
@@ -486,7 +496,7 @@
 				}
 			},
 			"school": "lightning",
-			"blurb": "Lobs a charged orb at the nearest enemy that bursts into a crackling static field, zapping everything standing in it.",
+			"blurb": "Lobs a charged orb at an enemy within 2 cells that bursts into a crackling static field, zapping everything standing in it.",
 			"cooldown": 9.0,
 			"damage": 5,
 			"element": "lightning",
@@ -494,7 +504,7 @@
 			"primary_stat": "dex",
 			"projectile": "",
 			"projectile_speed": 0.0,
-			"range_cells": 6,
+			"range_cells": 2,
 			"tick": true,
 			"trail_flavor": "lightning",
 			"icon": "fulminant_prism.png"

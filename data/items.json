@@ -26096,6 +26096,213 @@
 				"of_arcane_resist"
 			],
 			"unique": true
+		},
+		{
+			"id": "dueling_rapier",
+			"name": "Dueling Rapier",
+			"slot": "weapon",
+			"rarity": "epic",
+			"tile": "rapier_1.png",
+			"base_type": "rapier",
+			"weapon_class": "1H",
+			"damage_min": 41,
+			"damage_max": 74,
+			"damage_type": "physical",
+			"speed": 0.55,
+			"item_tier": 4,
+			"flavor_tags": [],
+			"lore": "A balanced blade for the patient duelist. Its point finds the gaps.",
+			"drop_weights": [
+				0,
+				0,
+				5,
+				35,
+				25
+			],
+			"unique": false,
+			"enchant_chance": 0.1,
+			"implicit_affixes": [
+				"of_finesse",
+				"of_crit"
+			],
+			"affix_pool": {
+				"of_might": 25,
+				"of_finesse": 15,
+				"of_wisdom": 10,
+				"of_sharpness": 30,
+				"of_embers": 8,
+				"of_frost": 8,
+				"of_storms": 8,
+				"of_devotion": 6,
+				"of_venom": 6,
+				"of_shadows": 6,
+				"of_runes": 6,
+				"of_crit": 25,
+				"of_haste": 20,
+				"of_lifesteal": 15,
+				"of_damage": 8,
+				"of_quickcast": 8,
+				"of_executioner": 8,
+				"of_brawler": 15,
+				"of_pyromancer": 6,
+				"of_cryomancer": 6,
+				"of_thundercaller": 6,
+				"of_zealot": 4,
+				"of_pestcaller": 4,
+				"of_nightcaller": 4,
+				"of_mystic": 4
+			}
+		},
+		{
+			"id": "masterwork_rapier",
+			"name": "Adamant Rapier",
+			"slot": "weapon",
+			"rarity": "legendary",
+			"tile": "rapier_1.png",
+			"base_type": "rapier",
+			"weapon_class": "1H",
+			"damage_min": 60,
+			"damage_max": 105,
+			"damage_type": "physical",
+			"speed": 0.55,
+			"item_tier": 5,
+			"flavor_tags": [],
+			"lore": "A narrow blade forged for the deepest halls. A precise hand needs no heavier steel.",
+			"drop_weights": [
+				0,
+				0,
+				0,
+				10,
+				35
+			],
+			"unique": false,
+			"enchant_chance": 0.1,
+			"implicit_affixes": [
+				"of_finesse",
+				"of_crit"
+			],
+			"affix_pool": {
+				"of_might": 25,
+				"of_finesse": 15,
+				"of_wisdom": 10,
+				"of_sharpness": 30,
+				"of_embers": 8,
+				"of_frost": 8,
+				"of_storms": 8,
+				"of_devotion": 6,
+				"of_venom": 6,
+				"of_shadows": 6,
+				"of_runes": 6,
+				"of_crit": 25,
+				"of_haste": 20,
+				"of_lifesteal": 15,
+				"of_damage": 8,
+				"of_quickcast": 8,
+				"of_executioner": 8,
+				"of_brawler": 15,
+				"of_pyromancer": 6,
+				"of_cryomancer": 6,
+				"of_thundercaller": 6,
+				"of_zealot": 4,
+				"of_pestcaller": 4,
+				"of_nightcaller": 4,
+				"of_mystic": 4
+			}
+		},
+		{
+			"id": "battle_wand",
+			"name": "Battle Wand",
+			"slot": "weapon",
+			"rarity": "epic",
+			"tile": "casters/wand_silver.png",
+			"base_type": "wand",
+			"weapon_class": "caster",
+			"damage_min": 30,
+			"damage_max": 50,
+			"speed": 0.6,
+			"damage_type": "cold",
+			"item_tier": 4,
+			"drop_weights": [
+				0,
+				0,
+				5,
+				35,
+				25
+			],
+			"default_tint": {
+				"hue": 200.0,
+				"sat": 0.4,
+				"mode": "colorize"
+			},
+			"flavor_tags": [
+				"cold"
+			],
+			"two_handed": false,
+			"lore": "A reinforced focus built for volleys, rather than elaborate incantations.",
+			"affix_pool": {
+				"of_damage": 26,
+				"of_wisdom": 18,
+				"of_frost": 24,
+				"of_quickcast": 10,
+				"of_cryomancer": 24,
+				"of_multicast": 24,
+				"of_chains": 20,
+				"of_crit": 16,
+				"of_haste": 16
+			},
+			"enchant_chance": 0.1,
+			"implicit_affixes": [
+				"of_multicast"
+			],
+			"unique": false
+		},
+		{
+			"id": "duelist_wand",
+			"name": "Duelist Wand",
+			"slot": "weapon",
+			"rarity": "legendary",
+			"tile": "casters/wand_glass.png",
+			"base_type": "wand",
+			"weapon_class": "caster",
+			"damage_min": 45,
+			"damage_max": 75,
+			"speed": 0.6,
+			"damage_type": "arcane",
+			"item_tier": 5,
+			"drop_weights": [
+				0,
+				0,
+				0,
+				10,
+				35
+			],
+			"default_tint": {
+				"hue": 275.0,
+				"sat": 0.7,
+				"mode": "colorize"
+			},
+			"flavor_tags": [],
+			"two_handed": false,
+			"lore": "A duelist’s focus. Every rune guides another bolt toward its mark.",
+			"affix_pool": {
+				"of_damage": 26,
+				"of_wisdom": 18,
+				"of_mystic": 24,
+				"of_runes": 14,
+				"of_quickcast": 12,
+				"of_resonance": 10,
+				"of_arcane_pool": 10,
+				"of_velocity": 10,
+				"of_multicast": 24,
+				"of_chains": 20,
+				"of_crit": 16,
+				"of_haste": 16
+			},
+			"enchant_chance": 0.1,
+			"implicit_affixes": [
+				"of_chains"
+			],
+			"unique": false
 		}
 	]
 }

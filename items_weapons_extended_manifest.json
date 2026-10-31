@@ -6033,6 +6033,101 @@
         "of_arcane_resist"
       ],
       "unique": true
+    },
+    {
+      "id": "battle_wand",
+      "name": "Battle Wand",
+      "slot": "weapon",
+      "rarity": "epic",
+      "tile": "casters/wand_silver.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 30,
+      "damage_max": 50,
+      "speed": 0.6,
+      "damage_type": "cold",
+      "item_tier": 4,
+      "drop_weights": [
+        0,
+        0,
+        5,
+        35,
+        25
+      ],
+      "default_tint": {
+        "hue": 200.0,
+        "sat": 0.4,
+        "mode": "colorize"
+      },
+      "flavor_tags": [
+        "cold"
+      ],
+      "two_handed": false,
+      "lore": "A reinforced focus built for volleys, rather than elaborate incantations.",
+      "affix_pool": {
+        "of_damage": 26,
+        "of_wisdom": 18,
+        "of_frost": 24,
+        "of_quickcast": 10,
+        "of_cryomancer": 24,
+        "of_multicast": 24,
+        "of_chains": 20,
+        "of_crit": 16,
+        "of_haste": 16
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_multicast"
+      ],
+      "unique": false
+    },
+    {
+      "id": "duelist_wand",
+      "name": "Duelist Wand",
+      "slot": "weapon",
+      "rarity": "legendary",
+      "tile": "casters/wand_glass.png",
+      "base_type": "wand",
+      "weapon_class": "caster",
+      "damage_min": 45,
+      "damage_max": 75,
+      "speed": 0.6,
+      "damage_type": "arcane",
+      "item_tier": 5,
+      "drop_weights": [
+        0,
+        0,
+        0,
+        10,
+        35
+      ],
+      "default_tint": {
+        "hue": 275.0,
+        "sat": 0.7,
+        "mode": "colorize"
+      },
+      "flavor_tags": [],
+      "two_handed": false,
+      "lore": "A duelist\u2019s focus. Every rune guides another bolt toward its mark.",
+      "affix_pool": {
+        "of_damage": 26,
+        "of_wisdom": 18,
+        "of_mystic": 24,
+        "of_runes": 14,
+        "of_quickcast": 12,
+        "of_resonance": 10,
+        "of_arcane_pool": 10,
+        "of_velocity": 10,
+        "of_multicast": 24,
+        "of_chains": 20,
+        "of_crit": 16,
+        "of_haste": 16
+      },
+      "enchant_chance": 0.1,
+      "implicit_affixes": [
+        "of_chains"
+      ],
+      "unique": false
     }
   ]
 }
