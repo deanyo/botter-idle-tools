@@ -948,7 +948,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_iron_aegis"
+        "of_warding"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1265,7 +1265,7 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_fire_resist",
-        "of_iron_aegis",
+        "of_the_bear",
         "of_warding",
         "of_cold_resist"
       ],

@@ -539,7 +539,7 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -588,7 +588,7 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 14,
@@ -681,7 +681,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality",
         "of_growth"
       ],
@@ -726,7 +725,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality",
         "of_growth"
       ],
@@ -857,7 +855,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality",
         "of_wisdom"
       ],
@@ -1042,7 +1039,7 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_quickcast",
-        "of_meditation",
+        "of_arcane_flow",
         "of_regen"
       ],
       "affix_pool": {
@@ -1225,7 +1222,7 @@
       "implicit_affixes": [
         "of_wisdom",
         "of_might",
-        "of_obstinance",
+        "of_the_bear",
         "of_growth"
       ],
       "affix_pool": {
@@ -1361,7 +1358,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality"
       ],
       "affix_pool": {
@@ -1410,7 +1406,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality",
         "of_growth"
       ],
@@ -1461,7 +1456,6 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_iron_aegis",
         "of_vitality"
       ],
       "affix_pool": {
@@ -1554,9 +1548,6 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "uq_caged",
-        "of_unbroken",
-        "of_iron_aegis",
-        "of_thorns",
         "of_the_bear"
       ],
       "affix_pool": {
@@ -1895,9 +1886,8 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_holy_anchor",
-        "of_holy_resist",
-        "of_regen"
+        "of_regen",
+        "of_holy_resist"
       ],
       "affix_pool": {
         "of_wisdom": 16,
@@ -2027,7 +2017,7 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_dark_resist",
-        "of_int_mastery",
+        "of_damage",
         "of_tactician"
       ],
       "affix_pool": {

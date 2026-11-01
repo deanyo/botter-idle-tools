@@ -1200,7 +1200,7 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_regen",
-        "of_smoldering_step",
+        "of_haste",
         "of_swiftness"
       ],
       "affix_pool": {
@@ -1240,7 +1240,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_obstinance",
+        "of_vitality",
         "of_cold_resist",
         "of_recoup",
         "of_the_bear"

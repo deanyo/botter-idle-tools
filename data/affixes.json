@@ -1722,7 +1722,8 @@
 					"type": "bool",
 					"impl": "of_berserker:is_raging"
 				}
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_hunter",
@@ -1756,7 +1757,8 @@
 					18,
 					20
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_echoes",
@@ -1789,7 +1791,8 @@
 					4,
 					4
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_tempest",
@@ -1889,7 +1892,8 @@
 					6,
 					10
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_plunder",
@@ -1992,7 +1996,8 @@
 					14,
 					18
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_berserker_rage",
@@ -2160,7 +2165,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_prospecting",
@@ -2225,7 +2231,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_polymorph",
@@ -2257,7 +2264,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_wolf_kinship",
@@ -2289,7 +2297,8 @@
 					22,
 					28
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_holy_anchor",
@@ -2353,7 +2362,8 @@
 					330,
 					330
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_tidesong",
@@ -2385,7 +2395,8 @@
 					40,
 					40
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_serpent_venom",
@@ -2417,7 +2428,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_phylactery",
@@ -2449,7 +2461,8 @@
 					35,
 					35
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_vault_key",
@@ -2481,7 +2494,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_five_heads",
@@ -2513,7 +2527,8 @@
 					22,
 					28
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_executioner_pact",
@@ -2582,7 +2597,8 @@
 					25,
 					30
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_revenant",
@@ -2617,7 +2633,8 @@
 					25,
 					28
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_kingslayer",
@@ -2651,7 +2668,8 @@
 					32,
 					40
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_butcher",
@@ -2685,7 +2703,8 @@
 					7,
 					10
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_unbroken",
@@ -2853,7 +2872,8 @@
 					85,
 					110
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_drainblade",
@@ -3024,7 +3044,8 @@
 					22,
 					28
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_smoldering_step",
@@ -3057,7 +3078,8 @@
 					32,
 					40
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_thorns",
@@ -3298,7 +3320,8 @@
 					5,
 					7
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_chainspark",
@@ -3332,7 +3355,8 @@
 					44,
 					50
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_warden_step",
@@ -3365,7 +3389,8 @@
 					65,
 					80
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_abundance",
@@ -3479,7 +3504,8 @@
 					"type": "bool",
 					"impl": "of_lingering_pestilence:has_long_dot"
 				}
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_unique_slayer",
@@ -6152,7 +6178,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"_doc": "UNIQUE-ONLY signature (2026-08-07). RULE REWRITE: every spell you cast counts as EVERY element for reaction purposes, so any spell can trigger any reaction. Normally a build must equip the right damage type to open a combo (fire->poisoned = ignite); this removes that constraint entirely and makes loadout-building free-form. Costs 25% spell damage as the price, expressed as a real trade via the P4 extra_stats substrate. Read in actor._apply_typed_damage's reaction gate.",
@@ -6215,7 +6242,8 @@
 						]
 					]
 				}
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"_doc": "UNIQUE-ONLY signature (2026-08-07). RULE REWRITE: your aura reservation is refunded entirely, but your maximum mana is halved. An aurastacker build normally trades pool for auras; this inverts the arithmetic so auras are free and spenders become the scarce thing. P2 measured a pure-aura build at 283% funded with mana 'genuinely irrelevant', so this is the item that makes that build shape a DECISION. Read in stat_calc's aura-reservation lane.",
@@ -6251,7 +6279,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "of_the_ricochet",
@@ -8255,7 +8284,8 @@
 					5,
 					5
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_unbreakable",
@@ -8287,7 +8317,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_first_cut",
@@ -8319,7 +8350,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_titans_vigour",
@@ -8351,7 +8383,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_berserkers_fury",
@@ -8383,7 +8416,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_caged",
@@ -8415,7 +8449,8 @@
 					1,
 					1
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_unwritten",
@@ -8447,7 +8482,8 @@
 					5,
 					5
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_mind_over_steel",
@@ -8479,7 +8515,8 @@
 					2,
 					2
 				]
-			]
+			],
+			"unique_only": true
 		},
 		{
 			"id": "uq_mirrorward",
@@ -8511,7 +8548,8 @@
 					30,
 					30
 				]
-			]
+			],
+			"unique_only": true
 		}
 	]
 }

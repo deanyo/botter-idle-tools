@@ -530,7 +530,7 @@
       "implicit_affixes": [
         "of_thundercaller",
         "of_storms",
-        "of_chainspark"
+        "of_crit"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -900,8 +900,6 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_butcher",
-        "of_thorns",
-        "of_first_strike",
         "of_the_bear"
       ],
       "affix_pool": {

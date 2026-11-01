@@ -696,7 +696,7 @@
       "unique": false,
       "enchant_chance": 0.1,
       "implicit_affixes": [
-        "of_obstinance"
+        "of_max_res"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -978,7 +978,7 @@
       "unique": false,
       "enchant_chance": 0.15,
       "implicit_affixes": [
-        "of_obstinance"
+        "of_max_res"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1204,7 +1204,7 @@
       "implicit_affixes": [
         "of_vitality",
         "of_regen",
-        "of_recoup"
+        "of_lifesteal"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1426,7 +1426,7 @@
       "unique": true,
       "enchant_chance": 0.0,
       "implicit_affixes": [
-        "of_obstinance",
+        "of_max_res",
         "of_warding",
         "of_recoup",
         "of_abundance"
@@ -1542,9 +1542,7 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "uq_first_cut",
-        "of_executioner",
-        "of_first_strike",
-        "of_kingslayer"
+        "of_executioner"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -2271,7 +2269,7 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "many-armed",
       "implicit_affixes": [
-        "of_int_mastery",
+        "of_damage",
         "of_resonance"
       ],
       "affix_pool": {
@@ -2650,8 +2648,7 @@
       "enchant_chance": 0.0,
       "requires_innate_tag": "scholar",
       "implicit_affixes": [
-        "of_int_mastery",
-        "of_channeling",
+        "of_damage",
         "of_wisdom"
       ],
       "affix_pool": {
@@ -2759,7 +2756,7 @@
       "implicit_affixes": [
         "of_cold_resist",
         "of_cryomancer",
-        "of_recoup"
+        "of_regen"
       ],
       "affix_pool": {
         "of_frost": 20,

@@ -545,7 +545,6 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step",
         "of_swiftness"
       ],
       "affix_pool": {
@@ -588,7 +587,7 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step"
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -634,7 +633,6 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step",
         "of_swiftness"
       ],
       "affix_pool": {
@@ -805,7 +803,7 @@
       "implicit_affixes": [
         "of_lightning_resist",
         "of_haste",
-        "of_devastation"
+        "of_swiftness"
       ],
       "affix_pool": {
         "of_finesse": 22,
@@ -1055,7 +1053,7 @@
       "implicit_affixes": [
         "of_haste",
         "of_the_cat",
-        "of_warden_step"
+        "of_swiftness"
       ],
       "item_tier": 4,
       "lore": "Plain forged iron, but heavier than the metal alone explains.",

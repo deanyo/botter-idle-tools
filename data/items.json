@@ -2582,7 +2582,7 @@
 			"implicit_affixes": [
 				"of_kingslayer",
 				"of_might",
-				"of_unique_slayer"
+				"of_executioner"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -3258,7 +3258,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_unbroken"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 15,
@@ -3300,7 +3300,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_unbroken"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 15,
@@ -3573,7 +3573,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_unbroken"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 15,
@@ -3796,7 +3796,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_unbroken"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 15,
@@ -3880,9 +3880,6 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"uq_caged",
-				"of_unbroken",
-				"of_iron_aegis",
-				"of_thorns",
 				"of_the_bear"
 			],
 			"affix_pool": {
@@ -4071,7 +4068,7 @@
 			"implicit_affixes": [
 				"of_lightning_resist",
 				"of_haste",
-				"of_devastation"
+				"of_swiftness"
 			],
 			"affix_pool": {
 				"of_finesse": 22,
@@ -4432,7 +4429,7 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"of_fire_resist",
-				"of_iron_aegis",
+				"of_the_bear",
 				"of_warding",
 				"of_cold_resist"
 			],
@@ -5183,7 +5180,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality",
 				"of_growth"
 			],
@@ -5271,7 +5267,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 14,
@@ -5320,7 +5316,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis"
+				"of_vitality"
 			],
 			"affix_pool": {
 				"of_might": 14,
@@ -5456,7 +5452,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality",
 				"of_wisdom"
 			],
@@ -5506,7 +5501,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality",
 				"of_growth"
 			],
@@ -5557,7 +5551,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality"
 			],
 			"affix_pool": {
@@ -5649,7 +5642,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality",
 				"of_growth"
 			],
@@ -5871,7 +5863,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_iron_aegis",
 				"of_vitality"
 			],
 			"affix_pool": {
@@ -5966,7 +5957,7 @@
 			"implicit_affixes": [
 				"of_wisdom",
 				"of_quickcast",
-				"of_meditation",
+				"of_arcane_flow",
 				"of_regen"
 			],
 			"affix_pool": {
@@ -6011,7 +6002,7 @@
 			"implicit_affixes": [
 				"of_wisdom",
 				"of_might",
-				"of_obstinance",
+				"of_the_bear",
 				"of_growth"
 			],
 			"affix_pool": {
@@ -7037,7 +7028,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_iron_aegis"
+				"of_warding"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -7768,7 +7759,7 @@
 			"implicit_affixes": [
 				"of_haste",
 				"of_the_cat",
-				"of_warden_step"
+				"of_swiftness"
 			],
 			"affix_pool": {
 				"of_finesse": 22,
@@ -7814,7 +7805,6 @@
 			"implicit_affixes": [
 				"of_haste",
 				"of_the_cat",
-				"of_warden_step",
 				"of_swiftness"
 			],
 			"affix_pool": {
@@ -8196,7 +8186,6 @@
 			"implicit_affixes": [
 				"of_haste",
 				"of_the_cat",
-				"of_warden_step",
 				"of_swiftness"
 			],
 			"affix_pool": {
@@ -9896,7 +9885,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_executioner",
-				"of_devastation",
+				"of_haste",
 				"of_abundance"
 			],
 			"affix_pool": {
@@ -10085,7 +10074,7 @@
 			"implicit_affixes": [
 				"of_regen",
 				"of_vitality",
-				"of_recoup"
+				"of_lifesteal"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -10148,7 +10137,7 @@
 			"implicit_affixes": [
 				"of_vitality",
 				"of_regen",
-				"of_recoup"
+				"of_lifesteal"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -10942,7 +10931,7 @@
 			"unique": false,
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_obstinance"
+				"of_max_res"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -11168,7 +11157,7 @@
 			"unique": false,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
-				"of_obstinance"
+				"of_max_res"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -11281,9 +11270,7 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"uq_first_cut",
-				"of_executioner",
-				"of_first_strike",
-				"of_kingslayer"
+				"of_executioner"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -11395,7 +11382,7 @@
 			"implicit_affixes": [
 				"of_vitality",
 				"of_regen",
-				"of_recoup"
+				"of_lifesteal"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -11505,7 +11492,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_obstinance",
+				"of_max_res",
 				"of_warding",
 				"of_recoup",
 				"of_abundance"
@@ -12184,7 +12171,7 @@
 			"implicit_affixes": [
 				"of_thundercaller",
 				"of_storms",
-				"of_chainspark"
+				"of_crit"
 			],
 			"affix_pool": {
 				"of_might": 16,
@@ -12968,8 +12955,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_might",
-				"of_sharpness",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13080,7 +13066,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13136,7 +13122,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker",
 				"of_sharpness"
 			],
 			"affix_pool": {
@@ -13192,7 +13177,7 @@
 			"unique": false,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
-				"of_armor_breaker",
+				"of_sharpness",
 				"of_might",
 				"of_executioner"
 			],
@@ -13249,7 +13234,7 @@
 			"unique": false,
 			"enchant_chance": 0.05,
 			"implicit_affixes": [
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13304,7 +13289,7 @@
 			"unique": false,
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_armor_breaker",
+				"of_sharpness",
 				"of_might"
 			],
 			"affix_pool": {
@@ -13360,9 +13345,8 @@
 			"unique": false,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
-				"of_armor_breaker",
-				"of_might",
-				"of_sundering"
+				"of_sharpness",
+				"of_might"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13418,7 +13402,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_executioner",
-				"of_bloodletting"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13473,9 +13457,8 @@
 			"unique": false,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
-				"of_doomstrike",
-				"of_executioner",
-				"of_executioner_pact"
+				"of_damage",
+				"of_executioner"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13745,7 +13728,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13856,7 +13839,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -13912,7 +13895,6 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker",
 				"of_sharpness"
 			],
 			"affix_pool": {
@@ -13971,7 +13953,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14029,7 +14011,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14139,7 +14121,7 @@
 			"unique": false,
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_armor_breaker",
+				"of_sharpness",
 				"of_might"
 			],
 			"affix_pool": {
@@ -14196,7 +14178,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14307,7 +14289,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14363,7 +14345,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14527,7 +14509,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_first_strike"
+				"of_crit"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14583,7 +14565,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_first_strike"
+				"of_crit"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14694,7 +14676,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_first_strike"
+				"of_crit"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14750,7 +14732,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_sundering"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14806,7 +14788,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_might",
-				"of_sundering",
+				"of_sharpness",
 				"of_executioner"
 			],
 			"affix_pool": {
@@ -14864,7 +14846,7 @@
 			"unique": false,
 			"enchant_chance": 0.05,
 			"implicit_affixes": [
-				"of_serrated_edge"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -14922,7 +14904,7 @@
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
 				"of_shadows",
-				"of_bloodletting"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -15595,7 +15577,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_haste",
-				"of_serrated_edge"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 25,
@@ -15653,7 +15635,7 @@
 			"unique": false,
 			"enchant_chance": 0.15,
 			"implicit_affixes": [
-				"of_serrated_edge",
+				"of_sharpness",
 				"of_haste",
 				"of_lifesteal"
 			],
@@ -16121,7 +16103,7 @@
 			"id": "halberd_jadeforged",
 			"implicit_affixes": [
 				"of_might",
-				"of_first_strike"
+				"of_crit"
 			],
 			"item_tier": 2,
 			"lore": "Carved from one piece of imperial jade. Fault-lines make patterns.",
@@ -16300,7 +16282,7 @@
 			],
 			"id": "broad_axe_voidwrought",
 			"implicit_affixes": [
-				"of_armor_breaker",
+				"of_sharpness",
 				"of_might"
 			],
 			"item_tier": 2,
@@ -16608,7 +16590,7 @@
 			"id": "steel_spear_mossy",
 			"implicit_affixes": [
 				"of_might",
-				"of_first_strike"
+				"of_crit"
 			],
 			"item_tier": 3,
 			"lore": "Damp green spores drift from every notch — they twitch toward warm flesh.",
@@ -17168,7 +17150,7 @@
 			"id": "warhammer_rosegold",
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"item_tier": 2,
 			"lore": "An alloy out of fashion in this century. The shine is unmistakable.",
@@ -17816,7 +17798,7 @@
 			"id": "bullwhip_gilded",
 			"implicit_affixes": [
 				"of_haste",
-				"of_serrated_edge"
+				"of_sharpness"
 			],
 			"item_tier": 2,
 			"lore": "Cathedral-gold leaf, beaten thin and prayed over for a hundred years.",
@@ -18253,7 +18235,7 @@
 			"id": "orcish_platemail_gilded",
 			"implicit_affixes": [
 				"of_the_bear",
-				"of_unbroken"
+				"of_vitality"
 			],
 			"item_tier": 3,
 			"lore": "Cathedral-gold leaf, beaten thin and prayed over for a hundred years.",
@@ -18934,9 +18916,8 @@
 			],
 			"id": "runed_broad_axe_azure",
 			"implicit_affixes": [
-				"of_armor_breaker",
-				"of_might",
-				"of_sundering"
+				"of_sharpness",
+				"of_might"
 			],
 			"item_tier": 4,
 			"lore": "Cold to the touch. The air around it always tastes of winter.",
@@ -20081,7 +20062,7 @@
 			"id": "runed_bardiche_mossy",
 			"implicit_affixes": [
 				"of_might",
-				"of_sundering",
+				"of_sharpness",
 				"of_executioner"
 			],
 			"item_tier": 4,
@@ -20137,7 +20118,7 @@
 			"implicit_affixes": [
 				"of_haste",
 				"of_the_cat",
-				"of_warden_step"
+				"of_swiftness"
 			],
 			"item_tier": 4,
 			"lore": "Plain forged iron, but heavier than the metal alone explains.",
@@ -20249,7 +20230,7 @@
 			"id": "giant_club_crimson",
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"item_tier": 3,
 			"lore": "Forged in dragonfire, the metal still glows when blood spills near it.",
@@ -20803,7 +20784,7 @@
 			"enchant_chance": 0.0,
 			"requires_innate_tag": "many-armed",
 			"implicit_affixes": [
-				"of_int_mastery",
+				"of_damage",
 				"of_resonance"
 			],
 			"affix_pool": {
@@ -21032,7 +21013,7 @@
 			"requires_innate_tag": "ancient",
 			"implicit_affixes": [
 				"of_dark_resist",
-				"of_int_mastery"
+				"of_wisdom"
 			],
 			"affix_pool": {
 				"of_wisdom": 16,
@@ -21796,7 +21777,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_prospecting",
+				"of_might",
 				"of_sharpness"
 			],
 			"affix_pool": {
@@ -21962,9 +21943,8 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_holy_anchor",
-				"of_holy_resist",
-				"of_regen"
+				"of_regen",
+				"of_holy_resist"
 			],
 			"affix_pool": {
 				"of_wisdom": 16,
@@ -22596,8 +22576,7 @@
 			"enchant_chance": 0.0,
 			"requires_innate_tag": "scholar",
 			"implicit_affixes": [
-				"of_int_mastery",
-				"of_channeling",
+				"of_damage",
 				"of_wisdom"
 			],
 			"affix_pool": {
@@ -22797,7 +22776,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_might",
-				"of_armor_breaker"
+				"of_sharpness"
 			],
 			"affix_pool": {
 				"of_might": 30,
@@ -23315,7 +23294,7 @@
 			"implicit_affixes": [
 				"of_cold_resist",
 				"of_cryomancer",
-				"of_recoup"
+				"of_regen"
 			],
 			"affix_pool": {
 				"of_frost": 20,
@@ -23361,7 +23340,7 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"of_regen",
-				"of_smoldering_step",
+				"of_haste",
 				"of_swiftness"
 			],
 			"affix_pool": {
@@ -23400,8 +23379,8 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"of_finesse",
-				"of_chainspark",
-				"of_avenger"
+				"of_crit",
+				"of_damage"
 			],
 			"affix_pool": {
 				"of_storms": 14,
@@ -23445,7 +23424,7 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"of_dark_resist",
-				"of_int_mastery",
+				"of_damage",
 				"of_tactician"
 			],
 			"affix_pool": {
@@ -23746,7 +23725,7 @@
 			"unique": true,
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
-				"of_obstinance",
+				"of_vitality",
 				"of_cold_resist",
 				"of_recoup",
 				"of_the_bear"
@@ -23793,8 +23772,6 @@
 			"enchant_chance": 0.0,
 			"implicit_affixes": [
 				"of_butcher",
-				"of_thorns",
-				"of_first_strike",
 				"of_the_bear"
 			],
 			"affix_pool": {
@@ -23942,7 +23919,7 @@
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_channeling"
+				"of_damage"
 			]
 		},
 		{
@@ -23984,7 +23961,7 @@
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_channeling",
+				"of_damage",
 				"of_quickcast"
 			]
 		},
@@ -24062,7 +24039,7 @@
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_channeling",
+				"of_damage",
 				"of_resonance"
 			]
 		},
@@ -24099,13 +24076,14 @@
 				"of_wisdom": 22,
 				"of_resonance": 20,
 				"of_quickcast": 16,
-				"of_arcane_pool": 14
+				"of_arcane_pool": 14,
+				"of_thrift": 14
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_channeling",
+				"of_damage",
 				"of_resonance",
-				"of_meditation"
+				"of_arcane_flow"
 			]
 		},
 		{
@@ -24184,12 +24162,13 @@
 				"of_damage": 24,
 				"of_might": 18,
 				"of_devotion": 24,
-				"of_zealot": 24
+				"of_zealot": 24,
+				"of_crit": 14
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_zealot",
-				"of_channeling"
+				"of_damage"
 			]
 		},
 		{
@@ -24235,7 +24214,7 @@
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
 				"of_zealot",
-				"of_channeling",
+				"of_damage",
 				"of_might"
 			]
 		},
@@ -24444,7 +24423,7 @@
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_scribe"
+				"of_wisdom"
 			]
 		},
 		{
@@ -24478,12 +24457,14 @@
 			"affix_pool": {
 				"of_damage": 22,
 				"of_arcane_pool": 16,
-				"of_wisdom": 14
+				"of_wisdom": 14,
+				"of_shadows": 18,
+				"of_thrift": 14
 			},
 			"enchant_chance": 0.1,
 			"implicit_affixes": [
-				"of_scribe",
-				"of_int_mastery"
+				"of_wisdom",
+				"of_damage"
 			]
 		},
 		{
@@ -24515,7 +24496,7 @@
 			],
 			"lore": "Memorized by gods. Indexed for everyone else.",
 			"implicit_affixes": [
-				"of_channeling",
+				"of_damage",
 				"of_quickcast",
 				"of_thrift"
 			],

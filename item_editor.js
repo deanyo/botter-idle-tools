@@ -155,7 +155,11 @@
     if (Number.isFinite(it.damage_min) && Number.isFinite(it.damage_max) && it.damage_min > it.damage_max) out.push('Maximum damage is below minimum damage.');
     if (!Array.isArray(it.drop_weights) || it.drop_weights.length !== 5 || !it.drop_weights.every(w => Number.isInteger(w) && w >= 0)) out.push('Drop weights need five whole numbers of 0 or more.');
     if (!Number.isFinite(it.enchant_chance) || it.enchant_chance < 0 || it.enchant_chance > 1) out.push('Enchant chance must be between 0 and 1.');
-    for (const id of it.implicit_affixes || []) if (!affixById.has(id)) out.push(`Built-in bonus "${id}" does not exist.`);
+    for (const id of it.implicit_affixes || []) {
+      const a = affixById.get(id);
+      if (!a) out.push(`Built-in bonus "${id}" does not exist.`);
+      else if (!pool.has(id) && a.family !== 'drawback' && !(it.unique && a.unique_only)) out.push(`Bonus "${a.name}" requires an approved unique mechanic on a unique item.`);
+    }
     for (const [id, w] of Object.entries(it.affix_pool || {})) {
       if (!affixById.has(id)) out.push(`Pool affix "${id}" does not exist.`);
       else if (!(Number.isFinite(w) && w > 0)) out.push(`Pool weight for ${affixById.get(id).name} must be above 0.`);
@@ -326,7 +330,7 @@
     const text = document.createElement('div');
     const name = document.createElement('strong'); name.textContent = affix.name; text.append(name);
     if (affix.family === 'drawback') name.className = 'drawback-name';
-    else if (!pool.has(affix.id) && affix.family !== 'eternal') { const tag = document.createElement('span'); tag.className = 'parked-tag'; tag.textContent = 'parked'; text.append(tag); }
+    else if (!pool.has(affix.id) && affix.family !== 'eternal') { const tag = document.createElement('span'); tag.className = 'parked-tag'; tag.textContent = affix.unique_only ? 'unique only' : 'parked'; text.append(tag); }
     const small = document.createElement('small'); small.textContent = bonusDescription(affix, rarity); text.append(small);
     row.append(text, button); return row;
   }
@@ -340,7 +344,7 @@
     }));
     const q = $('implicit-search').value.trim().toLowerCase();
     const options = affixes.filter(a => a.family !== 'eternal' && a.family !== 'drawback' && appliesTo(a, it) && !chosen.includes(a.id) &&
-      ($('show-parked').checked || pool.has(a.id)) && (!q || `${a.name} ${a.stat} ${a.id}`.toLowerCase().includes(q)))
+      (pool.has(a.id) || (it.unique && a.unique_only && $('show-parked').checked)) && (!q || `${a.name} ${a.stat} ${a.id}`.toLowerCase().includes(q)))
       .sort((a, b) => Number(pool.has(b.id)) - Number(pool.has(a.id)) || a.name.localeCompare(b.name));
     $('implicit-options').replaceChildren(...options.map(a => {
       const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Add';
@@ -594,7 +598,7 @@
     $('f-base_type').addEventListener('change', () => { setField('base_type', $('f-base_type').value.trim()); renderImplicits(); renderPool(); });
     $('f-item_tier').addEventListener('change', () => { setField('item_tier', Number($('f-item_tier').value)); renderStats(); });
     $('f-rarity').addEventListener('change', () => { setField('rarity', $('f-rarity').value); renderImplicits(); renderPool(); });
-    $('f-unique').addEventListener('change', () => setField('unique', $('f-unique').checked));
+    $('f-unique').addEventListener('change', () => { setField('unique', $('f-unique').checked); renderImplicits(); });
     $('f-lore').addEventListener('input', () => setField('lore', $('f-lore').value));
     $('f-requires_innate_tag').addEventListener('change', () => setField('requires_innate_tag', $('f-requires_innate_tag').value));
     $('f-boss_drop').addEventListener('change', () => setField('boss_drop', $('f-boss_drop').value.trim()));

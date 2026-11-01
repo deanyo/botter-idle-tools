@@ -314,6 +314,10 @@
     }
     if (target >= 3) {
       if (!RARITIES.includes(item.rarity)) return 'Choose a valid rarity.';
+      for (const id of item.implicit_affixes || []) {
+        const a = affixMap.get(id);
+        if (!a || (!pool.has(id) && a.family !== 'drawback' && !(item.unique && a.unique_only))) return 'Special bonuses require a unique item and an approved unique mechanic. Remove the bonus or mark the item as unique.';
+      }
       for (const key of ['default_tint','default_tint_overlay']) if (item[key] && !validTint(item[key])) return 'Check the sprite colour settings.';
       for (const key of Object.keys(STAT_LABELS)) if (Object.hasOwn(item,key)) {
         const value = item[key];

@@ -1392,7 +1392,7 @@
       "implicit_affixes": [
         "of_regen",
         "of_vitality",
-        "of_recoup"
+        "of_lifesteal"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -1454,7 +1454,7 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_executioner",
-        "of_devastation",
+        "of_haste",
         "of_abundance"
       ],
       "affix_pool": {
@@ -1644,7 +1644,7 @@
       "implicit_affixes": [
         "of_vitality",
         "of_regen",
-        "of_recoup"
+        "of_lifesteal"
       ],
       "affix_pool": {
         "of_might": 16,
@@ -2936,8 +2936,8 @@
       "enchant_chance": 0.0,
       "implicit_affixes": [
         "of_finesse",
-        "of_chainspark",
-        "of_avenger"
+        "of_crit",
+        "of_damage"
       ],
       "affix_pool": {
         "of_storms": 14,

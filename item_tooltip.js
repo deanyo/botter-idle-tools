@@ -70,13 +70,13 @@ window.BotterTooltip = (() => {
     if (item.requires_innate_tag) host.append(el('p', 'tt-heritage', `${cap(item.requires_innate_tag)} heritage required`));
     const implicits = (item.implicit_affixes || []).map(id => ctx.affixById.get(id)).filter(Boolean);
     if (implicits.length) {
-      section('Unique', true);
+      section(item.unique ? 'Unique' : 'Built-in bonuses', !!item.unique);
       for (const affix of implicits) {
         // A drawback renders red, as in item_tooltip.gd, so its cost is never read as a bonus.
         const drawback = affix.family === 'drawback';
         const line = el('p', 'tt-implicit' + (drawback ? ' drawback' : ''), affixLine(affix, midValue(affix, rarity, ctx.rarityIndices), tip), drawback ? undefined : tip.stat_colors[affix.stat]);
         host.append(line);
-        if (affix.kind === 'flag' && ref.stat_descriptions?.[affix.stat]) host.append(el('p', 'tt-desc', ref.stat_descriptions[affix.stat]));
+        if ((affix.kind === 'flag' || affix.unique_only) && ref.stat_descriptions?.[affix.stat]) host.append(el('p', 'tt-desc', ref.stat_descriptions[affix.stat].replaceAll('{N}', midValue(affix, rarity, ctx.rarityIndices).value)));
       }
     }
     const n = (ctx.rarityCounts || {})[rarity] || 0;

@@ -579,7 +579,7 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_bear",
-        "of_unbroken"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 15,
@@ -747,7 +747,7 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_bear",
-        "of_unbroken"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 15,
@@ -1166,7 +1166,7 @@
       "enchant_chance": 0.15,
       "implicit_affixes": [
         "of_the_bear",
-        "of_unbroken"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 15,
@@ -1415,7 +1415,7 @@
       "enchant_chance": 0.1,
       "implicit_affixes": [
         "of_the_bear",
-        "of_unbroken"
+        "of_vitality"
       ],
       "affix_pool": {
         "of_might": 15,
@@ -2105,7 +2105,7 @@
       "id": "orcish_platemail_gilded",
       "implicit_affixes": [
         "of_the_bear",
-        "of_unbroken"
+        "of_vitality"
       ],
       "item_tier": 3,
       "lore": "Cathedral-gold leaf, beaten thin and prayed over for a hundred years.",
@@ -2326,7 +2326,7 @@
       "requires_innate_tag": "ancient",
       "implicit_affixes": [
         "of_dark_resist",
-        "of_int_mastery"
+        "of_wisdom"
       ],
       "affix_pool": {
         "of_wisdom": 16,

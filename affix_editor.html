@@ -293,11 +293,12 @@ function setStatus(msg) {
 // uniques and old items, so they sit behind their own chip.
 let activeFamilyFilter = "rolls";
 
-const LIST_LABELS = {rolls: "Rolls", parked: "Parked", eternal: "Eternal", drawbacks: "Drawbacks", supports: "Supports", all: "All"};
-const LIST_HINTS = {rolls: "Can drop on items, be forged, or drop as forge shards", parked: "Never rolls; kept for uniques and items players already own", eternal: "The Descent-only extra affix", drawbacks: "Unique-only costs", supports: "Spell supports", all: "Every affix in affixes.json"};
+const LIST_LABELS = {rolls: "Rolls", uniques: "Unique only", parked: "Parked", eternal: "Eternal", drawbacks: "Drawbacks", supports: "Supports", all: "All"};
+const LIST_HINTS = {rolls: "Can drop on items, be forged, or drop as forge shards", uniques: "Approved signature mechanics for unique gear; never random rolls", parked: "Retired bonuses retained for existing saves", eternal: "The Descent-only extra affix", drawbacks: "Unique-only costs", supports: "Spell supports", all: "Every affix in affixes.json"};
 function affixGroup(a) {
   const pool = (doc.random_pool && doc.random_pool.ids) || [];
   if (pool.includes(a.id)) return "rolls";
+  if (a.unique_only) return "uniques";
   return {eternal: "eternal", drawback: "drawbacks", support: "supports"}[a.family] || "parked";
 }
 
@@ -309,7 +310,7 @@ function renderList() {
   // Family filter chip row at the top.
   const chipRow = document.createElement("div");
   chipRow.style.cssText = "display:flex; gap:4px; padding: 4px 0 8px 0; flex-wrap: wrap;";
-  for (const fam of ["rolls", "parked", "eternal", "drawbacks", "supports", "all"]) {
+  for (const fam of ["rolls", "uniques", "parked", "eternal", "drawbacks", "supports", "all"]) {
     const chip = document.createElement("button");
     chip.textContent = `${LIST_LABELS[fam]} (${fam === "all" ? doc.affixes.length : (counts[fam] || 0)})`;
     chip.title = LIST_HINTS[fam];
