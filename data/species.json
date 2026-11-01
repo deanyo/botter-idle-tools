@@ -262,7 +262,7 @@
         "id": "vampire_blood_thirst",
         "kind": "lifesteal_cap_bump",
         "value": 5,
-        "desc": "Lifesteal cap raised from 15% to 20%."
+        "desc": "+5% Lifesteal."
       }
     },
     {
@@ -353,7 +353,7 @@
         "id": "deep_elf_scholar",
         "kind": "spell_damage_cap_bump",
         "value": 30,
-        "desc": "spell_damage_pct cap raised from 120 to 150."
+        "desc": "+30% Spell Damage."
       }
     },
     {
