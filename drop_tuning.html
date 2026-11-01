@@ -119,15 +119,13 @@ const SLIDERS = [
       { key: "combo_chance",       label: "Combo chance",     min: 0, max: 0.50, step: 0.005, fmt: "pct1" },
     ],
   },
-  // Tint / recolor
-  { section: "tint_recolor",
-    title: "Tint / recolor",
-    doc: "Per-instance hue/sat recolor rolls (drives item_recolor.gdshader). any_tint_chance is the cumulative chance of getting ANY tint; the rare-mode chances (shimmer/inverted/prismatic) are sub-bands within that.",
+  // Holographic item finish
+  { section: "holographic",
+    title: "Holographic item finish",
+    doc: "A rare gear finish with a subtle animated sheen and a small multiplier to the item's base stats and affix values. Dual-enchant hue cycling is automatic and comes from the enchant combo.",
     rows: [
-      { key: "any_tint_chance",  label: "Any tint chance",  min: 0, max: 1.0,   step: 0.01,   fmt: "pct1" },
-      { key: "shimmer_chance",   label: "Shimmer chance",   min: 0, max: 0.10,  step: 0.001,  fmt: "pct2" },
-      { key: "inverted_chance",  label: "Inverted chance",  min: 0, max: 0.05,  step: 0.0005, fmt: "pct3" },
-      { key: "prismatic_chance", label: "Prismatic chance", min: 0, max: 0.02,  step: 0.0002, fmt: "pct3" },
+      { key: "chance",         label: "Holographic chance",     min: 0, max: 0.10, step: 0.0005, fmt: "pct2" },
+      { key: "stat_bonus_pct", label: "Item stat bonus",        min: 0, max: 15,   step: 0.5,    fmt: "pct1" },
     ],
   },
 ];
@@ -137,7 +135,7 @@ const DEFAULTS = {
   meta_rarity: { primal_chance: 0.001, ancient_chance: 0.011 },
   quality:     { tail_weight_mult: 1.0, low_quality_tail_mult: 1.0, high_quality_tail_mult: 1.0 },
   enchant:     { global_chance_mult: 1.0, combo_chance: 0.03 },
-  tint_recolor:{ any_tint_chance: 0.30, shimmer_chance: 0.005, inverted_chance: 0.001, prismatic_chance: 0.0005 },
+  holographic: { chance: 0.005, stat_bonus_pct: 5.0 },
 };
 
 let doc = JSON.parse(JSON.stringify(DEFAULTS));

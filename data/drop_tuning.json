@@ -17,12 +17,10 @@
     "combo_chance": 0.30,
     "_doc": "global_chance_mult scales every item's authored enchant_chance \u2014 set to 0 to disable enchant rolls globally; set to 2 to double everything. combo_chance is the secondary roll AFTER the first enchant lands; if it fires + the resulting pair has a registered combo, both flavors are replaced by the compound."
   },
-  "tint_recolor": {
-    "any_tint_chance": 0.05,
-    "shimmer_chance": 0.005,
-    "inverted_chance": 0.001,
-    "prismatic_chance": 0.0005,
-    "_doc": "Per-instance hue/sat recolor rolls (drives item_recolor.gdshader). Adjust to make recolored drops more or less common."
+  "holographic": {
+    "chance": 0.005,
+    "stat_bonus_pct": 5.0,
+    "_doc": "Independent rare item finish roll. Holographic items get a subtle animated sheen and this percentage multiplies the item's base stats and affix values. Dual-enchant hue cycling is driven by the enchant combo, not a random tint roll."
   },
   "tier_drop_band": {
     "_doc": "Per-tier \u00d7 floor-band rarity weights consumed by loot_factory.gd::roll_rarity (Beat-2 \u00a72.A wires consumption \u2014 Beat-1 \u00a71.I authors the data). Each entry is [common, uncommon, rare, epic, legendary] weight at that source tier \u00d7 floor band. Beat-2 wiring also applies boss_step (boss kills bump rarity by N tiers) / elite_step / trash_ceiling (trash mobs cap at this rarity). Source: balance_pass_2026-06-11 A7-pool-001/002/004 + synthesis \u00a72.4.",
