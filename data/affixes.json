@@ -483,7 +483,7 @@
 			"id": "of_multicast",
 			"family": "generic",
 			"kind": "flat",
-			"name": "Extra Projectiles",
+			"name": "Projectiles",
 			"stat": "spell_proj_bonus",
 			"applies_to": [
 				"amulet",

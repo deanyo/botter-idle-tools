@@ -55,7 +55,7 @@
 				"duration"
 			],
 			"school": "physical",
-			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown) and leaves them bleeding. +1 axe per Spell Projectile affix.",
+			"blurb": "Orbits 1+ axes around you for ~2.5s. Each axe damages enemies it touches (per-axe per-enemy cooldown) and leaves them bleeding. +1 axe per Projectile affix.",
 			"cooldown": 13.8,
 			"damage": 14,
 			"element": "",
@@ -200,7 +200,7 @@
 				"tether": true
 			},
 			"school": "dark",
-			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Spell Projectile affix.",
+			"blurb": "Debuff: cursed enemies take +15% damage from all sources AND lose 50% effective armor for 4s. Targets the closest enemy in range; +1 target per Projectile affix.",
 			"class": "utility",
 			"cooldown": 12.8,
 			"damage": 1,
@@ -560,7 +560,7 @@
 				"duration"
 			],
 			"school": "arcane",
-			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Spell Projectile affix.",
+			"blurb": "Spawns 1+ orbiting wisps that home into nearby enemies on contact (one hit per wisp). +1 wisp per Projectile affix.",
 			"cooldown": 10.0,
 			"damage": 4,
 			"element": "",
