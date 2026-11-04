@@ -5,6 +5,7 @@
     {
       "id": "human",
       "name": "Human",
+      "tagline": "Balanced; levels a little faster",
       "sprite": "human_female.png",
       "lore": "Versatile and unremarkable. The baseline against which all others are measured. Slight XP boost from adaptability.",
       "hp_pct": 0,
@@ -32,6 +33,7 @@
     {
       "id": "spriggan",
       "name": "Spriggan",
+      "tagline": "Very fast and evasive, but frail",
       "sprite": "spriggan_female.png",
       "lore": "Forest-folk. Tiny and frail, but blindingly fast \u2014 both in step and in swing. The bot's original silhouette.",
       "hp_pct": -30,
@@ -60,6 +62,7 @@
     {
       "id": "minotaur",
       "name": "Minotaur",
+      "tagline": "Hits hard and crits often",
       "sprite": "minotaur_male.png",
       "lore": "Born to fight. Crushing strength, thick hide, slower swings than humans but each one bites deeper.",
       "hp_pct": 10,
@@ -88,6 +91,7 @@
     {
       "id": "naga",
       "name": "Naga",
+      "tagline": "Tough and self-healing, but slow",
       "sprite": "naga_female.png",
       "lore": "Coiled serpent-folk. Heavy frame, slow on the move, but recovers wounds with quiet patience. Cannot wear boots \u2014 no feet to put them on.",
       "hp_pct": 20,
@@ -119,6 +123,7 @@
     {
       "id": "tengu",
       "name": "Tengu",
+      "tagline": "Fast and aggressive, but frail",
       "sprite": "tengu_wingless_brown_female.png",
       "lore": "Crow-folk. Quick on the wing, sharp of eye. Aggressive and frail \u2014 strikes first, dies first.",
       "hp_pct": -10,
@@ -147,6 +152,7 @@
     {
       "id": "troll",
       "name": "Troll",
+      "tagline": "Huge health that heals itself",
       "sprite": "troll_male.png",
       "lore": "Ravenous regenerators. Knit flesh as fast as enemies tear it. Slow learners, but they outlast everything.",
       "hp_pct": 30,
@@ -175,6 +181,7 @@
     {
       "id": "octopode",
       "name": "Octopode",
+      "tagline": "Lucky scavenger with odd gear slots",
       "sprite": "octopode_1.png",
       "lore": "Tentacled scavengers. No torso for armor, no feet for boots, no head for helms \u2014 but tentacles for trinkets. Fortune-favored finders.",
       "hp_pct": -5,
@@ -209,6 +216,7 @@
     {
       "id": "demonspawn",
       "name": "Demonspawn",
+      "tagline": "Strikes hard, crits often, levels fast",
       "sprite": "demonspawn_red_male.png",
       "lore": "Born of mortal flesh and infernal fire. Sharp claws, sharper instincts. Hated by the holy.",
       "hp_pct": 0,
@@ -240,6 +248,7 @@
     {
       "id": "vampire",
       "name": "Vampire",
+      "tagline": "Drains life with every strike",
       "sprite": "vampire_female.png",
       "lore": "Undying drinker of the living. Drains life from every strike. Slow to bleed.",
       "hp_pct": -5,
@@ -268,6 +277,7 @@
     {
       "id": "mummy",
       "name": "Mummy",
+      "tagline": "Sturdy and levels fast, but slow",
       "sprite": "mummy_female.png",
       "lore": "Bound in linen and ancient curses. Brittle, slow, but rich in the wisdom of the tomb.",
       "hp_pct": 0,
@@ -297,6 +307,7 @@
     {
       "id": "hill_orc",
       "name": "Hill Orc",
+      "tagline": "Sturdy fighter that finds more loot",
       "sprite": "lorc_male_0.png",
       "lore": "Mountain raiders. Sturdy as stone, mean as winter. They take what they want and leave little behind.",
       "hp_pct": 10,
@@ -330,6 +341,7 @@
     {
       "id": "deep_elf",
       "name": "Deep Elf",
+      "tagline": "Frail, with deadly crits",
       "sprite": "deep_elf_female.png",
       "lore": "Refined cave-dwellers. Frail, but their precision and learning make every strike count.",
       "hp_pct": -15,
@@ -359,6 +371,7 @@
     {
       "id": "gargoyle",
       "name": "Gargoyle",
+      "tagline": "Heavily armoured, but slow",
       "sprite": "gargoyle_male.png",
       "lore": "Carved of living stone. Ponderous, unflinching, nearly indestructible.",
       "hp_pct": -10,
@@ -387,6 +400,7 @@
     {
       "id": "halfling",
       "name": "Halfling",
+      "tagline": "Nimble and lucky, but frail",
       "sprite": "halfling_female.png",
       "lore": "Small, lucky, and disarmingly cheerful. They find shiny things and stay out of harm's way.",
       "hp_pct": -20,
@@ -415,6 +429,7 @@
     {
       "id": "kobold",
       "name": "Kobold",
+      "tagline": "Quick scavenger, but frail",
       "sprite": "kobold_female_new.png",
       "lore": "Twitchy little hunters. Quick fingers, quicker feet, and a knack for spotting the gold first.",
       "hp_pct": -25,
